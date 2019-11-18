@@ -39,33 +39,6 @@ function byte BestMode()
 	return 0;
 }
 
-function float GetAIRating()
-{
-	local Bot B;
-	local float Result, Dist, Height;
-	local vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return AIRating;
-
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
-	Height = B.Enemy.Location.Z - Instigator.Location.Z;
-
-	Result = AIRating;
-	// Enemy too far away
-	result += Height/-500;
-	if (Height > -200)
-	{
-		if (Dist > 800)
-			Result -= (Dist-800) / 2000;
-		if (Dist < 500)
-			Result -= 1 - Dist/500;
-	}
-	return Result;
-}
-
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.2;	}
 // tells bot whether to charge or back off while defending against this weapon
@@ -108,8 +81,8 @@ defaultproperties
      PutDownTime=0.700000
      BringUpTime=0.750000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.400000
-     CurrentRating=0.400000
+     AIRating=0.850000
+     CurrentRating=0.850000
      bShowChargingBar=False
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'

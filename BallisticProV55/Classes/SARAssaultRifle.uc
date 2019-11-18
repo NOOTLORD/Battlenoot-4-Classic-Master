@@ -394,30 +394,29 @@ function byte BestMode()
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	if ( B == None )
+		return AIRating;
+		
+	Rating = Super.GetAIRating();
 
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
+	if (B.Enemy == None)
+		return Rating;
 
-	Result = Super.GetAIRating();
-	if (Dist > 700)
-		Result += 0.3;
-	else if (B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		Result -= 0.05 * B.Skill;
-	if (Dist > 2000)
-		Result -= (Dist-2000) / 4000;
+    Dist = VSize(B.Enemy.Location - Instigator.Location);
 
-	return Result;
+	return class'BUtil'.static.DistanceAtten(Rating, 0.6, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance);
 }
+
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.4;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.4;	}
+
 // End AI Stuff =====
 
 simulated function bool ReadyToFire(int Mode)
@@ -444,6 +443,8 @@ simulated function bool ReadyToFire(int Mode)
 
 defaultproperties
 {
+	 AIRating=0.72
+	 CurrentRating=0.72
      LaserOnSound=Sound'BallisticSounds2.M806.M806LSight'
      LaserOffSound=Sound'BallisticSounds2.M806.M806LSight'
      StockOpenAnim="StockOn"

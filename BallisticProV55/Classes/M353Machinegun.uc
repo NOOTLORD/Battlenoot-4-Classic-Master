@@ -204,6 +204,28 @@ function GiveTo(Pawn Other, optional Pickup Pickup)
 	}
 }
 
+function float GetAIRating()
+{
+	local Bot B;
+
+	local float Dist;
+	local float Rating;
+
+	B = Bot(Instigator.Controller);
+
+	if ( B == None )
+		return AIRating;
+
+	Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
+		return Rating;
+
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 1024, 2048); 
+	}
+	
 simulated function SetScopeBehavior()
 {
 	bUseNetAim = default.bUseNetAim || bScopeView;
@@ -303,8 +325,8 @@ defaultproperties
      PutDownTime=0.550000
      BringUpTime=0.700000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.700000
-     CurrentRating=0.700000
+     AIRating=0.7500000
+     CurrentRating=0.7500000
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
      AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'

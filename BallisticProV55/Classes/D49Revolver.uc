@@ -455,25 +455,21 @@ function byte BestMode()
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-
-	if (IsSlave())
-		return 0;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
+	if ( B == None )
 		return AIRating;
+
+    Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
+		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
 
-	Result = Super.GetAIRating();
-	if (Dist < 500)
-		Result -= 1-Dist/500;
-	else if (Dist < 3000)
-		Result += (Dist-1000) / 2000;
-	else
-		Result = (Result + 0.66) - (Dist-3000) / 2500;
-	return Result;
+	return class'BUtil'.static.DistanceAtten(Rating, 0.5, Dist, 768, 3072); 
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -541,8 +537,8 @@ defaultproperties
      PutDownAnimRate=1.250000
      PutDownTime=0.500000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.400000
-     CurrentRating=0.400000
+     AIRating=0.600000
+     CurrentRating=0.600000
      bSniping=True
      bCanThrow=False
      Description="Another fine weapon designed by the acclaimed 'Black & Wood' company, the D49 revolver is a true hand cannon. Based on weapons of old, the D49 was intended for non-military use, but rather for self defense and civilian purposes. The dual-barrel design has made it a favourite among it's users, capable of causing massive damage if used correctly, able to easily kill an armored Terran."

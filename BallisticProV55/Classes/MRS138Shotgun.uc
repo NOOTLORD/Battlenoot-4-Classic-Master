@@ -265,36 +265,21 @@ function byte BestMode()
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	if ( B == None )
+		return AIRating;
 
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
+    Rating = Super.GetAIRating();
 
-	Result = Super.GetAIRating();
-	if (!HasMagAmmo(0) && Ammo[0].AmmoAmount < 1)
-	{
-		if (Dist > 400)
-			return 0;
-		return Result / (1+(Dist/400));
-	}
-	// Enemy too far away
-	if (Dist > 1000)
-		Result -= (Dist-1000) / 2000;
-	// If the enemy has a knife, a gun looks better
-	if (B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		Result += 0.1 * B.Skill;
-	// Sniper bad, very bad
-	else if (B.Enemy.Weapon != None && B.Enemy.Weapon.bSniping && Dist > 500)
-		Result -= 0.3;
-	Result += 1 - Dist / 1000;
+    if (B.Enemy == None)
+		return Rating;
 
-	return Result;
-}
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, BallisticProShotgunFire(BFireMode[0]).CutOffStartRange, BallisticProShotgunFire(BFireMode[0]).CutOffDistance);}
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()
@@ -377,8 +362,8 @@ defaultproperties
      RecoilDeclineDelay=0.650000
      FireModeClass(0)=Class'BallisticProV55.MRS138PrimaryFire'
      FireModeClass(1)=Class'BallisticProV55.MRS138PrimaryFire'
-     AIRating=0.600000
-     CurrentRating=0.600000
+     AIRating=0.800000
+     CurrentRating=0.800000
      bMeleeWeapon=True
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'

@@ -219,6 +219,34 @@ simulated function SetScopeBehavior()
 	}
 }
 
+function float GetAIRating()
+{
+	local Bot B;
+
+	local float Dist;
+	local float Rating;
+
+	B = Bot(Instigator.Controller);
+
+	if ( B == None )
+		return AIRating;
+
+	Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
+		return Rating;
+
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 2048, 2048); 
+	}
+	
+// tells bot whether to charge or back off while using this weapon
+function float SuggestAttackStyle()	{	return -0.5;	}
+
+// tells bot whether to charge or back off while defending against this weapon
+function float SuggestDefenseStyle()	{	return 0.5;	}
+
 defaultproperties
 {
      BeltLength=8

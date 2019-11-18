@@ -365,21 +365,21 @@ function byte BestMode()	{	return 0;	}
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	if ( B == None )
+		return AIRating;
+
+	Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
+		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
 
-	Result = Super.GetAIRating();
-	if (Dist < 1000)
-		Result += (Dist/1000) - 1;
-	else
-		Result += 1-(Abs(Dist-5000)/5000);
-
-	return Result;
+	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.5, Dist, 3072, 2048); 
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -458,8 +458,8 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      BringUpTime=0.500000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.650000
-     CurrentRating=0.600000
+     AIRating=0.80000
+     CurrentRating=0.800000
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
      AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'

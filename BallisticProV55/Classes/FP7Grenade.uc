@@ -56,8 +56,8 @@ defaultproperties
      FireModeClass(0)=Class'BallisticProV55.FP7PrimaryFire'
      FireModeClass(1)=Class'BallisticProV55.FP7PrimaryFire'
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.400000
-     CurrentRating=0.400000
+     AIRating=0.8500000
+     CurrentRating=0.8500000
      bShowChargingBar=False
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'

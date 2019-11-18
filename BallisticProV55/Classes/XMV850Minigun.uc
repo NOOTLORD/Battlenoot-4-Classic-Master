@@ -343,33 +343,33 @@ function byte BestMode()
 
 	return 0;
 }
+
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	if ( B == None )
+		return AIRating;
+		
+	Rating = Super.GetAIRating();
 
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
+	if (B.Enemy == None)
+		return Rating;
+		
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
 
-	Result = Super.GetAIRating();
-	if (Dist > 1000)
-		Result -= (Dist-1000) / 3000;
-	if (B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		Result += 0.2;
-	else if (B.Enemy.Weapon != None && B.Enemy.Weapon.bSniping && Dist > 500)
-		Result -= 0.4;
-
-	return Result;
+	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 2048, 2048); 
 }
+
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.5;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.8;	}
+
 // End AI Stuff =====
 
 defaultproperties
@@ -430,8 +430,8 @@ defaultproperties
      PutDownTime=0.800000
      BringUpTime=2.000000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.700000
-     CurrentRating=0.700000
+     AIRating=0.800000
+     CurrentRating=0.800000
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
      AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
      Description="Anti-Krao weapons are a common thing these days, with many being designed specifically to kill as many as possible in a short time. However, no infantry weapon does this better, than the XMV-850. A weapon to be feared, this monster is capable of firing as many as sixty 5.56mm rounds a second. While most miniguns are capable of firing ten or twelve thousand rounds-per-minute, the XMV-850 has been designed for infantry use, as a fire-rate that high, would generate far to much recoil. To make the weapon usable in a defensive position, it can be deployed to stabilise it, and allows the user to become that much more effective. To help with recoil, and allow the soldier to use the weapon more efectively when not deployed, the fire-rate can be limited to a lower RPM. Though not terribly accurate or damaging, the fact that it can pour out bullets at such a rate, means that it will be difficult to miss the target."

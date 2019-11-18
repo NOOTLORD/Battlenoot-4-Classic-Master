@@ -34,36 +34,6 @@ function byte BestMode()
 	return 0;
 }
 
-function float GetAIRating()
-{
-	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return AIRating;
-
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
-
-	Result = AIRating;
-	// Enemy too far away
-	if (Dist > 1500)
-		return 0.1;			// Enemy too far away
-	// Better if we can get him in the back
-	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0)
-		Result += 0.08 * B.Skill;
-	// If the enemy has a knife too, a gun looks better
-	if (B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		Result = FMax(0.0, Result *= 0.7 - (Dist/1000));
-	// The further we are, the worse it is
-	else
-		Result = FMax(0.0, Result *= 1 - (Dist/1000));
-
-	return Result;
-}
-
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()
 {
@@ -75,6 +45,7 @@ function float SuggestDefenseStyle()
 {
 	return -1;
 }
+
 // End AI Stuff =====
 
 defaultproperties
@@ -102,8 +73,8 @@ defaultproperties
      PutDownTime=0.200000
      BringUpTime=0.200000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.200000
-     CurrentRating=0.200000
+     AIRating=0.700000
+     CurrentRating=0.700000
      bMeleeWeapon=True
      bShowChargingBar=False
      bCanThrow=False

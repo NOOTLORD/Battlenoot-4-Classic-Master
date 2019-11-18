@@ -507,28 +507,34 @@ function byte BestMode()	{	return 0;	}
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
-
+	local float Dist, Rating;
+	
 	B = Bot(Instigator.Controller);
+	
 	if ( (B == None) || (B.Enemy == None) )
 		return Super.GetAIRating();
+		
+// anti-vehicle specialist
+    if (Vehicle(B.Enemy) != None)
+		return 1.2;
 
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
+	Rating = Super.GetAIRating();
 
-	Result = Super.GetAIRating();
-	if (Dist < 500)
-		Result -= 0.6;
-	else if (Dist > 3000)
-		Result -= 0.3;
-	result += 0.2 - FRand()*0.4;
-	return Result;
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	if (Dist < 1024) // danger close
+		return 0.4;
+
+	// projectile
+	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 3072, 4096); 
 }
+
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.5;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.9;	}
+
 // End AI Stuff =====
 
 exec simulated function WeaponSpecial(optional byte i)
@@ -817,8 +823,8 @@ defaultproperties
      PutDownTime=0.800000
      BringUpTime=1.000000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.750000
-     CurrentRating=0.750000
+     AIRating=0.800000
+     CurrentRating=0.800000
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
      AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
