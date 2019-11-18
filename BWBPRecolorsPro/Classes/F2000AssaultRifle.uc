@@ -361,25 +361,21 @@ function bool CanAttack(Actor Other)
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	if ( B == None )
+		return AIRating;
 
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
+	Rating = Super.GetAIRating();
 
-	Result = Super.GetAIRating();
-	if (Dist > 700)
-		Result += 0.3;
-	else if (B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		Result -= 0.05 * B.Skill;
-	if (Dist > 3000)
-		Result -= (Dist-3000) / 4000;
+	if (B.Enemy == None)
+		return Rating;
 
-	return Result;
+    Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	return class'BUtil'.static.DistanceAtten(Rating, 0.5, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 	
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -446,8 +442,8 @@ defaultproperties
      FireModeClass(1)=Class'BWBPRecolorsPro.F2000SecondaryFire'
      PutDownTime=0.700000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.600000
-     CurrentRating=0.600000
+     AIRating=0.750000
+     CurrentRating=0.750000
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
      AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'

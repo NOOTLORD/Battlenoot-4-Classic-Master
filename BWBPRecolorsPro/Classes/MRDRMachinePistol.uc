@@ -97,30 +97,21 @@ function byte BestMode()
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	if ( B == None )
+		return AIRating;
 
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
+	Rating = Super.GetAIRating();
 
-	Result = Super.GetAIRating();
-	if (!HasMagAmmo(0) && !HasNonMagAmmo(0))
-	{
-		if (Dist > 400)
-			return 0;
-		return Result / (1+(Dist/400));
-	}
+	if (B.Enemy == None)
+		return Rating;
 
-	if (Dist < 500)
-		Result += 0.3;
-	if (Dist > 1000)
-		Result -= (Dist-1000) / 4000;
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
 
-	return Result;
+	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 1536); 
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -213,6 +204,8 @@ defaultproperties
      GunLength=0.100000
      AimAdjustTime=100.000000
      AimSpread=16
+	 AIRating=0.6
+	 CurrentRating=0.6
      AimDamageThreshold=0.000000
      ChaosDeclineTime=0.450000
      ChaosAimSpread=256

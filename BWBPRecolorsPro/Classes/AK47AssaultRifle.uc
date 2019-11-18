@@ -302,17 +302,17 @@ simulated function float RateSelf()
 function byte BestMode()
 {
 	local Bot B;
+	local float Dist;
 
 	B = Bot(Instigator.Controller);
+	
 	if ( (B == None) || (B.Enemy == None) )
 		return 0;
 
-	if (B.Skill > Rand(6))
-	{
-		if (Chaos < 0.1 || Chaos < 0.5 && VSize(B.Enemy.Location - Instigator.Location) > 500)
-			return 1;
-	}
-	else if (FRand() > 0.75)
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	if (Dist < 1024 && FRand() > 0.75)
+
 		return 1;
 	return 0;
 }
@@ -320,24 +320,18 @@ function byte BestMode()
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
+    if ( B == None )
 		return AIRating;
+	if (B.Enemy == None)
+		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
 
-	Result = Super.GetAIRating();
-	if (Dist < 500)
-		Result -= 1-Dist/500;
-	else if (Dist < 3000)
-		Result += (Dist-1000) / 2000;
-	else
-		Result = (Result + 0.66) - (Dist-3000) / 2500;
-	if (Result < 0.34 && CurrentWeaponMode != 2)
-		CurrentWeaponMode = 2;
-	return Result;
+	return class'BUtil'.static.DistanceAtten(Rating, 0.6, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -406,8 +400,8 @@ defaultproperties
      PutDownAnimRate=1.750000
      BringUpTime=0.400000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.600000
-     CurrentRating=0.600000
+     AIRating=0.700000
+     CurrentRating=0.700000
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
      AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'

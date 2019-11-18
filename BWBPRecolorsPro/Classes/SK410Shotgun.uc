@@ -100,41 +100,31 @@ function byte BestMode()
 	Dir = Instigator.Location - B.Enemy.Location;
 	Dist = VSize(Dir);
 
-	if (Dist > 400)
-		return 0;
-	if (Dist < FireMode[1].MaxRange() && FRand() > 0.3)
-		return 1;
-	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0 && (VSize(B.Enemy.Velocity) < 100 || Normal(B.Enemy.Velocity) dot Normal(B.Velocity) < 0.5))
+	if (Dist > 1024 || B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
 		return 1;
 
-	return Rand(2);
+	return 0;
 }
 
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
-	local vector Dir;
-
+	local float Dist;
+	local float Rating;
+	
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	if ( B == None )
+		return AIRating;
 
-	Dir = B.Enemy.Location - Instigator.Location;
-	Dist = VSize(Dir);
+	Rating = Super.GetAIRating();
 
-	// Enemy too far away
-	if (Dist > 1000)
-		Result -= (Dist-1000) / 2000;
-	// If the enemy has a knife too, a gun looks better
-	if (B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		Result += 0.1 * B.Skill;
-	// Sniper bad, very bad
-	else if (B.Enemy.Weapon != None && B.Enemy.Weapon.bSniping && Dist > 500)
-		Result -= 0.3;
-	Result += 1 - Dist / 1000;
+	if (B.Enemy == None)
+		return Rating;
 
-	return Result;
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 1536); 
+
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -216,8 +206,8 @@ defaultproperties
      PutDownAnimRate=1.600000
      PutDownTime=0.350000
      BringUpTime=0.600000
-     AIRating=0.600000
-     CurrentRating=0.600000
+     AIRating=0.850000
+     CurrentRating=0.850000
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
      AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
