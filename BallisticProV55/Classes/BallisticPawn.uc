@@ -1772,12 +1772,6 @@ simulated function StartDeRes()
 		if (Stumps[i] != None)
 			Stumps[i].Destroy();
 
-	// Wicked new BW DeRes ---------
-	Spawn(class'BWDeresFX',self,, Location);
-	NewDeResDecal = Spawn(class'BWDeResDecal', self, , Location, rot(-16384,0,0));
-	PlaySound(NewDeResSound, SLOT_Interact, 1.0);
-
-
 	for (i=0;i<Skins.Length;i++)
 	{
 		if (Skins[i]==None)
@@ -2581,8 +2575,8 @@ defaultproperties
      UDamageSound=Sound'BallisticSounds3.Udamage.UDamageFire'
 	 GruntVolume=0.175000
      FootstepVolume=0.300000
-     DeResTime=4.000000
-     RagdollLifeSpan=20.000000
+     DeResTime=2.000000
+     RagdollLifeSpan=15.000000
      RagDeathUpKick=0.000000
      bCanWalkOffLedges=True
      bSpecialHUD=True
