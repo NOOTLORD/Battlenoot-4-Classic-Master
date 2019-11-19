@@ -61,9 +61,7 @@ auto state Pickup
 		local Ammunition A;
 
 		if ( ValidTouch(Other) )
-		{
-			if ( Pawn(Other).GiveHealth(5, Pawn(Other).HealthMax) )
-				bGetIt=true;
+		
 			// First go through our inventory and revive all the ghosts
 			for (Inv=Pawn(Other).Inventory; Inv!=None && Count < 1000; Count++)
 			{
@@ -117,7 +115,6 @@ auto state Pickup
             }
 		}
 	}
-}
 
 simulated event Tick(float DT)
 {
