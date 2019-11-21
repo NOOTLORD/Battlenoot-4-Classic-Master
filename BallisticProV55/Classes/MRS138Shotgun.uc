@@ -346,6 +346,7 @@ defaultproperties
      SightPivot=(Pitch=512)
      SightOffset=(Z=24.250000)
      SightingTime=0.300000
+	 SightZoomFactor=0
      GunLength=32.000000
      LongGunPivot=(Pitch=4500,Yaw=-8000)
      SightAimFactor=0.100000

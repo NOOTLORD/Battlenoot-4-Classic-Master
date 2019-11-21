@@ -177,6 +177,7 @@ defaultproperties
      SightOffset=(X=-20.000000,Y=-7.400000,Z=45.299999)
      SightDisplayFOV=40.000000
      SightingTime=0.200000
+	 SightZoomFactor=0
      GunLength=4.000000
      AimAdjustTime=100.000000
      AimDamageThreshold=0.000000

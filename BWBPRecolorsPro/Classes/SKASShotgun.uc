@@ -210,6 +210,7 @@ defaultproperties
      bNoCrosshairInScope=True
      SightPivot=(Pitch=1024)
      SightOffset=(X=-20.000000,Y=9.700000,Z=17.849998)
+	 SightZoomFactor=0
      GunLength=32.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimAdjustTime=100.000000
