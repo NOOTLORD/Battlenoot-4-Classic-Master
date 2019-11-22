@@ -244,7 +244,7 @@ simulated function ClientReceiveEnd()
 }
 
 // Get Name, BigIconMaterial and classname of weapon at index? in group?
-function bool LoadWIFromCache(string ClassStr, out BC_WeaponInfoCache.WeaponInfo WepInfo)
+simulated function bool LoadWIFromCache(string ClassStr, out BC_WeaponInfoCache.WeaponInfo WepInfo)
 {
 	local int i;
 
@@ -287,7 +287,7 @@ simulated function SortList()
 						wiGroup = 10;
 					for (j = 0; j < SortedWIs.Length; ++j)
 					{
-						existingGroup = sortedWIs[j].InventoryGroup;
+						existingGroup = SortedWIs[j].InventoryGroup;
 
 						if (existingGroup == 0)
 							existingGroup = 10;
@@ -300,12 +300,15 @@ simulated function SortList()
 						}
 
 						if (wiGroup == existingGroup)
+						{
 							if (StrCmp(WI.ItemName, SortedWIs[j].ItemName, 6, True) <= 0)
 							{	
 								SortedWIs.Insert(j, 1);
 								SortedWIs[j] = WI;
 								break;
 							}
+
+                        }
 
 						if (j == SortedWIs.Length - 1)
 						{
