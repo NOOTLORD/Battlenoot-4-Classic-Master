@@ -40,17 +40,6 @@ simulated function Notify_CockAimed()
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
-//// client only ////
-simulated event ClientStartFire(int Mode)
-{
-    if (mode == 1)
-    {
-    	if (TazerEffect == None)
-    		StartTazer();
-    }
-	super.ClientStartFire(Mode);
-}
-
 simulated function StartTazer()
 {
    	TazerTime = 0;
@@ -70,27 +59,6 @@ simulated function KillTazer()
 		TazerEffect.Kill();
 	if (Role==ROLE_Authority && ThirdPersonActor != None)
 		MRS138Attachment(ThirdPersonActor).bTazerOn = false;
-}
-
-exec simulated function WeaponSpecial(optional byte i)
-{
-	bLightsOn = !bLightsOn;
-	ServerFlashLight(bLightsOn);
-	if (bLightsOn)
-	{
-		PlaySound(TorchOnSound,,0.7,,32);
-		if (FlashLightEmitter == None)
-			FlashLightEmitter = Spawn(class'MRS138TorchEffect',self,,location);
-		class'BallisticEmitter'.static.ScaleEmitter(FlashLightEmitter, DrawScale);
-		StartProjector();
-	}
-	else
-	{
-		PlaySound(TorchOffSound,,0.7,,32);
-		if (FlashLightEmitter != None)
-			FlashLightEmitter.Destroy();
-		KillProjector();
-	}
 }
 
 function ServerFlashLight (bool bNew)

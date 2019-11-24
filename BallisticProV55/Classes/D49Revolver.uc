@@ -386,52 +386,6 @@ function ServerUpdateLaser(bool bNewLaserOn)
 	bUseNetAim = bNewLaserOn;
 }
 
-exec simulated function WeaponSpecial(optional byte i)
-{
-		if (!bScopeView && !bLaserOn)
-		{
-			FullZoomFOV=60.000000;
-			bLaserOn=true;
-			ScopeView();
-		}
-		else
-		{
-			if (bLaserOn)
-			{
-				FullZoomFOV=default.FullZoomFOV;
-				bLaserOn=false;
-			}
-			else
-			{
-				FullZoomFOV=60.000000;
-				bLaserOn=true;
-			}
-		}
-	bUseNetAim = bLaserOn;
-	ServerUpdateLaser(bLaserOn);
-
-//	if (bScopeView)
-//	{
-//		if (bLaserOn)
-//		{
-//			ScopeView();
-//			bLaserOn=false;
-//		}
-//		else
-//			bLaserOn=true;
-//	}
-//	else
-//	{
-//		ScopeView();
-//		bLaserOn=true;
-//	}
-}
-
-exec simulated function WeaponSpecialRelease(optional byte i)
-{
-	ScopeViewRelease();
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()
@@ -523,6 +477,7 @@ defaultproperties
      SightingTime=0.200000
      SightAimFactor=0.150000
      AimAdjustTime=100.000000
+	 SightZoomFactor=0
      AimSpread=16
      AimDamageThreshold=0.000000
      ChaosDeclineTime=0.450000

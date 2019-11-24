@@ -320,6 +320,7 @@ defaultproperties
      SightOffset=(X=-10.000000,Y=-4.400000,Z=12.130000)
      SightDisplayFOV=40.000000
      SightingTime=0.200000
+	 SightZoomFactor=0
      SightAimFactor=0.150000
      JumpChaos=0.200000
      AimAdjustTime=100.000000

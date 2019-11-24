@@ -103,20 +103,6 @@ function ServerSwitchStock(bool bNewValue)
 	AdjustUziProperties(false);
 }
 
-//simulated function DoWeaponSpecial(optional byte i)
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (ReloadState != RS_None)
-		return;
-	if (Clientstate != WS_ReadyToFire)
-		return;
-	bStockOpen = !bStockOpen;
-	TemporaryScopeDown(0.4);
-	ServerSwitchStock(bStockOpen);
-	SwitchStock(bStockOpen);
-	AdjustUziProperties(false);
-}
-
 simulated function SwitchStock(bool bNewValue)
 {
 	if (Role == ROLE_Authority)

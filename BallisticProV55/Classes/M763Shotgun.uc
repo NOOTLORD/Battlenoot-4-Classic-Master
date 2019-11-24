@@ -13,12 +13,6 @@ var bool bAltLoaded;
 
 var Name SingleLoadAnim;
 
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerLoadShell;
-}
-
 function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
 {
 	if (MeleeState >= MS_Held)
@@ -187,27 +181,6 @@ simulated function FirePressed(float F)
 				ServerCockGun();
 		}
 	}
-		
-	else if(ReloadState == RS_None && !bAltLoaded && HasNonMagAmmo(1) && !IsFiring() && Level.TimeSeconds > FireMode[1].NextFireTime)
-	{
-		CommonLoadShell();
-		if (Level.NetMode == NM_Client)
-			ServerLoadShell();
-	}
-}
-
-simulated function CommonLoadShell()
-{
-	if (Role == ROLE_Authority)
-		bServerReloading=true;
-	ReloadState = RS_Cocking;
-	if (CurrentWeaponMode==0)
-		PlayAnim(SingleLoadAnim,1.6, 0.0);
-}
-
-function ServerLoadShell()
-{
-	CommonLoadShell();
 }
 
 // AI Interface =====

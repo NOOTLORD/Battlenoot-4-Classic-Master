@@ -90,27 +90,6 @@ function ServerSwitchStock(bool bNewValue)
 	SwitchStock(bNewValue);
 	AdjustStockProperties();
 }
-//simulated function DoWeaponSpecial(optional byte i)
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (ReloadState != RS_None)
-		return;
-	if (Clientstate != WS_ReadyToFire)
-		return;
-
-	if (!bStockOpen)
-		SetStockRotation();
-
-	bStockOpen = !bStockOpen;
-
-	if (!bStockOpen)
-		SetStockRotation();
-
-	TemporaryScopeDown(0.4);
-	ServerSwitchStock(bStockOpen);
-	SwitchStock(bStockOpen);
-	AdjustStockProperties();
-}
 
 simulated function SwitchStock(bool bNewValue)
 {

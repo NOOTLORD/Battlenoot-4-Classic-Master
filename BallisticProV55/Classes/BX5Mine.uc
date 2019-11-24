@@ -37,12 +37,6 @@ function ServerSetSringMode(bool bNewValue)
 	bSpringMode = bNewValue;
 }
 
-//simulated function DoWeaponSpecial(optional byte i)
-exec simulated function WeaponSpecial(optional byte i)
-{
-	SwitchSpringMode();
-}
-
 simulated function SwitchSpringMode()
 {
 	if (!bSpringMode)

@@ -60,7 +60,7 @@ defaultproperties
      bDryUncock=True
      MuzzleFlashClass=Class'BallisticProV55.Fifty9FlashEmitter'
      FlashBone="Muzzle"
-     FlashScaleFactor=0.350000
+     FlashScaleFactor=0.375000
      BrassClass=Class'BallisticProV55.Brass_Uzi'
      BrassOffset=(X=-26.000000,Y=1.500000,Z=-1.750000)
      AimedFireAnim="SightFire"
