@@ -24,7 +24,7 @@ function PlayFiring()
 	}
 	else
 	{
-		AimedFireAnim='FireCombined';
+		AimedFireAnim='SightFireCombined';
 		FireAnim = 'FireCombined';
 	}
 	super.PlayFiring();
@@ -39,7 +39,7 @@ function ServerPlayFiring()
 	}
 	else
 	{
-		AimedFireAnim='FireCombined';
+		AimedFireAnim='SightFireCombined';
 		FireAnim = 'FireCombined';
 	}
 	super.ServerPlayFiring();
@@ -47,8 +47,8 @@ function ServerPlayFiring()
 
 defaultproperties
 {
-     CutOffDistance=2560.000000
-     CutOffStartRange=1024.000000
+     CutOffDistance=1536.000000
+     CutOffStartRange=768.000000
      TraceCount=10
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerChance=1.000000
@@ -65,7 +65,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.MRS138FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
-     BrassOffset=(X=33.500000,Y=-7.500000,Z=15.500000)
+     BrassOffset=(X=34.000000,Y=-7.500000,Z=13.000000)
      RecoilPerShot=1280.000000
      FireChaos=0.400000
      XInaccuracy=256.000000

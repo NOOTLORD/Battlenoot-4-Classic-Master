@@ -311,8 +311,7 @@ defaultproperties
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
-     SightPivot=(Pitch=512)
-     SightOffset=(Z=24.250000)
+     SightOffset=(Z=18.00000)
      SightingTime=0.300000
 	 SightZoomFactor=0
      GunLength=32.000000

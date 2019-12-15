@@ -28,9 +28,9 @@ function PlayFiring()
 
 defaultproperties
 {
-     CutOffDistance=3072.000000
-     CutOffStartRange=768.000000
-     TraceRange=(Max=6000.000000)
+     CutOffDistance=1536.000000
+     CutOffStartRange=256.000000
+     TraceRange=(Min=4000.000000,Max=4000.000000)
      WaterRangeFactor=0.600000
      MaxWallSize=24.000000
      MaxWalls=1
@@ -52,8 +52,8 @@ defaultproperties
      BrassOffset=(X=-42.500000,Y=7.000000,Z=2.500000)
      RecoilPerShot=256.000000
      FireChaos=0.140000
-     XInaccuracy=128.000000
-     YInaccuracy=128.000000
+     XInaccuracy=96.000000
+     YInaccuracy=96.000000
      BallisticFireSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-Fire',Volume=2.000000)
      FireEndAnim=
      FireAnimRate=1.500000
