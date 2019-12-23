@@ -47,8 +47,8 @@ function ServerPlayFiring()
 
 defaultproperties
 {
-     CutOffDistance=1536.000000
-     CutOffStartRange=768.000000
+     CutOffDistance=2048.000000
+     CutOffStartRange=1024.000000
      TraceCount=10
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerChance=1.000000
@@ -68,8 +68,8 @@ defaultproperties
      BrassOffset=(X=34.000000,Y=-7.500000,Z=13.000000)
      RecoilPerShot=1280.000000
      FireChaos=0.400000
-     XInaccuracy=256.000000
-     YInaccuracy=256.000000
+     XInaccuracy=350.000000
+     YInaccuracy=350.000000
      BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Fire',Volume=2.000000)
      FireAnim="FireCombined"
      FireEndAnim=

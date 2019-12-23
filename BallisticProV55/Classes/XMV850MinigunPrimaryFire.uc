@@ -333,7 +333,7 @@ defaultproperties
      FlashScaleFactor=0.600000
      BrassClass=Class'BallisticProV55.Brass_Minigun'
      BrassOffset=(X=-56.000000,Y=-8.000000,Z=5.000000)
-     RecoilPerShot=96.000000
+     RecoilPerShot=72.000000
      VelocityRecoil=48.000000
      FireChaos=0.250000
      XInaccuracy=32.000000

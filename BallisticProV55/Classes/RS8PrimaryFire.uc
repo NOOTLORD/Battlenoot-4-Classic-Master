@@ -168,8 +168,8 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Fire',Volume=2.000000)
      bPawnRapidFireAnim=True
 	 FireEndAnim=
-     FireAnimRate=2
-     FireRate=0.320000
+     FireAnimRate=1.500000
+     FireRate=0.225000
      AmmoClass=Class'BallisticProV55.Ammo_RS8Bullets'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)

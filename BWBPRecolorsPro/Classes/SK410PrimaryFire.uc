@@ -63,18 +63,18 @@ simulated function DestroyEffects()
 defaultproperties
 {
      HipSpreadFactor=2.000000
-     CutOffDistance=1280.000000
-     CutOffStartRange=512.000000
+     CutOffDistance=1536.000000
+     CutOffStartRange=378.000000
      MaxSpreadFactor=6
-     TraceCount=3
+     TraceCount=6
      TracerClass=Class'BWBPRecolorsPro.TraceEmitter_ShotgunHE'
      ImpactManager=Class'BWBPRecolorsPro.IM_ShellHE'
      TraceRange=(Min=4000.000000,Max=6000.000000)
      MaxWalls=1
-     Damage=25.000000
-     DamageHead=50.000000
-     DamageLimb=25.000000
-     RangeAtten=0.700000
+     Damage=14.000000
+     DamageHead=14.000000
+     DamageLimb=14.000000
+     RangeAtten=0.500000
      DamageType=Class'BWBPRecolorsPro.DT_SK410Shotgun'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_SK410ShotgunHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_SK410Shotgun'
@@ -83,11 +83,11 @@ defaultproperties
      BrassClass=Class'BWBPRecolorsPro.Brass_ShotgunHE'
      BrassOffset=(X=-50.000000,Y=5.000000,Z=-6.500000)
      AimedFireAnim="SightFire"
-     RecoilPerShot=240.000000
+     RecoilPerShot=700.000000
      VelocityRecoil=180.000000
      FireChaos=0.040000
-     XInaccuracy=200.000000
-     YInaccuracy=200.000000
+     XInaccuracy=400.000000
+     YInaccuracy=400.000000
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Blast',Volume=2.000000)
      FireEndAnim=
      FireAnimRate=2.250000
