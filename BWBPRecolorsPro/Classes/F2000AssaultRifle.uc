@@ -21,137 +21,8 @@ var(F2000AssaultRifle) name		ScopeBone;			// Bone to use for hiding scope
 
 replication
 {
-	reliable if (Role == ROLE_Authority)
-		ClientGrenadePickedUp;
 	reliable if (Role < ROLE_Authority)
 		ServerSwitchSilencer;
-}
-
-//=====================================================================
-// GRENADE CODE
-//=====================================================================
-
-// Notifys for greande loading sounds
-simulated function Notify_F2000GrenOpen()	{	PlaySound(GrenOpenSound, SLOT_Misc, 0.5, ,64);	}
-simulated function Notify_F2000GrenLoad()		{	PlaySound(GrenLoadSound, SLOT_Misc, 0.5, ,64);	}
-simulated function Notify_F2000GrenClose()	{	PlaySound(GrenCloseSound, SLOT_Misc, 0.5, ,64);F2000SecondaryFire(FireMode[1]).bLoaded = true;		}
-
-// A grenade has just been picked up. Loads one in if we're empty
-function GrenadePickedUp ()
-{
-	if (Ammo[1].AmmoAmount < Ammo[1].MaxAmmo)
-	{
-		if (Instigator.Weapon == self)
-			LoadGrenade();
-		else
-
-			F2000SecondaryFire(FireMode[1]).bLoaded=true;
-	}
-	if (!Instigator.IsLocallyControlled())
-		ClientGrenadePickedUp();
-}
-
-simulated function ClientGrenadePickedUp()
-{
-	if (Ammo[1].AmmoAmount < Ammo[1].MaxAmmo)
-	{
-		if (ClientState == WS_ReadyToFire)
-			LoadGrenade();
-		else
-			F2000SecondaryFire(FireMode[1]).bLoaded=true;
-	}
-}
-
-simulated function bool IsGrenadeLoaded()
-{
-	return F2000SecondaryFire(FireMode[1]).bLoaded;
-}
-
-// Tell our ammo that this is the F2000 it must notify about grenade pickups
-function GiveAmmo(int m, WeaponPickup WP, bool bJustSpawned)
-{
-	Super.GiveAmmo(m, WP, bJustSpawned);
-	if (Ammo[1] != None && Ammo_F2000Grenades(Ammo[1]) != None)
-		Ammo_F2000Grenades(Ammo[1]).DaF2K = self;
-}
-
-// Load in a grenade
-simulated function LoadGrenade()
-{
-	if (Ammo[1].AmmoAmount < 1 || F2000SecondaryFire(FireMode[1]).bLoaded)
-	{
-		if(!F2000SecondaryFire(FireMode[1]).bLoaded)
-			PlayIdle();
-		return;
-	}
-
-	if (ReloadState == RS_None)
-	{
-		ReloadState = RS_GearSwitch;
-		PlayAnim(GrenadeLoadAnim, 1.1, , 0);
-	}
-}
-
-function ServerStartReload (optional byte i)
-{
-	local int channel;
-	local name seq;
-	local float frame, rate;
-
-	if (bPreventReload)
-		return;
-	if (ReloadState != RS_None)
-		return;
-
-	GetAnimParams(channel, seq, frame, rate);
-	if (seq == GrenadeLoadAnim)
-		return;
-
-	if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
-	{
-		if (AmmoAmount(1) > 0 && !IsReloadingGrenade())
-		{
-			LoadGrenade();
-			ClientStartReload(1);
-		}
-		return;
-	}
-	super.ServerStartReload();
-}
-
-simulated function ClientStartReload(optional byte i)
-{
-	if (Level.NetMode == NM_Client)
-	{
-		if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
-		{
-			if (AmmoAmount(1) > 0 && !IsReloadingGrenade())
-				LoadGrenade();
-		}
-		else
-			CommonStartReload(i);
-	}
-}
-
-simulated function bool CheckWeaponMode (int Mode)
-{
-	if (Mode == 1)
-		return FireCount < 1;
-	return super.CheckWeaponMode(Mode);
-}
-
-function bool BotShouldReloadGrenade ()
-{
-	if ( (Level.TimeSeconds - Instigator.LastPainTime > 1.0) )
-		return true;
-	return false;
-}
-
-simulated event WeaponTick(float DT)
-{
-	super.WeaponTick(DT);
-	if (AIController(Instigator.Controller) != None && !IsGrenadeLoaded()&& AmmoAmount(1) > 0 && BotShouldReloadGrenade() && !IsReloadingGrenade())
-		LoadGrenade();
 }
 
 //=====================================================================
@@ -289,11 +160,6 @@ function byte BestMode()
 	if ( (B == None) || (B.Enemy == None) )
 		return 0;
 
-	if (AmmoAmount(1) < 1 || !IsGrenadeLoaded())
-		return 0;
-	else if (MagAmmo < 1)
-		return 1;
-
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
 	Height = B.Enemy.Location.Z - Instigator.Location.Z;
 	VDot = Normal(B.Enemy.Velocity) Dot Normal(Instigator.Location - B.Enemy.Location);
@@ -338,24 +204,6 @@ simulated function bool IsReloadingGrenade()
 	if (Anim == GrenadeLoadAnim)
  		return true;
 	return false;
-}
-
-function bool CanAttack(Actor Other)
-{
-	if (!IsGrenadeLoaded())
-	{
-		if (IsReloadingGrenade())
-		{
-			if ((Level.TimeSeconds - Instigator.LastPainTime > 1.0))
-				return false;
-		}
-		else if (AmmoAmount(1) > 0 && BotShouldReloadGrenade())
-		{
-			LoadGrenade();
-			return false;
-		}
-	}
-	return super.CanAttack(Other);
 }
 
 function float GetAIRating()
@@ -439,21 +287,19 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.140000
      FireModeClass(0)=Class'BWBPRecolorsPro.F2000PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.F2000SecondaryFire'
+     FireModeClass(1)=Class'BWBPRecolorsPro.F2000PrimaryFire'
      PutDownTime=0.700000
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.750000
      CurrentRating=0.750000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_Mars'
      Description="The 3 variant of the Modular Assault Rifle System is one of many rifles built under NDTR Industries' MARS project. The project, which was aimed to produce a successor to the army's current M50 and M30 rifles, has produced a number of functional prototypes. ||The 3 variant is a short barreled model designed for CQC use with non-standard ammunition. Field tests have shown excellent results when loaded with Snowstorm or Firestorm rounds, and above-average performance with Zero-G, toxic and electro rounds. This specific MARS-3 is loaded with Snowstorm XII rounds and is set to fire at a blistering 850 RPM. Enemies hit with this ammunition will be chilled and slowed."
      Priority=65
      HudColor=(B=255,G=175,R=125)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
-     PickupClass=Class'BWBPRecolorsPro.F2000Pickup'
      PlayerViewOffset=(X=0.500000,Y=12.000000,Z=-18.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'

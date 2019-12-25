@@ -1,5 +1,5 @@
 //=============================================================================
-// M763PrimaryFire.
+// SKASPrimaryFire
 //
 // Powerful shotgun blast with moderate spread and fair range for a shotgun.
 //
@@ -90,7 +90,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.500000
      FireRate=0.300000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_SKASShells'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_SKASshotgun'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
 	 ShakeRotTime=0.000000					  

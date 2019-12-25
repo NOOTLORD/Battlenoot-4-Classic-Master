@@ -16,11 +16,6 @@ var() sound		UltraDrawSound;       	//56k MODEM ACTION.
 var()     float Heat;
 var()     float CoolRate;
 
-static function class<Pickup> RecommendAmmoPickup(int Mode)
-{
-	return class'AP_SKASDrum';
-}
-
 function GiveTo(Pawn Other, optional Pickup Pickup)
 {
     local int m;
@@ -162,10 +157,6 @@ simulated function Notify_ManualBrassOut()
 	BFireMode[0].EjectBrass();
 }
 
-simulated function float ChargeBar()
-{
-    return FMin((Heat + SKASSecondaryFire(Firemode[1]).RailPower), 1);
-}
 
 simulated event WeaponTick(float DT)
 {
@@ -233,8 +224,7 @@ defaultproperties
      AIRating=0.850000
      CurrentRating=0.850000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKASshotgun'
      Description="SKAS-21 Super Shotgun||Manufacturer: UTC Defense Tech|Primary: Variable Fire Buckshot|Secondary: Tri-Barrel Blast"
      Priority=71
      HudColor=(B=190,G=190,R=190)

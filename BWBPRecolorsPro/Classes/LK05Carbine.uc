@@ -558,8 +558,7 @@ defaultproperties
      AIRating=0.70000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_68mm'  
      Priority=41
      HudColor=(B=24,G=48)
      CustomCrossHairScale=0.000000

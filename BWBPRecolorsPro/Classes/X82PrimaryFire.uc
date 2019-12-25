@@ -9,13 +9,6 @@
 //=============================================================================
 class X82PrimaryFire extends BallisticProInstantFire;
 
-simulated function PreBeginPlay()
-{
-	if (X82Rifle_TW(Weapon) != None)
-		FireChaos = 0.03;
-	super.PreBeginPlay();
-}
-
 defaultproperties
 {
      TraceRange=(Min=30000.000000,Max=30000.000000)

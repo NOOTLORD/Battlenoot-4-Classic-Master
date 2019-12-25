@@ -73,17 +73,6 @@ function Notify_Deploy()
 
 	FireMode[1].bIsFiring = false;
    	FireMode[1].StopFiring();
-
-	if(Sandbag(T) != None)
-	{
-		HitLoc = T.Location;
-		HitLoc.Z += class'X82Turret'.default.CollisionHeight + 15;
-	}
-	
-	else
-	{
-		HitLoc.Z += class'X82Turret'.default.CollisionHeight - 9;
-	}
 	
 	CompressedEq = Instigator.Rotation;
 		
@@ -95,8 +84,6 @@ function Notify_Deploy()
 	CompressedEq.Yaw = (CompressedEq.Yaw >> 8) & 255;
 	CompressedEq.Pitch = (CompressedEq.Pitch << 8);
 	CompressedEq.Yaw = (CompressedEq.Yaw << 8);
-
-	Turret = Spawn(class'X82Turret', None,, HitLoc, CompressedEq);
 	
     if (Turret != None)
     {

@@ -102,11 +102,6 @@ simulated function NewDrawWeaponInfo(Canvas C, Float YPos)
 	}
 }
 
-simulated function bool IsKnifeLoaded()
-{
-	return AK47SecondaryFire(FireMode[1]).bLoaded;
-}
-
 simulated function bool IsReloadingKnife()
 {
     local name anim;
@@ -140,119 +135,6 @@ simulated event AnimEnd (int Channel)
 		}
 	}
 	super.AnimEnd(Channel);
-}
-
-// Load in a grenade
-simulated function LoadKnife()
-{
-	if (Ammo[1].AmmoAmount < 1 || AK47SecondaryFire(FireMode[1]).bLoaded)
-		return;
-	if (ReloadState == RS_None)
-	{
-		ReloadState = RS_Cocking;
-		PlayAnim(KnifeLoadAnim, 1.1, , 0);
-	}		
-}
-
-function ServerStartReload (optional byte i)
-{
-	local int channel;
-	local name seq;
-	local float frame, rate;
-
-	if (bPreventReload)
-		return;
-	if (ReloadState != RS_None)
-		return;
-
-	GetAnimParams(channel, seq, frame, rate);
-	if (seq == KnifeLoadAnim)
-		return;
-
-	if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
-	{
-		if (AmmoAmount(1) > 0 && !IsReloadingKnife())
-		{
-			LoadKnife();
-			ClientStartReload(1);
-		}
-		return;
-	}
-	super.ServerStartReload();
-}
-
-simulated function ClientStartReload(optional byte i)
-{
-	if (Level.NetMode == NM_Client)
-	{
-		if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
-		{
-			if (AmmoAmount(1) > 0 && !IsReloadingKnife())
-				LoadKnife();
-		}
-		else
-			CommonStartReload(i);
-	}
-}											
-simulated function Notify_BladeLaunch()
-{
-	SetBoneScale(0, 0.0, GrenBone);
-}
-
-simulated function Notify_BladeDrop()
-{	
-	PlaySound(GrenDropSound, SLOT_Misc,1.5,,32,,);
-}
-
-simulated function Notify_BladeAppear()
-{
-	SetBoneScale(0, 1.0, GrenBone);
-	SetBoneScale(1, 1.0, GrenBoneBase);
-}
-
-simulated function Notify_BladeLoaded()	
-{	
-	PlaySound(GrenLoadSound, SLOT_Misc,1.5,,32,,);
-	
-	bLoaded=True;
-	AK47SecondaryFire(FireMode[1]).bLoaded = True;
-	AK47Attachment(ThirdPersonActor).bLoaded = True;
-	FireMode[1].PreFireTime = FireMode[1].default.PreFireTime; 
-	AK47MeleeFire(MeleeFireMode).SwitchBladeMode(AK47SecondaryFire(FireMode[1]).bLoaded);
-}
-
-simulated function BladeOut()
-{
-	bLoaded=False;
-	AK47Attachment(ThirdPersonActor).bLoaded = False;
-	AK47MeleeFire(MeleeFireMode).SwitchBladeMode(false);
-}
-
-simulated function BringUp(optional Weapon PrevWeapon)
-{
-	if (AK47SecondaryFire(FireMode[1]).bLoaded)
-		AK47MeleeFire(MeleeFireMode).SwitchBladeMode(AK47SecondaryFire(FireMode[1]).bLoaded);
-		
-	else
-	{
-		SetBoneScale (0, 0.0, GrenBone);
-		SetBoneScale (1, 0.0, GrenBoneBase);
-	}
-	
-	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
-	{
-		SetBoneScale(2,0.0,BulletBone);
-		SetBoneScale(3,0.0,BulletBone2);
-	}
-
-	super.BringUp(PrevWeapon);
-}
-
-function AttachToPawn(Pawn P)
-{
-	Super.AttachToPawn(P);
-	if (AK47SecondaryFire(FireMode[1]).bLoaded)
-		AK47Attachment(ThirdPersonActor).bLoaded = True;
 }
 
 // Animation notify for when cocking action starts. Used to time sounds
@@ -342,7 +224,6 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     KnifeLoadAnim="ReloadKnife"
      bLoaded=True
      GrenBone="KnifeBlade"
      GrenBoneBase="AttachKnife"
@@ -394,7 +275,7 @@ defaultproperties
      RecoilMinRandFactor=0.15000
      RecoilDeclineTime=1.500000
      FireModeClass(0)=Class'BWBPRecolorsPro.AK47PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.AK47SecondaryFire'
+	 FireModeClass(1)=Class'BWBPRecolorsPro.AK47PrimaryFire'
      IdleAnimRate=0.400000
      SelectAnimRate=1.700000
      PutDownAnimRate=1.750000
@@ -403,8 +284,7 @@ defaultproperties
      AIRating=0.700000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AKrifle'
      Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
      Priority=65
      HudColor=(G=100)

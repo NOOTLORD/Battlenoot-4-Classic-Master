@@ -190,6 +190,7 @@ defaultproperties
      BringUpTime=1.200000
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_AHPistol'
      Description="Built as a more affordable alternative to the AH104, the AH208 is an alternate design chambered for .44 magnum rounds instead of the usual $100 .600 HEAP ones. It is less accurate than the AH104 and D49, but its 8 round magazine and faster reload times let it put more rounds down range than both. Its significant weight and recoil means it requires both hands to shoot and is harder to control than its revolver and handcannon siblings, a fact that comes into play where range is a concern. While not as popular as its larger .600 cousin, the AH208 packs a formidable punch and is a force to be reckoned with."
      Priority=63
      HudColor=(G=217)

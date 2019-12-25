@@ -13,7 +13,6 @@ defaultproperties
      MaxAmmo=1
      InitialAmount=1
      IconFlashMaterial=Shader'BallisticRecolors3TexPro.XM84.AmmoIcon_XM84Flash'
-     PickupClass=Class'BWBPRecolorsPro.XM84Pickup'
      IconMaterial=Texture'BallisticRecolors3TexPro.XM84.AmmoIcon_XM84'
      IconCoords=(X2=64,Y2=64)
      ItemName="XM84 Tech Grenade Ammo"
