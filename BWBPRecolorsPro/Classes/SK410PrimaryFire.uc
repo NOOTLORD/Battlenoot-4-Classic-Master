@@ -92,7 +92,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=2.250000
      FireRate=0.220000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_8GaugeHE'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410shotgun'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

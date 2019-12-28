@@ -87,7 +87,7 @@ defaultproperties
      DampenFactorParallel=0.500000
      bNoInitialSpin=True
      bAlignToVelocity=True
-     DetonateDelay=2.500000
+     DetonateDelay=2.000000
      ImpactDamage=75
      ImpactDamageType=Class'BWBPRecolorsPro.DTMGLGrenade'
      ImpactManager=Class'BWBPRecolorsPro.IM_MGLGrenade'
@@ -100,7 +100,7 @@ defaultproperties
      MotionBlurTime=0.000000
      ShakeRotTime=0.000000
      ShakeOffsetTime=0.000000
-     Speed=1500.000000
+     Speed=1750.000000
      Damage=145.000000
      DamageRadius=300.000000
      MyDamageType=Class'BWBPRecolorsPro.DTMGLGrenadeRadius'

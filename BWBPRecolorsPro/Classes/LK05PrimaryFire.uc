@@ -9,6 +9,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class LK05PrimaryFire extends BallisticRangeAttenFire;
 
@@ -275,8 +277,8 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.LK05.LK05-RapidFire',Volume=2.000000)
      bPawnRapidFireAnim=True
      FireEndAnim=
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05rifle'
      FireRate=0.095000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_68mm'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

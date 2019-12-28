@@ -1,16 +1,16 @@
 //=============================================================================
-// Ammo_SKASshotgun.
+// Ammo_XM84flash.
 //
-// Ammo for the SKAS-21 Shotgun.
+// Ammo for the XM84 flashbang
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2006 RuneStorm. All Rights Reserved.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //=============================================================================
-class Ammo_SKASshotgun extends BallisticAmmo;
+class Ammo_XM84flash extends BallisticAmmo;
 
 defaultproperties
 {
-     MaxAmmo=36
-     InitialAmount=18
-     ItemName="SKAS-21 Shells"
+     MaxAmmo=1
+     InitialAmount=1
+     ItemName="XM84 Tech Grenade Ammo"
 }

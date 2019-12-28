@@ -241,7 +241,6 @@ defaultproperties
      ManualLines(1)="Prepares a melee attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. If lacking a knife, becomes a blunt attack, dealing lower base damage but inflicting a short-duration blinding effect when striking. This attack inflicts more damage from behind."
      ManualLines(2)="The Weapon Function key manages the ballistic knife. If a knife is attached, it will be launched, dealing high damage. This attack is hip-accurate and has no recoil. If no knife is attached, one will be attached if available.||This weapon is effective at medium range."
      SpecialInfo(0)=(Info="320.0;25.0;1.0;110.0;0.5;0.8;0.0")
-     MeleeFireClass=Class'BWBPRecolorsPro.AK47MeleeFire'
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
      MagAmmo=25
@@ -284,7 +283,7 @@ defaultproperties
      AIRating=0.700000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AKrifle'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK47rifle'
      Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
      Priority=65
      HudColor=(G=100)
@@ -292,7 +291,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
      GroupOffset=5
-     PickupClass=Class'BWBPRecolorsPro.AK47Pickup'
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.AK47Attachment'

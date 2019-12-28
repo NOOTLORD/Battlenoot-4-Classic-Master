@@ -168,7 +168,6 @@ defaultproperties
      ManualLines(1)="Fires a single slug with an arming delay. Whilst unarmed, it will reflect from struck walls or surfaces. Deals good impact damage and minor radius damage."
      ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Effective at close to medium range depending upon active mode."
      SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")
-     MeleeFireClass=Class'BWBPRecolorsPro.SK410MeleeFire'
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=8
@@ -179,8 +178,6 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagIn',Volume=0.750000)
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
-     WeaponModes(1)=(ModeName="Automatic Slug",bUnavailable=True,ModeID="WM_FullAuto")
-     WeaponModes(2)=(ModeName="0451-EXECUTE",bUnavailable=True)
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      bNoCrosshairInScope=True
@@ -210,8 +207,7 @@ defaultproperties
      AIRating=0.850000
      CurrentRating=0.850000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_8GaugeHE'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SK410shotgun'
      Description="The SK-410 shotgun is a large-bore, compact shotgun based off the popular AK-490 design. While it is illegal on several major planets, this powerful weapon and its signature explosive shotgun shells are almost ubiquitous. A weapon originally designed for breaching use, the SK-410 is now found in the hands of civillians and terrorists throughout the worlds. It had become so prolific with outer colony terrorist groups that the UTC began the SKAS assault weapon program in an effort to find a powerful shotgun of their own."
      Priority=67
      HudColor=(G=25)
@@ -219,7 +215,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=7
-     PickupClass=Class'BWBPRecolorsPro.SK410Pickup'
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.SK410.SmallIcon_SK410'

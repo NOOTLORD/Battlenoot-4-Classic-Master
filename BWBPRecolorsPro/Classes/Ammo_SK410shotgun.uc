@@ -1,16 +1,15 @@
 //=============================================================================
-// Ammo_SKASshotgun.
+// Ammo_SK410shotgun.
 //
-// Ammo for the SKAS-21 Shotgun.
+// SK410 shotgun ammo
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2006 RuneStorm. All Rights Reserved.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //=============================================================================
-class Ammo_SKASshotgun extends BallisticAmmo;
+class Ammo_SK410shotgun extends BallisticAmmo;
 
 defaultproperties
 {
-     MaxAmmo=36
-     InitialAmount=18
-     ItemName="SKAS-21 Shells"
+     MaxAmmo=60
+     ItemName="8 Gauge HE Shells"
 }

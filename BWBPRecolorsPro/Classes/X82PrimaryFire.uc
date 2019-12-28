@@ -36,7 +36,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Fire',Volume=2.000000,Radius=1024.000000)
      FireEndAnim=
      FireRate=1.000000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_50BMG'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_X82rifle'
      ShakeRotMag=(X=450.000000,Y=64.000000)
      ShakeRotRate=(X=12400.000000,Y=12400.000000,Z=12400.000000)
      ShakeRotTime=0.000000						  

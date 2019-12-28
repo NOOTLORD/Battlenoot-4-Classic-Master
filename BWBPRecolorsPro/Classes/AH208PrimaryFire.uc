@@ -55,7 +55,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.Eagle.Eagle-Fire4',Volume=2.000000)
      FireEndAnim=
      FireRate=0.600000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_AHPistol'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208Pistol'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

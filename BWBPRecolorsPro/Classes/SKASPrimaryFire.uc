@@ -7,60 +7,9 @@
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //=============================================================================
 class SKASPrimaryFire extends BallisticProShotgunFire;
-var() sound		SuperFireSound;
-var() sound		ClassicFireSound;
-var() sound		UltraFireSound;
-var() sound		XR4FireSound;
-
-simulated function SwitchWeaponMode (byte NewMode)
-{
-	if (NewMode == 2)
-	{
-		BallisticFireSound.Sound=SuperFireSound;
-		FireRate=1.75;
-		FireAnim='SemiFire';
-		FireAnimRate=1.45;
-    	KickForce=13000;
-		RecoilPerShot=1536;
-     	FireChaos=0.5;
-     	FlashScaleFactor=2;
-     	XInaccuracy=100.000000;
-     	YInaccuracy=100.000000;
-		CutOffDistance=4096;
-		CutOffStartRange=2048;
-	}
-	
-	else
-	{
-		FireRate=default.FireRate;
-		RangeAtten=Default.RangeAtten;
-		BallisticFireSound.Sound=default.BallisticFireSound.Sound;
-		FireAnim=default.FireAnim;
-		KickForce=Default.KickForce;
-		RecoilPerShot=Default.RecoilPerShot;
-     	FireChaos=Default.FireChaos;
-		bCockAfterFire=False;
-     	XInaccuracy=default.XInaccuracy;
-     	YInaccuracy=default.YInaccuracy;
-		CutOffDistance=	Default.CutOffDistance;
-		CutOffStartRange=Default.CutOffStartRange;
-	}
-}
-
-
-simulated function DestroyEffects()
-{
-    if (MuzzleFlash != None)
-		MuzzleFlash.Destroy();
-	Super.DestroyEffects();
-}
 
 defaultproperties
 {
-     SuperFireSound=Sound'PackageSounds4Pro.SKAS.SKAS-Power'
-     ClassicFireSound=Sound'PackageSounds4Pro.SKAS.SKAS-Classic'
-     UltraFireSound=Sound'PackageSounds4Pro.SKAS.SKAS-Ultra2'
-     XR4FireSound=Sound'PackageSounds4Pro.XR4.XR4-Fire'
      CutOffDistance=3072.000000
      CutOffStartRange=1280.000000
      TraceCount=7

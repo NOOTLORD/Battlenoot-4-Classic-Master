@@ -5,8 +5,10 @@ class MGLPickup extends BallisticWeaponPickup
 	placeable;
 
 #exec OBJ LOAD FILE=BallisticEffects.utx
-#exec OBJ LOAD FILE=BallisticHardware2.usx
+#exec OBJ LOAD FILE=BallisticRecolors4TexPro.utx
+#exec OBJ LOAD FILE=BallisticRecolors4StaticProExp.usx
 
+//Fixed by (NL)NOOTLORD
 //===========================================================================
 // StaticPrecache
 //

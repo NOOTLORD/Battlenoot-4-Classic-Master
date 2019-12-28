@@ -161,7 +161,7 @@ defaultproperties
      AIRating=0.400000
      CurrentRating=0.400000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_XM84HTG'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_XM84flash
      Description="The XM84 Heavy Disruptor grenade is an advanced electromagnetic pulsar weapon designed for incapacitation and disorientation. State of the art field psionic generators ensure the XM84 can tackle all types of targets. A fission criticality-inducing core combined with the Tandem MS flux generator gives the XM84 the destructive ability to strip away energy shields and fry any electrical system without a Warship-Grade Faraday cage. Warning: Long term exposure to armed XM84s is known to cause acute radiation poisoning and cerebral hemorrhaging. Proximity to a disruptive burst will cause permanent memory loss and irreversible neurological damage."
      Priority=70
      HudColor=(B=255,G=150,R=100)

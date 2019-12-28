@@ -232,7 +232,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=4
-     PickupClass=Class'BWBPRecolorsPro.SKASPickup'
      PlayerViewOffset=(X=-4.000000,Y=1.000000,Z=-10.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SKASAttachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.SKAS.SmallIcon_SKAS'

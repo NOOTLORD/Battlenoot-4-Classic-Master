@@ -558,13 +558,12 @@ defaultproperties
      AIRating=0.70000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_68mm'  
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05rifle'  
      Priority=41
      HudColor=(B=24,G=48)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
-     PickupClass=Class'BWBPRecolorsPro.LK05Pickup'
      PlayerViewOffset=(X=-6.000000,Y=12.000000,Z=-17.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'

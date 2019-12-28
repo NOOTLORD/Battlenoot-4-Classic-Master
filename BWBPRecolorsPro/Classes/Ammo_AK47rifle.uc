@@ -1,16 +1,16 @@
 //=============================================================================
-// Ammo_SKASshotgun.
+// Ammo_AK47rifle.
 //
-// Ammo for the SKAS-21 Shotgun.
+// 7.62mm SOVIET BULLETS. USED IN THE ONLY SOVIET GUN THAT MATTERS
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //=============================================================================
-class Ammo_SKASshotgun extends BallisticAmmo;
+class Ammo_AK47rifle extends BallisticAmmo;
 
 defaultproperties
 {
-     MaxAmmo=36
-     InitialAmount=18
-     ItemName="SKAS-21 Shells"
+     MaxAmmo=150
+     InitialAmount=75
+     ItemName="7.62 AP Rifle Rounds"
 }

@@ -266,7 +266,6 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=8
-     PickupClass=Class'BWBPRecolorsPro.MGLPickup'
      PlayerViewOffset=(X=5.000000,Y=-1.000000,Z=-7.000000)
      AttachmentClass=Class'BWBPRecolorsPro.MGLAttachment'
      IconMaterial=Texture'BallisticRecolors4TexPro.MGL.SmallIcon_MGL'

@@ -1,16 +1,16 @@
 //=============================================================================
-// Ammo_SKASshotgun.
+// Ammo_X82rifle.
 //
-// Ammo for the SKAS-21 Shotgun.
+// X82 Rifle ammo
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2006 RuneStorm. All Rights Reserved.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //=============================================================================
-class Ammo_SKASshotgun extends BallisticAmmo;
+class Ammo_X82rifle extends BallisticAmmo;
 
 defaultproperties
 {
-     MaxAmmo=36
-     InitialAmount=18
-     ItemName="SKAS-21 Shells"
+     MaxAmmo=30
+     InitialAmount=15
+     ItemName=".50 N6-BMG HEAP Rifle Rounds"
 }

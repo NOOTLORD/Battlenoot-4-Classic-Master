@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class LK05SecondaryFire extends BallisticFire;
 
@@ -24,7 +26,7 @@ defaultproperties
      bWaitForRelease=True
      bModeExclusive=False
      FireRate=1.300000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_68mm'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05rifle'
      AmmoPerFire=0
      BotRefireRate=0.300000
      aimerror=0.000000
