@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class Ammo_SKASshotgun extends BallisticAmmo;
 

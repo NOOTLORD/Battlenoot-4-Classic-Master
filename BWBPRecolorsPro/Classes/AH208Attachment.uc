@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class AH208Attachment extends HandgunAttachment;
 
@@ -41,5 +43,4 @@ defaultproperties
      Skins(1)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-Misc'
      Skins(2)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
      Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'
-     bSelected=True
 }

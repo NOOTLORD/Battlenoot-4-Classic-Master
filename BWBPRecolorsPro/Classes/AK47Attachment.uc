@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class AK47Attachment extends BallisticAttachment;
 
@@ -76,5 +78,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.TP_AK490'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.350000
-     bSelected=True
 }

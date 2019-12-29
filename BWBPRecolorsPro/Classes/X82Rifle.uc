@@ -7,6 +7,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class X82Rifle extends BallisticWeapon;
 
@@ -23,6 +25,7 @@ simulated function bool HasAmmo()
 }
 
 // AI Interface =====
+// choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -74,8 +77,6 @@ defaultproperties
      ClipInSound=(Volume=0.750000)
      ClipInFrame=0.850000
      bCockOnEmpty=True
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333300
@@ -146,5 +147,4 @@ defaultproperties
      Skins(2)=Shader'BallisticRecolors3TexPro.X82.X82SkinShine'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=0
-     bSelected=True
 }

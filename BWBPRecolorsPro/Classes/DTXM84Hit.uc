@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
 class DTXM84Hit extends DT_BWBlunt;
 
@@ -15,6 +17,9 @@ defaultproperties
      BloodManagerName="BallisticProV55.BloodMan_BluntSmall"
      bDetonatesBombs=False
      DamageIdent="Grenade"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False		 
      DamageDescription=",Blunt,Hazard,"
      WeaponClass=Class'BWBPRecolorsPro.XM84Flashbang'
      DeathString="%k beaned %o with an XM84, who promptly died."
@@ -23,5 +28,6 @@ defaultproperties
      bDelayedDamage=True
      GibPerterbation=0.500000
      KDamageImpulse=20000.000000
-     bSelected=False
+	 VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	
 }

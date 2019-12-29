@@ -1,18 +1,16 @@
 //=============================================================================
-// Ammo_AK47rifle.
-//
-// 7.62mm SOVIET BULLETS. USED IN THE ONLY SOVIET GUN THAT MATTERS
+// Ammo_Bloodhound.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-
-// Edited by (NL)NOOTLORD
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
-class Ammo_AK47rifle extends BallisticAmmo;
+class Ammo_Bloodhound extends BallisticAmmo;
 
 defaultproperties
 {
-     MaxAmmo=150
-     InitialAmount=75
-     ItemName="7.62 AP Rifle Rounds"
+     MaxAmmo=90
+     InitialAmount=45
+     ItemName="Bloodhound Darts"
 }

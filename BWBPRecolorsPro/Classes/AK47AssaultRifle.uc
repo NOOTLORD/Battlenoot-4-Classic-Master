@@ -3,10 +3,11 @@
 //
 // A powerful 7.62mm powerhouse. Fills a similar role to the CYLO UAW, albiet is
 // far more reliable and has a launchable bayonet in place of the shotgun.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class AK47AssaultRifle extends BallisticWeapon;
 
-var() name			KnifeLoadAnim;	//Anim for grenade reload
 var   bool			bLoaded;
 
 var() name			GrenBone;	
@@ -14,128 +15,10 @@ var() name			GrenBoneBase;
 var() Sound		GrenLoadSound;				
 var() Sound		GrenDropSound;		
 
-var() name			KnifeBackAnim;
-var() name			KnifeThrowAnim;
 var   float			NextThrowTime;
 
 var name			BulletBone, BulletBone2;
 
-function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
-{
-	if (MeleeState >= MS_Held)
-		Momentum *= 0.5;
-	
-	super.AdjustPlayerDamage( Damage, InstigatedBy, HitLocation, Momentum, DamageType);
-}
-
-simulated function DrawWeaponInfo(Canvas C)
-{
-	NewDrawWeaponInfo(C, 0);
-}
-
-simulated function NewDrawWeaponInfo(Canvas C, Float YPos)
-{
-	local float ScaleFactor2;
-	local float		ScaleFactor, XL, YL, YL2, SprintFactor;
-	local string	Temp;
-	local int	TempNum;
-	
-	ScaleFactor = C.ClipX / 1600;
-	ScaleFactor2 = 99 * C.ClipX/3200;
-	C.Style = ERenderStyle.STY_Alpha;
-	C.DrawColor = class'HUD'.Default.WhiteColor;
-    if(bLoaded)
-    {
-		C.SetPos(C.ClipX - (2.5) * ScaleFactor2, C.ClipY - 110 * ScaleFactor * class'HUD'.default.HudScale);
-		C.DrawTile( Texture'BallisticRecolors3TexPro.AK490.AK490-KnifeIcon',ScaleFactor2*2, ScaleFactor2, 0, 0, 256, 128);
-	}
-
-	DrawCrosshairs(C);
-	
-	if (bSkipDrawWeaponInfo)
-		return;
-
-	ScaleFactor = C.ClipX / 1600;
-	// Draw the spare ammo amount
-	C.Font = GetFontSizeIndex(C, -2 + int(2 * class'HUD'.default.HudScale));
-	C.DrawColor = class'hud'.default.WhiteColor;
-	if (!bNoMag)
-	{
-		Temp = GetHUDAmmoText(0);
-		C.TextSize(Temp, XL, YL);
-		C.CurX = C.ClipX - 20 * ScaleFactor * class'HUD'.default.HudScale - XL;
-		C.CurY = C.ClipY - 120 * ScaleFactor * class'HUD'.default.HudScale - YL;
-		C.DrawText(Temp, false);
-	}
-	if (Ammo[1] != None && Ammo[1] != Ammo[0])
-	{
-		TempNum = Ammo[1].AmmoAmount;
-		C.TextSize(Temp, XL, YL);
-		C.CurX = C.ClipX - 160 * ScaleFactor * class'HUD'.default.HudScale - XL;
-		C.CurY = C.ClipY - 120 * ScaleFactor * class'HUD'.default.HudScale - YL;
-		C.DrawText(TempNum, false);
-	}
-
-	if (CurrentWeaponMode < WeaponModes.length && !WeaponModes[CurrentWeaponMode].bUnavailable && WeaponModes[CurrentWeaponMode].ModeName != "")
-	{
-		C.Font = GetFontSizeIndex(C, -3 + int(2 * class'HUD'.default.HudScale));
-		C.TextSize(WeaponModes[CurrentWeaponMode].ModeName, XL, YL2);
-		C.CurX = C.ClipX - 15 * ScaleFactor * class'HUD'.default.HudScale - XL;
-		C.CurY = C.ClipY - 130 * ScaleFactor * class'HUD'.default.HudScale - YL2 - YL;
-		C.DrawText(WeaponModes[CurrentWeaponMode].ModeName, false);
-	}
-
-	// This is pretty damn disgusting, but the weapon seems to be the only way we can draw extra info on the HUD
-	// Would be nice if someone could have a HUD function called along the inventory chain
-	if (SprintControl != None && SprintControl.Stamina < SprintControl.MaxStamina)
-	{
-		SprintFactor = SprintControl.Stamina / SprintControl.MaxStamina;
-		C.CurX = C.OrgX  + 5    * ScaleFactor * class'HUD'.default.HudScale;
-		C.CurY = C.ClipY - 330  * ScaleFactor * class'HUD'.default.HudScale;
-		if (SprintFactor < 0.2)
-			C.SetDrawColor(255, 0, 0);
-		else if (SprintFactor < 0.5)
-			C.SetDrawColor(64, 128, 255);
-		else
-			C.SetDrawColor(0, 0, 255);
-		C.DrawTile(Texture'Engine.MenuWhite', 200 * ScaleFactor * class'HUD'.default.HudScale * SprintFactor, 30 * ScaleFactor * class'HUD'.default.HudScale, 0, 0, 1, 1);
-	}
-}
-
-simulated function bool IsReloadingKnife()
-{
-    local name anim;
-    local float frame, rate;
-    GetAnimParams(0, anim, frame, rate);
-	if (Anim == KnifeLoadAnim)
- 		return true;
-	return false;
-}									    											    						   			   			   
-simulated event AnimEnd (int Channel)
-{
-    local name anim;
-    local float frame, rate;
-
-    GetAnimParams(0, anim, frame, rate);
-	if (anim == KnifeLoadAnim)
-	{
-		ReloadState = RS_None;
-		IdleTweenTime=0.0;
-		PlayIdle();
-	}
-	else
-		IdleTweenTime=default.IdleTweenTime;
-
-	if (Anim == 'Fire' || Anim == 'KnifeFire' || Anim == 'ReloadEmpty')
-	{
-		if (MagAmmo - BFireMode[0].ConsumedLoad < 2)
-		{
-			SetBoneScale(2,0.0,BulletBone);
-			SetBoneScale(3,0.0,BulletBone2);
-		}
-	}
-	super.AnimEnd(Channel);
-}
 
 // Animation notify for when cocking action starts. Used to time sounds
 simulated function Notify_CockSim()
@@ -169,6 +52,20 @@ simulated function Notify_ClipOut()
 	}
 }
 
+// Secondary fire doesn't count for this weapon
+simulated function bool HasAmmo()
+{
+	//First Check the magazine
+	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
+		return true;
+	//If it is a non-mag or the magazine is empty
+	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
+			return true;
+	return false;	//This weapon is empty
+}
+
+// AI Interface =====
+
 simulated function float RateSelf()
 {
 	if (!HasAmmo())
@@ -179,25 +76,9 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
-// AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist;
-
-	B = Bot(Instigator.Controller);
-	
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	if (Dist < 1024 && FRand() > 0.75)
-
-		return 1;
-	return 0;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -224,11 +105,6 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     bLoaded=True
-     GrenBone="KnifeBlade"
-     GrenBoneBase="AttachKnife"
-     GrenLoadSound=Sound'PackageSounds4Pro.AK47.Knife-Load'
-     GrenDropSound=Sound'PackageSounds4Pro.AK47.Knife-Drop'
      BulletBone="Bullet1"
      BulletBone2="Bullet2"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
@@ -309,5 +185,4 @@ defaultproperties
      Skins(1)=Texture'BallisticRecolors3TexPro.AK490.AK490-Main'
      Skins(2)=Texture'BallisticRecolors3TexPro.AK490.AK490-Misc'
      AmbientGlow=0
-     bSelected=True
 }

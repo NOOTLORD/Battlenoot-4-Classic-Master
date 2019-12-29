@@ -53,5 +53,4 @@ defaultproperties
      CollisionHeight=2.000000
      bCollideWorld=True
      Mass=30.000000
-     bSelected=True
 }

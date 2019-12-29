@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
 class DTXM84GrenadeRadius extends DT_BWExplode;
 
@@ -17,10 +19,9 @@ defaultproperties
      FlashV=(X=128.000000,Y=128.000000,Z=128.000000)
      FlashF=-2.000000
      DamageIdent="Grenade"
-     MinMotionBlurDamage=1.000000
-     MotionBlurDamageRange=20.000000
-     MotionBlurFactor=9.000000
-     bUseMotionBlur=False
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.XM84Flashbang'
      DeathString="%o was fatally corrupted by %k's tech grenade."
      FemaleSuicide="%o had a tactical error with her tactical grenade."
@@ -30,8 +31,6 @@ defaultproperties
      bDelayedDamage=True
      bNeverSevers=True
      PawnDamageSounds(0)=Sound'PackageSounds4Pro.Misc.XM84-StunEffect'
-     DamageOverlayMaterial=Shader'XGameShaders.PlayerShaders.LightningHit'
-     DamageOverlayTime=0.900000
-     VehicleMomentumScaling=0.500000
-     bSelected=False
+	 VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	
 }

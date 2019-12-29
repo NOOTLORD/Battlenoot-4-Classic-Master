@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
 class DT_SK410ShotgunHead extends DT_BWBullet;
 
@@ -38,6 +40,9 @@ defaultproperties
      bIgniteFires=True
      bHeaddie=True
      DamageIdent="Shotgun"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	
      DamageDescription=",Bullet,Flame,"
      WeaponClass=Class'BWBPRecolorsPro.SK410Shotgun'
      DeathString="With the aid of %k SK-410, %o's head revolted successfully from %vh body."
@@ -50,4 +55,6 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      GibPerterbation=1.600000
      KDamageImpulse=1000.000000
+	 VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

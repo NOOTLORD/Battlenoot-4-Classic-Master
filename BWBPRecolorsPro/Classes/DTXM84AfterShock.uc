@@ -1,8 +1,11 @@
 //=============================================================================
 // DTMRS138Tazer.
+//
 //?/ a/sf/ a/s/ Headache grenades!
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
 class DTXM84AfterShock extends DT_BWMiscDamage;
 
@@ -15,11 +18,10 @@ defaultproperties
      FlashV=(X=128.000000,Y=128.000000,Z=128.000000)
      bDetonatesBombs=False
      DamageIdent="Grenade"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      DamageDescription=",Gas,GearSafe,Hazard,"
-     MinMotionBlurDamage=1.000000
-     MotionBlurDamageRange=20.000000
-     MotionBlurFactor=3.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BWBPRecolorsPro.XM84Flashbang'
      DeathString="%o's brain was reduced to goo by %k's XM84."
      FemaleSuicide="%o succumbed to her own tech grenade."
@@ -32,6 +34,6 @@ defaultproperties
      DamageOverlayTime=0.900000
      GibPerterbation=0.001000
      KDamageImpulse=90000.000000
-     VehicleMomentumScaling=0.000000
-     bSelected=False
+	 VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	
 }

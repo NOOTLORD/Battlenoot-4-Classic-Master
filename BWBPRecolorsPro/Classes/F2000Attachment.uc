@@ -1,5 +1,7 @@
 //=============================================================================
 // F2000Attachment.
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
 class F2000Attachment extends BallisticAttachment;
 
@@ -58,5 +60,4 @@ defaultproperties
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.MARS3_TP'
      DrawScale=1.000000
-     bSelected=True
 }

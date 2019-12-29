@@ -1,3 +1,8 @@
+//=============================================================================
+// MGLAttachment
+//
+// Edited by (NL)NOOTLORD
+//=============================================================================
 class MGLAttachment extends BallisticAttachment;
 
 defaultproperties
@@ -5,7 +10,6 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     BrassClass=Class'BWBPRecolorsPro.Brass_Longhorn'
      BrassMode=MU_None
      InstantMode=MU_Both
      FlashMode=MU_Both

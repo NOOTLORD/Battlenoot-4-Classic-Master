@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class SK410Shotgun extends BallisticProShotgun;
 
@@ -77,6 +79,20 @@ simulated function Notify_CockSim()
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
+// Secondary fire doesn't count for this weapon
+simulated function bool HasAmmo()
+{
+	//First Check the magazine
+	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
+		return true;
+	//If it is a non-mag or the magazine is empty
+	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
+			return true;
+	return false;	//This weapon is empty
+}
+
+// AI Interface =====
+
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -85,26 +101,9 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
-// AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-
-	if (Dist > 1024 || B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		return 1;
-
-	return 0;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -152,8 +151,6 @@ function float SuggestDefenseStyle()
     return FClamp(Result, -1.0, -0.3);
 }
 // End AI Stuff =====
-
-simulated function Notify_BrassOut();
 
 defaultproperties
 {
@@ -233,5 +230,4 @@ defaultproperties
      Skins(2)=Texture'BallisticRecolors3TexPro.SK410.SK410-Misc'
      Skins(3)=Shader'BallisticRecolors3TexPro.SK410.SK410-LightsOn'
      AmbientGlow=0
-     bSelected=True
 }

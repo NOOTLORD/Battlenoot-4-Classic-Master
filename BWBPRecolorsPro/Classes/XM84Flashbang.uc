@@ -7,6 +7,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class XM84Flashbang extends BallisticHandGrenade;
 var() Material          MatGlow1;     	// adren
@@ -60,32 +62,21 @@ simulated function CheckNoGrenades()
 		PlayAnim(SelectAnim, 1, 0.0);
 }
 
-// AI Interface =====
-function byte BestMode()
+// Secondary fire doesn't count for this weapon
+simulated function bool HasAmmo()
 {
-	local Bot B;
-	local float Dist, Height, result;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-	Height = B.Enemy.Location.Z - Instigator.Location.Z;
-	result = 0.5;
-
-	if (Dist > 500)
-		result -= 0.4;
-	else
-		result += 0.4;
-	if (Abs(Height) > 32)
-		result -= Height / Dist;
-	if (result > 0.5)
-		return 1;
-	return 0;
+	//First Check the magazine
+	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
+		return true;
+	//If it is a non-mag or the magazine is empty
+	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
+			return true;
+	return false;	//This weapon is empty
 }
+
+// AI Interface =====
+// choose between regular or alt-fire
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -178,5 +169,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.XM84Grenade'
      DrawScale=0.400000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     bSelected=True
 }

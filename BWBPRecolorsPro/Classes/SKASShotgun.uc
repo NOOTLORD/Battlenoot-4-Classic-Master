@@ -5,16 +5,11 @@
 //
 // by Nolan "Dark Carnivour" Richert
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class SKASShotgun extends BallisticProShotgun;
-var bool		bIsSuper;			// Manual mode!
-var float		lastModeChangeTime;
-
 var() sound      	QuickCockSound;
-var() sound		UltraDrawSound;       	//56k MODEM ACTION.
-
-var()     float Heat;
-var()     float CoolRate;
 
 function GiveTo(Pawn Other, optional Pickup Pickup)
 {
@@ -68,6 +63,8 @@ function GiveTo(Pawn Other, optional Pickup Pickup)
 	}
 }
 
+// AI Interface =====
+
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -76,30 +73,9 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
-// AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-
-	if (Dist > 400)
-		return 0;
-	if (Dist < FireMode[1].MaxRange() && FRand() > 0.3)
-		return 1;
-	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0 && (VSize(B.Enemy.Velocity) < 100 || Normal(B.Enemy.Velocity) dot Normal(B.Velocity) < 0.5))
-		return 1;
-
-	return Rand(2);
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -147,31 +123,12 @@ function float SuggestDefenseStyle()
 }
 // End AI Stuff =====
 
-simulated function Notify_BrassOut()
-{
-//	BFireMode[0].EjectBrass();
-}
-
-simulated function Notify_ManualBrassOut()
-{
-	BFireMode[0].EjectBrass();
-}
-
-
-simulated event WeaponTick(float DT)
-{
-	Heat = FMax(0, Heat - CoolRate*DT);
-	super.WeaponTick(DT);
-}
-
 defaultproperties
 {
      ManualLines(0)="Automatic fire has moderate spread, moderate damage, short range and fast fire rate.||Manual fire has tight spread, long range, good damage and low fire rate."
      ManualLines(1)="Multi-shot attack. Loads a shell into each of the barrels, then fires them all at once. Very high damage, short range and wide spread."
      ManualLines(2)="Extremely effective at close range."
      QuickCockSound=Sound'PackageSounds4Pro.SKAS.SKAS-Cock'
-     UltraDrawSound=Sound'PackageSounds4Pro.SKAS.SKAS-UltraDraw'
-     CoolRate=0.700000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=2)
      TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      BigIconMaterial=Texture'BallisticRecolors3TexPro.SKAS.BigIcon_SKAS'
@@ -190,12 +147,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic",bUnavailable=True)
      WeaponModes(1)=(ModeName="Automatic",ModeID="WM_FullAuto")
-     WeaponModes(2)=(ModeName="Manual",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
-     WeaponModes(3)=(ModeName="Semi-Auto",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
-     WeaponModes(4)=(ModeName="1110011",bUnavailable=True,ModeID="WM_FullAuto")
-     WeaponModes(5)=(ModeName="XR4 System",bUnavailable=True,ModeID="WM_FullAuto")
      CurrentWeaponMode=1
      bNotifyModeSwitch=True
      bNoCrosshairInScope=True
@@ -247,5 +199,4 @@ defaultproperties
      DrawScale=0.260000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=0
-     bSelected=True
 }

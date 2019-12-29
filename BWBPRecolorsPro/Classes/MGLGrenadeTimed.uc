@@ -5,7 +5,7 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-
+//
 // Edited by (NL)NOOTLORD
 //=============================================================================
 class MGLGrenadeTimed extends BallisticGrenade;
@@ -83,5 +83,4 @@ defaultproperties
      MyDamageType=Class'BWBPRecolorsPro.DTMGLGrenadeRadius'
      ImpactSound=Sound'PackageSounds4Pro.Misc.FLAK-GrenadeBounce'
      StaticMesh=StaticMesh'BallisticHardware2.M900.M900Grenade'
-     bSelected=True
 }

@@ -1,10 +1,12 @@
 //=============================================================================
 // MGLauncher.
 //
-// Multiple Grenade LauncherLauncher!
+// Multiple Grenade Launcher!
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class MGLauncher extends BallisticWeapon;
 
@@ -140,6 +142,8 @@ simulated function bool HasAmmo()
 	return Super.HasAmmo();
 }
 
+// AI Interface =====
+
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -148,12 +152,10 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
-// AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	return 0;
-}
+function byte BestMode()	{	return 0;	}
+
 
 function float GetAIRating()
 {
@@ -200,11 +202,6 @@ function float SuggestDefenseStyle()
 }
 // End AI Stuff =====
 
-simulated function Notify_BrassOut()
-{
-//	BFireMode[0].EjectBrass();
-}
-
 defaultproperties
 {
      MatDef=Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase'
@@ -225,7 +222,7 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=6
-     CockSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Pump',Volume=0.900000,Radius=32.000000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Pump',Volume=0.00000,Radius=32.000000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=0.900000,Radius=32.000000)
      ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=0.900000,Radius=32.000000)
      ClipInFrame=0.325000
@@ -284,5 +281,4 @@ defaultproperties
      Skins(2)=Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase'
      Skins(3)=Shader'BallisticRecolors4TexPro.MGL.MGL-HolosightGlow'
      AmbientGlow=0
-     bSelected=True
 }

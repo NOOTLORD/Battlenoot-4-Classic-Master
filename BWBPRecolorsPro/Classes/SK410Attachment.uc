@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD
 //=============================================================================
 class SK410Attachment extends BallisticShotgunAttachment;
 
@@ -25,5 +27,4 @@ defaultproperties
      RelativeRotation=(Pitch=32768)
      DrawScale=0.200000
      PrePivot=(X=1.000000,Z=-5.000000)
-     bSelected=True
 }

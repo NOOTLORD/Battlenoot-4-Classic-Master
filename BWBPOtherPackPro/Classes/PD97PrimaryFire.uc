@@ -40,12 +40,12 @@ defaultproperties
      AimedFireAnim="SightFire"
      RecoilPerShot=256.000000
      FireChaos=0.150000
-     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=1.350000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=2.000000)
      PreFireAnim=
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"
      FireRate=0.400000
-     AmmoClass=Class'BWBPOtherPackPro.Ammo_BloodhoundDarts'
+     AmmoClass=Class'BWBPOtherPackPro.Ammo_Bloodhound'
      ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)

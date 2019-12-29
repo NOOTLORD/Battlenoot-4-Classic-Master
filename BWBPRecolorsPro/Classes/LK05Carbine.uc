@@ -12,6 +12,8 @@
 //
 // by Sarge.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
 class LK05Carbine extends BallisticWeapon;
 
@@ -70,19 +72,16 @@ simulated event PostNetReceive()
 //=================================
 //Silencer Code
 //=================================
-
 function ServerSwitchSilencer(bool bNewValue)
 {
-	if (!Instigator.IsLocallyControlled())
-		LK05PrimaryFire(FireMode[0]).SwitchSilencerMode(bNewValue);
-
+    LK05PrimaryFire(FireMode[0]).SwitchSilencerMode(bNewValue);
 	LK05Attachment(ThirdPersonActor).bSilenced=bNewValue;	
 	PlaySuppressorAttachment(bNewValue);
 	bSilenced = bNewValue;
 	BFireMode[0].bAISilent = bSilenced;
 }
 
-exec simulated function SwitchSilencer() 
+exec simulated function WeaponSpecial(optional byte i)
 {
 	if (ReloadState != RS_None)
 		return;
@@ -135,60 +134,6 @@ simulated function PlayReload()
 	else
 		SetBoneScale (0, 0.0, SilencerBone);
 }
-
-//=================================
-// Flashlight + Laser Code
-//=================================
-exec simulated function WeaponSpecial(optional byte i)
-{
-	GearStatus++;
-	if (GearStatus > 4)
-		GearStatus = 1;
-
-	if (bool(GearStatus & 1))  //Flashlight
-	{
-		bLightsOn = !bLightsOn;
-		ServerFlashLight(bLightsOn);
-		if (bLightsOn)
-		{
-			PlaySound(TorchOnSound,,0.7,,32);
-			if (FlashLightEmitter == None)
-				FlashLightEmitter = Spawn(class'MRS138TorchEffect',self,,location);
-			class'BallisticEmitter'.static.ScaleEmitter(FlashLightEmitter, DrawScale);
-			StartProjector();
-		}
-		else
-		{
-			PlaySound(TorchOffSound,,0.7,,32);
-			if (FlashLightEmitter != None)
-				FlashLightEmitter.Destroy();
-			KillProjector();
-		}
-	}
-	else //Laser
-	{
-		bLaserOn = !bLaserOn;
-		ServerSwitchLaser(bLaserOn);
-		if (bLaserOn)
-		{
-			SpawnLaserDot();
-			PlaySound(LaserOnSound,,0.7,,32);
-			AimSpread = LaserAimSpread;
-			BFireMode[0].FireChaos *= 0.8;
-		}
-		else
-		{
-			KillLaserDot();
-			PlaySound(LaserOffSound,,0.7,,32);
-			AimSpread = default.AimSpread;
-			BFireMode[0].FireChaos = BFireMode[0].default.FireChaos;
-		}
-
-		PlayIdle();
-		bUseNetAim = default.bUseNetAim || bScopeView || bLaserOn;
-	}
-}
-
 
 //=================================
 // Flashlight
@@ -449,9 +394,8 @@ simulated event AnimEnd (int Channel)
 	Super.AnimEnd(Channel);
 }
 
-//=================================
-// Bot crap
-//=================================
+// AI Interface =====
+
 simulated function float RateSelf()
 {
 	if (!HasAmmo())
@@ -463,12 +407,8 @@ simulated function float RateSelf()
 	return CurrentRating;
 }
 
-// AI Interface =====
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	return 0;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -548,7 +488,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.LK05SecondaryFire'
+     FireModeClass(1)=Class'BWBPRecolorsPro.LK05PrimaryFire'
      IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000

@@ -1,5 +1,7 @@
 //=============================================================================
 // MARS-3 (i.e. F2000.)
+//
+// Edited by (NL)NOOTLORD 
 //=============================================================================
 class F2000AssaultRifle extends BallisticWeapon;
 
@@ -11,11 +13,6 @@ var() sound		SilencerOnSound;		// Silencer stuck on sound
 var() sound		SilencerOffSound;		//
 var() sound		SilencerOnTurnSound;	// Silencer screw on sound
 var() sound		SilencerOffTurnSound;	//
-
-var() Sound		GrenOpenSound;		//Sounds for grenade reloading
-var() Sound		GrenLoadSound;		//
-var() Sound		GrenCloseSound;		//
-var() name		GrenadeLoadAnim;	//Anim for grenade reload
 
 var(F2000AssaultRifle) name		ScopeBone;			// Bone to use for hiding scope
 
@@ -135,76 +132,9 @@ simulated function bool PutDown()
 	return false;
 }
 
-//=====================================================================
-// AI INTERFACE CODE
-//=====================================================================
-simulated function float RateSelf()
-{
-	if (!HasAmmo())
-		CurrentRating = 0;
-	else if (Ammo[0].AmmoAmount < 1 && MagAmmo < 1)
-		CurrentRating = Instigator.Controller.RateWeapon(self)*0.3;
-	else
-		return Super.RateSelf();
-	return CurrentRating;
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Result, Height, Dist, VDot;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-	Height = B.Enemy.Location.Z - Instigator.Location.Z;
-	VDot = Normal(B.Enemy.Velocity) Dot Normal(Instigator.Location - B.Enemy.Location);
-
-	Result = FRand()-0.3;
-	// Too far for grenade
-	if (Dist > 800)
-		Result -= (Dist-800) / 2000;
-	// Too close for grenade
-	if (Dist < 500 &&  VDot > 0.3)
-		result -= (500-Dist) / 1000;
-	if (VSize(B.Enemy.Velocity) > 50)
-	{
-		// Straight lines
-		if (Abs(VDot) > 0.8)
-			Result += 0.1;
-		// Enemy running away
-		if (VDot < 0)
-			Result -= 0.2;
-		else
-			Result += 0.2;
-	}
-
-	// Higher than enemy
-//	if (Height < 0)
-//		Result += 0.1;
-	// Improve grenade acording to height, but temper using horizontal distance (bots really like grenades when right above you)
-	Dist = VSize(B.Enemy.Location*vect(1,1,0) - Instigator.Location*vect(1,1,0));
-	if (Height < -100)
-		Result += Abs((Height/2) / Dist);
-
-	if (Result > 0.5)
-		return 1;
-	return 0;
-}
-
-simulated function bool IsReloadingGrenade()
-{
-    local name anim;
-    local float frame, rate;
-    GetAnimParams(0, anim, frame, rate);
-	if (Anim == GrenadeLoadAnim)
- 		return true;
-	return false;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -241,10 +171,6 @@ defaultproperties
      SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
      SilencerOnTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      SilencerOffTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
-     GrenOpenSound=Sound'BallisticSounds2.M50.M50GrenOpen'
-     GrenLoadSound=Sound'BallisticSounds2.M50.M50GrenLoad'
-     GrenCloseSound=Sound'BallisticSounds2.M50.M50GrenClose'
-     GrenadeLoadAnim="GLReload"
      ScopeBone="EOTech"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
@@ -315,5 +241,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.MARS3_FP'
      DrawScale=0.300000
      AmbientGlow=0
-     bSelected=True
 }

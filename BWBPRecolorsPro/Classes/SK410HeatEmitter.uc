@@ -198,6 +198,4 @@ defaultproperties
          SpawnOnTriggerPPS=500000.000000
      End Object
      Emitters(4)=SpriteEmitter'BWBPRecolorsPro.SK410HeatEmitter.SpriteEmitter5'
-
-     bSelected=True
 }

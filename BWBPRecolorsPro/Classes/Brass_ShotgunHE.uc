@@ -50,6 +50,7 @@ defaultproperties
      HitSoundVolume=0.125000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyShell'
      DrawScale=0.110000
+	 DrawScale3D=(X=0.800000,Y=0.800000,Z=0.800000)
      Skins(0)=Texture'BallisticRecolors3TexPro.SK410.Cart_ShotgunHE'
      bSelected=True
 }

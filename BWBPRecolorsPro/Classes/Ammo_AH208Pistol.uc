@@ -1,4 +1,12 @@
-class Ammo_AH208Pistol extends BallisticAmmo;
+//=============================================================================
+// Ammo_AH208pistol.
+//
+// AH208 Pistol ammo
+//
+// Edited by (NL)NOOTLORD
+//=============================================================================
+class Ammo_AH208pistol extends BallisticAmmo;
+
 
 defaultproperties
 {
