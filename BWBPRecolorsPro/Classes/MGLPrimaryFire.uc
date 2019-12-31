@@ -24,7 +24,7 @@ defaultproperties
      bTossed=True
      bModeExclusive=False
      FireForce="AssaultRifleAltFire"
-     FireRate=0.850000
+     FireRate=0.750000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_MGL'
      ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)

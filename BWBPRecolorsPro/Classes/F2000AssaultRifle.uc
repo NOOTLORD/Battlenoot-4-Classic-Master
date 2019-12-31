@@ -132,6 +132,17 @@ simulated function bool PutDown()
 	return false;
 }
 
+simulated function float RateSelf()
+{
+	if (!HasAmmo())
+		CurrentRating = 0;
+	else if (Ammo[0].AmmoAmount < 1 && MagAmmo < 1)
+		CurrentRating = Instigator.Controller.RateWeapon(self)*0.3;
+	else
+		return Super.RateSelf();
+	return CurrentRating;
+}
+
 // AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
@@ -213,7 +224,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.140000
      FireModeClass(0)=Class'BWBPRecolorsPro.F2000PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.F2000PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownTime=0.700000
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.750000

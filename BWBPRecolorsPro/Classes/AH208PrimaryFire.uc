@@ -43,7 +43,7 @@ defaultproperties
      DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.000000)
      KickForce=0
      PenetrateForce=0
-     bPenetrate=False					   					
+     bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      FlashScaleFactor=0.250000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
@@ -60,10 +60,10 @@ defaultproperties
      AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208pistol'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-5.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
+     ShakeOffsetTime=0.000000
      BotRefireRate=0.900000
      WarnTargetPct=0.100000
      aimerror=600.000000

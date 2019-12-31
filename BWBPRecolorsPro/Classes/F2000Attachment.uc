@@ -42,18 +42,23 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BWBPRecolorsPro.MARSFlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     ImpactManager=Class'BallisticProV55.IM_Bullet'
+     FlashMode=MU_Both	 
      FlashBone="tip2"
      AltFlashBone="tip2"
      FlashScale=0.150000
+     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     FlashMode=MU_Both
-     LightMode=MU_Both
+     BrassMode=MU_Both
+     InstantMode=MU_Both
+     LightMode=MU_Primary
+     TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
+     TracerMode=MU_Primary	 
      TracerChance=0.500000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+     FlyByMode=MU_Both 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
      bRapidFire=True

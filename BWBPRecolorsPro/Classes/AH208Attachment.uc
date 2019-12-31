@@ -22,16 +22,24 @@ simulated function PostBeginPlay()
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
-     ImpactManager=Class'BallisticProV55.IM_BigBullet'
-     MeleeImpactManager=Class'BallisticProV55.IM_GunHit'
+	 FlashMode=MU_Primary
      FlashBone="Muzzle"
      AltFlashBone="Muzzle"
      FlashScale=0.300000
+     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassBone="Scope"
+	 BrassMode=MU_Primary
+     BrassBone="Scope"	 
+	 InstantMode=MU_Primary
+     LightMode=MU_Primary
+	 TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
+	 TracerMode=MU_Primary
+     TracerChance=1.000000	 
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
+	 WaterTracerMode=MU_Primary
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+	 FlyByMode=MU_Primary
      ReloadAnim="Reload_Pistol"
      CockingAnim="Cock_RearPull"
      ReloadAnimRate=0.850000

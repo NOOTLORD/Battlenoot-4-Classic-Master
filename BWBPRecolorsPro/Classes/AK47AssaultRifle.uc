@@ -8,15 +8,6 @@
 //=============================================================================
 class AK47AssaultRifle extends BallisticWeapon;
 
-var   bool			bLoaded;
-
-var() name			GrenBone;	
-var() name			GrenBoneBase;
-var() Sound		GrenLoadSound;				
-var() Sound		GrenDropSound;		
-
-var   float			NextThrowTime;
-
 var name			BulletBone, BulletBone2;
 
 
@@ -52,20 +43,6 @@ simulated function Notify_ClipOut()
 	}
 }
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
-// AI Interface =====
-
 simulated function float RateSelf()
 {
 	if (!HasAmmo())
@@ -77,23 +54,29 @@ simulated function float RateSelf()
 	return CurrentRating;
 }
 
+// AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-    if ( B == None )
+	
+	if ( B == None )
 		return AIRating;
+
+	Rating = Super.GetAIRating();
+
 	if (B.Enemy == None)
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.DistanceAtten(Rating, 0.6, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 
 }
 
@@ -135,7 +118,7 @@ defaultproperties
      SightPivot=(Pitch=64)
      SightOffset=(X=10.000000,Y=-10.020000,Z=20.600000)
      SightDisplayFOV=40.000000
-     HipRecoilFactor=0.500000
+     HipRecoilFactor=1.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimAdjustTime=100.000000
      AimSpread=16
@@ -150,7 +133,7 @@ defaultproperties
      RecoilMinRandFactor=0.15000
      RecoilDeclineTime=1.500000
      FireModeClass(0)=Class'BWBPRecolorsPro.AK47PrimaryFire'
-	 FireModeClass(1)=Class'BWBPRecolorsPro.AK47PrimaryFire'
+	 FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.400000
      SelectAnimRate=1.700000
      PutDownAnimRate=1.750000

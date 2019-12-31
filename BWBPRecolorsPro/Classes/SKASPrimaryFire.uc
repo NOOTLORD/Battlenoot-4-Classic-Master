@@ -14,7 +14,7 @@ defaultproperties
 {
      CutOffDistance=3072.000000
      CutOffStartRange=1280.000000
-     TraceCount=7
+     TraceCount=4
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=7000.000000,Max=7000.000000)
@@ -28,7 +28,7 @@ defaultproperties
      DamageTypeArm=Class'BWBPRecolorsPro.DTSKASShotgun'
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
-     FlashScaleFactor=1.250000
+     FlashScaleFactor=1.150000
      BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
      BrassOffset=(X=-21.000000,Y=-2.000000,Z=-1.000000)
      RecoilPerShot=450.000000

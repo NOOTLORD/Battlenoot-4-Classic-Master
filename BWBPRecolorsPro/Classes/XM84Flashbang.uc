@@ -62,18 +62,6 @@ simulated function CheckNoGrenades()
 		PlayAnim(SelectAnim, 1, 0.0);
 }
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}

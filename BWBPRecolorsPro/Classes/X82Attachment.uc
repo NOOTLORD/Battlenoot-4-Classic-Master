@@ -10,13 +10,6 @@
 //=============================================================================
 class X82Attachment extends BallisticAttachment;
 
-simulated Event PostNetBeginPlay()
-{
-	super.PostNetBeginPlay();
-	if (BallisticTurret(Instigator) != None)
-		bHidden=true;
-}
-
 // Return the location of the muzzle.
 simulated function Vector GetTipLocation()
 {
@@ -111,14 +104,20 @@ simulated function FlashMuzzleFlash(byte Mode)
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
-     ImpactManager=Class'BWBPRecolorsPro.IM_ExpBullet'
+     FlashMode=MU_Primary
+     ImpactManager=Class'BallisticProV55.IM_Bullet' 
      BrassClass=Class'BWBPRecolorsPro.Brass_BMG'
-     TracerMode=MU_Primary
+     BrassMode=MU_Primary
+     InstantMode=MU_Primary
+     LightMode=MU_Primary
+     TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
+     TracerMode=MU_Primary	 
      TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Both
+     WaterTracerMode=MU_Primary
      FlyBySound=(Sound=Sound'PackageSounds4Pro.X82.X83-FlyBy',Volume=1.500000)
+     FlyByMode=MU_Primary	 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.X83A1_3rd'

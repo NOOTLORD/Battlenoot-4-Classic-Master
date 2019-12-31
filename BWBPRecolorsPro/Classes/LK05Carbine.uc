@@ -17,15 +17,6 @@
 //=============================================================================
 class LK05Carbine extends BallisticWeapon;
 
-var   byte		GearStatus;
-
-var   bool		bLaserOn, bOldLaserOn;
-var   LaserActor	Laser;
-var() Sound		LaserOnSound;
-var() Sound		LaserOffSound;
-var   Emitter		LaserDot;
-var() float			LaserAimSpread;
-
 var   bool		bSilenced;				// Silencer on. Silenced
 var() name		SilencerBone;			// Bone to use for hiding silencer
 var() name		SilencerBone2;			// Bone to use for hiding silencer
@@ -33,40 +24,12 @@ var() sound		SilencerOnSound;		// Silencer stuck on sound
 var() sound		SilencerOffSound;		//
 var() name		SilencerOnAnim;			// Think hard about this one...
 var() name		SilencerOffAnim;		//
-
-var Projector		FlashLightProj;
-var Emitter		FlashLightEmitter;
-var bool		bLightsOn;
-var bool		bFirstDraw;
-var vector		TorchOffset;
-var() Sound		TorchOnSound;
-var() Sound		TorchOffSound;
-
 var() name		ScopeBone;			// Bone to use for hiding scope
-
 
 replication
 {
 	reliable if (Role < ROLE_Authority)
-		ServerFlashLight, ServerSwitchSilencer;
-	reliable if (Role == ROLE_Authority)
-		bLaserOn;
-}
-
-simulated event PostNetReceive()
-{
-	if (level.NetMode != NM_Client)
-		return;
-	//Do not use default to save postnetreceived shit
-	if (bLaserOn != bOldLaserOn)
-	{
-		if (bLaserOn)
-			AimAdjustTime = default.AimAdjustTime * 1.5;
-		else
-			AimAdjustTime = default.AimAdjustTime;
-		bOldLaserOn = bLaserOn;
-	}
-	Super.PostNetReceive();
+		ServerSwitchSilencer;
 }
 
 //=================================
@@ -74,14 +37,16 @@ simulated event PostNetReceive()
 //=================================
 function ServerSwitchSilencer(bool bNewValue)
 {
-    LK05PrimaryFire(FireMode[0]).SwitchSilencerMode(bNewValue);
+	if (!Instigator.IsLocallyControlled())
+		LK05PrimaryFire(FireMode[0]).SwitchSilencerMode(bNewValue);
+
 	LK05Attachment(ThirdPersonActor).bSilenced=bNewValue;	
 	PlaySuppressorAttachment(bNewValue);
 	bSilenced = bNewValue;
 	BFireMode[0].bAISilent = bSilenced;
 }
 
-exec simulated function WeaponSpecial(optional byte i)
+exec simulated function SwitchSilencer() 
 {
 	if (ReloadState != RS_None)
 		return;
@@ -136,195 +101,6 @@ simulated function PlayReload()
 }
 
 //=================================
-// Flashlight
-//=================================
-function ServerFlashLight (bool bNew)
-{
-	bLightsOn = bNew;
-	LK05Attachment(ThirdPersonActor).bLightsOn = bLightsOn;
-}
-
-simulated function StartProjector()
-{
-	if (FlashLightProj == None)
-		FlashLightProj = Spawn(class'MRS138TorchProjector',self,,location);
-	AttachToBone(FlashLightProj, 'tip4');
-	FlashLightProj.SetRelativeLocation(TorchOffset);
-}
-simulated function KillProjector()
-{
-	if (FlashLightProj != None)
-		FlashLightProj.Destroy();
-}
-
-simulated event Tick(float DT)
-{
-	super.Tick(DT);
-
-	if (!bLightsOn || ClientState != WS_ReadyToFire)
-		return;
-	if (!Instigator.IsFirstPerson())
-		KillProjector();
-	else if (FlashLightProj == None)
-		StartProjector();
-}
-
-
-simulated event RenderOverlays( Canvas Canvas )
-{
-	local Vector TazLoc;
-	local Rotator TazRot;
-	super.RenderOverlays(Canvas);
-	if (!IsInState('Lowered'))
-		DrawLaserSight(Canvas);
-	if (bLightsOn)
-	{
-		TazLoc = GetBoneCoords('tip4').Origin;
-		TazRot = GetBoneRotation('tip4');
-		if (FlashLightEmitter != None)
-		{
-			FlashLightEmitter.SetLocation(TazLoc);
-			FlashLightEmitter.SetRotation(TazRot);
-			Canvas.DrawActor(FlashLightEmitter, false, false, DisplayFOV);
-		}
-	}
-}
-
-
-//=================================
-// Laser
-//=================================
-function ServerSwitchLaser(bool bNewLaserOn)
-{
-	bLaserOn = bNewLaserOn;
-	bUseNetAim = default.bUseNetAim || bScopeView || bLaserOn;
-	if (ThirdPersonActor!=None)
-		LK05Attachment(ThirdPersonActor).bLaserOn = bLaserOn;
-	if (bLaserOn)
-	{
-		AimAdjustTime = default.AimAdjustTime * 1.5;
-		AimSpread = LaserAimSpread;
-		BFireMode[0].FireChaos *= 0.8;
-	}
-	else
-	{
-		AimAdjustTime = default.AimAdjustTime;
-		AimSpread = default.AimSpread;
-		BFireMode[0].FireChaos = BFireMode[0].default.FireChaos;
-	}
-}
-
-
-simulated function KillLaserDot()
-{
-	if (LaserDot != None)
-	{
-		LaserDot.Kill();
-		LaserDot = None;
-	}
-}
-simulated function SpawnLaserDot(optional vector Loc)
-{
-	if (LaserDot == None)
-		LaserDot = Spawn(class'MD24LaserDot',,,Loc);
-}
-
-
-// Draw a laser beam and dot to show exact path of bullets before they're fired
-simulated function DrawLaserSight ( Canvas Canvas )
-{
-	local Vector HitLocation, Start, End, HitNormal, Scale3D, Loc;
-	local Rotator AimDir;
-	local Actor Other;
-
-	if ((ClientState == WS_Hidden) || (!bLaserOn) || Instigator == None || Instigator.Controller == None || Laser==None)
-		return;
-
-	AimDir = BallisticFire(FireMode[0]).GetFireAim(Start);
-	Loc = GetBoneCoords('tip3').Origin;
-
-	End = Start + Normal(Vector(AimDir))*5000;
-	Other = FireMode[0].Trace (HitLocation, HitNormal, End, Start, true);
-	if (Other == None)
-		HitLocation = End;
-
-	// Draw dot at end of beam
-	if (ReloadState == RS_None && ClientState == WS_ReadyToFire && Level.TimeSeconds - FireMode[0].NextFireTime > 0.2)
-		SpawnLaserDot(HitLocation);
-	else
-		KillLaserDot();
-	if (LaserDot != None)
-		LaserDot.SetLocation(HitLocation);
-	Canvas.DrawActor(LaserDot, false, false, Instigator.Controller.FovAngle);
-
-	// Draw beam from bone on gun to point on wall(This is tricky cause they are drawn with different FOVs)
-	Laser.SetLocation(Loc);
-	HitLocation = class'BUtil'.static.ConvertFOVs(Instigator.Location + Instigator.EyePosition(), Instigator.GetViewRotation(), End, Instigator.Controller.FovAngle, DisplayFOV, 400);
-
-	if (ReloadState == RS_None && ClientState == WS_ReadyToFire && 
-	   ((FireMode[0].IsFiring() && Level.TimeSeconds - FireMode[0].NextFireTime > -0.05) || (!FireMode[0].IsFiring() && Level.TimeSeconds - FireMode[0].NextFireTime > 0.2)))
-		Laser.SetRotation(Rotator(HitLocation - Loc));
-	else
-	{
-		AimDir = GetBoneRotation('tip3');
-		Laser.SetRotation(AimDir);
-	}
-	Scale3D.X = VSize(HitLocation-Loc)/128;
-	Scale3D.Y = 1;
-	Scale3D.Z = 1;
-	Laser.SetDrawScale3D(Scale3D);
-	Canvas.DrawActor(Laser, false, false, DisplayFOV);
-}
-
-//=================================
-// Destroy Cleanup
-//=================================
-simulated function bool PutDown()
-{
-	if (Super.PutDown())
-	{
-		KillLaserDot();
-		if (ThirdPersonActor != None)
-			LK05Attachment(ThirdPersonActor).bLaserOn = false;
-		KillProjector();
-		if (FlashLightEmitter != None)
-			FlashLightEmitter.Destroy();
-
-		Instigator.AmbientSound = UsedAmbientSound;
-		Instigator.SoundVolume = default.SoundVolume;
-		Instigator.SoundPitch = default.SoundPitch;
-		Instigator.SoundRadius = default.SoundRadius;
-		Instigator.bFullVolume = false;
-		return true;
-	}
-	return false;
-}
-
-simulated function Destroyed ()
-{
-	default.bLaserOn = false;
-	if (Laser != None)
-		Laser.Destroy();
-	if (LaserDot != None)
-		LaserDot.Destroy();
-	if (FlashLightEmitter != None)
-		FlashLightEmitter.Destroy();
-	KillProjector();
-
-	if(Instigator != None)
-	{
-		Instigator.AmbientSound = UsedAmbientSound;
-		Instigator.SoundVolume = default.SoundVolume;
-		Instigator.SoundPitch = default.SoundPitch;
-		Instigator.SoundRadius = default.SoundRadius;
-		Instigator.bFullVolume = false;
-	}
-
-	Super.Destroyed();
-}
-
-
-//=================================
 // Sights and custom anim support
 //=================================
 simulated function BringUp(optional Weapon PrevWeapon)
@@ -342,16 +118,7 @@ simulated function BringUp(optional Weapon PrevWeapon)
 	}
 
 	Super.BringUp(PrevWeapon);
-	if (Instigator != None && Laser == None && PlayerController(Instigator.Controller) != None)
-		Laser = Spawn(class'LaserActor');
-	if (Instigator != None && LaserDot == None && PlayerController(Instigator.Controller) != None)
-		SpawnLaserDot();
-	if (Instigator != None && AIController(Instigator.Controller) != None)
-	{
-		ServerSwitchLaser(FRand() > 0.5);
-		ServerFlashlight(FRand() > 0.5);
-	}
-
+	
 	if (AIController(Instigator.Controller) != None)
 		bSilenced = (FRand() > 0.5);
 
@@ -359,16 +126,6 @@ simulated function BringUp(optional Weapon PrevWeapon)
 		SetBoneScale (0, 1.0, SilencerBone);
 	else
 		SetBoneScale (0, 0.0, SilencerBone);
-
-	if ( ThirdPersonActor != None )
-		LK05Attachment(ThirdPersonActor).bLaserOn = bLaserOn;
-
-
-	Instigator.AmbientSound = UsedAmbientSound;
-	Instigator.SoundVolume = default.SoundVolume;
-	Instigator.SoundPitch = default.SoundPitch;
-	Instigator.SoundRadius = default.SoundRadius;
-	Instigator.bFullVolume = true;
 }
 
 simulated event AnimEnd (int Channel)
@@ -394,8 +151,6 @@ simulated event AnimEnd (int Channel)
 	Super.AnimEnd(Channel);
 }
 
-// AI Interface =====
-
 simulated function float RateSelf()
 {
 	if (!HasAmmo())
@@ -407,25 +162,30 @@ simulated function float RateSelf()
 	return CurrentRating;
 }
 
+// AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
 
-    if (B.Enemy == None)
+	Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	return class'BUtil'.static.DistanceAtten(Rating, 0.6, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance);
+	
+	return class'BUtil'.static.DistanceAtten(Rating, 0.6, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -439,18 +199,12 @@ defaultproperties
      ManualLines(0)="5.56 fire. Higher DPS than comparable weapons, but awkward recoil and highly visible tracers."
      ManualLines(1)="Attaches or remvoes the suppressor. When active, the suppressor reduces recoil and noise output and hides the muzzle flash, but reduces range."
      ManualLines(2)="The Weapon Function key, when used, first cycles between the weapon's laser sight and flashlight, and then activates both at once. Activate again to disable both. The laser sight reduces the spread of the hipfire, but compromises stealth.||Effective at close and medium range."																												   																																																																																																																			  
-     LaserOnSound=Sound'BallisticSounds2.M806.M806LSight'
-     LaserOffSound=Sound'BallisticSounds2.M806.M806LSight'
-     LaserAimSpread=128.000000
      SilencerBone="Silencer"
      SilencerBone2="Silencer2"
      SilencerOnSound=Sound'BWBP3-Sounds.SRS900.SRS-SilencerOn'
      SilencerOffSound=Sound'BWBP3-Sounds.SRS900.SRS-SilencerOff'
      SilencerOnAnim="SilencerOn"
      SilencerOffAnim="SilencerOff"
-     TorchOffset=(X=-50.000000)
-     TorchOnSound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-FlashClick'
-     TorchOffSound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-FlashClick'
      ScopeBone="EOTech"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
@@ -469,7 +223,7 @@ defaultproperties
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
      WeaponModes(1)=(bUnavailable=True,Value=4.000000)
-     WeaponModes(3)=(bUnavailable=True)
+     WeaponModes(3)=(bUnavailable=True) 
      bNoCrosshairInScope=True
      SightOffset=(X=10.000000,Y=-8.550000,Z=24.660000)
      SightDisplayFOV=40.000000
@@ -488,7 +242,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.LK05PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000
@@ -519,5 +273,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.LK05_FP'
      DrawScale=0.300000
      AmbientGlow=0
-     bSelected=True
 }

@@ -68,9 +68,9 @@ defaultproperties
      CutOffDistance=1536.000000
      CutOffStartRange=378.000000
      MaxSpreadFactor=6
-     TraceCount=6
-     TracerClass=Class'BWBPRecolorsPro.TraceEmitter_ShotgunHE'
-     ImpactManager=Class'BWBPRecolorsPro.IM_ShellHE'
+     TraceCount=4
+     TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
+     ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=4000.000000,Max=6000.000000)
      MaxWalls=1
      Damage=14.000000

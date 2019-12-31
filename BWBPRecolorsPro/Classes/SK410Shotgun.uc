@@ -79,20 +79,6 @@ simulated function Notify_CockSim()
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
-// AI Interface =====
-
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -102,16 +88,19 @@ simulated function float RateSelf()
 	return CurrentRating;
 }
 
+// AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
-	
+
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
 
@@ -121,9 +110,8 @@ function float GetAIRating()
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 1536); 
-
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -196,7 +184,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.330000
      FireModeClass(0)=Class'BWBPRecolorsPro.SK410PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.SK410PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnimRate=1.600000
      PutDownAnimRate=1.600000
      PutDownTime=0.350000

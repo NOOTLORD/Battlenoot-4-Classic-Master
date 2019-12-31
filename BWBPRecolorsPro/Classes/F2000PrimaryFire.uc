@@ -161,7 +161,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DTF2000Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DTF2000AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DTF2000Assault'
-     PenetrateForce=0					   
+     PenetrateForce=0
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BWBPRecolorsPro.MARSFlashEmitter'
@@ -178,14 +178,14 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-RapidFire',Volume=1.500000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      FireEndAnim=
-     FireRate=0.097500
+     FireRate=0.095000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_F2000rifle'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
+     ShakeOffsetTime=0.000000
      WarnTargetPct=0.200000
      aimerror=600.000000
 }

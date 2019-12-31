@@ -17,10 +17,10 @@ defaultproperties
      EffectChance=0.500000
      DamageIdent="SMG"
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     MinMotionBlurDamage=00.000000
+     MotionBlurDamageRange=0.000000
+     MotionBlurFactor=0.000000
+     MotionBlurTime=0.000000
      WeaponClass=Class'BallisticProV55.XRS10SubMachinegun'
      DeathString="%o was cleansed by a hail of %k's XRS-10 rounds."
      FemaleSuicide="%o silenced herself."

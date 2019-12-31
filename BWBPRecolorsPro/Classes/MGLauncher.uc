@@ -142,8 +142,6 @@ simulated function bool HasAmmo()
 	return Super.HasAmmo();
 }
 
-// AI Interface =====
-
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -152,10 +150,9 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
-
+// AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
-
 
 function float GetAIRating()
 {
@@ -179,26 +176,13 @@ function float GetAIRating()
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()
 {
-	if (AIController(Instigator.Controller) == None)
-		return 0.5;
-	return AIController(Instigator.Controller).Skill / 7;
+	return -0.2;
 }
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()
 {
-	local Bot B;
-	local float Result, Dist;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return -0.5;
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	Result = -1 * (B.Skill / 6);
-	Result *= (1 - (Dist/4000));
-    return FClamp(Result, -1.0, -0.3);
+	return 0.2;
 }
 // End AI Stuff =====
 
@@ -228,10 +212,10 @@ defaultproperties
      ClipInFrame=0.325000
      StartShovelAnim="ReloadStart"
      EndShovelAnim="ReloadEnd"
-     WeaponModes(0)=(ModeName="Timed",bUnavailable=True,ModeID="WM_FullAuto")
-     WeaponModes(1)=(ModeName="Impact",ModeID="WM_FullAuto")
+     WeaponModes(0)=(ModeName="Timed",ModeID="WM_FullAuto")
+     WeaponModes(1)=(ModeName="Impact",bUnavailable=True,ModeID="WM_FullAuto")
      WeaponModes(2)=(ModeName="4-Round Burst",bUnavailable=True)
-     CurrentWeaponMode=1
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=512)
      SightOffset=(X=-30.000000,Y=12.450000,Z=14.850000)
@@ -249,7 +233,7 @@ defaultproperties
      RecoilMax=6144.000000
      RecoilDeclineDelay=0.500000
      FireModeClass(0)=Class'BWBPRecolorsPro.MGLPrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.MGLPrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnimRate=1.500000
      PutDownAnimRate=2.000000
      PutDownTime=0.660000

@@ -9,61 +9,8 @@
 // Edited by (NL)NOOTLORD
 //=============================================================================
 class SKASShotgun extends BallisticProShotgun;
+
 var() sound      	QuickCockSound;
-
-function GiveTo(Pawn Other, optional Pickup Pickup)
-{
-    local int m;
-    local weapon w;
-    local bool bPossiblySwitch, bJustSpawned;
-
-    Instigator = Other;
-    W = Weapon(Other.FindInventoryType(class));
-    if ( W == None )
-    {
-		bJustSpawned = true;
-        Super(Inventory).GiveTo(Other);
-        bPossiblySwitch = true;
-        W = self;
-		if (Pickup != None && BallisticWeaponPickup(Pickup) != None)
-			MagAmmo = BallisticWeaponPickup(Pickup).MagAmmo;
-    }
-    else if ( !W.HasAmmo() )
-	    bPossiblySwitch = true;
-
-    if ( Pickup == None )
-        bPossiblySwitch = true;
-
-    for (m = 0; m < NUM_FIRE_MODES; m++)
-    {
-        if ( FireMode[m] != None )
-        {
-            FireMode[m].Instigator = Instigator;
-            GiveAmmo(m,WeaponPickup(Pickup),bJustSpawned);
-        }
-    }
-	
-	if (MeleeFireMode != None)
-		MeleeFireMode.Instigator = Instigator;
-		
-	if ( (Instigator.Weapon != None) && Instigator.Weapon.IsFiring() )
-		bPossiblySwitch = false;
-
-	if ( Instigator.Weapon != W )
-		W.ClientWeaponSet(bPossiblySwitch);
-		
-	//Disable aim for weapons picked up by AI-controlled pawns
-	bAimDisabled = default.bAimDisabled || !Instigator.IsHumanControlled();
-
-    if ( !bJustSpawned )
-	{
-        for (m = 0; m < NUM_FIRE_MODES; m++)
-			Ammo[m] = None;
-		Destroy();
-	}
-}
-
-// AI Interface =====
 
 simulated function float RateSelf()
 {
@@ -74,16 +21,19 @@ simulated function float RateSelf()
 	return CurrentRating;
 }
 
+// AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
-	
+
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
 
@@ -93,7 +43,7 @@ function float GetAIRating()
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 1536); 
 }
 
@@ -170,7 +120,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.450000
      FireModeClass(0)=Class'BWBPRecolorsPro.SKASPrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.SKASPrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.100000
      PutDownTime=0.700000
      AIRating=0.850000

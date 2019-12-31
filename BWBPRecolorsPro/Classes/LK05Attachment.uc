@@ -215,18 +215,22 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      AltMuzzleFlashClass=Class'BWBPRecolorsPro.LK05SilencedFlash'
-     ImpactManager=Class'BallisticProV55.IM_Bullet'
+     FlashMode=MU_Primary 	 
      AltFlashBone="tip2"
      FlashScale=0.400000
+     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Rifle'
+     BrassMode=MU_Both	 
      InstantMode=MU_Both
-     FlashMode=MU_Both
-     LightMode=MU_Both
+     LightMode=MU_Primary
+     TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
+     TracerMode=MU_Primary	 
      TracerChance=0.500000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+     FlyByMode=MU_Both	 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=1.200000
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.TP_LK05'
@@ -242,5 +246,4 @@ defaultproperties
      Skins(7)=Shader'BallisticRecolors4TexPro.LK05.LK05-StockShine'
      Skins(8)=Shader'BallisticRecolors4TexPro.LK05.LK05-EOTechShine'
      Skins(9)=Shader'BallisticRecolors4TexPro.LK05.LK05-MagShine'
-     bSelected=True
 }

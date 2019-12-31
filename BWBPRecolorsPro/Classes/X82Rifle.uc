@@ -12,18 +12,6 @@
 //=============================================================================
 class X82Rifle extends BallisticWeapon;
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
@@ -31,20 +19,22 @@ function byte BestMode()	{	return 0;	}
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
-		
+
 	Rating = Super.GetAIRating();
 
 	if (B.Enemy == None)
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.5, Dist, 2048, 3072); 
 }
 
@@ -106,7 +96,7 @@ defaultproperties
      RecoilYFactor=0.300000
      RecoilDeclineTime=1.500000
      FireModeClass(0)=Class'BWBPRecolorsPro.X82PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.X82PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnim="Takeout"
      PutDownAnim="PutDown"
      IdleAnimRate=0.040000

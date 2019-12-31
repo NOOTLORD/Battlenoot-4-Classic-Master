@@ -100,18 +100,6 @@ simulated function PlayCocking(optional byte Type)
 		PlayAnim(CockAnim, CockAnimRate, 0.2);
 }
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
@@ -186,7 +174,7 @@ defaultproperties
      ChaosDeclineTime=0.450000
      RecoilDeclineDelay=0.750000
      FireModeClass(0)=Class'BWBPRecolorsPro.AH208PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.AH208PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownAnimRate=1.600000
      PutDownTime=0.500000
      BringUpTime=1.200000
@@ -194,7 +182,7 @@ defaultproperties
      bCanThrow=False
      AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208pistol'
      Description="Built as a more affordable alternative to the AH104, the AH208 is an alternate design chambered for .44 magnum rounds instead of the usual $100 .600 HEAP ones. It is less accurate than the AH104 and D49, but its 8 round magazine and faster reload times let it put more rounds down range than both. Its significant weight and recoil means it requires both hands to shoot and is harder to control than its revolver and handcannon siblings, a fact that comes into play where range is a concern. While not as popular as its larger .600 cousin, the AH208 packs a formidable punch and is a force to be reckoned with."
-     Priority=63
+     Priority=96
      HudColor=(G=217)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"

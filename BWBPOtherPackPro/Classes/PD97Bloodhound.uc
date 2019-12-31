@@ -7,6 +7,8 @@
 //
 // Secondary fire launches a tazer with a limited maximum range. This applies slow and damage 
 // over time. Breaking line of sight or angling around the user will remove the tazer's effect.
+//
+// Edited by (NL)NOOTLORD 
 //===========================================================================
 class PD97Bloodhound extends BallisticHandgun;
 
@@ -191,18 +193,6 @@ function LostControl(PD97DartControl DC)
 			return;
 		}
 	}
-}
-
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-		return true;
-	return false;	//This weapon is empty
 }
 
 // AI Interface =====
