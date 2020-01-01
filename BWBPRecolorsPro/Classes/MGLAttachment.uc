@@ -1,7 +1,7 @@
 //=============================================================================
 // MGLAttachment
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MGLAttachment extends BallisticAttachment;
 

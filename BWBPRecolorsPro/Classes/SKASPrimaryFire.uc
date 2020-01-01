@@ -6,7 +6,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SKASPrimaryFire extends BallisticProShotgunFire;
 
@@ -14,7 +14,7 @@ defaultproperties
 {
      CutOffDistance=3072.000000
      CutOffStartRange=1280.000000
-     TraceCount=4
+     TraceCount=7
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=7000.000000,Max=7000.000000)
@@ -33,7 +33,7 @@ defaultproperties
      BrassOffset=(X=-21.000000,Y=-2.000000,Z=-1.000000)
      RecoilPerShot=450.000000
      VelocityRecoil=180.000000
-     FireChaos=0.030000
+     FireChaos=0.300000
      XInaccuracy=310.000000
      YInaccuracy=310.000000
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-Single',Volume=2.000000)
@@ -48,7 +48,7 @@ defaultproperties
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
 	 ShakeOffsetTime=0.000000						 
-     BotRefireRate=0.900000
-     WarnTargetPct=0.100000
+     BotRefireRate=0.800000
+     WarnTargetPct=0.400000
      aimerror=600.000000
 }

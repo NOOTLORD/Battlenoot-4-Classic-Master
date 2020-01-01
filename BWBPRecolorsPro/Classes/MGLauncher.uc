@@ -6,7 +6,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MGLauncher extends BallisticWeapon;
 
@@ -224,6 +224,7 @@ defaultproperties
      AimAdjustTime=100.000000
      AimSpread=192
      AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000	 
      ChaosDeclineTime=1.000000
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.100000),(InVal=0.300000,OutVal=-0.200000),(InVal=1.000000,OutVal=-0.300000)))
      RecoilYCurve=(Points=(,(InVal=0.300000,OutVal=0.500000),(InVal=1.000000,OutVal=1.000000)))

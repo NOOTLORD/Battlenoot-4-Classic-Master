@@ -4,7 +4,7 @@
 // Assault rifle fire.
 // DPS is greater than normal, but so too is recoil.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class AK47PrimaryFire extends BallisticRangeAttenFire;
 

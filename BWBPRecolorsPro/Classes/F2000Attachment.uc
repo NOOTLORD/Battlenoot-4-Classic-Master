@@ -1,7 +1,7 @@
 //=============================================================================
 // F2000Attachment.
 //
-// Edited by (NL)NOOTLORD 
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class F2000Attachment extends BallisticAttachment;
 

@@ -1,3 +1,13 @@
+//=============================================================================
+// PD97Dart.
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
+//=============================================================================
+
 class PD97Dart extends BallisticProjectile;
 
 var Actor StuckActor;
@@ -88,5 +98,4 @@ defaultproperties
      StaticMesh=StaticMesh'BallisticHardware_25.OA-SMG.OA-SMG_Dart'
      LifeSpan=2.500000
      bIgnoreTerminalVelocity=True
-     bSelected=True
 }

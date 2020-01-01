@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Brass_ShotgunHE extends BWBrass_Default;
 
@@ -52,5 +54,4 @@ defaultproperties
      DrawScale=0.110000
 	 DrawScale3D=(X=0.700000,Y=0.700000,Z=0.700000)
      Skins(0)=Texture'BallisticRecolors3TexPro.SK410.Cart_ShotgunHE'
-     bSelected=True
 }

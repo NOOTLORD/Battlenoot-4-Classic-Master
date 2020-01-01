@@ -8,7 +8,7 @@
 // Secondary fire launches a tazer with a limited maximum range. This applies slow and damage 
 // over time. Breaking line of sight or angling around the user will remove the tazer's effect.
 //
-// Edited by (NL)NOOTLORD 
+// Modified by (NL)NOOTLORD						  
 //===========================================================================
 class PD97Bloodhound extends BallisticHandgun;
 
@@ -221,12 +221,6 @@ function float GetAIRating()
 	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 2048); 
 }
 
-// tells bot whether to charge or back off while using this weapon
-function float SuggestAttackStyle()	{	return 0.2;	}
-// tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return -0.2;	}
-// End AI Stuff =====
-
 defaultproperties
 {
 	 AIRating=0.5
@@ -258,13 +252,13 @@ defaultproperties
      MagAmmo=5
      CockAnimRate=1.250000
 	 ReloadAnimRate=0.800000
-     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock'Volume=1.350000)
-     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit'Volume=1.750000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut'Volume=1.750000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn'Volume=1.750000)
+     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock')
+     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit')
+     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut')
+     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn')
      ClipInFrame=0.650000
      bCockOnEmpty=True
-	 WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
@@ -277,6 +271,7 @@ defaultproperties
      AimAdjustTime=100.000000
      AimSpread=16
      AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=0.450000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=512
@@ -287,13 +282,12 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.500000
      FireModeClass(0)=Class'BWBPOtherPackPro.PD97PrimaryFire'
-     FireModeClass(1)=Class'BWBPOtherPackPro.PD97PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownTime=0.600000
      BringUpTime=0.900000
      SelectForce="SwitchToAssaultRifle"
      bShowChargingBar=False
      bCanThrow=False
-	 AmmoClass(0)=Class'BWBPOtherPackPro.Ammo_Bloodhound
      Description="Originally a specialist law enforcement weapon, the PD-97 'Bloodhound' has been adapted into a military role, used to control opponents and track their movement upon the battlefield. While less immediately lethal than most other weapons, its tactical repertoire is not to be underestimated."
      DisplayFOV=57.500000
      Priority=24
@@ -301,7 +295,7 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-	 InventorySize=6				 
+	 InventorySize=6
      GroupOffset=6
      PlayerViewOffset=(X=5.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BWBPOtherPackPro.PD97Attachment'

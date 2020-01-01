@@ -1,7 +1,7 @@
 //=============================================================================
 // DTMGLGrenadeRadius.
 //
-// Edited by (NL)NOOTLORD 
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTMGLGrenadeRadius extends DT_BWExplode;
 

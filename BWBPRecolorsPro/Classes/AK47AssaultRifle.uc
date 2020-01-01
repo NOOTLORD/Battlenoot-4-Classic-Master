@@ -4,7 +4,7 @@
 // A powerful 7.62mm powerhouse. Fills a similar role to the CYLO UAW, albiet is
 // far more reliable and has a launchable bayonet in place of the shotgun.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class AK47AssaultRifle extends BallisticWeapon;
 
@@ -123,6 +123,7 @@ defaultproperties
      AimAdjustTime=100.000000
      AimSpread=16
      AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=3072
@@ -146,7 +147,7 @@ defaultproperties
      Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
      Priority=65
      HudColor=(G=100)
-     CustomCrossHairScale=0.000000
+     CustomCrossHairScale=0.000000	 
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
      GroupOffset=5

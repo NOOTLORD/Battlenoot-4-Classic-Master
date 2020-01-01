@@ -7,7 +7,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class X82PrimaryFire extends BallisticProInstantFire;
 
@@ -26,7 +26,7 @@ defaultproperties
      DamageTypeArm=Class'BWBPRecolorsPro.DT_X82Torso'
      KickForce=0
      PenetrateForce=0
-     bPenetrate=False										   					
+     bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BWBPRecolorsPro.Brass_BMG'
@@ -37,7 +37,7 @@ defaultproperties
      FireChaos=0.700000
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Fire',Volume=2.000000,Radius=1024.000000)
      FireEndAnim=
-     FireRate=1.000000
+     FireRate=0.900000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_X82rifle'
      ShakeRotMag=(X=450.000000,Y=64.000000)
      ShakeRotRate=(X=12400.000000,Y=12400.000000,Z=12400.000000)
@@ -46,6 +46,6 @@ defaultproperties
      ShakeOffsetRate=(X=-1000.000000)
      ShakeOffsetTime=0.000000							 
      BotRefireRate=0.300000
-     WarnTargetPct=0.050000
+     WarnTargetPct=0.700000
      aimerror=600.000000
 }

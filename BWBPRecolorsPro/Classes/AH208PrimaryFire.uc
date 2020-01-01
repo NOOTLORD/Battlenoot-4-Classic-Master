@@ -2,7 +2,7 @@
 // AH208PrimaryFire.
 // The Pro equivalent of the Golden Gun.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class AH208PrimaryFire extends BallisticRangeAttenFire;
 

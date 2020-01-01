@@ -6,8 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-
-// Edited by (NL)NOOTLORD
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MGLPrimaryFire extends BallisticProProjectileFire;
 
@@ -31,6 +31,6 @@ defaultproperties
      ShakeOffsetRate=(X=-1000.000000)
      ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPRecolorsPro.MGLGrenadeTimed'
-     BotRefireRate=0.300000
-     WarnTargetPct=0.300000
+     BotRefireRate=0.500000
+     WarnTargetPct=0.750000
 }

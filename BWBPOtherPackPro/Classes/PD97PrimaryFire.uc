@@ -1,3 +1,12 @@
+//=============================================================================
+// PD97Bloodhound primaryfire class.
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
+//=============================================================================
 class PD97PrimaryFire extends BallisticProProjectileFire;
 
 simulated function PlayFiring()
@@ -51,6 +60,6 @@ defaultproperties
      ShakeOffsetRate=(X=-1000.000000)
      ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPOtherPackPro.PD97Dart'
-     BotRefireRate=0.300000
+     BotRefireRate=0.700000
      WarnTargetPct=0.300000
 }

@@ -5,24 +5,28 @@
 // adapting code by Nolan "Dark Carnivour" Richert
 // Aspects of which are copyright (c) 2006 RuneStorm. All rights reserved.
 //
-// Edited by (NL)NOOTLORD 
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class PD97Attachment extends HandgunAttachment;
 
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     ImpactManager=Class'BallisticProV55.IM_BigBullet'
-     AltFlashBone="Tazer"
+     FlashMode=MU_Primary 
 	 FlashScale=0.250000
+     ImpactManager=Class'BallisticProV55.IM_BigBullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassMode=MU_None
+     BrassMode=MU_None	 
      InstantMode=MU_None
-     FlashMode=MU_Primary
+     LightMode=MU_Primary
+     TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
+     TracerMode=MU_Primary
+     TracerChance=1.000000	 
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_None
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+     FlyByMode=MU_Primary	 
      ReloadAnim="Reload_Pistol"
      CockingAnim="Cock_RearPull"
      ReloadAnimRate=1.400000

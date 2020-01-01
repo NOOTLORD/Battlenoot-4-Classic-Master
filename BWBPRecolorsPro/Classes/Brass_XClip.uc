@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Brass_XClip extends BWBrass_Default;
 
@@ -21,5 +23,4 @@ defaultproperties
      HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticRecolors4StaticPro.XM84.XM84Clip'
      DrawScale=1.500000
-     bSelected=True
 }

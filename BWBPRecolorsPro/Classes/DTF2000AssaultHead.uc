@@ -1,7 +1,7 @@
 //=============================================================================
 // DTF2000AssaultHead.
 //
-// Edited by (NL)NOOTLORD 
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTF2000AssaultHead extends DT_BWBullet;
 

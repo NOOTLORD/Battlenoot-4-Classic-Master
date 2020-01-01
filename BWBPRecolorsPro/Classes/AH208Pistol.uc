@@ -7,7 +7,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class AH208Pistol extends BallisticWeapon;
 
@@ -170,7 +170,9 @@ defaultproperties
 	 SightZoomFactor=0
      GunLength=4.000000
      AimAdjustTime=100.000000
+     AimSpread=16	 
      AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=0.450000
      RecoilDeclineDelay=0.750000
      FireModeClass(0)=Class'BWBPRecolorsPro.AH208PrimaryFire'

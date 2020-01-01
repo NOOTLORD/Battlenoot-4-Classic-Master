@@ -43,7 +43,7 @@ defaultproperties
 {
      LowPolyStaticMesh=StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickupLow'
      InventoryType=Class'BWBPRecolorsPro.MGLauncher'
-     RespawnTime=120.000000
+     RespawnTime=5.000000
      PickupMessage="You picked up the Conqueror multiple grenade launcher."
      PickupSound=Sound'BallisticSounds2.M763.M763Putaway'
      StaticMesh=StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickup'

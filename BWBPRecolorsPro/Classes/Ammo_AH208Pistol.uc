@@ -3,7 +3,7 @@
 //
 // AH208 Pistol ammo
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Ammo_AH208pistol extends BallisticAmmo;
 

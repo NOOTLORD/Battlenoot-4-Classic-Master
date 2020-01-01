@@ -1,7 +1,7 @@
 //=============================================================================
 // MARS-3 (i.e. F2000.)
 //
-// Edited by (NL)NOOTLORD 
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class F2000AssaultRifle extends BallisticWeapon;
 
@@ -214,6 +214,7 @@ defaultproperties
      AimAdjustTime=100.000000
      AimSpread=16
      AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000	 
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=3072

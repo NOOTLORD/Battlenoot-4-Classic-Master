@@ -9,7 +9,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SK410PrimaryFire extends BallisticProShotgunFire;
 
@@ -68,7 +68,7 @@ defaultproperties
      CutOffDistance=1536.000000
      CutOffStartRange=378.000000
      MaxSpreadFactor=6
-     TraceCount=4
+     TraceCount=6
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=4000.000000,Max=6000.000000)
@@ -97,11 +97,11 @@ defaultproperties
      AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410shotgun'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
+     ShakeOffsetTime=0.000000
      BotRefireRate=0.900000
-     WarnTargetPct=0.100000
+     WarnTargetPct=0.500000
      aimerror=600.000000
 }

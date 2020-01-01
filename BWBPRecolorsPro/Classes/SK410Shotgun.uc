@@ -6,7 +6,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SK410Shotgun extends BallisticProShotgun;
 
@@ -175,12 +175,12 @@ defaultproperties
      AimAdjustTime=100.000000
      AimSpread=0
      AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000	 
      ChaosAimSpread=0
      RecoilXCurve=(Points=(,(InVal=0.500000,OutVal=0.000000),(InVal=0.700000,OutVal=-0.200000),(InVal=0.8500000,OutVal=0.15000),(InVal=0.750000,OutVal=0.050000),(InVal=1.000000,OutVal=0)))
      RecoilYCurve=(Points=(,(InVal=0.300000,OutVal=0.500000),(InVal=1.000000,OutVal=1.000000)))
-     RecoilYFactor=0.750000
-     RecoilMinRandFactor=0.250000
-     RecoilMax=8192.000000
+     RecoilYFactor=0.5
+	 RecoilXFactor=0.3
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.330000
      FireModeClass(0)=Class'BWBPRecolorsPro.SK410PrimaryFire'
@@ -194,7 +194,7 @@ defaultproperties
      bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SK410shotgun'
      Description="The SK-410 shotgun is a large-bore, compact shotgun based off the popular AK-490 design. While it is illegal on several major planets, this powerful weapon and its signature explosive shotgun shells are almost ubiquitous. A weapon originally designed for breaching use, the SK-410 is now found in the hands of civillians and terrorists throughout the worlds. It had become so prolific with outer colony terrorist groups that the UTC began the SKAS assault weapon program in an effort to find a powerful shotgun of their own."
-     Priority=67
+     Priority=245
      HudColor=(G=25)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"

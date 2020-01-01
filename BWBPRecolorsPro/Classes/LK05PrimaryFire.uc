@@ -9,8 +9,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-
-// Edited by (NL)NOOTLORD
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class LK05PrimaryFire extends BallisticRangeAttenFire;
 
@@ -261,7 +261,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_LK05Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_LK05AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_LK05Assault'
-     PenetrateForce=0					   
+     PenetrateForce=0
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashScaleFactor=0.400000
@@ -281,10 +281,10 @@ defaultproperties
      FireRate=0.095000
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
+     ShakeOffsetTime=0.000000
      WarnTargetPct=0.200000
      aimerror=600.000000
 }

@@ -6,7 +6,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class AH208Attachment extends HandgunAttachment;
 
@@ -29,7 +29,7 @@ defaultproperties
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
 	 BrassMode=MU_Primary
-     BrassBone="Scope"	 
+     BrassBone="Scope"
 	 InstantMode=MU_Primary
      LightMode=MU_Primary
 	 TrackAnimMode=MU_None

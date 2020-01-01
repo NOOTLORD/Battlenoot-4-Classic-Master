@@ -8,7 +8,7 @@
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XM84Flashbang extends BallisticHandGrenade;
 var() Material          MatGlow1;     	// adren
@@ -130,6 +130,7 @@ defaultproperties
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=1
      AimAdjustTime=100.000000
+     AimSpread=0	 
      AimDamageThreshold=0.000000
      FireModeClass(0)=Class'BWBPRecolorsPro.XM84PrimaryFire'
      FireModeClass(1)=Class'BWBPRecolorsPro.XM84PrimaryFire'
@@ -142,7 +143,7 @@ defaultproperties
      bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_XM84flash
      Description="The XM84 Heavy Disruptor grenade is an advanced electromagnetic pulsar weapon designed for incapacitation and disorientation. State of the art field psionic generators ensure the XM84 can tackle all types of targets. A fission criticality-inducing core combined with the Tandem MS flux generator gives the XM84 the destructive ability to strip away energy shields and fry any electrical system without a Warship-Grade Faraday cage. Warning: Long term exposure to armed XM84s is known to cause acute radiation poisoning and cerebral hemorrhaging. Proximity to a disruptive burst will cause permanent memory loss and irreversible neurological damage."
-     Priority=70
+     Priority=142
      HudColor=(B=255,G=150,R=100)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"

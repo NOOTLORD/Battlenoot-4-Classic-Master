@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Brass_BMG extends BWBrass_Default;
 
@@ -17,5 +19,4 @@ defaultproperties
      DrawScale=0.070000
      DrawScale3D=(X=0.750000,Y=0.800000,Z=0.800000)
      RotationRate=(Pitch=16384,Yaw=32768)
-     bSelected=True
 }

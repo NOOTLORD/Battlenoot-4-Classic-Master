@@ -13,7 +13,7 @@
 // by Sarge.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Edited by (NL)NOOTLORD 
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class LK05Carbine extends BallisticWeapon;
 
@@ -230,8 +230,9 @@ defaultproperties
      SightingTime=0.300000
      SprintOffSet=(Pitch=-3072,Yaw=-4096)
      AimAdjustTime=100.000000
-     AimSpread=1024
+     AimSpread=16
      AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000	 
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=3072

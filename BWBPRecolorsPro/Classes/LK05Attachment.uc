@@ -5,8 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-
-// Edited by (NL)NOOTLORD
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class LK05Attachment extends BallisticAttachment;
 
