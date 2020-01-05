@@ -41,7 +41,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.115000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_AK47rifle'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_AK47Clip'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

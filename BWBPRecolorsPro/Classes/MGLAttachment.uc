@@ -10,9 +10,9 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
      FlashMode=MU_Primary 
      FlashScale=0.900000	 
+     LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      InstantMode=MU_Primary
-     LightMode=MU_Primary
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
      TracerMode=MU_Primary

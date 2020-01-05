@@ -215,14 +215,14 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      AltMuzzleFlashClass=Class'BWBPRecolorsPro.LK05SilencedFlash'
-     FlashMode=MU_Primary 	 
+     FlashMode=MU_Both 
      AltFlashBone="tip2"
      FlashScale=0.400000
+     LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassMode=MU_Both	 
      InstantMode=MU_Both
-     LightMode=MU_Primary
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
      TracerMode=MU_Primary	 

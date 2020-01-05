@@ -169,7 +169,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Fire',Volume=2.000000,Radius=384.000000)
      bPawnRapidFireAnim=True
      FireRate=0.090000
-     AmmoClass=Class'BallisticProV55.Ammo_XRS10Bullets'
+     AmmoClass=Class'BallisticProV55.Ammo_XRS10Clip'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

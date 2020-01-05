@@ -105,11 +105,12 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
      FlashMode=MU_Primary
+     FlashScale=1.000000	 
+     LightMode=MU_Primary		 
      ImpactManager=Class'BallisticProV55.IM_Bullet' 
-     BrassClass=Class'BWBPRecolorsPro.Brass_BMG'
+     BrassClass=Class'BWBPRecolorsPro.Brass_X82rifle'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
-     LightMode=MU_Primary
      TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
      TracerMode=MU_Primary	 

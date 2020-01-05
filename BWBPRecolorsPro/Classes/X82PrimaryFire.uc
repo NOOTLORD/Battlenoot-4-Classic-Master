@@ -29,7 +29,7 @@ defaultproperties
      bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
      FlashScaleFactor=0.400000
-     BrassClass=Class'BWBPRecolorsPro.Brass_BMG'
+     BrassClass=Class'BWBPRecolorsPro.Brass_X82rifle'
      BrassBone="breach"
      BrassOffset=(X=-50.000000,Y=1.500000,Z=2.500000)
      RecoilPerShot=1024.000000
@@ -38,7 +38,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Fire',Volume=2.000000,Radius=1024.000000)
      FireEndAnim=
      FireRate=0.900000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_X82rifle'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_X82Clip'
      ShakeRotMag=(X=450.000000,Y=64.000000)
      ShakeRotRate=(X=12400.000000,Y=12400.000000,Z=12400.000000)
      ShakeRotTime=0.000000						  

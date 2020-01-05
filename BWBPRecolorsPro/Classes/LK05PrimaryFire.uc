@@ -277,7 +277,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.LK05.LK05-RapidFire',Volume=2.000000)
      bPawnRapidFireAnim=True
      FireEndAnim=
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05rifle'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05Clip'
      FireRate=0.095000
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)

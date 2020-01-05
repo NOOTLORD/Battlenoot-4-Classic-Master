@@ -2001,8 +2001,6 @@ singular event BaseChange()
 			JumpOffPawn();
 		}
 	}
-	else if (Sandbag(Base) != None) //hack fixme
-		JumpOffPawn();
 	
 	else if ( (Decoration(Base) != None) && (Velocity.Z < -400) )
 	{

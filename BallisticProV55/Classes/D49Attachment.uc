@@ -142,9 +142,9 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
-     ImpactManager=Class'BallisticProV55.IM_BigBullet'
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
      AltFlashBone="tip2"
-     FlashScale=0.425000
+     FlashScale=0.400000
      BrassClass=Class'BallisticProV55.Brass_Magnum'
      BrassBone="MagnumWhole"
      InstantMode=MU_Both
@@ -155,6 +155,8 @@ defaultproperties
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+	 ReloadAnim="Reload_Pistol"
+     ReloadAnimRate=0.350000
      Mesh=SkeletalMesh'BallisticAnims2.D49-3rd'
      DrawScale=0.150000
      bSelected=True

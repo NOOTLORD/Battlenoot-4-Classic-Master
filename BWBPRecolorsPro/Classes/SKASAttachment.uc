@@ -60,11 +60,11 @@ defaultproperties
      AltMuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'	 
      FlashMode=MU_Primary 	 
      FlashScale=2.000000
+     LightMode=MU_Primary		 
      ImpactManager=Class'BallisticProV55.IM_Shell'	 
      BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
-     LightMode=MU_Primary
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerMode=MU_Primary	 

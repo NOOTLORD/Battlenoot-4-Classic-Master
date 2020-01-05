@@ -288,6 +288,7 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      bShowChargingBar=False
      bCanThrow=False
+     AmmoClass=Class'BWBPOtherPackPro.Ammo_PD97Clip'	 
      Description="Originally a specialist law enforcement weapon, the PD-97 'Bloodhound' has been adapted into a military role, used to control opponents and track their movement upon the battlefield. While less immediately lethal than most other weapons, its tactical repertoire is not to be underestimated."
      DisplayFOV=57.500000
      Priority=24

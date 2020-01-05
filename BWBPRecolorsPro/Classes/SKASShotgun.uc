@@ -126,7 +126,7 @@ defaultproperties
      AIRating=0.850000
      CurrentRating=0.850000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKASshotgun'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKASDrum'
      Description="SKAS-21 Super Shotgun||Manufacturer: UTC Defense Tech|Primary: Variable Fire Buckshot|Secondary: Tri-Barrel Blast"
      Priority=71
      HudColor=(B=190,G=190,R=190)

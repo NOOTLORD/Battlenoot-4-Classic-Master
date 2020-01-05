@@ -35,6 +35,7 @@ replication
 //=================================
 //Silencer Code
 //=================================
+
 function ServerSwitchSilencer(bool bNewValue)
 {
 	if (!Instigator.IsLocallyControlled())
@@ -253,7 +254,7 @@ defaultproperties
      AIRating=0.70000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05rifle'  
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05Clip'  
      Priority=41
      HudColor=(B=24,G=48)
      CustomCrossHairScale=0.000000

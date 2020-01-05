@@ -35,18 +35,6 @@ replication
 		ServerSwitchStock;
 }
 
-
-simulated function float ChargeBar()
-{
-	if (level.TimeSeconds >= FireMode[1].NextFireTime)
-	{
-		if (FireMode[1].bIsFiring)
-			return FMin(1, FireMode[1].HoldTime / FireMode[1].MaxHoldTime);
-		return FMin(1, SARFlashFire(FireMode[1]).DecayCharge / FireMode[1].MaxHoldTime);
-	}
-	return (FireMode[1].NextFireTime - level.TimeSeconds) / FireMode[1].FireRate;
-}
-
 simulated function AdjustStockProperties ()
 {
 	if (bStockOpen)

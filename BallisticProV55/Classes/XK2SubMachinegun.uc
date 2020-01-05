@@ -20,41 +20,10 @@ var() sound		SilencerOffSound;		//
 var() sound		SilencerOnTurnSound;	// Silencer screw on sound
 var() sound		SilencerOffTurnSound;	//
 
-var int				IceCharge;
-var float			LastChargeTime;
-
-const ChargeInterval = 0.5;
-
 replication
 {
 	reliable if (Role < ROLE_Authority)
 		ServerSwitchSilencer;
-	reliable if (Role == ROLE_Authority)
-		IceCharge;
-}
-
-simulated function WeaponTick(float DT)
-{
-	Super.WeaponTick(DT);
-	
-	if (!IsFiring() && IceCharge < 20 && Level.TimeSeconds > LastChargeTime + ChargeInterval)
-	{
-		IceCharge++;
-		LastChargeTime = Level.TimeSeconds;
-	}
-}
-
-simulated function float ChargeBar()
-{
-	return IceCharge/20.0f;
-}
-
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2)
-		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
-	else
-		PlayAnim(CockAnim, CockAnimRate, 0.2);
 }
 
 function ServerSwitchSilencer(bool bNewValue)
@@ -245,7 +214,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.110000
      FireModeClass(0)=Class'BallisticProV55.Xk2PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.Xk2PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
      AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'

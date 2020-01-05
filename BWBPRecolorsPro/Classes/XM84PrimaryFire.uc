@@ -14,14 +14,14 @@ defaultproperties
 {
      NoClipPreFireAnim="PrepThrow"
      SpawnOffset=(X=25.000000,Y=10.000000,Z=2.000000)
-     BrassClass=Class'BWBPRecolorsPro.Brass_XClip'
+     BrassClass=Class'BWBPRecolorsPro.Brass_XM84grenade'
      BrassBone="tip"
      BrassOffset=(X=10.000000)
      BallisticFireSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Throw',Radius=32.000000,bAtten=True)
      PreFireAnim="PrepThrow"
      FireAnim="Throw"
      FireRate=2.000000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_XM84flash'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_XM84Grenade'
      ShakeRotMag=(X=0.000000,Y=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000						  

@@ -86,49 +86,12 @@ simulated function Destroyed()
 	Super.Destroyed();
 }
 
-simulated function InstantFireEffects(byte Mode)
-{
-	if (FiringMode != 0)
-		MeleeFireEffects();
-	else
-		Super.InstantFireEffects(FiringMode);
-}
-// Do trace to find impact info and then spawn the effect
-simulated function MeleeFireEffects()
-{
-	local Vector HitLocation, Dir, Start;
-	local Material HitMat;
 
-	if (mHitLocation == vect(0,0,0))
-		return;
-
-	if (Level.NetMode == NM_Client)
-	{
-		mHitActor = None;
-		Start = Instigator.Location + Instigator.EyePosition();
-		Dir = Normal(mHitLocation - Start);
-		mHitActor = Trace (HitLocation, mHitNormal, mHitLocation + Dir*10, mHitLocation - Dir*10, false,, HitMat);
-		if (mHitActor == None || (!mHitActor.bWorldGeometry))
-			return;
-
-		if (HitMat == None)
-			mHitSurf = int(mHitActor.SurfaceType);
-		else
-			mHitSurf = int(HitMat.SurfaceType);
-	}
-	else
-		HitLocation = mHitLocation;
-	if (mHitActor == None || (!mHitActor.bWorldGeometry && Mover(mHitActor) == None && Vehicle(mHitActor) == None))
-		return;
-//	if (ImpactManager != None)
-		class'IM_GunHit'.static.StartSpawn(HitLocation, mHitNormal, mHitSurf, instigator);
-}
 
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     MeleeImpactManager=Class'BallisticProV55.IM_GunHit'
      FlashBone="Muzzle"
      AltFlashBone="Muzzle"
      FlashScale=0.200000

@@ -105,12 +105,10 @@ function PlayFiring()
 {
 	if (SRS600Rifle(Weapon).bSilenced)
 	{
-		SRS600Rifle(Weapon).StealthImpulse(0.05);
 		Weapon.SetBoneScale (0, 1.0, SRS600Rifle(Weapon).SilencerBone);
 	}
 	else
 	{
-		SRS600Rifle(Weapon).StealthImpulse(0.3);
 		Weapon.SetBoneScale (0, 0.0, SRS600Rifle(Weapon).SilencerBone);
 	}
 
@@ -168,13 +166,13 @@ defaultproperties
 {
      SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      SFlashBone="tip2"
-     SFlashScaleFactor=0.750000
+     SFlashScaleFactor=0.500000
      CutOffDistance=6144.000000
      CutOffStartRange=3072.000000
      TraceRange=(Min=30000.000000,Max=30000.000000)
      WaterRangeFactor=0.800000
-     MaxWallSize=48.000000
-     MaxWalls=3
+     MaxWallSize=64.000000
+     MaxWalls=1
      Damage=40.000000
      DamageHead=80.000000
      DamageLimb=40.000000
@@ -183,18 +181,18 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTSRS600Rifle'
      DamageTypeHead=Class'BallisticProV55.DTSRS600RifleHead'
      DamageTypeArm=Class'BallisticProV55.DTSRS600Rifle'
-     KickForce=2000
-     PenetrateForce=120
-     bPenetrate=True
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False
      ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-1',Volume=0.800000,Radius=48.000000,bAtten=True)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
-     FlashScaleFactor=0.500000
+     FlashScaleFactor=0.450000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassOffset=(X=-10.000000,Y=1.000000,Z=-1.000000)
+     BrassOffset=(X=-10.000000,Y=1.000000,Z=-1.500000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=240.000000
-     FireChaos=0.065000
+     FireChaos=0.070000
      FireChaosCurve=(Points=(,(InVal=0.160000),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=32.000000
      YInaccuracy=32.000000
@@ -206,10 +204,10 @@ defaultproperties
      AmmoClass=Class'BallisticProV55.Ammo_RS762mm'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=2.000000
+	 ShakeRotTime=0.000000					  
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=2.000000
+	 ShakeOffsetTime=0.000000						 
      WarnTargetPct=0.200000
-     aimerror=800.000000
+     aimerror=600.000000
 }

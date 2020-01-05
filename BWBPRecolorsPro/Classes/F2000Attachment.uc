@@ -46,11 +46,11 @@ defaultproperties
      FlashBone="tip2"
      AltFlashBone="tip2"
      FlashScale=0.150000
+     LightMode=MU_Primary		 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassMode=MU_Both
      InstantMode=MU_Both
-     LightMode=MU_Primary
      TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
      TracerMode=MU_Primary	 

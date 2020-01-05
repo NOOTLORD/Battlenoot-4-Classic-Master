@@ -1,7 +1,5 @@
 class SRS600Rifle extends BallisticWeapon;
 
-var float StealthRating, StealthImps;
-
 var   bool		bSilenced;				// Silencer on. Silenced
 var() name		SilencerBone;			// Bone to use for hiding silencer
 var() name		SilencerOnAnim;			// Think hard about this one...
@@ -15,66 +13,12 @@ replication
 		ServerSwitchSilencer;
 }
 
-simulated function ClientPlayerDamaged(byte DamageFactor)
-{
-	super.ClientPlayerDamaged(DamageFactor);
-	if (Instigator.IsLocallyControlled())
-		StealthImpulse(FMin(0.8, float(DamageFactor)/255));
-}
-
-simulated function ClientJumped()
-{
-	super.ClientJumped();
-	if (Instigator.IsLocallyControlled())
-		StealthImpulse(0.15);
-}
-
-simulated function StealthImpulse(float Amount)
-{
-	if (Instigator.IsLocallyControlled())
-		StealthImps = FMin(1.0, StealthImps + Amount);
-}
-
-simulated event WeaponTick(float DT)
-{
-	local float Speed, NewSR, P;
-
-	super.WeaponTick(DT);
-
-	if (!Instigator.IsLocallyControlled())
-		return;
-
-	if (Instigator.Base != None)
-		Speed = VSize(Instigator.Velocity - Instigator.Base.Velocity);
-	else
-		Speed = VSize(Instigator.Velocity);
-	if (Instigator.bIsCrouched)
-		NewSR = 0.06;
-	else
-		NewSR = 0.2;
-	if (Speed > Instigator.WalkingPct * Instigator.GroundSpeed)
-		NewSR += Speed / 1100;
-	else
-		NewSR += Speed / 1900;
-
-
-
-	NewSR = FMin(1.0, NewSR + StealthImps);
-
-	P = NewSR-StealthRating;
-	P = P / Abs(P);
-	StealthRating = FClamp(StealthRating + P*DT, NewSR, StealthRating);
-
-	StealthImps = FMax(0, StealthImps - DT / 4);
-}
-
 simulated function PlayCocking(optional byte Type)
 {
 	if (Type == 2)
 		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
 	else
 		PlayAnim(CockAnim, CockAnimRate, 0.2);
-	StealthImpulse(0.1);
 }
 
 function ServerSwitchSilencer(bool bNewValue)
@@ -95,8 +39,6 @@ exec simulated function WeaponSpecial(optional byte i)
 	bSilenced = !bSilenced;
 	ServerSwitchSilencer(bSilenced);
 	SwitchSilencer(bSilenced);
-
-	StealthImpulse(0.1);
 }
 
 simulated function SwitchSilencer(bool bNewValue)
@@ -136,8 +78,6 @@ simulated function PlayReload()
 {
 	super.PlayReload();
 
-	StealthImpulse(0.1);
-
 	if (MagAmmo < 1)
 		SetBoneScale (1, 0.0, 'Bullet');
 
@@ -145,23 +85,6 @@ simulated function PlayReload()
 		SetBoneScale (0, 1.0, SilencerBone);
 	else
 		SetBoneScale (0, 0.0, SilencerBone);
-}
-
-static function class<Pickup> RecommendAmmoPickup(int Mode)
-{
-	return class'AP_SRS900Clip';
-}
-
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
 }
 
 // AI Interface =====
@@ -242,11 +165,15 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.650000
      CurrentRating=0.600000
+     bCanThrow=False
+     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'																	  												  
      Description="Another battlefield favourite produced by high-tech manufacturer, NDTR Industries, the SRS-900 is indeed a fine weapon. Using high velocity 7.62mm ammunition, this rifle causes a lot of damage to the target, but suffers from high recoil, chaos and a low clip capacity. The altered design, can now incorporate a silencer to the end of the barrel, increasing its capabilities as a stealth weapon. This particular model, also features a versatile, red-filter scope, complete with various tactical readouts and indicators, including a range finder, stability metre, elevation indicator, ammo display and stealth meter."
      Priority=40
      HudColor=(B=50,G=50,R=200)
+     CustomCrossHairScale=0.000000								  
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
+     GroupOffset=6				  
      PickupClass=Class'BallisticProV55.SRS600Pickup'
      PlayerViewOffset=(X=2.000000,Y=9.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'

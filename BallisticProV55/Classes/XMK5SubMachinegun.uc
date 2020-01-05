@@ -9,230 +9,9 @@
 //=============================================================================
 class XMK5SubMachinegun extends BallisticWeapon;
 
-var() name		DartLoadAnim;		//Anim for Dart reload
-var() Sound		DartLoadSound;		//Sounds for Dart reloading
-var() Sound		DartCockSound;		//Sounds for Dart cocking
-
-replication
-{
-	unreliable if (Role == Role_Authority)
-		ClientDartPickedUp;
-}
-
-// Notifys for Dart loading sounds
-simulated function Notify_DartIn()			{	PlaySound(DartLoadSound, SLOT_Misc, 0.5, ,64);	}
-simulated function Notify_DartHit()			{	PlaySound(DartCockSound, SLOT_Misc, 0.75, ,64);	XMK5SecondaryFire(FireMode[1]).bLoaded = true;	}
-
-// A Dart has just been picked up. Loads one in if we're empty
-function DartPickedUp ()
-{
-	if (Ammo[1].AmmoAmount < Ammo[1].MaxAmmo)
-	{
-		if (Instigator.Weapon == self)
-			LoadDart();
-		else
-			XMK5SecondaryFire(FireMode[1]).bLoaded=true;
-	}
-	if (!Instigator.IsLocallyControlled())
-		ClientDartPickedUp();
-}
-
-simulated function ClientDartPickedUp()
-{
-	if (Ammo[1].AmmoAmount < Ammo[1].MaxAmmo)
-	{
-//		if (ClientState == WS_ReadyToFire)
-			LoadDart();
-//		else
-//			XMK5SecondaryFire(FireMode[1]).bLoaded=true;
-	}
-}
-simulated function bool IsDartLoaded()
-{
-	return XMK5SecondaryFire(FireMode[1]).bLoaded;
-}
-
-// Tell our ammo that this is the XMK5 it must notify about Dart pickups
-function GiveAmmo(int m, WeaponPickup WP, bool bJustSpawned)
-{
-	Super.GiveAmmo(m, WP, bJustSpawned);
-	if (Ammo[1] != None && Ammo_XMK5Darts(Ammo[1]) != None)
-		Ammo_XMK5Darts(Ammo[1]).DaXMK5 = self;
-}
-
-simulated event AnimEnd (int Channel)
-{
-    local name anim;
-    local float frame, rate;
-
-    GetAnimParams(0, anim, frame, rate);
-	if (anim == DartLoadAnim)
-	{
-		ReloadState = RS_None;
-		if (Role == ROLE_Authority)
-			bServerReloading=False;
-		IdleTweenTime=0.0;
-		PlayIdle();
-	}
-	else
-		IdleTweenTime=default.IdleTweenTime;
-		Super.AnimEnd(Channel);
-}
-// Load in a Dart
-simulated function LoadDart()
-{
-	if (Ammo[1].AmmoAmount < 1 || XMK5SecondaryFire(FireMode[1]).bLoaded)
-		return;
-	if (ReloadState == RS_None)
-	{
-		ReloadState = RS_Cocking;
-		if (Role == ROLE_Authority)
-			bServerReloading=True;
-		PlayAnim(DartLoadAnim, 1.1, , 0);
-	}
-}
-
-function ServerStartReload (optional byte i)
-{
-	local int channel;
-	local name seq;
-	local float frame, rate;
-
-	if (bPreventReload)
-		return;
-	if (ReloadState != RS_None)
-		return;
-
-	GetAnimParams(channel, seq, frame, rate);
-	if (seq == DartLoadAnim)
-		return;
-
-	if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
-	{	
-		if (AmmoAmount(1) > 0 && !IsReloadingDart())
-		{
-			LoadDart();
-			ClientStartReload(1);
-		}
-		return;
-	}
-	super.ServerStartReload();
-}
-
-simulated function ClientStartReload(optional byte i)
-{
-	if (Level.NetMode == NM_Client)
-	{
-		if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
-		{
-			if (AmmoAmount(1) > 0 && !IsReloadingDart())
-				LoadDart();
-		}
-		else
-			CommonStartReload(i);
-	}
-}
-
-simulated function bool CheckWeaponMode (int Mode)
-{
-	if (Mode == 1)
-		return FireCount < 1;
-	return super.CheckWeaponMode(Mode);
-}
-
-function bool BotShouldReloadDart ()
-{
-	if ( (Level.TimeSeconds - Instigator.LastPainTime > 1.0) )
-		return true;
-	return false;
-}
-
-simulated event WeaponTick(float DT)
-{
-	super.WeaponTick(DT);
-
-	if (AIController(Instigator.Controller) != None && !IsDartLoaded()&& AmmoAmount(1) > 0 && BotShouldReloadDart() && !IsReloadingDart())
-		LoadDart();
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Result, Height, Dist, VDot;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-/*
-	if (AmmoAmount(1) < 1 || !IsGrenadeLoaded())
-		return 0;
-	else if (MagAmmo < 1)
-		return 1;
-*/
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-	Height = B.Enemy.Location.Z - Instigator.Location.Z;
-	VDot = Normal(B.Enemy.Velocity) Dot Normal(Instigator.Location - B.Enemy.Location);
-
-	Result = FRand()-0.3;
-	// Too far for grenade
-	if (Dist > 800)
-		Result -= (Dist-800) / 2000;
-	// Too close for grenade
-	if (Dist < 500 &&  VDot > 0.3)
-		result -= (500-Dist) / 1000;
-	if (VSize(B.Enemy.Velocity) > 50)
-	{
-		// Straight lines
-		if (Abs(VDot) > 0.8)
-			Result += 0.1;
-		// Enemy running away
-		if (VDot < 0)
-			Result -= 0.2;
-		else
-			Result += 0.2;
-	}
-	// Higher than enemy
-//	if (Height < 0)
-//		Result += 0.1;
-	// Improve grenade acording to height, but temper using horizontal distance (bots really like grenades when right above you)
-	Dist = VSize(B.Enemy.Location*vect(1,1,0) - Instigator.Location*vect(1,1,0));
-	if (Height < -100)
-		Result += Abs((Height/2) / Dist);
-
-	if (Result > 0.5)
-		return 1;
-	return 0;
-}
-
-simulated function bool IsReloadingDart()
-{
-    local name anim;
-    local float frame, rate;
-    GetAnimParams(0, anim, frame, rate);
-	if (Anim == DartLoadAnim)
- 		return true;
-	return false;
-}
-
-function bool CanAttack(Actor Other)
-{
-	if (!IsDartLoaded())
-	{
-		if (IsReloadingDart())
-		{
-			if ((Level.TimeSeconds - Instigator.LastPainTime > 1.0))
-				return false;
-		}
-		else if (AmmoAmount(1) > 0 && BotShouldReloadDart())
-		{
-			LoadDart();
-			return false;
-		}
-	}
-	return super.CanAttack(Other);
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -263,9 +42,6 @@ function float SuggestDefenseStyle()	{	return -0.6;	}
 
 defaultproperties
 {
-     DartLoadAnim="Reload2"
-     DartLoadSound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_LoadDart'
-     DartCockSound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_CockDart'
      PlayerSpeedFactor=1.050000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
@@ -316,12 +92,11 @@ defaultproperties
      RecoilDeclineTime=1.250000
      RecoilDeclineDelay=0.125000
      FireModeClass(0)=Class'BallisticProV55.XMK5PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.XMK5SecondaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownTime=0.350000
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_XMK5Clip''
      Description="NDTR's recent line of urban submachineguns, specfically the XMk5, has garnered attention from various UTC units operating in such environments. The XMk5 is often, and is indeed encouraged to be, fitted with all manner of attachments designed by NDTR as well. While many of the attachments are 'standard' sights, grenade launchers, flash lights and laser sights, there are other more peculiar devices. One of the most popular of these, is a unique, air-powered, dart launcher. The most commonly used dart, is one that stuns and poisons the victim, making them easy prey for the XMk5's primary bullet fire mode."
      Priority=41
      HudColor=(G=150,R=225)
@@ -329,7 +104,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
      GroupOffset=2
-     PickupClass=Class'BallisticProV55.XMK5Pickup'
      PlayerViewOffset=(X=2.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.XMK5Attachment'
      IconMaterial=Texture'BallisticTextures_25.OA-SMG.SmallIcon_OASMG'
@@ -344,5 +118,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.OA-SMG'
      DrawScale=0.450000
      AmbientGlow=0
-     bSelected=True
 }

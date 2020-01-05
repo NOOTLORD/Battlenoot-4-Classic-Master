@@ -29,77 +29,6 @@ simulated function TickAim(float DT)
 {
 	Super(BallisticWeapon).TickAim(DT);
 }
-function Notify_Deploy()
-{
-	local vector HitLoc, HitNorm, Start, End;
-	local actor T;
-	local Rotator CompressedEq;
-    local BallisticTurret Turret;
-    local int Forward;
-
-	if (Instigator.HeadVolume.bWaterVolume)
-		return;
-	// Trace forward and then down. make sure turret is being deployed:
-	//   on world geometry, at least 30 units away, on level ground, not on the other side of an obstacle
-	// BallisticPro specific: Can be deployed upon sandbags providing that sandbag is not hosting
-	// another weapon already. When deployed upon sandbags, the weapon is automatically deployed 
-	// to the centre of the bags.
-	
-	Start = Instigator.Location + Instigator.EyePosition();
-	for (Forward=75;Forward>=45;Forward-=15)
-	{
-		End = Start + vector(Instigator.Rotation) * Forward;
-		T = Trace(HitLoc, HitNorm, End, Start, true, vect(6,6,6));
-		if (T != None && VSize(HitLoc - Start) < 30)
-			return;
-		if (T == None)
-			HitLoc = End;
-		End = HitLoc - vect(0,0,100);
-		T = Trace(HitLoc, HitNorm, End, HitLoc, true, vect(6,6,6));
-		if (T != None && (T.bWorldGeometry && (Sandbag(T) == None || Sandbag(T).AttachedWeapon == None)) && HitNorm.Z >= 0.9 && FastTrace(HitLoc, Start))
-			break;
-		if (Forward <= 45)
-			return;
-	}
-
-	FireMode[1].bIsFiring = false;
-   	FireMode[1].StopFiring();
-
-	if(Sandbag(T) != None)
-	{
-		HitLoc = T.Location;
-		HitLoc.Z += class'M925Turret'.default.CollisionHeight + 15;
-	}
-	
-	else
-	{
-		HitLoc.Z += class'M925Turret'.default.CollisionHeight - 9;
-	}
-	
-	CompressedEq = Instigator.Rotation;
-		
-	//Rotator compression causes disparity between server and client rotations,
-	//which then plays hob with the turret's aim.
-	//Do the compression first then use that to spawn the turret.
-	
-	CompressedEq.Pitch = (CompressedEq.Pitch >> 8) & 255;
-	CompressedEq.Yaw = (CompressedEq.Yaw >> 8) & 255;
-	CompressedEq.Pitch = (CompressedEq.Pitch << 8);
-	CompressedEq.Yaw = (CompressedEq.Yaw << 8);
-
-	Turret = Spawn(class'M925Turret', None,, HitLoc, CompressedEq);
-	
-    if (Turret != None)
-    {
-    	if (Sandbag(T) != None)
-			Sandbag(T).AttachedWeapon = Turret;
-		Turret.InitDeployedTurretFor(self);
-		Turret.TryToDrive(Instigator);
-		Destroy();
-    }
-    else
-		log("Notify_Deploy: Could not spawn turret for M925Machinegun");
-}
 
 simulated function PositionSights ()
 {
@@ -306,7 +235,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.220000
      FireModeClass(0)=Class'BallisticProV55.M925PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.M925PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownTime=0.700000
      BringUpTime=0.700000
      SelectForce="SwitchToAssaultRifle"
@@ -322,7 +251,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=6
      GroupOffset=1
-     PickupClass=Class'BallisticProV55.M925Pickup'
      PlayerViewOffset=(X=9.000000,Y=5.000000,Z=-7.000000)
      AttachmentClass=Class'BallisticProV55.M925Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M925'

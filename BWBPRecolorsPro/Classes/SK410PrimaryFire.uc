@@ -82,7 +82,7 @@ defaultproperties
      DamageTypeArm=Class'BWBPRecolorsPro.DT_SK410Shotgun'
      MuzzleFlashClass=Class'BWBPRecolorsPro.SK410HeatEmitter'
      FlashScaleFactor=0.750000
-     BrassClass=Class'BWBPRecolorsPro.Brass_ShotgunHE'
+     BrassClass=Class'BWBPRecolorsPro.Brass_SK410shotgun'
      BrassOffset=(X=-50.000000,Y=5.000000,Z=-6.500000)
      AimedFireAnim="SightFire"
      RecoilPerShot=700.000000
@@ -94,7 +94,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=2.250000
      FireRate=0.220000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410shotgun'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410Clip'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000

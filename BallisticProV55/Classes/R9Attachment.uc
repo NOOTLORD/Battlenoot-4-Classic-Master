@@ -142,15 +142,7 @@ simulated function Vector GetTipLocation()
 defaultproperties
 {
      TracerClasses(0)=Class'BallisticProV55.TraceEmitter_Default'
-     TracerClasses(1)=Class'BallisticProV55.TraceEmitter_Freeze'
-     TracerClasses(2)=Class'BallisticProV55.TraceEmitter_R9Laser'
-     TracerClasses(3)=Class'BallisticProV55.TraceEmitter_Default'
-     TracerClasses(4)=Class'BallisticProV55.TraceEmitter_Default'
-     ImpactManagers(0)=Class'BallisticProV55.IM_Bullet'
-     ImpactManagers(1)=Class'BallisticProV55.IM_FreezeHit'
-     ImpactManagers(2)=Class'BallisticProV55.IM_R9Laser'
-     ImpactManagers(3)=Class'BallisticProV55.IM_Bullet'
-     ImpactManagers(4)=Class'BallisticProV55.IM_Bullet'
+     ImpactManagers(0)=Class'BallisticProV55.IM_Bullet''
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      ImpactManager=Class'BallisticProV55.IM_Bullet'

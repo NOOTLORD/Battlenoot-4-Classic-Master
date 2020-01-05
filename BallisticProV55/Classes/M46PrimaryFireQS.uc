@@ -25,9 +25,9 @@ defaultproperties
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M46FlashEmitter'
-     FlashScaleFactor=0.550000
+     FlashScaleFactor=0.500000
      BrassClass=Class'BallisticProV55.Brass_M46AR'
-     BrassOffset=(X=-11.000000,Y=5.000000,Z=-5.500000)
+     BrassOffset=(X=-12.000000,Y=3.000000,Z=-4.500000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=180.000000
      FireChaos=0.045000

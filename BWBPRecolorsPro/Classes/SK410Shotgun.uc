@@ -192,7 +192,7 @@ defaultproperties
      AIRating=0.850000
      CurrentRating=0.850000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SK410shotgun'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SK410Clip'
      Description="The SK-410 shotgun is a large-bore, compact shotgun based off the popular AK-490 design. While it is illegal on several major planets, this powerful weapon and its signature explosive shotgun shells are almost ubiquitous. A weapon originally designed for breaching use, the SK-410 is now found in the hands of civillians and terrorists throughout the worlds. It had become so prolific with outer colony terrorist groups that the UTC began the SKAS assault weapon program in an effort to find a powerful shotgun of their own."
      Priority=245
      HudColor=(G=25)

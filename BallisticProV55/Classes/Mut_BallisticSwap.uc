@@ -605,23 +605,6 @@ event Tick (float DT)
 
 defaultproperties
 {
-     Swaps(0)=(Old=Class'XWeapons.ShieldGun',NewClassNames=("BallisticProV55.X3Knife","BallisticProV55.A909SkrithBlades","BallisticProV55.EKS43Katana","BallisticProV55.X4Knife"))
-     Swaps(1)=(Old=Class'XWeapons.AssaultRifle',NewClassNames=("BallisticProV55.M806Pistol","BallisticProV55.MRT6Shotgun","BallisticProV55.A42SkrithPistol","BallisticProV55.D49Revolver","BallisticProV55.AM67Pistol","BallisticProV55.RS8Pistol","BallisticProV55.GRS9Pistol","BallisticProV55.leMatRevolver","BallisticProV55.BOGPPistol","BallisticProV55.MD24Pistol"))
-     Swaps(2)=(Old=Class'XWeapons.BioRifle',NewClassNames=("BallisticProV55.XK2SubMachinegun","BallisticProV55.Fifty9MachinePistol","BallisticProV55.XRS10SubmachineGun","BallisticProV55.XMK5SubMachinegun"))
-     Swaps(3)=(Old=Class'XWeapons.ShockRifle',NewClassNames=("BallisticProV55.M50AssaultRifle","BallisticProV55.SARAssaultRifle","BallisticProV55.M46AssaultRifle"))
-     Swaps(4)=(Old=Class'XWeapons.LinkGun',NewClassNames=("BallisticProV55.A73SkrithRifle","BallisticProV55.E23PlasmaRifle","BallisticProV55.RSDarkStar","BallisticProV55.RSNovaStaff"))
-     Swaps(5)=(Old=Class'XWeapons.Minigun',NewClassNames=("BallisticProV55.M353Machinegun","BallisticProV55.M925Machinegun","BallisticProV55.XMV850Minigun"))
-     Swaps(6)=(Old=Class'XWeapons.FlakCannon',NewClassNames=("BallisticProV55.M763Shotgun","BallisticProV55.M290Shotgun","BallisticProV55.MRS138Shotgun","BallisticProV55.A500Reptile"))
-     Swaps(7)=(Old=Class'XWeapons.RocketLauncher',NewClassNames=("BallisticProV55.G5Bazooka","BallisticProV55.MACWeapon","BallisticProV55.MRocketLauncher"))
-     Swaps(8)=(Old=Class'XWeapons.SniperRifle',NewClassNames=("BallisticProV55.R78Rifle","BallisticProV55.R9RangerRifle","BallisticProV55.M75Railgun","BallisticProV55.MarlinRifle","BallisticProV55.SRS900Rifle","BallisticProV55.M75Railgun"))
-     Swaps(9)=(Old=Class'XWeapons.Painter',NewClassNames=("BallisticProV55.RX22AFlamer","BallisticProV55.HVCMk9LightningGun"),bSuper=True)
-     Swaps(10)=(Old=Class'XWeapons.Redeemer',NewClassNames=("BallisticProV55.RX22AFlamer","BallisticProV55.HVCMk9LightningGun"),bSuper=True)
-     Swaps(11)=(Old=Class'UTClassic.ClassicSniperRifle',NewClassNames=("BallisticProV55.R78Rifle","BallisticProV55.R9RangerRifle","BallisticProV55.M75Railgun","BallisticProV55.MarlinRifle","BallisticProV55.SRS900Rifle","BallisticProV55.M75Railgun"))
-     Swaps(12)=(Old=Class'Onslaught.ONSAVRiL',NewClassNames=("BallisticProV55.G5Bazooka","BallisticProV55.MACWeapon"))
-     Swaps(13)=(Old=Class'Onslaught.ONSGrenadeLauncher',NewClassNames=("BallisticProV55.NRP57Grenade"))
-     Swaps(14)=(Old=Class'Onslaught.ONSMineLayer',NewClassNames=("BallisticProV55.BX5Mine"))
-     Swaps(15)=(Old=Class'OnslaughtFull.ONSPainter',NewClassNames=("BallisticProV55.R78Rifle"),bSuper=True)
-     Swaps(16)=(Old=Class'XWeapons.SuperShockRifle',NewClassNames=("BallisticProV55.HVCMk9LightningGun"),bSuper=True)
      AmmoSwaps(0)=(Old=Class'XWeapons.AssaultAmmo')
      AmmoSwaps(1)=(Old=Class'XWeapons.BioAmmo')
      AmmoSwaps(2)=(Old=Class'XWeapons.ShockAmmo')
@@ -636,12 +619,7 @@ defaultproperties
      AmmoSwaps(11)=(Old=Class'Onslaught.ONSGrenadeAmmo')
      AmmoSwaps(12)=(Old=Class'Onslaught.ONSMineAmmo')
      AmmoSwaps(13)=(Old=Class'XWeapons.GrenadeAmmo')
-     NadeReplacePercent=15
-     GrenadePickupClasses(0)=Class'BallisticProV55.FP7Pickup'
-     GrenadePickupClasses(1)=Class'BallisticProV55.NRP57Pickup'
-     GrenadePickupClasses(2)=Class'BallisticProV55.T10Pickup'
-     GrenadePickupClasses(3)=Class'BallisticProV55.BX5Pickup'
-     GrenadePickupClasses(4)=Class'BallisticProV55.FP9Pickup'
+     NadeReplacePercent=0
      PickupChangeTime=60.000000
      LockerChangeTime=90.000000
      bLockersChange=True
