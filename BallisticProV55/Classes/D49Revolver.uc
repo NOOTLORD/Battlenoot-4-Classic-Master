@@ -53,15 +53,6 @@ var   EBarrelMode		RealBarrelMode;
 var   bool				bBarrelModeUsed;
 var   byte				BMByte, OldBMByte;
 
-var   Emitter		LaserDot;
-var   bool			bLaserOn;
-
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerUpdateLaser;
-}
-
 simulated function RevolverFired(EBarrelMode BarrelsFired)
 {
 	if (BarrelsFired == BM_Neither)
@@ -230,21 +221,6 @@ simulated function BringUp(optional Weapon PrevWeapon)
 	else
 		HandgunGroup = default.HandgunGroup;
 }
-simulated function bool PutDown()
-{
-	if (super.PutDown())
-	{
-		bLaserOn=false;
-		KillLaserDot();
-		if (Instigator.IsLocallyControlled())
-		{
-			bRevCocked=false;
-			SetBoneRotation('Hammer', rot(0,0,0));
-		}
-		return true;
-	}
-	return false;
-}
 
 simulated state Raising
 {
@@ -301,13 +277,6 @@ simulated function CommonCockGun(optional byte Type)
 		SafePlayAnim('Cock', 1.0, 0.2);
 }
 
-// Change some properties when using sights...
-simulated function SetScopeBehavior()
-{
-	super.SetScopeBehavior();
-	bUseNetAim = default.bUseNetAim || bScopeView || bLaserOn;
-}
-
 simulated function ApplyAimRotation()
 {
 	ApplyAimToView();
@@ -318,7 +287,7 @@ simulated function ApplyAimRotation()
 simulated function bool CheckWeaponMode (int Mode)
 {
 	if (IsInState('DualAction') || IsInState('PendingDualAction'))
-		return false;
+		return false;															   			   
 	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
 		return true;
 	if (Mode > 0 && OtherGun != None && D49Revolver(OtherGun) != None && FireCount < 1)
@@ -334,77 +303,9 @@ simulated function bool CheckWeaponMode (int Mode)
 	return true;
 }
 
-simulated function KillLaserDot()
-{
-	if (LaserDot != None)
-	{
-		LaserDot.Kill();
-		LaserDot = None;
-	}
-}
-simulated function SpawnLaserDot(optional vector Loc)
-{
-	if (LaserDot == None)
-		LaserDot = Spawn(class'M806LaserDot',,,Loc);
-}
-
-simulated function DrawLaserSight ( Canvas Canvas )
-{
-	local Vector HitLocation, Start, End, HitNormal;
-	local Rotator AimDir;
-	local Actor Other;
-
-	if (ClientState != WS_ReadyToFire || !bLaserOn/* || !bScopeView */|| ReloadState != RS_None || IsInState('DualAction') || Level.TimeSeconds - FireMode[0].NextFireTime < 0.2)
-	{
-		KillLaserDot();
-		return;
-	}
-
-	AimDir = BallisticFire(FireMode[0]).GetFireAim(Start);
-
-	End = Start + Normal(Vector(AimDir))*5000;
-	Other = FireMode[0].Trace (HitLocation, HitNormal, End, Start, true);
-	if (Other == None)
-		HitLocation = End;
-
-	// Draw dot at end of beam
-	SpawnLaserDot(HitLocation);
-	if (LaserDot != None)
-		LaserDot.SetLocation(HitLocation);
-	Canvas.DrawActor(LaserDot, false, false, Instigator.Controller.FovAngle);
-}
-
-simulated event RenderOverlays( Canvas Canvas )
-{
-	super.RenderOverlays(Canvas);
-	if (!IsInState('Lowered'))
-		DrawLaserSight(Canvas);
-}
-
-function ServerUpdateLaser(bool bNewLaserOn)
-{
-	bUseNetAim = bNewLaserOn;
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	if (B.Skill > Rand(6))
-	{
-		if (Chaos < 0.1 || Chaos < 0.5 && VSize(B.Enemy.Location - Instigator.Location) < 500)
-			return 1;
-	}
-	else if (FRand() > 0.75)
-		return 1;
-	return 0;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -488,7 +389,7 @@ defaultproperties
      RecoilDeclineTime=0.800000
      RecoilDeclineDelay=0.350000
      FireModeClass(0)=Class'BallisticProV55.D49PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.D49PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownAnimRate=1.250000
      PutDownTime=0.500000
      SelectForce="SwitchToAssaultRifle"
@@ -496,6 +397,7 @@ defaultproperties
      CurrentRating=0.600000
      bSniping=True
      bCanThrow=False
+     AmmoClass(0)=Class'BallisticProV55.Ammo_D49Bullets'	 
      Description="Another fine weapon designed by the acclaimed 'Black & Wood' company, the D49 revolver is a true hand cannon. Based on weapons of old, the D49 was intended for non-military use, but rather for self defense and civilian purposes. The dual-barrel design has made it a favourite among it's users, capable of causing massive damage if used correctly, able to easily kill an armored Terran."
      DisplayFOV=50.000000
      Priority=22
@@ -504,7 +406,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
      GroupOffset=2
-     PickupClass=Class'BallisticProV55.D49Pickup'
      PlayerViewOffset=(X=-2.000000,Y=13.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=512)
      AttachmentClass=Class'BallisticProV55.D49Attachment'
@@ -523,5 +424,4 @@ defaultproperties
      Skins(1)=Shader'BallisticWeapons2.D49.D49-Shiney'
      Skins(2)=Shader'BallisticWeapons2.D49.D49Shells-Shiney'
      AmbientGlow=0
-     bSelected=True
 }

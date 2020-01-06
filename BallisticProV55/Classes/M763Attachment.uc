@@ -20,6 +20,12 @@ simulated function InstantFireEffects(byte Mode)
 	local Material HitMat;
 	local int i;
 	local float XS, YS, RMin, RMax, Range, fX;
+
+	if (Mode == 1)
+	{
+		GasShotFX();
+		return;
+	}
 	
 	if (Level.NetMode == NM_Client && FireClass != None)
 	{
@@ -80,6 +86,18 @@ simulated function InstantFireEffects(byte Mode)
 				ImpactManager.static.StartSpawn(HitLocation, mHitNormal, mHitSurf, self);
 		}
 	}
+}
+
+// Does all the effects for an instant-hit kind of fire.
+// On the client, this uses mHitLocation to find all the other info needed.
+simulated function GasShotFX()
+{
+	if (mHitLocation == vect(0,0,0) || Instigator == none)
+		return;
+
+	SpawnTracer(1, mHitLocation);
+	FlyByEffects(1, mHitLocation);
+
 }
 
 // Spawn a tracer and water tracer
@@ -153,11 +171,12 @@ defaultproperties
      ImpactManager=Class'BallisticProV55.IM_Shell'
      FlashScale=1.800000
      BrassClass=Class'BallisticProV55.Brass_Shotgun'
+     TracerMode=MU_Both
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
-	 TracerChance=1.000000
+     TracerChance=0.500000
+     MeleeStrikeAnim="Melee_swing"
      SingleFireAnim="RifleHip_FireCock"
      SingleAimedFireAnim="RifleAimed_FireCock"
      Mesh=SkeletalMesh'BallisticAnims2.M763-3rd'
      DrawScale=0.080000
-     bSelected=True
 }

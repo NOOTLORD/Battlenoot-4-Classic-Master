@@ -28,7 +28,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTX4Knife'
      DamageTypeHead=Class'BallisticProV55.DTX4KnifeHead'
      DamageTypeArm=Class'BallisticProV55.DTX4KnifeLimb'
-     KickForce=0				  
+     KickForce=100
      HookStopFactor=1.700000
      HookPullForce=100.000000
      bReleaseFireOnDie=False
@@ -41,8 +41,7 @@ defaultproperties
      AmmoPerFire=0
      ShakeRotMag=(X=64.000000,Y=128.000000)
      ShakeRotRate=(X=2500.000000,Y=2500.000000,Z=2500.000000)
-     ShakeRotTime=0.000000						  
-     BotRefireRate=0.800000
-     WarnTargetPct=0.050000
-     aimerror=400.000000
+     ShakeRotTime=2.500000
+     BotRefireRate=0.500000
+     WarnTargetPct=0.50000
 }

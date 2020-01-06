@@ -826,8 +826,7 @@ defaultproperties
      AIRating=0.800000
      CurrentRating=0.800000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_G5Rocket'
      Description="Based on the original design by the legendary maniac Pirate, Var Dehidra, the G5 has undergone many alterations to become what it is today. The original bandit version was constructed by Var Dehidra to blast open armored cash transportation vehicles. Its name is derived from one of Dehidra's favourite targets, the G5 CTV 4x. It is now a very deadly weapon, used to destroy everything from tanks and structures to Skrith hordes and aircraft. The bombardement attack is a recent addition, replacing the original, primitive heat seeking function that caused it to target CTVs or backfire on the pirates' own craft, provided mainly for use in outdoor environments to destroy all manner of moving targets. The latest model also features a laser-painter device, allowing the user to guide the rocket wherever they wish."
      Priority=86
      HudColor=(B=25,G=150,R=50)
@@ -836,7 +835,6 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=8
-     PickupClass=Class'BallisticProV55.G5Pickup'
      PlayerViewOffset=(X=10.000000,Y=10.500000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_G5'

@@ -12,18 +12,6 @@
 //=============================================================================
 class M353Machinegun extends BallisticMachinegun;
 
-function InitWeaponFromTurret(BallisticTurret Turret)
-{
-	bNeedCock = false;
-	Ammo[0].AmmoAmount = Turret.AmmoAmount[0];
-	if (!Instigator.IsLocallyControlled())
-		ClientInitWeaponFromTurret(Turret);
-}
-simulated function ClientInitWeaponFromTurret(BallisticTurret Turret)
-{
-	bNeedCock=false;
-}
-
 simulated function TickAim(float DT)
 {
 	Super(BallisticWeapon).TickAim(DT);
@@ -78,28 +66,6 @@ simulated function bool HasAmmo()
 	return false;	//This weapon is empty
 }
 
-function float GetAIRating()
-{
-	local Bot B;
-
-	local float Dist;
-	local float Rating;
-
-	B = Bot(Instigator.Controller);
-
-	if ( B == None )
-		return AIRating;
-
-	Rating = Super.GetAIRating();
-
-	if (B.Enemy == None)
-		return Rating;
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 1024, 2048); 
-	}
-	
 simulated function SetScopeBehavior()
 {
 	bUseNetAim = default.bUseNetAim || bScopeView;
@@ -133,11 +99,40 @@ simulated function SetScopeBehavior()
 	}
 }
 
+// AI Interface =====
+// choose between regular or alt-fire
+function byte BestMode()	{	return 0;	}
+
+function float GetAIRating()
+{
+	local Bot B;
+
+	local float Dist;
+	local float Rating;
+
+	B = Bot(Instigator.Controller);
+
+	if ( B == None )
+		return AIRating;
+
+	Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
+		return Rating;
+
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 1024, 2048); 
+	}
+	
+
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.5;	}
 
 // tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return 0.5;	}												
+function float SuggestDefenseStyle()	{	return 0.5;	}	
+// End AI Stuff =====	
+										
 defaultproperties
 {
      BoxOnSound=(Sound=Sound'BallisticSounds2.M353.M353-BoxOn')
@@ -150,7 +145,7 @@ defaultproperties
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M353'
      BigIconCoords=(Y1=50,Y2=240)
-     SightFXClass=Class'BallisticProV55.M353SightLEDs'
+     SightFXClass=Class'BallisticProV55.M353SightLEDs'	 
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
@@ -202,8 +197,7 @@ defaultproperties
      AIRating=0.7500000
      CurrentRating=0.7500000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_M353Belt'
      Description="The M353 'Guardian' Machinegun has seen some of the most brutal battles ever recorded in recent history, and has helped win many of them, the most famous being the bloody 'Wasteland Seige' where 12 million Krao were slaughtered along a 500 mile line of defences. Used primarily as a defensive weapon, the M353's incredible rate of fire can quickly and effectively destroy masses of oncoming foes, especially melee attackers. When the secondary mode is activated, the Guardian becomes much more accurate when the user mounts it on the ground, allowing it to be a very effective defensive weapon. With its high rate of fire and high damage, the M353 becomes very inaccurate after just a few rounds and with its high ammo capacity, comes the difficulty of longer reload times than smaller weapons."
      DisplayFOV=50.000000
      Priority=43
@@ -225,5 +219,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.M353Machinegun'
      DrawScale=0.350000
      AmbientGlow=0
-     bSelected=True
 }

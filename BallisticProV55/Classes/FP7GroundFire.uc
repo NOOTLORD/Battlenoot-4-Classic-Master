@@ -3,7 +3,7 @@
 //
 // A small patch of fire. This is an emitter, but it also does the server side
 // damage stuff. These will fall to the ground and stay wherever they land.
-// This is spaawned on server for damage and on clients for effects.
+// This is spawned on server for damage and on clients for effects.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -14,123 +14,6 @@ class R9RangerRifle extends BallisticWeapon;
 
 #exec OBJ LOAD File=R9A_tex.utx
 
-exec simulated function SwitchWeaponMode (optional byte ModeNum)	
-{
-	if (ClientState == WS_ReadyToFire && ReloadState == RS_None) 
-	{
-		if (ModeNum == 0)
-			ServerSwitchWeaponMode(255);
-		else ServerSwitchWeaponMode(ModeNum-1);
-	}
-}
-
-// Cycle through the various weapon modes
-function ServerSwitchWeaponMode (byte NewMode)
-{
-	local int m;
-	
-	if (bPreventReload)
-		return;
-	if (ReloadState != RS_None)
-		return;
-		
-	if (NewMode == 255)
-		NewMode = CurrentWeaponMode + 1;
-		
-	if (NewMode == CurrentWeaponMode)
-		return;
-	
-	while (NewMode != CurrentWeaponMode && (NewMode >= WeaponModes.length || WeaponModes[NewMode].bUnavailable) )
-	{
-		if (NewMode >= WeaponModes.length)
-			NewMode = 0;
-		else
-			NewMode++;
-	}
-	if (!WeaponModes[NewMode].bUnavailable)
-	{
-		CurrentWeaponMode = NewMode;
-		NetUpdateTime = Level.TimeSeconds - 1;
-	}
-	
-	if (bNotifyModeSwitch)
-	{
-		if (Instigator != None && !Instigator.IsLocallyControlled())
-		{
-			BFireMode[0].SwitchWeaponMode(CurrentWeaponMode);
-			BFireMode[1].SwitchWeaponMode(CurrentWeaponMode);
-		}
-		ClientSwitchWeaponModes(CurrentWeaponMode);
-	}
-	
-	R9Attachment(ThirdPersonActor).CurrentTracerMode = CurrentWeaponMode;
-
-	if (Instigator.IsLocallyControlled())
-		default.LastWeaponMode = CurrentWeaponMode;
-		
-	for (m=0; m < NUM_FIRE_MODES; m++)
-		if (FireMode[m] != None && FireMode[m].bIsFiring)
-			StopFire(m);
-
-	bServerReloading = true;
-	if (BallisticAttachment(ThirdPersonActor) != None && BallisticAttachment(ThirdPersonActor).ReloadAnim != '')
-		Instigator.SetAnimAction('ReloadGun');
-	CommonStartReload(0);	//Server animation
-	ClientStartReload(0);	//Client animation
-}
-
-// See if firing modes will let us fire another round or not
-simulated function bool CheckWeaponMode (int Mode)
-{
-	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
-		return true;
-	if ((Mode == 0 && FireCount >= WeaponModes[CurrentWeaponMode].Value) || (Mode == 1 && FireCount >= 2))
-		return false;
-	return true;
-}
-
-//===========================================================================
-// ManageHeatInteraction
-//
-// Called from primary fire when hitting a target. Objects don't like having iterators used within them
-// and may crash servers otherwise.
-//===========================================================================
-function int ManageHeatInteraction(Pawn P, int HeatPerShot)
-{
-	local R9HeatManager HM;
-	local int HeatBonus;
-	
-	foreach P.BasedActors(class'R9HeatManager', HM)
-		break;
-	if (HM == None)
-	{
-		HM = Spawn(class'R9HeatManager',P,,P.Location + vect(0,0,-30));
-		HM.SetBase(P);
-	}
-	
-	if (HM != None)
-	{
-		HeatBonus = HM.Heat;
-		if (Vehicle(P) != None)
-			HM.AddHeat(HeatPerShot/4);
-		else HM.AddHeat(HeatPerShot);
-	}
-	
-	return heatBonus;
-}
-
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
 // AI Interface =====
 function byte BestMode()	{	return 0;	}
 
@@ -215,8 +98,7 @@ defaultproperties
      AIRating=0.800000
      CurrentRating=0.800000
 	 bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_R9Clip'
      Description="Outstanding reliability and durability in the field are what characterise one of Black & Wood's legendary rifles. Though not widely used by most military forces, the R9 is renowned for its near indestructable design, and superb reliability. Those who use the weapon, mostly snipers, hunters, and specialised squads, swear by it's accuracy and dependability. Often used without fancy features or burdening devices such as optical scopes and similar attachements, the R9 is a true legend with it's users."
      Priority=33
      HudColor=(G=175)
@@ -224,7 +106,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9
      GroupOffset=3
-     PickupClass=Class'BallisticProV55.R9Pickup'
      PlayerViewOffset=(Y=9.500000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.R9Attachment'
      IconMaterial=Texture'BallisticTextures3.ui.SmallIcon_R9'
@@ -240,5 +121,4 @@ defaultproperties
      DrawScale=0.500000
      Skins(4)=Shader'R9A_tex.R9_body_SH1'
      AmbientGlow=0
-     bSelected=True
 }

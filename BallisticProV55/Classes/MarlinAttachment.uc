@@ -21,5 +21,4 @@ defaultproperties
      FlyByMode=MU_Primary
      Mesh=SkeletalMesh'BWBP4-Anims.Marlin-3rd'
      DrawScale=0.125000
-     bSelected=True
 }

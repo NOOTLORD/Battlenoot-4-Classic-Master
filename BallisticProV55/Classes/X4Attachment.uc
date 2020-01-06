@@ -14,14 +14,14 @@ defaultproperties
      MeleeAltStrikeAnim="Blade_Smack"
      ImpactManager=Class'BallisticProV55.IM_Knife'
      BrassMode=MU_None
-     InstantMode=MU_Both
+     InstantMode=MU_Primary
      FlashMode=MU_None
      LightMode=MU_None
      TrackAnimMode=MU_Both
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
+     WaterTracerMode=MU_Primary	 
      MeleeStrikeAnim="Blade_Stab"
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims_25.X4_3rd'
      DrawScale=0.175000
-     bSelected=True
 }

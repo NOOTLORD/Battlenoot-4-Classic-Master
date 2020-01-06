@@ -14,5 +14,4 @@ defaultproperties
      GrenadeSmokeClass=Class'BallisticProV55.NRP57Trail'
      Mesh=SkeletalMesh'BallisticAnims2.Grenade-3rd'
      DrawScale=0.100000
-     bSelected=True
 }

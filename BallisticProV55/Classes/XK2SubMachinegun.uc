@@ -108,24 +108,9 @@ simulated function Notify_ClipOutOfSight()
 	SetBoneScale (1, 1.0, 'Bullet');
 }
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-		return true;
-	return false;	//This weapon is empty
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	return 0;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -217,8 +202,7 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_XK2Clip'
      Description="Yet another high quality weapon by Black & Wood, the XK2 is a light-weight, silenceable sub-machinegun. It has a very fast rate of fire, but its low velocity bullets make it less dangerous than other weapons. However, these low velocity rounds do allow the weapon to be easily silenced, turning it into an effective stealth weapon, used by many law enforcement organisations, and Black-Ops military units alike. The weapon's high rate of fire, and quick reload times, means that the soldier can pump out rounds quicker than even the M353, making it very useful for cover-fire."
      DisplayFOV=55.000000
      Priority=32
@@ -227,7 +211,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
      GroupOffset=1
-     PickupClass=Class'BallisticProV55.XK2Pickup'
      PlayerViewOffset=(X=4.000000,Y=8.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.Xk2Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_XK2'
@@ -242,5 +225,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.XK2SMG'
      DrawScale=0.200000
      AmbientGlow=0
-     bSelected=True
 }

@@ -10,9 +10,6 @@ class SARPrimaryFire extends BallisticRangeAttenFire;
 
 function PlayFiring()
 {
-	if (SARAssaultRifle(Weapon).bStockOpen && !SARAssaultRifle(Weapon).bStockOpenRotated)
-		SARAssaultRifle(Weapon).SetStockRotation();
-
 	if (ScopeDownOn == SDO_Fire)
 		BW.TemporaryScopeDown(0.5, 0.9);
 		
@@ -104,7 +101,7 @@ defaultproperties
      bModeExclusive=False
      FireEndAnim=
      FireRate=0.100000
-     AmmoClass=Class'BallisticProV55.Ammo_556mm'
+     AmmoClass=Class'BallisticProV55.Ammo_SARClip'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

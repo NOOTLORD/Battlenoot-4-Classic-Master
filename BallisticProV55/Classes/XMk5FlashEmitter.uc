@@ -73,6 +73,4 @@ defaultproperties
          SpawnOnTriggerPPS=500000.000000
      End Object
      Emitters(1)=SpriteEmitter'BallisticProV55.XMk5FlashEmitter.SpriteEmitter5'
-
-     bSelected=True
 }

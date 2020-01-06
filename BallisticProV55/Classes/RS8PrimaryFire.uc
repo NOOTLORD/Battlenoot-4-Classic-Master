@@ -170,7 +170,7 @@ defaultproperties
 	 FireEndAnim=
      FireAnimRate=1.500000
      FireRate=0.225000
-     AmmoClass=Class'BallisticProV55.Ammo_RS8Bullets'
+     AmmoClass=Class'BallisticProV55.Ammo_RS8Clip'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

@@ -30,18 +30,6 @@ simulated function Notify_CockAimed()
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
 // AI Interface =====
 function byte BestMode()	{	return 0;	}
 
@@ -135,8 +123,7 @@ defaultproperties
      CurrentRating=0.800000
      bSniping=True
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_R78Clip'
      Description="Originally taken from the design of a bird hunting rifle, the R78 'Raven', is a favourite among military snipers and commando corps. Used to a great extent by the expert marksmen of the New European Army, the Raven, is extremely reliable and capable of incredible damage in a single shot. The added long distance sniping scope makes the R78 one of the most deadly weapons. Of course, the gun is only as good as the soldier using it, with a low clip capacity, long reload times and it's terrible ineffectiveness in close quarters combat."
      DisplayFOV=55.000000
      Priority=33
@@ -145,7 +132,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9
      GroupOffset=2
-     PickupClass=Class'BallisticProV55.R78Pickup'
      PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.R78Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_R78'
@@ -160,5 +146,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.R78A1Rifle'
      DrawScale=0.450000
      AmbientGlow=0
-     bSelected=True
 }

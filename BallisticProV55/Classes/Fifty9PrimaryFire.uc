@@ -71,7 +71,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BallisticSounds3.UZI.UZI-Fire',Volume=0.900000)
      bPawnRapidFireAnim=True
      FireRate=0.072000
-     AmmoClass=Class'BallisticProV55.Ammo_FiftyNine'
+     AmmoClass=Class'BallisticProV55.Ammo_FiftyClip'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

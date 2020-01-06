@@ -54,14 +54,13 @@ defaultproperties
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=1
      FireModeClass(0)=Class'BallisticProV55.FP7PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.FP7PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.8500000
      CurrentRating=0.8500000
      bShowChargingBar=False
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_FP7Grenades'
      Description="A deadly hand grenade, the FP7 releases a searing blast of flames capable of melting metal with tempatures of over 7500 degrees farenheit. The flames will continue to burn for a while, causing significant damage to anyone caught within the blast radius. FP7's are still widely used against both soldiers and equipment. The weapon was used extensivly during both Human-Skrith wars and is especially famous for its part in the UTC-Cryon battles where the UTC 'Ice Hogs' used it to incinerate Cryon cyborgs."
      Priority=8
      HudColor=(G=50)
@@ -69,7 +68,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=0
      GroupOffset=3
-     PickupClass=Class'BallisticProV55.FP7Pickup'
      PlayerViewOffset=(X=8.000000,Y=10.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=1024,Yaw=-1024)
      AttachmentClass=Class'BallisticProV55.FP7Attachment'
@@ -79,5 +77,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.FP7Grenade'
      DrawScale=0.400000
      AmbientGlow=0
-     bSelected=True
 }

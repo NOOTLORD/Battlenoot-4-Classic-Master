@@ -54,7 +54,7 @@ defaultproperties
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"
      FireRate=0.400000
-     AmmoClass=Class'BWBPOtherPackPro.Ammo_PD97Clip'
+     AmmoClass=Class'BWBPOtherPackPro.Ammo_PD97Drum'
      ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)

@@ -53,7 +53,6 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
-    ClientPlayForceFeedback(FireForce);  // jdf
     FireCount++;
 	// End code from normal PlayFiring()
 
@@ -96,7 +95,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.250000
      FireRate=0.900000
-     AmmoClass=Class'BallisticProV55.Ammo_Marlin'
+     AmmoClass=Class'BallisticProV55.Ammo_MarlinBullet'
      ShakeRotMag=(X=400.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
 	 ShakeRotTime=0.000000					  

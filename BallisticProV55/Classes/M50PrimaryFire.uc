@@ -46,7 +46,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.110000
-     AmmoClass=Class'BallisticProV55.Ammo_556mm'
+     AmmoClass=Class'BallisticProV55.Ammo_M50Clip'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

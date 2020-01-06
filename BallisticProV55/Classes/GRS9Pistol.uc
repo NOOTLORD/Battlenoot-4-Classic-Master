@@ -137,8 +137,7 @@ defaultproperties
      PutDownAnimRate=1.500000
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9Clip'
      Description="The GRS9 from Drake & Co. is used primarily by inner core planets for law enforcement purposes. The additional laser unit adds an alternative attack to the GRS9. The laser unit can be held down, for up to 3.5 seconds, releasing a searing beam upon enemies. This drains the rechargeable battery however, which must be left to replenish when empty."
      Priority=9
      HudColor=(B=25,G=25,R=200)
@@ -159,7 +158,4 @@ defaultproperties
      Mesh=SkeletalMesh'BWBP4-Anims.Glock'
      DrawScale=0.150000
      AmbientGlow=0
-     bFullVolume=True
-     SoundRadius=128.000000
-     bSelected=True
 }

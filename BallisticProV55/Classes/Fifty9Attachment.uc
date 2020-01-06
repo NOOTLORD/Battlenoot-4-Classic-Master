@@ -8,14 +8,6 @@
 //=============================================================================
 class Fifty9Attachment extends HandgunAttachment;
 
-simulated function PostBeginPlay()
-{
-	super.PostBeginPlay();
-	SetBoneRotation('tip', rot(0,0,8192));
-	if (FRand() > 0.5)
-		SetBoneRotation('Stock', rot(32768,0,0));
-}
-
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.Fifty9FlashEmitter'
@@ -36,5 +28,4 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.Fifty9-3rd'
      DrawScale=0.190000
-     bSelected=True
 }

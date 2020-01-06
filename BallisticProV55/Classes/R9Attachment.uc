@@ -12,18 +12,6 @@ var byte CurrentTracerMode;
 var array< class<BCTraceEmitter> >	TracerClasses[5];
 var array< class<BCImpactManager> >	ImpactManagers[5];
 
-replication
-{
-	reliable if (Role == ROLE_Authority)
-		CurrentTracerMode;
-}
-
-simulated function PostBeginPlay()
-{
-	Super.PostBeginPlay();
-	CurrentTracerMode = BallisticWeapon(Instigator.Weapon).CurrentWeaponMode;
-}
-
 // Does all the effects for an instant-hit kind of fire.
 // On the client, this uses mHitLocation to find all the other info needed.
 simulated function InstantFireEffects(byte Mode)
@@ -128,6 +116,7 @@ simulated function SpawnTracer(byte Mode, Vector V)
 	}
 }
 
+
 simulated function Vector GetTipLocation()
 {
     local Coords C;
@@ -144,7 +133,6 @@ defaultproperties
      TracerClasses(0)=Class'BallisticProV55.TraceEmitter_Default'
      ImpactManagers(0)=Class'BallisticProV55.IM_Bullet''
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
-     AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      FlashScale=1.550000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
@@ -159,5 +147,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims3.USSR-3rd'
      DrawScale=0.160000
      Skins(0)=Shader'R9A_tex.R9_body_SH1'
-     bSelected=True
 }

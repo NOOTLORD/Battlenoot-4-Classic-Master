@@ -29,9 +29,6 @@ simulated function bool AllowFire()
 			Weapon.PlayOwnedSound(DryFireSound.Sound,DryFireSound.Slot,DryFireSound.Volume,DryFireSound.bNoOverride,DryFireSound.Radius,DryFireSound.Pitch,DryFireSound.bAtten);
 			bPlayedDryFire=true;
 		}
-		if (bDryUncock)
-			BW.bNeedCock=true;
-		BW.bNeedReload = BW.MayNeedReload(ThisModeNum, 0);
 
 		BW.EmptyFire(ThisModeNum);
 		return false;		// Is there ammo in weapon's mag
@@ -115,7 +112,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.100000
      FireRate=0.750000
-     AmmoClass=Class'BallisticProV55.Ammo_12Gauge'
+     AmmoClass=Class'BallisticProV55.Ammo_M763Shell'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

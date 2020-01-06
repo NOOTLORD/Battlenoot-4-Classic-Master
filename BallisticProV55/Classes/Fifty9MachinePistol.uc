@@ -9,11 +9,6 @@
 //=============================================================================
 class Fifty9MachinePistol extends BallisticWeapon;
 
-var   name		StockOpenAnim;
-var   name		StockCloseAnim;
-var   bool		bStockOpen, bStockOpenRotated;
-var   int StockChaosAimSpread;
-
 // This uhhh... thing is added to allow manual drawing of brass OVER the muzzle flash
 struct UziBrass
 {
@@ -21,25 +16,6 @@ struct UziBrass
 	var() float KillTime;
 };
 var   array<UziBrass>	UziBrassList;
-
-replication
-{
-	reliable if (Role == ROLE_Authority)
-		ServerSwitchStock;
-}
-
-simulated event WeaponTick (Float DT)
-{
-	Super.WeaponTick (DT);
-	
-	if (LastFireTime < Level.TimeSeconds - RecoilDeclineDelay && MeleeFatigue > 0)
-		MeleeFatigue = FMax(0, MeleeFatigue - DT/RecoilDeclineTime);
-}
-
-simulated function float ChargeBar()
-{
-	return MeleeFatigue;
-}
 
 simulated function RenderSightFX(Canvas Canvas)
 {
@@ -55,21 +31,6 @@ simulated function RenderSightFX(Canvas Canvas)
 			SightFX.SetRotation( OrthoRotation(C.XAxis, C.YAxis, C.ZAxis)  + rot(0,0,8192) );
 		Canvas.DrawActor(SightFX, false, false, DisplayFOV);
 	}
-}
-
-simulated function bool HasAmmoLoaded(byte Mode)
-{
-	if (Mode == 1)
-		return true;
-	if (bNoMag)
-		return HasNonMagAmmo(Mode);
-	else
-		return HasMagAmmo(Mode);
-}
-
-static function class<Pickup> RecommendAmmoPickup(int Mode)
-{
-	return class'AP_Fifty9Clip';
 }
 
 simulated event RenderOverlays( Canvas Canvas )
@@ -96,75 +57,6 @@ simulated event RenderOverlays( Canvas Canvas )
     bDrawingFirstPerson = false;
 }
 
-function ServerSwitchStock(bool bNewValue)
-{
-	bStockOpen = bNewValue;
-	SwitchStock(bNewValue);
-	AdjustUziProperties(false);
-}
-
-simulated function SwitchStock(bool bNewValue)
-{
-	if (Role == ROLE_Authority)
-		bServerReloading = True;
-	ReloadState = RS_GearSwitch;
-	
-	SetBoneRotation('Stock', rot(0,0,0));
-	if (bNewValue)
-		PlayAnim(StockOpenAnim);
-	else
-		PlayAnim(StockCloseAnim);
-}
-
-simulated function AdjustUziProperties (bool bDualMode)
-{
-	if (bStockOpen)
-	{
-		BFireMode[0].RecoilPerShot *= 0.75;
-		RecoilXFactor		*= 0.75;
-		RecoilYFactor		*= 0.75;
-		ChaosAimSpread = StockChaosAimSpread;
-	}
-	else
-	{
-		BFireMode[0].RecoilPerShot = BFireMode[0].default.RecoilPerShot;
-		RecoilXFactor		= default.RecoilXFactor;
-		RecoilYFactor		= default.RecoilYFactor;
-		ChaosAimSpread = default.ChaosAimSpread;
-	}
-	
-		ChaosAimSpread 		*= BCRepClass.default.AccuracyScale;
-}
-
-simulated function SetStockRotation()
-{
-	if (bStockOpen)
-	{
-		SetBoneRotation('Stock', rot(32768,0,0));
-		bStockOpenRotated = true;
-	}
-	else
-	{
-		SetBoneRotation('Stock', rot(0,0,0));
-		bStockOpenRotated = false;
-	}
-}
-
-simulated function PlayIdle()
-{
-	if (bStockOpen && !bStockOpenRotated)
-	{
-		SetStockRotation();
-		IdleTweenTime=0.0;
-		super.PlayIdle();
-		IdleTweenTime=default.IdleTweenTime;
-	}
-	else if (!bStockOpen && bStockOpenRotated)
-		SetStockRotation();
-	else
-		super.PlayIdle();
-}
-
 simulated function PlayCocking(optional byte Type)
 {
 	if (Type == 2)
@@ -179,43 +71,9 @@ simulated function PostBeginPlay()
 	super.PostbeginPlay();
 }
 
-simulated function Notify_Fifty9Melee()
-{
-	if (Role == ROLE_Authority)
-		Fifty9SecondaryFire(BFireMode[1]).NotifiedDoFireEffect();
-	PlayOwnedSound(BFireMode[1].BallisticFireSound.Sound,
-		BFireMode[1].BallisticFireSound.Slot,
-		BFireMode[1].BallisticFireSound.Volume,
-		BFireMode[1].BallisticFireSound.bNoOverride,
-		BFireMode[1].BallisticFireSound.Radius,
-		BFireMode[1].BallisticFireSound.Pitch,
-		BFireMode[1].BallisticFireSound.bAtten);
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	if (!HasAmmoLoaded(0))
-		return 1;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-
-	if (Dist > 200)
-		return 0;
-	if (Dist < FireMode[1].MaxRange())
-		return 1;
-	return Rand(2);
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -237,12 +95,6 @@ function float GetAIRating()
 	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 2048); 
 }
 
-simulated function SetScopeBehavior()
-{
-	Super.SetScopeBehavior();
-	AdjustUziProperties(false);
-}
-
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.9;	}
 // tells bot whether to charge or back off while defending against this weapon
@@ -253,9 +105,6 @@ defaultproperties
 {
 	 AIRating=0.85
 	 CurrentRating=0.85
-     StockOpenAnim="StockOut"
-     StockCloseAnim="StockIn"
-     StockChaosAimSpread=2048
      PlayerSpeedFactor=1.100000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
@@ -301,21 +150,19 @@ defaultproperties
      RecoilMax=6144.000000
      RecoilDeclineDelay=0.120000
      FireModeClass(0)=Class'BallisticProV55.Fifty9PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.Fifty9PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownTime=0.400000
      BringUpTime=0.500000
      SelectForce="SwitchToAssaultRifle"
      bShowChargingBar=True
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_FiftyClip'
      Description="Krome Firepower is a reletively new arms company, with the aim of producing guns with 'style'. The Fifty-9 is one such weapon. Taking an original small arm, and replacing certain parts, adding new attachments, custom paint jobs, etc. Krome weapons are designed for civilian purposes, self defense, bounty hunters, enthusiasts, and collectors. This particular model comes with attached Krome blades, to add some extra flair to the weapon."
      Priority=31
      HudColor=(B=255,G=125,R=75)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
-     PickupClass=Class'BallisticProV55.Fifty9Pickup'
      PlayerViewOffset=(X=14.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.Fifty9Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_Fifty9'
@@ -330,5 +177,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.UZI'
      DrawScale=0.300000
      AmbientGlow=0
-     bSelected=True
 }

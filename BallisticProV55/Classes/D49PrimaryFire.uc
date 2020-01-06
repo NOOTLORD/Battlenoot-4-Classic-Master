@@ -10,13 +10,6 @@ class D49PrimaryFire extends BallisticRangeAttenFire;
 
 var   bool			bSecondary;
 
-simulated function FlashMuzzleFlash()
-{
-	if (bSecondary)
-		D49SecondaryFire(Weapon.GetFireMode(1)).FlashSingleMuzzleFlash();
-	else
-		super.FlashMuzzleFlash();
-}
 simulated function PlayFiring()
 {
 //	D49Revolver(Weapon).RevolverFired(ThisModeNum);
@@ -80,7 +73,7 @@ defaultproperties
      FireAnim="FireSingle"
      FireEndAnim=
      FireRate=0.400000
-     AmmoClass=Class'BallisticProV55.Ammo_44Magnum'
+     AmmoClass=Class'BallisticProV55.Ammo_D49Bullets'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=2.000000						  

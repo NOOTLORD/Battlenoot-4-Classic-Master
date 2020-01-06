@@ -1,5 +1,14 @@
 //=============================================================================
-// M46PrimaryFireQS.
+// M46QSPrimaryFire.
+//
+// Very automatic, bullet style instant hit. Shots are long ranged, powerful
+// and accurate when used carefully. The dissadvantages are severely screwed up
+// accuracy after firing a shot or two and the rapid rate of fire means ammo
+// dissapeares quick.
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
 //=============================================================================
 class M46PrimaryFireQS extends BallisticRangeAttenFire;
 

@@ -294,7 +294,6 @@ defaultproperties
      ManualLines(1)="Loads a gas shell. Once loaded, the gas shell can be fired, generating a linear cloud of toxic gas in front of the weapon. Anyone standing in this cloud will receive damage over time."
      ManualLines(2)="Has a melee attack. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. As a blunt attack, has lower base damage compared to bayonets but inflicts a short-duration blinding effect when striking. This attack inflicts more damage from behind.||As a shotgun, has poor penetration.||Most effective at medium range."
      SpecialInfo(0)=(Info="120.0;20.0;0.7;50.0;0.0;0.5;0.0")
-     MeleeFireClass=Class'BallisticProV55.M763MeleeFire'
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
 	 PutDownAnimRate=1.5
@@ -341,12 +340,11 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.800000
      FireModeClass(0)=Class'BallisticProV55.M763PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.M763PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.750000
      CurrentRating=0.750000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=BallisticProV55.Ammo_M763Shell'
      Description="The Avenger single barreled shotgun is the standard spread weapon of the UTC infantry divisions. Its high damage, reliability and good range for a shotgun have made this gun one of the humans' favourites; the M763 has blown open more Krao drones than can be counted. After its many successes, even during trials by the UTC's Reunited Jamaican Army, defending from wave upon wave of Krao minions during the 'Red Storm' Skrith invasion, the Avenger became the standard issue shotgun and a favorite of many forces including the UTC RJA Division."
      Priority=37
      HudColor=(B=255,R=200)
@@ -354,7 +352,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=2
-     PickupClass=Class'BallisticProV55.M763Pickup'
      PlayerViewOffset=(Y=12.000000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.M763Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M763'
@@ -369,5 +366,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.M763_FP'
      DrawScale=0.500000
      AmbientGlow=0
-     bSelected=True
 }

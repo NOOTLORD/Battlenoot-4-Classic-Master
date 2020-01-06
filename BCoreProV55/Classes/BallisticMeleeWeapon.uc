@@ -12,34 +12,7 @@ class BallisticMeleeWeapon extends BallisticWeapon
 	HideDropDown
 	CacheExempt;
 
-var   bool			bBlocked;		// Currently blocking
-var() name			BlockUpAnim;	// Anim for going into blocking
-var() name			BlockDownAnim;	// Anim when blocking stops
-var() name			BlockIdleAnim;	// Anim when in block mode and idle
-
 var float				MeleeSpreadAngle;
-
-replication
-{
-	reliable if ( Role<ROLE_Authority )
-		ServerSetBlocked;
-}
-
-simulated function TickDisplacement(float DT)
-{
-	if (AimDisplacementEndTime > Level.TimeSeconds)
-	{
-		AimDisplacementFactor = FMin (AimDisplacementFactor + DT/0.2, 0.75);
-		if (!bServerReloading)
-			bServerReloading = True;
-	}
-	else 
-	{
-		AimDisplacementFactor = FMax(AimDisplacementFactor-DT/0.35, 0);
-		if (bServerReloading)
-			bServerReloading=False;
-	}
-}
 
 simulated function PostBeginPlay()
 {
@@ -47,38 +20,6 @@ simulated function PostBeginPlay()
 	MeleeSpreadAngle = BallisticMeleeFire(BFireMode[0]).GetCrosshairInaccAngle();
 }
 
-function ServerSetBlocked(bool NewValue)
-{
-	bBlocked=NewValue;
-}
-
-simulated function float ChargeBar()
-{
-	return MeleeFatigue;
-}
-
-//simulated function DoWeaponSpecial(optional byte i)
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (bBlocked)
-		return;
-	bBlocked=true;
-	ServerSetBlocked(bBlocked);
-	if (!IsFiring())
-		PlayAnim(BlockUpAnim, 1.5);
-	IdleAnim = BlockIdleAnim;
-}
-//simulated function DoWeaponSpecialRelease(optional byte i)
-exec simulated function WeaponSpecialRelease(optional byte i)
-{
-	if (!bBlocked)
-		return;
-	bBlocked=false;
-	ServerSetBlocked(bBlocked);
-	if (!IsFiring())
-		PlayAnim(BlockDownAnim, 1.5);
-	IdleAnim = default.IdleAnim;
-}
 
 function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
 {
@@ -95,19 +36,6 @@ function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocati
 		
 	if (bBerserk)
 		Damage *= 0.75;
-	
-	if (BDT != None)
-	{
-		if (bBlocked && !IsFiring() && level.TimeSeconds > LastFireTime + 1 && BDT.default.bCanBeBlocked &&
-		Normal(HitLocation-(Instigator.Location+Instigator.EyePosition())) Dot Vector(Instigator.GetViewRotation()) > 0.4)
-		{
-			Damage = 0;
-			BallisticAttachment(ThirdPersonActor).UpdateBlockHit();
-			if (instigatedBy != None && BallisticWeapon(instigatedBy.Weapon) != None)
-				BallisticWeapon(instigatedBy.Weapon).ApplyBlockFatigue();
-			return;		
-        }
-	}
 }
 
 //Draws simple crosshairs to accurately describe hipfire at any FOV and resolution.
@@ -222,9 +150,6 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
-     BlockUpAnim="PrepBlock"
-     BlockDownAnim="EndBlock"
-     BlockIdleAnim="BlockIdle"
      InventorySize=2
 	 bNoMag=True
      bNonCocking=True
@@ -241,5 +166,5 @@ defaultproperties
      ChaosAimSpread=0
      RecoilDeclineTime=4.000000
      RecoilDeclineDelay=0.750000
-     bShowChargingBar=True
+     bShowChargingBar=False
 }

@@ -1,48 +1,29 @@
-class M46AttachmentQS extends M46Attachment;
-
-simulated function PlayPawnFiring(byte Mode)
-{
-	if ( xPawn(Instigator) == None )
-		return;
-	if (TrackAnimMode == MU_Both || (TrackAnimMode == MU_Primary && Mode == 0) || (TrackAnimMode == MU_Secondary && Mode != 0))
-		PlayPawnTrackAnim(Mode);
-	else
-	{
-		if (FiringMode == 0)
-		{
-			if (bIsAimed)
-				xPawn(Instigator).StartFiring(False, bRapidFire);
-			else
-				xPawn(Instigator).StartFiring(True, bRapidFire);
-		}
-		else 
-		{
-			if (bIsAimed)
-				xPawn(Instigator).StartFiring(False, bAltRapidFire);
-			else
-				xPawn(Instigator).StartFiring(True, bAltRapidFire);
-		}
-			SetTimer(WeaponLightTime, false);
-	}
-}
-
-// Return the location of the muzzle.
-simulated function Vector GetTipLocation()
-{
-    local Coords C;
-
-	if (Instigator != None && Instigator.IsFirstPerson() && PlayerController(Instigator.Controller).ViewTarget == Instigator)
-		C = Instigator.Weapon.GetBoneCoords('tip');
-	else
-		C = GetBoneCoords('tip');
-	if (Instigator != None && level.NetMode != NM_StandAlone && level.NetMode != NM_ListenServer && VSize(C.Origin - Instigator.Location) > 300)
-		return Instigator.Location;
-    return C.Origin;
-}
+// M46AttachmentQS.
+//
+// 3rd person weapon attachment for M46 Assault Rifle
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
+//=============================================================================
+class M46AttachmentQS extends BallisticAttachment;
 
 defaultproperties
 {
-     FlashScale=0.550000
-     TracerChance=0.500000
-     bHeavy=True
+     MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
+     AltFlashBone="tip2"
+     BrassClass=Class'BallisticProV55.Brass_M46AR'
+     FlashMode=MU_Both
+     LightMode=MU_Both
+     TracerClass=Class'BallisticProV55.TraceEmitter_Default'
+     WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
+     FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+     ReloadAnim="Reload_AR"
+     CockingAnim="Cock_RearPull"
+     ReloadAnimRate=1.400000
+     CockAnimRate=1.050000
+     bRapidFire=True
+     Mesh=SkeletalMesh'BallisticAnims_25.OA-AR_3rd'
+     DrawScale=0.275000
 }

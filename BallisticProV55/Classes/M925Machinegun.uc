@@ -13,18 +13,6 @@ class M925Machinegun extends BallisticMachinegun;
 
 #exec OBJ LOAD FILE=BallisticProTextures.utx
 
-function InitWeaponFromTurret(BallisticTurret Turret)
-{
-	bNeedCock = false;
-	Ammo[0].AmmoAmount = Turret.AmmoAmount[0];
-	if (!Instigator.IsLocallyControlled())
-		ClientInitWeaponFromTurret(Turret);
-}
-simulated function ClientInitWeaponFromTurret(BallisticTurret Turret)
-{
-	bNeedCock=false;
-}
-
 simulated function TickAim(float DT)
 {
 	Super(BallisticWeapon).TickAim(DT);
@@ -61,60 +49,6 @@ simulated function bool HasAmmo()
 	return false;	//This weapon is empty
 }
 
-function GiveTo(Pawn Other, optional Pickup Pickup)
-{
-    local int m;
-    local weapon w;
-    local bool bPossiblySwitch, bJustSpawned;
-
-    Instigator = Other;
-    W = Weapon(Other.FindInventoryType(class));
-    if ( W == None || class != W.Class)
-    {
-		bJustSpawned = true;
-        Super(Inventory).GiveTo(Other);
-        bPossiblySwitch = true;
-        W = self;
-		if (Pickup != None && BallisticWeaponPickup(Pickup) != None)
-			MagAmmo = BallisticWeaponPickup(Pickup).MagAmmo;
-    }
- 	
-   	else if ( !W.HasAmmo() )
-	    bPossiblySwitch = true;
-	    
-
-    if ( Pickup == None )
-        bPossiblySwitch = true;
-
-    for (m = 0; m < NUM_FIRE_MODES; m++)
-    {
-        if ( FireMode[m] != None )
-        {
-            FireMode[m].Instigator = Instigator;
-            W.GiveAmmo(m,WeaponPickup(Pickup),bJustSpawned);
-        }
-    }
-	
-	if (MeleeFireMode != None)
-		MeleeFireMode.Instigator = Instigator;
-
-	if ( (Instigator.Weapon != None) && Instigator.Weapon.IsFiring() )
-		bPossiblySwitch = false;
-
-	if ( Instigator.Weapon != W )
-		W.ClientWeaponSet(bPossiblySwitch);
-		
-	//Disable aim for weapons picked up by AI-controlled pawns
-	bAimDisabled = default.bAimDisabled || !Instigator.IsHumanControlled();
-
-    if ( !bJustSpawned )
-	{
-        for (m = 0; m < NUM_FIRE_MODES; m++)
-			Ammo[m] = None;
-		Destroy();
-	}
-}
-
 simulated function SetScopeBehavior()
 {
 	bUseNetAim = default.bUseNetAim || bScopeView;
@@ -148,6 +82,10 @@ simulated function SetScopeBehavior()
 	}
 }
 
+// AI Interface =====
+// choose between regular or alt-fire
+function byte BestMode()	{	return 0;	}
+
 function float GetAIRating()
 {
 	local Bot B;
@@ -175,6 +113,7 @@ function float SuggestAttackStyle()	{	return -0.5;	}
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.5;	}
+// End AI Stuff =====
 
 defaultproperties
 {
@@ -192,7 +131,7 @@ defaultproperties
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M925'
      BigIconCoords=(Y1=36,Y2=235)
-     SightFXClass=Class'BallisticProV55.M925SightLEDs'
+     SightFXClass=Class'BallisticProV55.M925SightLEDs'	 
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
@@ -242,8 +181,7 @@ defaultproperties
      AIRating=0.700000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_M925Belt'
      Description="The M925 was used during the late stages of the first Human-Skrith war when ballistic weapons first came back into large scale usage. The heavy calibre M925 was extremely effective against the Skrith and their allies and became known as the 'Monster' because it was the first weapon that the Skrith truly feared. Although it has a slower rate of fire than the M353, the 'Monster' has a much heavier bullet and can cause much more damage to an enemy soldier or vehicle in a single shot. It was also used extensively during the 'Wasteland Siege', to hose down thousands of Krao, and proved to be very effective at destroying the alien transport ships, as they were landing."
      Priority=56
      HudColor=(B=175,G=175,R=175)
@@ -271,5 +209,4 @@ defaultproperties
      Skins(4)=Texture'BallisticWeapons2.M925.M925AmmoBox'
      Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=0
-     bSelected=True
 }

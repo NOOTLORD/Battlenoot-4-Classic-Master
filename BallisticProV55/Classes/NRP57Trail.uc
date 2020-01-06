@@ -38,5 +38,4 @@ defaultproperties
 
      LifeSpan=5.000000
      bHardAttach=True
-     bSelected=True
 }

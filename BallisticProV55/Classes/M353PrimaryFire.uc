@@ -21,13 +21,6 @@ event ModeDoFire()
 	Super.ModeDoFire();
 }
 
-simulated function vector GetFireDir(out Vector StartTrace)
-{
-    if (BallisticTurret(Instigator) != None)
-    	StartTrace = Instigator.Location + Instigator.EyePosition() + Vector(Instigator.GetViewRotation()) * 64;
-	return super.GetFireDir(StartTrace);
-}
-
 defaultproperties
 {
      CutOffDistance=4096
@@ -62,7 +55,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.065000
-     AmmoClass=Class'BallisticProV55.Ammo_556mmBelt'
+     AmmoClass=Class'BallisticProV55.Ammo_M353Belt'
      ShakeRotMag=(X=64.000000,Y=64.000000,Z=128.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000

@@ -275,6 +275,7 @@ defaultproperties
      AIRating=0.600000
 	 CurrentRating=0.6
      bCanThrow=False
+     AmmoClass(0)=Class'BallisticProV55.Ammo_RS8Clip'	 
      Description="A fine and reliable weapon, produced by a rather new company, the 10mm RS8 pistol is bound for success. Featuring a 14 round, 10mm magazine, laser sight and silencer, as well as an effective closer range, 3-round burst fire mode. Use the laser sight to see exactly where your gun is aimed, and the silencer when stealth and quietness are required. The RS8 being a fairly recent firearm, first manufactured during the second-war, has not seen as much action as other older pistols, and some critics say it won't be able to stand up to a Cryon, let alone a Skrith!"
      DisplayFOV=65.000000
      Priority=17

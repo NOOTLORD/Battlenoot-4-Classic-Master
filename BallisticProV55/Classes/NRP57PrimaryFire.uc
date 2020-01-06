@@ -18,7 +18,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Throw',Radius=32.000000,bAtten=True)
      PreFireAnim="PrepThrow"
      FireAnim="Throw"
-     AmmoClass=Class'BallisticProV55.Ammo_Pineapple'
+     AmmoClass=Class'BallisticProV55.Ammo_NRP57Grenade'
      ShakeRotMag=(X=32.000000,Y=8.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000

@@ -11,9 +11,7 @@ class M50Attachment extends BallisticAttachment;
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
-     AltMuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     AltFlashBone="tip2"
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      FlashMode=MU_Both
      LightMode=MU_Both
@@ -28,5 +26,4 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.M50Third'
      DrawScale=0.160000
-     bSelected=True
 }

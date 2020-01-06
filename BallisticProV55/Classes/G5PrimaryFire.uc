@@ -133,7 +133,7 @@ defaultproperties
      bRecommendSplashDamage=True
      FireEndAnim=
      FireRate=0.800000
-     AmmoClass=Class'BallisticProV55.Ammo_RPG'
+     AmmoClass=Class'BallisticProV55.Ammo_G5Rocket'
      ShakeRotMag=(X=128.000000,Y=64.000000,Z=16.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000						  

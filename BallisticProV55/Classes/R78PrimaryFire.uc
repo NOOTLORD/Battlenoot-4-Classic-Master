@@ -22,9 +22,9 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTR78Rifle'
      DamageTypeHead=Class'BallisticProV55.DTR78RifleHead'
      DamageTypeArm=Class'BallisticProV55.DTR78Rifle'
-KickForce=0
-PenetrateForce=0
-bPenetrate=True						
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False						
      PDamageFactor=0.800000
      bCockAfterFire=True
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
@@ -37,13 +37,13 @@ bPenetrate=True
      BallisticFireSound=(Sound=Sound'BallisticSounds3.R78.R78-Fire',Radius=256.000000)
      FireEndAnim=
      FireRate=1.000000
-     AmmoClass=Class'BallisticProV55.Ammo_42Rifle'
+     AmmoClass=Class'BallisticProV55.Ammo_R78Clip'
      ShakeRotMag=(X=400.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-ShakeRotTime=0.000000					  
+     ShakeRotTime=0.000000					  
      ShakeOffsetMag=(X=-5.000000)
      ShakeOffsetRate=(X=-1000.000000)
-ShakeOffsetTime=0.000000						 
+     ShakeOffsetTime=0.000000						 
      BotRefireRate=0.300000
      WarnTargetPct=0.050000
      aimerror=600.000000

@@ -25,5 +25,4 @@ defaultproperties
      CockAnimRate=0.800000
      Mesh=SkeletalMesh'BWBP4-Anims.Glock-3rd'
      DrawScale=0.070000
-     bSelected=True
 }

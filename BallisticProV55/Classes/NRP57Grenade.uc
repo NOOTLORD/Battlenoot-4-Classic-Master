@@ -13,31 +13,8 @@
 class NRP57Grenade extends BallisticHandGrenade;
 
 // AI Interface =====
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist, Height, result;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-	Height = B.Enemy.Location.Z - Instigator.Location.Z;
-	result = 0.5;
-
-	if (Dist > 500)
-		result -= 0.4;
-	else
-		result += 0.4;
-	if (Abs(Height) > 32)
-		result -= Height / Dist;
-	if (result > 0.5)
-		return 1;
-	return 0;
-}
+// choose between regular or alt-fire
+function byte BestMode()	{	return 0;	}
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.2;	}
@@ -85,14 +62,12 @@ defaultproperties
      CurrentRating=0.850000
      bShowChargingBar=False
      bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57Grenade'
      Description="One of Black & Wood's most famous devices, the versatile NRP57 is a UTC favourite. Once the pin is pulled, it can be held ready as long as needed. The longer it is held, the further it will be thrown. The 3 second timer can be shortened by releasing the clip prior to throwing, but this greatly increases the risk of termination. The NRP57 is an effective tool which can be bounced around corners, lobbed over obstacles and has a high damage and a decent radius of effect, but it's true power lies in the soldier's ability to time the detonation and speed according to the distance of the target. The most famous story involving the Pineapple tells how the UTC Phobos Marines painted it yellow and rigged it for the unsuspecting Skrith who had, over the decades, developed an incredible taste for the terran fruit."
      Priority=7
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=0
-     PickupClass=Class'BallisticProV55.NRP57Pickup'
      PlayerViewOffset=(X=8.000000,Y=10.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=1024,Yaw=-1024)
      AttachmentClass=Class'BallisticProV55.NRP57Attachment'
@@ -102,5 +77,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'
      DrawScale=0.400000
      AmbientGlow=0
-     bSelected=True
 }

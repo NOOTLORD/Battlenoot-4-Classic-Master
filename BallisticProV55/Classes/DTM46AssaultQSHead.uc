@@ -40,7 +40,7 @@ defaultproperties
      MotionBlurDamageRange=80.000000
      MotionBlurFactor=4.000000
      MotionBlurTime=3.000000
-     WeaponClass=Class'BallisticProV55.M46AssaultRifle'
+     WeaponClass=Class'BallisticProV55.M46AssaultRifleQS'
      DeathString="%o's head was ripped of by %k's Jackal rifle."
      FemaleSuicide="%o looked down the mouth of her Jackal."
      MaleSuicide="%o looked down the mouth of his Jackal."

@@ -11,6 +11,7 @@ class X4Knife extends BallisticMeleeWeapon;
 
 #exec OBJ LOAD File=BallisticSounds3.uax
 
+// AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()
 {
@@ -86,7 +87,6 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      GroupOffset=3
-     PickupClass=Class'BallisticProV55.X4Pickup'
      PlayerViewOffset=(X=4.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.X4Attachment'
      IconMaterial=Texture'BallisticTextures_25.X4.SmallIcon_X4'
@@ -95,5 +95,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims_25.X4'
      DrawScale=0.300000
      AmbientGlow=0
-     bSelected=True
 }
