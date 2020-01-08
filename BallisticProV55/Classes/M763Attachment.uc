@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M763Attachment extends BallisticShotgunAttachment
 	DependsOn(M763GasControl);
@@ -166,15 +168,18 @@ simulated function SpawnTracer(byte Mode, Vector V)
 
 defaultproperties
 {
-     FireClass=Class'BallisticProV55.M763PrimaryFire'
      MuzzleFlashClass=Class'BallisticProV55.M763FlashEmitter'
+     FlashMode=MU_Primary 
+     FlashScale=1.800000	 
+     LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Shell'
-     FlashScale=1.800000
      BrassClass=Class'BallisticProV55.Brass_Shotgun'
-     TracerMode=MU_Both
+	 BrassMode=MU_Primary
+     InstantMode=MU_Primary
+     TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
+     TracerMode=MU_Primary	 
      TracerChance=0.500000
-     MeleeStrikeAnim="Melee_swing"
      SingleFireAnim="RifleHip_FireCock"
      SingleAimedFireAnim="RifleAimed_FireCock"
      Mesh=SkeletalMesh'BallisticAnims2.M763-3rd'

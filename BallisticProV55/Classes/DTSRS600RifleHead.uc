@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTSRS600RifleHead extends DT_BWBullet;
 
@@ -36,11 +38,8 @@ defaultproperties
      DeathStrings(4)="%k sunk a round into %o's tangled bush of hair."
      bHeaddie=True
      DamageIdent="Assault"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.SRS600Rifle'
      DeathString="%k assasinated %o's head with %kh SRS-600."
@@ -53,5 +52,6 @@ defaultproperties
      FlashScale=0.300000
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
-     bSelected=False
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

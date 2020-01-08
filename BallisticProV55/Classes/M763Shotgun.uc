@@ -183,29 +183,32 @@ simulated function FirePressed(float F)
 	}
 }
 
-// AI Interface =====
-// choose between regular or alt-fire
-function byte BestMode()
+simulated function PlayCocking(optional byte Type)
 {
-	local Bot B;
-	local float Dist;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-
-	if (Dist > 250)
-		return 0;
-	if (Dist < FireMode[1].MaxRange() && FRand() > 0.3)
-		return 1;
-	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0 && (VSize(B.Enemy.Velocity) < 100 || Normal(B.Enemy.Velocity) dot Normal(Instigator.Velocity) < 0.5))
-		return 1;
-	return Rand(2);
+	if (Type == 2 && HasAnim(CockAnimPostReload))
+		SafePlayAnim(CockAnimPostReload, CockAnimRate, 0.2, , "RELOAD");
+	else
+		SafePlayAnim(CockAnim, CockAnimRate, 0.2, , "RELOAD");
 }
+
+// Animation notify for when cocking action starts. Used to time sounds
+simulated function Notify_CockAimed()
+{
+	bNeedCock = False;
+	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
+}
+
+simulated function Destroyed()
+{
+	if (GC.Clouds.Length == 0)
+		GC.Destroy();
+	Super.Destroyed();
+}
+
+// AI Interface =====
+
+// choose between regular or alt-fire
+function byte BestMode()	{	return 0;	}
 
 function GiveTo(Pawn Other, optional Pickup Pickup)
 {
@@ -258,29 +261,8 @@ function float SuggestDefenseStyle()
 	Result *= (1 - (Dist/4000));
     return FClamp(Result, -1.0, -0.3);
 }
+
 // End AI Stuff =====
-
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2 && HasAnim(CockAnimPostReload))
-		SafePlayAnim(CockAnimPostReload, CockAnimRate, 0.2, , "RELOAD");
-	else
-		SafePlayAnim(CockAnim, CockAnimRate, 0.2, , "RELOAD");
-}
-
-// Animation notify for when cocking action starts. Used to time sounds
-simulated function Notify_CockAimed()
-{
-	bNeedCock = False;
-	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
-}
-
-simulated function Destroyed()
-{
-	if (GC.Clouds.Length == 0)
-		GC.Destroy();
-	Super.Destroyed();
-}
 
 defaultproperties
 {

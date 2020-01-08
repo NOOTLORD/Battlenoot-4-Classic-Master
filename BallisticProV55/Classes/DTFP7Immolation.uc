@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTFP7Immolation extends DT_BWFire;
 
@@ -21,6 +23,9 @@ defaultproperties
      MaleSuicides(1)="%o did his flaming scarecrow impression."
      bIgnoredOnLifts=True
      DamageIdent="Grenade"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.FP7Grenade'
      DeathString="%o was set a blaze by %k's FP7."
      FemaleSuicide="%o ran around like a maniac in a ball of fire."
@@ -29,4 +34,6 @@ defaultproperties
      bDelayedDamage=True
      GibPerterbation=0.100000
      KDamageImpulse=200.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

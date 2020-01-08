@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTXK2SMG extends DT_BWBullet;
 
@@ -15,16 +17,15 @@ defaultproperties
      DeathStrings(2)="%k silenced %o with XK2 rounds."
      EffectChance=0.500000
      DamageIdent="SMG"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XK2SubMachinegun'
      DeathString="%o was put out by %k's XK2."
      FemaleSuicide="%o silenced herself."
      MaleSuicide="%o silenced himself."
      bFastInstantHit=True
      FlashScale=0.300000
-     VehicleDamageScaling=0.150000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

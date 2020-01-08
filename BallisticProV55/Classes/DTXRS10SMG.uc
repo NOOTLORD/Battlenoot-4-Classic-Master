@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTXRS10SMG extends DT_BWBullet;
 
@@ -16,16 +18,15 @@ defaultproperties
      DeathStrings(3)="%k's XRS-10 sorted %o out good and proper."
      EffectChance=0.500000
      DamageIdent="SMG"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=00.000000
-     MotionBlurDamageRange=0.000000
-     MotionBlurFactor=0.000000
-     MotionBlurTime=0.000000
+     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.XRS10SubMachinegun'
      DeathString="%o was cleansed by a hail of %k's XRS-10 rounds."
      FemaleSuicide="%o silenced herself."
      MaleSuicide="%o silenced himself."
      bFastInstantHit=True
      FlashScale=0.300000
-     VehicleDamageScaling=0.150000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

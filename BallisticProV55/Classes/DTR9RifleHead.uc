@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTR9RifleHead extends DT_BWBullet;
 
@@ -36,11 +38,8 @@ defaultproperties
      DeathStrings(4)="%o's head received a round from %k's R9."
      bHeaddie=True
      DamageIdent="Sniper"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.R9RangerRifle'
      DeathString="%k shot %o's head out of the way with %kh R9."
@@ -51,5 +50,6 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      FlashScale=0.300000
      KDamageImpulse=2000.000000
-     bSelected=False
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

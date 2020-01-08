@@ -14,21 +14,6 @@ var() Material	MatDef;
 var() Material	MatArmed;
 var() Rotator	DrumRot;
 
-var bool bRemoteGrenadeOut;
-
-replication
-{
-	unreliable if (Role == ROLE_Authority)
-		ClientUpdateGrenadeStatus;
-}
-
-function ServerSwitchWeaponMode (byte NewMode)
-{
-	if (CurrentWeaponMode > 0 && FireMode[0].IsFiring())
-		return;
-	super.ServerSwitchWeaponMode (NewMode);
-}
-
 simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 {
 	if (anim == FireMode[0].FireAnim || (FireMode[1] != None && anim == FireMode[1].FireAnim))
@@ -113,35 +98,6 @@ simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 		ReloadState = RS_None;
 }
 
-function UpdateGrenadeStatus(bool bDetonatable)
-{
-	bRemoteGrenadeOut = bDetonatable;
-	
-	if (bDetonatable)
-		Skins[2]=MatArmed;
-	else
-		Skins[2]=MatDef;
-		
-	if (Role == ROLE_Authority && !Instigator.IsLocallyControlled())
-		ClientUpdateGrenadeStatus(bDetonatable);
-}
-
-simulated function ClientUpdateGrenadeStatus(bool bDet)
-{
-	bRemoteGrenadeOut = bDet;
-	if (bDet)
-		Skins[2]=MatArmed;
-	else
-		Skins[2]=MatDef;
-}
-
-simulated function bool HasAmmo()
-{
-	if (bRemoteGrenadeOut)
-		return true;
-	return Super.HasAmmo();
-}
-
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -151,6 +107,7 @@ simulated function float RateSelf()
 	return CurrentRating;
 }
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -184,6 +141,7 @@ function float SuggestDefenseStyle()
 {
 	return 0.2;
 }
+
 // End AI Stuff =====
 
 defaultproperties

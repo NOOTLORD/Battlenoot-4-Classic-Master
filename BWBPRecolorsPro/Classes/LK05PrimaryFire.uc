@@ -153,8 +153,6 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
-    ClientPlayForceFeedback(FireForce);  // jdf
-
 	if (!bFiring)
 		bFiring=true;
     FireCount++;

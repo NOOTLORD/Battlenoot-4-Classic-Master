@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTD49RevolverHead extends DT_BWBullet;
 
@@ -37,6 +39,9 @@ defaultproperties
      DeathStrings(5)="%o fumbled for %vh gun before %k blew %vh head off."
      bHeaddie=True
      DamageIdent="Pistol"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.D49Revolver'
      DeathString="%k took %o's head out with a shot from %kh D49."
      FemaleSuicide="%o shot herself in the face."
@@ -44,4 +49,6 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

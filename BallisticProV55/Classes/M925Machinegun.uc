@@ -8,6 +8,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M925Machinegun extends BallisticMachinegun;
 
@@ -83,6 +85,7 @@ simulated function SetScopeBehavior()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -113,6 +116,7 @@ function float SuggestAttackStyle()	{	return -0.5;	}
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.5;	}
+
 // End AI Stuff =====
 
 defaultproperties

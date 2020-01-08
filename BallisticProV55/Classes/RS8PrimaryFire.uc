@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class RS8PrimaryFire extends BallisticRangeAttenFire;
 
@@ -45,6 +47,7 @@ simulated function DestroyEffects()
 	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
 	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
 }
+
 // End effect functions ----------------------------------------------------
 function float GetDamage (Actor Other, vector HitLocation, vector Dir, out Actor Victim, optional out class<DamageType> DT)
 {
@@ -121,9 +124,7 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
-    ClientPlayForceFeedback(FireForce);  // jdf
     FireCount++;
-
 	// End code from normal PlayFiring()
 
 	if (RS8Pistol(Weapon) != None && RS8Pistol(Weapon).bSilenced && SilencedFireSound.Sound != None)

@@ -6,6 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Fifty9MachinePistol extends BallisticWeapon;
 
@@ -72,6 +74,7 @@ simulated function PostBeginPlay()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -97,8 +100,10 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.9;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.9;	}
+
 // End AI Stuff =====
 
 defaultproperties

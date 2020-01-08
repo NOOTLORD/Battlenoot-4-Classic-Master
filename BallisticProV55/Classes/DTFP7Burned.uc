@@ -6,6 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTFP7Burned extends DT_BWFire;
 
@@ -17,6 +19,9 @@ defaultproperties
      DeathStrings(3)="%o was roasted to a cinder by %k's FP7."
      bIgnoredOnLifts=True
      DamageIdent="Grenade"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.FP7Grenade'
      DeathString="%o went out in a blaze of %k's glory."
      FemaleSuicide="%o went out in a blaze of her own glory."
@@ -24,4 +29,6 @@ defaultproperties
      bDelayedDamage=True
      PawnDamageSounds(0)=Sound'BallisticSounds2.FP7.FP7BurnFlesh'
      KDamageImpulse=20000.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

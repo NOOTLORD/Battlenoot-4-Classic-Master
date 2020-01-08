@@ -6,9 +6,10 @@
 // its way from its owner's control. Secondary allows the user to mount the
 // weapon on the ground by crouching.
 //
-//
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M353Machinegun extends BallisticMachinegun;
 
@@ -100,6 +101,7 @@ simulated function SetScopeBehavior()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -131,6 +133,7 @@ function float SuggestAttackStyle()	{	return -0.5;	}
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.5;	}	
+
 // End AI Stuff =====	
 										
 defaultproperties

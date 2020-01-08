@@ -164,5 +164,4 @@ defaultproperties
      Emitters(4)=SpriteEmitter'BallisticProV55.BG_BulletHitHead.SpriteEmitter4'
 
      AutoDestroy=True
-     bSelected=True
 }

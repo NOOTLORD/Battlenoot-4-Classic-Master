@@ -23,19 +23,12 @@ simulated function FlashMuzzleFlash(byte Mode)
 		class'BUtil'.static.InitMuzzleFlash (AltMuzzleFlash, AltMuzzleFlashClass, DrawScale*FlashScale, self, AltFlashBone);
 	if (MuzzleFlashClass != None && MuzzleFlash == None)
 		class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, DrawScale*FlashScale, self, FlashBone);
-
+		
 	R = Instigator.Rotation;
 	R.Pitch = Rotation.Pitch;
-	if (Mode == 0 || Mode == 2)
-	{
-		if (class'BallisticMod'.default.bMuzzleSmoke)
-			Spawn(class'MRT6Smoke',,, AltMuzzleFlash.Location, R);
-		AltMuzzleFlash.Trigger(self, Instigator);
-	}
+	
 	if (Mode == 0 || Mode == 1)
 	{
-		if (class'BallisticMod'.default.bMuzzleSmoke)
-			Spawn(class'MRT6Smoke',,, MuzzleFlash.Location, R);
 		MuzzleFlash.Trigger(self, Instigator);
 	}
 

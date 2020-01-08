@@ -202,6 +202,4 @@ defaultproperties
          StartVelocityRange=(X=(Min=200.000000,Max=2000.000000),Y=(Min=-200.000000,Max=200.000000),Z=(Min=-200.000000,Max=200.000000))
      End Object
      Emitters(4)=SpriteEmitter'BallisticProV55.MRT6FlashEmitter.SpriteEmitter20'
-
-     bSelected=True
 }

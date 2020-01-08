@@ -6,10 +6,13 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XMK5SubMachinegun extends BallisticWeapon;
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -50,7 +53,6 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
-     bWT_Projectile=True
      ManualLines(0)="Automatic submachinegun fire. Higher damage per bullet than other SMGs, good range and solid DPS, but higher recoil. Penetration is acceptable."
      ManualLines(1)="Launches a stun dart. Upon impact with the enemy, deals damage over time and inflicts a blinding effect multiple times upon them."
      ManualLines(2)="Effective at close range."

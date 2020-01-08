@@ -9,6 +9,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class D49Revolver extends BallisticHandgun;
 
@@ -304,6 +306,7 @@ simulated function bool CheckWeaponMode (int Mode)
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -329,8 +332,10 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.5;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.5;	}
+
 // End AI Stuff =====
 
 defaultproperties

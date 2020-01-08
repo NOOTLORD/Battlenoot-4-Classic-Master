@@ -36,6 +36,8 @@
 // Replicated DoubleJumpsLeft in order to stop strange behaviour online
 // Configurable Walking and Crouching speed.
 // Set Movement Anims for "Walking" to "Running" ones.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticPawn extends xPawn;
 

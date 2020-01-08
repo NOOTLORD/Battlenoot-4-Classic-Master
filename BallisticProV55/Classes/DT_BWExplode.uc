@@ -4,7 +4,8 @@
 // Base damage type that implements some gore for explosions
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWExplode extends BallisticDamageType;
 
@@ -26,5 +27,6 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'
      GibPerterbation=0.500000
      KDamageImpulse=20000.000000
-     bSelected=True
+     VehicleDamageScaling=1.500000
+     InvasionDamageScaling=1.000000
 }

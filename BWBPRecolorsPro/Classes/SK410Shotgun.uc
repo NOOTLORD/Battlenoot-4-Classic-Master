@@ -89,6 +89,7 @@ simulated function float RateSelf()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -138,6 +139,7 @@ function float SuggestDefenseStyle()
 	Result *= (1 - (Dist/4000));
     return FClamp(Result, -1.0, -0.3);
 }
+
 // End AI Stuff =====
 
 defaultproperties

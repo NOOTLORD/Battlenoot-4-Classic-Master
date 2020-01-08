@@ -9,12 +9,15 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class R9RangerRifle extends BallisticWeapon;
 
 #exec OBJ LOAD File=R9A_tex.utx
 
 // AI Interface =====
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -39,8 +42,10 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.5;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.8;	}
+
 // End AI Stuff =====
 
 defaultproperties
@@ -64,10 +69,6 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipIn')
      ClipInFrame=0.650000
      WeaponModes(0)=(ModeName="Regular")
-     WeaponModes(1)=(ModeName="Freeze",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
-     WeaponModes(2)=(ModeName="Laser",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
-     WeaponModes(3)=(ModeName="Phosphorous",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
-     WeaponModes(4)=(ModeName="Poison",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      FullZoomFOV=60.000000

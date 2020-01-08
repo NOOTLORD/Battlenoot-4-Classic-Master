@@ -6,6 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class FP7Grenade extends BallisticHandGrenade;
 
@@ -54,7 +56,7 @@ defaultproperties
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=1
      FireModeClass(0)=Class'BallisticProV55.FP7PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BallisticProV55.FP7PrimaryFire'
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.8500000
      CurrentRating=0.8500000

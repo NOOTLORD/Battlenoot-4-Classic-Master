@@ -6,6 +6,8 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class X4PrimaryFire extends BallisticMeleeFire;
 
@@ -40,7 +42,6 @@ defaultproperties
      DamageLimb=55.000000
      DamageType=Class'BallisticProV55.DTX4Knife'
      DamageTypeHead=Class'BallisticProV55.DTX4KnifeHead'
-     DamageTypeArm=Class'BallisticProV55.DTX4KnifeLimb'
      KickForce=0				  
      BallisticFireSound=(Sound=SoundGroup'BallisticSounds_25.X4.X4_Melee',Radius=378.000000,bAtten=True)
      bAISilent=True

@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWBlade extends BallisticDamageType;
 
@@ -21,12 +23,13 @@ defaultproperties
      ShieldDamage=50
      bIgnoredOnLifts=True
      bMetallic=True
-     AimDisplacementDuration=1.500000
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      DamageDescription=",Slash,"
      bInstantHit=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.Knife.KnifeFlesh'
-     VehicleDamageScaling=0.000000
-     VehicleMomentumScaling=0.000000
      TransientSoundVolume=0.700000
-     bSelected=True
+     VehicleDamageScaling=0.000000	 
+     InvasionDamageScaling=1.000000	 
 }

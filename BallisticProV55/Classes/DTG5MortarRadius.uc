@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTG5MortarRadius extends DT_BWExplode;
 
@@ -16,11 +18,14 @@ defaultproperties
      MaleSuicides(0)="%o forgot where he left one of his mortar rockets."
      AimedString="Scoped"
      DamageIdent="Ordnance"
+	 AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False 
      WeaponClass=Class'BallisticProV55.G5Bazooka'
      DeathString="%o was bombarded by %k's G5."
      FemaleSuicide="%o forgot where she left one of her mortar rockets."
      MaleSuicide="%o forgot where he left one of his mortar rockets."
      bDelayedDamage=True
      VehicleDamageScaling=1.500000
-     VehicleMomentumScaling=1.500000
+     InvasionDamageScaling=1.000000
 }

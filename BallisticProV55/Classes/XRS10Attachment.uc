@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XRS10Attachment extends HandgunAttachment;
 
@@ -23,15 +25,17 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      FlashMode=MU_Both 
-     FlashBone="Muzzle"
+     FlashScale=0.750000	 
+     FlashBone="Muzzle"	 
      AltFlashBone="Muzzle2" 
      LightMode=MU_Primary	 
-     FlashScale=0.750000
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassMode=MU_Both
      InstantMode=MU_Both
+     TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
+     TracerMode=MU_Primary	 
      TracerChance=0.500000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both

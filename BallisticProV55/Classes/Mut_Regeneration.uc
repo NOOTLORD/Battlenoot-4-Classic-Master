@@ -6,6 +6,8 @@
 //
 // by Logan "Black Eagle" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Mut_Regeneration extends Mutator
 	config(BallisticProV55);

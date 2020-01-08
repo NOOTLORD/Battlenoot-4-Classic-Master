@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class NRP57Thrown extends BallisticProPineapple;
 
@@ -75,5 +77,4 @@ defaultproperties
      CollisionRadius=0.000000
      CollisionHeight=0.000000
      bUseCylinderCollision=True
-     bSelected=True
 }

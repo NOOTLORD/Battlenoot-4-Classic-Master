@@ -6,6 +6,8 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTXMK5SubMachinegun extends DT_BWBullet;
 
@@ -16,11 +18,9 @@ defaultproperties
      DeathStrings(2)="%k shovelled XMk5 rounds into %o."
      DeathStrings(3)="%k's XMk5 turned %o into a leaky piece of meat."
      DamageIdent="SMG"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XMK5SubMachinegun'
      DeathString="%k sprayed %o with XMk5 rounds."
      FemaleSuicide="%o ripped herself to shreds with an XMk5."
@@ -29,5 +29,6 @@ defaultproperties
      FlashScale=0.300000
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
-     VehicleDamageScaling=0.150000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

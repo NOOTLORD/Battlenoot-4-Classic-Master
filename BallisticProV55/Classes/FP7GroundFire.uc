@@ -199,5 +199,4 @@ defaultproperties
      bUseCylinderCollision=True
      Mass=30.000000
      bNotOnDedServer=False
-     bSelected=True
 }

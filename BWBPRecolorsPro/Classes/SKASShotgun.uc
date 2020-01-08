@@ -22,6 +22,7 @@ simulated function float RateSelf()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -71,6 +72,7 @@ function float SuggestDefenseStyle()
 	Result *= (1 - (Dist/4000));
     return FClamp(Result, -1.0, -0.3);
 }
+
 // End AI Stuff =====
 
 defaultproperties
@@ -97,7 +99,12 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
+     WeaponModes(0)=(bUnavailable=True) 
      WeaponModes(1)=(ModeName="Automatic",ModeID="WM_FullAuto")
+     WeaponModes(2)=(bUnavailable=True)	 
+     WeaponModes(3)=(bUnavailable=True)	 
+     WeaponModes(4)=(bUnavailable=True)	
+     WeaponModes(5)=(bUnavailable=True)		 
      CurrentWeaponMode=1
      bNotifyModeSwitch=True
      bNoCrosshairInScope=True

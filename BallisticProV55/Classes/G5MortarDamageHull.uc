@@ -24,5 +24,4 @@ defaultproperties
      CollisionRadius=8.000000
      CollisionHeight=8.000000
      bProjTarget=True
-     bSelected=True
 }

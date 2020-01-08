@@ -8,6 +8,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M50PrimaryFire extends BallisticRangeAttenFire;
 
@@ -25,8 +27,7 @@ defaultproperties
      RangeAtten=0.350000
      WaterRangeAtten=0.800000
      DamageType=Class'BallisticProV55.DTM50Assault'
-     DamageTypeHead=Class'BallisticProV55.DTM50AssaultHead'
-     DamageTypeArm=Class'BallisticProV55.DTM50AssaultLimb'					   
+     DamageTypeHead=Class'BallisticProV55.DTM50AssaultHead'				   
      PenetrateForce=0
      bPenetrate=False					
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)

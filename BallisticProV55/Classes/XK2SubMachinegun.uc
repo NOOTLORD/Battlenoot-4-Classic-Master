@@ -109,6 +109,7 @@ simulated function Notify_ClipOutOfSight()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 

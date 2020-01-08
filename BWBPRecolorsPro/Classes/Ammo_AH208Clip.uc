@@ -12,5 +12,5 @@ defaultproperties
 {
      MaxAmmo=7
      InitialAmount=7
-     ItemName=".44 Magnum Bullets"
+     ItemName="AH208 Clip"
 }

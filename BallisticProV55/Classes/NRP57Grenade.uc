@@ -9,15 +9,19 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class NRP57Grenade extends BallisticHandGrenade;
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.2;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.5;	}
 // End AI Stuff =====
@@ -73,7 +77,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.NRP57Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_NRP57'
      IconCoords=(X2=127,Y2=31)
-     ItemName="NRP-57 'Pineapple'"
+     ItemName="NRP-57 'Pineapple"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'
      DrawScale=0.400000
      AmbientGlow=0

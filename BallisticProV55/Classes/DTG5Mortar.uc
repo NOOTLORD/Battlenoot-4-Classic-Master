@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTG5Mortar extends DT_BWExplode;
 
@@ -16,6 +18,9 @@ defaultproperties
      SimpleKillString="G5 Bazooka Mortar"
      AimedString="Scoped"
      DamageIdent="Ordnance"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.G5Bazooka'
      DeathString="%o caught %k's G5 mortar."
      FemaleSuicide="%o caught one of her own G5 mortars."
@@ -23,5 +28,5 @@ defaultproperties
      bDelayedDamage=True
      GibPerterbation=0.800000
      VehicleDamageScaling=1.500000
-     VehicleMomentumScaling=1.500000
+     InvasionDamageScaling=1.000000
 }

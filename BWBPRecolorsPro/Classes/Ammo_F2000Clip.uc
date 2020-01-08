@@ -1,9 +1,6 @@
 //=============================================================================
 // Ammo_F2000Clip.
 //
-// 5.45mm bullet ammo. Shorter length round used in STANAG mags.
-// Used by the MARS-3
-//
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
@@ -15,5 +12,5 @@ defaultproperties
 {
      MaxAmmo=180
      InitialAmount=90
-     ItemName="5.45mm STN Ammo"
+     ItemName="F2000 Clip"
 }

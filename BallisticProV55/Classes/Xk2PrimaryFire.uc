@@ -6,6 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XK2PrimaryFire extends BallisticRangeAttenFire;
 
@@ -101,15 +103,16 @@ function PlayFiring()
 		Weapon.SetBoneScale (0, 0.0, XK2SubMachinegun(Weapon).SilencerBone);
 		
 	// Slightly modified Code from original PlayFiring()
+	
 	if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
 		BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
 	else if(!BW.bScopeView || !Weapon.HasAnim(AimedFireAnim))
 		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	else BW.SafePlayAnim(AimedFireAnim, FireAnimRate, TweenTime, , "FIRE");
+	
 	// End code from normal PlayFiring()
-
-    ClientPlayForceFeedback(FireForce);  // jdf
-    FireCount++;
+	    
+		FireCount++;
 
 	if (XK2SubMachinegun(Weapon) != None && XK2SubMachinegun(Weapon).bSilenced && SilencedFireSound.Sound != None)
 		Weapon.PlayOwnedSound(SilencedFireSound.Sound,SilencedFireSound.Slot,SilencedFireSound.Volume,,SilencedFireSound.Radius,,true);

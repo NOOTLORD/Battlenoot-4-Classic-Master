@@ -16,5 +16,4 @@ static function DoBloodEffects( vector HitLocation, float Damage, vector Momentu
 
 defaultproperties
 {
-     bSelected=True
 }

@@ -164,5 +164,4 @@ defaultproperties
      Emitters(4)=SpriteEmitter'BallisticProV55.BG_TorsoExplode.SpriteEmitter22'
 
      AutoDestroy=True
-     bSelected=False
 }

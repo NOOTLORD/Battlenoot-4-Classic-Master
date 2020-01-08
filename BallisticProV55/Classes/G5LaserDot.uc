@@ -45,5 +45,4 @@ defaultproperties
      Emitters(1)=SpriteEmitter'BallisticProV55.G5LaserDot.SpriteEmitter10'
 
      bHidden=True
-     bSelected=True
 }

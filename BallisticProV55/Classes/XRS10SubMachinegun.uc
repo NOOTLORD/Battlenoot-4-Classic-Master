@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XRS10SubMachinegun extends BallisticWeapon;
 
@@ -117,8 +119,8 @@ simulated function PlayReload()
 		SetBoneScale (0, 0.0, SilencerBone);
 }
 
-
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 

@@ -708,8 +708,7 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 
 defaultproperties
 {
-     Killstreaks(1)="BallisticProV55.XMV850Minigun"
-     bAllowKillstreaks=True
+     bAllowKillstreaks=False
      bHideLockers=True
      FriendlyName="BallisticPro: Loadout"
      Description="Play Ballistic Weapons, but instead of picking up weapons, you can choose five to start with, Melee, Sidearm, Primary, Secondary and Grenade. Ammo Packs replace weapon pickups and extra weapons can be taken from your enemies.||http://www.runestorm.com"

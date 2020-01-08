@@ -7,6 +7,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class G5Bazooka extends BallisticWeapon;
 
@@ -501,42 +503,6 @@ simulated function bool HasAmmo()
 	return false;	//This weapon is empty
 }
 
-// AI Interface =====
-function byte BestMode()	{	return 0;	}
-
-function float GetAIRating()
-{
-	local Bot B;
-	local float Dist, Rating;
-	
-	B = Bot(Instigator.Controller);
-	
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
-		
-// anti-vehicle specialist
-    if (Vehicle(B.Enemy) != None)
-		return 1.2;
-
-	Rating = Super.GetAIRating();
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	if (Dist < 1024) // danger close
-		return 0.4;
-
-	// projectile
-	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 3072, 4096); 
-}
-
-// tells bot whether to charge or back off while using this weapon
-function float SuggestAttackStyle()	{	return -0.5;	}
-
-// tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return -0.9;	}
-
-// End AI Stuff =====
-
 exec simulated function WeaponSpecial(optional byte i)
 {
 	bScopeHeld=true;
@@ -756,6 +722,44 @@ simulated function Notify_G5HideRocket ()
 		SetBoneScale (0, 0.0, 'Rocket');
 }
 
+// AI Interface =====
+
+// choose between regular or alt-fire
+function byte BestMode()	{	return 0;	}
+
+function float GetAIRating()
+{
+	local Bot B;
+	local float Dist, Rating;
+	
+	B = Bot(Instigator.Controller);
+	
+	if ( (B == None) || (B.Enemy == None) )
+		return Super.GetAIRating();
+		
+// anti-vehicle specialist
+    if (Vehicle(B.Enemy) != None)
+		return 1.2;
+
+	Rating = Super.GetAIRating();
+
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	if (Dist < 1024) // danger close
+		return 0.4;
+
+	// projectile
+	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 3072, 4096); 
+}
+
+// tells bot whether to charge or back off while using this weapon
+function float SuggestAttackStyle()	{	return -0.5;	}
+
+// tells bot whether to charge or back off while defending against this weapon
+function float SuggestDefenseStyle()	{	return -0.9;	}
+
+// End AI Stuff =====
+
 defaultproperties
 {
      HatchSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=0.700000,Pitch=1.000000)
@@ -849,5 +853,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.G5Bazooka'
      DrawScale=0.300000
      AmbientGlow=0
-     bSelected=True
 }

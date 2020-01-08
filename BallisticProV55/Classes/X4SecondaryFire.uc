@@ -7,6 +7,8 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class X4SecondaryFire extends BallisticMeleeFire;
 
@@ -27,7 +29,6 @@ defaultproperties
      Damage=90.000000
      DamageType=Class'BallisticProV55.DTX4Knife'
      DamageTypeHead=Class'BallisticProV55.DTX4KnifeHead'
-     DamageTypeArm=Class'BallisticProV55.DTX4KnifeLimb'
      KickForce=100
      HookStopFactor=1.700000
      HookPullForce=100.000000

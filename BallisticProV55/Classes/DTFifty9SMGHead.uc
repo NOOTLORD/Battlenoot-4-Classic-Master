@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTFifty9SMGHead extends DT_BWBullet;
 
@@ -36,11 +38,9 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="SMG"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.Fifty9MachinePistol'
      DeathString="%k Fifty-9ed %o's head."
      FemaleSuicide="%o Fifty-9ed her head off."
@@ -50,4 +50,5 @@ defaultproperties
      bSpecial=True
      FlashScale=0.300000
      VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

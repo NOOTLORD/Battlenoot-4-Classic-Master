@@ -6,15 +6,23 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class R9PrimaryFire extends BallisticRangeAttenFire;
 
 #exec OBJ LOAD File="BallisticProSounds.uax"
 
-
 //// server propagation of firing ////
 function ServerPlayFiring()
 {
+	if (BallisticFireSound.Sound != None)
+	{
+		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,BallisticFireSound.bNoOverride,BallisticFireSound.Radius,BallisticFireSound.Pitch,BallisticFireSound.bAtten);
+	}
+	
+	CheckClipFinished();
+
 	if (AimedFireAnim != '')
 	{
 		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
@@ -49,8 +57,19 @@ function PlayFiring()
 			BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
-}
 	
+    FireCount++;
+	
+	// End code from normal PlayFiring()
+
+	if (BallisticFireSound.Sound != None)
+	{
+		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,BallisticFireSound.bNoOverride,BallisticFireSound.Radius,BallisticFireSound.Pitch,BallisticFireSound.bAtten);
+	}
+	
+	CheckClipFinished();
+}
+
 defaultproperties
 {
      CutOffStartRange=4096

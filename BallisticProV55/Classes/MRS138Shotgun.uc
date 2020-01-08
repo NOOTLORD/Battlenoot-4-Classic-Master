@@ -1,13 +1,14 @@
 //=============================================================================
 // MRS138Shotgun.
 //
-// A combat shotgun with a Flashlight and Tazer.
+// A combat shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MRS138Shotgun extends BallisticProShotgun;
-
 
 function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
 {
@@ -32,7 +33,9 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
+
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -77,6 +80,7 @@ function float SuggestDefenseStyle()
 
     return 0.3 - (B.Skill / 6) * (1-(Dist/3000));
 }
+
 // End AI Stuff =====
 
 defaultproperties

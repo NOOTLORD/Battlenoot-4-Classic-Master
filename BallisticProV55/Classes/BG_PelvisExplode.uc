@@ -98,5 +98,4 @@ defaultproperties
      Emitters(2)=TrailEmitter'BallisticProV55.BG_PelvisExplode.TrailEmitter7'
 
      AutoDestroy=True
-     bSelected=False
 }

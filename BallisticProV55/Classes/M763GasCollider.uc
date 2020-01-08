@@ -49,5 +49,4 @@ defaultproperties
      CollisionHeight=150.000000
      bCollideActors=True
      bUseCylinderCollision=True
-     bSelected=True
 }

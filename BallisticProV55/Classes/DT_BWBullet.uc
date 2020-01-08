@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWBullet extends BallisticDamageType;
 
@@ -37,20 +39,19 @@ defaultproperties
      EffectChance=1.000000
      BloodManagerName="BallisticProV55.BloodMan_Bullet"
      bMetallic=True
-     AimDisplacementDuration=0.000000
      DamageDescription=",Bullet,"
      bOnlySeverLimbs=True
      bSeverPreventsBlood=True
-     MinMotionBlurDamage=0.000000
-     MotionBlurDamageRange=0.000000
-     MotionBlurFactor=0.000000
-     MotionBlurTime=0.000000
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      bInstantHit=True
      bRagdollBullet=True
      bBulletHit=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'
      FlashScale=0.000000
-     VehicleDamageScaling=0.350000
-     VehicleMomentumScaling=0.150000
-     bSelected=True
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
+
+
 }

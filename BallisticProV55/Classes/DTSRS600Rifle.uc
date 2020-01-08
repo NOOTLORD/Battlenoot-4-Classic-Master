@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTSRS600Rifle extends DT_BWBullet;
 
@@ -18,11 +20,8 @@ defaultproperties
      DeathStrings(5)="%o got %vs pacified by %k's SRS-600."
      DeathStrings(6)="%k stopped %o's whimpering with SRS-600 rounds."
      DamageIdent="Assault"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.SRS600Rifle'
      DeathString="%k assassinated %o with %kh SRS-600."
@@ -32,5 +31,6 @@ defaultproperties
      FlashScale=0.300000
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
-     bSelected=False
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

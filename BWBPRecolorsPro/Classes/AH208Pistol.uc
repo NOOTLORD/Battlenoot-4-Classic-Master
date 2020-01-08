@@ -100,6 +100,7 @@ simulated function PlayCocking(optional byte Type)
 		PlayAnim(CockAnim, CockAnimRate, 0.2);
 }
 
+
 // AI Interface =====
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
@@ -128,8 +129,10 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.3;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.5;	}
+
 // End AI Stuff =====
 
 defaultproperties

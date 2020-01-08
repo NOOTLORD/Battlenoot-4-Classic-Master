@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Brass_Uzi extends BWBrass_Default;
 
@@ -16,5 +18,4 @@ defaultproperties
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyPistolRound'
      DrawScale=0.090000
      DrawScale3D=(X=0.600000)
-     bSelected=True
 }

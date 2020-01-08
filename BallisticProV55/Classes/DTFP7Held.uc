@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTFP7Held extends DT_BWFire;
 
@@ -17,6 +19,9 @@ defaultproperties
      MaleSuicides(0)="%o successfully seared off his hands."
      MaleSuicides(1)="%o erupted in a shower of flames."
      DamageIdent="Grenade"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.FP7Grenade'
      DeathString="%k lurched onto %o in a ball of flames."
      FemaleSuicide="%o successfully seared off her hands."
@@ -24,4 +29,6 @@ defaultproperties
      bSkeletize=True
      GibPerterbation=0.100000
      KDamageImpulse=200.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

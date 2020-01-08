@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTFP7Grenade extends DT_BWBlunt;
 
@@ -14,7 +16,10 @@ defaultproperties
      BloodManagerName="BallisticProV55.BloodMan_BluntSmall"
      bDetonatesBombs=False
      bIgnoredOnLifts=True
-     DamageIdent="Grenade"
+     DamageIdent="Grenade"	 
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      DamageDescription=",Blunt,Hazard,"
      WeaponClass=Class'BallisticProV55.FP7Grenade'
      DeathString="%k bounce an FP7 off %o's head."
@@ -23,4 +28,6 @@ defaultproperties
      bDelayedDamage=True
      GibPerterbation=0.500000
      KDamageImpulse=20000.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

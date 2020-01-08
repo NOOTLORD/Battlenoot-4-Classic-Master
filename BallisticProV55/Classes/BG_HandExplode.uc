@@ -97,5 +97,4 @@ defaultproperties
      Emitters(2)=TrailEmitter'BallisticProV55.BG_HandExplode.TrailEmitter4'
 
      AutoDestroy=True
-     bSelected=False
 }

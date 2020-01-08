@@ -8,6 +8,8 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M46AssaultRifleQS extends BallisticWeapon;
 
@@ -23,6 +25,7 @@ simulated function float RateSelf()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -51,6 +54,7 @@ function float SuggestAttackStyle()	{	return 0.0;	}
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.5;	}
+
 // End AI Stuff =====
 
 defaultproperties

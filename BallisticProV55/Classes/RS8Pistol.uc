@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class RS8Pistol extends BallisticHandgun;
 
@@ -16,6 +18,7 @@ var() sound		SilencerOnSound;		// Silencer stuck on sound
 var() sound		SilencerOffSound;		//
 var() sound		SilencerOnTurnSound;	// Silencer screw on sound
 var() sound		SilencerOffTurnSound;	//
+
 replication
 {
 	reliable if (Role < ROLE_Authority)
@@ -86,6 +89,7 @@ exec simulated function WeaponSpecial(optional byte i)
 	ServerSwitchSilencer(bSilenced);
 	SwitchSilencer(bSilenced);
 }
+
 simulated function SwitchSilencer(bool bNewValue)
 {
 	if(Role == ROLE_Authority)
@@ -188,6 +192,7 @@ simulated function PlayReload()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 

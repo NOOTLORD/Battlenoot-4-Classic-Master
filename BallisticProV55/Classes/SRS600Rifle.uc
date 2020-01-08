@@ -1,3 +1,15 @@
+//=============================================================================
+// SRS600Rifle.
+//
+// An automatic rifle with elements of both a sniper rifle and assault rifle.
+// More powerful than M50, but less firerate and more recoil.
+// Can be silenced.
+//
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
+//=============================================================================
 class SRS600Rifle extends BallisticWeapon;
 
 var   bool		bSilenced;				// Silencer on. Silenced
@@ -88,6 +100,8 @@ simulated function PlayReload()
 }
 
 // AI Interface =====
+
+// choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -112,8 +126,10 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.2;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.8;	}
+
 // End AI Stuff =====
 
 defaultproperties

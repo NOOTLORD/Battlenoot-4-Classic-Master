@@ -251,5 +251,4 @@ defaultproperties
      SoundVolume=255
      SoundRadius=192.000000
      bNetNotify=True
-     bSelected=True
 }

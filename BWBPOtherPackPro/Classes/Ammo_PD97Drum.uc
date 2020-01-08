@@ -12,5 +12,5 @@ defaultproperties
 {
      MaxAmmo=90
      InitialAmount=45
-     ItemName="Bloodhound Darts"
+     ItemName="PD97 Drum"
 }

@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTNRP57Held extends DT_BWExplode;
 
@@ -18,6 +20,9 @@ defaultproperties
      MaleSuicides(0)="%o forgot to let go of his NRP-57."
      MaleSuicides(1)="%o couldn't part with his NRP-57 so it parted him."
      DamageIdent="Grenade"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      bNoSeverStumps=True
      WeaponClass=Class'BallisticProV55.NRP57Grenade'
      DeathString="%o got a share of %k's suicide."
@@ -26,6 +31,6 @@ defaultproperties
      bSkeletize=True
      GibModifier=0.500000
      GibPerterbation=0.900000
-     VehicleDamageScaling=1.500000
-     VehicleMomentumScaling=0.350000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

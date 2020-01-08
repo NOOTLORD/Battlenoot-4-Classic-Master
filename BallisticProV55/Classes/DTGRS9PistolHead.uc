@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTGRS9PistolHead extends DT_BWBullet;
 
@@ -35,11 +37,9 @@ defaultproperties
      DeathStrings(3)="%k litigated %o's head off."
      bHeaddie=True
      DamageIdent="Pistol"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=0.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.GRS9Pistol'
      DeathString="%k litigated %o's head off."
      FemaleSuicide="%o litigated her own head off."
@@ -48,4 +48,6 @@ defaultproperties
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      FlashScale=0.300000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

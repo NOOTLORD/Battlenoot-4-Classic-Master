@@ -136,6 +136,7 @@ static function class<pickup> GetPickupFor(class<Actor> A)
 		return class<inventory>(A).default.PickupClass;
 	return None;
 }
+
 // This picks one of the new items from one of the possible replacements
 function class<Actor> GetNewItem(int Index, optional bool bNoUnique, optional class<actor> OldItem)
 {

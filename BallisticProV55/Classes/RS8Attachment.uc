@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class RS8Attachment extends HandgunAttachment;
 
@@ -22,18 +24,22 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     ImpactManager=Class'BallisticProV55.IM_Bullet'
+     FlashMode=MU_Both 
+     FlashScale=0.500000	 
+     LightMode=MU_Primary	 
      FlashBone="Muzzle"
      AltFlashBone="Muzzle2"
-     FlashScale=0.500000
+	 ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassMode=MU_Both
+	 BrassMode=MU_Both
      InstantMode=MU_Both
-     FlashMode=MU_Both
+     TrackAnimMode=MU_None
+     TracerMode=MU_Primary
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+     FlyByMode=MU_Primary	 
      ReloadAnim="Reload_Pistol"
      CockingAnim="Cock_RearPull"
      ReloadAnimRate=1.400000

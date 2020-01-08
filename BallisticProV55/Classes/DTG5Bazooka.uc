@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTG5Bazooka extends DT_BWExplode;
 
@@ -15,13 +17,14 @@ defaultproperties
      DeathStrings(2)="%k launched %kh G5 rocket into %o's face."
      AimedString="Scoped"
      DamageIdent="Ordnance"
-     AimDisplacementDamageThreshold=0
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.G5Bazooka'
      DeathString="%o was blown to pieces by %k's G5."
      FemaleSuicide="%o splattered the walls with her gibs using a G5."
      MaleSuicide="%o splattered the walls with his gibs using a G5."
      bDelayedDamage=True
      VehicleDamageScaling=1.500000
-     VehicleMomentumScaling=1.500000
+     InvasionDamageScaling=1.000000
 }

@@ -1,10 +1,12 @@
 //=============================================================================
 // HealthKit.
 //
-// A HealthKit worth 35 health.
+// A HealthKit worth 50 health.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class IP_Healthkit extends TournamentHealth;
 

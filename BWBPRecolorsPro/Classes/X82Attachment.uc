@@ -30,11 +30,7 @@ simulated function Vector GetTipLocation()
     			return C.Origin;
 		}
 	}
-	else if (BallisticTurret(Instigator) != None)
-	{
-		C = Instigator.GetBoneCoords('tip');
-    		return C.Origin;
-	}
+	
 	else
 	{
 		C = GetBoneCoords('tip');
@@ -50,8 +46,6 @@ simulated function Vector GetEjectorLocation(optional out Rotator EjectorAngle)
     local Coords C;
 	if (Instigator != None && Instigator.IsFirstPerson() && PlayerController(Instigator.Controller).ViewTarget == Instigator)
 		C = Instigator.Weapon.GetBoneCoords(BrassBone);
-	else if (BallisticTurret(Instigator) != None)
-		C = Instigator.GetBoneCoords(BrassBone);
 	else
 		C = GetBoneCoords(BrassBone);
 	if (Instigator != None && VSize(C.Origin - Instigator.Location) > 200)
@@ -59,8 +53,6 @@ simulated function Vector GetEjectorLocation(optional out Rotator EjectorAngle)
 		EjectorAngle = Instigator.Rotation;
 		return Instigator.Location;
 	}
-	if (BallisticTurret(Instigator) != None)
-		EjectorAngle = Instigator.GetBoneRotation(BrassBone);
 	else
 		EjectorAngle = GetBoneRotation(BrassBone);
     return C.Origin;

@@ -104,5 +104,4 @@ defaultproperties
      Emitters(2)=TrailEmitter'BallisticProV55.BG_ShoulderExplode.TrailEmitter3'
 
      AutoDestroy=True
-     bSelected=False
 }

@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTM763ShotgunHead extends DT_BWShell;
 
@@ -25,4 +27,6 @@ defaultproperties
      bExtraMomentumZ=True
      GibPerterbation=0.400000
      KDamageImpulse=10000.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

@@ -147,6 +147,4 @@ defaultproperties
          StartVelocityRange=(X=(Min=10.000000,Max=40.000000),Y=(Min=-15.000000,Max=15.000000),Z=(Min=5.000000,Max=30.000000))
      End Object
      Emitters(2)=SpriteEmitter'BallisticProV55.BG_StumpSpurter.SpriteEmitter23'
-
-     bSelected=True
 }

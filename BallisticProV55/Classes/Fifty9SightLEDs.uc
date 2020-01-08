@@ -46,5 +46,4 @@ defaultproperties
 
      bHidden=True
      RelativeRotation=(Roll=8192)
-     bSelected=True
 }

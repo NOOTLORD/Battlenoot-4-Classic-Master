@@ -6,6 +6,8 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTX4Knife extends DT_BWBlade;
 
@@ -16,12 +18,15 @@ defaultproperties
      DeathStrings(2)="%k jammed %kh X4 knife into %o's staggering body."
      DeathStrings(3)="%o was stabbed to death by %k's X4."
      DamageIdent="Melee"
-     AimDisplacementDamageThreshold=0
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      DamageDescription=",Slash,Stab,"
      WeaponClass=Class'BallisticProV55.X4Knife'
      DeathString="%k cut up %o like a paper-shredder with %kh X4 knife."
      FemaleSuicide="%o fell on her X4 knife."
      MaleSuicide="%o fell on his X4 knife."
      KDamageImpulse=1000.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 	 
 }

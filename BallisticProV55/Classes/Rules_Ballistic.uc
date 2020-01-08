@@ -22,6 +22,6 @@ function int NetDamage( int OriginalDamage, int Damage, pawn Injured, pawn insti
 
 defaultproperties
 {
-     damageScale=0.800000
+     damageScale=1.000000
      VehicleDamageScale=1.000000
 }

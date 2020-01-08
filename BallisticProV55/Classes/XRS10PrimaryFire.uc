@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XRS10PrimaryFire extends BallisticRangeAttenFire;
 
@@ -58,6 +60,20 @@ function FlashMuzzleFlash()
 		EjectBrass();
 }
 
+// Remove effects
+simulated function DestroyEffects()
+{
+	Super.DestroyEffects();
+
+	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
+	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
+}
+
+simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
+{
+	BallisticAttachment(Weapon.ThirdPersonActor).BallisticUpdateHit(Other, HitLocation, HitNormal, Surf, XRS10SubMachinegun(Weapon).bSilenced, WaterHitLoc);
+}
+
 //// server propagation of firing ////
 function ServerPlayFiring()
 {
@@ -104,7 +120,6 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
-    ClientPlayForceFeedback(FireForce);  // jdf
     FireCount++;
 	// End code from normal PlayFiring()
 
@@ -114,22 +129,6 @@ function PlayFiring()
 		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,,BallisticFireSound.Radius);
 		
 	CheckClipFinished();
-}
-
-
-
-// Remove effects
-simulated function DestroyEffects()
-{
-	Super.DestroyEffects();
-
-	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
-	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
-}
-
-simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
-{
-	BallisticAttachment(Weapon.ThirdPersonActor).BallisticUpdateHit(Other, HitLocation, HitNormal, Surf, XRS10SubMachinegun(Weapon).bSilenced, WaterHitLoc);
 }
 
 defaultproperties

@@ -1,8 +1,6 @@
 //=============================================================================
 // Ammo_SK410Clip.
 //
-// SK410 shotgun ammo
-//
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
@@ -14,5 +12,5 @@ defaultproperties
 {
      MaxAmmo=60
 	 InitialAmount=30
-     ItemName="8 Gauge HE Shells"
+     ItemName="SK410 Clip"
 }

@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MarlinPrimaryFire extends BallisticRangeAttenFire;
 
@@ -54,6 +56,7 @@ function PlayFiring()
 	}
 	
     FireCount++;
+	
 	// End code from normal PlayFiring()
 
 	if (BallisticFireSound.Sound != None)

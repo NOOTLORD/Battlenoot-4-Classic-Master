@@ -116,5 +116,4 @@ defaultproperties
 
      AutoDestroy=True
      bHardAttach=True
-     bSelected=True
 }

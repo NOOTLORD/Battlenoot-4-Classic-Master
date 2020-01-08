@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Fifty9PrimaryFire extends BallisticRangeAttenFire;
 
@@ -24,6 +26,7 @@ function EjectBrass()
 	if (AIController(Instigator.Controller) != None)
 		return;
 	C = Weapon.GetBoneCoords(BrassBone);
+	
 //	Start = C.Origin + C.XAxis * BrassOffset.X + C.YAxis * BrassOffset.Y + C.ZAxis * BrassOffset.Z;
     Weapon.GetViewAxes(X,Y,Z);
 	Start = C.Origin + X * BrassOffset.X + Y * BrassOffset.Y + Z * BrassOffset.Z;

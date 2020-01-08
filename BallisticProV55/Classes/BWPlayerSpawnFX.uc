@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BWPlayerSpawnFX extends BallisticEmitter
 	placeable;
@@ -65,5 +67,4 @@ defaultproperties
      Emitters(1)=SpriteEmitter'BallisticProV55.BWPlayerSpawnFX.SpriteEmitter15'
 
      AutoDestroy=True
-     bSelected=True
 }

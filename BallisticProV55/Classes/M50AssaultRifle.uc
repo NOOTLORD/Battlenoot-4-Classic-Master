@@ -8,6 +8,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M50AssaultRifle extends BallisticWeapon;
 
@@ -25,6 +27,7 @@ simulated function float RateSelf()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -136,5 +139,4 @@ defaultproperties
      Skins(4)=Texture'BallisticWeapons2.M50.M50Laser'
      Skins(5)=Texture'BallisticWeapons2.M50.M50Gren'
      AmbientGlow=0
-     bSelected=True
 }

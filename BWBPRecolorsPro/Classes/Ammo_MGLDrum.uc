@@ -12,5 +12,5 @@ defaultproperties
      bNoPackResupply=True
      MaxAmmo=12
      InitialAmount=12
-     ItemName="Conqueror Grenades"
+     ItemName="MGL Drum"
 }

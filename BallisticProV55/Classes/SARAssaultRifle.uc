@@ -6,11 +6,10 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SARAssaultRifle extends BallisticWeapon;
-
-var   name		StockOpenAnim;
-var   name		StockCloseAnim;
 
 // This uhhh... thing is added to allow manual drawing of brass OVER the muzzle flash
 struct UziBrass
@@ -32,8 +31,30 @@ simulated function Notify_ClipOutOfSight()
 	SetBoneScale (1, 1.0, 'Bullet');
 }
 
+simulated function bool ReadyToFire(int Mode)
+{
+    local int alt;
+
+    if ( Mode == 0 )
+        alt = 1;
+    else
+        alt = 0;
+
+	if (FireMode[Mode] == None)
+		return false;
+
+    if ( ((FireMode[alt] != None && FireMode[alt] != FireMode[Mode]) && FireMode[alt].bIsFiring)
+		|| !FireMode[Mode].AllowFire()
+		|| (FireMode[Mode].NextFireTime > Level.TimeSeconds + FireMode[Mode].PreFireTime) )
+    {
+        return false;
+    }
+
+	return true;
+}
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -64,28 +85,6 @@ function float SuggestAttackStyle()	{	return 0.4;	}
 function float SuggestDefenseStyle()	{	return -0.4;	}
 
 // End AI Stuff =====
-
-simulated function bool ReadyToFire(int Mode)
-{
-    local int alt;
-
-    if ( Mode == 0 )
-        alt = 1;
-    else
-        alt = 0;
-
-	if (FireMode[Mode] == None)
-		return false;
-
-    if ( ((FireMode[alt] != None && FireMode[alt] != FireMode[Mode]) && FireMode[alt].bIsFiring)
-		|| !FireMode[Mode].AllowFire()
-		|| (FireMode[Mode].NextFireTime > Level.TimeSeconds + FireMode[Mode].PreFireTime) )
-    {
-        return false;
-    }
-
-	return true;
-}
 
 defaultproperties
 {

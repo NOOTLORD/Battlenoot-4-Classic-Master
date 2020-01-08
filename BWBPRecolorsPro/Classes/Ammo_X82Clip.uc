@@ -1,8 +1,6 @@
 //=============================================================================
 // Ammo_X82Clip.
 //
-// X82 Rifle ammo
-//
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
@@ -14,5 +12,5 @@ defaultproperties
 {
      MaxAmmo=30
      InitialAmount=15
-     ItemName=".50 N6-BMG HEAP Rifle Rounds"
+     ItemName="X82 Clip"
 }

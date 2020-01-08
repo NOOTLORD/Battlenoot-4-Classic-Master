@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class G5Rocket extends BallisticProjectile;
 
@@ -168,5 +170,4 @@ defaultproperties
      bUseCollisionStaticMesh=True
      bFixedRotationDir=True
      RotationRate=(Roll=32768)
-     bSelected=True
 }

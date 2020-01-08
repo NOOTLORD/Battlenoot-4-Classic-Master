@@ -149,5 +149,4 @@ defaultproperties
 
      Physics=PHYS_Trailer
      bHardAttach=True
-     bSelected=True
 }

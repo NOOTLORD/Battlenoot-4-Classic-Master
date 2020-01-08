@@ -101,6 +101,4 @@ defaultproperties
          LifetimeRange=(Min=0.300000,Max=0.300000)
      End Object
      Emitters(2)=MeshEmitter'BallisticProV55.Fifty9FlashEmitter.MeshEmitter1'
-
-     bSelected=True
 }

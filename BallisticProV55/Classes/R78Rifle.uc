@@ -8,6 +8,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class R78Rifle extends BallisticWeapon;
 
@@ -31,6 +33,7 @@ simulated function Notify_CockAimed()
 }
 
 // AI Interface =====
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()

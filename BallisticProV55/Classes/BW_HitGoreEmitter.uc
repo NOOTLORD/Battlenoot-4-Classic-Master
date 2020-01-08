@@ -123,5 +123,4 @@ simulated function InitHitForce(vector HitRay, float GibPerterbation)
 
 defaultproperties
 {
-     bSelected=True
 }

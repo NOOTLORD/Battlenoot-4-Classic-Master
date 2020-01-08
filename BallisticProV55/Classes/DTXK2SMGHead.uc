@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTXK2SMGHead extends DT_BWBullet;
 
@@ -34,11 +36,9 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="SMG"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XK2SubMachinegun'
      DeathString="%o was stung in the head by %k's XK2."
      FemaleSuicide="%o silenced herself."
@@ -49,4 +49,5 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      FlashScale=0.300000
      VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

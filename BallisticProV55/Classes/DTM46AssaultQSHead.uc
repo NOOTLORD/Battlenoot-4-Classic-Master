@@ -6,6 +6,8 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTM46AssaultQSHead extends DT_BWBullet;
 
@@ -35,11 +37,9 @@ defaultproperties
      DeathStrings(2)="%o got %vh head blown clean off by %k's M46 assault rifle."
      bHeaddie=True
      DamageIdent="Assault"
+     AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M46AssaultRifleQS'
      DeathString="%o's head was ripped of by %k's Jackal rifle."
      FemaleSuicide="%o looked down the mouth of her Jackal."
@@ -52,4 +52,6 @@ defaultproperties
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
      VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
+
 }

@@ -6,6 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SRS600PrimaryFire extends BallisticRangeAttenFire;
 
@@ -61,7 +63,6 @@ simulated function DestroyEffects()
 	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
 }
 
-/*
 // End effect functions ----------------------------------------------------
 function float GetDamage (Actor Other, vector HitLocation, vector Dir, out Actor Victim, optional out class<DamageType> DT)
 {
@@ -69,7 +70,7 @@ function float GetDamage (Actor Other, vector HitLocation, vector Dir, out Actor
 		return Super.GetDamage (Other, HitLocation, Dir, Victim, DT) * 0.8;
 	else
 		return Super.GetDamage (Other, HitLocation, Dir, Victim, DT);
-}*/
+}
 
 simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
 {
@@ -126,7 +127,6 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 
-    ClientPlayForceFeedback(FireForce);  // jdf
     FireCount++;
 
 	if (SRS600Rifle(Weapon) != None && SRS600Rifle(Weapon).bSilenced && SilencedFireSound.Sound != None)

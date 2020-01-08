@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTXRS10SMGHead extends DT_BWBullet;
 
@@ -36,11 +38,9 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="SMG"
-     AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000   
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XRS10SubMachinegun'
      DeathString="%k fired %kh XRS-10 into %o's face."
      FemaleSuicide="%o silenced herself."
@@ -50,5 +50,6 @@ defaultproperties
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      FlashScale=0.300000
-     VehicleDamageScaling=0.150000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }
