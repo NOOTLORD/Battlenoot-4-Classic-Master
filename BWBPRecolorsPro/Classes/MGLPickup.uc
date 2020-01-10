@@ -1,16 +1,12 @@
 //=============================================================================
 // MGLPickup.
-//
-// Edited by (NL)NOOTLORD
 //=============================================================================
 class MGLPickup extends BallisticWeaponPickup
 	placeable;
 
 #exec OBJ LOAD FILE=BallisticEffects.utx
-#exec OBJ LOAD FILE=BallisticRecolors4TexPro.utx
-#exec OBJ LOAD FILE=BallisticRecolors4StaticProExp.usx
+#exec OBJ LOAD FILE=BallisticHardware2.usx
 
-//Fixed by (NL)NOOTLORD
 //===========================================================================
 // StaticPrecache
 //
@@ -43,7 +39,7 @@ defaultproperties
 {
      LowPolyStaticMesh=StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickupLow'
      InventoryType=Class'BWBPRecolorsPro.MGLauncher'
-     RespawnTime=5.000000
+     RespawnTime=120.000000
      PickupMessage="You picked up the Conqueror multiple grenade launcher."
      PickupSound=Sound'BallisticSounds2.M763.M763Putaway'
      StaticMesh=StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickup'

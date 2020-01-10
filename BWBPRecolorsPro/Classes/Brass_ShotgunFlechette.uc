@@ -34,7 +34,6 @@ simulated function Destroyed()
 
 defaultproperties
 {
-     bAddOwnerVelocity=False
      HitSounds(0)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(1)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(2)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
@@ -46,9 +45,7 @@ defaultproperties
      HitSounds(8)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(9)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(10)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSoundVolume=0.125000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyShell'
      DrawScale=0.110000
      Skins(0)=Texture'BallisticRecolors4TexPro.M1014.Cart_ShotgunF'
-     bSelected=True
 }

@@ -21,5 +21,4 @@ defaultproperties
 {
      StopShortDist=128.000000
      AutoDestroy=True
-     bSelected=True
 }

@@ -16,7 +16,7 @@ defaultproperties
          FadeInEndTime=0.100000
          CoordinateSystem=PTCS_Relative
          MaxParticles=2
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=12.000000,Max=8.000000))
          ParticlesPerSecond=1.000000
          InitialParticlesPerSecond=500.000000
          Texture=Texture'AW-2k4XP.Weapons.ShockTankEffectCore2Ga'
@@ -37,7 +37,6 @@ defaultproperties
          ColorMultiplierRange=(X=(Min=0.500000,Max=0.500000),Y=(Min=0.500000,Max=0.500000))
          FadeOutStartTime=0.040000
          CoordinateSystem=PTCS_Relative
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
          ParticlesPerSecond=5.000000
          InitialParticlesPerSecond=1000.000000
          Texture=Texture'AW-2k4XP.Cicada.LongSpark'
@@ -49,5 +48,4 @@ defaultproperties
      Emitters(1)=SparkEmitter'BallisticProV55.MRS138TazerProjTrail.MRS138TazerProjTrailEmitter1'
 
      bNoDelete=False
-     bSelected=True
 }

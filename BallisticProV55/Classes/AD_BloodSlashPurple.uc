@@ -12,12 +12,4 @@ defaultproperties
      DecalTextures(3)=Texture'BallisticBloodPro.Bot.Bot-Slash4'
      MaterialBlendingOp=PB_None
      FrameBufferBlendingOp=PB_AlphaBlend
-     bProjectBSP=True
-     bProjectTerrain=True
-     bProjectStaticMesh=True
-     bProjectParticles=True
-     bClipBSP=True
-     bClipStaticMesh=True
-     bProjectOnAlpha=True
-     bSelected=False
 }

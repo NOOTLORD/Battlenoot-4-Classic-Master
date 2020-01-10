@@ -6,8 +6,6 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTMD24PistolHead extends DT_BWBullet;
 
@@ -37,9 +35,6 @@ defaultproperties
      DeathStrings(2)="%k's MD24 round cleared away %o's cranium."
      bHeaddie=True
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.MD24Pistol'
      DeathString="%o's head was whisked away by %k's MD24 round."
      FemaleSuicide="%o blew her ugly face off with an MD24."
@@ -47,7 +42,5 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
 }

@@ -128,5 +128,4 @@ defaultproperties
      Emitters(3)=SpriteEmitter'BallisticProV55.BG_FootExplodeBot.SpriteEmitter14'
 
      AutoDestroy=True
-     bSelected=False
 }

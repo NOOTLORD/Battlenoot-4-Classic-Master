@@ -61,5 +61,4 @@ defaultproperties
      SlotDescriptions(10)="special weapons"
      StackMode=SM_Down
      PosY=0.730000
-     bSelected=True
 }

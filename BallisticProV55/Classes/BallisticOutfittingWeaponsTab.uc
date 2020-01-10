@@ -707,13 +707,11 @@ defaultproperties
      End Object
      l_Receiving=GUILabel'BallisticProV55.BallisticOutfittingWeaponsTab.l_Receivinglabel'
 
-     CurrentIndex=1
-     bInitialised=True
-     SavedLoadouts(0)=(PresetName="Debug#1",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BWBPRecolorsPro.AH208Pistol",Weapons[2]="BWBPRecolorsPro.AK47AssaultRifle",Weapons[3]="BallisticProV55.XMK5SubMachinegun",Weapons[4]="BallisticProV55.G5Bazooka")
-     SavedLoadouts(1)=(PresetName="qqqqq",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.D49Revolver",Weapons[2]="BallisticProV55.XMK5SubMachinegun",Weapons[3]="BWBPOtherPackPro.CX61AssaultRifle",Weapons[4]="BallisticProV55.NRP57Grenade")
-     SavedLoadouts(2)=(PresetName="Debug#3",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BWBPRecolorsPro.AH208Pistol",Weapons[2]="BWBPRecolorsPro.AK47AssaultRifle",Weapons[3]="BallisticProV55.XMK5SubMachinegun",Weapons[4]="BallisticProV55.G5Bazooka")
-     SavedLoadouts(3)=(PresetName="Debug#4",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BWBPRecolorsPro.AH208Pistol",Weapons[2]="BWBPRecolorsPro.AK47AssaultRifle",Weapons[3]="BallisticProV55.XMK5SubMachinegun",Weapons[4]="BallisticProV55.G5Bazooka")
-     SavedLoadouts(4)=(PresetName="Debug#5",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BWBPRecolorsPro.AH208Pistol",Weapons[2]="BWBPRecolorsPro.AK47AssaultRifle",Weapons[3]="BallisticProV55.XMK5SubMachinegun",Weapons[4]="BallisticProV55.G5Bazooka")
+     SavedLoadouts(0)=(PresetName="DEFAULT",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(1)=(PresetName="DEFAULT2",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(2)=(PresetName="DEFAULT3",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(3)=(PresetName="DEFAULT4",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(4)=(PresetName="DEFAULT5",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
      QuickListText="QuickList"
      ReceivingText(0)="Receiving..."
      ReceivingText(1)="Loading..."

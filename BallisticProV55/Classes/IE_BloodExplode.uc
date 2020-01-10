@@ -99,5 +99,4 @@ defaultproperties
      Emitters(2)=SpriteEmitter'BallisticProV55.IE_BloodExplode.SpriteEmitter30'
 
      AutoDestroy=True
-     bSelected=True
 }

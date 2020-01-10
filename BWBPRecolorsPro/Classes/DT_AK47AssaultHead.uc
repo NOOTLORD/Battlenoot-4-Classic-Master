@@ -4,9 +4,7 @@
 // DamageType for AK490 headshots
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2005 RuneStorm. All Rights Reserved..
-//
-// Modified by (NL)NOOTLORD
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //=============================================================================
 class DT_AK47AssaultHead extends DT_BWBullet;
 
@@ -36,9 +34,6 @@ defaultproperties
      DeathStrings(2)="%k blew the Borscht out of %o's head with an AK490."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.AK47AssaultRifle'
      DeathString="%o's face was rearranged by Comrade %k's AK490."
      FemaleSuicide="%o shot heads with bullets."
@@ -50,5 +45,4 @@ defaultproperties
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
      VehicleDamageScaling=0.000000
-	 InvasionDamageScaling=1.000000
 }

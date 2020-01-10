@@ -13,7 +13,7 @@ defaultproperties
      DeathStrings(0)="%o blasted off like a rocket courtesy of %k's SK-410 slug."
      DeathStrings(1)="%o caught %k's SK-410 slug right in the chops."
      bNegatesMomentum=True
-     InvasionDamageScaling=1.000000
+     InvasionDamageScaling=1.500000
      DamageIdent="Shotgun"
      DamageDescription=",Bullet,Flame,"
      WeaponClass=Class'BWBPRecolorsPro.SK410Shotgun'

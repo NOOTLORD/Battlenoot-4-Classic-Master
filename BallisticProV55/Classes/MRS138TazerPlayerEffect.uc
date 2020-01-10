@@ -30,7 +30,7 @@ defaultproperties
          SizeScale(1)=(RelativeTime=0.070000,RelativeSize=1.500000)
          SizeScale(2)=(RelativeTime=0.170000,RelativeSize=1.000000)
          SizeScale(3)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=40.000000,Max=60.000000),Y=(Min=40.000000,Max=60.000000),Z=(Min=40.000000,Max=60.000000))
          Texture=Texture'BallisticEffects.Particles.FlareB1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.350000,Max=0.500000)
@@ -53,7 +53,7 @@ defaultproperties
          MaxParticles=25
          StartLocationRange=(Z=(Min=-10.000000,Max=10.000000))
          StartSpinRange=(X=(Min=0.250000,Max=0.250000))
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=24.000000,Max=34.000000),Y=(Min=24.000000,Max=34.000000),Z=(Min=24.000000,Max=34.000000))
          InitialParticlesPerSecond=5000.000000
          Texture=Texture'BallisticWeapons2.Effects.SparkA1'
          TextureUSubdivisions=2
@@ -84,7 +84,7 @@ defaultproperties
          DetailMode=DM_SuperHigh
          StartLocationOffset=(X=-20.000000)
          StartLocationRange=(Z=(Min=-20.000000,Max=20.000000))
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=5.000000,Max=7.000000),Y=(Min=5.000000,Max=7.000000),Z=(Min=5.000000,Max=7.000000))
          Texture=Texture'EpicParticles.Beams.HotBolt04aw'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.200000,Max=0.200000)
@@ -98,5 +98,4 @@ defaultproperties
      bHardAttach=True
      SoundVolume=150
      SoundRadius=128.000000
-     bSelected=True
 }

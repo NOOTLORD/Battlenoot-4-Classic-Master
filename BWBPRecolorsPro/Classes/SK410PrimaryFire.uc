@@ -8,8 +8,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class SK410PrimaryFire extends BallisticProShotgunFire;
 
@@ -69,10 +67,9 @@ defaultproperties
      CutOffStartRange=378.000000
      MaxSpreadFactor=6
      TraceCount=6
-     TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
-     ImpactManager=Class'BallisticProV55.IM_Shell'
+     TracerClass=Class'BWBPRecolorsPro.TraceEmitter_ShotgunHE'
+     ImpactManager=Class'BWBPRecolorsPro.IM_ShellHE'
      TraceRange=(Min=4000.000000,Max=6000.000000)
-     MaxWalls=1
      Damage=14.000000
      DamageHead=14.000000
      DamageLimb=14.000000
@@ -80,28 +77,30 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_SK410Shotgun'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_SK410ShotgunHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_SK410Shotgun'
+     KickForce=5000
+     PenetrateForce=100
+     bPenetrate=True
      MuzzleFlashClass=Class'BWBPRecolorsPro.SK410HeatEmitter'
-     FlashScaleFactor=0.750000
-     BrassClass=Class'BWBPRecolorsPro.Brass_SK410shotgun'
-     BrassOffset=(X=-50.000000,Y=5.000000,Z=-6.500000)
+     FlashScaleFactor=0.500000
+     BrassClass=Class'BWBPRecolorsPro.Brass_ShotgunHE'
+     BrassOffset=(X=-1.000000,Z=-1.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=700.000000
      VelocityRecoil=180.000000
-     FireChaos=0.040000
+     FireChaos=0.400000
      XInaccuracy=400.000000
      YInaccuracy=400.000000
-     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Blast',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Blast',Volume=1.300000)
      FireEndAnim=
      FireAnimRate=2.250000
      FireRate=0.220000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_8GaugeHE'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetTime=2.000000
      BotRefireRate=0.900000
      WarnTargetPct=0.500000
-     aimerror=600.000000
 }

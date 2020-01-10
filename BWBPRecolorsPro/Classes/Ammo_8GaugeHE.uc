@@ -11,7 +11,9 @@ class Ammo_8GaugeHE extends BallisticAmmo;
 defaultproperties
 {
      MaxAmmo=60
+	 InitialAmount=30
      IconFlashMaterial=Shader'BallisticRecolors3TexPro.SK410.AmmoIcon_SK410Flash'
+     PickupClass=Class'BWBPRecolorsPro.AP_8Gauge'
      IconMaterial=Texture'BallisticRecolors3TexPro.SK410.AmmoIcon_SK410'
      ItemName="8 Gauge HE Shells"
 }

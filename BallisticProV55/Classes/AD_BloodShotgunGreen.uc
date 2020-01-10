@@ -12,12 +12,4 @@ defaultproperties
      DecalTextures(3)=Texture'BallisticBloodPro.Alien.Alien-Spray4'
      DecalTextures(4)=Texture'BallisticBloodPro.Alien.Alien-Spray5'
      FrameBufferBlendingOp=PB_Add
-     bProjectBSP=True
-     bProjectTerrain=True
-     bProjectStaticMesh=True
-     bProjectParticles=True
-     bClipBSP=True
-     bClipStaticMesh=True
-     bProjectOnAlpha=True
-     bSelected=False
 }

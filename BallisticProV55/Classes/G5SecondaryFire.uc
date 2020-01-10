@@ -21,7 +21,7 @@ defaultproperties
      bWaitForRelease=True
      bModeExclusive=False
      FireRate=0.200000
-     AmmoClass=Class'BallisticProV55.Ammo_G5Rocket'
+     AmmoClass=Class'BallisticProV55.Ammo_RPG'
      AmmoPerFire=0
      BotRefireRate=0.300000
 }

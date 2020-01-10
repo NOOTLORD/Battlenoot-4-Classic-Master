@@ -35,12 +35,6 @@ defaultproperties
      DeathStrings(2)="%o got %vh head blown clean off by %k's M46A1 assault rifle."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M46AssaultRifle'
      DeathString="%o's head was ripped of by %k's Jackal rifle."
      FemaleSuicide="%o looked down the mouth of her Jackal."
@@ -49,8 +43,6 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     FlashScale=0.300000
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
-     bSelected=False
 }

@@ -97,7 +97,7 @@ static function array<string> GetAllLoadHints(optional bool bThisClassOnly)
 
 defaultproperties
 {
-     InventoryMode="BallisticProV55.Mut_OutfittingDM"
+     InventoryMode="BallisticProV55.Mut_BallisticDM"
      InventoryModes(0)="Normal"
      InventoryModes(1)="Loadout"
      InventoryModes(2)="Arena"
@@ -109,8 +109,6 @@ defaultproperties
      ModeDisplayText="Pickup Mode"
      ModeDescText="Choose how you want pickups to be added to game"
      DefaultPlayerClassName="BallisticProV55.BallisticPawn"
-     GoalScore=75
-     TimeLimit=25
      DeathMessageClass=Class'BallisticProV55.Ballistic_DeathMessage'
      PlayerControllerClassName="BallisticProV55.BallisticPlayer"
      GameName="BallisticPro: Team DM"

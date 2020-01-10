@@ -25,6 +25,7 @@ defaultproperties
      MinMotionBlurDamage=5.000000
      MotionBlurDamageRange=20.000000
      MotionBlurFactor=3.000000
+     bUseMotionBlur=True
      WeaponClass=Class'BallisticProV55.GRS9Pistol'
      DeathString="%o's head was illuminated off by %k's GRS-9 beam."
      FemaleSuicide="%o burned her own head off with a GRS-9."

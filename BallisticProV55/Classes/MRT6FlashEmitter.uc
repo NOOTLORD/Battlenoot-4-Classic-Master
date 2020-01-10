@@ -79,7 +79,7 @@ defaultproperties
          SizeScale(0)=(RelativeSize=1.000000)
          SizeScale(1)=(RelativeTime=0.620000,RelativeSize=2.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=4.000000)
-         StartSizeRange=(X=(Min=3.000000,Max=4.000000),Y=(Min=3.000000,Max=4.000000),Z=(Min=3.000000,Max=4.000000))
+         StartSizeRange=(X=(Min=6.000000,Max=8.000000),Y=(Min=6.000000,Max=8.000000),Z=(Min=6.000000,Max=8.000000))
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects2.Particles.SmokeWisp-Alpha'
          TextureUSubdivisions=4
@@ -113,7 +113,6 @@ defaultproperties
          MaxParticles=1
          SizeScale(0)=(RelativeSize=0.700000)
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.200000)
-         StartSizeRange=(X=(Min=0.500000,Max=0.500000),Y=(Min=0.500000,Max=0.500000),Z=(Min=0.500000,Max=0.500000))
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.400000,Max=0.400000)
          SpawnOnTriggerRange=(Min=1.000000,Max=1.000000)
@@ -136,7 +135,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
          StartLocationRange=(X=(Min=16.000000,Max=16.000000))
-         StartSizeRange=(X=(Min=22.500000,Max=22.500000),Y=(Min=50.000000,Max=50.000000),Z=(Min=50.000000,Max=50.000000))
+         StartSizeRange=(X=(Min=45.000000,Max=45.000000))
          DrawStyle=PTDS_Brighten
          Texture=Texture'BallisticEffects.Particles.FlareB1'
          SecondsBeforeInactive=0.000000
@@ -162,7 +161,7 @@ defaultproperties
          Opacity=0.600000
          FadeOutStartTime=0.200000
          MaxParticles=20
-         StartSizeRange=(X=(Min=2.000000,Max=2.500000),Y=(Min=2.000000,Max=2.500000),Z=(Min=2.000000,Max=2.500000))
+         StartSizeRange=(X=(Min=4.000000,Max=5.000000),Y=(Min=4.000000,Max=5.000000),Z=(Min=4.000000,Max=5.000000))
          DrawStyle=PTDS_Brighten
          Texture=Texture'BallisticEffects.Particles.Smoke3'
          SecondsBeforeInactive=0.000000
@@ -191,7 +190,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=20
          StartSpinRange=(X=(Min=0.250000,Max=0.250000))
-         StartSizeRange=(X=(Min=7.500000,Max=10.000000),Y=(Min=7.500000,Max=10.000000),Z=(Min=7.500000,Max=10.000000))
+         StartSizeRange=(X=(Min=15.000000,Max=20.000000),Y=(Min=15.000000,Max=20.000000),Z=(Min=15.000000,Max=20.000000))
          Texture=Texture'BallisticWeapons2.Effects.SparkA1'
          TextureUSubdivisions=2
          TextureVSubdivisions=2
@@ -202,4 +201,5 @@ defaultproperties
          StartVelocityRange=(X=(Min=200.000000,Max=2000.000000),Y=(Min=-200.000000,Max=200.000000),Z=(Min=-200.000000,Max=200.000000))
      End Object
      Emitters(4)=SpriteEmitter'BallisticProV55.MRT6FlashEmitter.SpriteEmitter20'
+
 }

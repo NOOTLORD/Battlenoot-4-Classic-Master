@@ -15,6 +15,7 @@ simulated function PostBeginPlay()
 	SetTimer(1.0 + 1.5 * FRand(), false);
 }
 
+
 simulated function Timer()
 {
 	Kill();

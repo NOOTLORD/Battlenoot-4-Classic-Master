@@ -39,5 +39,6 @@ function ScoreKill(Controller Killer, Controller Killed)
 
 defaultproperties
 {
-     bSelected=True
+     SpreeThresholds(0)=4
+     SpreeThresholds(1)=9
 }

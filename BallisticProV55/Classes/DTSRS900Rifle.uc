@@ -24,7 +24,6 @@ defaultproperties
      FemaleSuicide="%o nailed herself with the SRS-900."
      MaleSuicide="%o nailed himself with the SRS-900."
      bFastInstantHit=True
-     FlashScale=0.300000
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
 }

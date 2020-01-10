@@ -6,8 +6,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class AH208Pistol extends BallisticWeapon;
 
@@ -100,6 +98,17 @@ simulated function PlayCocking(optional byte Type)
 		PlayAnim(CockAnim, CockAnimRate, 0.2);
 }
 
+// Secondary fire doesn't count for this weapon
+simulated function bool HasAmmo()
+{
+	//First Check the magazine
+	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
+		return true;
+	//If it is a non-mag or the magazine is empty
+	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
+			return true;
+	return false;	//This weapon is empty
+}
 
 // AI Interface =====
 // choose between regular or alt-fire
@@ -129,10 +138,8 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.3;	}
-
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.5;	}
-
 // End AI Stuff =====
 
 defaultproperties
@@ -155,13 +162,12 @@ defaultproperties
      SpecialInfo(0)=(Info="140.0;12.0;0.7;70.0;0.55;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
-     MagAmmo=7
-     CockSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-Cock',Volume=1.000000,Radius=32.000000)
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipHit',Volume=1.000000,Radius=32.000000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipOut',Volume=1.000000,Radius=32.000000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipIn',Volume=1.000000,Radius=32.000000)
+     MagAmmo=8
+     CockSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-Cock',Volume=5.100000,Radius=32.000000)
+     ClipHitSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipHit',Volume=2.500000,Radius=32.000000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipOut',Volume=2.500000,Radius=32.000000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipIn',Volume=2.500000,Radius=32.000000)
      ClipInFrame=0.650000
-     bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic")
      WeaponModes(1)=(ModeName="Mode-2",bUnavailable=True,Value=7.000000)
      WeaponModes(2)=(bUnavailable=True)
@@ -172,27 +178,21 @@ defaultproperties
      SightingTime=0.200000
 	 SightZoomFactor=0
      GunLength=4.000000
-     AimAdjustTime=100.000000
-     AimSpread=16	 
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=0.450000
      RecoilDeclineDelay=0.750000
      FireModeClass(0)=Class'BWBPRecolorsPro.AH208PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BWBPRecolorsPro.AH208MeleeFire'
      PutDownAnimRate=1.600000
      PutDownTime=0.500000
      BringUpTime=1.200000
      SelectForce="SwitchToAssaultRifle"
-     bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AH208Clip'
      Description="Built as a more affordable alternative to the AH104, the AH208 is an alternate design chambered for .44 magnum rounds instead of the usual $100 .600 HEAP ones. It is less accurate than the AH104 and D49, but its 8 round magazine and faster reload times let it put more rounds down range than both. Its significant weight and recoil means it requires both hands to shoot and is harder to control than its revolver and handcannon siblings, a fact that comes into play where range is a concern. While not as popular as its larger .600 cousin, the AH208 packs a formidable punch and is a force to be reckoned with."
      Priority=96
      HudColor=(G=217)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
      GroupOffset=14
+     PickupClass=Class'BWBPRecolorsPro.AH208Pickup'
      PlayerViewOffset=(Y=19.500000,Z=-30.000000)
      BobDamping=1.200000
      AttachmentClass=Class'BWBPRecolorsPro.AH208Attachment'
@@ -213,5 +213,4 @@ defaultproperties
      Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
      Skins(4)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'
      Skins(5)=Shader'BallisticRecolors4TexPro.Eagle.Eagle-SightDotGreen'
-     AmbientGlow=0
 }

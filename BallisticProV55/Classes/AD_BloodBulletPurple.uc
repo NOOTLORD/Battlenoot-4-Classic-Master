@@ -16,12 +16,4 @@ defaultproperties
      DecalTextures(7)=Texture'BallisticBloodPro.Bot.Bot-Splat8'
      MaterialBlendingOp=PB_None
      FrameBufferBlendingOp=PB_AlphaBlend
-     bProjectBSP=True
-     bProjectTerrain=True
-     bProjectStaticMesh=True
-     bProjectParticles=True
-     bClipBSP=True
-     bClipStaticMesh=True
-     bProjectOnAlpha=True
-     bSelected=False
 }

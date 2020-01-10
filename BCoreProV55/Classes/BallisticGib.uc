@@ -144,7 +144,7 @@ defaultproperties
 {
      Spin=70000
      DampenFactor=0.500000
-     bUseBloodSplats=True						 
+     bUseBloodSplats=True
      HitSoundVolume=0.400000
      HitSoundRadius=64.000000
      HitSoundThreshold=100.000000

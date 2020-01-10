@@ -1,16 +1,6 @@
-//=============================================================================
-// SRS600Rifle.
-//
-// An automatic rifle with elements of both a sniper rifle and assault rifle.
-// More powerful than M50, but less firerate and more recoil.
-// Can be silenced.
-//
-// by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2006 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
-//=============================================================================
 class SRS600Rifle extends BallisticWeapon;
+
+var float StealthRating, StealthImps;
 
 var   bool		bSilenced;				// Silencer on. Silenced
 var() name		SilencerBone;			// Bone to use for hiding silencer
@@ -25,12 +15,66 @@ replication
 		ServerSwitchSilencer;
 }
 
+simulated function ClientPlayerDamaged(byte DamageFactor)
+{
+	super.ClientPlayerDamaged(DamageFactor);
+	if (Instigator.IsLocallyControlled())
+		StealthImpulse(FMin(0.8, float(DamageFactor)/255));
+}
+
+simulated function ClientJumped()
+{
+	super.ClientJumped();
+	if (Instigator.IsLocallyControlled())
+		StealthImpulse(0.15);
+}
+
+simulated function StealthImpulse(float Amount)
+{
+	if (Instigator.IsLocallyControlled())
+		StealthImps = FMin(1.0, StealthImps + Amount);
+}
+
+simulated event WeaponTick(float DT)
+{
+	local float Speed, NewSR, P;
+
+	super.WeaponTick(DT);
+
+	if (!Instigator.IsLocallyControlled())
+		return;
+
+	if (Instigator.Base != None)
+		Speed = VSize(Instigator.Velocity - Instigator.Base.Velocity);
+	else
+		Speed = VSize(Instigator.Velocity);
+	if (Instigator.bIsCrouched)
+		NewSR = 0.06;
+	else
+		NewSR = 0.2;
+	if (Speed > Instigator.WalkingPct * Instigator.GroundSpeed)
+		NewSR += Speed / 1100;
+	else
+		NewSR += Speed / 1900;
+
+
+
+	NewSR = FMin(1.0, NewSR + StealthImps);
+
+	P = NewSR-StealthRating;
+	P = P / Abs(P);
+	StealthRating = FClamp(StealthRating + P*DT, NewSR, StealthRating);
+
+	StealthImps = FMax(0, StealthImps - DT / 4);
+}
+
 simulated function PlayCocking(optional byte Type)
 {
 	if (Type == 2)
 		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
 	else
 		PlayAnim(CockAnim, CockAnimRate, 0.2);
+	StealthImpulse(0.1);
 }
 
 function ServerSwitchSilencer(bool bNewValue)
@@ -51,6 +95,8 @@ exec simulated function WeaponSpecial(optional byte i)
 	bSilenced = !bSilenced;
 	ServerSwitchSilencer(bSilenced);
 	SwitchSilencer(bSilenced);
+
+	StealthImpulse(0.1);
 }
 
 simulated function SwitchSilencer(bool bNewValue)
@@ -90,6 +136,8 @@ simulated function PlayReload()
 {
 	super.PlayReload();
 
+	StealthImpulse(0.1);
+
 	if (MagAmmo < 1)
 		SetBoneScale (1, 0.0, 'Bullet');
 
@@ -99,37 +147,52 @@ simulated function PlayReload()
 		SetBoneScale (0, 0.0, SilencerBone);
 }
 
-// AI Interface =====
+static function class<Pickup> RecommendAmmoPickup(int Mode)
+{
+	return class'AP_SRS900Clip';
+}
 
-// choose between regular or alt-fire
+// Secondary fire doesn't count for this weapon
+simulated function bool HasAmmo()
+{
+	//First Check the magazine
+	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
+		return true;
+	//If it is a non-mag or the magazine is empty
+	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
+			return true;
+	return false;	//This weapon is empty
+}
+
+// AI Interface =====
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
 	local Bot B;
-	local float Result, Dist;
+	
+	local float Dist;
+	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
+	
+	if ( B == None )
+		return AIRating;
+
+	Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
+		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	Result = Super.GetAIRating();
-	if (Dist < 1000)
-		Result += (Dist/1000) - 1;
-	else
-		Result += 1-(Abs(Dist-5000)/5000);
-
-	return Result;
+	
+	return class'BUtil'.static.DistanceAtten(Rating, 0.75, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 
 }
 
 // tells bot whether to charge or back off while using this weapon
-function float SuggestAttackStyle()	{	return -0.2;	}
-
+function float SuggestAttackStyle()	{	return 0.0;	}
 // tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return 0.8;	}
-
+function float SuggestDefenseStyle()	{	return 0.0;	}
 // End AI Stuff =====
 
 defaultproperties
@@ -161,7 +224,7 @@ defaultproperties
      FullZoomFOV=70.000000
      bNoCrosshairInScope=True
      SightOffset=(X=16.000000,Z=10.460000)
-     SightDisplayFOV=40.000000
+     SightDisplayFOV=25.000000
      GunLength=72.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
      AimSpread=32
@@ -179,17 +242,14 @@ defaultproperties
      SelectAnimRate=1.350000
      BringUpTime=0.350000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.650000
-     CurrentRating=0.600000
-     bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_SRS600Clip'																	  												  
+     AIRating=0.80000
+     CurrentRating=0.80000
      Description="Another battlefield favourite produced by high-tech manufacturer, NDTR Industries, the SRS-900 is indeed a fine weapon. Using high velocity 7.62mm ammunition, this rifle causes a lot of damage to the target, but suffers from high recoil, chaos and a low clip capacity. The altered design, can now incorporate a silencer to the end of the barrel, increasing its capabilities as a stealth weapon. This particular model, also features a versatile, red-filter scope, complete with various tactical readouts and indicators, including a range finder, stability metre, elevation indicator, ammo display and stealth meter."
      Priority=40
      HudColor=(B=50,G=50,R=200)
-     CustomCrossHairScale=0.000000								  
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
-     GroupOffset=6				  
+     PickupClass=Class'BallisticProV55.SRS600Pickup'
      PlayerViewOffset=(X=2.000000,Y=9.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
      IconMaterial=Texture'BallisticProTextures.SRS.SmallIcon_SRSM2'

@@ -212,5 +212,4 @@ defaultproperties
      Emitters(3)=SpriteEmitter'BallisticProV55.BG_LegExplodeBot.SpriteEmitter20'
 
      AutoDestroy=True
-     bSelected=False
 }

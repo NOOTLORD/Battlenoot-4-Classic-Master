@@ -1689,7 +1689,7 @@ simulated function DisplayDebug(Canvas Canvas, out float YL, out float YPos)
 simulated function MeleeHoldImpl()
 {
 	super.MeleeHoldImpl();
-
+	
 	if (IsMaster())
 		Othergun.MeleeHoldImpl();
 }
@@ -1697,13 +1697,14 @@ simulated function MeleeHoldImpl()
 simulated function MeleeReleaseImpl()
 {
 	super.MeleeReleaseImpl();
-
+	
 	if (IsMaster())
 		Othergun.MeleeReleaseImpl();
 }
 
 defaultproperties
 {
+	 AimDisplacementDurationMult=0.5
      SupportHandBone="Root01"
      bShouldDualInLoadout=True
      TrackSpeed=18000.000000

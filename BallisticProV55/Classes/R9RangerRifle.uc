@@ -9,24 +9,179 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class R9RangerRifle extends BallisticWeapon;
 
+var float LastModeChangeTime;
+
 #exec OBJ LOAD File=R9A_tex.utx
 
-// AI Interface =====
+exec simulated function SwitchWeaponMode (optional byte ModeNum)	
+{
+	if (ClientState == WS_ReadyToFire && ReloadState == RS_None) 
+	{
+		if (ModeNum == 0)
+			ServerSwitchWeaponMode(255);
+		else ServerSwitchWeaponMode(ModeNum-1);
+	}
+}
 
-function byte BestMode()	{	return 0;	}
+// Cycle through the various weapon modes
+function ServerSwitchWeaponMode (byte NewMode)
+{
+	local int m;
+	
+	if (bPreventReload)
+		return;
+	if (ReloadState != RS_None)
+		return;
+		
+	if (NewMode == 255)
+		NewMode = CurrentWeaponMode + 1;
+		
+	if (NewMode == CurrentWeaponMode)
+		return;
+	
+	while (NewMode != CurrentWeaponMode && (NewMode >= WeaponModes.length || WeaponModes[NewMode].bUnavailable) )
+	{
+		if (NewMode >= WeaponModes.length)
+			NewMode = 0;
+		else
+			NewMode++;
+	}
+	if (!WeaponModes[NewMode].bUnavailable)
+	{
+		CurrentWeaponMode = NewMode;
+		NetUpdateTime = Level.TimeSeconds - 1;
+	}
+	
+	if (bNotifyModeSwitch)
+	{
+		if (Instigator != None && !Instigator.IsLocallyControlled())
+		{
+			BFireMode[0].SwitchWeaponMode(CurrentWeaponMode);
+			BFireMode[1].SwitchWeaponMode(CurrentWeaponMode);
+		}
+		ClientSwitchWeaponModes(CurrentWeaponMode);
+	}
+	
+	R9Attachment(ThirdPersonActor).CurrentTracerMode = CurrentWeaponMode;
+
+	if (Instigator.IsLocallyControlled())
+		default.LastWeaponMode = CurrentWeaponMode;
+		
+	for (m=0; m < NUM_FIRE_MODES; m++)
+		if (FireMode[m] != None && FireMode[m].bIsFiring)
+			StopFire(m);
+
+	bServerReloading = true;
+	if (BallisticAttachment(ThirdPersonActor) != None && BallisticAttachment(ThirdPersonActor).ReloadAnim != '')
+		Instigator.SetAnimAction('ReloadGun');
+	CommonStartReload(0);	//Server animation
+	ClientStartReload(0);	//Client animation
+}
+
+// See if firing modes will let us fire another round or not
+simulated function bool CheckWeaponMode (int Mode)
+{
+	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
+		return true;
+	if ((Mode == 0 && FireCount >= WeaponModes[CurrentWeaponMode].Value) || (Mode == 1 && FireCount >= 2))
+		return false;
+	return true;
+}
+
+//===========================================================================
+// ManageHeatInteraction
+//
+// Called from primary fire when hitting a target. Objects don't like having iterators used within them
+// and may crash servers otherwise.
+//===========================================================================
+function int ManageHeatInteraction(Pawn P, int HeatPerShot)
+{
+	local R9HeatManager HM;
+	local int HeatBonus;
+	
+	foreach P.BasedActors(class'R9HeatManager', HM)
+		break;
+	if (HM == None)
+	{
+		HM = Spawn(class'R9HeatManager',P,,P.Location + vect(0,0,-30));
+		HM.SetBase(P);
+	}
+	
+	if (HM != None)
+	{
+		HeatBonus = HM.Heat;
+		if (Vehicle(P) != None)
+			HM.AddHeat(HeatPerShot/4);
+		else HM.AddHeat(HeatPerShot);
+	}
+	
+	return heatBonus;
+}
+
+// Secondary fire doesn't count for this weapon
+simulated function bool HasAmmo()
+{
+	//First Check the magazine
+	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
+		return true;
+	//If it is a non-mag or the magazine is empty
+	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
+			return true;
+	return false;	//This weapon is empty
+}
+
+// AI Interface =====
+function byte BestMode()
+{
+	local Bot B;
+	local R9HeatManager HM;
+	local float Dist;
+
+	B = Bot(Instigator.Controller);
+	if ( B == None  || B.Enemy == None)
+		return 0;
+		
+	if (level.TimeSeconds - LastModeChangeTime < 1.4 - B.Skill*0.1)
+		return 0;
+		
+		
+	Dist = VSize(Instigator.Location - B.Enemy.Location);
+	
+	foreach B.Enemy.BasedActors(class'R9HeatManager', HM)
+		break;
+		
+	if (HM != None || B.Enemy.Health + B.Enemy.ShieldStrength > 200)
+	{
+		if (CurrentWeaponMode != 2)
+		{
+			CurrentWeaponMode = 2;
+			R9PrimaryFire(FireMode[0]).SwitchWeaponMode(CurrentWeaponMode);
+		}
+	}
+	
+	else if (CurrentWeaponMode != 0)
+	{
+		CurrentWeaponMode = 0;
+		R9PrimaryFire(FireMode[0]).SwitchWeaponMode(CurrentWeaponMode);
+	}
+	
+	LastModeChangeTime = level.TimeSeconds;
+
+	return 0;
+}
 
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
 
@@ -36,16 +191,14 @@ function float GetAIRating()
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 2048, 2048); 
 }
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.5;	}
-
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.8;	}
-
 // End AI Stuff =====
 
 defaultproperties
@@ -62,13 +215,17 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway')
      MagAmmo=15
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds3.USSR.USSR-Cock',Volume=0.425000)
+     CockSound=(Sound=Sound'BallisticSounds3.USSR.USSR-Cock')
      ReloadAnimRate=1.250000
      ClipHitSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipHit')
      ClipOutSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipOut')
      ClipInSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipIn')
      ClipInFrame=0.650000
      WeaponModes(0)=(ModeName="Regular")
+     WeaponModes(1)=(ModeName="Freeze",ModeID="WM_SemiAuto",Value=1.000000)
+     WeaponModes(2)=(ModeName="Laser",ModeID="WM_SemiAuto",Value=1.000000)
+     WeaponModes(3)=(ModeName="Phosphorous",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
+     WeaponModes(4)=(ModeName="Poison",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      FullZoomFOV=60.000000
@@ -81,8 +238,7 @@ defaultproperties
      GunLength=80.000000
      CrouchAimFactor=0.750000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
-     AimDamageThreshold=0.000000
+     AimAdjustTime=0.600000
      ChaosSpeedThreshold=3000.000000
      ChaosAimSpread=3072
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.070000),(InVal=0.500000,OutVal=0.040000),(InVal=1.000000)))
@@ -92,21 +248,19 @@ defaultproperties
      RecoilMinRandFactor=0.500000
      RecoilDeclineDelay=0.350000
      FireModeClass(0)=Class'BallisticProV55.R9PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BallisticProV55.R9SecondaryFire'
      SelectAnimRate=1.100000
      BringUpTime=0.400000
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.800000
      CurrentRating=0.800000
-	 bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_R9Clip'
      Description="Outstanding reliability and durability in the field are what characterise one of Black & Wood's legendary rifles. Though not widely used by most military forces, the R9 is renowned for its near indestructable design, and superb reliability. Those who use the weapon, mostly snipers, hunters, and specialised squads, swear by it's accuracy and dependability. Often used without fancy features or burdening devices such as optical scopes and similar attachements, the R9 is a true legend with it's users."
      Priority=33
      HudColor=(G=175)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9
      GroupOffset=3
+     PickupClass=Class'BallisticProV55.R9Pickup'
      PlayerViewOffset=(Y=9.500000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.R9Attachment'
      IconMaterial=Texture'BallisticTextures3.ui.SmallIcon_R9'
@@ -121,5 +275,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.USSR'
      DrawScale=0.500000
      Skins(4)=Shader'R9A_tex.R9_body_SH1'
-     AmbientGlow=0
 }

@@ -5,14 +5,24 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class R9Attachment extends BallisticAttachment;
 
 var byte CurrentTracerMode;
 var array< class<BCTraceEmitter> >	TracerClasses[5];
 var array< class<BCImpactManager> >	ImpactManagers[5];
+
+replication
+{
+	reliable if (Role == ROLE_Authority)
+		CurrentTracerMode;
+}
+
+simulated function PostBeginPlay()
+{
+	Super.PostBeginPlay();
+	CurrentTracerMode = BallisticWeapon(Instigator.Weapon).CurrentWeaponMode;
+}
 
 // Does all the effects for an instant-hit kind of fire.
 // On the client, this uses mHitLocation to find all the other info needed.
@@ -118,7 +128,6 @@ simulated function SpawnTracer(byte Mode, Vector V)
 	}
 }
 
-
 simulated function Vector GetTipLocation()
 {
     local Coords C;
@@ -132,22 +141,19 @@ simulated function Vector GetTipLocation()
 
 defaultproperties
 {
+     TracerClasses(0)=Class'BallisticProV55.TraceEmitter_Default'
+     ImpactManagers(0)=Class'BallisticProV55.IM_Bullet'
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
-     FlashMode=MU_Primary 	
-     FlashScale=1.550000
-	 LightMode=MU_Primary
-     ImpactManagers(0)=Class'BallisticProV55.IM_Bullet''
+     AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
+     FlashScale=2.000000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassMode=MU_Primary
-     InstantMode=MU_Primary
-     TrackAnimMode=MU_None
-     TracerClasses(0)=Class'BallisticProV55.TraceEmitter_Default'	 
-     TracerMode=MU_Primary
-     TracerChance=1.000000	 
+     TracerMode=MU_Both
+     InstantMode=MU_Both
+     FlashMode=MU_Both
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Primary
+     WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-     FlyByMode=MU_Primary
      ReloadAnim="Reload_AR"
      CockingAnim="Cock_RearPull"
      Mesh=SkeletalMesh'BallisticAnims3.USSR-3rd'

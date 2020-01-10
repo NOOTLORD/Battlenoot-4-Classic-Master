@@ -18,5 +18,4 @@ defaultproperties
      DrawScale=0.500000
      CollisionRadius=8.000000
      CollisionHeight=5.000000
-     bSelected=True
 }

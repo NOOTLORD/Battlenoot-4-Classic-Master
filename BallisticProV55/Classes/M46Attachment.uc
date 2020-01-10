@@ -54,5 +54,4 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims_25.OA-AR_3rd'
      DrawScale=0.275000
-     bSelected=True
 }

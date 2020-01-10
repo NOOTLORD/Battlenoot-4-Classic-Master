@@ -62,7 +62,7 @@ defaultproperties
          StartSpinRange=(X=(Min=0.500000,Max=0.500000))
          SizeScale(1)=(RelativeTime=0.250000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=2.000000,Max=3.000000),Y=(Min=2.000000,Max=3.000000),Z=(Min=2.000000,Max=3.000000))
          InitialParticlesPerSecond=24.000000
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticBloodPro.Particles.BloodDrip1'
@@ -90,7 +90,7 @@ defaultproperties
          SizeScale(1)=(RelativeTime=0.170000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=0.900000,RelativeSize=1.000000)
          SizeScale(3)=(RelativeTime=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=4.000000,Max=5.000000),Y=(Min=4.000000,Max=5.000000),Z=(Min=4.000000,Max=5.000000))
          DrawStyle=PTDS_Modulated
          Texture=Texture'BallisticBloodPro.Decals.Splat2'
          SecondsBeforeInactive=0.000000
@@ -107,7 +107,7 @@ defaultproperties
          FadeOutStartTime=3.120000
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=7.000000,Max=7.000000),Y=(Min=7.000000,Max=7.000000),Z=(Min=7.000000,Max=7.000000))
          DrawStyle=PTDS_Modulated
          Texture=Texture'BallisticBloodPro.Decals.Splat4'
          SecondsBeforeInactive=0.000000

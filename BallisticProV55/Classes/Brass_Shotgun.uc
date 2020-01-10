@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class Brass_Shotgun extends BWBrass_Default;
 
@@ -36,8 +34,6 @@ simulated function Destroyed()
 
 defaultproperties
 {
-     StartVelocity=(Z=60.000000)
-     bAddOwnerVelocity=False
      HitSounds(0)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(1)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(2)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
@@ -49,8 +45,6 @@ defaultproperties
      HitSounds(8)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(9)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(10)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyShell'
      DrawScale=0.110000
-     DrawScale3D=(X=0.800000,Y=0.800000,Z=0.800000)
 }

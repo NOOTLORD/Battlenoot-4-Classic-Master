@@ -192,5 +192,4 @@ defaultproperties
      Emitters(4)=BeamEmitter'BallisticProV55.BG_ShoulderExplodeLeftBot.BeamEmitter2'
 
      AutoDestroy=True
-     bSelected=False
 }

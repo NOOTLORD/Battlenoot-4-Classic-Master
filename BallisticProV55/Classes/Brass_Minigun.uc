@@ -60,11 +60,8 @@ simulated function HitWall (Vector HitNormal, Actor Wall)
 
 defaultproperties
 {
-     bAddOwnerVelocity=False
-     HitSoundVolume=0.140000
+     StartVelocity=(Z=150.000000)
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyRifleRound'
      LifeSpan=4.000000
      DrawScale=0.090000
-     DrawScale3D=(X=0.600000,Y=0.800000,Z=0.800000)
-     bSelected=True
 }

@@ -16,9 +16,6 @@ simulated function InstantFireEffects(byte Mode)
 defaultproperties
 {
      BrassMode=MU_None
-     TracerMode=MU_Both
      FlashMode=MU_None
      LightMode=MU_None
-     TracerChance=0.500000
-     bSelected=False
 }

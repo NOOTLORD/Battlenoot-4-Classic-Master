@@ -108,12 +108,7 @@ static function BCReplicationInfo GetBRep(actor A)
 
 defaultproperties
 {
-     bNoDodging=True
-     WalkingPercentage=1.000000
-     CrouchingPercentage=0.500000
-     bUniversalMineLights=True
+     WalkingPercentage=0.900000
+     CrouchingPercentage=0.450000
      ModString="Ballistic Weapons v2.5"
-     AccuracyScale=0.249502
-     RecoilScale=0.145095
-     bNoLongGun=True
 }

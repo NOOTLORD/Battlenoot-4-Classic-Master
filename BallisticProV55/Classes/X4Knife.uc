@@ -6,14 +6,10 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class X4Knife extends BallisticMeleeWeapon;
 
 #exec OBJ LOAD File=BallisticSounds3.uax
-
-// AI Interface =====
 
 // choose between regular or alt-fire
 function byte BestMode()
@@ -49,7 +45,6 @@ function float SuggestDefenseStyle()
 {
 	return -1;
 }
-
 // End AI Stuff =====
 
 defaultproperties
@@ -69,8 +64,6 @@ defaultproperties
      bNoMag=True
      GunLength=0.000000
      bAimDisabled=True
-     AimAdjustTime=0.000000
-     AimDamageThreshold=0.000000
      FireModeClass(0)=Class'BallisticProV55.X4PrimaryFire'
      FireModeClass(1)=Class'BallisticProV55.X4SecondaryFire'
      SelectAnimRate=1.250000
@@ -80,17 +73,14 @@ defaultproperties
      AIRating=0.700000
      CurrentRating=0.700000
      bMeleeWeapon=True
-     bShowChargingBar=False
-     bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_X4Knife'	 
      Description="Much like its predecessor, the X4 is a high quality weapon, manufactured by the renowned Enravion group. The X4 was designed for use in other combat situations, specifically for the Outworld's large urban and industrial sprawls. Made of tougher, heavier and more durable materials, the X4 is not as light or balanced as the X3, and is thus not an easy weapon to use for throwing purposes."
      Priority=13
      HudColor=(B=25,G=150,R=50)
      CenteredOffsetY=7.000000
      CenteredRoll=0
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      GroupOffset=3
+     PickupClass=Class'BallisticProV55.X4Pickup'
      PlayerViewOffset=(X=4.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.X4Attachment'
      IconMaterial=Texture'BallisticTextures_25.X4.SmallIcon_X4'
@@ -98,5 +88,4 @@ defaultproperties
      ItemName="X4 Knife"
      Mesh=SkeletalMesh'BallisticAnims_25.X4'
      DrawScale=0.300000
-     AmbientGlow=0
 }

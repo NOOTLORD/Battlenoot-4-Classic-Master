@@ -6,8 +6,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class XK2PrimaryFire extends BallisticRangeAttenFire;
 
@@ -103,16 +101,15 @@ function PlayFiring()
 		Weapon.SetBoneScale (0, 0.0, XK2SubMachinegun(Weapon).SilencerBone);
 		
 	// Slightly modified Code from original PlayFiring()
-	
 	if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
 		BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
 	else if(!BW.bScopeView || !Weapon.HasAnim(AimedFireAnim))
 		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	else BW.SafePlayAnim(AimedFireAnim, FireAnimRate, TweenTime, , "FIRE");
-	
 	// End code from normal PlayFiring()
-	    
-		FireCount++;
+
+    ClientPlayForceFeedback(FireForce);  // jdf
+    FireCount++;
 
 	if (XK2SubMachinegun(Weapon) != None && XK2SubMachinegun(Weapon).bSilenced && SilencedFireSound.Sound != None)
 		Weapon.PlayOwnedSound(SilencedFireSound.Sound,SilencedFireSound.Slot,SilencedFireSound.Volume,,SilencedFireSound.Radius,,true);
@@ -125,47 +122,44 @@ function PlayFiring()
 defaultproperties
 {
      SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     SFlashBone="Muzzle2"
-     SFlashScaleFactor=0.800000
+     SFlashBone="tip2"
+     SFlashScaleFactor=1.000000
      CutOffDistance=2560.000000
      CutOffStartRange=1024.000000
      WaterRangeFactor=0.500000
      MaxWallSize=24.000000
-     MaxWalls=1
-     Damage=20.000000
-     DamageHead=40.000000
-     DamageLimb=20.000000
+     MaxWalls=2
+     Damage=22.000000
+     DamageHead=44.000000
+     DamageLimb=22.000000
      RangeAtten=0.250000
      WaterRangeAtten=0.600000
      DamageType=Class'BallisticProV55.DTXK2SMG'
      DamageTypeHead=Class'BallisticProV55.DTXK2SMGHead'
      DamageTypeArm=Class'BallisticProV55.DTXK2SMG'
-     PenetrateForce=0
-     bPenetrate=False					   					
+     PenetrateForce=150
+     bPenetrate=True
      ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-2',Volume=0.800000,Radius=72.000000,bAtten=True)
      DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=0.700000)
      bDryUncock=True
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashBone="Muzzle"
-     FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassOffset=(X=-40.000000,Z=-1.000000)
+     BrassOffset=(X=-25.000000,Z=-5.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=98.000000
      FireChaos=0.050000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
-     XInaccuracy=64.000000
-     YInaccuracy=64.000000
+     XInaccuracy=48.000000
+     YInaccuracy=48.000000
      SilencedFireSound=(Sound=Sound'BallisticSounds3.XK2.XK2-SilenceFire',Volume=1.000000,Radius=48.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.XK2.XK2-Fire',Volume=2.000000,Radius=384.000000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds3.XK2.XK2-Fire',Volume=0.500000,Radius=384.000000)
      bPawnRapidFireAnim=True
      FireRate=0.090000
-     AmmoClass=Class'BallisticProV55.Ammo_XK2Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_9mm'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-3.000000)
      ShakeOffsetRate=(X=-1000.000000)
-	 ShakeOffsetTime=0.000000
-     aimerror=600.000000
+     ShakeOffsetTime=1.500000
 }

@@ -1,7 +1,5 @@
 //=============================================================================
 // F2000Attachment.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class F2000Attachment extends BallisticAttachment;
 
@@ -42,23 +40,16 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BWBPRecolorsPro.MARSFlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     FlashMode=MU_Both	 
-     FlashBone="tip2"
-     AltFlashBone="tip2"
-     FlashScale=0.150000
-     LightMode=MU_Primary		 
-     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
+     FlashScale=0.250000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassMode=MU_Both
      InstantMode=MU_Both
-     TrackAnimMode=MU_None	 
+     FlashMode=MU_Both
+     LightMode=MU_Both
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
-     TracerMode=MU_Primary	 
-     TracerChance=0.500000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-     FlyByMode=MU_Both 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
      bRapidFire=True

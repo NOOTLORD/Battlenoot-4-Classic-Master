@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_AK47Assault extends DT_BWBullet;
 
@@ -18,9 +16,6 @@ defaultproperties
      DeathStrings(3)="%o was executed under the order of Czar %k and %kh AK."
      DeathStrings(4)="%o was liberated by Comrade %k's AK-490."
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.AK47AssaultRifle'
      DeathString="%o was destroyed by the Russian might of %k."
      FemaleSuicide="%o shot herself with an Awesome Kelly-490."
@@ -28,6 +23,4 @@ defaultproperties
      bFastInstantHit=True
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
 }

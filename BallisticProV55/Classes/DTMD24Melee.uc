@@ -14,7 +14,8 @@ defaultproperties
      DeathStrings(0)="%o was beaten like an egg by %k and %kh MD24."
      DeathStrings(1)="%k used %kh MD24 pistol to tenderise %o."
      DamageIdent="Melee"
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=True
+     AimDisplacementDuration=0.500000
      WeaponClass=Class'BallisticProV55.MD24Pistol'
      DeathString="%o was beaten like an egg by %k's MD24."
      FemaleSuicide="%o beat herself up with an MD24."

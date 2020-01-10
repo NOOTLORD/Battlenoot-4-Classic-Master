@@ -32,5 +32,4 @@ defaultproperties
 {
      InventoryType=Class'BallisticProV55.SRS600Rifle'
      PickupMessage="You picked up the SRS-600 enhanced battle rifle."
-     bSelected=False
 }

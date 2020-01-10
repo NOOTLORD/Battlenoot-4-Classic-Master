@@ -38,7 +38,7 @@ defaultproperties
      BrassOffset=(Y=10.000000)
      RecoilPerShot=180.000000
      FireChaos=0.045000
-     FireChaosCurve=(Points=(,(InVal=0.160000),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
+     FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=32.000000
      YInaccuracy=32.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_Fire1',Volume=1.750000,Slot=SLOT_Interact,bNoOverride=False)
@@ -52,6 +52,14 @@ defaultproperties
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
      ShakeOffsetTime=2.000000
-     WarnTargetPct=0.200000
+	 
+	 // AI
+	 bInstantHit=True
+	 bLeadTarget=False
+	 bTossed=False
+	 bSplashDamage=False
+	 bRecommendSplashDamage=False
+	 BotRefireRate=0.99
+     WarnTargetPct=0.2
      aimerror=700.000000
 }

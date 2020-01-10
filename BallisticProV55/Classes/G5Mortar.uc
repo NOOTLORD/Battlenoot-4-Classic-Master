@@ -254,7 +254,5 @@ defaultproperties
      MyDamageType=Class'BallisticProV55.DTG5Mortar'
      LifeSpan=0.000000
      bFullVolume=True
-     CollisionRadius=4.000000
-     CollisionHeight=4.000000
      bNetNotify=True
 }

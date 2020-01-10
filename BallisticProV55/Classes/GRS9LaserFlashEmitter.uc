@@ -24,7 +24,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=2
          StartLocationOffset=(X=10.000000)
-         StartSizeRange=(X=(Min=40.000000,Max=40.000000),Y=(Min=40.000000,Max=40.000000),Z=(Min=40.000000,Max=40.000000))
+         StartSizeRange=(X=(Min=80.000000,Max=80.000000),Y=(Min=80.000000,Max=80.000000),Z=(Min=80.000000,Max=80.000000))
          Texture=Texture'BallisticEffects.Particles.FlareB2'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.400000,Max=0.400000)
@@ -50,7 +50,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=3
          StartLocationOffset=(X=140.000000)
-         StartSizeRange=(X=(Min=15.000000,Max=20.000000),Y=(Min=60.000000,Max=80.000000),Z=(Min=60.000000,Max=80.000000))
+         StartSizeRange=(X=(Min=30.000000,Max=40.000000),Y=(Min=120.000000,Max=160.000000),Z=(Min=120.000000,Max=160.000000))
          Texture=Texture'BallisticEffects.Particles.WaterSpray1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.200000,Max=0.300000)
@@ -60,5 +60,4 @@ defaultproperties
      End Object
      Emitters(1)=SpriteEmitter'BallisticProV55.GRS9LaserFlashEmitter.SpriteEmitter10'
 
-     bSelected=True
 }

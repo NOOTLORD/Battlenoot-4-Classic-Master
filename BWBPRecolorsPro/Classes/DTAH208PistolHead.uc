@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTAH208PistolHead extends DT_BWBullet;
 
@@ -37,16 +35,11 @@ defaultproperties
      DeathStrings(3)="%k gave a new meaning of 'Eagle Eye' to %o."
      bHeaddie=True
      DamageIdent="Killstreak"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.AH208Pistol'
      DeathString="%k blasted away at %o's skull with %kh AH208."
      FemaleSuicide="%o killed herself with the AH208."
      MaleSuicide="%o killed himself with the AH208."
      bAlwaysSevers=True
      bSpecial=True
-     PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'	
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
+     PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
 }

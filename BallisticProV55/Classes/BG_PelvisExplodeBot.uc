@@ -164,5 +164,4 @@ defaultproperties
      Emitters(4)=BeamEmitter'BallisticProV55.BG_PelvisExplodeBot.BeamEmitter1'
 
      AutoDestroy=True
-     bSelected=False
 }

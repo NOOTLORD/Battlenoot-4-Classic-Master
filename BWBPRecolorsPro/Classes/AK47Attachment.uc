@@ -5,29 +5,71 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class AK47Attachment extends BallisticAttachment;
+
+var	  BallisticWeapon		myWeap;
+var Vector		SpawnOffset;
+var bool bLoaded; //knife on, use different impact manager
+
+replication
+{
+	reliable if (Role == ROLE_Authority)
+		bLoaded;
+}
+
+simulated function InstantFireEffects(byte Mode)
+{
+	if (FiringMode != 0)
+		MeleeFireEffects();
+	else
+		Super.InstantFireEffects(FiringMode);
+}
+
+// Do trace to find impact info and then spawn the effect
+simulated function MeleeFireEffects()
+{
+	local Vector HitLocation, Dir, Start;
+	local Material HitMat;
+
+	if (mHitLocation == vect(0,0,0))
+		return;
+
+	if (Level.NetMode == NM_Client)
+	{
+		mHitActor = None;
+		Start = Instigator.Location + Instigator.EyePosition();
+		Dir = Normal(mHitLocation - Start);
+		mHitActor = Trace (HitLocation, mHitNormal, mHitLocation + Dir*10, mHitLocation - Dir*10, false,, HitMat);
+		if (mHitActor == None || (!mHitActor.bWorldGeometry))
+			return;
+
+		if (HitMat == None)
+			mHitSurf = int(mHitActor.SurfaceType);
+		else
+			mHitSurf = int(HitMat.SurfaceType);
+	}
+	else
+		HitLocation = mHitLocation;
+	if (mHitActor == None || (!mHitActor.bWorldGeometry && Mover(mHitActor) == None && Vehicle(mHitActor) == None))
+		return;
+	if (!bLoaded)
+		class'IM_GunHit'.static.StartSpawn(HitLocation, mHitNormal, mHitSurf, instigator);
+	else class'IM_Bayonet'.static.StartSpawn(HitLocation, mHitNormal, mHitSurf, Instigator);
+}
 
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashMode=MU_Primary	 
-     FlashScale=0.250000	 
-     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassMode=MU_Primary
-     InstantMode=MU_Primary
-     LightMode=MU_Primary
-	 TrackAnimMode=MU_None
+     TrackAnimMode=MU_Secondary
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
-	 TracerMode=MU_Primary
-	 TracerChance=0.500000
+     TracerChance=2.000000
+     TracerMix=-3
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Primary
+     WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-	 FlyByMode=MU_Primary
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
      bRapidFire=True

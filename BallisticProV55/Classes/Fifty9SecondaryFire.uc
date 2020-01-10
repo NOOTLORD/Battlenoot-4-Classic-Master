@@ -71,8 +71,8 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTFifty9Blade'
      DamageTypeHead=Class'BallisticProV55.DTFifty9BladeHead'
      DamageTypeArm=Class'BallisticProV55.DTFifty9Blade'
-     HookStopFactor=0.000000
-     HookPullForce=0.000000														 
+     HookStopFactor=1.700000
+     HookPullForce=100.000000
      bUseWeaponMag=False
      bIgnoreReload=True
      BallisticFireSound=(Sound=SoundGroup'BallisticSounds3.UZI.Melee',Radius=256.000000,bAtten=True)
@@ -83,8 +83,14 @@ defaultproperties
      AmmoPerFire=0
      ShakeRotMag=(X=64.000000,Y=128.000000)
      ShakeRotRate=(X=2500.000000,Y=2500.000000,Z=2500.000000)
-     ShakeRotTime=0.000000						  
-     BotRefireRate=0.800000
-     WarnTargetPct=0.100000
-     aimerror=400.000000
+     ShakeRotTime=2.500000
+	 
+	 // AI
+	 bInstantHit=True
+	 bLeadTarget=False
+	 bTossed=False
+	 bSplashDamage=False
+	 bRecommendSplashDamage=False
+	 BotRefireRate=0.99
+     WarnTargetPct=0.3
 }

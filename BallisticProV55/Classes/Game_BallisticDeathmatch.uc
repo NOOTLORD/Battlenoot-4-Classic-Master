@@ -204,7 +204,7 @@ static function array<string> GetAllLoadHints(optional bool bThisClassOnly)
 defaultproperties
 {
      BallisticGroup="Ballistic"
-     InventoryMode="BallisticProV55.Mut_OutfittingDM"
+     InventoryMode="BallisticProV55.Mut_BallisticDM"
      InventoryModes(0)="Normal"
      InventoryModes(1)="Loadout"
      InventoryModes(2)="Conflict"

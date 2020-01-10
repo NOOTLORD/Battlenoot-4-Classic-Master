@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWBlunt extends BallisticDamageType;
 
@@ -26,5 +24,5 @@ defaultproperties
      bNeverSevers=True
      PawnDamageSounds(0)=Sound'BallisticSounds2.M763.M763SmashFlesh'
      VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
+     VehicleMomentumScaling=0.100000
 }

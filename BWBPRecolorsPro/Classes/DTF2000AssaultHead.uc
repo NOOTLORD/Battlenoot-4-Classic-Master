@@ -1,8 +1,3 @@
-//=============================================================================
-// DTF2000AssaultHead.
-//
-// Modified by (NL)NOOTLORD
-//=============================================================================
 class DTF2000AssaultHead extends DT_BWBullet;
 
 // HeadShot stuff from old sniper damage ------------------
@@ -31,9 +26,6 @@ defaultproperties
      DeathStrings(2)="%k tactically disabled %o with a MARS-3 bullet to the head."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.F2000AssaultRifle'
      DeathString="%o's brain shut down under %k's MARS-3 fire."
      FemaleSuicide="%o HEADSHOT SELF?!"
@@ -44,6 +36,4 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
-	 VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
 }

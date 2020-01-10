@@ -6,10 +6,9 @@
 // its way from its owner's control. Secondary allows the user to mount the
 // weapon on the ground by crouching.
 //
+//
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class M353Machinegun extends BallisticMachinegun;
 
@@ -66,7 +65,7 @@ simulated function bool HasAmmo()
 			return true;
 	return false;	//This weapon is empty
 }
-
+	
 simulated function SetScopeBehavior()
 {
 	bUseNetAim = default.bUseNetAim || bScopeView;
@@ -99,21 +98,21 @@ simulated function SetScopeBehavior()
 		ChaosSpeedThreshold = default.ChaosSpeedThreshold;
 	}
 }
-
+	
 // AI Interface =====
 
 // choose between regular or alt-fire
-function byte BestMode()	{	return 0;	}
-
+function byte BestMode()	{	return 0;	}	
+	
 function float GetAIRating()
 {
 	local Bot B;
-
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-
+	
 	if ( B == None )
 		return AIRating;
 
@@ -123,19 +122,18 @@ function float GetAIRating()
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 1024, 2048); 
-	}
 	
+	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 1024, 2048); 
+}
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.5;	}
 
 // tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return 0.5;	}	
+function float SuggestDefenseStyle()	{	return 0.5;	}
 
-// End AI Stuff =====	
-										
+// End AI Stuff =====
+
 defaultproperties
 {
      BoxOnSound=(Sound=Sound'BallisticSounds2.M353.M353-BoxOn')
@@ -148,7 +146,7 @@ defaultproperties
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M353'
      BigIconCoords=(Y1=50,Y2=240)
-     SightFXClass=Class'BallisticProV55.M353SightLEDs'	 
+     SightFXClass=Class'BallisticProV55.M353SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
@@ -168,20 +166,18 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
-	 WeaponModes(3)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(ModeName="Burst of Three")
+     WeaponModes(2)=(ModeName="Burst of Five",ModeID="WM_BigBurst",Value=5.000000)
+     WeaponModes(3)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      CurrentWeaponMode=3
-     bNoCrosshairInScope=True
+     bNoCrosshairInScope=False
      SightPivot=(Pitch=128)
      SightOffset=(X=-6.000000,Z=5.350000)
      SightingTime=0.550000
      SightAimFactor=0.700000
      SprintOffSet=(Pitch=-6000,Yaw=-8000)
-     AimAdjustTime=100.000000
      AimSpread=384
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000
+     ViewRecoilFactor=0.500000
      ChaosDeclineTime=1.600000
      ChaosAimSpread=3072
      RecoilXCurve=(Points=(,(InVal=0.070000,OutVal=-0.050000),(InVal=0.100000,OutVal=-0.085000),(InVal=0.180000,OutVal=0.060000),(InVal=0.300000,OutVal=-0.100000),(InVal=0.500000,OutVal=0.200000),(InVal=0.650000,OutVal=0.300000),(InVal=0.700000,OutVal=-0.100000),(InVal=0.850000,OutVal=0.400000),(InVal=1.000000)))
@@ -199,15 +195,13 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.7500000
      CurrentRating=0.7500000
-     bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_M353Belt'
      Description="The M353 'Guardian' Machinegun has seen some of the most brutal battles ever recorded in recent history, and has helped win many of them, the most famous being the bloody 'Wasteland Seige' where 12 million Krao were slaughtered along a 500 mile line of defences. Used primarily as a defensive weapon, the M353's incredible rate of fire can quickly and effectively destroy masses of oncoming foes, especially melee attackers. When the secondary mode is activated, the Guardian becomes much more accurate when the user mounts it on the ground, allowing it to be a very effective defensive weapon. With its high rate of fire and high damage, the M353 becomes very inaccurate after just a few rounds and with its high ammo capacity, comes the difficulty of longer reload times than smaller weapons."
      DisplayFOV=50.000000
      Priority=43
      HudColor=(G=150,R=100)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=6
+     PickupClass=Class'BallisticProV55.M353Pickup'
      PlayerViewOffset=(X=2.000000,Y=3.500000,Z=-4.000000)
      AttachmentClass=Class'BallisticProV55.M353Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M353'
@@ -221,5 +215,4 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticProAnims.M353Machinegun'
      DrawScale=0.350000
-     AmbientGlow=0
 }

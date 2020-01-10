@@ -159,5 +159,4 @@ defaultproperties
      bHidden=True
      RemoteRole=ROLE_None
      LifeSpan=20.000000
-     bSelected=True
 }

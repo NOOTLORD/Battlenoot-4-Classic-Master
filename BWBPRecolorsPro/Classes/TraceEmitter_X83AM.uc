@@ -36,7 +36,7 @@ defaultproperties
          SizeScale(1)=(RelativeTime=0.410000,RelativeSize=0.400000)
          SizeScale(2)=(RelativeTime=0.640000,RelativeSize=1.000000)
          SizeScale(3)=(RelativeTime=0.980000,RelativeSize=4.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=3.000000,Max=4.000000),Y=(Min=3.000000,Max=4.000000),Z=(Min=3.000000,Max=4.000000))
          InitialParticlesPerSecond=50000.000000
          Texture=Texture'BallisticRecolors3TexPro.X82.X83SmokeCore'
          LifetimeRange=(Min=0.400100,Max=0.400100)
@@ -66,7 +66,7 @@ defaultproperties
          SizeScale(0)=(RelativeSize=0.300000)
          SizeScale(1)=(RelativeTime=0.370000,RelativeSize=0.800000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.200000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=1.000000,Max=5.000000),Y=(Min=1.000000,Max=5.000000),Z=(Min=1.000000,Max=5.000000))
          InitialParticlesPerSecond=50000.000000
          Texture=Texture'BallisticEffects.Particles.Smoke3'
          LifetimeRange=(Min=1.500000,Max=1.500000)
@@ -93,7 +93,7 @@ defaultproperties
          StartLocationOffset=(X=-30.000000)
          SizeScale(0)=(RelativeSize=0.100000)
          SizeScale(1)=(RelativeTime=0.280000,RelativeSize=0.300000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=3.000000,Max=3.000000),Y=(Min=3.000000,Max=3.000000),Z=(Min=3.000000,Max=3.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_Brighten
          Texture=Texture'BallisticRecolors3TexPro.X82.X83SmokeCore'

@@ -150,7 +150,7 @@ defaultproperties
          StartLocationOffset=(X=20.000000)
          SpinsPerSecondRange=(X=(Max=2.000000))
          StartSpinRange=(X=(Max=1.000000))
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=2.000000,Max=3.000000),Y=(Min=2.000000,Max=3.000000),Z=(Min=2.000000,Max=3.000000))
          InitialParticlesPerSecond=400.000000
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticBloodPro.Sprites.HeadBits'

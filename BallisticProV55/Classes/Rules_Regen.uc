@@ -23,5 +23,4 @@ function ScoreKill(Controller Killer, Controller Killed)
 
 defaultproperties
 {
-     bSelected=True
 }

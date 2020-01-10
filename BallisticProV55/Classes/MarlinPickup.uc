@@ -41,5 +41,4 @@ defaultproperties
      Physics=PHYS_None
      DrawScale=0.250000
      CollisionHeight=3.000000
-     bSelected=True
 }

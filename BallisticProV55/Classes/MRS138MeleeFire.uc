@@ -66,6 +66,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTMRS138Tazer'
      DamageTypeHead=Class'BallisticProV55.DTMRS138Tazer'
      DamageTypeArm=Class'BallisticProV55.DTMRS138Tazer'
+     KickForce=80000
      bUseWeaponMag=False
      bReleaseFireOnDie=False
      bIgnoreReload=True
@@ -79,9 +80,10 @@ defaultproperties
      FireRate=0.750000
      AmmoClass=Class'BallisticProV55.Ammo_MRS138Shells'
      AmmoPerFire=0
+     ShakeRotTime=1.000000
      ShakeOffsetMag=(X=5.000000)
      ShakeOffsetRate=(X=-1000.000000)
+     ShakeOffsetTime=1.000000
      BotRefireRate=0.900000
      WarnTargetPct=0.050000
-     aimerror=0.000000
 }

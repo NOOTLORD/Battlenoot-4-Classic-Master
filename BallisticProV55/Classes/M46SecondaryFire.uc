@@ -54,6 +54,7 @@ simulated function bool AllowFire()
 
     return true;
 }
+
 simulated event ModeDoFire()
 {
 	if (!AllowFire())
@@ -94,9 +95,6 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
      FlashBone="tip2"
      BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_FireGren',Volume=1.750000)
-     bSplashDamage=True
-     bRecommendSplashDamage=True
-     bTossed=True
      bFireOnRelease=True
      PreFireTime=0.450000
      PreFireAnim="GrenadePrepFire"
@@ -104,11 +102,18 @@ defaultproperties
      FireForce="AssaultRifleAltFire"
      FireRate=0.750000
      AmmoClass=Class'BallisticProV55.Ammo_M46Grenades'
-     ShakeRotTime=0.000000
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetTime=2.000000
      ProjectileClass=Class'BallisticProV55.M46Grenade'
-     BotRefireRate=0.300000
-     WarnTargetPct=0.300000
+	 
+	 // AI
+	 bInstantHit=False
+	 bLeadTarget=True
+	 bTossed=True
+	 bSplashDamage=True
+	 bRecommendSplashDamage=True
+	 BotRefireRate=0.3
+     WarnTargetPct=0.8
 }

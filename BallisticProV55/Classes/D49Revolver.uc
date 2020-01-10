@@ -9,8 +9,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class D49Revolver extends BallisticHandgun;
 
@@ -160,15 +158,20 @@ simulated function Notify_ClipOutOfSight()
 
 simulated function Notify_D49Uncock()
 {	bRevCocked=false;	}
+
 simulated function Notify_D49Cock()
 {	bRevCocked=true;
 	class'BUtil'.static.PlayFullSound(self, CockSound);	}
+	
 simulated function Notify_D49CockAfterPullout()
 {	Notify_D49Cock();	}
+
 simulated function Notify_D49CockAfterFire()
 {	Notify_D49Cock();	}
+
 simulated function Notify_D49StartReload()
 {    class'BUtil'.static.PlayFullSound(self, RevReloadSound);	}
+
 simulated function Notify_D49SwingOpen()
 {
     class'BUtil'.static.PlayFullSound(self, RevOpenSound);
@@ -180,8 +183,10 @@ simulated function Notify_D49SwingOpen()
 		SetAnimFrame(0.38, 0);
 	}
 }
+
 simulated function Notify_D49SwingClosed()
 {	class'BUtil'.static.PlayFullSound(self, RevCloseSound);	}
+
 simulated function Notify_D49Spin()
 {	class'BUtil'.static.PlayFullSound(self, RevSpinSound);	}
 
@@ -279,30 +284,17 @@ simulated function CommonCockGun(optional byte Type)
 		SafePlayAnim('Cock', 1.0, 0.2);
 }
 
+// Change some properties when using sights...
+simulated function SetScopeBehavior()
+{
+	super.SetScopeBehavior();
+	bUseNetAim = default.bUseNetAim || bScopeView;
+}
+
 simulated function ApplyAimRotation()
 {
 	ApplyAimToView();
 	PlayerViewPivot = default.PlayerViewPivot + (GetAimPivot() + GetRecoilPivot()*0.1) * (DisplayFOV / Instigator.Controller.FovAngle);
-}
-
-// See if firing modes will let us fire another round or not
-simulated function bool CheckWeaponMode (int Mode)
-{
-	if (IsInState('DualAction') || IsInState('PendingDualAction'))
-		return false;															   			   
-	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
-		return true;
-	if (Mode > 0 && OtherGun != None && D49Revolver(OtherGun) != None && FireCount < 1)
-		return true;
-	if (FireCount >= WeaponModes[CurrentWeaponMode].Value && (!IsSlave() || WeaponModes[CurrentWeaponMode].ModeID != "WM_SemiAuto" || Othergun.WeaponModes[Othergun.CurrentWeaponMode].ModeID != "WM_SemiAuto" || Othergun.HandgunGroup == HandgunGroup || LastFireTime > level.TimeSeconds-SingleHeldRate))
-		return false;
-	if (Othergun != None && CanAlternate(Mode) && Mode == 0)
-	{
-		if ( (!Othergun.HasAmmoLoaded(Mode) || LastFireTime <= OtherGun.LastFireTime) && FireCount < 1 && Othergun.FireCount < 1 )
-			return true;
-		return false;
-	}
-	return true;
 }
 
 // AI Interface =====
@@ -313,20 +305,22 @@ function byte BestMode()	{	return 0;	}
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
 
-    Rating = Super.GetAIRating();
+	Rating = Super.GetAIRating();
 
 	if (B.Enemy == None)
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.DistanceAtten(Rating, 0.5, Dist, 768, 3072); 
 }
 
@@ -367,13 +361,11 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
      MagAmmo=6
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds2.D49.D49-Cock',Volume=0.750000)
+     CockSound=(Sound=Sound'BallisticSounds2.D49.D49-Cock')
      ReloadAnimRate=1.250000
-     ClipHitSound=(Volume=0.750000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellOut',Volume=0.750000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn',Volume=0.750000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellOut')
+     ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn')
      ClipInFrame=0.650000
-     bCockOnEmpty=True
      bAltTriggerReload=True
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
@@ -382,10 +374,7 @@ defaultproperties
      SightOffset=(X=-30.000000,Y=-0.400000,Z=14.500000)
      SightingTime=0.200000
      SightAimFactor=0.150000
-     AimAdjustTime=100.000000
-	 SightZoomFactor=0
      AimSpread=16
-     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.450000
      ChaosAimSpread=768
      RecoilYawFactor=0.000000
@@ -394,23 +383,21 @@ defaultproperties
      RecoilDeclineTime=0.800000
      RecoilDeclineDelay=0.350000
      FireModeClass(0)=Class'BallisticProV55.D49PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BallisticProV55.D49SecondaryFire'
      PutDownAnimRate=1.250000
      PutDownTime=0.500000
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
      CurrentRating=0.600000
      bSniping=True
-     bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_D49Bullets'	 
      Description="Another fine weapon designed by the acclaimed 'Black & Wood' company, the D49 revolver is a true hand cannon. Based on weapons of old, the D49 was intended for non-military use, but rather for self defense and civilian purposes. The dual-barrel design has made it a favourite among it's users, capable of causing massive damage if used correctly, able to easily kill an armored Terran."
      DisplayFOV=50.000000
      Priority=22
      HudColor=(B=255,G=200,R=200)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
      GroupOffset=2
+     PickupClass=Class'BallisticProV55.D49Pickup'
      PlayerViewOffset=(X=-2.000000,Y=13.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=512)
      AttachmentClass=Class'BallisticProV55.D49Attachment'
@@ -428,5 +415,4 @@ defaultproperties
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Shader'BallisticWeapons2.D49.D49-Shiney'
      Skins(2)=Shader'BallisticWeapons2.D49.D49Shells-Shiney'
-     AmbientGlow=0
 }

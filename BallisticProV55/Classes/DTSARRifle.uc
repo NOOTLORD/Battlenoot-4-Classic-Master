@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTSARRifle extends DT_BWBullet;
 
@@ -21,15 +19,9 @@ defaultproperties
      DeathStrings(6)="%o was cleaned out by %k's sub-assault rifle."
      EffectChance=0.500000
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.SARAssaultRifle'
      DeathString="%o's light was snuffed out by %k's S-AR 12."
      FemaleSuicide="%o consecrated herself."
      MaleSuicide="%o consecrated himself."
      bFastInstantHit=True
-     FlashScale=0.300000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
 }

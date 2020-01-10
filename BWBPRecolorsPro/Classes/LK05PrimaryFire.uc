@@ -9,8 +9,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class LK05PrimaryFire extends BallisticRangeAttenFire;
 
@@ -153,6 +151,8 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
+    ClientPlayForceFeedback(FireForce);  // jdf
+
 	if (!bFiring)
 		bFiring=true;
     FireCount++;
@@ -244,13 +244,13 @@ defaultproperties
      FireSoundLoopBegin=Sound'PackageSounds4Pro.Misc.F2000-SilFire'
      SMuzzleFlashClass=Class'BWBPRecolorsPro.LK05SilencedFlash'
      SFlashBone="tip2"
-     SFlashScaleFactor=1.000000
+     SFlashScaleFactor=0.750000
      CutOffDistance=3072.000000
      CutOffStartRange=1792.000000
      TraceRange=(Min=9000.000000,Max=11000.000000)
      WaterRangeFactor=0.800000
      MaxWallSize=32.000000
-     MaxWalls=1
+     MaxWalls=3
      Damage=25.000000
      DamageHead=50.000000
      DamageLimb=25.000000
@@ -259,30 +259,30 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_LK05Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_LK05AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_LK05Assault'
-     PenetrateForce=0
+     PenetrateForce=150
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
-     FlashScaleFactor=0.400000
+     FlashScaleFactor=0.500000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassBone="tip"
-     BrassOffset=(X=-50.000000,Y=4.000000,Z=-3.250000)
+     BrassOffset=(X=-80.000000,Y=1.000000)
      RecoilPerShot=160.000000
      FireChaos=0.035000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
      SilencedFireSound=(Sound=Sound'PackageSounds4Pro.Misc.F2000-SilFire',Volume=1.100000,Radius=192.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.LK05.LK05-RapidFire',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.LK05.LK05-RapidFire',Volume=1.200000)
      bPawnRapidFireAnim=True
      FireEndAnim=
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05Clip'
      FireRate=0.095000
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_68mm'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetTime=2.000000
      WarnTargetPct=0.200000
-     aimerror=600.000000
+     aimerror=900.000000
 }

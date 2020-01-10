@@ -63,5 +63,4 @@ static function DoSeverStump(Pawn Victim, name Bone, vector HitRay, float Damage
 
 defaultproperties
 {
-     bSelected=True
 }

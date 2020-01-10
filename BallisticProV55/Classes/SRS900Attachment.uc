@@ -1,7 +1,7 @@
 //=============================================================================
 // SRS900Attachment.
 //
-// 3rd person weapon attachment for SRS600 Battle Rifle
+// 3rd person weapon attachment for SRS900 Battle Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -74,7 +74,7 @@ defaultproperties
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      AltFlashBone="tip2"
-     FlashScale=0.550000
+     FlashScale=0.800000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassMode=MU_Both
      InstantMode=MU_Both
@@ -83,11 +83,9 @@ defaultproperties
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-     FlyByMode=MU_Primary
      ReloadAnim="Reload_AR"
      bRapidFire=True
      bAltRapidFire=True
      Mesh=SkeletalMesh'BWBP3b-Anims.SRS900-3rd'
      DrawScale=0.250000
-     bSelected=True
 }

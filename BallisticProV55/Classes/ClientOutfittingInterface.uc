@@ -429,7 +429,7 @@ function ServerSetLoadout(string Stuff0, string Stuff1, string Stuff2, string St
 
 defaultproperties
 {
-     ChangeInterval=5.000000
+     ChangeInterval=60.000000
      bHidden=True
      bOnlyRelevantToOwner=True
      bAlwaysRelevant=True

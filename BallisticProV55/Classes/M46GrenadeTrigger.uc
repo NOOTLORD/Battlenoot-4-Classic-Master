@@ -27,5 +27,4 @@ defaultproperties
      bHardAttach=True
      CollisionRadius=192.000000
      CollisionHeight=192.000000
-     bSelected=True
 }

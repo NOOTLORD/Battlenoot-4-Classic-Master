@@ -97,5 +97,4 @@ defaultproperties
      Emitters(3)=SpriteEmitter'BallisticProV55.IE_ShellMetal.SpriteEmitter1'
 
      AutoDestroy=True
-     bSelected=True
 }

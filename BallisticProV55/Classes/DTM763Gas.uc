@@ -34,6 +34,7 @@ defaultproperties
      MinMotionBlurDamage=1.000000
      MotionBlurDamageRange=20.000000
      MotionBlurFactor=6.000000
+     bUseMotionBlur=True
      WeaponClass=Class'BallisticProV55.M763Shotgun'
      DeathString="%o choked to death in a cloud of %k's toxic gas."
      FemaleSuicide="%o gassed herself."

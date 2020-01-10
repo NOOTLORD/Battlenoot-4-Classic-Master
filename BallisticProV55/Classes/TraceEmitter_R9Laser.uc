@@ -10,11 +10,6 @@ simulated function Initialize(float Distance, optional float Power)
 	Emitters[2].LifeTimeRange.Max = Distance / 16000;
 }
 
-	
-
-
-	
-
 defaultproperties
 {
      Begin Object Class=BeamEmitter Name=BeamEmitter0
@@ -36,7 +31,7 @@ defaultproperties
          MaxParticles=5
          SizeScale(0)=(RelativeSize=0.100000)
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=11.000000,Max=11.000000),Y=(Min=11.000000,Max=11.000000),Z=(Min=11.000000,Max=11.000000))
          InitialParticlesPerSecond=50000.000000
          Texture=Texture'BallisticEffects.GunFire.RailSmokeCore'
          SecondsBeforeInactive=0.000000
@@ -61,7 +56,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=9.000000,Max=9.000000),Y=(Min=9.000000,Max=9.000000),Z=(Min=9.000000,Max=9.000000))
          InitialParticlesPerSecond=50000.000000
          Texture=Texture'BallisticEffects.GunFire.RailCoreWave'
          SecondsBeforeInactive=0.000000
@@ -85,7 +80,7 @@ defaultproperties
          MaxParticles=100
          SpinsPerSecondRange=(X=(Max=4.000000))
          StartSpinRange=(X=(Max=1.000000))
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=1.000000,Max=25.000000),Y=(Min=1.000000,Max=25.000000),Z=(Min=1.000000,Max=25.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'AW-2004Particles.Energy.BurnFlare'
@@ -110,7 +105,7 @@ defaultproperties
          MaxParticles=1
          SizeScale(1)=(RelativeTime=0.250000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=2.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=50.000000,Max=50.000000),Y=(Min=50.000000,Max=50.000000),Z=(Min=50.000000,Max=50.000000))
          InitialParticlesPerSecond=1000.000000
          Texture=Texture'AW-2004Particles.Weapons.HardSpot'
          LifetimeRange=(Min=0.500000,Max=0.500000)
@@ -132,7 +127,7 @@ defaultproperties
          MaxParticles=1
          SizeScale(1)=(RelativeTime=0.150000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=2.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=30.000000,Max=30.000000),Y=(Min=30.000000,Max=30.000000),Z=(Min=30.000000,Max=30.000000))
          InitialParticlesPerSecond=1000.000000
          Texture=Texture'AW-2004Particles.Weapons.PlasmaStar2'
          LifetimeRange=(Min=0.500000,Max=0.500000)

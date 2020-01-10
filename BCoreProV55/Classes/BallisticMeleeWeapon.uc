@@ -12,7 +12,34 @@ class BallisticMeleeWeapon extends BallisticWeapon
 	HideDropDown
 	CacheExempt;
 
+var   bool			bBlocked;		// Currently blocking
+var() name			BlockUpAnim;	// Anim for going into blocking
+var() name			BlockDownAnim;	// Anim when blocking stops
+var() name			BlockIdleAnim;	// Anim when in block mode and idle
+
 var float				MeleeSpreadAngle;
+
+replication
+{
+	reliable if ( Role<ROLE_Authority )
+		ServerSetBlocked;
+}
+
+simulated function TickDisplacement(float DT)
+{
+	if (AimDisplacementEndTime > Level.TimeSeconds)
+	{
+		AimDisplacementFactor = FMin (AimDisplacementFactor + DT/0.2, 0.75);
+		if (!bServerReloading)
+			bServerReloading = True;
+	}
+	else 
+	{
+		AimDisplacementFactor = FMax(AimDisplacementFactor-DT/0.35, 0);
+		if (bServerReloading)
+			bServerReloading=False;
+	}
+}
 
 simulated function PostBeginPlay()
 {
@@ -20,6 +47,38 @@ simulated function PostBeginPlay()
 	MeleeSpreadAngle = BallisticMeleeFire(BFireMode[0]).GetCrosshairInaccAngle();
 }
 
+function ServerSetBlocked(bool NewValue)
+{
+	bBlocked=NewValue;
+}
+
+simulated function float ChargeBar()
+{
+	return MeleeFatigue;
+}
+
+//simulated function DoWeaponSpecial(optional byte i)
+exec simulated function WeaponSpecial(optional byte i)
+{
+	if (bBlocked)
+		return;
+	bBlocked=true;
+	ServerSetBlocked(bBlocked);
+	if (!IsFiring())
+		PlayAnim(BlockUpAnim, 1.5);
+	IdleAnim = BlockIdleAnim;
+}
+//simulated function DoWeaponSpecialRelease(optional byte i)
+exec simulated function WeaponSpecialRelease(optional byte i)
+{
+	if (!bBlocked)
+		return;
+	bBlocked=false;
+	ServerSetBlocked(bBlocked);
+	if (!IsFiring())
+		PlayAnim(BlockDownAnim, 1.5);
+	IdleAnim = default.IdleAnim;
+}
 
 function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
 {
@@ -36,6 +95,39 @@ function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocati
 		
 	if (bBerserk)
 		Damage *= 0.75;
+	
+	if (BDT != None)
+	{
+		if (bBlocked && !IsFiring() && level.TimeSeconds > LastFireTime + 1 && BDT.default.bCanBeBlocked &&
+		Normal(HitLocation-(Instigator.Location+Instigator.EyePosition())) Dot Vector(Instigator.GetViewRotation()) > 0.4)
+		{
+			Damage = 0;
+			BallisticAttachment(ThirdPersonActor).UpdateBlockHit();
+			if (instigatedBy != None && BallisticWeapon(instigatedBy.Weapon) != None)
+				BallisticWeapon(instigatedBy.Weapon).ApplyBlockFatigue();
+			return;
+		}
+	}
+}
+
+simulated event AnimEnd (int Channel)
+{
+    local name anim;
+    local float frame, rate;
+
+    GetAnimParams(0, anim, frame, rate);
+
+	if (bBlocked && (anim == FireMode[0].FireAnim || anim == FireMode[1].FireAnim))
+	{
+		PlayAnim(BlockUpAnim, 1.5);
+		IdleAnim = BlockIdleAnim;
+	}
+	else
+	{
+		if (!bBlocked)
+			IdleAnim = default.IdleAnim;
+		Super.AnimEnd(Channel);
+	}
 }
 
 //Draws simple crosshairs to accurately describe hipfire at any FOV and resolution.
@@ -104,16 +196,16 @@ function float GetAIRating()
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-
+	
 	if ( B == None)
 		return AIRating;
-
+		
 	if (B.Enemy == None)
 		return 0; // almost certainly useless against non-humans
-
+		
 	Dir = B.Enemy.Location - Instigator.Location;
 	Dist = VSize(Dir);
-
+	
 	// favour melee when attacking the enemy's back
 	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0)
 		Rating += 0.08 * B.Skill;
@@ -130,9 +222,9 @@ function float GetAIRating()
 		if (BW.bWT_Shotgun || BW.InventoryGroup == 3)
 			Rating = 0;	
 	}
-
+	
 	Rating = class'BUtil'.static.DistanceAtten(Rating, 0.4, Dist, 128, 128);
-
+	
 	return Rating * (1 - MeleeFatigue);
 }
 
@@ -150,11 +242,14 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
+     BlockUpAnim="PrepBlock"
+     BlockDownAnim="EndBlock"
+     BlockIdleAnim="BlockIdle"
      InventorySize=2
 	 bNoMag=True
      bNonCocking=True
 	 AIRating=0.700000
-	 CurrentRating=0.700000
+     CurrentRating=0.700000
      WeaponModes(0)=(bUnavailable=True,ModeID="WM_None")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
@@ -166,5 +261,5 @@ defaultproperties
      ChaosAimSpread=0
      RecoilDeclineTime=4.000000
      RecoilDeclineDelay=0.750000
-     bShowChargingBar=False
+     bShowChargingBar=True
 }

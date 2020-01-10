@@ -249,13 +249,13 @@ simulated function bool LoadWIFromCache(string ClassStr, out BC_WeaponInfoCache.
 	local int i;
 
 	WepInfo = class'BC_WeaponInfoCache'.static.AutoWeaponInfo(ClassStr, i);
-
+	
 	if (i == -1)
 	{
 		log("Error loading item for Conflict: "$ClassStr, 'Warning');
 		return false;
 	}
-
+	
 	return true;
 }
 
@@ -272,7 +272,7 @@ simulated function SortList()
 	{
 		if (InStr(FullInventoryList[i], "CItem") != -1)
 			ConflictItems[ConflictItems.Length] = FullInventoryList[i];
-
+	
 		else 
 		{
 			if (LoadWIFromCache(FullInventoryList[i], WI))
@@ -282,23 +282,24 @@ simulated function SortList()
 				else 
 				{	
 					wiGroup = WI.InventoryGroup;
-
+					
 					if (wiGroup == 0)
 						wiGroup = 10;
+						
 					for (j = 0; j < SortedWIs.Length; ++j)
 					{
 						existingGroup = SortedWIs[j].InventoryGroup;
-
+						
 						if (existingGroup == 0)
 							existingGroup = 10;
-
+						
 						if (wiGroup < existingGroup)
 						{
 							SortedWIs.Insert(j, 1);
 							SortedWIs[j] = WI;
 							break;
 						}
-
+						
 						if (wiGroup == existingGroup)
 						{
 							if (StrCmp(WI.ItemName, SortedWIs[j].ItemName, 6, True) <= 0)
@@ -307,9 +308,8 @@ simulated function SortList()
 								SortedWIs[j] = WI;
 								break;
 							}
-
-                        }
-
+						}
+						
 						if (j == SortedWIs.Length - 1)
 						{
 							SortedWIs[SortedWIs.Length] = WI;
@@ -320,12 +320,12 @@ simulated function SortList()
 			}
 		}
 	}
-
+	
 	for (i = 0; i < SortedWIs.Length; ++i)
 		FullInventoryList[i] = SortedWIs[i].ClassName;
-
+	
 	j = i;
-
+		
 	for (i = 0; i < ConflictItems.Length; ++i)
 	{
 		FullInventoryList[j] = ConflictItems[i];
@@ -414,6 +414,7 @@ simulated function bool ValidateWeapon (string WeaponName)
 
 //===================================================
 // WeaponRequirementsOK
+//
 // Called to verify a weapon is available to the player.
 // Manages team-related and Evolution factors.
 // Todo: Add support for weapon prices.

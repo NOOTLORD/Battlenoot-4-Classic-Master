@@ -2,7 +2,6 @@
 // M50SecondaryFire.
 //
 // A grenade that bonces off walls and detonates a certain time after impact
-// Good for scaring enemies out of dark corners and not much else
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -26,6 +25,7 @@ simulated function bool CheckGrenade()
 		bIsFiring=false;
 		return false;
 	}
+	
 	return true;
 }
 
@@ -51,13 +51,16 @@ simulated function bool AllowFire()
 	}
 
     return true;
-}																					  								   																																																																										 																																											 			   					   																															 								     								 
+}
+
 simulated event ModeDoFire()
 {
 	if (!AllowFire())
 		return;
+
 	if (!CheckGrenade())
 		return;
+		
 	Super.ModeDoFire();
 	
 	bLoaded = false;
@@ -84,11 +87,7 @@ defaultproperties
      bUseWeaponMag=False
      MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
      FlashBone="tip2"
-     FlashScaleFactor=0.600000
      BallisticFireSound=(Sound=Sound'BallisticSounds3.M50.M50GrenFire')
-     bSplashDamage=True
-     bRecommendSplashDamage=True
-     bTossed=True
      bFireOnRelease=True
      bWaitForRelease=True
      PreFireTime=0.450000
@@ -97,12 +96,18 @@ defaultproperties
      FireForce="AssaultRifleAltFire"
      FireRate=0.800000
      AmmoClass=Class'BallisticProV55.Ammo_M900Grenades'
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
+     ShakeOffsetTime=2.000000
      ProjectileClass=Class'BallisticProV55.M50Grenade'
-     BotRefireRate=0.300000
-     WarnTargetPct=0.300000
-     aimerror=600.000000
+	 
+	 // AI
+	 bInstantHit=False
+	 bLeadTarget=True
+	 bTossed=True
+	 bSplashDamage=True
+	 bRecommendSplashDamage=True
+	 BotRefireRate=0.3
+     WarnTargetPct=0.5
 }

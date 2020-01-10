@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTSARRifleHead extends DT_BWBullet;
 
@@ -39,10 +37,6 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
-     MotionBlurTime=3.000000
      WeaponClass=Class'BallisticProV55.SARAssaultRifle'
      DeathString="%o's head was hallowed by %k's SAR12."
      FemaleSuicide="%o routed herself."
@@ -51,7 +45,4 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     FlashScale=0.300000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
 }

@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class MGLGrenadeTimed extends BallisticGrenade;
 
@@ -64,8 +62,8 @@ defaultproperties
      PlayerImpactType=PIT_Detonate
      bNoInitialSpin=True
      bAlignToVelocity=True
-     DetonateDelay=2.500000
-     ImpactDamage=80
+     DetonateDelay=2.000000
+     ImpactDamage=100
      ImpactDamageType=Class'BWBPRecolorsPro.DTMGLGrenade'
      ImpactManager=Class'BWBPRecolorsPro.IM_MGLGrenade'
      TrailClass=Class'BWBPRecolorsPro.MGLNadeTrail'
@@ -73,11 +71,10 @@ defaultproperties
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=512.000000
      MotionBlurRadius=400.000000
-     MotionBlurFactor=0.000000
-     MotionBlurTime=0.000000
-     ShakeRotTime=0.000000
-     ShakeOffsetTime=0.000000
-     Speed=1750.000000
+     MotionBlurFactor=3.000000
+     MotionBlurTime=4.000000
+     bCoverPenetrator=True
+     Speed=4500.000000
      Damage=145.000000
      DamageRadius=300.000000
      MyDamageType=Class'BWBPRecolorsPro.DTMGLGrenadeRadius'

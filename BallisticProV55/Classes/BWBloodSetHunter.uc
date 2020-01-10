@@ -32,7 +32,11 @@ static function class<BallisticBloodSet> PickBloodSet (Pawn Victim, out int Weig
 	{
 		if (xPawn(Victim) != None)
 		{
-		    if (xPawn(Victim)!=None && class<SPECIES_Jugg>(xPawn(Victim).Species) != None)
+			if (xPawn(Victim)!=None && class<xAlienGibGroup>(xPawn(Victim).GibGroupClass) != None)
+				return class'BloodSetGreen';
+			else if (xPawn(Victim)!=None && class<xBotGibGroup>(xPawn(Victim).GibGroupClass) != None)
+				return class'BloodSetPurple';
+			else if (xPawn(Victim)!=None && class<SPECIES_Jugg>(xPawn(Victim).Species) != None)
 				return class'BloodSet_Jugg';
 			else if (Victim.bIsFemale)
 				return class'BloodSet_DefaultFemale';

@@ -73,5 +73,4 @@ defaultproperties
      bSkipActorPropertyReplication=True
      RemoteRole=ROLE_SimulatedProxy
      LifeSpan=5.000000
-     bSelected=True
 }

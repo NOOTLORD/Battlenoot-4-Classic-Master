@@ -186,7 +186,7 @@ defaultproperties
      DampenFactor=0.500000
      RandomDir=(Pitch=2048,Yaw=2048)
      StartVelocity=(Y=20.000000,Z=100.000000)
-     LifeTimeScale=0.100000
+     LifeTimeScale=1.000000
      bAddOwnerVelocity=True
      bHitSounds=True
      HitSoundVolume=0.400000

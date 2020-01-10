@@ -191,7 +191,7 @@ function ServerStartReload (optional byte i)
 	if (seq == GrenadeLoadAnim)
 		return;
 
-	if (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1)
+	if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
 	{
 		if (AmmoAmount(1) > 0 && !IsReloadingGrenade())
 		{
@@ -207,7 +207,7 @@ simulated function ClientStartReload(optional byte i)
 {
 	if (Level.NetMode == NM_Client)
 	{
-		if (i == 1)
+		if (i == 1 || (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1))
 		{
 			if (AmmoAmount(1) > 0 && !IsReloadingGrenade())
 				LoadGrenade();
@@ -324,10 +324,12 @@ function bool CanAttack(Actor Other)
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
 
@@ -336,17 +338,15 @@ function float GetAIRating()
 	if (B.Enemy == None)
 		return Rating;
 
-    Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	return class'BUtil'.static.DistanceAtten(Rating, 0.75, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance);
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+	
+	return class'BUtil'.static.DistanceAtten(Rating, 0.75, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 
 }
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.0;	}
-
 // tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return 0.5;	}
-
+function float SuggestDefenseStyle()	{	return 0.0;	}
 // End AI Stuff =====
 
 defaultproperties

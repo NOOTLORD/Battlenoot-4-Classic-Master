@@ -6,20 +6,34 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class M925PrimaryFire extends BallisticRangeAttenFire;
+
+simulated function ModeDoFire()
+{
+    if (!AllowFire())
+        return;
+
+	BallisticMachinegun(Weapon).SetBeltVisibility(BallisticMachinegun(Weapon).MagAmmo);
+	Super.ModeDoFire();
+}
+
+simulated function vector GetFireDir(out Vector StartTrace)
+{
+    if (BallisticTurret(Instigator) != None)
+    	StartTrace = Instigator.Location + Instigator.EyePosition() + Vector(Instigator.GetViewRotation()) * 64;
+	return super.GetFireDir(StartTrace);
+}
 
 defaultproperties
 {
 	 CutOffStartRange=3072
 	 CutOffDistance=6144
 	 RangeAtten=0.6
-	 TraceRange=(Min=15000.000000,Max=15000.000000)
+     TraceRange=(Min=15000.000000,Max=15000.000000)
      WaterRangeFactor=0.800000
      MaxWallSize=96.000000
-     MaxWalls=1
+     MaxWalls=3
      Damage=50.000000
      DamageHead=100.000000
      DamageLimb=50.000000
@@ -27,14 +41,14 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTM925MG'
      DamageTypeHead=Class'BallisticProV55.DTM925MGHead'
      DamageTypeArm=Class'BallisticProV55.DTM925MG'
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False
+     KickForce=6000
+     PenetrateForce=300
+     bPenetrate=True
      DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.700000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
      BrassClass=Class'BallisticProV55.Brass_BigMG'
-     BrassOffset=(X=-25.000000,Y=1.000000,Z=-5.000000)
+     BrassOffset=(X=6.000000,Y=10.000000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=300.000000
      VelocityRecoil=128.000000
@@ -46,13 +60,13 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.150000
-     AmmoClass=Class'BallisticProV55.Ammo_M925Belt'
+     AmmoClass=Class'BallisticProV55.Ammo_50CalBelt'
      ShakeRotMag=(X=64.000000,Y=64.000000,Z=128.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-15.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetTime=1.500000
      WarnTargetPct=0.200000
-     aimerror=600.000000
+     aimerror=800.000000
 }

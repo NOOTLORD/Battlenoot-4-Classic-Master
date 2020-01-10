@@ -8,8 +8,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class M925Machinegun extends BallisticMachinegun;
 
@@ -92,12 +90,12 @@ function byte BestMode()	{	return 0;	}
 function float GetAIRating()
 {
 	local Bot B;
-
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-
+	
 	if ( B == None )
 		return AIRating;
 
@@ -107,10 +105,10 @@ function float GetAIRating()
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 2048, 2048); 
-	}
 	
+	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.75, Dist, 2048, 2048); 
+}
+
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.5;	}
 
@@ -135,7 +133,7 @@ defaultproperties
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M925'
      BigIconCoords=(Y1=36,Y2=235)
-     SightFXClass=Class'BallisticProV55.M925SightLEDs'	 
+     SightFXClass=Class'BallisticProV55.M925SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
@@ -154,7 +152,6 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.M925.M925-ShellIn')
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
-	 WeaponModes(1)=(bUnavailable=True)
      bNoCrosshairInScope=True
      SightPivot=(Pitch=64)
      SightOffset=(X=-18.000000,Z=7.200000)
@@ -164,9 +161,9 @@ defaultproperties
      SightAimFactor=0.750000
      SprintOffSet=(Pitch=-6000,Yaw=-8000)
      JumpOffSet=(Pitch=-6000,Yaw=4000)
-     AimAdjustTime=100.000000
+     AimAdjustTime=0.400000
      AimSpread=384
-	 AimDamageThreshold=0.000000
+     ViewRecoilFactor=0.250000
      ChaosDeclineTime=1.750000
      ChaosAimSpread=3072
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.100000),(InVal=0.300000,OutVal=-0.150000),(InVal=1.000000)))
@@ -184,15 +181,13 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.700000
      CurrentRating=0.700000
-     bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_M925Belt'
      Description="The M925 was used during the late stages of the first Human-Skrith war when ballistic weapons first came back into large scale usage. The heavy calibre M925 was extremely effective against the Skrith and their allies and became known as the 'Monster' because it was the first weapon that the Skrith truly feared. Although it has a slower rate of fire than the M353, the 'Monster' has a much heavier bullet and can cause much more damage to an enemy soldier or vehicle in a single shot. It was also used extensively during the 'Wasteland Siege', to hose down thousands of Krao, and proved to be very effective at destroying the alien transport ships, as they were landing."
-     Priority=56
+     Priority=42
      HudColor=(B=175,G=175,R=175)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=6
      GroupOffset=1
+     PickupClass=Class'BallisticProV55.M925Pickup'
      PlayerViewOffset=(X=9.000000,Y=5.000000,Z=-7.000000)
      AttachmentClass=Class'BallisticProV55.M925Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M925'
@@ -212,5 +207,4 @@ defaultproperties
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(4)=Texture'BallisticWeapons2.M925.M925AmmoBox'
      Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=0
 }

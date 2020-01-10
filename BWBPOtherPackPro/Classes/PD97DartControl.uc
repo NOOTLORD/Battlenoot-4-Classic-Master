@@ -1,11 +1,5 @@
 //=============================================================================
-// PD97Bloodhound burner effect.
-//
-// by Logan "BlackEagle" Richert.
-// uses code by Nolan "Dark Carnivour" Richert.
-// Copyright© 2011 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
+// AS50's burner effect.
 //=============================================================================
 class PD97DartControl extends BallisticEmitter
 	placeable;
@@ -153,7 +147,7 @@ defaultproperties
          StartSpinRange=(X=(Max=1.000000))
          SizeScale(0)=(RelativeSize=0.200000)
          SizeScale(1)=(RelativeTime=0.250000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=-0.000000,Max=0.000000),Y=(Min=-0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=-75.000000,Max=75.000000),Y=(Min=-75.000000,Max=75.000000),Z=(Min=-75.000000,Max=75.000000))
          InitialParticlesPerSecond=20.000000
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects2.Particles.NewSmoke1g'
@@ -167,7 +161,7 @@ defaultproperties
      bReplicateInstigator=True
      Physics=PHYS_Trailer
      RemoteRole=ROLE_SimulatedProxy
-     AmbientSound=None
+     AmbientSound=Sound'BallisticSounds2.FP7.FP7FireLoop'
      SoundRadius=128.000000
      bNotOnDedServer=False
 }

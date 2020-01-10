@@ -22,7 +22,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
          SpinsPerSecondRange=(Z=(Min=2.000000,Max=4.000000))
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=0.500000),Y=(Min=0.500000,Max=0.700000),Z=(Min=0.500000,Max=0.700000))
          InitialParticlesPerSecond=50000.000000
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=2.000000,Max=2.000000)
@@ -43,7 +43,7 @@ defaultproperties
          MaxParticles=100
          SpinsPerSecondRange=(X=(Max=4.000000))
          StartSpinRange=(X=(Max=1.000000))
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=3.000000,Max=7.000000),Y=(Min=5.000000,Max=15.000000),Z=(Min=5.000000,Max=15.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_Brighten
          Texture=Texture'BallisticEffects.Particles.Smoke2'
@@ -51,6 +51,6 @@ defaultproperties
          LifetimeRange=(Min=0.900000,Max=0.900000)
          StartVelocityRange=(X=(Max=9000.000000))
      End Object
-     Emitters(1)=SpriteEmitter'BallisticProV55.TraceEmitter_Freeze.SpriteEmitter0'
+     Emitters(2)=SpriteEmitter'BallisticProV55.TraceEmitter_Freeze.SpriteEmitter0'
 
 }

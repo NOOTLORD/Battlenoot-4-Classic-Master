@@ -170,6 +170,9 @@ defaultproperties
      LowImpactVelocity=500.000000
      HighImpactVelocity=1000.000000
      MaxPoolVelocity=50.000000
+     bUseBloodDrags=True
+     bUseBloodImpacts=True
+     bUseBloodPools=True
      bHidden=True
      bNetTemporary=True
      bAlwaysRelevant=True

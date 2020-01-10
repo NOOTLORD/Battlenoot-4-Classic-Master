@@ -88,7 +88,7 @@ simulated event ModeDoFire()
         if(BallisticTurret(Weapon.Owner) == None  && class'Mut_Ballistic'.static.GetBPRI(xPawn(Weapon.Owner).PlayerReplicationInfo) != None)
 			class'Mut_Ballistic'.static.GetBPRI(xPawn(Weapon.Owner).PlayerReplicationInfo).AddFireStat(load, BW.InventoryGroup);
     }
-    
+	
 	if (!BW.bScopeView)
 		BW.FireChaos = FClamp(BW.FireChaos + (FireChaos * InterpCurveEval(FireChaosCurve, BW.FireChaos)), 0, 1);
 	

@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_LK05AssaultHead extends DT_BWBullet;
 
@@ -36,9 +34,6 @@ defaultproperties
      DeathStrings(2)="%k's LK05 turned %o's head into a pink mist."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.LK05Carbine'
      DeathString="%o had %vh brain shredded by %k's MJ51."
      FemaleSuicide="%o took the easy way out."
@@ -49,6 +44,5 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
-	 VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
+     VehicleDamageScaling=0.150000
 }

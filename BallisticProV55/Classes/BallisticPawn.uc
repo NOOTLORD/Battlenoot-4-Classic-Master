@@ -36,8 +36,6 @@
 // Replicated DoubleJumpsLeft in order to stop strange behaviour online
 // Configurable Walking and Crouching speed.
 // Set Movement Anims for "Walking" to "Running" ones.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticPawn extends xPawn;
 
@@ -1749,7 +1747,6 @@ function PlayTeleportEffect( bool bOut, bool bSound)
 //		    Spawn(TransEffects[0],,,Location + CollisionHeight * vect(0,0,0.75));
 //	    else
 //		    Spawn(TransEffects[1],,,Location + CollisionHeight * vect(0,0,0.75));
-		Spawn(class'BWPlayerSpawnFX',,,Location);
 	}
 	else if ( bOut )
 		DoTranslocateOut(Location);
@@ -1773,6 +1770,8 @@ simulated function StartDeRes()
 	for (i=Stumps.length-1;i>=0;i--)
 		if (Stumps[i] != None)
 			Stumps[i].Destroy();
+
+	// Wicked new BW DeRes ---------
 
 	for (i=0;i<Skins.Length;i++)
 	{
@@ -2002,8 +2001,7 @@ singular event BaseChange()
 			Base.TakeDamage( (1-Velocity.Z/100)* Mass/Base.Mass, Self,Location,0.5 * Velocity , class'Crushed');
 			JumpOffPawn();
 		}
-	}
-	
+	}	
 	else if ( (Decoration(Base) != None) && (Velocity.Z < -400) )
 	{
 		decorMass = FMax(Decoration(Base).Mass, 1);
@@ -2573,10 +2571,9 @@ defaultproperties
      Fades(14)=Texture'BallisticProTextures.Icons.stealth_120'
      Fades(15)=Texture'BallisticProTextures.Icons.stealth_128'
      UDamageSound=Sound'BallisticSounds3.Udamage.UDamageFire'
-	 GruntVolume=0.150000
-     FootstepVolume=0.300000
-     DeResTime=2.000000
-     RagdollLifeSpan=15.000000
+     FootstepVolume=0.400000
+     DeResTime=4.000000
+     RagdollLifeSpan=20.000000
      RagDeathUpKick=0.000000
      bCanWalkOffLedges=True
      bSpecialHUD=True
@@ -2585,7 +2582,6 @@ defaultproperties
      LadderSpeed=280.000000
      WalkingPct=0.900000
      CrouchedPct=0.350000
-	 SuperHealthMax=100.000000
      HeadRadius=13.000000
      TransientSoundVolume=0.100000
      Begin Object Class=KarmaParamsSkel Name=PawnKParams

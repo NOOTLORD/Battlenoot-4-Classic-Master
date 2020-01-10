@@ -42,8 +42,7 @@ defaultproperties
      HitEffects(0)=Class'BallisticProV55.IE_NRP57Explosion'
      HitDecals(0)=Class'BallisticProV55.AD_Explosion'
      HitSounds(0)=SoundGroup'BallisticSounds2.Explosions.Explode-Small'
-     HitSoundVolume=1.500000
+     HitSoundVolume=1.000000
      HitSoundRadius=1024.000000
      EffectBackOff=64.000000
-     bSelected=True
 }

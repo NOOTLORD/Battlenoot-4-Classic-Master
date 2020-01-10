@@ -23,9 +23,10 @@ defaultproperties
      FireRate=0.650000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_8GaugeHE'
      AmmoPerFire=0
+     ShakeRotTime=1.000000
      ShakeOffsetMag=(X=5.000000)
      ShakeOffsetRate=(X=-1000.000000)
+     ShakeOffsetTime=1.000000
      BotRefireRate=0.900000
      WarnTargetPct=0.050000
-     aimerror=0.000000
 }

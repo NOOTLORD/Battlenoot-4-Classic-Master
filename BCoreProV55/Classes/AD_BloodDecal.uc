@@ -27,12 +27,7 @@ function StopExpanding ()
 
 defaultproperties
 {
-     StayScale=0.100000
-     bProjectBSP=False
-     bProjectTerrain=False
-     bProjectStaticMesh=False
-     bProjectParticles=False
-     bProjectActor=False
-     bProjectOnAlpha=False
-     bSelected=True
+     StayScale=1.000000
+     bClipBSP=True
+     bClipStaticMesh=True
 }

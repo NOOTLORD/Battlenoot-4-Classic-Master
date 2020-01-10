@@ -19,5 +19,4 @@ defaultproperties
      PrePivot=(Z=-9.000000)
      CollisionRadius=8.000000
      CollisionHeight=5.200000
-     bSelected=True
 }

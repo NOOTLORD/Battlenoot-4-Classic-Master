@@ -38,5 +38,4 @@ defaultproperties
      bReplicateMovement=False
      bSkipActorPropertyReplication=True
      RemoteRole=ROLE_SimulatedProxy
-     bSelected=True
 }

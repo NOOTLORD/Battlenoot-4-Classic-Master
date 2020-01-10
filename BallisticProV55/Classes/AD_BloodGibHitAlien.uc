@@ -22,14 +22,7 @@ defaultproperties
      FrameBufferBlendingOp=PB_Add
      FOV=1
      MaxTraceDistance=48
-     bProjectBSP=True
-     bProjectTerrain=True
-     bProjectStaticMesh=True
-     bProjectParticles=True
-     bClipBSP=True
-     bClipStaticMesh=True
-     bProjectOnAlpha=True
+     bProjectActor=False
      bStatic=False
      DrawScale=0.150000
-     bSelected=False
 }

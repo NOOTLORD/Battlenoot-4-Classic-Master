@@ -6,8 +6,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class M763PrimaryFire extends BallisticProShotgunFire;
 
@@ -31,6 +29,9 @@ simulated function bool AllowFire()
 			Weapon.PlayOwnedSound(DryFireSound.Sound,DryFireSound.Slot,DryFireSound.Volume,DryFireSound.bNoOverride,DryFireSound.Radius,DryFireSound.Pitch,DryFireSound.bAtten);
 			bPlayedDryFire=true;
 		}
+		if (bDryUncock)
+			BW.bNeedCock=true;
+		BW.bNeedReload = BW.MayNeedReload(ThisModeNum, 0);
 
 		BW.EmptyFire(ThisModeNum);
 		return false;		// Is there ammo in weapon's mag
@@ -86,10 +87,8 @@ defaultproperties
      CutOffStartRange=1536.000000
      TraceCount=7
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
-     TracerChance=1.000000
      ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=7500.000000,Max=7500.000000)
-     MaxWalls=1
      Damage=15.000000
      DamageHead=15.000000
      DamageLimb=15.000000
@@ -97,31 +96,37 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTM763Shotgun'
      DamageTypeHead=Class'BallisticProV55.DTM763ShotgunHead'
      DamageTypeArm=Class'BallisticProV55.DTM763Shotgun'
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False			   					 					
+     KickForce=5000
+     PenetrateForce=100
+     bPenetrate=True
      MuzzleFlashClass=Class'BallisticProV55.M763FlashEmitter'
-     FlashScaleFactor=0.390000
+     FlashScaleFactor=2.000000
      BrassClass=Class'BallisticProV55.Brass_Shotgun'
-     BrassOffset=(X=-32.000000,Y=1.000000,Z=1.000000)
+     BrassOffset=(X=-1.000000,Z=-1.000000)
      AimedFireAnim="FireCombinedSight"
      RecoilPerShot=1024.000000
-     FireChaos=0.050000
+     FireChaos=0.500000
      XInaccuracy=150.000000
      YInaccuracy=150.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.M763.M763Fire1',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds3.M763.M763Fire1',Volume=1.300000)
      FireAnim="FireCombined"
      FireEndAnim=
      FireAnimRate=1.100000
      FireRate=0.750000
-     AmmoClass=Class'BallisticProV55.Ammo_M763Shell'
+     AmmoClass=Class'BallisticProV55.Ammo_12Gauge'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
-     BotRefireRate=0.900000
-     WarnTargetPct=0.100000
-     aimerror=600.000000
+     ShakeOffsetTime=2.000000
+	 
+	 // AI
+	 bInstantHit=True
+	 bLeadTarget=False
+	 bTossed=False
+	 bSplashDamage=False
+	 bRecommendSplashDamage=False
+	 BotRefireRate=0.7
+     WarnTargetPct=0.5
 }

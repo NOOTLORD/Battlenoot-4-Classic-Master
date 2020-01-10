@@ -17,6 +17,7 @@ defaultproperties
      FrameBufferBlendingOp=PB_None
      FOV=1
      MaxTraceDistance=80
+     bProjectActor=False
      bStatic=False
      DrawScale=0.500000
 }

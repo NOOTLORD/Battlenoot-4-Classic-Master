@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTM763Shotgun extends DT_BWShell;
 
@@ -16,10 +14,8 @@ defaultproperties
      DeathStrings(1)="%k's Avenger punctured %o with pellets."
      DeathStrings(2)="%o was blown across the map by %k's M763."
      DeathStrings(3)="%k's 12-gauge M763 flurry cast %o to the wind."
+     InvasionDamageScaling=1.500000
      DamageIdent="Shotgun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.M763Shotgun'
      DeathString="%k blasted a pound of lead into %o with the M763."
      FemaleSuicide="%o nailed herself with the M763."
@@ -27,6 +23,5 @@ defaultproperties
      bExtraMomentumZ=True
      GibPerterbation=0.400000
      KDamageImpulse=25000.000000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
+     VehicleMomentumScaling=0.200000
 }

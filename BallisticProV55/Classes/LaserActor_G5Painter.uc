@@ -10,5 +10,4 @@ defaultproperties
 {
      StaticMesh=StaticMesh'BallisticHardware2.Lasers.LaserCross'
      Skins(0)=FinalBlend'BallisticWeapons2.Effects.G5LaserBeamFBFade'
-     bSelected=True
 }

@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTM50AssaultHead extends DT_BWBullet;
 
@@ -36,9 +34,6 @@ defaultproperties
      DeathStrings(2)="%k annihilated %o's head with the M50."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M50AssaultRifle'
      DeathString="%o's head was brutally gunned off by %k with the M50."
      FemaleSuicide="%o saw a bullet coming up the barrel of her M50."
@@ -47,9 +42,7 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     FlashScale=0.300000
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
      VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
 }

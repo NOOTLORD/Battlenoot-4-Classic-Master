@@ -20,10 +20,9 @@ defaultproperties
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=512.000000
      MotionBlurRadius=384.000000
-     MotionBlurFactor=0.000000
-     MotionBlurTime=0.000000
-     ShakeRotTime=0.000000
-     ShakeOffsetTime=0.000000
+     MotionBlurFactor=3.000000
+     MotionBlurTime=4.000000
+     bCoverPenetrator=True
      MyDamageType=Class'BallisticProV55.DTM46GrenadeRadius'
      StaticMesh=StaticMesh'BallisticHardware_25.OA-AR.OA-AR_Grenade'
      CullDistance=2500.000000
@@ -37,5 +36,4 @@ defaultproperties
      bCollideWorld=False
      bProjTarget=True
      bNetNotify=True
-     bSelected=True
 }

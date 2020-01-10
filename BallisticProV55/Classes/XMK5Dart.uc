@@ -44,13 +44,10 @@ defaultproperties
      MotionBlurRadius=0.000000
      MotionBlurFactor=0.000000
      MotionBlurTime=0.000000
-     ShakeRotTime=0.000000
-     ShakeOffsetTime=0.000000
      Speed=10000.000000
      Damage=30.000000
      MyDamageType=Class'BallisticProV55.DTXMK5Dart'
      StaticMesh=StaticMesh'BallisticHardware_25.OA-SMG.OA-SMG_Dart'
      LifeSpan=1.500000
      bIgnoreTerminalVelocity=True
-     bSelected=True
 }

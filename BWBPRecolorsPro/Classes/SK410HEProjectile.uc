@@ -10,14 +10,12 @@ class SK410HEProjectile extends BallisticGrenade;
 
 simulated event ProcessTouch( actor Other, vector HitLocation )
 {
-
 	if (Other == Instigator && (!bCanHitOwner))
 		return;
 	if (Other == HitActor)
 		return;
 	if (Base != None)
 		return;
-
 
 	if ( Instigator == None || Instigator.Controller == None )
 		Other.SetDelayedDamageInstigatorController( InstigatorController );
@@ -139,9 +137,6 @@ defaultproperties
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=512.000000
      MotionBlurRadius=128.000000
-     MotionBlurTime=0.000000
-     ShakeRotTime=0.000000
-     ShakeOffsetTime=0.000000
      Speed=8000.000000
      MaxSpeed=15000.000000
      Damage=50.000000
@@ -155,5 +150,4 @@ defaultproperties
      StaticMesh=StaticMesh'BallisticRecolors4StaticPro.Bulldog.Frag12Proj'
      LifeSpan=16.000000
      DrawScale=2.000000
-     bSelected=True
 }

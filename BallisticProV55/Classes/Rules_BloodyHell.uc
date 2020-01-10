@@ -66,5 +66,4 @@ simulated function DoDamageDeathBlood()
 defaultproperties
 {
      ExplodedDamageName="BallisticProV55.DT_BWExplode"
-     bSelected=True
 }

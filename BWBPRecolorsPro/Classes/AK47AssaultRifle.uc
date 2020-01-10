@@ -3,13 +3,40 @@
 //
 // A powerful 7.62mm powerhouse. Fills a similar role to the CYLO UAW, albiet is
 // far more reliable and has a launchable bayonet in place of the shotgun.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class AK47AssaultRifle extends BallisticWeapon;
 
 var name			BulletBone, BulletBone2;
 
+simulated event AnimEnd (int Channel)
+{
+    local name anim;
+    local float frame, rate;
+
+    GetAnimParams(0, anim, frame, rate);
+
+	if (Anim == 'Fire' || Anim == 'KnifeFire' || Anim == 'ReloadEmpty')
+	{
+		if (MagAmmo - BFireMode[0].ConsumedLoad < 2)
+		{
+			SetBoneScale(2,0.0,BulletBone);
+			SetBoneScale(3,0.0,BulletBone2);
+		}
+	}
+	super.AnimEnd(Channel);
+}
+
+
+simulated function BringUp(optional Weapon PrevWeapon)
+{	
+	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
+	{
+		SetBoneScale(2,0.0,BulletBone);
+		SetBoneScale(3,0.0,BulletBone2);
+	}
+
+	super.BringUp(PrevWeapon);
+}
 
 // Animation notify for when cocking action starts. Used to time sounds
 simulated function Notify_CockSim()
@@ -55,9 +82,10 @@ simulated function float RateSelf()
 }
 
 // AI Interface =====
-// choose between regular or alt-fire
 
+// choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
+
 
 function float GetAIRating()
 {
@@ -108,11 +136,11 @@ defaultproperties
      MagAmmo=25
      CockAnimPostReload="ReloadEndCock"
      CockingBringUpTime=1.300000
-     CockSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-Cock',Volume=0.650000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-Cock',Volume=3.500000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipHit',Volume=0.650000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipOut',Volume=0.650000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipIn',Volume=0.650000,Pitch=0.750000)
+     ClipHitSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipHit',Volume=3.500000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipOut',Volume=3.500000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipIn',Volume=3.500000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True,ModeID="WM_None")
@@ -121,23 +149,19 @@ defaultproperties
      SightPivot=(Pitch=64)
      SightOffset=(X=10.000000,Y=-10.020000,Z=20.600000)
      SightDisplayFOV=40.000000
-     HipRecoilFactor=1.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=3072
-     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.050000),(InVal=0.400000,OutVal=0.130000),(InVal=0.800000,OutVal=-0.160000),(InVal=1.000000,OutVal=-0.080000)))
-     RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.170000),(InVal=0.300000,OutVal=0.450000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.800000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.10000),(InVal=0.400000,OutVal=0.130000),(InVal=0.600000,OutVal=-0.160000),(InVal=1.000000,OutVal=-0.080000)))
+     RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.200000),(InVal=0.300000,OutVal=0.450000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.800000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.220000
      RecoilYFactor=0.300000
      RecoilMinRandFactor=0.15000
      RecoilDeclineTime=1.500000
      FireModeClass(0)=Class'BWBPRecolorsPro.AK47PrimaryFire'
-	 FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.400000
      SelectAnimRate=1.700000
      PutDownAnimRate=1.750000
@@ -145,15 +169,13 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.700000
      CurrentRating=0.700000
-     bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK47Clip'
      Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
      Priority=65
      HudColor=(G=100)
-     CustomCrossHairScale=0.000000	 
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
      GroupOffset=5
+     PickupClass=Class'BWBPRecolorsPro.AK47Pickup'
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.AK47Attachment'
@@ -171,5 +193,4 @@ defaultproperties
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticRecolors3TexPro.AK490.AK490-Main'
      Skins(2)=Texture'BallisticRecolors3TexPro.AK490.AK490-Misc'
-     AmbientGlow=0
 }

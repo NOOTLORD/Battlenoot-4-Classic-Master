@@ -254,7 +254,6 @@ simulated event RenderOverlays (Canvas C)
 	}
 	C.Font = GetFontSizeIndex(C, -2 + int(2 * class'HUD'.default.HudScale));
 
-
 	// Draw Readout
 	C.SetDrawColor(255,255,255,255);
 	C.SetPos(C.OrgX, C.OrgY + 565 * ScaleFactor);
@@ -365,10 +364,12 @@ function byte BestMode()	{	return 0;	}
 function float GetAIRating()
 {
 	local Bot B;
+	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
+	
 	if ( B == None )
 		return AIRating;
 
@@ -378,7 +379,7 @@ function float GetAIRating()
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.5, Dist, 3072, 2048); 
 }
 
@@ -418,7 +419,7 @@ defaultproperties
      SpecialInfo(0)=(Info="240.0;20.0;0.9;75.0;1.0;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway')
-     PutDownTime=0.4		 
+	 PutDownTime=0.4
      MagAmmo=20
      CockAnimRate=1.200000
      CockSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-Cock',Volume=0.650000)
@@ -426,7 +427,6 @@ defaultproperties
      ClipOutSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipOut')
      ClipInSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipIn')
      ClipInFrame=0.650000
-     bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333000
@@ -444,8 +444,6 @@ defaultproperties
      GunLength=72.000000
      SightAimFactor=0.350000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
-     AimDamageThreshold=0.000000
      ChaosDeclineTime=1.250000
      ChaosAimSpread=3072
      RecoilXCurve=(Points=(,(InVal=0.100000),(InVal=0.250000,OutVal=-0.120000),(InVal=0.400000,OutVal=0.180000),(InVal=0.800000,OutVal=-0.220000),(InVal=1.000000,OutVal=0.250000)))
@@ -460,13 +458,9 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.80000
      CurrentRating=0.800000
-     bCanThrow=False
-     AmmoClass(0)=Class'BCoreProV55.BallisticAmmo'
-     AmmoClass(1)=Class'BCoreProV55.BallisticAmmo'
      Description="Another battlefield favourite produced by high-tech manufacturer, NDTR Industries, the SRS-900 is indeed a fine weapon. Using high velocity 7.62mm ammunition, this rifle causes a lot of damage to the target, but suffers from high recoil, chaos and a low clip capacity. The altered design, can now incorporate a silencer to the end of the barrel, increasing its capabilities as a stealth weapon. This particular model, also features a versatile, red-filter scope, complete with various tactical readouts and indicators, including a range finder, stability metre, elevation indicator, ammo display and stealth meter."
      Priority=40
      HudColor=(B=50,G=50,R=200)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9
      GroupOffset=6
@@ -488,6 +482,4 @@ defaultproperties
      Skins(1)=Texture'BWBP3-Tex.SRS900.SRS900Scope'
      Skins(2)=Texture'BWBP3-Tex.SRS900.SRS900Ammo'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=0
-     bSelected=True
 }

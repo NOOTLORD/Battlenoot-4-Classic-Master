@@ -37,7 +37,6 @@ defaultproperties
          SizeScale(0)=(RelativeSize=0.500000)
          SizeScale(1)=(RelativeTime=0.070000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.500000,Max=0.500000),Y=(Min=0.500000,Max=0.500000),Z=(Min=0.500000,Max=0.500000))
          DrawStyle=PTDS_Brighten
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.500000,Max=0.500000)
@@ -61,7 +60,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
          StartLocationOffset=(X=20.000000)
-         StartSizeRange=(X=(Min=30.000000,Max=30.000000),Y=(Min=30.000000,Max=30.000000),Z=(Min=30.000000,Max=30.000000))
+         StartSizeRange=(X=(Min=60.000000,Max=60.000000),Y=(Min=60.000000,Max=60.000000),Z=(Min=60.000000,Max=60.000000))
          DrawStyle=PTDS_Brighten
          Texture=Texture'BallisticEffects.Particles.FlareB1'
          SecondsBeforeInactive=0.000000
@@ -93,7 +92,7 @@ defaultproperties
          StartSpinRange=(X=(Min=0.250000,Max=0.250000))
          SizeScale(0)=(RelativeSize=0.500000)
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=15.000000,Max=20.000000),Y=(Min=15.000000,Max=20.000000),Z=(Min=15.000000,Max=20.000000))
+         StartSizeRange=(X=(Min=30.000000,Max=40.000000),Y=(Min=30.000000,Max=40.000000),Z=(Min=30.000000,Max=40.000000))
          Texture=Texture'BallisticWeapons2.Effects.SparkA1'
          TextureUSubdivisions=2
          TextureVSubdivisions=2
@@ -103,4 +102,5 @@ defaultproperties
          StartVelocityRange=(X=(Min=200.000000,Max=1500.000000),Y=(Min=-40.000000,Max=40.000000),Z=(Min=-40.000000,Max=40.000000))
      End Object
      Emitters(2)=SpriteEmitter'BallisticProV55.R78FlashEmitter.SpriteEmitter14'
+
 }

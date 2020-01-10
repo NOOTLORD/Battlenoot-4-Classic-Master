@@ -29,6 +29,6 @@ defaultproperties
      MaleSuicide="%o basked in the blue glow of his MARS-3 mine."
      bDelayedDamage=True
      bNeverSevers=True
-     VehicleDamageScaling=1.000000
+     VehicleDamageScaling=1.900000
      VehicleMomentumScaling=0.800000
 }

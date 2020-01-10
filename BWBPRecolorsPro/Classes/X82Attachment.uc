@@ -5,10 +5,15 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class X82Attachment extends BallisticAttachment;
+
+simulated Event PostNetBeginPlay()
+{
+	super.PostNetBeginPlay();
+	if (BallisticTurret(Instigator) != None)
+		bHidden=true;
+}
 
 // Return the location of the muzzle.
 simulated function Vector GetTipLocation()
@@ -30,7 +35,11 @@ simulated function Vector GetTipLocation()
     			return C.Origin;
 		}
 	}
-	
+	else if (BallisticTurret(Instigator) != None)
+	{
+		C = Instigator.GetBoneCoords('tip');
+    		return C.Origin;
+	}
 	else
 	{
 		C = GetBoneCoords('tip');
@@ -46,6 +55,8 @@ simulated function Vector GetEjectorLocation(optional out Rotator EjectorAngle)
     local Coords C;
 	if (Instigator != None && Instigator.IsFirstPerson() && PlayerController(Instigator.Controller).ViewTarget == Instigator)
 		C = Instigator.Weapon.GetBoneCoords(BrassBone);
+	else if (BallisticTurret(Instigator) != None)
+		C = Instigator.GetBoneCoords(BrassBone);
 	else
 		C = GetBoneCoords(BrassBone);
 	if (Instigator != None && VSize(C.Origin - Instigator.Location) > 200)
@@ -53,6 +64,8 @@ simulated function Vector GetEjectorLocation(optional out Rotator EjectorAngle)
 		EjectorAngle = Instigator.Rotation;
 		return Instigator.Location;
 	}
+	if (BallisticTurret(Instigator) != None)
+		EjectorAngle = Instigator.GetBoneRotation(BrassBone);
 	else
 		EjectorAngle = GetBoneRotation(BrassBone);
     return C.Origin;
@@ -96,21 +109,12 @@ simulated function FlashMuzzleFlash(byte Mode)
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
-     FlashMode=MU_Primary
-     FlashScale=1.000000	 
-     LightMode=MU_Primary		 
-     ImpactManager=Class'BallisticProV55.IM_Bullet' 
-     BrassClass=Class'BWBPRecolorsPro.Brass_X82rifle'
-     BrassMode=MU_Primary
-     InstantMode=MU_Primary
-     TrackAnimMode=MU_None	 
-     TracerClass=Class'BallisticProV55.TraceEmitter_Default'
-     TracerMode=MU_Primary	 
-     TracerChance=1.000000
+     ImpactManager=Class'BWBPRecolorsPro.IM_ExpBullet'
+     BrassClass=Class'BWBPRecolorsPro.Brass_BMG'
+     TracerClass=Class'BWBPRecolorsPro.TraceEmitter_HMG'
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Primary
-     FlyBySound=(Sound=Sound'PackageSounds4Pro.X82.X83-FlyBy',Volume=1.500000)
-     FlyByMode=MU_Primary	 
+     WaterTracerMode=MU_Both
+     FlyBySound=(Sound=Sound'PackageSounds4Pro.X82.X83-FlyBy',Volume=2.500000)
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.X83A1_3rd'

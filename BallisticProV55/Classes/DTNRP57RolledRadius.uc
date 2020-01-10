@@ -12,6 +12,7 @@ defaultproperties
 {
      DeathStrings(0)="%k rolled a pineapple into %o's town."
      DeathStrings(1)="%o tripped on %k's patroling pineapple."
+     InvasionDamageScaling=3.000000
      DamageIdent="Grenade"
      WeaponClass=Class'BallisticProV55.NRP57Grenade'
      DeathString="%k rolled a pineapple into %o's town."

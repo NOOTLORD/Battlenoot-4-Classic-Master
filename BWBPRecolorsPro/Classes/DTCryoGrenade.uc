@@ -18,5 +18,5 @@ defaultproperties
      GibModifier=0.500000
      GibPerterbation=0.400000
      KDamageImpulse=15000.000000
-     VehicleDamageScaling=1.000000
+     VehicleDamageScaling=2.000000
 }

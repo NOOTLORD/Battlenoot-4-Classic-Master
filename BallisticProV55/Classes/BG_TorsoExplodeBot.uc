@@ -471,5 +471,4 @@ defaultproperties
      Emitters(6)=MeshEmitter'BallisticProV55.BG_TorsoExplodeBot.MeshEmitter1'
 
      AutoDestroy=True
-     bSelected=False
 }

@@ -30,7 +30,7 @@ defaultproperties
          FadeOutStartTime=0.110000
          CoordinateSystem=PTCS_Relative
          MaxParticles=12
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=10.000000,Max=10.000000),Y=(Min=10.000000,Max=10.000000),Z=(Min=10.000000,Max=10.000000))
          InitialParticlesPerSecond=50000.000000
          Texture=Texture'BallisticEffects.Particles.HotFlareA1'
          SecondsBeforeInactive=0.000000
@@ -62,7 +62,7 @@ defaultproperties
          StartSpinRange=(Y=(Min=-0.250000,Max=-0.250000))
          SizeScale(1)=(RelativeTime=0.560000,RelativeSize=0.800000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=0.500000,Max=1.200000),Y=(Min=0.500000,Max=1.200000),Z=(Min=2.000000,Max=8.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_Brighten
          SecondsBeforeInactive=0.000000
@@ -85,7 +85,7 @@ defaultproperties
          FadeInEndTime=0.004000
          MaxParticles=2
          StartLocationRange=(X=(Min=-5.000000,Max=5.000000),Y=(Min=-5.000000,Max=5.000000),Z=(Min=-5.000000,Max=5.000000))
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=20.000000,Max=20.000000),Y=(Min=20.000000,Max=20.000000),Z=(Min=20.000000,Max=20.000000))
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects2.Particles.SmokeWisp-Alpha'
          TextureUSubdivisions=4
@@ -113,7 +113,7 @@ defaultproperties
          FadeOutStartTime=0.110600
          CoordinateSystem=PTCS_Relative
          MaxParticles=8
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=5.000000,Max=5.000000),Y=(Min=5.000000,Max=5.000000),Z=(Min=5.000000,Max=5.000000))
          InitialParticlesPerSecond=5000.000000
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects.Particles.WaterSpray1Alpha'

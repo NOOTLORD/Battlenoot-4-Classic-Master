@@ -136,7 +136,6 @@ static function class<pickup> GetPickupFor(class<Actor> A)
 		return class<inventory>(A).default.PickupClass;
 	return None;
 }
-
 // This picks one of the new items from one of the possible replacements
 function class<Actor> GetNewItem(int Index, optional bool bNoUnique, optional class<actor> OldItem)
 {
@@ -221,12 +220,8 @@ function ModifyPlayer(Pawn Other)
 	// No lights please
 	xPlayerReplicationInfo(Other.PlayerReplicationInfo).bForceNoPlayerLights = true;
 
-	// Make bots a bit less insane...
 	if (Other.Controller != None && Bot(Other.Controller) != None)
-	{
-		Bot(Other.Controller).Jumpiness-=0.2;
-		//Bot(Other.Controller).StrafingAbility-=0.5;
-		//Bot(Other.Controller).CombatStyle-=0.3;
+	{	
 		// Change favorite weapons for bots
 		if (Bot(Other.Controller).FavoriteWeapon != None)
 		{
@@ -868,12 +863,47 @@ function Array<Class<Weapon> > GetAllWeaponClasses()
 
 defaultproperties
 {
-     Replacements(0)=(OldItemName="XPickups.HealthPack",NewItemNames=("BallisticProV55.IP_HealthKit"))
-     Replacements(1)=(OldItemName="XPickups.UDamagePack",NewItemNames=("BallisticProV55.IP_UDamage"))
+     Replacements(0)=(OldItemName="XWeapons.ShieldGun",NewItemNames=("BallisticProV55.X3Pickup","BallisticProV55.A909Pickup","BallisticProV55.EKS43Pickup","BallisticProV55.X4Pickup"))
+     Replacements(1)=(OldItemName="XWeapons.AssaultRifle",NewItemNames=("BallisticProV55.M806Pickup","BallisticProV55.MRT6Pickup","BallisticProV55.A42Pickup","BallisticProV55.XK2Pickup","BallisticProV55.D49Pickup","BallisticProV55.AM67Pickup","BallisticProV55.Fifty9Pickup","BallisticProV55.RS8Pickup","BallisticProV55.XRS10Pickup","BallisticProV55.GRS9Pickup","BallisticProV55.leMatPickup","BallisticProV55.BOGPPickup","BallisticProV55.MD24Pickup","BallisticProV55.XMK5Pickup"))
+     Replacements(2)=(OldItemName="XWeapons.BioRiflePickup",NewItemNames=("BallisticProV55.NRP57Pickup","BallisticProV55.FP7Pickup","BallisticProV55.FP9Pickup","BallisticProV55.BX5Pickup","BallisticProV55.T10Pickup"))
+     Replacements(3)=(OldItemName="XWeapons.ShockRiflePickup",NewItemNames=("BallisticProV55.M50Pickup","BallisticProV55.XK2Pickup","BallisticProV55.SARPickup","BallisticProV55.SRS900Pickup","BallisticProV55.M46Pickup","BallisticProV55.XMK5Pickup"))
+     Replacements(4)=(OldItemName="XWeapons.LinkGunPickup",NewItemNames=("BallisticProV55.A73Pickup","BallisticProV55.A42Pickup","BallisticProV55.HVCMk9Pickup","BallisticProV55.E23Pickup","BallisticProV55.RSDarkPickup","BallisticProV55.RSNovaPickup"))
+     Replacements(5)=(OldItemName="XWeapons.MinigunPickup",NewItemNames=("BallisticProV55.M353Pickup","BallisticProV55.M925Pickup","BallisticProV55.XMV850Pickup"))
+     Replacements(6)=(OldItemName="XWeapons.FlakCannonPickup",NewItemNames=("BallisticProV55.M763Pickup","BallisticProV55.M290Pickup","BallisticProV55.MRS138Pickup","BallisticProV55.A500Pickup"))
+     Replacements(7)=(OldItemName="XWeapons.RocketLauncherPickup",NewItemNames=("BallisticProV55.G5Pickup","BallisticProV55.RX22APickup","BallisticProV55.MACPickup","BallisticProV55.MRLPickup"))
+     Replacements(8)=(OldItemName="XWeapons.SniperRiflePickup",NewItemNames=("BallisticProV55.R78Pickup","BallisticProV55.M75Pickup","BallisticProV55.R9Pickup","BallisticProV55.MarlinPickup"))
+     Replacements(9)=(OldItemName="XWeapons.PainterPickup",bSuper=True,NewItemNames=("BallisticProV55.R78Pickup","BallisticProV55.M75Pickup","BallisticProV55.R9Pickup","BallisticProV55.MarlinPickup"))
+     Replacements(10)=(OldItemName="XWeapons.RedeemerPickup",bSuper=True,NewItemNames=("BallisticProV55.M75Pickup","BallisticProV55.G5Pickup","BallisticProV55.RX22APickup","BallisticProV55.MACPickup","BallisticProV55.MRLPickup"))
+     Replacements(11)=(OldItemName="UTClassic.ClassicSniperRiflePickup",NewItemNames=("BallisticProV55.R78Pickup","BallisticProV55.M75Pickup","BallisticProV55.R9Pickup","BallisticProV55.MarlinPickup"))
+     Replacements(12)=(OldItemName="Onslaught.ONSAVRiLPickup",NewItemNames=("BallisticProV55.G5Pickup","BallisticProV55.M75Pickup","BallisticProV55.MACPickup"))
+     Replacements(13)=(OldItemName="Onslaught.ONSGrenadePickup",NewItemNames=("BallisticProV55.NRP57Pickup","BallisticProV55.FP7Pickup","BallisticProV55.T10Pickup"))
+     Replacements(14)=(OldItemName="Onslaught.ONSMineLayerPickup",NewItemNames=("BallisticProV55.FP9Pickup","BallisticProV55.BX5Pickup"))
+     Replacements(15)=(OldItemName="OnslaughtFull.ONSPainterPickup",bSuper=True,NewItemNames=("BallisticProV55.R78Pickup","BallisticProV55.M75Pickup","BallisticProV55.R9Pickup","BallisticProV55.MarlinPickup"))
+     Replacements(16)=(OldItemName="XWeapons.AssaultAmmoPickup",NewItemNames=("BallisticProV55.AP_M806Clip","BallisticProV55.AP_12GaugeClips","BallisticProV55.AP_XK2Clip","BallisticProV55.AP_6Magnum","BallisticProV55.AP_AM67Clip","BallisticProV55.AP_Fifty9Clip","BallisticProV55.AP_RS8Clip","BallisticProV55.AP_XRS10Clip","BallisticProV55.AP_GRS9Clip","BallisticProV55.AP_leMat","BallisticProV55.AP_BOGPGrenades","BallisticProV55.AP_MD24Clip","BallisticProV55.AP_XMK5Clip"))
+     Replacements(17)=(OldItemName="XWeapons.BioAmmoPickup",NewItemNames=("BallisticProV55.NRP57Pickup","BallisticProV55.FP7Pickup","BallisticProV55.FP9Pickup","BallisticProV55.BX5Pickup","BallisticProV55.T10Pickup"))
+     Replacements(18)=(OldItemName="XWeapons.ShockAmmoPickup",NewItemNames=("BallisticProV55.AP_556mmClip","BallisticProV55.AP_XK2Clip","BallisticProV55.AP_SARClip","BallisticProV55.AP_SRS900Clip","BallisticProV55.AP_M46Clip","BallisticProV55.AP_XMK5Clip"))
+     Replacements(19)=(OldItemName="XWeapons.LinkAmmoPickup",NewItemNames=("BallisticProV55.AP_A73Clip","BallisticProV55.AP_HVCMk9Cell","BallisticProV55.AP_E23Clip","BallisticProV55.AP_DarkDiamond","BallisticProV55.AP_NovaCrystal"))
+     Replacements(20)=(OldItemName="XWeapons.MinigunAmmoPickup",NewItemNames=("BallisticProV55.AP_M353Belt","BallisticProV55.AP_M925Belt","BallisticProV55.AP_XMV850Ammo"))
+     Replacements(21)=(OldItemName="XWeapons.FlakAmmoPickup",NewItemNames=("BallisticProV55.AP_12GaugeBox","BallisticProV55.AP_MRS138Box","BallisticProV55.AP_A500Cells"))
+     Replacements(22)=(OldItemName="XWeapons.RocketAmmoPickup",NewItemNames=("BallisticProV55.AP_G5Ammo","BallisticProV55.AP_FlamerGas","BallisticProV55.AP_MACShells","BallisticProV55.AP_MRLRockets"))
+     Replacements(23)=(OldItemName="XWeapons.SniperAmmoPickup",NewItemNames=("BallisticProV55.AP_R78Clip","BallisticProV55.AP_M75Clip","BallisticProV55.AP_R9Clip","BallisticProV55.AP_MarlinAmmo"))
+     Replacements(24)=(OldItemName="UTClassic.ClassicSniperAmmoPickup",NewItemNames=("BallisticProV55.AP_R78Clip","BallisticProV55.AP_M75Clip","BallisticProV55.AP_R9Clip","BallisticProV55.AP_MarlinAmmo"))
+     Replacements(25)=(OldItemName="Onslaught.ONSAVRiLAmmoPickup",NewItemNames=("BallisticProV55.AP_G5Ammo","BallisticProV55.AP_M75Clip","BallisticProV55.AP_MACShells"))
+     Replacements(26)=(OldItemName="Onslaught.ONSGrenadeAmmoPickup",NewItemNames=("BallisticProV55.NRP57Pickup","BallisticProV55.FP7Pickup","BallisticProV55.T10Pickup"))
+     Replacements(27)=(OldItemName="Onslaught.ONSMineAmmoPickup",NewItemNames=("BallisticProV55.FP9Pickup","BallisticProV55.BX5Pickup"))
+     Replacements(28)=(OldItemName="XPickups.HealthPack",NewItemNames=("BallisticProV55.IP_HealthKit"))
+     Replacements(29)=(OldItemName="XPickups.MiniHealthPack",NewItemNames=("BallisticProV55.IP_Bandage"))
+     Replacements(30)=(OldItemName="XPickups.AdrenalinePickup",NewItemNames=("BallisticProV55.IP_Adrenaline"))
+     Replacements(31)=(OldItemName="XPickups.UDamagePack",NewItemNames=("BallisticProV55.IP_UDamage"))
+     Replacements(32)=(OldItemName="XPickups.SuperHealthPack",NewItemNames=("BallisticProV55.IP_SuperHealthKit"))
+     Replacements(33)=(OldItemName="XPickups.SuperShieldPack",NewItemNames=("BallisticProV55.IP_BigArmor"))
+     Replacements(34)=(OldItemName="XPickups.ShieldPack",NewItemNames=("BallisticProV55.IP_SmallArmor"))
      UDamageSnd=Sound'BallisticSounds3.Udamage.UDamageFire'
      ItemGroup="Ballistic"
-     bLeaveSuper=True
-     CamUpdateRate="0"
+     bSpawnUniqueItems=True
+     bPickupsChange=True
+     bRandomDefaultWeapons=True
+     CamUpdateRate="1"
      CamRateOptions(0)="No Update"
      CamRateOptions(1)="Slow 2 FPS"
      CamRateOptions(2)="Medium 5 FPS"

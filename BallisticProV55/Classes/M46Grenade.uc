@@ -142,11 +142,10 @@ defaultproperties
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=512.000000
      MotionBlurRadius=384.000000
-     MotionBlurFactor=0.000000
-     MotionBlurTime=0.000000
+     MotionBlurFactor=3.000000
+     MotionBlurTime=4.000000
      Speed=2700.000000
      MyDamageType=None
      StaticMesh=StaticMesh'BallisticHardware_25.OA-AR.OA-AR_Grenade'
      DrawScale=0.450000
-     bSelected=True
 }

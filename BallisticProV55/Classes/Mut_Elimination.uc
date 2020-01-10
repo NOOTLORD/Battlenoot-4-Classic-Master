@@ -298,7 +298,12 @@ function bool SpawnNewItem(int Index, Actor Other, optional class<Pickup> NewIte
 defaultproperties
 {
      Replacements(0)=(OldItem=Class'XPickups.HealthPack',NewItem=Class'BallisticProV55.IP_HealthKit')
-     Replacements(1)=(OldItem=Class'XPickups.UDamagePack',NewItem=Class'BallisticProV55.IP_UDamage')
+     Replacements(1)=(OldItem=Class'XPickups.MiniHealthPack',NewItem=Class'BallisticProV55.IP_Bandage')
+     Replacements(2)=(OldItem=Class'XPickups.AdrenalinePickup',NewItem=Class'BallisticProV55.IP_Adrenaline')
+     Replacements(3)=(OldItem=Class'XPickups.UDamagePack',NewItem=Class'BallisticProV55.IP_UDamage')
+     Replacements(4)=(OldItem=Class'XPickups.SuperHealthPack',NewItem=Class'BallisticProV55.IP_SuperHealthKit')
+     Replacements(5)=(OldItem=Class'XPickups.SuperShieldPack',NewItem=Class'BallisticProV55.IP_BigArmor')
+     Replacements(6)=(OldItem=Class'XPickups.ShieldPack',NewItem=Class'BallisticProV55.IP_SmallArmor')
      bNetTemporary=True
      bAlwaysRelevant=True
      RemoteRole=ROLE_SimulatedProxy

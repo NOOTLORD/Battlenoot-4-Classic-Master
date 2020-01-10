@@ -313,8 +313,9 @@ var		  float		LongGunFactor;		// Current percent of long-gun factors applied. Wi
 var		  float		NewLongGunFactor;	// What LongGunFactor should be. Set instantly when bumping into obstacles
 var(BAim) rotator	LongGunPivot;		// How to rotate aim and gun at full LongGunFactor
 var(BAim) vector		LongGunOffset;		// How much to offset weapon position at full LongGunFactor
-var		  float		AimDisplacementFactor;
-var		  float		AimDisplacementEndTime;
+var		  float		AimDisplacementFactor;  // Current factor for aim displacement.
+var		  float		AimDisplacementEndTime; // Time when aim displacement effect wears off.
+var		  float		AimDisplacementDurationMult; // Duration multiplier for aim displacement.
 // General
 var(BAim) bool		bAimDisabled;		// Disables the entire aiming system. Bullets go exactly where crosshair is aimed.
 var(BAim) bool		bUseNetAim;			// Aim info is replicated to clients. Otherwise client and server aim will be separate
@@ -1230,7 +1231,6 @@ simulated function StopScopeView(optional bool bNoAnim)
 	{
 		PlayerController(InstigatorController).myHud.bCrosshairShow = False;
 	}
-
 }
 
 // Scope up anim just ended. Either go into scope view or move the scope back down again
@@ -1621,11 +1621,13 @@ simulated function bool CanUseSights()
 // Interpolate our generated 'sighting anims' (the gun's movement to and from the sight view position)
 simulated function TickSighting (float DT)
 {
-	if (SightingState == SS_None || SightingState == SS_Active)
+	switch (SightingState)
+	{
+	case SS_None:
+	case SS_Active:
 		return;
-
-	if (SightingState == SS_Raising)
-	{	// Raising gun to sight position
+	case SS_Raising:
+		// Raising gun to sight position
 		if (SightingPhase < 1.0)
 		{
 			if ((bScopeHeld || bPendingSightUp) && CanUseSights())
@@ -1642,9 +1644,9 @@ simulated function TickSighting (float DT)
 			SightingState = SS_Active;
 			ScopeUpAnimEnd();
 		}
-	}
-	else if (SightingState == SS_Lowering)
-	{	// Lowering gun from sight pos
+		break;
+	case SS_Lowering:
+		// Lowering gun from sight pos
 		if (SightingPhase > 0.0)
 		{
 			if (bScopeHeld && CanUseSights())
@@ -1660,6 +1662,7 @@ simulated function TickSighting (float DT)
 			ScopeDownAnimEnd();
 			DisplayFOV = default.DisplayFOV;
 		}
+		break;
 	}
 }
 
@@ -1710,11 +1713,14 @@ exec simulated function WeaponSpecial(optional byte i)
 { 
 	WeaponSpecialImpl(i);
 }
+
 simulated function WeaponSpecialImpl(byte i)
 {
 	if(!Instigator.bNoWeaponFiring)	
 		ServerWeaponSpecial(i);	
-}// Server side WS event. Override for server side WS funcs. ClientWeaponSpecial can be called from here.
+}
+
+// Server side WS event. Override for server side WS funcs. ClientWeaponSpecial can be called from here.
 function ServerWeaponSpecial(optional byte i);
 
 // Client WS. This is the call back from server. Not called by default...
@@ -1769,7 +1775,6 @@ simulated function CommonCockGun(optional byte Type)
 // Integrated melee attacks.
 //===========================================================================
 exec simulated function MeleeHold()
-
 {
 	MeleeHoldImpl();
 }
@@ -1796,17 +1801,10 @@ simulated function MeleeHoldImpl()
 	}
 }
 
-function ServerMeleeHold()
+function AddMeleeChargeSpeed()
 {
 	local float NewSpeed;
 	
-	//PlayerController(InstigatorController).ClientMessage("ServerMeleeHold");
-	MeleeState = MS_Held;
-	ReloadState = RS_None;
-	bServerReloading=True; //lock the gun to prevent desynchronisation
-	MeleeFireMode.HoldStartTime = Level.TimeSeconds;
-	MeleeFireMode.PlayPreFire();
-	GunLength = 1;
 	if (SprintControl != None && SprintControl.bSprinting)
 		PlayerSprint(false);
 	PlayerSpeedFactor = FMin(PlayerSpeedFactor * 1.15, 1.15);
@@ -1815,6 +1813,32 @@ function ServerMeleeHold()
 		NewSpeed *= 1.4;
 	if (Instigator.GroundSpeed != NewSpeed)
 		Instigator.GroundSpeed = NewSpeed;
+}
+
+function RemoveMeleeChargeSpeed()
+{
+	local float NewSpeed;
+	
+	if (SprintControl != None && SprintControl.bSprinting)
+		PlayerSprint(true);
+	PlayerSpeedFactor = default.PlayerSpeedFactor;
+	NewSpeed = Instigator.default.GroundSpeed * PlayerSpeedFactor;
+	if (ComboSpeed(xPawn(Instigator).CurrentCombo) != None)
+		NewSpeed *= 1.4;
+	if (Instigator.GroundSpeed != NewSpeed)
+		Instigator.GroundSpeed = NewSpeed;
+}
+
+function ServerMeleeHold()
+{
+	//PlayerController(InstigatorController).ClientMessage("ServerMeleeHold");
+	MeleeState = MS_Held;
+	ReloadState = RS_None;
+	bServerReloading=True; //lock the gun to prevent desynchronisation
+	MeleeFireMode.HoldStartTime = Level.TimeSeconds;
+	MeleeFireMode.PlayPreFire();
+	GunLength = 1;
+	AddMeleeChargeSpeed();
 	bPreventReload = True;
 }
 
@@ -1822,14 +1846,19 @@ exec simulated function MeleeRelease()
 {
 	MeleeReleaseImpl();
 }
+
 simulated function MeleeReleaseImpl()
 {
 	if (MeleeFireMode == None || ClientState != WS_ReadyToFire || MeleeState == MS_None)
 		return;
 	switch(MeleeState)
 	{
-		case MS_Pending: MeleeState = MS_None; break;
-		case MS_StrikePending: MeleeState = MS_Strike; break;
+		case MS_Pending: 
+			MeleeState = MS_None; 
+			break;
+		case MS_StrikePending: 
+			MeleeState = MS_Strike; 
+			break;
 		case MS_Held:
 			if (Role < Role_Authority)
 			{
@@ -1846,22 +1875,13 @@ simulated function MeleeReleaseImpl()
 
 final function ServerMeleeRelease()
 {
-	local float NewSpeed;
-	
 	//PlayerController(InstigatorController).ClientMessage("ServerMeleeRelease");
 	MeleeState = MS_Strike;
 	if (Instigator.IsLocallyControlled())
 		MeleeFireMode.PlayFiring();
 	else MeleeFireMode.ServerPlayFiring();
 	MeleeFireMode.DoFireEffect();
-	if (SprintControl != None && SprintControl.bSprinting)
-		PlayerSprint(true);
-	PlayerSpeedFactor = default.PlayerSpeedFactor;
-	NewSpeed = Instigator.default.GroundSpeed * PlayerSpeedFactor;
-	if (ComboSpeed(xPawn(Instigator).CurrentCombo) != None)
-		NewSpeed *= 1.4;
-	if (Instigator.GroundSpeed != NewSpeed)
-		Instigator.GroundSpeed = NewSpeed;
+	RemoveMeleeChargeSpeed();
 	GunLength = default.GunLength;
 	//Trace, damage code
 	//Fire delay
@@ -1903,14 +1923,17 @@ function ServerStartReload (optional byte i)
 
 	if (bPreventReload)
 		return;
+		
 	if (ReloadState != RS_None)
 		return;
+		
 	if (MagAmmo >= default.MagAmmo)
 	{
 		if (bNeedCock)
 			ServerCockGun(0);
 		return;
 	}
+	
 	if (Ammo[0].AmmoAmount < 1)
 		return;
 
@@ -1919,8 +1942,10 @@ function ServerStartReload (optional byte i)
 			StopFire(m);
 
 	bServerReloading = true;
+	
 	if (BallisticAttachment(ThirdPersonActor) != None && BallisticAttachment(ThirdPersonActor).ReloadAnim != '')
 		Instigator.SetAnimAction('ReloadGun');
+		
 	CommonStartReload(i);	//Server animation
 	ClientStartReload(i);	//Client animation
 }
@@ -2507,7 +2532,7 @@ function float GetAIRating()
 {
 	if (bNoMag)
 		return AIRating;
-    if (DiscourageReload())
+	if (DiscourageReload())
 		return AIRating * 0.25;
 	return AIRating;
 }
@@ -2552,11 +2577,13 @@ function bool CanAttack(Actor Other)
 
 	if (ReloadState != RS_None)
 		return false;
+		
 	if (!bNoMag && (bNeedReload || MagAmmo < 1))
 	{
 		BotReload(true);
 		return false;
 	}
+	
 	if (!bNonCocking && bNeedCock && !bNeedReload && MagAmmo > 0)
 	{
 		CommonCockGun();
@@ -2629,9 +2656,11 @@ function bool RecommendHeal(Bot B)
 		&& (VSize(Instigator.Location - V.Location) < 1.5 * FireMode[0].MaxRange())
 		&& (V.Health < V.HealthMax) && (V.LinkHealMult > 0) )
 		return true;
+
 	if ( Vehicle(B.RouteGoal) != None && B.Enemy == None && VSize(Instigator.Location - B.RouteGoal.Location) < 1.5 * FireMode[0].MaxRange()
 	     && Vehicle(B.RouteGoal).TeamLink(B.GetTeamNum()) )
 		return true;
+
 	O = DestroyableObjective(B.Squad.SquadObjective);
 	if ( O != None && B.Enemy == None && O.TeamLink(B.GetTeamNum()) && O.Health < O.DamageCapacity
 	     && VSize(Instigator.Location - O.Location) < 1.1 * FireMode[0].MaxRange() && B.LineOfSightTo(O) )
@@ -3890,6 +3919,8 @@ simulated function Rotator GetPlayerAim(optional bool bFire)
 function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
 {
 	local float DF;
+	local float AimDisplacementDuration;
+	
 	local class<BallisticDamageType> BDT;
 	
 	if (InstigatedBy != None && InstigatedBy.Controller != None && InstigatedBy.Controller.SameTeamAs(InstigatorController))
@@ -3904,15 +3935,17 @@ function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocati
 	{
 		if (BDT.default.bDisplaceAim && Damage >= BDT.default.AimDisplacementDamageThreshold && Level.TimeSeconds + BDT.default.AimDisplacementDuration > AimDisplacementEndTime)
 		{
+			AimDisplacementDuration = BDT.default.AimDisplacementDuration * AimDisplacementDurationMult;
+		
 			if (BDT.default.AimDisplacementDamageThreshold == 0)
 			{
-				AimDisplacementEndTime = Level.TimeSeconds + FMin(2, BDT.default.AimDisplacementDuration);
-				ClientDisplaceAim(FMin(2, BDT.default.AimDisplacementDuration));
+				AimDisplacementEndTime = Level.TimeSeconds + FMin(2, AimDisplacementDuration);
+				ClientDisplaceAim(FMin(2, AimDisplacementDuration));
 			}
 			else
 			{
-				AimDisplacementEndTime = Level.TimeSeconds + FMin(2, BDT.default.AimDisplacementDuration * (float(Damage)/BDT.default.AimDisplacementDamageThreshold));
-				ClientDisplaceAim(FMin(2, BDT.default.AimDisplacementDuration * (float(Damage)/BDT.default.AimDisplacementDamageThreshold)));
+				AimDisplacementEndTime = Level.TimeSeconds + FMin(2, AimDisplacementDuration * (float(Damage)/BDT.default.AimDisplacementDamageThreshold));
+				ClientDisplaceAim(FMin(2, AimDisplacementDuration * (float(Damage)/BDT.default.AimDisplacementDamageThreshold)));
 			}
 			if (bScopeView)
 				StopScopeView();
@@ -4200,7 +4233,8 @@ simulated function DrawCrosshairs(canvas C)
 	ScaleFactor = C.ClipX / 1600;
 	
 	// Draw weapon specific Crosshairs
-if (bOldCrosshairs || PlayerController(Instigator.Controller) == None || (Instigator.IsFirstPerson() && bScopeView))		return;
+	if (bOldCrosshairs || PlayerController(Instigator.Controller) == None || (Instigator.IsFirstPerson() && bScopeView))
+		return;
 		
 	if (!bNoMag && MagAmmo == 0)
 	{
@@ -4258,9 +4292,10 @@ if (bOldCrosshairs || PlayerController(Instigator.Controller) == None || (Instig
 			C.DrawTileStretched(Texture'Engine.WhiteTexture', 4, 4);
 		}
 	}
-
+	
 	//green
 	C.DrawColor = SavedDrawColor;
+	
 	if (!bScopeView)
 	{
 		//hor
@@ -4525,6 +4560,7 @@ static function String GetManual()
 
 defaultproperties
 {
+	 AimDisplacementDurationMult=1.000000
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=2.000000
@@ -4533,12 +4569,7 @@ defaultproperties
      IdleTweenTime=0.200000
      SightFXBone="tip"
      BCRepClass=Class'BCoreProV55.BCReplicationInfo'
-     bEvenBodyDamage=True
-     AimKnockScale=1.000000
-     bDrawCrosshairDot=True
-     bLimitCarry=True
-     MaxWeaponsPerSlot=1
-     InventorySize=7
+     InventorySize=12
      HeaderColor=(B=50,G=50,R=255)
      TextColor=(G=175,R=255)
      SpecialInfo(0)=(Id="EvoDefs",Info="0.0;10.0;0.5;50.0;0.2;0.2;0.1")
@@ -4576,7 +4607,7 @@ defaultproperties
      SightOffset=(Z=2.500000)
      SightDisplayFOV=30.000000
      SightingTime=0.350000
-     SightingTimeScale=0.750000
+     SightingTimeScale=1.000000
      MinFixedZoomLevel=0.050000
      MinZoom=1.000000
      MaxZoom=2.000000

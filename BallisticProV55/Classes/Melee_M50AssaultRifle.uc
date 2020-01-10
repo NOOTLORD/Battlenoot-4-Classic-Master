@@ -36,24 +36,10 @@ function float GetAIRating()
 
 defaultproperties
 {
-     CamUpdateRate=0.500000
-     CockSound=(Volume=0.500000)
-     ClipHitSound=(Volume=0.500000)
-     ClipOutSound=(Volume=0.500000)
-     ClipInSound=(Volume=0.500000)
-     bCockOnEmpty=False
-     WeaponModes(1)=(bUnavailable=False)
-     AimAdjustTime=0.500000
-     AimDamageThreshold=100.000000
      FireModeClass(0)=Class'BallisticProV55.M50CamFire'
      FireModeClass(1)=Class'BallisticProV55.M50CamFire'
      AIRating=0.000000
-     bCanThrow=True
-     AmmoClass(0)=None
-     AmmoClass(1)=None
      Priority=11
      PickupClass=Class'BallisticProV55.Melee_M50Pickup'
      ItemName="Unfireable M50 Assault Rifle"
-     AmbientGlow=12
-     bSelected=False
 }

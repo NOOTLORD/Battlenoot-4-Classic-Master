@@ -17,8 +17,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
          StartLocationOffset=(X=1.500000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
-         DrawStyle=PTDS_Regular
+         StartSizeRange=(X=(Min=35.000000,Max=35.000000),Y=(Min=35.000000,Max=35.000000),Z=(Min=35.000000,Max=35.000000))
          Texture=Texture'BallisticEffects.Particles.FlareB1'
          LifetimeRange=(Min=1.000000,Max=1.000000)
      End Object
@@ -43,8 +42,8 @@ defaultproperties
          StartLocationOffset=(X=-5.000000)
          SizeScale(0)=(RelativeSize=0.500000)
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
-         DrawStyle=PTDS_Regular
+         StartSizeRange=(X=(Min=60.000000,Max=60.000000),Y=(Min=60.000000,Max=60.000000),Z=(Min=60.000000,Max=60.000000))
+         DrawStyle=PTDS_Brighten
          Texture=Texture'BallisticEffects.Particles.AquaFlareA1'
          LifetimeRange=(Min=1.000000,Max=1.000000)
          StartVelocityRange=(X=(Min=350.000000,Max=350.000000))
@@ -57,5 +56,4 @@ defaultproperties
      bHidden=True
      DrawScale=0.300000
      Skins(0)=Texture'BallisticEffects.Particles.FlareA1'
-     bSelected=True
 }

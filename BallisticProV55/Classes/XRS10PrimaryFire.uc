@@ -3,8 +3,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class XRS10PrimaryFire extends BallisticRangeAttenFire;
 
@@ -60,20 +58,6 @@ function FlashMuzzleFlash()
 		EjectBrass();
 }
 
-// Remove effects
-simulated function DestroyEffects()
-{
-	Super.DestroyEffects();
-
-	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
-	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
-}
-
-simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
-{
-	BallisticAttachment(Weapon.ThirdPersonActor).BallisticUpdateHit(Other, HitLocation, HitNormal, Surf, XRS10SubMachinegun(Weapon).bSilenced, WaterHitLoc);
-}
-
 //// server propagation of firing ////
 function ServerPlayFiring()
 {
@@ -120,6 +104,7 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
+    ClientPlayForceFeedback(FireForce);  // jdf
     FireCount++;
 	// End code from normal PlayFiring()
 
@@ -131,16 +116,32 @@ function PlayFiring()
 	CheckClipFinished();
 }
 
+
+
+// Remove effects
+simulated function DestroyEffects()
+{
+	Super.DestroyEffects();
+
+	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
+	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
+}
+
+simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
+{
+	BallisticAttachment(Weapon.ThirdPersonActor).BallisticUpdateHit(Other, HitLocation, HitNormal, Surf, XRS10SubMachinegun(Weapon).bSilenced, WaterHitLoc);
+}
+
 defaultproperties
 {
      SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     SFlashBone="Muzzle2"
-     SFlashScaleFactor=1.150000
+     SFlashBone="tip2"
+     SFlashScaleFactor=1.000000
      CutOffDistance=1024.000000
      CutOffStartRange=512.000000
      WaterRangeFactor=0.500000
      MaxWallSize=24.000000
-     MaxWalls=1
+     MaxWalls=2
      Damage=28.000000
      DamageHead=28.000000
      DamageLimb=28.000000
@@ -149,31 +150,28 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTXRS10SMG'
      DamageTypeHead=Class'BallisticProV55.DTXRS10SMGHead'
      DamageTypeArm=Class'BallisticProV55.DTXRS10SMG'
-     PenetrateForce=0
-     bPenetrate=False				   					
-     ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-2',Volume=1.000000,Radius=48.000000,bAtten=True)
-     DryFireSound=(Volume=1.500000)
+     PenetrateForce=135
+     bPenetrate=True
+     ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-2',Volume=0.800000,Radius=48.000000,bAtten=True)
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=0.700000)
      bDryUncock=True
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashBone="Muzzle"
-     FlashScaleFactor=0.450000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassOffset=(X=-36.000000,Y=1.500000,Z=-0.500000)
+     BrassOffset=(X=-26.000000,Z=-5.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=190.000000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.320000,OutVal=1),(InVal=0.500000,OutVal=1.500000),(InVal=1.000000,OutVal=2.250000)))
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-SilenceFire',Volume=2.000000,Radius=48.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Fire',Volume=2.000000,Radius=384.000000)
+     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-SilenceFire',Volume=0.800000,Radius=48.000000,bAtten=True)
+     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Fire',Volume=0.900000,Radius=384.000000)
      bPawnRapidFireAnim=True
-     FireRate=0.090000
-     AmmoClass=Class'BallisticProV55.Ammo_XRS10Clip'
+     FireRate=0.0850000
+     AmmoClass=Class'BallisticProV55.Ammo_XRS10Bullets'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-3.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000	 
-     aimerror=600.000000
+     ShakeOffsetTime=1.500000
 }

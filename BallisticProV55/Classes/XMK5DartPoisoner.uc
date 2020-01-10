@@ -86,13 +86,12 @@ static function int GetPoisonDamage()
 defaultproperties
 {
      DamageType=Class'BallisticProV55.DTXMK5DartPoison'
-     Damage=5
-     PoisonTime=2.000000
+     Damage=10
+     PoisonTime=4.500000
      bHidden=True
      bOnlyRelevantToOwner=True
      bReplicateMovement=False
      bSkipActorPropertyReplication=True
      RemoteRole=ROLE_SimulatedProxy
      bHardAttach=True
-     bSelected=True
 }

@@ -16,6 +16,7 @@ defaultproperties
      DeathStrings(2)="%k's proximity grenade latched onto %o's flapping ear."
      SimpleKillString="M46 Proximity Mine Direct"
      bDetonatesBombs=False
+     InvasionDamageScaling=2.000000
      DamageIdent="Grenade"
      WeaponClass=Class'BallisticProV55.M46AssaultRifle'
      DeathString="%k's sticky M46 grenade got stuck to %o."

@@ -55,12 +55,11 @@ function bool HandlePickupQuery( pickup Item )
 
 defaultproperties
 {
-     MaxAmmo=2
-     InitialAmount=2
+     MaxAmmo=18
+     InitialAmount=3
      IconFlashMaterial=Shader'BallisticTextures_25.OA-SMG.AmmoIcon_OASMGFlash'
      PickupClass=Class'BallisticProV55.AP_XMK5Clip'
      IconMaterial=Texture'BallisticTextures_25.OA-SMG.AmmoIcon_OASMG'
      IconCoords=(X2=64,Y2=64)
      ItemName="XMk5 Stun Darts"
-     bSelected=True
 }

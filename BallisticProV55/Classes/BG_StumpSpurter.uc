@@ -73,7 +73,7 @@ defaultproperties
          StartSpinRange=(X=(Min=0.500000,Max=0.500000))
          SizeScale(0)=(RelativeSize=0.500000)
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=3.000000,Max=5.000000),Y=(Min=3.000000,Max=5.000000),Z=(Min=3.000000,Max=5.000000))
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticBloodPro.Particles.BloodDrip1'
          SecondsBeforeInactive=0.000000
@@ -102,7 +102,7 @@ defaultproperties
          SizeScale(1)=(RelativeTime=0.070000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=0.900000,RelativeSize=1.000000)
          SizeScale(3)=(RelativeTime=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=5.000000,Max=5.000000),Y=(Min=5.000000,Max=5.000000),Z=(Min=5.000000,Max=5.000000))
          DrawStyle=PTDS_Modulated
          Texture=Texture'BallisticBloodPro.Decals.Splat2'
          SecondsBeforeInactive=0.000000
@@ -138,7 +138,7 @@ defaultproperties
          StartSpinRange=(X=(Min=0.500000,Max=0.500000))
          SizeScale(0)=(RelativeSize=0.500000)
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
+         StartSizeRange=(X=(Min=3.000000,Max=5.000000),Y=(Min=5.000000,Max=12.000000),Z=(Min=5.000000,Max=12.000000))
          InitialParticlesPerSecond=10.000000
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticBloodPro.Particles.BloodDrip1'
@@ -147,4 +147,5 @@ defaultproperties
          StartVelocityRange=(X=(Min=10.000000,Max=40.000000),Y=(Min=-15.000000,Max=15.000000),Z=(Min=5.000000,Max=30.000000))
      End Object
      Emitters(2)=SpriteEmitter'BallisticProV55.BG_StumpSpurter.SpriteEmitter23'
+
 }

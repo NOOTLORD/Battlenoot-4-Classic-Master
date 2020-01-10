@@ -49,7 +49,7 @@ defaultproperties
 {
      EffectsDetailMode=DM_High
      bEjectBrass=True
-     bMuzzleSmoke=True					  
+     bMuzzleSmoke=True
      bBulletFlybys=True
      bAlwaysRelevant=True
      RemoteRole=ROLE_SimulatedProxy

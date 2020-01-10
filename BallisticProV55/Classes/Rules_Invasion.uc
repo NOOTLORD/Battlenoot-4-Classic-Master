@@ -10,5 +10,4 @@ function int NetDamage( int OriginalDamage, int Damage, pawn injured, pawn insti
 
 defaultproperties
 {
-     bSelected=True
 }

@@ -16,6 +16,7 @@ defaultproperties
      DeathStrings(2)="%o was blown to the Moon by %k's M46 detonation."
      SimpleKillString="M46 Mine Manual Detonation"
      bDetonatesBombs=False
+     InvasionDamageScaling=2.000000
      DamageIdent="Grenade"
      WeaponClass=Class'BallisticProV55.M46AssaultRifle'
      DeathString="%o wandered too close to %k's lurking M46 grenade."

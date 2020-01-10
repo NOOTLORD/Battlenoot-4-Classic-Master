@@ -450,5 +450,4 @@ defaultproperties
      DefaultSwaps(13)=(NIs=("BallisticProV55.NRP57Grenade"))
      DefaultSwaps(14)=(NIs=("BallisticProV55.BX5Mine"))
      DefaultSwaps(15)=(NIs=("BallisticProV55.R78Rifle"))
-     bDefaultsWritten=True
 }

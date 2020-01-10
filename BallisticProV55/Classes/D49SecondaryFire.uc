@@ -79,7 +79,7 @@ defaultproperties
      TraceRange=(Min=8000.000000,Max=9000.000000)
      WaterRangeFactor=0.800000
      MaxWallSize=32.000000
-     MaxWalls=1
+     MaxWalls=2
      Damage=90.000000
      DamageHead=160.000000
      DamageLimb=90.000000
@@ -88,12 +88,12 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTD49Revolver'
      DamageTypeHead=Class'BallisticProV55.DTD49RevolverHead'
      DamageTypeArm=Class'BallisticProV55.DTD49Revolver'
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False				   					
+     KickForce=4000
+     PenetrateForce=200
+     bPenetrate=True
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      FlashBone="tip2"
-     FlashScaleFactor=0.800000
+     FlashScaleFactor=1.200000
      RecoilPerShot=2048.000000
      FireChaos=0.800000
      XInaccuracy=128.000000
@@ -105,11 +105,17 @@ defaultproperties
      AmmoPerFire=2
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-5.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
-     BotRefireRate=0.900000
-     WarnTargetPct=0.100000
-     aimerror=600.000000
+     ShakeOffsetTime=2.000000
+	 
+	 // AI
+	 bInstantHit=True
+	 bLeadTarget=False
+	 bTossed=False
+	 bSplashDamage=False
+	 bRecommendSplashDamage=False
+	 BotRefireRate=0.7
+     WarnTargetPct=0.5
 }

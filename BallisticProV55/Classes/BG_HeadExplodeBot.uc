@@ -207,5 +207,4 @@ defaultproperties
      Emitters(6)=TrailEmitter'BallisticProV55.BG_HeadExplodeBot.TrailEmitter1'
 
      AutoDestroy=True
-     bSelected=False
 }

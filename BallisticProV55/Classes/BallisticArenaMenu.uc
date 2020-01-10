@@ -582,10 +582,6 @@ defaultproperties
      Presets(6)=(PresetName="Machinegun Battle",WeaponClassNames=("BallisticProV55.M353Machinegun","BallisticProV55.M925Machinegun","BallisticProV55.XMV850Minigun"))
      Presets(7)=(PresetName="Blade Match",WeaponClassNames=("BallisticProV55.X3Knife","BallisticProV55.A909SkrithBlades","BallisticProV55.EKS43Katana"))
      Presets(8)=(PresetName="UT2004 Stuff",WeaponClassNames=("XWeapons.AssaultRifle","XWeapons.BioRifle","XWeapons.FlakCannon","XWeapons.Painter","XWeapons.SniperRifle","XWeapons.LinkGun","XWeapons.Minigun","XWeapons.Redeemer","XWeapons.RocketLauncher","XWeapons.ShieldGun","XWeapons.ShockRifle","UTClassic.ClassicSniperRifle","XWeapons.Translauncher","Onslaught.ONSAVRiL","Onslaught.ONSGrenadeLauncher","Onslaught.ONSMineLayer","OnslaughtFull.ONSPainter"))
-     Presets(9)=(PresetName="Monster Weapons2")
-     Presets(10)=(WeaponClassNames=("BWBPRecolorsPro.FLASHLauncher","BWBPRecolorsPro.BulldogAssaultCannon"))
-     Presets(11)=(PresetName="2",WeaponClassNames=("BWBPRecolorsPro.FLASHLauncher","BWBPRecolorsPro.BulldogAssaultCannon"))
-     Presets(12)=(PresetName="22")
      Headings(0)="Ballistic Weapons"
      Headings(1)="UT2004 Standard"
      Headings(2)="Other"

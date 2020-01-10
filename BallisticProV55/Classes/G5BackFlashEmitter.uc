@@ -100,4 +100,5 @@ defaultproperties
          VelocityLossRange=(X=(Min=0.700000,Max=0.700000),Y=(Min=0.700000,Max=0.700000),Z=(Min=0.700000,Max=0.700000))
      End Object
      Emitters(2)=SpriteEmitter'BallisticProV55.G5BackFlashEmitter.SpriteEmitter24'
+
 }

@@ -456,32 +456,36 @@ function byte BestMode()
 function float GetAIRating()
 {
 	local Bot B;
-    local float Dist, HeightFactor;
+	
+	local float Dist, HeightFactor;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-    if ( B == None )
+	
+	if ( B == None )
 		return AIRating;
 
-    Rating = Super.GetAIRating();
+	Rating = Super.GetAIRating();
 
-if (B.Enemy == None)
+	if (B.Enemy == None)
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	HeightFactor = 1 + 0.3 * FClamp((B.Enemy.Location.Z - Instigator.Location.Z)/-500, -2, 1); 
-
+	
 	if (Dist < 512)
 		return 0.5 * HeightFactor; // discourage close-range grenade
-
+	
 	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 1536, 2048) * HeightFactor; 
 }
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.2;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.5;	}
+
 // End AI Stuff =====
 
 defaultproperties

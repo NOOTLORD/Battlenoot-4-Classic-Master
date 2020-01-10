@@ -12,8 +12,6 @@
 //
 // by Sarge.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class LK05Carbine extends BallisticWeapon;
 
@@ -24,13 +22,9 @@ var() sound		SilencerOnSound;		// Silencer stuck on sound
 var() sound		SilencerOffSound;		//
 var() name		SilencerOnAnim;			// Think hard about this one...
 var() name		SilencerOffAnim;		//
+
 var() name		ScopeBone;			// Bone to use for hiding scope
 
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerSwitchSilencer;
-}
 
 //=================================
 //Silencer Code
@@ -118,8 +112,6 @@ simulated function BringUp(optional Weapon PrevWeapon)
 		ReloadAnim = 'Reload';
 	}
 
-	Super.BringUp(PrevWeapon);
-	
 	if (AIController(Instigator.Controller) != None)
 		bSilenced = (FRand() > 0.5);
 
@@ -127,6 +119,12 @@ simulated function BringUp(optional Weapon PrevWeapon)
 		SetBoneScale (0, 1.0, SilencerBone);
 	else
 		SetBoneScale (0, 0.0, SilencerBone);
+
+	Instigator.AmbientSound = UsedAmbientSound;
+	Instigator.SoundVolume = default.SoundVolume;
+	Instigator.SoundPitch = default.SoundPitch;
+	Instigator.SoundRadius = default.SoundRadius;
+	Instigator.bFullVolume = true;
 }
 
 simulated event AnimEnd (int Channel)
@@ -152,6 +150,9 @@ simulated event AnimEnd (int Channel)
 	Super.AnimEnd(Channel);
 }
 
+//=================================
+// Bot crap
+//=================================
 simulated function float RateSelf()
 {
 	if (!HasAmmo())
@@ -164,6 +165,7 @@ simulated function float RateSelf()
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
 function byte BestMode()	{	return 0;	}
 
@@ -191,15 +193,17 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.0;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.5;	}
+
 // End AI Stuff =====
 
 defaultproperties
 {
      ManualLines(0)="5.56 fire. Higher DPS than comparable weapons, but awkward recoil and highly visible tracers."
      ManualLines(1)="Attaches or remvoes the suppressor. When active, the suppressor reduces recoil and noise output and hides the muzzle flash, but reduces range."
-     ManualLines(2)="The Weapon Function key, when used, first cycles between the weapon's laser sight and flashlight, and then activates both at once. Activate again to disable both. The laser sight reduces the spread of the hipfire, but compromises stealth.||Effective at close and medium range."																												   																																																																																																																			  
+     ManualLines(2)="The Weapon Function key, when used, first cycles between the weapon's laser sight and flashlight, and then activates both at once. Activate again to disable both. The laser sight reduces the spread of the hipfire, but compromises stealth.||Effective at close and medium range."
      SilencerBone="Silencer"
      SilencerBone2="Silencer2"
      SilencerOnSound=Sound'BWBP3-Sounds.SRS900.SRS-SilencerOn'
@@ -214,26 +218,22 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      SpecialInfo(0)=(Info="240.0;25.0;0.9;80.0;0.7;0.7;0.4")
-     BringUpSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-PullOut',Volume=0.750000)
-     PutDownSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-Putaway',Volume=0.750000)
+     BringUpSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-PullOut',Volume=2.200000)
+     PutDownSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-Putaway',Volume=2.200000)
      MagAmmo=32
-     CockSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-Cock')
-     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagOut',Volume=0.650000)
-     ClipInSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagIn',Volume=0.650000)
+     CockSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-Cock',Volume=2.200000)
+     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagOut',Volume=2.400000)
+     ClipInSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagIn',Volume=2.400000)
      ClipInFrame=0.650000
-     bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True,Value=4.000000)
-     WeaponModes(3)=(bUnavailable=True) 
+     WeaponModes(1)=(Value=4.000000)
+     WeaponModes(3)=(bUnavailable=True)
      bNoCrosshairInScope=True
      SightOffset=(X=10.000000,Y=-8.550000,Z=24.660000)
-     SightDisplayFOV=40.000000
+     SightDisplayFOV=25.000000
      SightingTime=0.300000
      SprintOffSet=(Pitch=-3072,Yaw=-4096)
-     AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000	 
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=3072
@@ -244,7 +244,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BWBPRecolorsPro.LK05SecondaryFire'
      IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000
@@ -253,13 +253,12 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.70000
      CurrentRating=0.700000
-     bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05Clip'  
      Priority=41
      HudColor=(B=24,G=48)
-     CustomCrossHairScale=0.000000
+	 bCockOnEmpty=True
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
+     PickupClass=Class'BWBPRecolorsPro.LK05Pickup'
      PlayerViewOffset=(X=-6.000000,Y=12.000000,Z=-17.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'
@@ -274,5 +273,4 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.LK05_FP'
      DrawScale=0.300000
-     AmbientGlow=0
 }

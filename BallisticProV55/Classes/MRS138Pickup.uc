@@ -46,5 +46,4 @@ defaultproperties
      DrawScale=0.250000
      PrePivot=(Y=-18.000000)
      CollisionHeight=3.000000
-     bSelected=True
 }

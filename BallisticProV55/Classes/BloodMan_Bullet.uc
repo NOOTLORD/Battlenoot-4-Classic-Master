@@ -109,10 +109,4 @@ static function DoSeverStump(Pawn Victim, name Bone, vector HitRay, float Damage
 
 defaultproperties
 {
-     SplatRange=384.000000
-     DecalChance=1.000000
-     EffectChance=1.000000
-     DripperThreshold=10.000000
-     DripperChance=0.500000
-     bSelected=False
 }

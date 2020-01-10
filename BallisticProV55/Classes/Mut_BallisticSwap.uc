@@ -619,7 +619,7 @@ defaultproperties
      AmmoSwaps(11)=(Old=Class'Onslaught.ONSGrenadeAmmo')
      AmmoSwaps(12)=(Old=Class'Onslaught.ONSMineAmmo')
      AmmoSwaps(13)=(Old=Class'XWeapons.GrenadeAmmo')
-     NadeReplacePercent=0
+     NadeReplacePercent=15
      PickupChangeTime=60.000000
      LockerChangeTime=90.000000
      bLockersChange=True

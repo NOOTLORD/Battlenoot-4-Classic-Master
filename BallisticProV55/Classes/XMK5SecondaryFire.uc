@@ -53,6 +53,7 @@ simulated function bool AllowFire()
 
     return true;
 }
+
 simulated event ModeDoFire()
 {
 	if (!AllowFire())
@@ -89,7 +90,7 @@ defaultproperties
      bLoaded=True
      SpawnOffset=(X=15.000000,Y=10.000000,Z=-9.000000)
      bUseWeaponMag=False
-     FlashBone="Muzzle2"
+     FlashBone="tip2"
      XInaccuracy=512.000000
      YInaccuracy=512.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=1.350000)
@@ -100,12 +101,11 @@ defaultproperties
      FireForce="AssaultRifleAltFire"
      FireRate=2.000000
      AmmoClass=Class'BallisticProV55.Ammo_XMK5Darts'
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=2.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
+     ShakeOffsetTime=2.000000
      ProjectileClass=Class'BallisticProV55.XMK5Dart'
      BotRefireRate=0.300000
      WarnTargetPct=0.300000
-     aimerror=600.000000
 }

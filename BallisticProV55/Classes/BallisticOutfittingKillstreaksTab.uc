@@ -369,7 +369,7 @@ defaultproperties
      End Object
      l_Receiving=GUILabel'BallisticProV55.BallisticOutfittingKillstreaksTab.l_Receivinglabel'
 
-     SavedStreaks(0)=(PresetName="DEFAULT",Weapons[0]="BWBPRecolorsPro.MGLauncher",Weapons[1]="BallisticProV55.XMV850Minigun")
+     SavedStreaks(0)=(PresetName="DEFAULT",Weapons[0]="BallisticProV55.RX22AFlamer",Weapons[1]="BallisticProV55.MRocketLauncher")
      SavedStreaks(1)=(PresetName="DEFAULT2",Weapons[0]="BallisticProV55.RX22AFlamer",Weapons[1]="BallisticProV55.MRocketLauncher")
      SavedStreaks(2)=(PresetName="DEFAULT3",Weapons[0]="BallisticProV55.RX22AFlamer",Weapons[1]="BallisticProV55.MRocketLauncher")
      SavedStreaks(3)=(PresetName="DEFAULT4",Weapons[0]="BallisticProV55.RX22AFlamer",Weapons[1]="BallisticProV55.MRocketLauncher")

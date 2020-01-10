@@ -42,11 +42,10 @@ defaultproperties
      PickupDrawScale=0.500000
      InventoryType=Class'BallisticProV55.R78Rifle'
      RespawnTime=20.000000
-     PickupMessage="You picked up the R78A1 covert sniper rifle."
+     PickupMessage="You picked up the R78A1 explosive sniper rifle."
      PickupSound=Sound'BallisticSounds2.R78.R78Putaway'
      StaticMesh=StaticMesh'BallisticHardware2.R78.R78PickupHi'
      Physics=PHYS_None
      DrawScale=0.470000
      CollisionHeight=3.000000
-     bSelected=True
 }

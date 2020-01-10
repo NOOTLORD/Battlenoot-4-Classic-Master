@@ -162,18 +162,7 @@ function StopFiring()
 defaultproperties
 {
      BurstInterval=0.125000
-     MaxWalls=2
-     KickForce=12000
-     PenetrateForce=150
-     bPenetrate=True
-     ClipFinishSound=(Volume=0.800000)
-     FlashScaleFactor=1.400000
-     BrassOffset=(X=-40.000000)
      MaxBurst=2
      RecoilPerShot=512.000000
-     BallisticFireSound=(Volume=0.800000)
      FireRate=0.900000
-     ShakeRotTime=2.000000
-     ShakeOffsetTime=2.000000
-     aimerror=800.000000
 }

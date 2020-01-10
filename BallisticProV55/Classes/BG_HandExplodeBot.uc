@@ -151,5 +151,4 @@ defaultproperties
      Emitters(3)=SpriteEmitter'BallisticProV55.BG_HandExplodeBot.SpriteEmitter17'
 
      AutoDestroy=True
-     bSelected=False
 }

@@ -13,6 +13,12 @@ var bool bAltLoaded;
 
 var Name SingleLoadAnim;
 
+replication
+{
+	reliable if (Role < ROLE_Authority)
+		ServerLoadShell;
+}
+
 function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
 {
 	if (MeleeState >= MS_Held)
@@ -181,7 +187,96 @@ simulated function FirePressed(float F)
 				ServerCockGun();
 		}
 	}
+		
+	else if(ReloadState == RS_None && !bAltLoaded && HasNonMagAmmo(1) && !IsFiring() && Level.TimeSeconds > FireMode[1].NextFireTime)
+	{
+		CommonLoadShell();
+		if (Level.NetMode == NM_Client)
+			ServerLoadShell();
+	}
 }
+
+simulated function CommonLoadShell()
+{
+	if (Role == ROLE_Authority)
+		bServerReloading=true;
+	ReloadState = RS_Cocking;
+	if (CurrentWeaponMode==0)
+		PlayAnim(SingleLoadAnim,1.6, 0.0);
+}
+
+function ServerLoadShell()
+{
+	CommonLoadShell();
+}
+
+// AI Interface =====
+// choose between regular or alt-fire
+function byte BestMode()
+{
+	local Bot B;
+	local float Dist;
+	local Vector Dir;
+
+	B = Bot(Instigator.Controller);
+	if ( (B == None) || (B.Enemy == None) )
+		return 0;
+
+	Dir = Instigator.Location - B.Enemy.Location;
+	Dist = VSize(Dir);
+
+	if (Dist > 250)
+		return 0;
+	if (Dist < FireMode[1].MaxRange() && FRand() > 0.3)
+		return 1;
+	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0 && (VSize(B.Enemy.Velocity) < 100 || Normal(B.Enemy.Velocity) dot Normal(Instigator.Velocity) < 0.5))
+		return 1;
+	return Rand(2);
+}
+
+function GiveTo(Pawn Other, optional Pickup Pickup)
+{
+	Super.GiveTo(Other, Pickup);
+	
+	if (GC != None)
+		GC.Instigator = Other;
+}
+
+function float GetAIRating()
+{
+	local Bot B;
+	
+	local float Dist;
+	local float Rating;
+
+	B = Bot(Instigator.Controller);
+	
+	if ( B == None )
+		return AIRating;
+
+	Rating = Super.GetAIRating();
+
+	if (B.Enemy == None)
+		return Rating;
+
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+	
+	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, BallisticProShotgunFire(BFireMode[0]).CutOffStartRange, BallisticProShotgunFire(BFireMode[0]).CutOffDistance); 
+}
+
+// tells bot whether to charge or back off while using this weapon
+function float SuggestAttackStyle()
+{
+	return 0.5;
+}
+
+// tells bot whether to charge or back off while defending against this weapon
+function float SuggestDefenseStyle()
+{
+	return -0.5;
+}
+
+// End AI Stuff =====
 
 simulated function PlayCocking(optional byte Type)
 {
@@ -205,65 +300,6 @@ simulated function Destroyed()
 	Super.Destroyed();
 }
 
-// AI Interface =====
-
-// choose between regular or alt-fire
-function byte BestMode()	{	return 0;	}
-
-function GiveTo(Pawn Other, optional Pickup Pickup)
-{
-	Super.GiveTo(Other, Pickup);
-	
-	if (GC != None)
-		GC.Instigator = Other;
-}
-
-function float GetAIRating()
-{
-	local Bot B;
-	local float Dist;
-	local float Rating;
-
-	B = Bot(Instigator.Controller);
-	if ( B == None )
-		return AIRating;
-
-	Rating = Super.GetAIRating();
-
-    if (B.Enemy == None)
-		return Rating;
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, BallisticProShotgunFire(BFireMode[0]).CutOffStartRange, BallisticProShotgunFire(BFireMode[0]).CutOffDistance);}
-
-// tells bot whether to charge or back off while using this weapon
-function float SuggestAttackStyle()
-{
-	if (AIController(Instigator.Controller) == None)
-		return 0.5;
-	return AIController(Instigator.Controller).Skill / 7;
-}
-
-// tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()
-{
-	local Bot B;
-	local float Result, Dist;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return -0.5;
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-	Result = -1 * (B.Skill / 6);
-	Result *= (1 - (Dist/4000));
-    return FClamp(Result, -1.0, -0.3);
-}
-
-// End AI Stuff =====
-
 defaultproperties
 {
      SingleLoadAnim="LoadSingle"
@@ -276,17 +312,17 @@ defaultproperties
      ManualLines(1)="Loads a gas shell. Once loaded, the gas shell can be fired, generating a linear cloud of toxic gas in front of the weapon. Anyone standing in this cloud will receive damage over time."
      ManualLines(2)="Has a melee attack. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. As a blunt attack, has lower base damage compared to bayonets but inflicts a short-duration blinding effect when striking. This attack inflicts more damage from behind.||As a shotgun, has poor penetration.||Most effective at medium range."
      SpecialInfo(0)=(Info="120.0;20.0;0.7;50.0;0.0;0.5;0.0")
+     MeleeFireClass=Class'BallisticProV55.M763MeleeFire'
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
 	 PutDownAnimRate=1.5
-	 PutDownTime=0.35					 				  
+	 PutDownTime=0.35
      MagAmmo=7
      CockAnimRate=1.700000
-     CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock1',Volume=0.400000)
+     CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock1')
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.100000
-     ClipOutSound=(Volume=0.750000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1',Volume=0.750000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1')
      ClipInFrame=0.375000
      bCockOnEmpty=True
      bCanSkipReload=True
@@ -301,16 +337,13 @@ defaultproperties
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
-     bNoCrosshairInScope=True
      SightPivot=(Pitch=32)
      SightOffset=(X=5.000000,Z=11.500000)
      SightDisplayFOV=40.000000
      SightingTime=0.300000
      GunLength=48.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
      AimSpread=0
-     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.750000
      ChaosSpeedThreshold=850.000000
      ChaosAimSpread=0
@@ -322,18 +355,16 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.800000
      FireModeClass(0)=Class'BallisticProV55.M763PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BallisticProV55.M763SecondaryFire'
      AIRating=0.750000
      CurrentRating=0.750000
-     bCanThrow=False
-     AmmoClass(0)=BallisticProV55.Ammo_M763Shell'
      Description="The Avenger single barreled shotgun is the standard spread weapon of the UTC infantry divisions. Its high damage, reliability and good range for a shotgun have made this gun one of the humans' favourites; the M763 has blown open more Krao drones than can be counted. After its many successes, even during trials by the UTC's Reunited Jamaican Army, defending from wave upon wave of Krao minions during the 'Red Storm' Skrith invasion, the Avenger became the standard issue shotgun and a favorite of many forces including the UTC RJA Division."
      Priority=37
      HudColor=(B=255,R=200)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=2
+     PickupClass=Class'BallisticProV55.M763Pickup'
      PlayerViewOffset=(Y=12.000000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.M763Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M763'
@@ -347,5 +378,4 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticProAnims.M763_FP'
      DrawScale=0.500000
-     AmbientGlow=0
 }

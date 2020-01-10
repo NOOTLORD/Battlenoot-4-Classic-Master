@@ -8,6 +8,8 @@
 //=============================================================================
 class BallisticTab_EliminationInventoryPro extends MidGamePanel;
 
+const INVENTORY_SIZE_MAX = 35;
+
 var bool					bLoadInitialized;
 
 var automated GUIListBox	lb_Weapons;
@@ -182,13 +184,13 @@ simulated function InitWeaponLists ()
 	local class<actor> a;
 	local class<Weapon> Weap;
 	local class<ConflictItem> CI;
-    local int i, lastIndex;
+	local int i, lastIndex;
 	local BC_WeaponInfoCache.WeaponInfo WI;
 
 	l_Loading.Hide();
 
 	lb_Weapons.List.Clear();
-	
+
 	//Only explicitly load saved inventory.	
 	Inventory.length = 0;
 	SpaceUsed = 0;
@@ -196,20 +198,22 @@ simulated function InitWeaponLists ()
 	for (i=0;i< EPRI.SavedInventory.length;i++)
 	{
 		a = class<Actor>(DynamicLoadObject(EPRI.SavedInventory[i], class'Class'));
+		
 		if (class<BallisticWeapon>(a) != None)
 		{
 			Weap = class<BallisticWeapon>(a);
 			AddInventory(string(Weap), Weap, Weap.default.ItemName);
 		}
+		
 		else if (class<ConflictItem>(a) != None)
 		{
 			CI = class<ConflictItem>(a);
 			AddInventory(string(CI), CI, CI.default.ItemName);
 		}
 	}
-	
-    lastIndex = -1;
 
+	lastIndex = -1;
+	
 	//Use cache for the rest.
 	//Weapons here will be loaded explicitly if they're selected in the list, via the Extra string data.
 	// The Full Inventory List is already sorted by inventory group and Conflict item status.
@@ -217,31 +221,31 @@ simulated function InitWeaponLists ()
 	{
 		if (!EPRI.WeaponRequirementsOk(EPRI.RequirementsList[i]))
 			continue;
-			
+		
 		if (InStr(EPRI.FullInventoryList[i], "CItem") != -1)
 		{ 
-			if (lastIndex != -1)		
+			if (lastIndex != -1)
 			{
 				lastIndex = -1;
 				lb_Weapons.List.Add("Misc",,"Mc",true);
 			}
-
+			
 			CI = class<ConflictItem>(DynamicLoadObject(EPRI.FullInventoryList[i], class'Class'));
 			
 			if (CI != None)
-		    lb_Weapons.List.Add(CI.default.ItemName, , EPRI.FullInventoryList[i]);
+				lb_Weapons.List.Add(CI.default.ItemName, , EPRI.FullInventoryList[i]);
 		}
-
+		
 		else 
 		{
 			if (LoadWIFromCache(EPRI.FullInventoryList[i], WI))
 			{
-            if (WI.InventoryGroup != lastIndex)
+				if (WI.InventoryGroup != lastIndex)
 				{
 					lastIndex = WI.InventoryGroup;
 					lb_Weapons.List.Add(class'BallisticTab_OutfittingPro'.static.GetHeading(lastIndex),,"Weapon Category",true);
 				}
-
+				
 				lb_Weapons.List.Add(WI.ItemName, , EPRI.FullInventoryList[i]);
 			}
 		}
@@ -280,7 +284,7 @@ function bool AddInventory(string ClassName, class<actor> InvClass, string Frien
 	if (class<ConflictItem>(InvClass) != None)
 	{
 		Size = class<ConflictItem>(InvClass).default.Size/5;
-		if (SpaceUsed + Size > 20)
+		if (SpaceUsed + Size > INVENTORY_SIZE_MAX)
 			return false;
 
 		SpaceUsed += Size;
@@ -300,7 +304,7 @@ function bool AddInventory(string ClassName, class<actor> InvClass, string Frien
 	Weap = class<BallisticWeapon>(WeaponClass);
 
 	Size = GetItemSize(WeaponClass);
-	if (SpaceUsed + Size > 20)
+	if (SpaceUsed + Size > INVENTORY_SIZE_MAX)
 		return false;
 
 	SpaceUsed += Size;
@@ -352,7 +356,7 @@ function bool InternalOnClick(GUIComponent Sender)
 		X = Box_Inventory.Bounds[0];
 		for (i=0;i<Inventory.length;i++)
 		{
-			ItemSize = (Box_Inventory.ActualWidth()/20) * Inventory[i].Size;
+			ItemSize = (Box_Inventory.ActualWidth()/INVENTORY_SIZE_MAX) * Inventory[i].Size;
 			if (Controller.MouseX > X && Controller.MouseX < X + ItemSize)
 			{
 				SpaceUsed -= Inventory[i].Size;
@@ -482,11 +486,11 @@ function DrawInventory(Canvas C)
 
 	C.SetDrawColor(64,64,64,255);
 	X = MyX;
-	for(i=0;i<20;i++)
+	for(i=0;i<INVENTORY_SIZE_MAX;i++)
 	{
 		C.SetPos(X, Myy);
-		C.DrawTile(BoxTex, MyW/20, MyH, 0, 0, 128, 64);
-		X += MyW/20;
+		C.DrawTile(BoxTex, MyW/INVENTORY_SIZE_MAX, MyH, 0, 0, 128, 64);
+		X += MyW/INVENTORY_SIZE_MAX;
 	}
 
 	X = MyX;
@@ -499,7 +503,7 @@ function DrawInventory(Canvas C)
 			C.SetDrawColor(255,255,255,255);
 
 			//can't exceed twice the height - Azarael
-			ItemSize = (MyW/20) * Inventory[i].Size;
+			ItemSize = (MyW/INVENTORY_SIZE_MAX) * Inventory[i].Size;
 			IconX = FMin(ItemSize, MyH*2.3);
 			IconY = IconX/2;
 

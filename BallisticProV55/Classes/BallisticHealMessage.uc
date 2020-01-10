@@ -22,9 +22,8 @@ defaultproperties
      bIsUnique=True
      bIsConsoleMessage=False
      bFadeMessage=True
+     Lifetime=1
      DrawColor=(B=210,G=180,R=170)
      StackMode=SM_Down
      PosY=0.775000
-     FontSize=-2
-     bSelected=True
 }

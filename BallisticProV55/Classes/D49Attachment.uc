@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class D49Attachment extends HandgunAttachment;
 
@@ -143,24 +141,19 @@ simulated function FlashMuzzleFlash(byte Mode)
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
-     FlashMode=MU_Primary 
-     FlashScale=0.400000	 
-     LightMode=MU_Primary
-     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
+     AltMuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
+     ImpactManager=Class'BallisticProV55.IM_BigBullet'
      BrassClass=Class'BallisticProV55.Brass_Magnum'
-     BrassMode=MU_Primary	 
      BrassBone="MagnumWhole"
-     InstantMode=MU_Primary
-     TrackAnimMode=MU_None
+     TracerMode=MU_Both
+     InstantMode=MU_Both
+     FlashMode=MU_Both
+     LightMode=MU_Both
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
-     TracerMode=MU_Primary	 
-     TracerChance=1.000000						  
+     TracerChance=0.600000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Primary	 
+     WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-     FlyByMode=MU_Primary
-	 ReloadAnim="Reload_Pistol"
-     ReloadAnimRate=0.350000
      Mesh=SkeletalMesh'BallisticAnims2.D49-3rd'
      DrawScale=0.150000
 }

@@ -16,19 +16,11 @@ defaultproperties
      DeathStrings(2)="%o got shredded by %k's M46A1 Jackal."
      DeathStrings(3)="%k pumped lead into %o with %kh M46A1."
      DamageIdent="Assault"
-     AimDisplacementDuration=0.000000
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M46AssaultRifle'
      DeathString="%o was brutally gunned down by %k's rabid M46A1 assault rifle."
      FemaleSuicide="%o's Jackal tore her to shreds."
      MaleSuicide="%o's Jackal tore him to shreds."
      bFastInstantHit=True
-     FlashScale=0.300000
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
-     bSelected=False
 }

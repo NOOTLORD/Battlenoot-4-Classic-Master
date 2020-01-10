@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTMarlinRifleHead extends DT_BWBullet;
 
@@ -38,10 +36,8 @@ defaultproperties
      DeathStrings(4)="%o got %vh head plucked off by %k's Deermaster rifle."
      bSnipingDamage=True
      bHeaddie=True
+     InvasionDamageScaling=2.000000
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.MarlinRifle'
      DeathString="%k plunged a Redwood 6000 round into %o's head."
      FemaleSuicide="%o plucked her head off with a Deermaster."
@@ -49,8 +45,6 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     FlashScale=0.300000
      KDamageImpulse=2000.000000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
+     VehicleDamageScaling=0.150000
 }

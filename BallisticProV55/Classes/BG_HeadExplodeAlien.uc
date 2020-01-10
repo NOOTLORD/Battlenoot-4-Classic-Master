@@ -96,5 +96,4 @@ defaultproperties
      Emitters(2)=TrailEmitter'BallisticProV55.BG_HeadExplodeAlien.TrailEmitter0'
 
      AutoDestroy=True
-     bSelected=False
 }

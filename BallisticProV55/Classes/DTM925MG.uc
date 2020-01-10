@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTM925MG extends DT_BWBullet;
 
@@ -19,15 +17,9 @@ defaultproperties
      DeathStrings(4)="%o was crucified by %k's .50 machinegun."
      HipString="HIP SPAM"
      DamageIdent="Machinegun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M925Machinegun'
      DeathString="%k made a holy man of %o with M925 rounds."
      FemaleSuicide="%o caught her face in the belt feed of her M925."
      MaleSuicide="%o caught his face in the belt feed of his M925."
      bFastInstantHit=True
-     FlashScale=0.300000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
 }

@@ -105,6 +105,7 @@ defaultproperties
          UseRegularSizeScale=False
          AutomaticInitialSpawning=False
          TriggerDisabled=False
+		 Opacity=0.35
          ColorScale(0)=(Color=(B=255,G=128,R=128))
          ColorScale(1)=(RelativeTime=0.100000,Color=(B=255,G=192,R=192))
          ColorScale(2)=(RelativeTime=0.300000,Color=(B=64,G=96,R=96,A=255))
@@ -206,4 +207,5 @@ defaultproperties
          StartVelocityRange=(X=(Min=100.000000,Max=2000.000000),Y=(Min=-200.000000,Max=200.000000),Z=(Min=-200.000000,Max=200.000000))
      End Object
      Emitters(4)=SpriteEmitter'BallisticProV55.M763FlashEmitter.SpriteEmitter17'
+
 }

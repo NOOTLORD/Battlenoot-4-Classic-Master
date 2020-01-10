@@ -40,4 +40,5 @@ defaultproperties
          StartVelocityRange=(X=(Min=-5.000000,Max=5.000000),Y=(Min=-5.000000,Max=5.000000),Z=(Min=-5.000000))
      End Object
      Emitters(0)=SpriteEmitter'BallisticProV55.G5HatchEmitter.SpriteEmitter4'
+
 }

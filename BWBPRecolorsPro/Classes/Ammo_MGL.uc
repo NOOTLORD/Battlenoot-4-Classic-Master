@@ -1,9 +1,5 @@
 //=============================================================================
-// Ammo_MGL
-//
-// Conqueror MGL ammo type.
-//
-// Modified by (NL)NOOTLORD
+// Conqueror ammo type.
 //=============================================================================
 class Ammo_MGL extends BallisticAmmo;
 

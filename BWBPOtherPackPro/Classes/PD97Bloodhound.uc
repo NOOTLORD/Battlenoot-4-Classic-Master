@@ -7,11 +7,10 @@
 //
 // Secondary fire launches a tazer with a limited maximum range. This applies slow and damage 
 // over time. Breaking line of sight or angling around the user will remove the tazer's effect.
-//
-// Modified by (NL)NOOTLORD						  
 //===========================================================================
 class PD97Bloodhound extends BallisticHandgun;
 
+var PD97TazerEffect TazerEffect;
 var array<PD97DartControl> StruckTargets;
 
 var rotator DrumRot;
@@ -174,6 +173,18 @@ simulated function Notify_ClipIn()
 }
 
 //===========================================================================
+// Dual wield properties.
+//===========================================================================
+simulated function bool MasterCanSendMode(int Mode) {return Othergun.class==class;}
+
+simulated function bool CanAlternate(int Mode)
+{
+	if (Mode != 0)
+		return True;
+	return super.CanAlternate(Mode);
+}
+
+//===========================================================================
 // Darts.
 //===========================================================================
 function AddControl(PD97DartControl DC)
@@ -194,38 +205,81 @@ function LostControl(PD97DartControl DC)
 		}
 	}
 }
+//===========================================================================
+// Tazer implementation.
+//===========================================================================
+simulated function RenderOverlays (Canvas C)
+{
+	Super.RenderOverlays(C);
 
-// AI Interface =====
-// choose between regular or alt-fire
+	if (TazerEffect != None)
+	{
+		TazerEffect.bHidden = true;
+		TazerEffect.SetLocation(ConvertFOVs(GetBoneCoords('Tazer').Origin, DisplayFOV, Instigator.Controller.FovAngle, 96));
+		C.DrawActor(TazerEffect, false, false, Instigator.Controller.FovAngle);
+	}
+}
 
-function byte BestMode()	{	return 0;	}
+simulated function WeaponTick (float DT)
+{
+	super.WeaponTick(DT);
+
+	if (TazerEffect != None && !Instigator.IsFirstPerson() && AIController(Instigator.Controller) == None)
+	{
+		TazerEffect.bHidden = False;
+		TazerEffect.SetLocation(BallisticAttachment(ThirdPersonActor).GetTipLocation());
+	}
+}
+
+simulated function vector ConvertFOVs (vector InVec, float InFOV, float OutFOV, float Distance)
+{
+	local vector ViewLoc, Outvec, Dir, X, Y, Z;
+	local rotator ViewRot;
+
+	ViewLoc = Instigator.Location + Instigator.EyePosition();
+	ViewRot = Instigator.GetViewRotation();
+	Dir = InVec - ViewLoc;
+	GetAxes(ViewRot, X, Y, Z);
+
+    OutVec.X = Distance / tan(OutFOV * PI / 360);
+    OutVec.Y = (Dir dot Y) * (Distance / tan(InFOV * PI / 360)) / (Dir dot X);
+    OutVec.Z = (Dir dot Z) * (Distance / tan(InFOV * PI / 360)) / (Dir dot X);
+    OutVec = OutVec >> ViewRot;
+
+	return OutVec + ViewLoc;
+}
+
+function byte BestMode()
+{
+	return 0;
+}
 
 function float GetAIRating()
 {
 	local Bot B;
-
+	
 	local float Dist;
 	local float Rating;
-
+	
 	B = Bot(Instigator.Controller);
-
+	
 	if ( B == None )
 		return AIRating;
 
 	Rating = Super.GetAIRating();
-
+	
 	if (B.Enemy == None)
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
+	
 	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 2048); 
 }
 
 defaultproperties
 {
-	 AIRating=0.5
-	 CurrentRating=0.5
+	AIRating=0.5
+	CurrentRating=0.5
      ShellBones(0)="Shell1"
      ShellBones(1)="Shell2"
      ShellBones(2)="Shell3"
@@ -252,27 +306,20 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
      MagAmmo=5
      CockAnimRate=1.250000
-	 ReloadAnimRate=0.800000
      CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock')
      ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit')
      ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut')
      ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn')
      ClipInFrame=0.650000
-     bCockOnEmpty=True
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-10.000000,Y=-4.400000,Z=12.130000)
      SightDisplayFOV=40.000000
      SightingTime=0.200000
-	 SightZoomFactor=0
      SightAimFactor=0.150000
      JumpChaos=0.200000
-     AimAdjustTime=100.000000
+     AimAdjustTime=0.450000
      AimSpread=16
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=0.450000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=512
@@ -283,22 +330,19 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.500000
      FireModeClass(0)=Class'BWBPOtherPackPro.PD97PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BWBPOtherPackPro.PD97SecondaryFire'
      PutDownTime=0.600000
      BringUpTime=0.900000
      SelectForce="SwitchToAssaultRifle"
-     bShowChargingBar=False
-     bCanThrow=False
-     AmmoClass(0)=Class'BWBPOtherPackPro.Ammo_PD97Drum'	 
+     bShowChargingBar=True
      Description="Originally a specialist law enforcement weapon, the PD-97 'Bloodhound' has been adapted into a military role, used to control opponents and track their movement upon the battlefield. While less immediately lethal than most other weapons, its tactical repertoire is not to be underestimated."
-     DisplayFOV=57.500000
      Priority=24
      HudColor=(B=250,G=150,R=150)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
 	 InventorySize=6
      GroupOffset=6
+     PickupClass=Class'BWBPOtherPackPro.PD97Pickup'
      PlayerViewOffset=(X=5.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BWBPOtherPackPro.PD97Attachment'
      IconMaterial=Texture'BWBPOtherPackTex.Bloodhound.Icon_PD97'
@@ -312,5 +356,4 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BWBPOtherPackAnim.Bloodhound_FP'
      DrawScale=0.200000
-     AmbientGlow=0
 }
