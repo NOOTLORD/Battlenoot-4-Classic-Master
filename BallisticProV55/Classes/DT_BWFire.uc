@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWFire extends BallisticDamageType;
 
@@ -23,6 +25,6 @@ defaultproperties
      bNeverSevers=True
      GibPerterbation=0.500000
      KDamageImpulse=1000.000000
-     VehicleDamageScaling=0.600000
-     VehicleMomentumScaling=0.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

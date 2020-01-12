@@ -5,73 +5,12 @@
 //
 // by Nolan "Dark Carnivour" Richert
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SKASShotgun extends BallisticProShotgun;
-var bool		bIsSuper;			// Manual mode!
-var float		lastModeChangeTime;
 
 var() sound      	QuickCockSound;
-var() sound		UltraDrawSound;       	//56k MODEM ACTION.
-
-var()     float Heat;
-var()     float CoolRate;
-
-static function class<Pickup> RecommendAmmoPickup(int Mode)
-{
-	return class'AP_SKASDrum';
-}
-
-function GiveTo(Pawn Other, optional Pickup Pickup)
-{
-    local int m;
-    local weapon w;
-    local bool bPossiblySwitch, bJustSpawned;
-
-    Instigator = Other;
-    W = Weapon(Other.FindInventoryType(class));
-    if ( W == None )
-    {
-		bJustSpawned = true;
-        Super(Inventory).GiveTo(Other);
-        bPossiblySwitch = true;
-        W = self;
-		if (Pickup != None && BallisticWeaponPickup(Pickup) != None)
-			MagAmmo = BallisticWeaponPickup(Pickup).MagAmmo;
-    }
-    else if ( !W.HasAmmo() )
-	    bPossiblySwitch = true;
-
-    if ( Pickup == None )
-        bPossiblySwitch = true;
-
-    for (m = 0; m < NUM_FIRE_MODES; m++)
-    {
-        if ( FireMode[m] != None )
-        {
-            FireMode[m].Instigator = Instigator;
-            GiveAmmo(m,WeaponPickup(Pickup),bJustSpawned);
-        }
-    }
-	
-	if (MeleeFireMode != None)
-		MeleeFireMode.Instigator = Instigator;
-		
-	if ( (Instigator.Weapon != None) && Instigator.Weapon.IsFiring() )
-		bPossiblySwitch = false;
-
-	if ( Instigator.Weapon != W )
-		W.ClientWeaponSet(bPossiblySwitch);
-		
-	//Disable aim for weapons picked up by AI-controlled pawns
-	bAimDisabled = default.bAimDisabled || !Instigator.IsHumanControlled();
-
-    if ( !bJustSpawned )
-	{
-        for (m = 0; m < NUM_FIRE_MODES; m++)
-			Ammo[m] = None;
-		Destroy();
-	}
-}
 
 simulated function float RateSelf()
 {
@@ -81,31 +20,11 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
+
 // AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-
-	if (Dist > 400)
-		return 0;
-	if (Dist < FireMode[1].MaxRange() && FRand() > 0.3)
-		return 1;
-	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0 && (VSize(B.Enemy.Velocity) < 100 || Normal(B.Enemy.Velocity) dot Normal(B.Velocity) < 0.5))
-		return 1;
-
-	return Rand(2);
-}
-
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -153,38 +72,15 @@ function float SuggestDefenseStyle()
 	Result *= (1 - (Dist/4000));
     return FClamp(Result, -1.0, -0.3);
 }
+
 // End AI Stuff =====
-
-simulated function Notify_BrassOut()
-{
-//	BFireMode[0].EjectBrass();
-}
-
-simulated function Notify_ManualBrassOut()
-{
-	BFireMode[0].EjectBrass();
-}
-
-simulated function float ChargeBar()
-{
-    return FMin((Heat + SKASSecondaryFire(Firemode[1]).RailPower), 1);
-}
-
-simulated event WeaponTick(float DT)
-{
-	Heat = FMax(0, Heat - CoolRate*DT);
-	super.WeaponTick(DT);
-}
 
 defaultproperties
 {
-	 InventorySize=18
      ManualLines(0)="Automatic fire has moderate spread, moderate damage, short range and fast fire rate.||Manual fire has tight spread, long range, good damage and low fire rate."
      ManualLines(1)="Multi-shot attack. Loads a shell into each of the barrels, then fires them all at once. Very high damage, short range and wide spread."
      ManualLines(2)="Extremely effective at close range."
      QuickCockSound=Sound'PackageSounds4Pro.SKAS.SKAS-Cock'
-     UltraDrawSound=Sound'PackageSounds4Pro.SKAS.SKAS-UltraDraw'
-     CoolRate=0.700000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=2)
      TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      BigIconMaterial=Texture'BallisticRecolors3TexPro.SKAS.BigIcon_SKAS'
@@ -197,26 +93,29 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=12
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-CockLong',Volume=1.000000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-CockLong',Volume=0.850000)
      ReloadAnimRate=1.550000
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipOut1',Volume=2.000000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=2.000000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipOut1',Volume=0.850000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic",bUnavailable=True)
+     WeaponModes(0)=(bUnavailable=True) 
      WeaponModes(1)=(ModeName="Automatic",ModeID="WM_FullAuto")
-     WeaponModes(2)=(ModeName="Manual",ModeID="WM_SemiAuto",Value=1.000000)
-     WeaponModes(3)=(ModeName="Semi-Auto",bUnavailable=True,ModeID="WM_SemiAuto",Value=1.000000)
-     WeaponModes(4)=(ModeName="1110011",bUnavailable=True,ModeID="WM_FullAuto")
-     WeaponModes(5)=(ModeName="XR4 System",bUnavailable=True,ModeID="WM_FullAuto")
+     WeaponModes(2)=(bUnavailable=True)	 
+     WeaponModes(3)=(bUnavailable=True)	 
+     WeaponModes(4)=(bUnavailable=True)	
+     WeaponModes(5)=(bUnavailable=True)		 
      CurrentWeaponMode=1
      bNotifyModeSwitch=True
+     bNoCrosshairInScope=True
      SightPivot=(Pitch=1024)
-     SightOffset=(X=-20.000000,Y=9.700000,Z=19.000000)
+     SightOffset=(X=-20.000000,Y=9.700000,Z=17.849998)
 	 SightZoomFactor=0
      GunLength=32.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
+     AimAdjustTime=100.000000
      AimSpread=0
+     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.800000
      ChaosSpeedThreshold=3000.000000
      ChaosAimSpread=0
@@ -228,19 +127,21 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.450000
      FireModeClass(0)=Class'BWBPRecolorsPro.SKASPrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.SKASSecondaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.100000
      PutDownTime=0.700000
      AIRating=0.850000
      CurrentRating=0.850000
-     bShowChargingBar=True
+     bShowChargingBar=False	 
+     bCanThrow=False
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKASDrum'
      Description="SKAS-21 Super Shotgun||Manufacturer: UTC Defense Tech|Primary: Variable Fire Buckshot|Secondary: Tri-Barrel Blast"
      Priority=245
      HudColor=(B=190,G=190,R=190)
+     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=4
-     PickupClass=Class'BWBPRecolorsPro.SKASPickup'
      PlayerViewOffset=(X=-4.000000,Y=1.000000,Z=-10.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SKASAttachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.SKAS.SmallIcon_SKAS'
@@ -255,4 +156,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.SKASShotgunFP'
      DrawScale=0.260000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+     AmbientGlow=0
 }

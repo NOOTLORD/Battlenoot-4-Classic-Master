@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTMarlinRifle extends DT_BWBullet;
 
@@ -18,12 +20,15 @@ defaultproperties
      DeathStrings(5)="%k drilled %o like a moose."
      DeathStrings(6)="%k shot %o like a little deer."
      bSnipingDamage=True
-     InvasionDamageScaling=2.000000
      DamageIdent="Sniper"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.MarlinRifle'
      DeathString="%o was hounded by %k's Marlin Rifle."
      FemaleSuicide="%o hunted herself to extinction."
      MaleSuicide="%o hunted himself to extinction."
-     VehicleDamageScaling=0.150000
-     VehicleMomentumScaling=0.000000
+     FlashScale=0.300000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

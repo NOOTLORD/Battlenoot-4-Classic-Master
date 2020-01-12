@@ -7,6 +7,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTR78RifleHead extends DT_BWBullet;
 
@@ -39,10 +41,10 @@ defaultproperties
      AimedString="Scoped"
      bSnipingDamage=True
      bHeaddie=True
-     InvasionDamageScaling=2.000000
      DamageIdent="Sniper"
-     bDisplaceAim=True
-     AimDisplacementDamageThreshold=150
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.R78Rifle'
      DeathString="%o's head was removed from the scene by %k's R78."
      FemaleSuicide="%o sniped off her own head."
@@ -50,6 +52,8 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
+     FlashScale=0.300000
      KDamageImpulse=2000.000000
-     VehicleDamageScaling=0.150000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

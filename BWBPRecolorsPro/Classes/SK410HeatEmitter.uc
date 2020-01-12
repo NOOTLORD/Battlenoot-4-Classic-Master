@@ -57,7 +57,7 @@ defaultproperties
          SizeScale(0)=(RelativeSize=3.000000)
          SizeScale(1)=(RelativeTime=0.620000,RelativeSize=5.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=8.000000)
-         StartSizeRange=(X=(Min=12.000000,Max=16.000000),Y=(Min=12.000000,Max=16.000000),Z=(Min=12.000000,Max=16.000000))
+         StartSizeRange=(X=(Min=3.000000,Max=4.000000),Y=(Min=3.000000,Max=4.000000),Z=(Min=3.000000,Max=4.000000))
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects2.Particles.SmokeWisp-Alpha'
          TextureUSubdivisions=4
@@ -95,7 +95,7 @@ defaultproperties
          SizeScale(0)=(RelativeSize=2.000000)
          SizeScale(1)=(RelativeTime=0.620000,RelativeSize=3.500000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=5.000000)
-         StartSizeRange=(X=(Min=6.000000,Max=8.000000),Y=(Min=6.000000,Max=8.000000),Z=(Min=6.000000,Max=8.000000))
+         StartSizeRange=(X=(Min=1.500000,Max=2.000000),Y=(Min=1.500000,Max=2.000000),Z=(Min=1.500000,Max=2.000000))
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects2.Particles.SmokeWisp-Alpha'
          TextureUSubdivisions=4
@@ -133,7 +133,7 @@ defaultproperties
          SizeScale(0)=(RelativeSize=0.500000)
          SizeScale(1)=(RelativeTime=0.170000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.200000)
-         StartSizeRange=(Y=(Min=1.500000,Max=1.500000),Z=(Min=1.500000,Max=1.500000))
+         StartSizeRange=(X=(Min=0.250000,Max=0.250000),Y=(Min=0.375000,Max=0.375000),Z=(Min=0.375000,Max=0.375000))
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.125000,Max=0.125000)
          SpawnOnTriggerRange=(Min=1.000000,Max=1.000000)
@@ -164,8 +164,7 @@ defaultproperties
          SizeScale(0)=(RelativeSize=0.700000)
          SizeScale(1)=(RelativeTime=0.160000,RelativeSize=1.000000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.400000)
-		 SpinParticles=True
-		 StartSpinRange=(Z=(Min=0.12,Max=0.12))
+         StartSizeRange=(X=(Min=0.250000,Max=0.250000),Y=(Min=0.250000,Max=0.250000),Z=(Min=0.250000,Max=0.250000))
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.200000,Max=0.200000)
          SpawnOnTriggerRange=(Min=1.000000,Max=1.000000)
@@ -191,7 +190,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
          StartLocationOffset=(X=40.000000)
-         StartSizeRange=(X=(Min=120.000000,Max=120.000000),Y=(Min=120.000000,Max=120.000000),Z=(Min=120.000000,Max=120.000000))
+         StartSizeRange=(X=(Min=30.000000,Max=30.000000),Y=(Min=30.000000,Max=30.000000),Z=(Min=30.000000,Max=30.000000))
          Texture=Texture'BallisticEffects.Particles.FlareB1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.200000,Max=0.200000)
@@ -199,5 +198,4 @@ defaultproperties
          SpawnOnTriggerPPS=500000.000000
      End Object
      Emitters(4)=SpriteEmitter'BWBPRecolorsPro.SK410HeatEmitter.SpriteEmitter5'
-
 }

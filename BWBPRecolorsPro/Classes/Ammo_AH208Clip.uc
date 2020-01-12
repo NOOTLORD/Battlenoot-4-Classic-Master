@@ -1,11 +1,16 @@
 //=============================================================================
-// AD_A73BPower.
+// Ammo_AH208Clip.
+//
+// AH208 Pistol ammo
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
-class AD_A73BPower extends AD_ImpactDecal
-	placeable;
+class Ammo_AH208Clip extends BallisticAmmo;
+
 
 defaultproperties
 {
-     ProjTexture=Texture'BallisticRecolors3TexPro.A73b.A73BScorch'
-     DrawScale=0.800000
+     MaxAmmo=7
+     InitialAmount=7
+     ItemName="AH208 Clip"
 }

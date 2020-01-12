@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SKASAttachment extends BallisticShotgunAttachment;
 
@@ -21,19 +23,12 @@ simulated function FlashMuzzleFlash(byte Mode)
 		class'BUtil'.static.InitMuzzleFlash (AltMuzzleFlash, AltMuzzleFlashClass, DrawScale*FlashScale, self, AltFlashBone);
 	if (MuzzleFlashClass != None && MuzzleFlash == None)
 		class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, DrawScale*FlashScale, self, FlashBone);
-
+		
 	R = Instigator.Rotation;
 	R.Pitch = Rotation.Pitch;
-	if (Mode == 0 || Mode == 2)
-	{
-		if (class'BallisticMod'.default.bMuzzleSmoke)
-			Spawn(class'MRT6Smoke',,, AltMuzzleFlash.Location, R);
-		AltMuzzleFlash.Trigger(self, Instigator);
-	}
+	
 	if (Mode == 0 || Mode == 1)
 	{
-		if (class'BallisticMod'.default.bMuzzleSmoke)
-			Spawn(class'MRT6Smoke',,, MuzzleFlash.Location, R);
 		MuzzleFlash.Trigger(self, Instigator);
 	}
 
@@ -54,17 +49,19 @@ function SKASUpdateHit(Actor HitActor, vector HitLocation, vector HitNormal, int
 
 defaultproperties
 {
-     FireClass=Class'BWBPRecolorsPro.SKASPrimaryFire'
+     FireClass=Class'BWBPRecolorsPro.SKASPrimaryFire'													 
      MuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
-     AltMuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
-     ImpactManager=Class'BallisticProV55.IM_Shell'
-     FlashScale=1.800000
+     AltMuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'	 
+     FlashMode=MU_Primary 	 
+     FlashScale=2.000000
+     LightMode=MU_Primary		 
+     ImpactManager=Class'BallisticProV55.IM_Shell'	 
      BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
-     BrassMode=MU_Both
-     InstantMode=MU_Both
-     FlashMode=MU_Both
-     LightMode=MU_Both
+     BrassMode=MU_Primary
+     InstantMode=MU_Primary
+     TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
+     TracerMode=MU_Primary	 
      TracerChance=0.500000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.950000

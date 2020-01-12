@@ -5,18 +5,25 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SK410Attachment extends BallisticShotgunAttachment;
 
 defaultproperties
 {
-     FireClass=Class'BWBPRecolorsPro.SK410PrimaryFire'
+     FireClass=Class'BWBPRecolorsPro.SK410PrimaryFire'													  
      MuzzleFlashClass=Class'BWBPRecolorsPro.SK410HeatEmitter'
-     ImpactManager=Class'BWBPRecolorsPro.IM_ShellHE'
-     MeleeImpactManager=Class'BallisticProV55.IM_GunHit'
-     FlashScale=1.800000
-     BrassClass=Class'BWBPRecolorsPro.Brass_ShotgunHE'
-     TracerClass=Class'BWBPRecolorsPro.TraceEmitter_ShotgunHE'
+     FlashMode=MU_Primary 	 
+     FlashScale=1.200000
+     LightMode=MU_Primary		 
+     ImpactManager=Class'BallisticProV55.IM_Shell'	 
+     BrassClass=Class'BWBPRecolorsPro.Brass_SK410shotgun'
+     BrassMode=MU_Primary 
+     InstantMode=MU_Primary
+     TrackAnimMode=MU_None	 
+     TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
+     TracerMode=MU_Primary	 
      TracerChance=0.500000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.900000

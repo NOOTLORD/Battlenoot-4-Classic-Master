@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class SK410Shotgun extends BallisticProShotgun;
 
@@ -77,6 +79,8 @@ simulated function Notify_CockSim()
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
+simulated function Notify_BrassOut();
+
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -85,27 +89,11 @@ simulated function float RateSelf()
 		return Super.RateSelf();
 	return CurrentRating;
 }
+
 // AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-
-	if (Dist > 1024 || B.Enemy.Weapon != None && B.Enemy.Weapon.bMeleeWeapon)
-		return 1;
-		
-	return 0;
-}
-
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -153,9 +141,8 @@ function float SuggestDefenseStyle()
 	Result *= (1 - (Dist/4000));
     return FClamp(Result, -1.0, -0.3);
 }
-// End AI Stuff =====
 
-simulated function Notify_BrassOut();
+// End AI Stuff =====
 
 defaultproperties
 {
@@ -167,54 +154,56 @@ defaultproperties
      bWT_Shotgun=True
      bWT_Machinegun=True
      ManualLines(0)="Fires shotgun blasts with wide spread. These blasts inflict heavy damage and knock the enemy back."
-     ManualLines(1)="Fires an explosive slug. Deals good impact damage and minor radius damage. Targets hit will be knocked back a significant distance."
-     ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Extremely effective at close range and against charges and melee."
+     ManualLines(1)="Fires a single slug with an arming delay. Whilst unarmed, it will reflect from struck walls or surfaces. Deals good impact damage and minor radius damage."
+     ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Effective at close to medium range depending upon active mode."
      SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")
-     MeleeFireClass=Class'BWBPRecolorsPro.SK410MeleeFire'
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=8
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-Cock',Volume=1.400000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-Cock',Volume=0.750000)
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagOut',Volume=1.300000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagIn',Volume=1.300000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagOut',Volume=0.750000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagIn',Volume=0.750000)
+     bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
-     WeaponModes(1)=(ModeName="Automatic Slug",bUnavailable=True,ModeID="WM_FullAuto")
-     WeaponModes(2)=(ModeName="0451-EXECUTE",bUnavailable=True)
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      bNoCrosshairInScope=True
      SightPivot=(Pitch=150)
-     SightOffset=(X=15.000000,Y=-10.000000,Z=22.500000)
-	 SightDisplayFOV=40
+     SightOffset=(X=-8.000000,Y=-10.000000,Z=22.500000)
      SightingTime=0.250000
 	 SightZoomFactor=0
      GunLength=48.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
+     AimAdjustTime=100.000000
      AimSpread=0
+     AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000	 
      ChaosAimSpread=0
      RecoilXCurve=(Points=(,(InVal=0.500000,OutVal=0.000000),(InVal=0.700000,OutVal=-0.200000),(InVal=0.8500000,OutVal=0.15000),(InVal=0.750000,OutVal=0.050000),(InVal=1.000000,OutVal=0)))
-     RecoilYCurve=(Points=(,(InVal=0.500000,OutVal=0.400000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilYCurve=(Points=(,(InVal=0.300000,OutVal=0.500000),(InVal=1.000000,OutVal=1.000000)))
      RecoilYFactor=0.1
 	 RecoilXFactor=0.1
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.330000
      FireModeClass(0)=Class'BWBPRecolorsPro.SK410PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.SK410SecondaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnimRate=1.600000
      PutDownAnimRate=1.600000
      PutDownTime=0.350000
      BringUpTime=0.600000
      AIRating=0.850000
      CurrentRating=0.850000
+     bCanThrow=False
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SK410Clip'
      Description="The SK-410 shotgun is a large-bore, compact shotgun based off the popular AK-490 design. While it is illegal on several major planets, this powerful weapon and its signature explosive shotgun shells are almost ubiquitous. A weapon originally designed for breaching use, the SK-410 is now found in the hands of civillians and terrorists throughout the worlds. It had become so prolific with outer colony terrorist groups that the UTC began the SKAS assault weapon program in an effort to find a powerful shotgun of their own."
      Priority=245
      HudColor=(G=25)
+     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=7
-     PickupClass=Class'BWBPRecolorsPro.SK410Pickup'
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.SK410.SmallIcon_SK410'
@@ -232,4 +221,5 @@ defaultproperties
      Skins(1)=Texture'BallisticRecolors3TexPro.SK410.SK410-C-CamoSnow'
      Skins(2)=Texture'BallisticRecolors3TexPro.SK410.SK410-Misc'
      Skins(3)=Shader'BallisticRecolors3TexPro.SK410.SK410-LightsOn'
+     AmbientGlow=0
 }

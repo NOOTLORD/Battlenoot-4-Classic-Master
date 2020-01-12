@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_LK05SilAssaultHead extends DT_BWBullet;
 
@@ -35,6 +37,9 @@ defaultproperties
      SimpleKillString="LK-05 Advanced Carbine Suppressed"
      bHeaddie=True
      DamageIdent="Assault"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.LK05Carbine'
      DeathString="%o's head was picked off by %k's silent LK05."
      FemaleSuicide="%o saw a bullet coming up the barrel of her LK05."
@@ -46,4 +51,5 @@ defaultproperties
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
      VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

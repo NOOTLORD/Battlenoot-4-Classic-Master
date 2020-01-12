@@ -1,10 +1,12 @@
 //=============================================================================
 // DT_X82Head.
 //
-// DamageType for M30A2 headshots
+// DamageType for X82 rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_X82Head extends DT_BWBullet;
 
@@ -36,10 +38,10 @@ defaultproperties
      AimedString="Scoped"
      bSnipingDamage=True
      bHeaddie=True
-     InvasionDamageScaling=2.000000
      DamageIdent="Sniper"
-     bDisplaceAim=True
-     AimDisplacementDuration=0.700000
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.X82Rifle'
      DeathString="%k blew %o's skull away with a .50 Cal bullet."
      FemaleSuicide="%o shot herself in the head while cleaning her gun."
@@ -51,5 +53,6 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      GibPerterbation=0.200000
      KDamageImpulse=10000.000000
-     VehicleDamageScaling=0.650000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

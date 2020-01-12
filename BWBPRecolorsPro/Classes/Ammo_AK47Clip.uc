@@ -1,15 +1,16 @@
 //=============================================================================
-// Brass_G28Clip.
-//
-// The detatchable clip from the G28 grenade
+// Ammo_AK47Clip.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
-class Brass_G28Clip extends Brass_GClip;
+class Ammo_AK47Clip extends BallisticAmmo;
 
 defaultproperties
 {
-     StaticMesh=StaticMesh'BallisticRecolors4StaticPro.G28.G28Clip'
-     Texture=None
+     MaxAmmo=150
+     InitialAmount=75
+     ItemName="AK47 Clip"
 }

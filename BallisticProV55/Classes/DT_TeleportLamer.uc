@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_TeleportLamer extends DT_BWMiscDamage;
 
@@ -40,6 +42,9 @@ defaultproperties
 {
      bDetonatesBombs=False
      DamageIdent="Grenade"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False	 
      DeathString="%o tried to cheese %k with a mined teleporter, and ate the damage %vs."
      FemaleSuicide="%o tried to cheese by mining a teleporter."
      MaleSuicide="%o tried to cheese by mining a teleporter."
@@ -51,4 +56,5 @@ defaultproperties
      GibPerterbation=0.500000
      KDamageImpulse=20000.000000
      VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

@@ -1,31 +1,18 @@
 //=============================================================================
 // MGLauncher.
 //
-// Multiple Grenade LauncherLauncher!
+// Multiple Grenade Launcher!
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MGLauncher extends BallisticWeapon;
 
 var() Material	MatDef;
 var() Material	MatArmed;
 var() Rotator	DrumRot;
-
-var bool bRemoteGrenadeOut;
-
-replication
-{
-	unreliable if (Role == ROLE_Authority)
-		ClientUpdateGrenadeStatus;
-}
-
-function ServerSwitchWeaponMode (byte NewMode)
-{
-	if (CurrentWeaponMode > 0 && FireMode[0].IsFiring())
-		return;
-	super.ServerSwitchWeaponMode (NewMode);
-}
 
 simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 {
@@ -111,35 +98,6 @@ simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 		ReloadState = RS_None;
 }
 
-function UpdateGrenadeStatus(bool bDetonatable)
-{
-	bRemoteGrenadeOut = bDetonatable;
-	
-	if (bDetonatable)
-		Skins[2]=MatArmed;
-	else
-		Skins[2]=MatDef;
-		
-	if (Role == ROLE_Authority && !Instigator.IsLocallyControlled())
-		ClientUpdateGrenadeStatus(bDetonatable);
-}
-
-simulated function ClientUpdateGrenadeStatus(bool bDet)
-{
-	bRemoteGrenadeOut = bDet;
-	if (bDet)
-		Skins[2]=MatArmed;
-	else
-		Skins[2]=MatDef;
-}
-
-simulated function bool HasAmmo()
-{
-	if (bRemoteGrenadeOut)
-		return true;
-	return Super.HasAmmo();
-}
-
 simulated function float RateSelf()
 {
 	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
@@ -149,31 +107,26 @@ simulated function float RateSelf()
 	return CurrentRating;
 }
 // AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	return 0;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
 	local Bot B;
-	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	
 	if ( B == None )
 		return AIRating;
 
-	Rating = Super.GetAIRating();
-
+    Rating = Super.GetAIRating();
 	if (B.Enemy == None)
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-	
+
 	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.5, Dist, 1024, 3072); 
 }
 
@@ -188,16 +141,11 @@ function float SuggestDefenseStyle()
 {
 	return 0.2;
 }
-// End AI Stuff =====
 
-simulated function Notify_BrassOut()
-{
-//	BFireMode[0].EjectBrass();
-}
+// End AI Stuff =====
 
 defaultproperties
 {
-	 InventorySize=24
      MatDef=Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase'
      MatArmed=Texture'BallisticRecolors4TexPro.MGL.MGL-Screen'
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
@@ -216,22 +164,25 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=6
-     CockSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Pump',Volume=2.300000,Radius=32.000000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=1.700000,Radius=32.000000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=1.700000,Radius=32.000000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Pump',Volume=0.00000,Radius=32.000000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=0.900000,Radius=32.000000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=0.900000,Radius=32.000000)
      ClipInFrame=0.325000
      StartShovelAnim="ReloadStart"
      EndShovelAnim="ReloadEnd"
-     WeaponModes(0)=(ModeName="Timed",bUnavailable=True,ModeID="WM_FullAuto")
-     WeaponModes(1)=(ModeName="Impact",ModeID="WM_FullAuto")
+     WeaponModes(0)=(ModeName="Timed",ModeID="WM_FullAuto")
+     WeaponModes(1)=(ModeName="Impact",bUnavailable=True,ModeID="WM_FullAuto")
      WeaponModes(2)=(ModeName="4-Round Burst",bUnavailable=True)
-     CurrentWeaponMode=1
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=512)
      SightOffset=(X=-30.000000,Y=12.450000,Z=14.850000)
      GunLength=48.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4096)
+     AimAdjustTime=100.000000
      AimSpread=192
+     AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000	 
      ChaosDeclineTime=1.000000
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.100000),(InVal=0.300000,OutVal=-0.200000),(InVal=1.000000,OutVal=-0.300000)))
      RecoilYCurve=(Points=(,(InVal=0.300000,OutVal=0.500000),(InVal=1.000000,OutVal=1.000000)))
@@ -241,18 +192,20 @@ defaultproperties
      RecoilMax=6144.000000
      RecoilDeclineDelay=0.500000
      FireModeClass(0)=Class'BWBPRecolorsPro.MGLPrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.MGLSecondaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnimRate=1.500000
      PutDownAnimRate=2.000000
      PutDownTime=0.660000
      BringUpTime=0.660000
      AIRating=0.900000
      CurrentRating=0.900000
+     bCanThrow=False
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_MGLDrum'
      Description="The big, bad Conqueror” is an alias to the VDML-6 Multiple Grenade Launcher, designed as a heavier, tactical version of the old world M32, and a more direct way of punting grenades down range, unlike the PUMA’s Airburst grenades or the Longhorn’s smart cluster. Black and Wood designed this weapon to bring down explosives over the Skrith’s plasma barriers with haste, the user can fire timed grenades to flush out any hiders, or impact to wreck enemies without bouncing off of them (note, when fired at a short range, the impact fuse will not engage). But when tactics are needed, the “Conqueror” can also fire remote detonated grenades for traps. So far, the Conqueror has already conquered 2 services and will be seeing more as they come."
-     Priority=245
+     Priority=68
+     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=8
-     PickupClass=Class'BWBPRecolorsPro.MGLPickup'
      PlayerViewOffset=(X=5.000000,Y=-1.000000,Z=-7.000000)
      AttachmentClass=Class'BWBPRecolorsPro.MGLAttachment'
      IconMaterial=Texture'BallisticRecolors4TexPro.MGL.SmallIcon_MGL'
@@ -270,4 +223,5 @@ defaultproperties
      Skins(1)=Texture'BallisticRecolors4TexPro.MGL.MGL-Main'
      Skins(2)=Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase'
      Skins(3)=Shader'BallisticRecolors4TexPro.MGL.MGL-HolosightGlow'
+     AmbientGlow=0
 }

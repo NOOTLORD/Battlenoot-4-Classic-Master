@@ -1,5 +1,7 @@
 //=============================================================================
 // MARS-3 (i.e. F2000.)
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class F2000AssaultRifle extends BallisticWeapon;
 
@@ -130,9 +132,6 @@ simulated function bool PutDown()
 	return false;
 }
 
-//=====================================================================
-// AI INTERFACE CODE
-//=====================================================================
 simulated function float RateSelf()
 {
 	if (!HasAmmo())
@@ -152,12 +151,10 @@ function byte BestMode()	{	return 0;	}
 function float GetAIRating()
 {
 	local Bot B;
-	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	
 	if ( B == None )
 		return AIRating;
 
@@ -166,9 +163,9 @@ function float GetAIRating()
 	if (B.Enemy == None)
 		return Rating;
 
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-	
-	return class'BUtil'.static.DistanceAtten(Rating, 0.5, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 
+    Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	return class'BUtil'.static.DistanceAtten(Rating, 0.5, Dist, BallisticRangeAttenFire(BFireMode[0]).CutOffStartRange, BallisticRangeAttenFire(BFireMode[0]).CutOffDistance); 	
 }
 
 // tells bot whether to charge or back off while using this weapon
@@ -176,7 +173,6 @@ function float SuggestAttackStyle()	{	return 0.4;	}
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.4;	}
-
 // End AI Stuff =====
 
 defaultproperties
@@ -203,20 +199,24 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-BoltPull',Volume=1.100000,Radius=32.000000)
+     CockSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-BoltPull',Volume=0.650000,Radius=32.000000)
      ReloadAnimRate=1.350000
-     ClipHitSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagFiddle',Volume=1.200000,Radius=32.000000)
-     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagOut',Volume=1.200000,Radius=32.000000)
-     ClipInSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagIn',Volume=1.200000,Radius=32.000000)
+     ClipHitSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagFiddle',Volume=0.650000,Radius=32.000000)
+     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagOut',Volume=0.650000,Radius=32.000000)
+     ClipInSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagIn',Volume=0.650000,Radius=32.000000)
      ClipInFrame=0.650000
+     bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(ModeName="4-Round Burst",Value=4.000000)
+     WeaponModes(1)=(ModeName="4-Round Burst",bUnavailable=True,Value=4.000000)
      WeaponModes(2)=(ModeName="Automatic")
      bNoCrosshairInScope=True
      SightOffset=(X=6.000000,Y=-6.350000,Z=23.150000)
-     SightDisplayFOV=25.000000
+     SightDisplayFOV=40.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4096)
+     AimAdjustTime=100.000000
      AimSpread=16
+     AimDamageThreshold=0.000000
+	 ViewRecoilFactor=1.000000	 
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=3072
@@ -232,12 +232,14 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.750000
      CurrentRating=0.750000
+     bCanThrow=False
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_F2000Clip'
      Description="The 3 variant of the Modular Assault Rifle System is one of many rifles built under NDTR Industries' MARS project. The project, which was aimed to produce a successor to the army's current M50 and M30 rifles, has produced a number of functional prototypes. ||The 3 variant is a short barreled model designed for CQC use with non-standard ammunition. Field tests have shown excellent results when loaded with Snowstorm or Firestorm rounds, and above-average performance with Zero-G, toxic and electro rounds. This specific MARS-3 is loaded with Snowstorm XII rounds and is set to fire at a blistering 850 RPM. Enemies hit with this ammunition will be chilled and slowed."
      Priority=65
      HudColor=(B=255,G=175,R=125)
+     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
-     PickupClass=Class'BWBPRecolorsPro.F2000Pickup'
      PlayerViewOffset=(X=0.500000,Y=12.000000,Z=-18.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'
@@ -252,4 +254,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.MARS3_FP'
      DrawScale=0.300000
+     AmbientGlow=0
 }

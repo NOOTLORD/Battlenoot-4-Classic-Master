@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTFifty9SMG extends DT_BWBullet;
 
@@ -16,12 +18,16 @@ defaultproperties
      DeathStrings(3)="%o got into %k's performance space."
      DeathStrings(4)="%k's Fifty-9 sprayed %o down in style."
      EffectChance=0.500000
-     InvasionDamageScaling=1.500000
      DamageIdent="SMG"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.Fifty9MachinePistol'
      DeathString="%k went Fifty9 on %o."
      FemaleSuicide="%o Fifty-9ed herself."
      MaleSuicide="%o Fifty-9ed himself."
      bFastInstantHit=True
-     VehicleDamageScaling=0.100000
+     FlashScale=0.300000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

@@ -109,12 +109,21 @@ simulated function FlashMuzzleFlash(byte Mode)
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
-     ImpactManager=Class'BWBPRecolorsPro.IM_ExpBullet'
-     BrassClass=Class'BWBPRecolorsPro.Brass_BMG'
-     TracerClass=Class'BWBPRecolorsPro.TraceEmitter_HMG'
+     FlashMode=MU_Primary
+     FlashScale=1.000000	 
+     LightMode=MU_Primary		 
+     ImpactManager=Class'BallisticProV55.IM_Bullet' 
+     BrassClass=Class'BWBPRecolorsPro.Brass_X82rifle'
+     BrassMode=MU_Primary
+     InstantMode=MU_Primary
+     TrackAnimMode=MU_None	 
+     TracerClass=Class'BallisticProV55.TraceEmitter_Default'
+     TracerMode=MU_Primary	 
+     TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Both
-     FlyBySound=(Sound=Sound'PackageSounds4Pro.X82.X83-FlyBy',Volume=2.500000)
+     WaterTracerMode=MU_Primary
+     FlyBySound=(Sound=Sound'PackageSounds4Pro.X82.X83-FlyBy',Volume=1.500000)
+     FlyByMode=MU_Primary	 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.X83A1_3rd'

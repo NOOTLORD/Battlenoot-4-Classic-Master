@@ -1,11 +1,13 @@
 //=============================================================================
-// M50SecondaryFire.
+// MGLPrimaryFire
 //
 // A grenade that bonces off walls and detonates a certain time after impact
 // Good for scaring enemies out of dark corners and not much else
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MGLPrimaryFire extends BallisticProProjectileFire;
 
@@ -17,22 +19,18 @@ defaultproperties
      RecoilPerShot=768.000000
      FireChaos=0.650000
      BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.MGL.MGL-Fire',Volume=9.200000)
+     bSplashDamage=True
+     bRecommendSplashDamage=True
+     bTossed=True
      bModeExclusive=False
      FireForce="AssaultRifleAltFire"
      FireRate=0.850000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_MGL'
-     ShakeRotTime=2.000000
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_MGLDrum'
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=2.000000
-     ProjectileClass=Class'BWBPRecolorsPro.MGLGrenade'
-	 
-	 // AI
-	 bInstantHit=False
-	 bLeadTarget=True
-	 bTossed=True
-	 bSplashDamage=True
-	 bRecommendSplashDamage=True
-	 BotRefireRate=0.5
-     WarnTargetPct=0.75
+     ShakeOffsetTime=0.000000
+     ProjectileClass=Class'BWBPRecolorsPro.MGLGrenadeTimed'
+     BotRefireRate=0.500000
+     WarnTargetPct=0.750000
 }

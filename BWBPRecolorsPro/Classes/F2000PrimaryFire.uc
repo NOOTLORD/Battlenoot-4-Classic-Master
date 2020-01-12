@@ -6,6 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class F2000PrimaryFire extends BallisticRangeAttenFire;
 	
@@ -128,7 +130,6 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
-    ClientPlayForceFeedback(FireForce);  // jdf
     FireCount++;
 	// End code from normal PlayFiring()
 
@@ -144,13 +145,13 @@ defaultproperties
 {
      SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      SFlashBone="tip2"
-     SFlashScaleFactor=1.000000
+     SFlashScaleFactor=0.600000
      CutOffDistance=5120.000000
      CutOffStartRange=2048.000000
      TraceRange=(Min=15000.000000,Max=15000.000000)
      WaterRangeFactor=0.800000
      MaxWallSize=32.000000
-     MaxWalls=2
+     MaxWalls=1
      Damage=25.000000
      DamageHead=50.000000
      DamageLimb=25.000000
@@ -159,13 +160,13 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DTF2000Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DTF2000AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DTF2000Assault'
-     PenetrateForce=150
+     PenetrateForce=0
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BWBPRecolorsPro.MARSFlashEmitter'
-     FlashScaleFactor=0.500000
-     BrassClass=Class'BallisticProV55.Brass_MG'
-     BrassOffset=(X=-80.000000,Y=1.000000)
+     FlashScaleFactor=0.400000
+     BrassClass=Class'BallisticProV55.Brass_Rifle'
+     BrassOffset=(X=-29.000000,Y=2.500000,Z=-2.500000)
      AimedFireAnim="SightFire"
      RecoilPerShot=150.000000
      FireChaos=0.032000
@@ -173,17 +174,17 @@ defaultproperties
      XInaccuracy=48.000000
      YInaccuracy=48.000000
      SilencedFireSound=(Sound=Sound'PackageSounds4ProExp.MARS.F2000-SilFire2',Volume=1.100000,Radius=192.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-RapidFire',Volume=1.100000,Slot=SLOT_Interact,bNoOverride=False)
+     BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-RapidFire',Volume=1.500000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      FireEndAnim=
-     FireRate=0.090000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_545mmSTANAG'
+     FireRate=0.095000
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_F2000Clip'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=2.000000
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=2.000000
+     ShakeOffsetTime=0.000000
      WarnTargetPct=0.200000
-     aimerror=900.000000
+     aimerror=750.000000
 }
