@@ -1,7 +1,8 @@
 //=============================================================================
-// Ammo_MGLDrum
+// Ammo class for MGL Grenade Launcher
 //
-// Conqueror MGL ammo type.
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
@@ -12,5 +13,4 @@ defaultproperties
      bNoPackResupply=True
      MaxAmmo=12
      InitialAmount=12
-     ItemName="MGL Drum"
 }

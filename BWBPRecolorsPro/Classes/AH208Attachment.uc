@@ -1,7 +1,5 @@
 //=============================================================================
-// AH208Attachment.
-//
-// 3rd person weapon attachment for AH208 Pistol
+// 3rd person weapon attachment for AH-208 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

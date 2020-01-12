@@ -1,8 +1,5 @@
 //=============================================================================
-// MGLPrimaryFire
-//
-// A grenade that bonces off walls and detonates a certain time after impact
-// Good for scaring enemies out of dark corners and not much else
+// Main Primaryfire class for MGL Grenade Launcher
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

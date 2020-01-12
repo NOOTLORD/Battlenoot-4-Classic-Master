@@ -210,7 +210,6 @@ defaultproperties
      ManualLines(0)="Semi-automatic rifle fire. High damage, long range, high penetration and moderate recoil. Sustained damage output is modest."
      ManualLines(1)="As primary, except fires subsonic rounds. Loses damage over range but has lower recoil, lesser flash and is quieter."
      ManualLines(2)="As a long-ranged weapon lacking a scope, it has a reasonably quick aiming time. Does not use tracer rounds. Cumbersome to use in close combat."
-     SpecialInfo(0)=(Info="240.0;25.0;0.5;50.0;1.0;0.2;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway')
      MagAmmo=15

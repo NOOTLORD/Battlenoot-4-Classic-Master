@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo_F2000Clip.
+// Ammo class for F2000 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -12,5 +12,4 @@ defaultproperties
 {
      MaxAmmo=180
      InitialAmount=90
-     ItemName="F2000 Clip"
 }

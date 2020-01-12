@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_LK05SilAssault.
-//
-// DamageType for the _LK05 that is sulenced. DETH MASSAGES
+// Damage type for LK05 Carbine Silenced 
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

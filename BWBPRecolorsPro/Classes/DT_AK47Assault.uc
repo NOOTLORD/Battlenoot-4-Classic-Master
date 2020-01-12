@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_AK47Assault.
-//
-// DamageType for the AK-490 assault rifle primary fire
+// Damage type for AK47 Assault Rifle 
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

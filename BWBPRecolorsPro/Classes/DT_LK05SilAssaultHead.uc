@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_LK05SilAssaultHead.
-//
-// DamageType for _LK050 Silent Headshots
+// Damage type for LK05 Carbine Silenced headshot
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

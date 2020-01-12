@@ -1,8 +1,8 @@
 //=============================================================================
-// AK47BattleRifle.
+// Main weapon class for AK-470 Assault Rifle
 //
-// A powerful 7.62mm powerhouse. Fills a similar role to the CYLO UAW, albiet is
-// far more reliable and has a launchable bayonet in place of the shotgun.
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
@@ -130,7 +130,6 @@ defaultproperties
      ManualLines(0)="Automatic 7.62mm fire. Higher sustained damage than other weapons in its class, but greater recoil and inferior hipfire ability."
      ManualLines(1)="Prepares a melee attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. If lacking a knife, becomes a blunt attack, dealing lower base damage but inflicting a short-duration blinding effect when striking. This attack inflicts more damage from behind."
      ManualLines(2)="The Weapon Function key manages the ballistic knife. If a knife is attached, it will be launched, dealing high damage. This attack is hip-accurate and has no recoil. If no knife is attached, one will be attached if available.||This weapon is effective at medium range."
-     SpecialInfo(0)=(Info="320.0;25.0;1.0;110.0;0.5;0.8;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
      MagAmmo=25
@@ -174,7 +173,7 @@ defaultproperties
      AIRating=0.700000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK47Clip'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK470Clip'
      Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
      Priority=65
      HudColor=(G=100)
@@ -187,7 +186,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.AK47Attachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.AK490.SmallIcon_AK490'
      IconCoords=(X2=127,Y2=31)
-     ItemName="AK-490 Battle Rifle"
+     ItemName="AK-470 Assault Rifle"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

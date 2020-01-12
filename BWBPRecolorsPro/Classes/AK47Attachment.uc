@@ -1,7 +1,5 @@
 //=============================================================================
-// AK47Attachment.
-//
-// 3rd person weapon attachment for AK47 Battle Rifle
+// 3rd person weapon attachment for AK-470 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

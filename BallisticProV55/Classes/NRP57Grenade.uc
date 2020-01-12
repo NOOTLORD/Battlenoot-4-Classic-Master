@@ -65,7 +65,6 @@ defaultproperties
      ManualLines(0)="Throws a grenade overarm. The grenade will explode after 3 seconds, dealing high damage in a wide radius."
      ManualLines(1)="As primary, except the grenade is rolled underarm."
      ManualLines(2)="As with all grenades, Weapon Function or Reload can be used to release the clip and cook the grenade in the user's hand. Care must be taken not to overcook the grenade, lest the user be blown up. The NRP-57 grenade is effective on the move or against static positions."
-     SpecialInfo(0)=(Info="60.0;5.0;0.25;30.0;0.0;0.0;0.4")
      BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway')
      CurrentWeaponMode=1

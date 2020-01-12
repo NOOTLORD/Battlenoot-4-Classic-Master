@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_X82Head.
-//
-// DamageType for X82 rifle headshots
+// DamageType for X82 Sniper Rifle headshot
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

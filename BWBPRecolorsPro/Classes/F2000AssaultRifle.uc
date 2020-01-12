@@ -1,5 +1,8 @@
 //=============================================================================
-// MARS-3 (i.e. F2000.)
+// Main weapon class for Mars-3 Assault Rifle
+//
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
@@ -194,7 +197,6 @@ defaultproperties
      ManualLines(0)="Powerful 5.56mm fire. Has a fast fire rate and high sustained DPS, but excessive recoil."
      ManualLines(1)="Launches a cryogenic grenade. Upon impact, freezes nearby enemies, slowing their movement. The effect is proportional to their distance from the epicentre. This attack will also extinguish the fires of an FP7 grenade."
      ManualLines(2)="The Weapon Special key attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible.||Effective at close to medium range."
-     SpecialInfo(0)=(Info="320.0;25.0;1.0;110.0;0.8;0.5;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
      CockAnimPostReload="ReloadEndCock"
@@ -245,7 +247,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'
      IconMaterial=Texture'BallisticRecolors4TexPro.MARS.SmallIcon_F2000Alt'
      IconCoords=(X2=127,Y2=31)
-     ItemName="MARS-3 'Snowstorm' XII"
+     ItemName="Mars-3 Assault Rifle"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

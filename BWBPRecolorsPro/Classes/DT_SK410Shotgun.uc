@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_SK410.
-//
-// Damage type for the HE SK410 shells
+// Damage type for SK410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

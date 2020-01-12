@@ -391,7 +391,6 @@ defaultproperties
      ManualLines(0)="Automatic machine pistol fire. Moderate damage per bullet and high fire rate. Deals extreme DPS at close range, but has controllability and recoil issues, especially from the hip."
      ManualLines(1)="Toggles the laser sight. While active, reduces the hipfire spread, but broadcasts the user's position to the enemy."
      ManualLines(2)="The Weapon Function key attaches a suppressor, reducing recoil, range and noise output and removing the flash.||This weapon is highly effective at very close range."
-     SpecialInfo(0)=(Info="60.0;5.0;0.4;-1.0;0.0;0.2;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
      MagAmmo=24

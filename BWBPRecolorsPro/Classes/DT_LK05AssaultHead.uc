@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_LK05AssaultHead.
-//
-// DamageType for LK05 headshots
+// Damage type for LK05 Carbine headshot
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

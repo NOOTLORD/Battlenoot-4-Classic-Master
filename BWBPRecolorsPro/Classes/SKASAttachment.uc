@@ -1,6 +1,4 @@
 //=============================================================================
-// SKASAttachment.
-//
 // 3rd person weapon attachment for SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.

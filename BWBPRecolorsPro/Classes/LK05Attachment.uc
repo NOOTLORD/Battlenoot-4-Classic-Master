@@ -1,7 +1,5 @@
 //=============================================================================
-// LK05Attachment.
-//
-// 3rd person weapon attachment for LK05 Tactical Rifle
+// 3rd person weapon attachment for LK-05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

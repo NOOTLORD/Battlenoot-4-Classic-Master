@@ -1,10 +1,5 @@
 //=============================================================================
-// SK410PrimaryFire.
-//
-// Moderately strong shotgun blast with decent spread and fair range for a shotgun.
-// Can do more damage than the M763, but requires more shots normally.
-//
-// Can fire its shells HE mode, however it's nowhere near as strong as a FRAG.
+// Main Primaryfire class for SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

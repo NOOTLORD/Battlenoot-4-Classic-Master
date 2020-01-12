@@ -19,7 +19,7 @@ event PostBeginPlay()
 defaultproperties
 {
      bRandomRotate=True
-     StayTime=20.000000
+     StayTime=5.000000
      FOV=1
      MaxTraceDistance=60
      bProjectParticles=False

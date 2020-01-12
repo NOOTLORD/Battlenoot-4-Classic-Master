@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_AK47AssaultHead.
-//
-// DamageType for AK490 headshots
+// Damage type for AK47 Assault Rifle headshot
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved..

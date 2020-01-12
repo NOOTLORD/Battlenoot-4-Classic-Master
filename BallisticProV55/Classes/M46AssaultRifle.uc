@@ -367,7 +367,6 @@ defaultproperties
      ManualLines(0)="Automatic battle rifle fire. Moderate damage per shot with greater range and penetration than assault rifles. Recoil is moderate."
      ManualLines(1)="Deploys a mine. These mines can be detonated with the Weapon Function key shortly after being placed for severe damage. Mines can be picked up with the Use key."
      ManualLines(2)="Effective at medium to long range."
-     SpecialInfo(0)=(Info="240.0;25.0;0.9;70.0;0.9;0.2;0.7")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
      MagAmmo=25

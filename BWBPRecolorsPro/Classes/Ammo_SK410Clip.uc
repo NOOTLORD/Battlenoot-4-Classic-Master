@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo_SK410Clip.
+// Ammo class for SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -12,5 +12,4 @@ defaultproperties
 {
      MaxAmmo=60
 	 InitialAmount=30
-     ItemName="SK410 Clip"
 }

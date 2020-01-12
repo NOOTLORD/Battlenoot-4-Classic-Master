@@ -1,6 +1,11 @@
-//-----------------------------------------------------------
-//Rocket Trail for Tarntula rocket projectile
-//-----------------------------------------------------------
+//=============================================================================
+//Grenade trail class for MGL Grenade Launcher grenade 
+//
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
+//=============================================================================
 class MGLNadeTrail extends BallisticEmitter;
 
 #exec OBJ LOAD FILE=AS_FX_TX.utx

@@ -1,7 +1,5 @@
 //=============================================================================
-// MGL870Grenade.
-//
-// Grenade fired by MGL-870 grenade launcher.
+// Grenade Class for MGL Grenade Launcher.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -66,10 +64,10 @@ defaultproperties
      bAlignToVelocity=True
      DetonateDelay=2.500000
      ImpactDamage=80
-     ImpactDamageType=Class'BWBPRecolorsPro.DTMGLGrenade'
+     ImpactDamageType=Class'BWBPRecolorsPro.DT_MGLGrenade'
      ImpactManager=Class'BWBPRecolorsPro.IM_MGLGrenade'
      TrailClass=Class'BWBPRecolorsPro.MGLNadeTrail'
-     MyRadiusDamageType=Class'BWBPRecolorsPro.DTMGLGrenadeRadius'
+     MyRadiusDamageType=Class'BWBPRecolorsPro.DT_MGLGrenadeRadius'
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=512.000000
      MotionBlurRadius=400.000000
@@ -80,7 +78,7 @@ defaultproperties
      Speed=1750.000000
      Damage=145.000000
      DamageRadius=300.000000
-     MyDamageType=Class'BWBPRecolorsPro.DTMGLGrenadeRadius'
+     MyDamageType=Class'BWBPRecolorsPro.DT_MGLGrenadeRadius'
      ImpactSound=Sound'PackageSounds4Pro.Misc.FLAK-GrenadeBounce'
      StaticMesh=StaticMesh'BallisticHardware2.M900.M900Grenade'
 }

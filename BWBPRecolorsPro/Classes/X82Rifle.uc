@@ -1,9 +1,5 @@
 //=============================================================================
-// X82Rifle.
-//
-// BARRET Assault Rifle, aka thez Z. BArrate SOmepre rFIle. Good vs vars.
-// Has underslung rifle. It also comes with MEAT VISION, btw.
-//
+// Main weapon class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

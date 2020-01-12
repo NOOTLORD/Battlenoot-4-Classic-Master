@@ -1,7 +1,5 @@
 //=============================================================================
-// SK410HeatEmitter
-//
-// Special muzzleflash for melting CYLOs.
+// Special muzzleflash for SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

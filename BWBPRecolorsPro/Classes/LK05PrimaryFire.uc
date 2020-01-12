@@ -1,11 +1,5 @@
 //=============================================================================
-// LK05PrimaryFire.
-//
-// Rapid fire CQC fire. Uses up ammo very quickly. 
-// Very controllable, and packs a decent punch.
-//
-// Has accuracy and damage drop off issues due to CQC Barrel.
-// Rounds detonate on target and do not penetrate.
+// Main Primaryfire class for LK-05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -21,7 +15,7 @@ var() sound	FireSoundLoopEnd;
 var bool bFiring;
 
 var() Actor						SMuzzleFlash;		// Silenced Muzzle flash stuff
-var() class<Actor>			SMuzzleFlashClass;
+var() class<Actor>			    SMuzzleFlashClass;
 var() Name						SFlashBone;
 var() float						SFlashScaleFactor;
 

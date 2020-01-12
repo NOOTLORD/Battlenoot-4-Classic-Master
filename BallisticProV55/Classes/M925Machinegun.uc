@@ -140,7 +140,6 @@ defaultproperties
      ManualLines(0)="Automatic .50 cal fire. High damage per shot, but high recoil and slow fire rate. Sustained damage output is excellent. As a machinegun, it has a very long effective range. Large magazine capacity allows the weapon to fire for a long time, but the reload time is long."
      ManualLines(1)="Deploys the machinegun upon the ground or a nearby wall. May also be deployed upon sandbags. Whilst deployed, becomes perfectly accurate, loses its iron sights and gains a reduction in recoil. Locational damage (damage which can target an area on the body) taken from the front is significantly reduced."
      ManualLines(2)="The M925, as a heavy machine gun, burdens the player, reducing movement speed and jump height. It also has terrible hipfire and takes almost a second to aim.||It is effective at medium to long range and when employed defensively."
-     SpecialInfo(0)=(Info="360.0;30.0;0.8;40.0;0.0;0.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M925.M925-Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M925.M925-Putaway')
      MagAmmo=40

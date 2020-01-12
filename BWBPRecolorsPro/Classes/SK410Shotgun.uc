@@ -1,7 +1,5 @@
 //=============================================================================
-// SK410Shotgun.
-//
-// The SK410 auto shottie, aka the LASERLASER
+// Main weapon class for SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -156,7 +154,6 @@ defaultproperties
      ManualLines(0)="Fires shotgun blasts with wide spread. These blasts inflict heavy damage and knock the enemy back."
      ManualLines(1)="Fires a single slug with an arming delay. Whilst unarmed, it will reflect from struck walls or surfaces. Deals good impact damage and minor radius damage."
      ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Effective at close to medium range depending upon active mode."
-     SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=8
@@ -208,7 +205,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.SK410.SmallIcon_SK410'
      IconCoords=(X2=127,Y2=35)
-     ItemName="SK-410 Assault Shotgun"
+     ItemName="SK-410 Shotgun"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=25

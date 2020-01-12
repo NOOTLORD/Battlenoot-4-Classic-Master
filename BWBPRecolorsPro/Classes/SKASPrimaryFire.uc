@@ -1,7 +1,5 @@
 //=============================================================================
-// SKASPrimaryFire
-//
-// Powerful shotgun blast with moderate spread and fair range for a shotgun.
+// Main Primaryfire class for SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -23,9 +21,9 @@ defaultproperties
      DamageHead=26.000000
      DamageLimb=13.000000
      RangeAtten=0.250000
-     DamageType=Class'BWBPRecolorsPro.DTSKASShotgun'
-     DamageTypeHead=Class'BWBPRecolorsPro.DTSKASShotgunHead'
-     DamageTypeArm=Class'BWBPRecolorsPro.DTSKASShotgun'
+     DamageType=Class'BWBPRecolorsPro.DT_SKASShotgun'
+     DamageTypeHead=Class'BWBPRecolorsPro.DT_SKASShotgunHead'
+     DamageTypeArm=Class'BWBPRecolorsPro.DT_SKASShotgun'
      KickForce=0
      PenetrateForce=0
      bPenetrate=False										   					

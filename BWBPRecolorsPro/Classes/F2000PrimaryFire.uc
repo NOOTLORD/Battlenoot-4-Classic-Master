@@ -1,8 +1,5 @@
 //=============================================================================
-// F2000PrimaryFire.
-//
-// Very automatic, bullet style instant hit. Shots have medium range and good
-// power. Accuracy and ammo goes quickly with its faster than normal rate of fire.
+// Main Primaryfire class for Mars-3 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -157,9 +154,9 @@ defaultproperties
      DamageLimb=25.000000
      RangeAtten=0.350000
      WaterRangeAtten=0.800000
-     DamageType=Class'BWBPRecolorsPro.DTF2000Assault'
-     DamageTypeHead=Class'BWBPRecolorsPro.DTF2000AssaultHead'
-     DamageTypeArm=Class'BWBPRecolorsPro.DTF2000Assault'
+     DamageType=Class'BWBPRecolorsPro.DT_F2000Assault'
+     DamageTypeHead=Class'BWBPRecolorsPro.DT_F2000AssaultHead'
+     DamageTypeArm=Class'BWBPRecolorsPro.DT_F2000Assault'
      PenetrateForce=0
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      bCockAfterEmpty=True

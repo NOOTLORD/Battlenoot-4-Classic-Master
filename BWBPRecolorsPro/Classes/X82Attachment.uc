@@ -1,6 +1,4 @@
 //=============================================================================
-// X82Attachment.
-//
 // 3rd person weapon attachment for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.

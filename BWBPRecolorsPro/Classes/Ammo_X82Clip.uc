@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo_X82Clip.
+// Ammo class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -12,5 +12,4 @@ defaultproperties
 {
      MaxAmmo=30
      InitialAmount=15
-     ItemName="X82 Clip"
 }

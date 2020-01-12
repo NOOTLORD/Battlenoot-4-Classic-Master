@@ -1,12 +1,10 @@
 //=============================================================================
-// SKASShotgun.
-//
-// Automatic shotgun.
+// Main weapon class for SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
-// Modified by (NL)NOOTLORD
+// Modified by (NL)NOOTLORD 
 //=============================================================================
 class SKASShotgun extends BallisticProShotgun;
 
@@ -88,7 +86,6 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
      bWT_Machinegun=True
-     SpecialInfo(0)=(Info="360.0;30.0;0.9;120.0;0.0;3.0;0.0")
      BringUpSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-Select')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=12
@@ -146,7 +143,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.SKASAttachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.SKAS.SmallIcon_SKAS'
      IconCoords=(X2=127,Y2=30)
-     ItemName="SKAS-21 Automatic Shotgun"
+     ItemName="SKAS-21 Shotgun"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=25

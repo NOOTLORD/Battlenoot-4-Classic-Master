@@ -1,8 +1,8 @@
 //=============================================================================
-// AK-490's primary fire.
+// Main Primaryfire class for AK-470 Assault Rifle
 //
-// Assault rifle fire.
-// DPS is greater than normal, but so too is recoil.
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
@@ -41,7 +41,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.115000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_AK47Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_AK470Clip'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
      ShakeRotTime=0.000000

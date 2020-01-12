@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_X82.
-//
-// DamageType for the M30A2 assault rifle primary fire
+// Damage type for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

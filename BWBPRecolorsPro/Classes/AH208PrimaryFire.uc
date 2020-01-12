@@ -1,6 +1,8 @@
 //=============================================================================
-// AH208PrimaryFire.
-// The Pro equivalent of the Golden Gun.
+// Main Primaryfire class for AH-208 Pistol
+//
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
@@ -37,9 +39,9 @@ defaultproperties
      DamageLimb=90.000000
      RangeAtten=0.600000
      WaterRangeAtten=0.800000
-     DamageType=Class'BWBPRecolorsPro.DTAH208Pistol'
-     DamageTypeHead=Class'BWBPRecolorsPro.DTAH208PistolHead'
-     DamageTypeArm=Class'BWBPRecolorsPro.DTAH208Pistol'
+     DamageType=Class'BWBPRecolorsPro.DT_AH208Pistol'
+     DamageTypeHead=Class'BWBPRecolorsPro.DT_AH208PistolHead'
+     DamageTypeArm=Class'BWBPRecolorsPro.DT_AH208Pistol'
      DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.000000)
      KickForce=0
      PenetrateForce=0

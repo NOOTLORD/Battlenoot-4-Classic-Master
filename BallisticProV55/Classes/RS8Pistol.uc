@@ -477,7 +477,6 @@ defaultproperties
      ManualLines(0)="Semi-automatic 10mm fire. Moderate damage and fire rate. Has the option of burst fire."
      ManualLines(1)="Attaches a suppressor, reducing the effective range but removing the flash and reducing the noise output."
      ManualLines(2)="Weapon Function toggles a laser sight, reducing the hipfire spread."
-     SpecialInfo(0)=(Info="0.0;-5.0;-999.0;-1.0;0.0;-999.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
      MagAmmo=10

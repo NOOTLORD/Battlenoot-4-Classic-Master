@@ -1,7 +1,8 @@
 //=============================================================================
-// Ammo_AH208Clip.
+// Ammo class for AH-208 Pistol
 //
-// AH208 Pistol ammo
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
@@ -12,5 +13,4 @@ defaultproperties
 {
      MaxAmmo=7
      InitialAmount=7
-     ItemName="AH208 Clip"
 }

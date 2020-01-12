@@ -1,7 +1,5 @@
 //=============================================================================
-// Brass_X82rifle.
-//
-// A .50 BMG casing that flies left.
+// Brass class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

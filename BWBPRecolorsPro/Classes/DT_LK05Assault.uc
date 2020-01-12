@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_LK05Assault.
-//
-// DamageType for the LK05 Carbine primary fire
+// Damage type for LK05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

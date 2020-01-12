@@ -1,14 +1,5 @@
 //=============================================================================
-// LK05Carbine
-//
-// An accurate and controllable carbine that is absolutely tricked out.
-// Has a holosight, laser, silencer, and flashlight!
-//
-// Uses sledgehammer rounds that slow down enemies. Comes with low ammo and low
-// reserve ammo.
-//
-// Has less range and power than long barreled rifles.
-// Has better accuracy and control than fellow long barrel rifles.
+// Main weapon class for LK-05 Carbine
 //
 // by Sarge.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -24,7 +15,7 @@ var() sound		SilencerOnSound;		// Silencer stuck on sound
 var() sound		SilencerOffSound;		//
 var() name		SilencerOnAnim;			// Think hard about this one...
 var() name		SilencerOffAnim;		//
-var() name		ScopeBone;			// Bone to use for hiding scope
+var() name		ScopeBone;			    // Bone to use for hiding scope
 
 replication
 {
@@ -223,7 +214,6 @@ defaultproperties
      BigIconCoords=(Y1=36,Y2=225)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     SpecialInfo(0)=(Info="240.0;25.0;0.9;80.0;0.7;0.7;0.4")
      BringUpSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-PullOut',Volume=0.750000)
      PutDownSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-Putaway',Volume=0.750000)
      MagAmmo=32
@@ -254,7 +244,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BWBPRecolorsPro.LK05SecondaryFire'
      IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000
@@ -275,7 +265,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'
      IconMaterial=Texture'BallisticRecolors4TexPro.LK05.SmallIcon_LK05'
      IconCoords=(X2=127,Y2=31)
-     ItemName="LK-05 Advanced Carbine"
+     ItemName="LK-05 Carbine"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

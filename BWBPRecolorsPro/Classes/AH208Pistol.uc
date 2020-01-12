@@ -1,8 +1,5 @@
 //=============================================================================
-// AH208Pistol.
-//
-// A powerful sidearm designed for long range combat. The .44 bulelts are very
-// deadly. Secondary is a pistol whip.
+// Main weapon class for AH-208 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -152,7 +149,6 @@ defaultproperties
      ManualLines(0)="Powerful .44 fire. Massive damage, long range and excellent fire rate."
      ManualLines(1)="Prepares a bludgeoning attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. As a blunt attack, has lower base damage compared to bayonets but inflicts a short-duration blinding effect when striking. This attack inflicts more damage from behind."
      ManualLines(2)="Effective at all ranges."
-     SpecialInfo(0)=(Info="140.0;12.0;0.7;70.0;0.55;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
      MagAmmo=7
@@ -198,7 +194,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.AH208Attachment'
      IconMaterial=Texture'BallisticRecolors4TexPro.Eagle.SmallIcon_Eagle'
      IconCoords=(X2=127,Y2=31)
-     ItemName="AH208 Golden Pistol"
+     ItemName="AH-208 Pistol"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

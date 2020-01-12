@@ -1,3 +1,12 @@
+//=============================================================================
+// Main Primaryfire class for PD-97 Bloodhound
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
+//=============================================================================
 class PD97PrimaryFire extends BallisticProProjectileFire;
 
 simulated function PlayFiring()
@@ -35,19 +44,21 @@ function SpawnProjectile (Vector Start, Rotator Dir)
 defaultproperties
 {
      SpawnOffset=(X=15.000000,Y=15.000000,Z=-20.000000)
+	 MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
+     FlashScaleFactor=0.250000
      AimedFireAnim="SightFire"
      RecoilPerShot=256.000000
      FireChaos=0.150000
-     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=1.350000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=2.000000)
      PreFireAnim=
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"
      FireRate=0.400000
-     AmmoClass=Class'BWBPOtherPackPro.Ammo_BloodhoundDarts'
-     ShakeRotTime=2.000000
+     AmmoClass=Class'BWBPOtherPackPro.Ammo_PD97Drum'
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=2.000000
+     ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPOtherPackPro.PD97Dart'
      BotRefireRate=0.700000
      WarnTargetPct=0.300000

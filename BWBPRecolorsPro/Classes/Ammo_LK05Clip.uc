@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo_LK05Clip.
+// Ammo class for LK-05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -12,5 +12,4 @@ defaultproperties
 {
      MaxAmmo=192
      InitialAmount=96
-     ItemName="LK05 Clip"
 }

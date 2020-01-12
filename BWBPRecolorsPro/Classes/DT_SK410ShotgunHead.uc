@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_SK410Head.
-//
-// Damage type for the DT_SK410 DT_SK410DT_SK410DT_SK410.
+// Damage type for SK410 Shotgun headshot
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

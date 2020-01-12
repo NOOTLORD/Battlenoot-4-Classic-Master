@@ -1,5 +1,11 @@
 //=============================================================================
-// AS50's burner effect.
+// Heal Control class for PD-97 Bloodhound
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD	
 //=============================================================================
 class PD97HealControl extends PD97DartControl
 	placeable;

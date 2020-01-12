@@ -1,8 +1,5 @@
 //=============================================================================
-// X82PrimaryFire.
-//
-// Very accurate, long ranged and powerful bullet fire. Headshots are
-// especially dangerous.
+// Main Primaryfire class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

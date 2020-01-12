@@ -1,7 +1,5 @@
 //=============================================================================
-// MGLauncher.
-//
-// Multiple Grenade Launcher!
+// Main weapon class for MGL Grenade Launcher
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -160,7 +158,6 @@ defaultproperties
      ManualLines(0)="Launches a grenade. Fire rate, damage and explosive radius are good. These grenades have an arming delay and if striking a surface when unarmed will ricochet. Direct impacts will always result in explosion."
      ManualLines(1)="Employs a manually controlled grenade. Pressing altfire again detonates the grenade."
      ManualLines(2)="Effective with height advantage and at medium range."
-     SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
      MagAmmo=6
@@ -210,7 +207,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.MGLAttachment'
      IconMaterial=Texture'BallisticRecolors4TexPro.MGL.SmallIcon_MGL'
      IconCoords=(X2=127,Y2=35)
-     ItemName="Conqueror MGL"
+     ItemName="MGL Grenade Launcher"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=25
