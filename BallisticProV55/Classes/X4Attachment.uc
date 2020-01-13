@@ -6,6 +6,8 @@
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class X4Attachment extends BallisticMeleeAttachment;
 
@@ -19,6 +21,7 @@ defaultproperties
      LightMode=MU_None
      TrackAnimMode=MU_Both
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
+     WaterTracerMode=MU_Both								  
      MeleeStrikeAnim="Blade_Stab"
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims_25.X4_3rd'

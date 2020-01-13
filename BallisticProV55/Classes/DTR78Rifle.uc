@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTR78Rifle extends DT_BWBullet;
 
@@ -20,15 +18,15 @@ defaultproperties
      DeathStrings(5)="%o never even saw %k's R78 bullet coming."
      AimedString="Scoped"
      bSnipingDamage=True
+     InvasionDamageScaling=2.000000
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
+     bDisplaceAim=True
+     AimDisplacementDamageThreshold=100
+     AimDisplacementDuration=0.300000
      WeaponClass=Class'BallisticProV55.R78Rifle'
      DeathString="%o was silenced by %k's R78."
      FemaleSuicide="%o held her R78 the wrong way around."
      MaleSuicide="%o held his R78 the wrong way around."
-     FlashScale=0.300000
      VehicleDamageScaling=0.150000
-     InvasionDamageScaling=1.000000	 
+     VehicleMomentumScaling=0.300000
 }

@@ -28,7 +28,6 @@ simulated event AnimEnd (int Channel)
 	super.AnimEnd(Channel);
 }
 
-
 simulated function BringUp(optional Weapon PrevWeapon)
 {	
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)

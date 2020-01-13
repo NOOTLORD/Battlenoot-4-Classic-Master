@@ -1747,6 +1747,7 @@ function PlayTeleportEffect( bool bOut, bool bSound)
 //		    Spawn(TransEffects[0],,,Location + CollisionHeight * vect(0,0,0.75));
 //	    else
 //		    Spawn(TransEffects[1],,,Location + CollisionHeight * vect(0,0,0.75));
+		Spawn(class'BWPlayerSpawnFX',,,Location);
 	}
 	else if ( bOut )
 		DoTranslocateOut(Location);
@@ -1772,6 +1773,10 @@ simulated function StartDeRes()
 			Stumps[i].Destroy();
 
 	// Wicked new BW DeRes ---------
+	Spawn(class'BWDeresFX',self,, Location);
+	NewDeResDecal = Spawn(class'BWDeResDecal', self, , Location, rot(-16384,0,0));
+	PlaySound(NewDeResSound, SLOT_Interact, 1.0);
+
 
 	for (i=0;i<Skins.Length;i++)
 	{
@@ -2001,7 +2006,10 @@ singular event BaseChange()
 			Base.TakeDamage( (1-Velocity.Z/100)* Mass/Base.Mass, Self,Location,0.5 * Velocity , class'Crushed');
 			JumpOffPawn();
 		}
-	}	
+	}
+	else if (Sandbag(Base) != None) //hack fixme
+		JumpOffPawn();
+	
 	else if ( (Decoration(Base) != None) && (Velocity.Z < -400) )
 	{
 		decorMass = FMax(Decoration(Base).Mass, 1);

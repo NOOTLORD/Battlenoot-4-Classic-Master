@@ -67,7 +67,10 @@ defaultproperties
 {
      HitSoundPitch=0.500000
      StartVelocity=(X=-150.000000,Y=0.000000,Z=50.000000)
+     bAddOwnerVelocity=False
+     HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyPistolRound'
      DrawScale=0.400000
      RotationRate=(Pitch=40000,Yaw=20000,Roll=30000)
+     bSelected=True
 }

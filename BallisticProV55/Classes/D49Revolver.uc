@@ -53,6 +53,15 @@ var   EBarrelMode		RealBarrelMode;
 var   bool				bBarrelModeUsed;
 var   byte				BMByte, OldBMByte;
 
+var   Emitter		LaserDot;
+var   bool			bLaserOn;
+
+replication
+{
+	reliable if (Role < ROLE_Authority)
+		ServerUpdateLaser;
+}
+
 simulated function RevolverFired(EBarrelMode BarrelsFired)
 {
 	if (BarrelsFired == BM_Neither)
@@ -158,20 +167,15 @@ simulated function Notify_ClipOutOfSight()
 
 simulated function Notify_D49Uncock()
 {	bRevCocked=false;	}
-
 simulated function Notify_D49Cock()
 {	bRevCocked=true;
 	class'BUtil'.static.PlayFullSound(self, CockSound);	}
-	
 simulated function Notify_D49CockAfterPullout()
 {	Notify_D49Cock();	}
-
 simulated function Notify_D49CockAfterFire()
 {	Notify_D49Cock();	}
-
 simulated function Notify_D49StartReload()
 {    class'BUtil'.static.PlayFullSound(self, RevReloadSound);	}
-
 simulated function Notify_D49SwingOpen()
 {
     class'BUtil'.static.PlayFullSound(self, RevOpenSound);
@@ -183,10 +187,8 @@ simulated function Notify_D49SwingOpen()
 		SetAnimFrame(0.38, 0);
 	}
 }
-
 simulated function Notify_D49SwingClosed()
 {	class'BUtil'.static.PlayFullSound(self, RevCloseSound);	}
-
 simulated function Notify_D49Spin()
 {	class'BUtil'.static.PlayFullSound(self, RevSpinSound);	}
 
@@ -227,6 +229,21 @@ simulated function BringUp(optional Weapon PrevWeapon)
 		HandgunGroup = Othergun.HandgunGroup;
 	else
 		HandgunGroup = default.HandgunGroup;
+}
+simulated function bool PutDown()
+{
+	if (super.PutDown())
+	{
+		bLaserOn=false;
+		KillLaserDot();
+		if (Instigator.IsLocallyControlled())
+		{
+			bRevCocked=false;
+			SetBoneRotation('Hammer', rot(0,0,0));
+		}
+		return true;
+	}
+	return false;
 }
 
 simulated state Raising
@@ -288,7 +305,7 @@ simulated function CommonCockGun(optional byte Type)
 simulated function SetScopeBehavior()
 {
 	super.SetScopeBehavior();
-	bUseNetAim = default.bUseNetAim || bScopeView;
+	bUseNetAim = default.bUseNetAim || bScopeView || bLaserOn;
 }
 
 simulated function ApplyAimRotation()
@@ -297,10 +314,143 @@ simulated function ApplyAimRotation()
 	PlayerViewPivot = default.PlayerViewPivot + (GetAimPivot() + GetRecoilPivot()*0.1) * (DisplayFOV / Instigator.Controller.FovAngle);
 }
 
-// AI Interface =====
+// See if firing modes will let us fire another round or not
+simulated function bool CheckWeaponMode (int Mode)
+{
+	if (IsInState('DualAction') || IsInState('PendingDualAction'))
+		return false;
+	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
+		return true;
+	if (Mode > 0 && OtherGun != None && D49Revolver(OtherGun) != None && FireCount < 1)
+		return true;
+	if (FireCount >= WeaponModes[CurrentWeaponMode].Value && (!IsSlave() || WeaponModes[CurrentWeaponMode].ModeID != "WM_SemiAuto" || Othergun.WeaponModes[Othergun.CurrentWeaponMode].ModeID != "WM_SemiAuto" || Othergun.HandgunGroup == HandgunGroup || LastFireTime > level.TimeSeconds-SingleHeldRate))
+		return false;
+	if (Othergun != None && CanAlternate(Mode) && Mode == 0)
+	{
+		if ( (!Othergun.HasAmmoLoaded(Mode) || LastFireTime <= OtherGun.LastFireTime) && FireCount < 1 && Othergun.FireCount < 1 )
+			return true;
+		return false;
+	}
+	return true;
+}
 
+simulated function KillLaserDot()
+{
+	if (LaserDot != None)
+	{
+		LaserDot.Kill();
+		LaserDot = None;
+	}
+}
+simulated function SpawnLaserDot(optional vector Loc)
+{
+	if (LaserDot == None)
+		LaserDot = Spawn(class'M806LaserDot',,,Loc);
+}
+
+simulated function DrawLaserSight ( Canvas Canvas )
+{
+	local Vector HitLocation, Start, End, HitNormal;
+	local Rotator AimDir;
+	local Actor Other;
+
+	if (ClientState != WS_ReadyToFire || !bLaserOn/* || !bScopeView */|| ReloadState != RS_None || IsInState('DualAction') || Level.TimeSeconds - FireMode[0].NextFireTime < 0.2)
+	{
+		KillLaserDot();
+		return;
+	}
+
+	AimDir = BallisticFire(FireMode[0]).GetFireAim(Start);
+
+	End = Start + Normal(Vector(AimDir))*5000;
+	Other = FireMode[0].Trace (HitLocation, HitNormal, End, Start, true);
+	if (Other == None)
+		HitLocation = End;
+
+	// Draw dot at end of beam
+	SpawnLaserDot(HitLocation);
+	if (LaserDot != None)
+		LaserDot.SetLocation(HitLocation);
+	Canvas.DrawActor(LaserDot, false, false, Instigator.Controller.FovAngle);
+}
+
+simulated event RenderOverlays( Canvas Canvas )
+{
+	super.RenderOverlays(Canvas);
+	if (!IsInState('Lowered'))
+		DrawLaserSight(Canvas);
+}
+
+function ServerUpdateLaser(bool bNewLaserOn)
+{
+	bUseNetAim = bNewLaserOn;
+}
+
+exec simulated function WeaponSpecial(optional byte i)
+{
+		if (!bScopeView && !bLaserOn)
+		{
+			FullZoomFOV=60.000000;
+			bLaserOn=true;
+			ScopeView();
+		}
+		else
+		{
+			if (bLaserOn)
+			{
+				FullZoomFOV=default.FullZoomFOV;
+				bLaserOn=false;
+			}
+			else
+			{
+				FullZoomFOV=60.000000;
+				bLaserOn=true;
+			}
+		}
+	bUseNetAim = bLaserOn;
+	ServerUpdateLaser(bLaserOn);
+
+//	if (bScopeView)
+//	{
+//		if (bLaserOn)
+//		{
+//			ScopeView();
+//			bLaserOn=false;
+//		}
+//		else
+//			bLaserOn=true;
+//	}
+//	else
+//	{
+//		ScopeView();
+//		bLaserOn=true;
+//	}
+}
+
+exec simulated function WeaponSpecialRelease(optional byte i)
+{
+	ScopeViewRelease();
+}
+
+// AI Interface =====
 // choose between regular or alt-fire
-function byte BestMode()	{	return 0;	}
+function byte BestMode()
+{
+	local Bot B;
+
+	B = Bot(Instigator.Controller);
+	if ( (B == None) || (B.Enemy == None) )
+		return 0;
+
+	if (B.Skill > Rand(6))
+	{
+		if (Chaos < 0.1 || Chaos < 0.5 && VSize(B.Enemy.Location - Instigator.Location) < 500)
+			return 1;
+	}
+	else if (FRand() > 0.75)
+		return 1;
+	return 0;
+}
 
 function float GetAIRating()
 {
@@ -326,10 +476,8 @@ function float GetAIRating()
 
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return 0.5;	}
-
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return -0.5;	}
-
 // End AI Stuff =====
 
 defaultproperties
@@ -356,6 +504,7 @@ defaultproperties
      ManualLines(0)="Fires from a single barrel. Powerful, but short-ranged and has high recoil."
      ManualLines(1)="Fires both barrels at once. Twice as much recoil as the single fire with lower sustained damage output."
      ManualLines(2)="The D49 is very effective at close range. However, it suffers from a cripplingly long reload time. When dual wielded, both pistols will fire simultaneously, allowing the altfire to be used for an extremely powerful attack."
+     SpecialInfo(0)=(Info="120.0;10.0;0.6;50.0;1.0;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
      MagAmmo=6

@@ -19,7 +19,7 @@ event PostBeginPlay()
 defaultproperties
 {
      bRandomRotate=True
-     StayTime=5.000000
+     StayTime=20.000000
      FOV=1
      MaxTraceDistance=60
      bProjectParticles=False
@@ -28,7 +28,7 @@ defaultproperties
      bClipStaticMesh=True
      bProjectOnUnlit=True
      bStatic=False
-     LifeSpan=1.000000
+     LifeSpan=20.000000
      DrawScale=0.250000
      bGameRelevant=True
 }

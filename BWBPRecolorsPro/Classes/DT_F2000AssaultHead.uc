@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for Mars-3 Assault Rifle headshot
+// Damage type for MARS-3 Assault Rifle headshot
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class TraceEmitter_Pistol extends BCTraceEmitter;
 
@@ -20,7 +22,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=1
          SpinsPerSecondRange=(Z=(Min=2.000000,Max=4.000000))
-         StartSizeRange=(X=(Min=0.300000,Max=0.500000),Y=(Min=0.150000,Max=0.150000),Z=(Min=0.150000,Max=0.150000))
+         StartSizeRange=(X=(Min=0.150000,Max=0.150000),Y=(Min=0.150000,Max=0.150000),Z=(Min=0.150000,Max=0.150000))
          InitialParticlesPerSecond=50000.000000
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=2.000000,Max=2.000000)

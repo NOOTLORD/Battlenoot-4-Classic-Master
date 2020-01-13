@@ -1,5 +1,5 @@
 //=============================================================================
-// Main weapon class for Mars-3 Assault Rifle
+// Main weapon class for MARS-3 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -247,7 +247,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'
      IconMaterial=Texture'BallisticRecolors4TexPro.MARS.SmallIcon_F2000Alt'
      IconCoords=(X2=127,Y2=31)
-     ItemName="Mars-3 Assault Rifle"
+     ItemName="MARS-3 Assault Rifle"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

@@ -5,7 +5,7 @@
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
 //
-// Modified by (NL)NOOTLORD	
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class PD97HealControl extends PD97DartControl
 	placeable;
@@ -88,11 +88,11 @@ defaultproperties
          StartSpinRange=(X=(Max=1.000000))
          SizeScale(0)=(RelativeSize=0.200000)
          SizeScale(1)=(RelativeTime=0.250000,RelativeSize=1.000000)
-         StartSizeRange=(X=(Min=-75.000000,Max=75.000000),Y=(Min=-75.000000,Max=75.000000),Z=(Min=-75.000000,Max=75.000000))
+         StartSizeRange=(X=(Min=-15.000000,Max=15.000000),Y=(Min=-15.000000,Max=15.000000),Z=(Min=-15.000000,Max=15.000000))
          ParticlesPerSecond=4.000000
          InitialParticlesPerSecond=20.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects2.Particles.NewSmoke1g'
+         Texture=Texture'XEffectMat.Combos.greencross'
          TextureUSubdivisions=1
          TextureVSubdivisions=1
          LifetimeRange=(Min=0.500000,Max=0.750000)

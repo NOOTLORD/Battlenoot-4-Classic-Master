@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTM353MGHead extends DT_BWBullet;
 
@@ -37,9 +35,6 @@ defaultproperties
      HipString="HIP SPAM"
      bHeaddie=True
      DamageIdent="Machinegun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M353Machinegun'
      DeathString="%k furiously machinegunned %o's head off."
      FemaleSuicide="%o shot herself in the head with the M353."
@@ -48,7 +43,4 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     FlashScale=0.300000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
 }

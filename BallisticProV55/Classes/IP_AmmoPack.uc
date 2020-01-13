@@ -8,6 +8,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class IP_AmmoPack extends BallisticAmmoPickup;
 
@@ -62,7 +64,7 @@ auto state Pickup
 
 		if ( ValidTouch(Other) )
 		{
-			if ( Pawn(Other).GiveHealth(5, Pawn(Other).HealthMax) )
+			if ( Pawn(Other).GiveHealth(0, Pawn(Other).HealthMax) )
 				bGetIt=true;
 			// First go through our inventory and revive all the ghosts
 			for (Inv=Pawn(Other).Inventory; Inv!=None && Count < 1000; Count++)

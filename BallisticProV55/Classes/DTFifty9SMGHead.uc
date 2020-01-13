@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTFifty9SMGHead extends DT_BWBullet;
 
@@ -37,10 +35,8 @@ defaultproperties
      DeathStrings(3)="%o got a faceful of %k's Fifty-9 light show."
      EffectChance=0.500000
      bHeaddie=True
+     InvasionDamageScaling=1.500000
      DamageIdent="SMG"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.Fifty9MachinePistol'
      DeathString="%k Fifty-9ed %o's head."
      FemaleSuicide="%o Fifty-9ed her head off."
@@ -48,7 +44,5 @@ defaultproperties
      bFastInstantHit=True
      bAlwaysSevers=True
      bSpecial=True
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
 }

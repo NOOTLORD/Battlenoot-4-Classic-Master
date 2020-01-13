@@ -21,6 +21,13 @@ event ModeDoFire()
 	Super.ModeDoFire();
 }
 
+simulated function vector GetFireDir(out Vector StartTrace)
+{
+    if (BallisticTurret(Instigator) != None)
+    	StartTrace = Instigator.Location + Instigator.EyePosition() + Vector(Instigator.GetViewRotation()) * 64;
+	return super.GetFireDir(StartTrace);
+}
+
 defaultproperties
 {
 	 CutOffDistance=4096

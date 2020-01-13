@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTMRS138Shotgun extends DT_BWShell;
 
@@ -16,10 +14,8 @@ defaultproperties
      DeathStrings(1)="%o absorbed the random shots of %k's combat shotgun."
      DeathStrings(2)="%k blasted %o down as %ve tried to scamper away in fear."
      DeathStrings(3)="%o was disassembled by %k's MRS-138 barrage."
+     InvasionDamageScaling=1.500000
      DamageIdent="Shotgun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.MRS138Shotgun'
      DeathString="%k fired a tenner into %o with the MRS-138."
      FemaleSuicide="%o fired a tenner into herself with the MRS-138."
@@ -27,6 +23,4 @@ defaultproperties
      bExtraMomentumZ=True
      GibPerterbation=0.400000
      KDamageImpulse=25000.000000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
 }

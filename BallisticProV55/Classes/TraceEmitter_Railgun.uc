@@ -190,4 +190,5 @@ defaultproperties
      End Object
      Emitters(5)=BeamEmitter'BallisticProV55.TraceEmitter_Railgun.BeamEmitter3'
 
+     bSelected=False
 }

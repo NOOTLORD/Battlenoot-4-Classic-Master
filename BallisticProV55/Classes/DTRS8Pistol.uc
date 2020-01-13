@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTRS8Pistol extends DT_BWBullet;
 
@@ -17,15 +15,10 @@ defaultproperties
      DeathStrings(2)="%k snapped a few RS8 rounds into %o."
      EffectChance=0.500000
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.RS8Pistol'
      DeathString="%o was suppressed by %k's 10mm RS8."
      FemaleSuicide="%o silenced herself."
      MaleSuicide="%o silenced himself."
      bFastInstantHit=True
-     FlashScale=0.300000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000
+     VehicleDamageScaling=0.100000
 }

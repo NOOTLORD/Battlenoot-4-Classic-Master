@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class TraceEmitter_WaterBullet extends BCTraceEmitter;
 
@@ -34,7 +36,7 @@ defaultproperties
          CoordinateSystem=PTCS_Relative
          MaxParticles=120
          StartLocationRange=(X=(Max=1000.000000))
-         StartSizeRange=(X=(Min=1.000000,Max=2.000000),Y=(Min=1.000000,Max=2.000000),Z=(Min=1.000000,Max=2.000000))
+         StartSizeRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects.Particles.AquaBubble1'
          SecondsBeforeInactive=0.000000

@@ -6,8 +6,7 @@
 // Copyright© 2011 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
-//=============================================================================
-
+//=============================================================================																			   			
 class PD97Dart extends BallisticProjectile;
 
 var Actor StuckActor;
@@ -84,17 +83,17 @@ defaultproperties
 {
      ImpactManager=Class'BallisticProV55.IM_XMK5Dart'
      TrailClass=Class'BallisticProV55.PineappleTrail'
-     MyRadiusDamageType=Class'BWBPOtherPackPro.DT_PD97Dart'
+     MyRadiusDamageType=Class'BWBPOtherPackPro.DTPD97Dart'
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=0.000000
      MotionBlurRadius=0.000000
      MotionBlurFactor=0.000000
      MotionBlurTime=0.000000
      ShakeRotTime=0.000000
-     ShakeOffsetTime=0.000000
+     ShakeOffsetTime=0.000000						  							 
      Speed=15000.000000
      Damage=3.000000
-     MyDamageType=Class'BWBPOtherPackPro.DT_PD97Dart'
+     MyDamageType=Class'BWBPOtherPackPro.DTPD97Dart'
      StaticMesh=StaticMesh'BallisticHardware_25.OA-SMG.OA-SMG_Dart'
      LifeSpan=2.500000
      bIgnoreTerminalVelocity=True

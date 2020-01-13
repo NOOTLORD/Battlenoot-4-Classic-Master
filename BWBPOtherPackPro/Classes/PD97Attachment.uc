@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for PD-97 Bloodhound dart
+// 3rd person weapon attachment for PD-97 Bloodhound
 //
 // by Azarael
 // adapting code by Nolan "Dark Carnivour" Richert

@@ -24,6 +24,12 @@ simulated function vector GetFireDir(out Vector StartTrace)
     	StartTrace = Instigator.Location + Instigator.EyePosition() + Vector(Instigator.GetViewRotation()) * 64;
 	return super.GetFireDir(StartTrace);
 }
+simulated function PreBeginPlay()
+{
+	if (M925Machinegun_TW(Weapon) != None)
+		FireChaos = 0.035;
+	super.PreBeginPlay();
+}
 
 defaultproperties
 {

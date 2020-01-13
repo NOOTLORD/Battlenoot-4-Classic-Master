@@ -11,6 +11,7 @@ class MD24Pickup extends BallisticHandgunPickup
 #exec OBJ LOAD FILE=BallisticWeapons2.utx
 #exec OBJ LOAD FILE=BallisticEffects.utx
 #exec OBJ LOAD FILE=BallisticHardware2.usx
+#exec OBJ LOAD FILE=BallisticHardware_25.usx
 
 //===========================================================================
 // StaticPrecache

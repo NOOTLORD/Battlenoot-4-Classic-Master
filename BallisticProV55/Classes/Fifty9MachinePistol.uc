@@ -285,6 +285,7 @@ defaultproperties
      ManualLines(0)="Sprays low-calibre bullets. Has an extremely high fire rate and very high DPS, but suffers from recoil and hip stability problems and has low penetration and awful effective range."
      ManualLines(1)="Continually slashes with the attached blade. Damage output is modest and range is low."
      ManualLines(2)="The Fifty-9's stock can be engaged or disengaged with the Weapon Function key. With the stock engaged, the recoil is reduced but the hipfire spread increases. The Fifty-9 is extremely effective at very close range."
+     SpecialInfo(0)=(Info="120.0;10.0;0.8;40.0;0.0;0.4;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
      MagAmmo=24

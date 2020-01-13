@@ -5,8 +5,6 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTR9Rifle extends DT_BWBullet;
 
@@ -19,14 +17,8 @@ defaultproperties
      DeathStrings(4)="%k banged a round through %o with %kh R9."
      DeathStrings(5)="%k stapled %o with %kh R9."
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.R9RangerRifle'
      DeathString="%k exorcised %o with R9 rounds."
      FemaleSuicide="%o exorcised herself."
      MaleSuicide="%o exorcised himself."
-     FlashScale=0.300000
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
 }
