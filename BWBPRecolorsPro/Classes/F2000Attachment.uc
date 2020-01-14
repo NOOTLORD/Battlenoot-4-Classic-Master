@@ -50,7 +50,7 @@ defaultproperties
      AltFlashBone="tip2"
      FlashScale=0.150000
      LightMode=MU_Primary		 
-     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassMode=MU_Both
      InstantMode=MU_Both

@@ -10,7 +10,7 @@ class MGLAttachment extends BallisticAttachment;
 
 defaultproperties
 {
-     MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
+     MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashMode=MU_Primary 
      FlashScale=0.900000	 
      LightMode=MU_Primary	 

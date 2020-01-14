@@ -3,6 +3,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class RS8PrimaryFire extends BallisticRangeAttenFire;
 
@@ -45,6 +47,7 @@ simulated function DestroyEffects()
 	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
 	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
 }
+
 // End effect functions ----------------------------------------------------
 function float GetDamage (Actor Other, vector HitLocation, vector Dir, out Actor Victim, optional out class<DamageType> DT)
 {
@@ -66,7 +69,7 @@ function ServerPlayFiring()
 	else if (BallisticFireSound.Sound != None)
 		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,BallisticFireSound.bNoOverride,BallisticFireSound.Radius,BallisticFireSound.Pitch,BallisticFireSound.bAtten);
 
-	CheckClipFinished();
+   	CheckClipFinished();
 
 	if (AimedFireAnim != '')
 	{
@@ -106,7 +109,7 @@ function PlayFiring()
 
 	if (ScopeDownOn == SDO_Fire)
 		BW.TemporaryScopeDown(0.5, 0.9);
-		
+
 	if (AimedFireAnim != '')
 	{
 		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
@@ -124,12 +127,12 @@ function PlayFiring()
     ClientPlayForceFeedback(FireForce);  // jdf
     FireCount++;
 	// End code from normal PlayFiring()
-	
+
 	if (RS8Pistol(Weapon) != None && RS8Pistol(Weapon).bSilenced && SilencedFireSound.Sound != None)
 		Weapon.PlayOwnedSound(SilencedFireSound.Sound,SilencedFireSound.Slot,SilencedFireSound.Volume,,SilencedFireSound.Radius,,true);
 	else if (BallisticFireSound.Sound != None)
 		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,,BallisticFireSound.Radius);
-
+	
 	CheckClipFinished();
 }
 
@@ -137,13 +140,13 @@ defaultproperties
 {
      SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      SFlashBone="tip2"
-     SFlashScaleFactor=1.000000
+     SFlashScaleFactor=0.500000
 	 TraceRange=(Min=4000.000000,Max=4000.000000)
      CutOffDistance=2048.000000
      CutOffStartRange=256.000000
      WaterRangeFactor=0.450000
      MaxWallSize=24.000000
-     MaxWalls=2
+     MaxWalls=1
      Damage=27.000000
      DamageHead=40.000000
      DamageLimb=27.000000
@@ -152,28 +155,32 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTRS8Pistol'
      DamageTypeHead=Class'BallisticProV55.DTRS8PistolHead'
      DamageTypeArm=Class'BallisticProV55.DTRS8Pistol'
-     PenetrateForce=135
-     bPenetrate=True
+     PenetrateForce=0
+     bPenetrate=False	 
+     ClipFinishSound=(Volume=1.000000)
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashScaleFactor=0.500000
+     FlashBone="Muzzle"
+     FlashScaleFactor=0.350000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassOffset=(X=-14.000000,Z=-5.000000)
+     BrassOffset=(X=-28.000000,Y=5.000000,Z=1.000000)
      RecoilPerShot=768.000000
      FireChaos=0.250000
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilenceFire',Volume=0.700000,Radius=76.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Fire',Volume=1.100000)
+     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilenceFire',Volume=1.500000,Radius=76.000000,bAtten=True)
+     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Fire',Volume=2.000000)
      bPawnRapidFireAnim=True
 	 FireEndAnim=
-     FireAnimRate=2
-     FireRate=0.320000
-     AmmoClass=Class'BallisticProV55.Ammo_RS8Bullets'
+     FireAnimRate=1.500000
+     FireRate=0.225000
+     AmmoClass=Class'BallisticProV55.Ammo_RS8Clip'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=2.000000
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-3.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=1.500000
+     ShakeOffsetTime=0.000000
      BotRefireRate=0.750000
+     aimerror=750.000000
 }

@@ -28,7 +28,7 @@ defaultproperties
      DamageTypeHead=Class'BallisticProV55.DTXMK5SubMachinegunHead'
      DamageTypeArm=Class'BallisticProV55.DTXMK5SubMachinegun'
      PenetrateForce=0
-     bPenetrate=False					   					
+     bPenetrate=False
      ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-2',Volume=0.800000,Radius=48.000000,bAtten=True)
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      bCockAfterEmpty=True
@@ -40,8 +40,8 @@ defaultproperties
      RecoilPerShot=130.000000
      FireChaos=0.070000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
-     XInaccuracy=96.000000
-     YInaccuracy=96.000000
+     XInaccuracy=48.000000
+     YInaccuracy=48.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_Fire1',Volume=1.350000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      FireEndAnim=
@@ -49,7 +49,7 @@ defaultproperties
      AmmoClass=Class'BallisticProV55.Ammo_XMK5Clip'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-20.000000)
      ShakeOffsetRate=(X=-1000.000000)
      ShakeOffsetTime=0.000000							 

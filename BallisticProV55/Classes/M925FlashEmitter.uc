@@ -111,4 +111,5 @@ defaultproperties
      End Object
      Emitters(2)=SpriteEmitter'BallisticProV55.M925FlashEmitter.SpriteEmitter3'
 
+     bSelected=True
 }

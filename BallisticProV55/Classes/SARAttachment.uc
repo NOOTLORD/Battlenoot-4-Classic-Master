@@ -16,7 +16,7 @@ defaultproperties
      FlashMode=MU_Primary
      FlashScale=0.750000	 
      LightMode=MU_Primary	 
-     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_SAR'
      BrassMode=MU_Primary
      InstantMode=MU_Primary

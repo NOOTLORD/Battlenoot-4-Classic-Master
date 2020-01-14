@@ -224,7 +224,7 @@ defaultproperties
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
      WeaponModes(1)=(bUnavailable=True,Value=4.000000)
-     WeaponModes(3)=(bUnavailable=True) 
+     WeaponModes(3)=(bUnavailable=True)
      bNoCrosshairInScope=True
      SightOffset=(X=10.000000,Y=-8.550000,Z=24.660000)
      SightDisplayFOV=40.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// PD97Bloodhound burner effect.
+// Damage effect class for PD97 Bloodhound
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

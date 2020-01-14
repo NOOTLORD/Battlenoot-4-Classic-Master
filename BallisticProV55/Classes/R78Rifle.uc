@@ -8,6 +8,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class R78Rifle extends BallisticWeapon;
 
@@ -43,17 +45,16 @@ simulated function bool HasAmmo()
 }
 
 // AI Interface =====
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
 	local Bot B;
-	
 	local float Dist;
 	local float Rating;
 
 	B = Bot(Instigator.Controller);
-	
 	if ( B == None )
 		return AIRating;
 
@@ -63,13 +64,16 @@ function float GetAIRating()
 		return Rating;
 
 	Dist = VSize(B.Enemy.Location - Instigator.Location);
-	
+
 	return class'BUtil'.static.ReverseDistanceAtten(Rating, 0.5, Dist, 2048, 3072); 
 }
+
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()	{	return -0.9;	}
+
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.9;	}
+
 // End AI Stuff =====
 
 defaultproperties
@@ -78,20 +82,19 @@ defaultproperties
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_R78'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     ManualLines(0)="Bolt-action sniper rifle fire with explosive rounds. High damage, long range, slow fire rate and deals damage to targets near the struck target."
+     ManualLines(0)="Bolt-action sniper rifle fire. High damage, long range, slow fire rate and unusually quiet compared to other weapons in its class."
      ManualLines(1)="Engages the scope."
-     ManualLines(2)="Does not use tracer rounds. Effective at long range and against clustered enemies."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;60.0;10.0;0.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway')
 	 PutDownTime=0.5
      MagAmmo=7
      CockAnim="CockQuick"
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock')
+     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock',Volume=0.700000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipHit')
-     ClipOutSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipOut')
-     ClipInSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipIn')
+     ClipHitSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipHit',Volume=0.700000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipOut',Volume=0.700000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipIn',Volume=0.700000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic")
@@ -117,8 +120,9 @@ defaultproperties
      CrouchAimFactor=0.600000
      SightAimFactor=0.150000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=0.700000
+     AimAdjustTime=100.000000
      AimSpread=192
+     AimDamageThreshold=0.000000
      ChaosSpeedThreshold=2400.000000
      ChaosAimSpread=2048
      RecoilYawFactor=0.100000
@@ -132,14 +136,16 @@ defaultproperties
      AIRating=0.800000
      CurrentRating=0.800000
      bSniping=True
+     bCanThrow=False
+     AmmoClass(0)=Class'BallisticProV55.Ammo_R78Clip'
      Description="Originally taken from the design of a bird hunting rifle, the R78 'Raven', is a favourite among military snipers and commando corps. Used to a great extent by the expert marksmen of the New European Army, the Raven, is extremely reliable and capable of incredible damage in a single shot. The added long distance sniping scope makes the R78 one of the most deadly weapons. Of course, the gun is only as good as the soldier using it, with a low clip capacity, long reload times and it's terrible ineffectiveness in close quarters combat."
      DisplayFOV=55.000000
      Priority=33
      HudColor=(B=50,G=50,R=200)
+     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9
      GroupOffset=2
-     PickupClass=Class'BallisticProV55.R78Pickup'
      PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.R78Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_R78'
@@ -153,4 +159,5 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticProAnims.R78A1Rifle'
      DrawScale=0.450000
+     AmbientGlow=0
 }

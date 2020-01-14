@@ -47,7 +47,7 @@ defaultproperties
      ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000 
+     ShakeOffsetTime=0.000000
      WarnTargetPct=0.200000
      aimerror=750.000000
 }

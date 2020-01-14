@@ -85,7 +85,7 @@ defaultproperties
      AimedFireAnim="SightFire"
      RecoilPerShot=700.000000
      VelocityRecoil=180.000000
-     FireChaos=0.040000
+     FireChaos=0.400000
      XInaccuracy=400.000000
      YInaccuracy=400.000000
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.M781.M781-Blast',Volume=2.000000)

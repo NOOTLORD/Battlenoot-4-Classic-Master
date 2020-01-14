@@ -28,6 +28,6 @@ defaultproperties
      ShakeOffsetRate=(X=-1000.000000)
      ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPRecolorsPro.MGLGrenadeTimed'
-     BotRefireRate=0.500000
-     WarnTargetPct=0.750000
+	 BotRefireRate=0.5
+     WarnTargetPct=0.75
 }

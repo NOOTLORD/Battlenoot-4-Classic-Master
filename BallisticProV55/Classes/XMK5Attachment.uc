@@ -16,7 +16,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashMode=MU_Primary 
      FlashScale=0.200000 
-     FlashBone="Muzzle"	 
+     FlashBone="tip"	 
 	 LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_XMK5SMG'

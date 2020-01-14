@@ -44,7 +44,7 @@ defaultproperties
          StartSpinRange=(X=(Max=1.000000))
          SizeScale(0)=(RelativeSize=0.500000)
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=2.000000)
-         StartSizeRange=(X=(Min=3.000000,Max=4.000000),Y=(Min=3.000000,Max=4.000000),Z=(Min=3.000000,Max=4.000000))
+         StartSizeRange=(X=(Min=4.000000,Max=3.000000),Y=(Min=4.000000,Max=3.000000),Z=(Min=4.000000,Max=3.000000))
          DrawStyle=PTDS_AlphaBlend
          Texture=Texture'BallisticEffects.Particles.Smoke6'
          SecondsBeforeInactive=0.000000
@@ -72,11 +72,10 @@ defaultproperties
          ColorScale(2)=(RelativeTime=1.000000,Color=(B=32,G=64,R=128))
          FadeOutStartTime=0.080000
          CoordinateSystem=PTCS_Relative
-		 Opacity=0.5
          MaxParticles=1
          SizeScale(1)=(RelativeTime=0.170000,RelativeSize=0.800000)
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.500000)
-         StartSizeRange=(X=(Min=0.400000,Max=0.400000),Y=(Min=0.350000,Max=0.350000),Z=(Min=0.350000,Max=0.350000))
+         StartSizeRange=(X=(Min=0.400000,Max=0.400000),Y=(Min=0.300000,Max=0.300000),Z=(Min=0.300000,Max=0.300000))
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.500000,Max=0.500000)
          SpawnOnTriggerRange=(Min=1.000000,Max=1.000000)
@@ -95,7 +94,7 @@ defaultproperties
          ColorScale(0)=(Color=(B=255,G=255,R=255))
          ColorScale(1)=(RelativeTime=0.142857,Color=(B=64,G=192,R=255,A=255))
          ColorScale(2)=(RelativeTime=1.000000,Color=(B=64,G=128,R=192))
-         Opacity=0.50000
+         Opacity=0.720000
          FadeOutStartTime=0.200000
          FadeInEndTime=0.032000
          CoordinateSystem=PTCS_Relative
@@ -121,7 +120,6 @@ defaultproperties
          ColorScale(0)=(Color=(B=255,G=255,R=255,A=255))
          ColorScale(1)=(RelativeTime=0.207143,Color=(B=128,G=192,R=255,A=255))
          ColorScale(2)=(RelativeTime=1.000000,Color=(B=32,G=96,R=255,A=255))
-		 Opacity=0.5
          FadeOutStartTime=0.150500
          FadeInEndTime=0.021000
          CoordinateSystem=PTCS_Relative
@@ -136,4 +134,5 @@ defaultproperties
      End Object
      Emitters(3)=SpriteEmitter'BallisticProV55.MRS138FlashEmitter.SpriteEmitter0'
 
+     bSelected=True
 }

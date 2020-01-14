@@ -870,7 +870,7 @@ defaultproperties
      bSpawnUniqueItems=True
      bPickupsChange=True
      bRandomDefaultWeapons=True
-     CamUpdateRate="1"
+     CamUpdateRate="0"
      CamRateOptions(0)="No Update"
      CamRateOptions(1)="Slow 2 FPS"
      CamRateOptions(2)="Medium 5 FPS"

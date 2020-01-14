@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MRS138PrimaryFire extends BallisticProShotgunFire;
 
@@ -51,6 +53,7 @@ defaultproperties
      CutOffStartRange=1024.000000
      TraceCount=10
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
+     TracerChance=1.000000
      ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=7000.000000,Max=7000.000000)
      MaxWalls=1
@@ -61,34 +64,29 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTMRS138Shotgun'
      DamageTypeHead=Class'BallisticProV55.DTMRS138ShotgunHead'
      DamageTypeArm=Class'BallisticProV55.DTMRS138Shotgun'
-     KickForce=4000
-     PenetrateForce=120
-     bPenetrate=True
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False 					
      MuzzleFlashClass=Class'BallisticProV55.MRS138FlashEmitter'
+     FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
-     BrassOffset=(X=45.000000,Y=-20.000000,Z=35.000000)
+     BrassOffset=(X=34.000000,Y=-7.500000,Z=13.000000)
      RecoilPerShot=1280.000000
      FireChaos=0.400000
      XInaccuracy=250.000000
      YInaccuracy=250.000000
-     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Fire',Volume=1.500000)
+     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Fire',Volume=2.000000)
      FireAnim="FireCombined"
      FireEndAnim=
      FireRate=0.430000
      AmmoClass=Class'BallisticProV55.Ammo_MRS138Shells'
      ShakeRotMag=(X=128.000000,Y=64.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=2.000000
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=2.000000
-	 
-	 // AI
-	 bInstantHit=True
-	 bLeadTarget=False
-	 bTossed=False
-	 bSplashDamage=False
-	 bRecommendSplashDamage=False
+     ShakeOffsetTime=0.000000
 	 BotRefireRate=0.7
      WarnTargetPct=0.5
+     aimerror=750.000000
 }

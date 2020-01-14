@@ -10,12 +10,12 @@ class SK410Attachment extends BallisticShotgunAttachment;
 
 defaultproperties
 {
-     FireClass=Class'BWBPRecolorsPro.SK410PrimaryFire'													  
+     FireClass=Class'BWBPRecolorsPro.SK410PrimaryFire'
      MuzzleFlashClass=Class'BWBPRecolorsPro.SK410HeatEmitter'
      FlashMode=MU_Primary 	 
      FlashScale=1.200000
      LightMode=MU_Primary		 
-     ImpactManager=Class'BallisticProV55.IM_Shell'	 
+     ImpactManager=Class'BallisticProV55.IM_Shell'
      BrassClass=Class'BWBPRecolorsPro.Brass_SK410shotgun'
      BrassMode=MU_Primary 
      InstantMode=MU_Primary

@@ -49,11 +49,11 @@ defaultproperties
 {
      FireClass=Class'BWBPRecolorsPro.SKASPrimaryFire'													 
      MuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
-     AltMuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'	 
+     AltMuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
      FlashMode=MU_Primary 	 
      FlashScale=2.000000
      LightMode=MU_Primary		 
-     ImpactManager=Class'BallisticProV55.IM_Shell'	 
+     ImpactManager=Class'BallisticProV55.IM_Shell'
      BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
      BrassMode=MU_Primary
      InstantMode=MU_Primary

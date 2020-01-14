@@ -26,7 +26,7 @@ defaultproperties
      DamageTypeArm=Class'BWBPRecolorsPro.DT_SKASShotgun'
      KickForce=0
      PenetrateForce=0
-     bPenetrate=False										   					
+     bPenetrate=False
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
      FlashScaleFactor=1.150000
@@ -48,7 +48,7 @@ defaultproperties
 	 ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-30.000000)
      ShakeOffsetRate=(X=-1000.000000)
-	 ShakeOffsetTime=0.000000						 
+	 ShakeOffsetTime=0.000000
      BotRefireRate=0.800000
      WarnTargetPct=0.400000
      aimerror=750.000000

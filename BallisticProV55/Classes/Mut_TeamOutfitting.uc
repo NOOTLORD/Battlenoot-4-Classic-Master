@@ -733,6 +733,7 @@ defaultproperties
      LoadOut(4)="BallisticProV55.NRP57Grenade"
      Killstreaks(0)="BallisticProV55.RX22AFlamer"
      Killstreaks(1)="BallisticProV55.MRocketLauncher"
+     bAllowKillstreaks=False	 
      RedLoadoutGroup0(0)="BallisticProV55.X3Knife"
      RedLoadoutGroup0(1)="BallisticProV55.A909SkrithBlades"
      RedLoadoutGroup0(2)="BallisticProV55.EKS43Katana"

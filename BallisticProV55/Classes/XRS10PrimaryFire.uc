@@ -135,7 +135,7 @@ simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNor
 defaultproperties
 {
      SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     SFlashBone="Muzzle2"
+     SFlashBone="tip2"
      SFlashScaleFactor=1.150000
      CutOffDistance=1024.000000
      CutOffStartRange=512.000000
@@ -151,12 +151,12 @@ defaultproperties
      DamageTypeHead=Class'BallisticProV55.DTXRS10SMGHead'
      DamageTypeArm=Class'BallisticProV55.DTXRS10SMG'
      PenetrateForce=0
-     bPenetrate=False				   					
+     bPenetrate=False
      ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-2',Volume=1.000000,Radius=48.000000,bAtten=True)
      DryFireSound=(Volume=1.500000)
      bDryUncock=True
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashBone="Muzzle"
+     FlashBone="tip"
      FlashScaleFactor=0.450000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassOffset=(X=-36.000000,Y=1.500000,Z=-0.500000)
@@ -172,7 +172,7 @@ defaultproperties
      AmmoClass=Class'BallisticProV55.Ammo_XRS10Clip'
      ShakeRotMag=(X=64.000000,Y=32.000000)
      ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=-3.000000)
      ShakeOffsetRate=(X=-1000.000000)
      ShakeOffsetTime=0.000000	 

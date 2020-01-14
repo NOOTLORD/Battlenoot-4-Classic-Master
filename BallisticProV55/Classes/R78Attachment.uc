@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class R78Attachment extends BallisticAttachment;
 
@@ -28,77 +30,24 @@ simulated function Vector GetTipLocation()
     return C.Origin;
 }
 
-// Does all the effects for an instant-hit kind of fire.
-// On the client, this uses mHitLocation to find all the other info needed.
-simulated function InstantFireEffects(byte Mode)
-{
-	local Vector HitLocation, Dir, Start;
-	local Material HitMat;
-	
-	if (InstantMode == MU_None || (InstantMode == MU_Secondary && Mode == 0) || (InstantMode == MU_Primary && Mode != 0))
-		return;
-	if (mHitLocation == vect(0,0,0))
-		return;
-	if (Instigator == none)
-		return;
-	SpawnTracer(Mode, mHitLocation);
-	FlyByEffects(Mode, mHitLocation);
-	// Client, trace for hitnormal, hitmaterial and hitactor
-	if (Level.NetMode == NM_Client)
-	{
-		mHitActor = None;
-		Start = Instigator.Location + Instigator.EyePosition();
-
-		if (WallPenetrates != 0)				{
-			WallPenetrates = 0;
-			DoWallPenetrate(Start, mHitLocation);	}
-
-		Dir = Normal(mHitLocation - Start);
-		mHitActor = Trace (HitLocation, mHitNormal, mHitLocation + Dir * 10, mHitLocation - Dir * 10, true,, HitMat); // CYLO needs to trace actors to find Pawns 
-		// Check for water and spawn splash
-		if (ImpactManager!= None && bDoWaterSplash)
-			DoWaterTrace(Start, mHitLocation);
-
-		if (mHitActor == None)
-		{
-			log("No HitActor");
-			return;
-		}
-		// Set the hit surface type
-		if (Vehicle(mHitActor) != None)
-			mHitSurf = 3;
-		else if (HitMat == None)
-			mHitSurf = int(mHitActor.SurfaceType);
-		else
-			mHitSurf = int(HitMat.SurfaceType);
-	}
-	// Server has all the info already...
- 	else
-		HitLocation = mHitLocation;
-
-	if (level.NetMode != NM_Client && ImpactManager!= None && WaterHitLocation != vect(0,0,0) && bDoWaterSplash && Level.DetailMode >= DM_High && class'BallisticMod'.default.EffectsDetailMode > 0)
-		ImpactManager.static.StartSpawn(WaterHitLocation, Normal((Instigator.Location + Instigator.EyePosition()) - WaterHitLocation), 9, Instigator);
-	if (mHitActor == None)
-		return;
-	if (!mHitActor.bWorldGeometry && Mover(mHitActor) == None && mHitActor.bProjTarget)
-	{
-		Spawn (class'IE_IncBulletMetal', ,, HitLocation,);
-		return;
-	}
-	if (ImpactManager != None)
-		ImpactManager.static.StartSpawn(HitLocation, mHitNormal, mHitSurf, instigator);
-}
-
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
-     ImpactManager=Class'IM_IncendiaryHMGBullet'
+     FlashMode=MU_Primary  
+     FlashScale=0.900000
+     LightMode=MU_Primary		 
+     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Rifle'
+     BrassMode=MU_Primary	 
+     InstantMode=MU_Primary
+     TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
-     TracerChance=0.000000
+	 TracerMode=MU_Primary
+     TracerChance=1.000000						  
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Both
-     FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+     WaterTracerMode=MU_Primary
+     FlyBySound=(Sound=Sound'PackageSounds4Pro.X82.X83-FlyBy',Volume=1.500000)
+     FlyByMode=MU_Primary	 
      ReloadAnim="Reload_AR"
      CockingAnim="Cock_RearPull"
      CockAnimRate=1.400000

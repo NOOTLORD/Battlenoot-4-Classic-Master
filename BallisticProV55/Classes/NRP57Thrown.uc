@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class NRP57Thrown extends BallisticProPineapple;
 
@@ -48,7 +50,7 @@ defaultproperties
 {
      DampenFactor=0.400000
      DampenFactorParallel=0.600000
-     DetonateDelay=1.500000
+     DetonateDelay=3.000000
      ImpactDamage=15
      ImpactDamageType=Class'BallisticProV55.DTNRP57Grenade'
      ImpactManager=Class'BallisticProV55.IM_NRP57Grenade'
@@ -58,7 +60,11 @@ defaultproperties
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=512.000000
      MotionBlurRadius=512.000000
-     bCoverPenetrator=True
+	 bCoverPenetrator=False
+     MotionBlurFactor=0.000000
+     MotionBlurTime=0.000000
+     ShakeRotTime=0.000000
+     ShakeOffsetTime=0.000000
      Speed=1400.000000
      MaxSpeed=1500.000000
      Damage=225.000000
@@ -66,4 +72,9 @@ defaultproperties
      MyDamageType=Class'BallisticProV55.DTNRP57Grenade'
      ImpactSound=SoundGroup'BallisticSounds2.NRP57.NRP57-Concrete'
      StaticMesh=StaticMesh'BallisticHardware2.NRP57.Pineapple'
+     AmbientGlow=40
+     bUnlit=False
+     CollisionRadius=0.000000
+     CollisionHeight=0.000000
+     bUseCylinderCollision=True
 }
