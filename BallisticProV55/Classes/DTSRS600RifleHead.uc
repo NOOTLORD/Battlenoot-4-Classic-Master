@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTSRS600RifleHead extends DT_BWBullet;
 
@@ -36,6 +38,9 @@ defaultproperties
      DeathStrings(4)="%k sunk a round into %o's tangled bush of hair."
      bHeaddie=True
      DamageIdent="Assault"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.SRS600Rifle'
      DeathString="%k assasinated %o's head with %kh SRS-600."
      FemaleSuicide="%o saw a bullet coming up the barrel of her SRS-600."
@@ -44,6 +49,9 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
+     FlashScale=0.300000
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
+     VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 
 }

@@ -18,7 +18,7 @@ defaultproperties
 	 RangeAtten=0.6
 	 TraceRange=(Min=15000.000000,Max=15000.000000)
      WaterRangeFactor=0.800000
-     MaxWallSize=96.000000
+     MaxWallSize=24.000000
      MaxWalls=1
      Damage=50.000000
      DamageHead=100.000000

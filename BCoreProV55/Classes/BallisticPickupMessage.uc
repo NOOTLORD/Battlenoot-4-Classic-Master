@@ -5,4 +5,5 @@ defaultproperties
 {
      StackMode=SM_Down
      PosY=0.730000
+     FontSize=-2	 
 }

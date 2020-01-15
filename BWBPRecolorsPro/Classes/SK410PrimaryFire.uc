@@ -68,6 +68,7 @@ defaultproperties
      ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=4000.000000,Max=6000.000000)
      MaxWalls=1
+     MaxWallSize=24.000000 
      Damage=14.000000
      DamageHead=14.000000
      DamageLimb=14.000000

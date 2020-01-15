@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M925Attachment extends BallisticAttachment;
 
@@ -59,9 +61,8 @@ simulated function FlashMuzzleFlash(byte Mode)
 		}
 		
 		AltMuzzleFlash.Trigger(self, Instigator);
-		if (bRandomFlashRoll)	SetBoneRotation(AltFlashBone, R, 0, 1.f);
-		
-	}
+		if (bRandomFlashRoll)	SetBoneRotation(AltFlashBone, R, 0, 1.f);		
+	}	
 	else if (Mode == 0 && MuzzleFlashClass != None)
 	{
 		if (MuzzleFlash == None)

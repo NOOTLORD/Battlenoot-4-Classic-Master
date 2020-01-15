@@ -8,43 +8,6 @@
 //=============================================================================
 class M763Shotgun extends BallisticProShotgun;
 
-var M763GasControl GC;
-var bool bAltLoaded;
-
-var Name SingleLoadAnim;
-
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerLoadShell;
-}
-
-function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
-{
-	if (MeleeState >= MS_Held)
-		Momentum *= 0.5;
-	
-	super.AdjustPlayerDamage( Damage, InstigatedBy, HitLocation, Momentum, DamageType);
-}
-
-// Add extra Ballistic info to the debug readout
-simulated function DisplayDebug(Canvas Canvas, out float YL, out float YPos)
-{
-	super.DisplayDebug(Canvas, YL, YPos);
-
-    Canvas.SetDrawColor(255,128,0);
-    Canvas.DrawText("bNeedCock: "$bNeedCock$", bAltLoaded: "$bAltLoaded);
-    YPos += YL;
-    Canvas.SetPos(4,YPos);
-}
-
-simulated function PostBeginPlay()
-{
-	Super.PostBeginPlay();
-	
-	GC = Spawn(class'M763GasControl', self);
-}
-
 simulated function BringUp(optional Weapon PrevWeapon)
 {
 	Super.BringUp(PrevWeapon);
@@ -59,18 +22,7 @@ simulated function Notify_CockStart()
 }
 
 simulated event AnimEnded (int Channel, name anim, float frame, float rate) 
-{
-	if (MeleeFireMode != None && anim == MeleeFireMode.FireAnim)
-	{
-		if (MeleeState == MS_StrikePending)
-			MeleeState = MS_Pending;
-		else MeleeState = MS_None;
-		ReloadState = RS_None;
-		if (Role == ROLE_Authority)
-			bServerReloading=False;
-		bPreventReload=false;
-	}
-	
+{	
 	//Phase out Channel 1 if a sight fire animation has just ended.
 	if (anim == BFireMode[0].AimedFireAnim || anim == BFireMode[1].AimedFireAnim)
 	{
@@ -114,6 +66,7 @@ simulated event AnimEnded (int Channel, name anim, float frame, float rate)
 		PlayShovelLoop();
 		return;
 	}
+	
 	// End of reloading, either cock the gun or go to idle
 	else if (ReloadState == RS_EndShovel)
 	{
@@ -129,19 +82,13 @@ simulated event AnimEnded (int Channel, name anim, float frame, float rate)
 		}
 		return;
 	}
+	
 	//Cock anim ended, goto idle
 	else if (ReloadState == RS_Cocking)
 	{
 		bNeedCock=false;
 		ReloadState = RS_None;
-		ReloadFinished();
-		
-		if (Anim == SingleLoadAnim)
-			bAltLoaded = True;
-		
-		else
-			bAltLoaded=False;
-		
+		ReloadFinished();		
 		PlayIdle();
 		ReAim(0.05);
 	}
@@ -155,14 +102,21 @@ simulated event AnimEnded (int Channel, name anim, float frame, float rate)
 	}
 }
 
-simulated function float RateSelf()
+simulated function PlayCocking(optional byte Type)
 {
-	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
-		CurrentRating = Super.RateSelf() * 0.2;
+	if (Type == 2 && HasAnim(CockAnimPostReload))
+		SafePlayAnim(CockAnimPostReload, CockAnimRate, 0.2, , "RELOAD");
 	else
-		return Super.RateSelf();
-	return CurrentRating;
+		SafePlayAnim(CockAnim, CockAnimRate, 0.2, , "RELOAD");
 }
+
+// Animation notify for when cocking action starts. Used to time sounds
+simulated function Notify_CockAimed()
+{
+	bNeedCock = False;
+	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
+}
+
 
 // Fire pressed. Change weapon if out of ammo, reload if empty mag or skip reloading if possible
 simulated function FirePressed(float F)
@@ -180,67 +134,28 @@ simulated function FirePressed(float F)
 	
 	if (F == 0)
 	{
-		if (reloadState == RS_None && (bNeedCock || bAltLoaded) && MagAmmo > 0 && !IsFiring() && level.TimeSeconds > FireMode[0].NextfireTime)
+		if (reloadState == RS_None && (bNeedCock) && MagAmmo > 0 && !IsFiring() && level.TimeSeconds > FireMode[0].NextfireTime)
 		{
 			CommonCockGun();
 			if (Level.NetMode == NM_Client)
 				ServerCockGun();
 		}
 	}
-		
-	else if(ReloadState == RS_None && !bAltLoaded && HasNonMagAmmo(1) && !IsFiring() && Level.TimeSeconds > FireMode[1].NextFireTime)
-	{
-		CommonLoadShell();
-		if (Level.NetMode == NM_Client)
-			ServerLoadShell();
-	}
 }
 
-simulated function CommonLoadShell()
+simulated function float RateSelf()
 {
-	if (Role == ROLE_Authority)
-		bServerReloading=true;
-	ReloadState = RS_Cocking;
-	if (CurrentWeaponMode==0)
-		PlayAnim(SingleLoadAnim,1.6, 0.0);
-}
-
-function ServerLoadShell()
-{
-	CommonLoadShell();
+	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
+		CurrentRating = Super.RateSelf() * 0.2;
+	else
+		return Super.RateSelf();
+	return CurrentRating;
 }
 
 // AI Interface =====
+
 // choose between regular or alt-fire
-function byte BestMode()
-{
-	local Bot B;
-	local float Dist;
-	local Vector Dir;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return 0;
-
-	Dir = Instigator.Location - B.Enemy.Location;
-	Dist = VSize(Dir);
-
-	if (Dist > 250)
-		return 0;
-	if (Dist < FireMode[1].MaxRange() && FRand() > 0.3)
-		return 1;
-	if (vector(B.Enemy.Rotation) dot Normal(Dir) < 0.0 && (VSize(B.Enemy.Velocity) < 100 || Normal(B.Enemy.Velocity) dot Normal(Instigator.Velocity) < 0.5))
-		return 1;
-	return Rand(2);
-}
-
-function GiveTo(Pawn Other, optional Pickup Pickup)
-{
-	Super.GiveTo(Other, Pickup);
-	
-	if (GC != None)
-		GC.Instigator = Other;
-}
+function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
 {
@@ -278,31 +193,10 @@ function float SuggestDefenseStyle()
 
 // End AI Stuff =====
 
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2 && HasAnim(CockAnimPostReload))
-		SafePlayAnim(CockAnimPostReload, CockAnimRate, 0.2, , "RELOAD");
-	else
-		SafePlayAnim(CockAnim, CockAnimRate, 0.2, , "RELOAD");
-}
-
-// Animation notify for when cocking action starts. Used to time sounds
-simulated function Notify_CockAimed()
-{
-	bNeedCock = False;
-	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
-}
-
-simulated function Destroyed()
-{
-	if (GC.Clouds.Length == 0)
-		GC.Destroy();
-	Super.Destroyed();
-}
+// End AI Stuff =====
 
 defaultproperties
 {
-     SingleLoadAnim="LoadSingle"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M763'
      BigIconCoords=(Y1=35,Y2=230)
@@ -315,13 +209,14 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
 	 PutDownAnimRate=1.5
-	 PutDownTime=0.35
+	 PutDownTime=0.35					 				  
      MagAmmo=7
      CockAnimRate=1.700000
-     CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock1')
+     CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock1',Volume=0.400000)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.100000
-     ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1')
+     ClipOutSound=(Volume=0.750000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1',Volume=0.750000)
      ClipInFrame=0.375000
      bCockOnEmpty=True
      bCanSkipReload=True
@@ -336,13 +231,16 @@ defaultproperties
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
+     bNoCrosshairInScope=True
      SightPivot=(Pitch=32)
      SightOffset=(X=5.000000,Z=11.500000)
      SightDisplayFOV=40.000000
      SightingTime=0.300000
      GunLength=48.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
+     AimAdjustTime=100.000000
      AimSpread=0
+     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.750000
      ChaosSpeedThreshold=850.000000
      ChaosAimSpread=0
@@ -354,12 +252,15 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.800000
      FireModeClass(0)=Class'BallisticProV55.M763PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.M763SecondaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.750000
      CurrentRating=0.750000
+     bCanThrow=False
+     AmmoClass(0)=BallisticProV55.Ammo_M763Shell'
      Description="The Avenger single barreled shotgun is the standard spread weapon of the UTC infantry divisions. Its high damage, reliability and good range for a shotgun have made this gun one of the humans' favourites; the M763 has blown open more Krao drones than can be counted. After its many successes, even during trials by the UTC's Reunited Jamaican Army, defending from wave upon wave of Krao minions during the 'Red Storm' Skrith invasion, the Avenger became the standard issue shotgun and a favorite of many forces including the UTC RJA Division."
      Priority=37
      HudColor=(B=255,R=200)
+     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=2
@@ -376,4 +277,5 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticProAnims.M763_FP'
      DrawScale=0.500000
+     AmbientGlow=0
 }

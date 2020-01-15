@@ -1,4 +1,15 @@
-class M46AttachmentQS extends M46Attachment;
+//=============================================================================
+// M46Attachment.
+//
+// 3rd person weapon attachment for M46QS Assault Rifle
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
+//=============================================================================
+class M46AttachmentQS extends BallisticAttachment;
+
+var() vector		ScopedTracerOffset;
 
 simulated function PlayPawnFiring(byte Mode)
 {
@@ -42,5 +53,29 @@ simulated function Vector GetTipLocation()
 
 defaultproperties
 {
-     bHeavy=True
+     ScopedTracerOffset=(Y=-14.000000,Z=-2.000000)
+     MuzzleFlashClass=Class'BallisticProV55.M46FlashEmitter'
+     FlashMode=MU_Primary 
+     FlashScale=1.000000	 
+     LightMode=MU_Primary	 
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
+     BrassClass=Class'BallisticProV55.Brass_M46AR'
+     BrassMode=MU_Primary
+     InstantMode=MU_Primary
+     TrackAnimMode=MU_None
+     TracerClass=Class'BallisticProV55.TraceEmitter_Default'
+     TracerMode=MU_Primary
+     TracerChance=0.500000	 
+     WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
+     WaterTracerMode=MU_Primary	 
+     FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
+     FlyByMode=MU_Primary
+     ReloadAnim="Reload_AR"
+     CockingAnim="Cock_RearPull"
+     ReloadAnimRate=1.400000
+     CockAnimRate=1.050000
+     bRapidFire=True
+	 bHeavy=True
+     Mesh=SkeletalMesh'BallisticAnims_25.OA-AR_3rd'
+     DrawScale=0.275000
 }

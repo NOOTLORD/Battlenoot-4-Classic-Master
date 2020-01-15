@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTRS8PistolHead extends DT_BWBullet;
 
@@ -35,6 +37,9 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="Pistol"
+     AimDisplacementDamageThreshold=0.000000
+     AimDisplacementDuration=0.000000
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.RS8Pistol'
      DeathString="%k shut down %o's head with %kh RS8."
      FemaleSuicide="%o silenced herself."
@@ -43,5 +48,7 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
+     FlashScale=0.300000
      VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

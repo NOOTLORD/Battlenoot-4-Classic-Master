@@ -142,7 +142,7 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
-     ImpactManager=Class'BallisticProV55.IM_BigBullet'
+     ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_Magnum'
      BrassBone="MagnumWhole"
      TracerMode=MU_Both

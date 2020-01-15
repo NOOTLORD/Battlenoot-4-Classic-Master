@@ -708,6 +708,13 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 
 defaultproperties
 {
+     LoadOut(0)="BallisticProV55.X3Knife"
+     LoadOut(1)="BallisticProV55.M806Pistol"
+     LoadOut(2)="BallisticProV55.M763Shotgun"
+     LoadOut(3)="BallisticProV55.M50AssaultRifle"
+     LoadOut(4)="BallisticProV55.NRP57Grenade"
+     Killstreaks(0)="BallisticProV55.RX22AFlamer"
+     Killstreaks(1)="BallisticProV55.MRocketLauncher"													 
      bAllowKillstreaks=False
      bHideLockers=True
      FriendlyName="BallisticPro: Loadout"

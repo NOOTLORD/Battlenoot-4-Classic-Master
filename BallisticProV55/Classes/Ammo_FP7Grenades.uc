@@ -1,16 +1,17 @@
 //=============================================================================
-// M50CameraBase.
+// Ammo_FP7Grenades.
+//
+// Ammo for the FP7
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //=============================================================================
-class M50CameraBase extends Actor;
+class Ammo_FP7Grenades extends BallisticAmmo;
 
 defaultproperties
 {
-     DrawType=DT_StaticMesh
-     StaticMesh=StaticMesh'BallisticHardware2.M50.M50CameraBase'
-     RemoteRole=ROLE_SimulatedProxy
-     CollisionRadius=10.000000
-     CollisionHeight=10.000000
+     bNoPackResupply=True
+     MaxAmmo=1
+     InitialAmount=1
+     ItemName="FP7 Grenade Ammo"
 }
