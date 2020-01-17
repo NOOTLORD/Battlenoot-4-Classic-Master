@@ -34,11 +34,9 @@ defaultproperties
      DeathStrings(0)="%k furiously machinegunned %o's head off."
      DeathStrings(1)="%o bit the bullet from %k's M353."
      DeathStrings(2)="%o's head was destroyed by %k's M353."
-     HipString="HIP SPAM"
      bHeaddie=True
      DamageIdent="Machinegun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M353Machinegun'
      DeathString="%k furiously machinegunned %o's head off."

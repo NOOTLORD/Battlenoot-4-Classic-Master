@@ -23,10 +23,12 @@ defaultproperties
      FireForce="AssaultRifleAltFire"
      FireRate=0.850000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_MGLDrum'
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000
-     ShakeOffsetMag=(X=-20.000000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPRecolorsPro.MGLGrenadeTimed'
 	 BotRefireRate=0.5
      WarnTargetPct=0.75

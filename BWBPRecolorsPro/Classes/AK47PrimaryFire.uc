@@ -24,6 +24,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_AK47Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_AK47AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_AK47Assault'
+     KickForce=0
      PenetrateForce=0
      bPenetrate=False
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
@@ -42,12 +43,12 @@ defaultproperties
      FireEndAnim=
      FireRate=0.115000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_AK470Clip'
-     ShakeRotMag=(X=128.000000,Y=64.000000)
-     ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000
-     ShakeOffsetMag=(X=-30.000000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      WarnTargetPct=0.200000
      aimerror=750.000000
 }

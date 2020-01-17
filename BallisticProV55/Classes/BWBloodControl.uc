@@ -69,15 +69,8 @@ simulated function Initialize(class<DamageType> DT)
 simulated function class<BallisticBloodSet> GetBloodSet(Pawn Victim)
 {
 	return class'BWBloodSetHunter'.static.GetBloodSetFor(Victim);
-
-/*	if (xPawn(Victim)!=None && class<xAlienGibGroup>(xPawn(Victim).GibGroupClass) != None)
-		return class'BloodSetGreen';
-	else if (xPawn(Victim)!=None && class<xBotGibGroup>(xPawn(Victim).GibGroupClass) != None)
-		return class'BloodSetPurple';
-	else
-		return class'BloodSetDefault';
-*/
 }
+
 simulated function Timer()
 {
 	if (Owner != None && xPawn(Owner) != None)
@@ -170,9 +163,9 @@ defaultproperties
      LowImpactVelocity=500.000000
      HighImpactVelocity=1000.000000
      MaxPoolVelocity=50.000000
-     bUseBloodDrags=True
+     bUseBloodDrags=False
      bUseBloodImpacts=True
-     bUseBloodPools=True
+     bUseBloodPools=False
      bHidden=True
      bNetTemporary=True
      bAlwaysRelevant=True

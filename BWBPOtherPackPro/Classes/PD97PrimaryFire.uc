@@ -53,12 +53,14 @@ defaultproperties
      PreFireAnim=
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"
-     FireRate=0.400000
+     FireRate=0.400000	 
      AmmoClass=Class'BWBPOtherPackPro.Ammo_PD97Drum'
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000
-     ShakeOffsetMag=(X=-20.000000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPOtherPackPro.PD97Dart'
      BotRefireRate=0.700000
      WarnTargetPct=0.300000

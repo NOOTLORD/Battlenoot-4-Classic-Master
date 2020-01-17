@@ -38,8 +38,7 @@ defaultproperties
      DeathStrings(4)="%k sunk a round into %o's tangled bush of hair."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.SRS600Rifle'
      DeathString="%k assasinated %o's head with %kh SRS-600."

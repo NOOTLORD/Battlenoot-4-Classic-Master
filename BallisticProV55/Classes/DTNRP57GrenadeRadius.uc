@@ -16,8 +16,7 @@ defaultproperties
      DeathStrings(1)="%k's pineapple crawled it's way into %o's path."
      DeathStrings(2)="%o couldn't get enough of %k's pineapple delight."
      DamageIdent="Grenade"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.NRP57Grenade'
      DeathString="%o discovered one of %k's lurking pineapples."

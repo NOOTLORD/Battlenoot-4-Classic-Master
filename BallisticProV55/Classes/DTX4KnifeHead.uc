@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(1)="%o lost %vh ears and eyes to %k's X4 blade."
      DeathStrings(2)="%k jammed %kh X4 in %o's skull and wriggled it around a bit."
      bHeaddie=True
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False 
      DeathString="%k's X4 separated %o from %vh head."
      FemaleSuicide="%o attempted brain surgery on herself with an X4."

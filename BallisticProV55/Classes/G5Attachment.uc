@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class G5Attachment extends BallisticAttachment;
 
@@ -130,11 +132,14 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.G5FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.G5BackFlashEmitter'
+     FlashMode=MU_Primary 
+     FlashScale=1.000000		 
+     LightMode=MU_Primary	
+     AltFlashBone="tip2"	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     AltFlashBone="tip2"
-     FlashScale=1.200000
      BrassMode=MU_None
      InstantMode=MU_None
+     TrackAnimMode=MU_None	 
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.Bazooka-3rd'
      DrawScale=0.230000

@@ -16,8 +16,7 @@ defaultproperties
      DeathStrings(1)="%o was drilled by %k's M50."
      DeathStrings(2)="%k purified %o with M50 rounds."
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M50AssaultRifle'
      DeathString="%k eliminated %o with the M50."

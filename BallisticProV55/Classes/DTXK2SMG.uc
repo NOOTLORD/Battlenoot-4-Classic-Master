@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(2)="%k silenced %o with XK2 rounds."
      EffectChance=0.500000
      DamageIdent="SMG"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XK2SubMachinegun'
      DeathString="%o was put out by %k's XK2."

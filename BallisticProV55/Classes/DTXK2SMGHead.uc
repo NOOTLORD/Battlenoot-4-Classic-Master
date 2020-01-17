@@ -36,8 +36,7 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="SMG"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XK2SubMachinegun'
      DeathString="%o was stung in the head by %k's XK2."

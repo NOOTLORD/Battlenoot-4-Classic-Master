@@ -37,8 +37,7 @@ defaultproperties
      DeathStrings(2)="%o got %vh head blown clean off by %k's M46 assault rifle."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M46AssaultRifleQS'
      DeathString="%o's head was ripped of by %k's Jackal rifle."

@@ -35,11 +35,9 @@ defaultproperties
      DeathStrings(1)="%k put a 50 cal through %o's idiotic face."
      DeathStrings(2)="%o's head was completely ruined by %k's speeding M925 rounds."
      DeathStrings(3)="%o's head was sanctified by %k's M925."
-     HipString="HIP SPAM"
      bHeaddie=True
      DamageIdent="Machinegun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M925Machinegun'
      DeathString="%k's M925 turned %o's head into mist."

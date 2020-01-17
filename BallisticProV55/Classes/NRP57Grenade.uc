@@ -100,7 +100,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.NRP57Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_NRP57'
      IconCoords=(X2=127,Y2=31)
-     ItemName="NRP-57 'Pineapple"
+     ItemName="NRP-57 Grenade"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'
      DrawScale=0.400000
      AmbientGlow=0

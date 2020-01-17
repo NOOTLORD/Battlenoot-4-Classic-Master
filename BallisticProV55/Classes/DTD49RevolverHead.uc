@@ -39,8 +39,7 @@ defaultproperties
      DeathStrings(5)="%o fumbled for %vh gun before %k blew %vh head off."
      bHeaddie=True
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.D49Revolver'
      DeathString="%k took %o's head out with a shot from %kh D49."

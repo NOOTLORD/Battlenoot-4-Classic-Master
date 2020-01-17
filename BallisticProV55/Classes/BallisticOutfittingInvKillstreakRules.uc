@@ -48,6 +48,6 @@ function ScoreKill(Controller Killer, Controller Killed)
 
 defaultproperties
 {
-     InvSpreeThresholds(0)=150
-     InvSpreeThresholds(1)=350
+     InvSpreeThresholds(0)=0
+     InvSpreeThresholds(1)=0
 }

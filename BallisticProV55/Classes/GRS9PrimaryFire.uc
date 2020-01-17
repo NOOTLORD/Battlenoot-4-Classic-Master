@@ -45,6 +45,7 @@ defaultproperties
      DamageTypeHead=Class'BallisticProV55.DTGRS9PistolHead'
      DamageTypeArm=Class'BallisticProV55.DTGRS9Pistol'
      DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.500000)
+     KickForce=0
      PenetrateForce=0
      bPenetrate=False					
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
@@ -61,12 +62,12 @@ defaultproperties
      FireAnimRate=1.500000
      FireRate=0.180000
      AmmoClass=Class'BallisticProV55.Ammo_GRS9Clip'
-     ShakeRotMag=(X=64.000000,Y=32.000000)
-     ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=0.000000						  
-     ShakeOffsetMag=(X=-5.000000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000							 
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000						 
 	 BotRefireRate=0.99
      WarnTargetPct=0.2
      aimerror=750.000000

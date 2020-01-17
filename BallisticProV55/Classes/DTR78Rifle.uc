@@ -21,8 +21,7 @@ defaultproperties
      AimedString="Scoped"
      bSnipingDamage=True
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.R78Rifle'
      DeathString="%o was silenced by %k's R78."

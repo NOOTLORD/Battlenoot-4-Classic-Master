@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(2)="%o got %vh head ventilated by %k's MRS-138."
      bHeaddie=True
      DamageIdent="Shotgun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.MRS138Shotgun'
      DeathString="%k tore off %o's head with a tenner from %kh shotgun."

@@ -13,8 +13,7 @@ defaultproperties
      EffectChance=0.500000
      BloodManagerName="BallisticProV55.BloodMan_ShotgunShell"
      DamageDescription=",Shell,"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      FlashScale=0.300000
      VehicleDamageScaling=0.000000

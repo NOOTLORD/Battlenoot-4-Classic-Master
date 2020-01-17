@@ -152,7 +152,7 @@ defaultproperties
      bNoTrailWhenStill=True
      DrawType=DT_StaticMesh
      Physics=PHYS_Falling
-     LifeSpan=16.000000
+     LifeSpan=6.000000
      AmbientGlow=32
      bUnlit=False
      TransientSoundVolume=0.170000

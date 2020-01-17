@@ -36,6 +36,8 @@
 // Replicated DoubleJumpsLeft in order to stop strange behaviour online
 // Configurable Walking and Crouching speed.
 // Set Movement Anims for "Walking" to "Running" ones.
+//
+// Modified by (NL)NOOTLORD					   
 //=============================================================================
 class BallisticPawn extends xPawn;
 
@@ -2577,7 +2579,8 @@ defaultproperties
      Fades(14)=Texture'BallisticProTextures.Icons.stealth_120'
      Fades(15)=Texture'BallisticProTextures.Icons.stealth_128'
      UDamageSound=Sound'BallisticSounds3.Udamage.UDamageFire'
-     FootstepVolume=0.400000
+	 GruntVolume=0.150000
+     FootstepVolume=0.300000
      DeResTime=4.000000
      RagdollLifeSpan=20.000000
      RagDeathUpKick=0.000000
@@ -2588,7 +2591,9 @@ defaultproperties
      LadderSpeed=280.000000
      WalkingPct=0.900000
      CrouchedPct=0.350000
-     HeadRadius=13.000000
+	 SuperHealthMax=100.000000		
+	 HeadHeight=0.000000
+     HeadRadius=0.000000
      TransientSoundVolume=0.100000
      Begin Object Class=KarmaParamsSkel Name=PawnKParams
          KConvulseSpacing=(Max=2.200000)

@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(1)="%k passed a few MD24 rounds into %o's stomach."
      DeathStrings(2)="%o got %vs greased by %k's MD24 pistol."
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.MD24Pistol'
      DeathString="%o was stuffed like a turkey by %k's MD24."

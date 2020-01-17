@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(2)="%k blasted %o down as %ve tried to scamper away in fear."
      DeathStrings(3)="%o was disassembled by %k's MRS-138 barrage."
      DamageIdent="Shotgun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.MRS138Shotgun'
      DeathString="%k fired a tenner into %o with the MRS-138."

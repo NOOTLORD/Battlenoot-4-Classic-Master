@@ -17,10 +17,8 @@ defaultproperties
      DeathStrings(2)="%k blasted %o into a corner with %kh M925."
      DeathStrings(3)="%k's M925 judged %o unworthy."
      DeathStrings(4)="%o was crucified by %k's .50 machinegun."
-     HipString="HIP SPAM"
      DamageIdent="Machinegun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M925Machinegun'
      DeathString="%k made a holy man of %o with M925 rounds."

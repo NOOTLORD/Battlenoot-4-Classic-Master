@@ -42,8 +42,7 @@ defaultproperties
      DamageDescription=",Bullet,"
      bOnlySeverLimbs=True
      bSeverPreventsBlood=True
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      bInstantHit=True
      bRagdollBullet=True

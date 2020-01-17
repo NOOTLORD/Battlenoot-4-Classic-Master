@@ -19,8 +19,7 @@ defaultproperties
      DeathStrings(4)="%k banged a round through %o with %kh R9."
      DeathStrings(5)="%k stapled %o with %kh R9."
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.R9RangerRifle'
      DeathString="%k exorcised %o with R9 rounds."

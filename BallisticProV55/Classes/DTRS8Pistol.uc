@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(2)="%k snapped a few RS8 rounds into %o."
      EffectChance=0.500000
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.RS8Pistol'
      DeathString="%o was suppressed by %k's 10mm RS8."

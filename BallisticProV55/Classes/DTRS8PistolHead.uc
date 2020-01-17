@@ -37,8 +37,7 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.RS8Pistol'
      DeathString="%k shut down %o's head with %kh RS8."

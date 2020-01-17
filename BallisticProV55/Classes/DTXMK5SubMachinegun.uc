@@ -18,8 +18,7 @@ defaultproperties
      DeathStrings(2)="%k shovelled XMk5 rounds into %o."
      DeathStrings(3)="%k's XMk5 turned %o into a leaky piece of meat."
      DamageIdent="SMG"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XMK5SubMachinegun'
      DeathString="%k sprayed %o with XMk5 rounds."

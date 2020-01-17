@@ -18,8 +18,7 @@ defaultproperties
      DeathStrings(2)="%o got shredded by %k's M46 Jackal."
      DeathStrings(3)="%k pumped lead into %o with %kh M46."
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M46AssaultRifleQS'
      DeathString="%o was brutally gunned down by %k's rabid M46 assault rifle."

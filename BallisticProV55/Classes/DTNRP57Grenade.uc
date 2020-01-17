@@ -16,8 +16,7 @@ defaultproperties
      BloodManagerName="BallisticProV55.BloodMan_BluntSmall"
      bDetonatesBombs=False
      DamageIdent="Grenade"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      DamageDescription=",Blunt,Hazard,"
      WeaponClass=Class'BallisticProV55.NRP57Grenade'

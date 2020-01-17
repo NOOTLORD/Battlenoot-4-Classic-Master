@@ -74,6 +74,6 @@ static function DoBloodHit(Pawn Victim, name Bone, vector HitLoc, vector HitRay,
 
 defaultproperties
 {
-     DripperThreshold=8.000000
-     DripperChance=0.800000
+     DripperThreshold=0.000000
+     DripperChance=0.000000
 }

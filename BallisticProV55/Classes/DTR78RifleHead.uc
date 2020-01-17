@@ -42,8 +42,7 @@ defaultproperties
      bSnipingDamage=True
      bHeaddie=True
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.R78Rifle'
      DeathString="%o's head was removed from the scene by %k's R78."

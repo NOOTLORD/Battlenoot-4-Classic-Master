@@ -19,8 +19,7 @@ defaultproperties
      DeathStrings(4)="%k's Fifty-9 sprayed %o down in style."
      EffectChance=0.500000
      DamageIdent="SMG"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.Fifty9MachinePistol'
      DeathString="%k went Fifty9 on %o."

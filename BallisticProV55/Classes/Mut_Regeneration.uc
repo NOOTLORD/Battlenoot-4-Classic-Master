@@ -47,9 +47,6 @@ event PostBeginPlay()
 	Super.PostBeginPlay();
 
 	SetTimer(RegenRate, true);
-
-	if(!bDeleteMe)
-		Level.Game.AddGameModifier(Spawn(class'Rules_Regen'));
 }
 
 defaultproperties
@@ -60,7 +57,7 @@ defaultproperties
      HealthCap=100
      HealthBonus=0
      HealthBonusCap=100
-     VehiclesRegen=True
+     VehiclesRegen=False
      FriendlyName="BallisticPro: Regeneration"
      Description="Periodically restores health to injured players and vehicles, and awards bonus player health for kills...||http://www.runestorm.com"
 }

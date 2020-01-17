@@ -204,11 +204,11 @@ defaultproperties
      FireEndAnim=
      FireRate=0.170000
      AmmoClass=Class'BallisticProV55.Ammo_SRS600Clip'
-     ShakeRotMag=(X=128.000000,Y=64.000000)
-     ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-	 ShakeRotTime=0.000000
-     ShakeOffsetMag=(X=-30.000000)
-     ShakeOffsetRate=(X=-1000.000000)
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      WarnTargetPct=0.200000
      aimerror=750.000000

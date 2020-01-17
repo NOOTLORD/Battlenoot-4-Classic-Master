@@ -7,6 +7,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class G5Bazooka extends BallisticWeapon;
 
@@ -501,41 +503,6 @@ simulated function bool HasAmmo()
 	return false;	//This weapon is empty
 }
 
-// AI Interface =====
-function byte BestMode()	{	return 0;	}
-
-function float GetAIRating()
-{
-	local Bot B;
-	local float Dist, Rating;
-
-	B = Bot(Instigator.Controller);
-	
-	if ( (B == None) || (B.Enemy == None) )
-		return Super.GetAIRating();
-		
-	// anti-vehicle specialist
-	if (Vehicle(B.Enemy) != None)
-		return 1.2;
-		
-	Rating = Super.GetAIRating();
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-	
-	if (Dist < 1024) // danger close
-		return 0.4;
-	
-	// projectile
-	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 3072, 4096); 
-}
-
-// tells bot whether to charge or back off while using this weapon
-function float SuggestAttackStyle()	{	return -0.5;	}
-
-// tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return -0.9;	}
-// End AI Stuff =====
-
 exec simulated function WeaponSpecial(optional byte i)
 {
 	bScopeHeld=true;
@@ -755,6 +722,44 @@ simulated function Notify_G5HideRocket ()
 		SetBoneScale (0, 0.0, 'Rocket');
 }
 
+// AI Interface =====
+
+// choose between regular or alt-fire
+function byte BestMode()	{	return 0;	}
+
+function float GetAIRating()
+{
+	local Bot B;
+	local float Dist, Rating;
+	
+	B = Bot(Instigator.Controller);
+	
+	if ( (B == None) || (B.Enemy == None) )
+		return Super.GetAIRating();
+		
+// anti-vehicle specialist
+    if (Vehicle(B.Enemy) != None)
+		return 1.2;
+
+	Rating = Super.GetAIRating();
+
+	Dist = VSize(B.Enemy.Location - Instigator.Location);
+
+	if (Dist < 1024) // danger close
+		return 0.4;
+
+	// projectile
+	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 3072, 4096); 
+}
+
+// tells bot whether to charge or back off while using this weapon
+function float SuggestAttackStyle()	{	return -0.5;	}
+
+// tells bot whether to charge or back off while defending against this weapon
+function float SuggestDefenseStyle()	{	return -0.9;	}
+
+// End AI Stuff =====
+
 defaultproperties
 {
      HatchSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=0.700000,Pitch=1.000000)
@@ -771,7 +776,7 @@ defaultproperties
      bWT_Splash=True
      bWT_Projectile=True
      bWT_Super=True
-	 InventorySize=24
+	 InventorySize=24				  
      ManualLines(0)="Fires a rocket. These rockets have an arming delay and will ricochet off surfaces when unarmed.|In Rocket mode, the rocket flies directly to the point of aim.|In Mortar mode, the rocket will fly upwards and then strike downwards upon the point of aim.|When scoped and in Mortar mode, targets focused directly upon by the weapon's scope may be highlighted in red; when this happens, the next Mortar shot will track the target until line of sight is broken. The target is notified of the lockon when the rocket is fired."
      ManualLines(1)="Toggles the guidance laser. With the guidance laser active, rockets will fly towards the point indicated by the laser at any given time."
      ManualLines(2)="When firing a mortar rocket. the Weapon Function key will cause the player to view through the rocket's nose camera.|As a bazooka, the G5 has no recoil. With the laser in use, its hipfire is stable, however it will always be lowered when the player jumps. The weapon is effective at medium to long range and with height advantage."
@@ -780,11 +785,11 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.G5.G5-Putaway')
      MagAmmo=2
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever')
+     CockSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=0.750000)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'BallisticSounds2.G5.G5-Load')
-     ClipInSound=(Sound=Sound'BallisticSounds2.G5.G5-LoadHatch')
+     ClipOutSound=(Sound=Sound'BallisticSounds2.G5.G5-Load',Volume=0.750000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.G5.G5-LoadHatch',Volume=0.750000)
      bCanSkipReload=True
      bShovelLoad=True
      StartShovelAnim="StartReload"
@@ -792,7 +797,7 @@ defaultproperties
      EndShovelAnim="FinishReload"
      EndShovelAnimRate=1.250000
      WeaponModes(0)=(ModeName="Rocket")
-     WeaponModes(1)=(ModeName="Mortar",ModeID="WM_SemiAuto")
+     WeaponModes(1)=(ModeName="Mortar",bUnavailable=True,ModeID="WM_SemiAuto")
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      ZoomType=ZT_Smooth
@@ -809,8 +814,9 @@ defaultproperties
      SightingTime=0.500000
      SprintOffSet=(Pitch=-6000,Yaw=-8000)
      JumpOffSet=(Pitch=-6000,Yaw=-1500)
-     AimAdjustTime=1.000000
+     AimAdjustTime=100.000000
      AimSpread=512
+     AimDamageThreshold=0.000000
      ChaosSpeedThreshold=1000.000000
      ChaosAimSpread=2560
      RecoilYawFactor=0.000000
@@ -824,14 +830,16 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.800000
      CurrentRating=0.800000
+     bCanThrow=False
+     AmmoClass(0)=Class'BallisticProV55.Ammo_G5Rocket'
      Description="Based on the original design by the legendary maniac Pirate, Var Dehidra, the G5 has undergone many alterations to become what it is today. The original bandit version was constructed by Var Dehidra to blast open armored cash transportation vehicles. Its name is derived from one of Dehidra's favourite targets, the G5 CTV 4x. It is now a very deadly weapon, used to destroy everything from tanks and structures to Skrith hordes and aircraft. The bombardement attack is a recent addition, replacing the original, primitive heat seeking function that caused it to target CTVs or backfire on the pirates' own craft, provided mainly for use in outdoor environments to destroy all manner of moving targets. The latest model also features a laser-painter device, allowing the user to guide the rocket wherever they wish."
      Priority=44
      HudColor=(B=25,G=150,R=50)
      CenteredOffsetY=10.000000
      CenteredRoll=0
+     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=8
-     PickupClass=Class'BallisticProV55.G5Pickup'
      PlayerViewOffset=(X=10.000000,Y=10.500000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_G5'
@@ -845,4 +853,5 @@ defaultproperties
      LightRadius=12.000000
      Mesh=SkeletalMesh'BallisticAnims2.G5Bazooka'
      DrawScale=0.300000
+     AmbientGlow=0
 }

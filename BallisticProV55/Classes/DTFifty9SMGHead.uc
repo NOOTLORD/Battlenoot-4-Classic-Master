@@ -38,8 +38,7 @@ defaultproperties
      EffectChance=0.500000
      bHeaddie=True
      DamageIdent="SMG"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.Fifty9MachinePistol'
      DeathString="%k Fifty-9ed %o's head."

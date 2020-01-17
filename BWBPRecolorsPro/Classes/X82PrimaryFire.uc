@@ -36,12 +36,12 @@ defaultproperties
      FireEndAnim=
      FireRate=0.900000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_X82Clip'
-     ShakeRotMag=(X=450.000000,Y=64.000000)
-     ShakeRotRate=(X=12400.000000,Y=12400.000000,Z=12400.000000)
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000
-     ShakeOffsetMag=(X=-5.500000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      BotRefireRate=0.300000
      WarnTargetPct=0.700000
      aimerror=750.000000

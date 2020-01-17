@@ -63,4 +63,5 @@ defaultproperties
      Emitters(2)=SpriteEmitter'BallisticProV55.D49SightLEDs.SpriteEmitter2'
 
      bHidden=True
+     bSelected=True
 }

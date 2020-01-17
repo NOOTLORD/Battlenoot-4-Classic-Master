@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class G5PrimaryFire extends BallisticProProjectileFire;
 
@@ -123,28 +125,25 @@ defaultproperties
      SpawnOffset=(X=10.000000,Y=10.000000,Z=-3.000000)
      bCockAfterFire=True
      MuzzleFlashClass=Class'BallisticProV55.G5FlashEmitter'
+     FlashScaleFactor=0.600000
      RecoilPerShot=64.000000
      FireChaos=0.500000
      XInaccuracy=4.000000
      YInaccuracy=4.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.G5.G5-Fire1')
+     BallisticFireSound=(Sound=Sound'BallisticSounds3.G5.G5-Fire1',Volume=1.050000)
+     bSplashDamage=True
+     bRecommendSplashDamage=True
      FireEndAnim=
      FireRate=0.800000
-     AmmoClass=Class'BallisticProV55.Ammo_RPG'
-     ShakeRotMag=(X=128.000000,Y=64.000000,Z=16.000000)
-     ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=2.500000
-     ShakeOffsetMag=(X=-20.000000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=2.500000
+     AmmoClass=Class'BallisticProV55.Ammo_G5Rocket'
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BallisticProV55.G5Rocket'
-	 
-	 // AI
-	 bInstantHit=False
-	 bLeadTarget=True
-	 bTossed=False
-	 bSplashDamage=True
-	 bRecommendSplashDamage=True
 	 BotRefireRate=0.5
      WarnTargetPct=0.8
+     aimerror=750.000000
 }

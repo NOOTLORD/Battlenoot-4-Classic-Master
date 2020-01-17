@@ -37,8 +37,7 @@ defaultproperties
      DeathStrings(2)="%k eventually split %o's thick skull with %kh SMG."
      bHeaddie=True
      DamageIdent="SMG"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.XMK5SubMachinegun'
      DeathString="%o had %vh head hollowed out by %k's XMk5."

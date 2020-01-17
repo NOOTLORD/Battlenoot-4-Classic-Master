@@ -29,8 +29,10 @@ defaultproperties
      Damage=90.000000
      DamageType=Class'BallisticProV55.DTX4Knife'
      DamageTypeHead=Class'BallisticProV55.DTX4KnifeHead'
-     DamageTypeArm=Class'BallisticProV55.DTX4KnifeLimb'
-     KickForce=100
+     DamageTypeArm=Class'BallisticProV55.DTX4Knife'
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False
      HookStopFactor=1.700000
      HookPullForce=100.000000
      bReleaseFireOnDie=False
@@ -41,9 +43,12 @@ defaultproperties
      FireAnim="Melee"
      AmmoClass=Class'BallisticProV55.Ammo_X4Knife'
      AmmoPerFire=0
-     ShakeRotMag=(X=64.000000,Y=128.000000)
-     ShakeRotRate=(X=2500.000000,Y=2500.000000,Z=2500.000000)
-     ShakeRotTime=2.500000
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      BotRefireRate=0.500000
      WarnTargetPct=0.50000
 }

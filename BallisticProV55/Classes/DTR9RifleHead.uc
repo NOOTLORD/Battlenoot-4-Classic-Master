@@ -38,8 +38,7 @@ defaultproperties
      DeathStrings(4)="%o's head received a round from %k's R9."
      bHeaddie=True
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.R9RangerRifle'
      DeathString="%k shot %o's head out of the way with %kh R9."

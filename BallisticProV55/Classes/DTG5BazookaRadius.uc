@@ -24,8 +24,7 @@ defaultproperties
      MaleSuicides(2)="%o blew himself into a chunky haze with the G5."
      AimedString="Scoped"
      DamageIdent="Ordnance"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.G5Bazooka'
      DeathString="%o almost escaped %k's G5 rocket."

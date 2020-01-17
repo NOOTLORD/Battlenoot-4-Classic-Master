@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(2)="%o was vindicated by %k's GRS-9."
      DeathStrings(3)="%k intimidated %o to pieces with %kh GRS-9."
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.GRS9Pistol'
      DeathString="%k prosecuted %o with %kh GRS-9."

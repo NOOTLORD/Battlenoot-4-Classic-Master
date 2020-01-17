@@ -23,6 +23,8 @@ defaultproperties
      bLocationalHit=False
      bCausesBlood=False
      bNeverSevers=True
+     bDisplaceAim=False
+     bUseMotionBlur=False	 
      GibPerterbation=0.500000
      KDamageImpulse=1000.000000
      VehicleDamageScaling=0.000000

@@ -178,6 +178,8 @@ defaultproperties
      SightDisplayFOV=40.000000
      GunLength=72.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
+     AimAdjustTime=100.000000
+     AimDamageThreshold=0.000000	 
      AimSpread=32
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=9000.000000

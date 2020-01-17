@@ -12,8 +12,7 @@ defaultproperties
      HipString="Luck"
      AimedString="Scoped"
      DamageIdent="Ordnance"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.G5Bazooka'
      DeathString="%o was knocked into next week by %k's unarmed G5."

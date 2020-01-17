@@ -37,8 +37,7 @@ defaultproperties
      DeathStrings(2)="%k's MD24 round cleared away %o's cranium."
      bHeaddie=True
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.MD24Pistol'
      DeathString="%o's head was whisked away by %k's MD24 round."

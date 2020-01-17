@@ -36,8 +36,7 @@ defaultproperties
      DeathStrings(2)="%k annihilated %o's head with the M50."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M50AssaultRifle'
      DeathString="%o's head was brutally gunned off by %k with the M50."

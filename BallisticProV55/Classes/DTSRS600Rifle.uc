@@ -20,8 +20,7 @@ defaultproperties
      DeathStrings(5)="%o got %vs pacified by %k's SRS-600."
      DeathStrings(6)="%k stopped %o's whimpering with SRS-600 rounds."
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.SRS600Rifle'
      DeathString="%k assassinated %o with %kh SRS-600."

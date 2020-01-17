@@ -42,8 +42,7 @@ defaultproperties
 {
      bDetonatesBombs=False
      DamageIdent="Grenade"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      DeathString="%o tried to cheese %k with a mined teleporter, and ate the damage %vs."
      FemaleSuicide="%o tried to cheese by mining a teleporter."

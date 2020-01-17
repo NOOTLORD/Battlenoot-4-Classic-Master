@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class G5Rocket extends BallisticProjectile;
 
@@ -135,10 +137,14 @@ defaultproperties
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=378.000000
      MotionBlurRadius=512.000000
-     bCoverPenetrator=True
+	 bCoverPenetrator=False
+     MotionBlurFactor=0.000000
+     MotionBlurTime=0.000000
      ShakeRotMag=(X=512.000000,Y=400.000000)
      ShakeRotRate=(X=3000.000000,Z=3000.000000)
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=20.000000,Y=30.000000,Z=30.000000)
+     ShakeOffsetTime=0.000000
      Speed=2000.000000
      MaxSpeed=25000.000000
      Damage=150.000000
@@ -157,10 +163,12 @@ defaultproperties
      bUpdateSimulatedPosition=True
      AmbientSound=Sound'BallisticSounds2.G5.G5-RocketFly'
      DrawScale=0.500000
+     AmbientGlow=60
+     bUnlit=False
      SoundVolume=192
      SoundRadius=128.000000
      CollisionRadius=4.000000
-     CollisionHeight=4.000000
+     CollisionHeight=4.000000							 							 
      bUseCollisionStaticMesh=True
      bFixedRotationDir=True
      RotationRate=(Roll=32768)

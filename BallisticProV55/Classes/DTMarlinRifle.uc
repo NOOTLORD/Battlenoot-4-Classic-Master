@@ -21,8 +21,7 @@ defaultproperties
      DeathStrings(6)="%k shot %o like a little deer."
      bSnipingDamage=True
      DamageIdent="Sniper"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.MarlinRifle'
      DeathString="%o was hounded by %k's Marlin Rifle."

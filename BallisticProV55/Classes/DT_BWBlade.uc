@@ -23,8 +23,7 @@ defaultproperties
      ShieldDamage=50
      bIgnoredOnLifts=True
      bMetallic=True
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      DamageDescription=",Slash,"
      bInstantHit=True

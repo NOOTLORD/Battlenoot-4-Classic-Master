@@ -116,9 +116,9 @@ event NotifyLevelChange()
 
 defaultproperties
 {
-     bShowSplash=True
+     bShowSplash=False
      SplashPic=Texture'BallisticTextures_25.ui.SplashScreenNew'
      VersionText="BallisticPro"
      FixText="http://www.ldg-gaming.eu/"
-     bVisible=True
+     bVisible=False
 }

@@ -18,8 +18,7 @@ defaultproperties
      MaleSuicides(0)="%o forgot where he left one of his mortar rockets."
      AimedString="Scoped"
      DamageIdent="Ordnance"
-	 AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False 
      WeaponClass=Class'BallisticProV55.G5Bazooka'
      DeathString="%o was bombarded by %k's G5."

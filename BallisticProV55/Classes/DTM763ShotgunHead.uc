@@ -18,6 +18,8 @@ defaultproperties
      DeathStrings(3)="%k's Avenger blast purged %o's face from the battlefield."
      bHeaddie=True
      DamageIdent="Shotgun"
+     bDisplaceAim=False
+     bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.M763Shotgun'
      DeathString="%k uncorked %o with the M763."
      FemaleSuicide="%o nailed herself with the M763."

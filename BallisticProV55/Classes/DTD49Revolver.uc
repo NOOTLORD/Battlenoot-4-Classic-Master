@@ -19,8 +19,7 @@ defaultproperties
      DeathStrings(4)="%k blasted %o to death with his monster magnum."
      DeathStrings(5)="%o was shot to the dirt by %k's magnum."
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      WeaponClass=Class'BallisticProV55.D49Revolver'
      DeathString="%k dropped %o with %kh six shooter."

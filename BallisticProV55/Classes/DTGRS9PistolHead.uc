@@ -37,8 +37,7 @@ defaultproperties
      DeathStrings(3)="%k litigated %o's head off."
      bHeaddie=True
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.GRS9Pistol'
      DeathString="%k litigated %o's head off."

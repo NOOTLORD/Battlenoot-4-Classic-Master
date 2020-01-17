@@ -17,8 +17,7 @@ defaultproperties
      DeathStrings(2)="%k launched %kh G5 rocket into %o's face."
      AimedString="Scoped"
      DamageIdent="Ordnance"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.G5Bazooka'
      DeathString="%o was blown to pieces by %k's G5."

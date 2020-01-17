@@ -18,8 +18,7 @@ defaultproperties
      DeathStrings(2)="%k jammed %kh X4 knife into %o's staggering body."
      DeathStrings(3)="%o was stabbed to death by %k's X4."
      DamageIdent="Melee"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False
      DamageDescription=",Slash,Stab,"
      WeaponClass=Class'BallisticProV55.X4Knife'
