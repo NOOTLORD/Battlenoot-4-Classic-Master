@@ -159,7 +159,7 @@ defaultproperties
      PutDownTime=0.400000
      BringUpTime=0.500000
      SelectForce="SwitchToAssaultRifle"
-     bShowChargingBar=True
+     bShowChargingBar=False
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_FiftyClip'
      Description="Krome Firepower is a reletively new arms company, with the aim of producing guns with 'style'. The Fifty-9 is one such weapon. Taking an original small arm, and replacing certain parts, adding new attachments, custom paint jobs, etc. Krome weapons are designed for civilian purposes, self defense, bounty hunters, enthusiasts, and collectors. This particular model comes with attached Krome blades, to add some extra flair to the weapon."
@@ -167,7 +167,7 @@ defaultproperties
      HudColor=(B=255,G=125,R=75)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=2
      PlayerViewOffset=(X=14.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.Fifty9Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_Fifty9'

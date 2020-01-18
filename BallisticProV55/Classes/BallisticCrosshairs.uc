@@ -17,4 +17,4 @@ defaultproperties
      Crosshairs(4)=(FriendlyName="Cross2",Image=Texture'BallisticUI2.Crosshairs.Cross2',USize=128,VSize=128)
      Crosshairs(5)=(FriendlyName="Cross3",Image=Texture'BallisticUI2.Crosshairs.Cross3',USize=128,VSize=128)
      Crosshairs(6)=(FriendlyName="Cross4",Image=Texture'BallisticUI2.Crosshairs.Cross4',USize=256,VSize=256)
-
+     Crosshairs(7)=(FriendlyName="Dot4",Image=Texture'BallisticUI2.Crosshairs.Dot1',USize=256,VSize=256)

@@ -164,8 +164,8 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.MRS138Shotgun'
      DrawScale=0.400000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Shader'BWAddPack-RS-Skins.MRS138.MRS138Shiney'
-     Skins(2)=Shader'BWAddPack-RS-Skins.MRS138.MRS138HeatShiney'
+     Skins(1)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Skin'
+     Skins(2)=Texture'BWAddPack-RS-Skins.MRS138.MRS138HeatShield'
      Skins(3)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Shell'
      AmbientGlow=0
 }

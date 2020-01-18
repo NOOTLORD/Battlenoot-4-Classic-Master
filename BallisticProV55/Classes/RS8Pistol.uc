@@ -323,6 +323,6 @@ defaultproperties
      Mesh=SkeletalMesh'BWBP1-Anims.RS8'
      DrawScale=0.300000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Shader'BWAddPack-RS-Skins.RS8.RS8-Shiney'
+     Skins(1)=Texture'BWAddPack-RS-Skins.RS8.RS8Skin'
      AmbientGlow=0
 }

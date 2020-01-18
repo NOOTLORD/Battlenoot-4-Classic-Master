@@ -11,6 +11,15 @@
 //=============================================================================
 class M925PrimaryFire extends BallisticRangeAttenFire;
 
+simulated function ModeDoFire()
+{
+    if (!AllowFire())
+        return;
+
+	BallisticMachinegun(Weapon).SetBeltVisibility(BallisticMachinegun(Weapon).MagAmmo);
+	Super.ModeDoFire();
+}
+
 defaultproperties
 {
 	 CutOffStartRange=3072

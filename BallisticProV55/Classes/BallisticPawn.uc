@@ -2544,7 +2544,7 @@ simulated function DisplayDebug(Canvas Canvas, out float YL, out float YPos)
 
 defaultproperties
 {
-     DoubleJumpsLeft=3
+     DoubleJumpsLeft=0
      MoverLeaveGrace=1.000000
      MinDragDistance=40.000000
      MaxPoolVelocity=20.000000

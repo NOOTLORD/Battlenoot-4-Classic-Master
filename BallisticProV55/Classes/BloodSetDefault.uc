@@ -12,6 +12,9 @@ defaultproperties
 {
      MyBloodName="default-red"
      MyBloodColor=(R=255)
+     WaterBloodClass=Class'BallisticProV55.IE_WaterBlood' 
+     LowImpactDecal=Class'BallisticProV55.AD_BloodLowImpact'
+     HighImpactDecal=Class'BallisticProV55.AD_BloodHighImpact'	 
      BulletEffect=Class'BallisticProV55.BG_BulletHit'
      BulletHeadEffect=Class'BallisticProV55.BG_BulletHitHead'
      ShotgunEffect=Class'BallisticProV55.BG_ShellHit'
