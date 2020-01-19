@@ -72,22 +72,21 @@ defaultproperties
      BigIconCoords=(Y1=40,Y2=235)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     bWT_Splash=True
+     bWT_Machinegun=True	 
      ManualLines(0)="Automatic battle rifle fire. Moderate damage per shot with greater range and penetration than assault rifles. Recoil is moderate."
      ManualLines(1)="Deploys a mine. These mines can be detonated with the Weapon Function key shortly after being placed for severe damage. Mines can be picked up with the Use key."
      ManualLines(2)="Effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;25.0;0.9;70.0;0.9;0.2;0.7")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.325000)
      MagAmmo=25
      CockAnimPostReload="ReloadEndCock"
-     CockAnimRate=1.250000														  																															   						 															 							 															   										
-     bWT_Machinegun=False	 bWT_Projectile=False																																											   																					   						  
-     CockSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_Cock',Volume=1.100000)
+     CockAnimRate=1.250000	 																																									   																					   						  
+     CockSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_Cock',Volume=0.800000)
      ReloadAnimRate=1.250000						
-     ClipHitSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipHit',Volume=1.000000)
-     ClipOutSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipOut',Volume=1.000000)
-     ClipInSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipIn',Volume=1.000000)
+     ClipHitSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipHit',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipIn',Volume=0.800000)
      bCockOnEmpty=True
      ClipInFrame=0.700000		
      WeaponModes(0)=(bUnavailable=True)	 
@@ -97,9 +96,6 @@ defaultproperties
      ZoomInAnim=
      ZoomOutAnim=
      ScopeViewTex=None
-     ZoomInSound=(Sound=None,Volume=0.000000)
-     ZoomOutSound=(Sound=None,Volume=0.000000)
-     FullZoomFOV=80.000000
      bNoMeshInScope=False
      bNoCrosshairInScope=True							 
      SightPivot=(Pitch=-300,Roll=0)

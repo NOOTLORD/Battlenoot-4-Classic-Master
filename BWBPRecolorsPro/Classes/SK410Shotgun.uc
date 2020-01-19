@@ -154,14 +154,14 @@ defaultproperties
      ManualLines(0)="Fires shotgun blasts with wide spread. These blasts inflict heavy damage and knock the enemy back."
      ManualLines(1)="Fires a single slug with an arming delay. Whilst unarmed, it will reflect from struck walls or surfaces. Deals good impact damage and minor radius damage."
      ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Effective at close to medium range depending upon active mode."
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.325000)
      MagAmmo=8
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-Cock',Volume=0.750000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagOut',Volume=0.750000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagIn',Volume=0.750000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagOut',Volume=1.000000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagIn',Volume=1.000000)
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
      CurrentWeaponMode=0

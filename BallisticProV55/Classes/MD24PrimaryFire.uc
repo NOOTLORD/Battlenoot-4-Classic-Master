@@ -47,7 +47,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTMD24Pistol'
      DamageTypeHead=Class'BallisticProV55.DTMD24PistolHead'
      DamageTypeArm=Class'BallisticProV55.DTMD24Pistol'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.500000)
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.125000)
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -60,7 +60,7 @@ defaultproperties
      FireChaos=0.200000
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds_25.MD24.MD24_Fire',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds_25.MD24.MD24_Fire',Volume=1.800000,bNoOverride=True)
      FireEndAnim=
      FireAnimRate=1.600000
      FireRate=0.220000

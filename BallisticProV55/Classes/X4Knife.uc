@@ -61,8 +61,8 @@ defaultproperties
      ManualLines(1)="Prepared slash. Gains damage over hold time (maximum bonus reached after 1.5 seconds). Deals more damage from behind."
      ManualLines(2)="The user's movement speed improves with this weapon active."
      SpecialInfo(0)=(Info="180.0;6.0;-999.0;-1.0;-999.0;-999.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.Knife.KnifePullOut')
-     PutDownSound=(Sound=Sound'BallisticSounds2.Knife.KnifePutaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.Knife.KnifePullOut',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.Knife.KnifePutaway',Volume=0.325000)
      MagAmmo=1
      bNoMag=True
      GunLength=0.000000

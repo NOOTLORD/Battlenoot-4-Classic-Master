@@ -25,6 +25,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_SKASShotgun'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_SKASShotgunHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_SKASShotgun'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.750000) 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -38,7 +39,7 @@ defaultproperties
      FireChaos=0.300000
      XInaccuracy=310.000000
      YInaccuracy=310.000000
-     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-Single',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-Single',Volume=1.600000,bNoOverride=True)
      FireAnim="FireRot"
      FireEndAnim=
      FireAnimRate=1.500000

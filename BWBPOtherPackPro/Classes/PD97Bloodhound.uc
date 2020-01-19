@@ -262,15 +262,15 @@ defaultproperties
      ManualLines(1)="Launches a tazer. The user must hold down Altfire or the tazer will be retracted. Upon striking an enemy, transmits a current dealing paltry DPS but slowing the enemy movement."
      ManualLines(2)="Primarily a support weapon, the Bloodhound is most effective when used as part of a team. Nevertheless, sufficient dart hits can cause high damage. The Bloodhound has very low recoil."
      SpecialInfo(0)=(Info="120.0;15.0;0.8;50.0;0.0;0.5;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=5
      CockAnimRate=1.250000
 	 ReloadAnimRate=0.800000
-     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock')
-     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit')
-     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut')
-     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn')
+     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock',Volume=1.200000)
+     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit',Volume=1.200000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut',Volume=1.200000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(1)=(bUnavailable=True)

@@ -55,16 +55,15 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      SpecialInfo(0)=(Info="360.0;35.0;1.0;80.0;10.0;0.0;0.0")
-     BringUpSound=(Sound=Sound'BWBP4-Sounds.MRL.MRL-BigOn',Volume=0.200000)
-     PutDownSound=(Sound=Sound'BWBP4-Sounds.MRL.MRL-BigOff',Volume=0.200000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
      MagAmmo=5
      CockAnimPostReload="Cock"
      CockAnimRate=1.500000
-     CockSound=(Sound=Sound'PackageSounds4Pro.X82.X83-Charge',Volume=0.750000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Charge',Volume=0.850000)
      ReloadAnimRate=0.400000
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.X82.X83-In',Volume=0.750000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.X82.X83-Out',Volume=0.750000)
-     ClipInSound=(Volume=0.750000)
+     ClipHitSound=(Sound=Sound'PackageSounds4Pro.X82.X82-In',Volume=0.850000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Out',Volume=0.850000)
      ClipInFrame=0.850000
      bCockOnEmpty=True
      WeaponModes(1)=(bUnavailable=True)

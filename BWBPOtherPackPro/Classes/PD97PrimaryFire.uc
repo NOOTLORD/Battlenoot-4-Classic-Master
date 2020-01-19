@@ -44,12 +44,13 @@ function SpawnProjectile (Vector Start, Rotator Dir)
 defaultproperties
 {
      SpawnOffset=(X=15.000000,Y=15.000000,Z=-20.000000)
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=0.850000)	 
 	 MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.250000
      AimedFireAnim="SightFire"
      RecoilPerShot=256.000000
      FireChaos=0.150000
-     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=1.350000,bNoOverride=True))
      PreFireAnim=
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"

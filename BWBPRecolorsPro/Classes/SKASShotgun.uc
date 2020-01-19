@@ -86,14 +86,14 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
      bWT_Machinegun=True
-     BringUpSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-Select')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.325000)
      MagAmmo=12
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-CockLong',Volume=0.850000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-CockLong',Volume=1.100000)
      ReloadAnimRate=1.550000
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipOut1',Volume=0.850000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=0.850000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipOut1',Volume=1.100000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=1.100000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True) 

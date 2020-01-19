@@ -57,18 +57,17 @@ defaultproperties
      ManualLines(1)="Launches a stun dart. Upon impact with the enemy, deals damage over time and inflicts a blinding effect multiple times upon them."
      ManualLines(2)="Effective at close range."
      SpecialInfo(0)=(Info="180.0;15.0;0.7;60.0;0.1;0.4;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.700000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.700000)
      MagAmmo=32
 	 AIRating=0.8
 	 CurrentRating=0.8
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_Cock',Volume=0.700000)
+     CockSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_Cock',Volume=0.875000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Volume=0.775000)
-     ClipOutSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_ClipOut',Volume=0.775000)
-     ClipInSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_ClipIn',Volume=0.775000)
+     ClipOutSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_ClipOut',Volume=0.875000)
+     ClipInSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_ClipIn',Volume=0.875000)
      ClipInFrame=0.760000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
