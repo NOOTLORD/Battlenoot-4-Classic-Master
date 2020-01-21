@@ -82,11 +82,10 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTSARRifle'
      DamageTypeHead=Class'BallisticProV55.DTSARRifleHead'
      DamageTypeArm=Class'BallisticProV55.DTSARRifle'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.100000)	  
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-1',Volume=0.800000,Radius=48.000000,bAtten=True)
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.700000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.500000
@@ -99,7 +98,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.SAR.SAR-Fire',Volume=2.000000,Slot=SLOT_Interact,bNoOverride=False)
+     BallisticFireSound=(Sound=Sound'BallisticSounds3.SAR.SAR-Fire',Volume=1.650000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      bModeExclusive=False
      FireEndAnim=

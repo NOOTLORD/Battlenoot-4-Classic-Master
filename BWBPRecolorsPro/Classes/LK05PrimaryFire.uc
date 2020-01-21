@@ -254,10 +254,10 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_LK05Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_LK05AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_LK05Assault'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.750000)		 
      KickForce=0
      PenetrateForce=0
-     bPenetrate=False
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)	 
+     bPenetrate=False 
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
@@ -268,7 +268,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     SilencedFireSound=(Sound=Sound'PackageSounds4Pro.Misc.F2000-SilFire',Volume=1.500000)
+     SilencedFireSound=(Sound=Sound'PackageSounds4Pro.Misc.F2000-SilFire',Volume=0.500000,Radius=192.000000,bAtten=True)
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.LK05.LK05-RapidFire',Volume=0.975000)
      bPawnRapidFireAnim=True
      FireEndAnim=

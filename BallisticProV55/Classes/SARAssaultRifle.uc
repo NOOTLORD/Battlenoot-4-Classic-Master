@@ -143,16 +143,16 @@ defaultproperties
      ManualLines(1)="Engages the frontal flash device. Inflicts a medium-duration blind upon enemies. The effect is more potent the closer the foe is both to the point of aim and to the user."
      ManualLines(2)="The Weapon Function key engages or disengages the stock. By default, the stock is disengaged, granting the SAR-12 superior hipfire but more recoil than similar weapons. Extending the stock reduces the recoil and widens the hipfire.||Effective at close to medium range, depending upon specialisation."
      SpecialInfo(0)=(Info="240.0;25.0;0.8;90.0;0.0;1.0;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.325000)
      MagAmmo=40
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds3.SAR.SAR-Cock',Volume=0.625000)
+     CockSound=(Sound=Sound'BallisticSounds3.SAR.SAR-Cock',Volume=0.900000)
      ReloadAnimRate=1.100000
      ClipHitSound=(Volume=0.625000)
-     ClipOutSound=(Sound=Sound'BallisticSounds3.SAR.SAR-ClipOut',Volume=0.625000)
-     ClipInSound=(Sound=Sound'BallisticSounds3.SAR.SAR-ClipIn',Volume=0.625000)
+     ClipOutSound=(Sound=Sound'BallisticSounds3.SAR.SAR-ClipOut',Volume=0.900000)
+     ClipInSound=(Sound=Sound'BallisticSounds3.SAR.SAR-ClipIn',Volume=0.900000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)

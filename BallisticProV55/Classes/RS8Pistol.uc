@@ -264,15 +264,15 @@ defaultproperties
      ManualLines(1)="Attaches a suppressor, reducing the effective range but removing the flash and reducing the noise output."
      ManualLines(2)="Weapon Function toggles a laser sight, reducing the hipfire spread."
      SpecialInfo(0)=(Info="0.0;-5.0;-999.0;-1.0;0.0;-999.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=10
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Cock',Volume=0.600000)
+     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Cock',Volume=0.800000)
      ReloadAnimRate=1.250000
      ClipHitSound=(Volume=0.600000)
-     ClipOutSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-ClipOut',Volume=0.600000)
-     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-ClipIn',Volume=0.600000)
+     ClipOutSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-ClipOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(1)=(bUnavailable=True)

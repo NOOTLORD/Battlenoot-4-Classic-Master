@@ -129,15 +129,15 @@ defaultproperties
      ManualLines(1)="Projects a laser beam. Has extremely low DPS, but consistent damage over range and recharges over time."
      ManualLines(2)="The Weapon Function key causes a hitscan single-shot beam to be projected from the unit, dealing good damage. The GRS-9 is effective at close range."
      SpecialInfo(0)=(Info="120.0;8.0;-999.0;25.0;0.0;0.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=15
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-Cock',Volume=0.600000)
+     CockSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-Cock',Volume=0.700000)
      ReloadAnimRate=1.350000
-     ClipHitSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipHit',Volume=0.600000)
-     ClipOutSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipOut',Volume=0.600000)
-     ClipInSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipIn',Volume=0.600000)
+     ClipHitSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipHit',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)

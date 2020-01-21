@@ -193,20 +193,17 @@ defaultproperties
      ManualLines(1)="Attaches a suppressor. Reduces recoil and noise output, hides the flash, but reduces range."
      ManualLines(2)="Effective from the hip and at close range."
      SpecialInfo(0)=(Info="120.0;10.0;0.6;60.0;0.3;0.1;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000))
+     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000))
      MagAmmo=40
-     CockSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Cock',Volume=0.600000)
+     CockSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Cock',Volume=0.850000)
      ClipHitSound=(Volume=0.600000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.XK2.XK2-ClipOut',Volume=0.600000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.XK2.XK2-ClipIn',Volume=0.600000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.XK2.XK2-ClipOut',Volume=0.850000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.XK2.XK2-ClipIn',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(ModeName="Burst of Three",bUnavailable=True)
-     WeaponModes(2)=(ModeName="Burst of Six",bUnavailable=True,ModeID="WM_BigBurst",Value=6.000000)
-     WeaponModes(3)=(ModeName="Full Auto",ModeID="WM_FullAuto")
-     CurrentWeaponMode=3
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=256)
      SightOffset=(X=5.000000,Z=12.700000)

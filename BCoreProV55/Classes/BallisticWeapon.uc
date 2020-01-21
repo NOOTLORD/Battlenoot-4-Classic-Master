@@ -969,7 +969,10 @@ simulated function PlayShovelEnd()
 simulated function PlayShovelLoop()
 {
 	SafePlayAnim(ReloadAnim, ReloadAnimRate, 0.0, , "RELOAD");
+	if (BallisticAttachment(ThirdPersonActor) != None && BallisticAttachment(ThirdPersonActor).ReloadAnim != '')
+		Instigator.SetAnimAction('Shovel');
 }
+
 simulated function PlayCocking(optional byte Type)
 {
 	if (Type == 2 && HasAnim(CockAnimPostReload))
@@ -980,6 +983,7 @@ simulated function PlayCocking(optional byte Type)
 	if (SightingState != SS_None)
 		TemporaryScopeDown(Default.SightingTime*Default.SightingTimeScale);
 }
+
 // End Play funcs -----------------------------------
 
 simulated function ClientJamMode(byte Mode)

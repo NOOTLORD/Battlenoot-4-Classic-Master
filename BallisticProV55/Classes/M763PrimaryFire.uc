@@ -98,6 +98,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTM763Shotgun'
      DamageTypeHead=Class'BallisticProV55.DTM763ShotgunHead'
      DamageTypeArm=Class'BallisticProV55.DTM763Shotgun'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.7500000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False			   					 					
@@ -110,7 +111,7 @@ defaultproperties
      FireChaos=0.050000
      XInaccuracy=150.000000
      YInaccuracy=150.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.M763.M763Fire1',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.M763.M763Fire1',Volume=1.350000)
      FireAnim="FireCombined"
      FireEndAnim=
      FireAnimRate=1.100000

@@ -24,6 +24,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTR78Rifle'
      DamageTypeHead=Class'BallisticProV55.DTR78RifleHead'
      DamageTypeArm=Class'BallisticProV55.DTR78Rifle'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.900000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -36,7 +37,7 @@ defaultproperties
      BrassOffset=(X=-32.500000,Y=2.500000,Z=-3.500000)
      RecoilPerShot=1536.000000
      FireChaos=0.500000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.R78.R78-Fire',Volume=1.000000,Radius=256.000000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.R78.R78-Fire',Volume=1.650000)
      FireEndAnim=
      FireRate=1.000000
      AmmoClass=Class'BallisticProV55.Ammo_R78Clip'

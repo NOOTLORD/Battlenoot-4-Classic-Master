@@ -129,16 +129,16 @@ defaultproperties
      ManualLines(0)="Automatic 7.62mm fire. Higher sustained damage than other weapons in its class, but greater recoil and inferior hipfire ability."
      ManualLines(1)="Prepares a melee attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. If lacking a knife, becomes a blunt attack, dealing lower base damage but inflicting a short-duration blinding effect when striking. This attack inflicts more damage from behind."
      ManualLines(2)="The Weapon Function key manages the ballistic knife. If a knife is attached, it will be launched, dealing high damage. This attack is hip-accurate and has no recoil. If no knife is attached, one will be attached if available.||This weapon is effective at medium range."
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.325000)
      MagAmmo=25
      CockAnimPostReload="ReloadEndCock"
      CockingBringUpTime=1.300000
-     CockSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-Cock',Volume=0.650000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-Cock',Volume=0.900000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipHit',Volume=0.650000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipOut',Volume=0.650000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipIn',Volume=0.650000)
+     ClipHitSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipHit',Volume=0.900000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipOut',Volume=0.900000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipIn',Volume=0.900000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True,ModeID="WM_None")

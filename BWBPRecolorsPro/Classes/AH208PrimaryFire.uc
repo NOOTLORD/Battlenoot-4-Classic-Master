@@ -42,7 +42,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_AH208Pistol'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_AH208PistolHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_AH208Pistol'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.000000)
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.125000)
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -56,7 +56,7 @@ defaultproperties
      FireChaos=0.350000
      XInaccuracy=1.000000
      YInaccuracy=1.000000
-     BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.Eagle.Eagle-Fire4',Volume=2.000000)
+     BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.Eagle.Eagle-Fire4',Volume=1.800000)
      FireEndAnim=
      FireRate=0.600000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208Clip'

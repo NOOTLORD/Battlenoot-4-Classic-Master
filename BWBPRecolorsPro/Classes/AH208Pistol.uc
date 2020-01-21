@@ -160,13 +160,13 @@ defaultproperties
      ManualLines(0)="Powerful .44 fire. Massive damage, long range and excellent fire rate."
      ManualLines(1)="Prepares a bludgeoning attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. As a blunt attack, has lower base damage compared to bayonets but inflicts a short-duration blinding effect when striking. This attack inflicts more damage from behind."
      ManualLines(2)="Effective at all ranges."
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=7
-     CockSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-Cock',Volume=1.000000,Radius=32.000000)
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipHit',Volume=1.000000,Radius=32.000000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipOut',Volume=1.000000,Radius=32.000000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipIn',Volume=1.000000,Radius=32.000000)
+     CockSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-Cock',Volume=1.000000)
+     ClipHitSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipHit',Volume=1.000000)
+     ClipOutSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipOut',Volume=1.000000)
+     ClipInSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipIn',Volume=1.000000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic")

@@ -85,21 +85,19 @@ defaultproperties
      ManualLines(0)="Bolt-action sniper rifle fire. High damage, long range, slow fire rate and unusually quiet compared to other weapons in its class."
      ManualLines(1)="Engages the scope."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;60.0;10.0;0.0;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
 	 PutDownTime=0.5
      MagAmmo=7
      CockAnim="CockQuick"
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock',Volume=0.700000)
+     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipHit',Volume=0.700000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipOut',Volume=0.700000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipIn',Volume=0.700000)
+     ClipHitSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipHit',Volume=1.000000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipOut',Volume=1.000000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipIn',Volume=1.000000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic")
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333000

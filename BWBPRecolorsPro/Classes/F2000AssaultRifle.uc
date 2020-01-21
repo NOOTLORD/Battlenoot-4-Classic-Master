@@ -197,19 +197,19 @@ defaultproperties
      ManualLines(0)="Powerful 5.56mm fire. Has a fast fire rate and high sustained DPS, but excessive recoil."
      ManualLines(1)="Launches a cryogenic grenade. Upon impact, freezes nearby enemies, slowing their movement. The effect is proportional to their distance from the epicentre. This attack will also extinguish the fires of an FP7 grenade."
      ManualLines(2)="The Weapon Special key attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible.||Effective at close to medium range."
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.325000))
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.325000))
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-BoltPull',Volume=0.650000,Radius=32.000000)
+     CockSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-BoltPull',Volume=0.950000)
      ReloadAnimRate=1.350000
-     ClipHitSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagFiddle',Volume=0.650000,Radius=32.000000)
-     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagOut',Volume=0.650000,Radius=32.000000)
-     ClipInSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagIn',Volume=0.650000,Radius=32.000000)
+     ClipHitSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagFiddle',Volume=0.950000)
+     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagOut',Volume=0.950000)
+     ClipInSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagIn',Volume=0.950000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(ModeName="4-Round Burst",bUnavailable=True,Value=4.000000)
+     WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(ModeName="Automatic")
      bNoCrosshairInScope=True
      SightOffset=(X=6.000000,Y=-6.350000,Z=23.150000)

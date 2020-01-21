@@ -33,7 +33,7 @@ defaultproperties
      RecoilPerShot=1024.000000
      VelocityRecoil=255.000000
      FireChaos=0.700000
-     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Fire',Volume=1.400000,bNoOverride=True)
+     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Fire',Volume=1.400000)
      FireEndAnim=
      FireRate=0.900000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_X82Clip'

@@ -162,16 +162,17 @@ defaultproperties
      ManualLines(1)="Attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible."
      ManualLines(2)="Effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;20.0;0.9;75.0;1.0;0.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
      MagAmmo=20
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-Cock',Volume=0.650000)
-     ClipHitSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipHit')
-     ClipOutSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipOut')
-     ClipInSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipIn')
+     CockSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-Cock',Volume=0.875000)
+     ClipHitSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipHit',Volume=0.875000)
+     ClipOutSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipOut',Volume=0.875000)
+     ClipInSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipIn',Volume=0.875000)
      ClipInFrame=0.650000
-     WeaponModes(0)=(bUnavailable=True)
+     WeaponModes(1)=(bUnavailable=True)	 
+     CurrentWeaponMode=0
      FullZoomFOV=70.000000
      bNoCrosshairInScope=True
      SightOffset=(X=16.000000,Z=10.460000)

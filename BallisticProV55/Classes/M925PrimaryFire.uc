@@ -36,10 +36,10 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTM925MG'
      DamageTypeHead=Class'BallisticProV55.DTM925MGHead'
      DamageTypeArm=Class'BallisticProV55.DTM925MG'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.120000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.700000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
      BrassClass=Class'BallisticProV55.Brass_BigMG'
@@ -47,10 +47,11 @@ defaultproperties
      AimedFireAnim="AimedFire"
      RecoilPerShot=300.000000
      VelocityRecoil=128.000000
-     FireChaos=0.150000    FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
+     FireChaos=0.150000    
+	 FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
      XInaccuracy=1.000000
      YInaccuracy=1.000000
-     BallisticFireSound=(Sound=SoundGroup'BallisticSounds3.M925.M925-Fire',Volume=0.800000)
+     BallisticFireSound=(Sound=SoundGroup'BallisticSounds2.M925.M925-Fire',Volume=0.550000)
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.150000

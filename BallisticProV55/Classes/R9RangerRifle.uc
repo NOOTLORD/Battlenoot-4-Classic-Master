@@ -68,21 +68,17 @@ defaultproperties
      ManualLines(1)="As primary, except fires subsonic rounds. Loses damage over range but has lower recoil, lesser flash and is quieter."
      ManualLines(2)="As a long-ranged weapon lacking a scope, it has a reasonably quick aiming time. Does not use tracer rounds. Cumbersome to use in close combat."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;50.0;1.0;0.2;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
      MagAmmo=15
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds3.USSR.USSR-Cock',Volume=0.425000)
+     CockSound=(Sound=Sound'BallisticSounds3.USSR.USSR-Cock',Volume=0.800000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipHit')
-     ClipOutSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipOut')
-     ClipInSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipIn')
+     ClipHitSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipHit',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      WeaponModes(0)=(ModeName="Semi-Auto")
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
-     WeaponModes(3)=(bUnavailable=True)
-     WeaponModes(4)=(bUnavailable=True)
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      FullZoomFOV=60.000000

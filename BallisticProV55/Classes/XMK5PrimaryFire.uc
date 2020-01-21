@@ -30,7 +30,7 @@ defaultproperties
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.110000)
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.XMk5FlashEmitter'
      FlashScaleFactor=0.400000

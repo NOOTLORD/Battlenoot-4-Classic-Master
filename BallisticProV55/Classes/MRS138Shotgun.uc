@@ -94,16 +94,16 @@ defaultproperties
      ManualLines(1)="Melee attack using the tazer. Like other melee attacks, gains damage the longer the altfire key is held (up to 1.5 seconds). Deals more damage from behind. Inflicts a medium-duration blind upon enemies when impacting and knocks them away from the user."
      ManualLines(2)="Weapon Function engages a flashlight which illuminates dark areas.||This weapon is extremely effective at close range."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;40.0;0.0;1.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.325000))
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.325000))
 	 PutDownAnimRate=1.5
 	 PutDownTime=0.35
      MagAmmo=5
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Cock',Volume=0.550000)
+     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Cock',Volume=1.000000)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.500000
-     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-ShellIn',Volume=0.750000)
+     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-ShellIn',Volume=1.000000)
      ClipInFrame=0.375000
      bCockOnEmpty=True
      bCanSkipReload=True

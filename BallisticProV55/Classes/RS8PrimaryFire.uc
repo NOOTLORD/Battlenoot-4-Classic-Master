@@ -155,11 +155,11 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTRS8Pistol'
      DamageTypeHead=Class'BallisticProV55.DTRS8PistolHead'
      DamageTypeArm=Class'BallisticProV55.DTRS8Pistol'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.000000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False	 
      ClipFinishSound=(Volume=1.000000)
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashBone="Muzzle"
      FlashScaleFactor=0.350000
@@ -169,8 +169,8 @@ defaultproperties
      FireChaos=0.250000
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilenceFire',Volume=1.500000,Radius=76.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Fire',Volume=2.000000)
+     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilenceFire',Volume=0.700000,Radius=76.000000,bAtten=True)
+     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Fire',Volume=1.750000)
      bPawnRapidFireAnim=True
 	 FireEndAnim=
      FireAnimRate=1.500000

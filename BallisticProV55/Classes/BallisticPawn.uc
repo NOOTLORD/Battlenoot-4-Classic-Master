@@ -527,9 +527,10 @@ simulated function AssignInitialPose()
 				bDisablePawnAnimation=True;
 				return;
 			}
-		}
+		}		
+		//log( "Skeleton "$recx.Skeleton$" Species "$recx.Species );
 		if ( recx.Sex ~= "Female" && PlayerReplicationInfo.CharacterName != "July")
-			LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdFemale');
+			LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdFemale');	 
 		else LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rd');
 	}
 }
@@ -2581,8 +2582,8 @@ defaultproperties
      UDamageSound=Sound'BallisticSounds3.Udamage.UDamageFire'
 	 GruntVolume=0.150000
      FootstepVolume=0.300000
-     DeResTime=4.000000
-     RagdollLifeSpan=20.000000
+     DeResTime=2.000000
+     RagdollLifeSpan=10.000000
      RagDeathUpKick=0.000000
      bCanWalkOffLedges=True
      bSpecialHUD=True

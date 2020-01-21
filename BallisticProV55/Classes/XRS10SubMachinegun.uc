@@ -125,6 +125,7 @@ simulated function PlayReload()
 	else
 		SetBoneScale (0, 0.0, SilencerBone);
 }
+
 // Secondary fire doesn't count for this weapon
 simulated function bool HasAmmo()
 {
@@ -192,13 +193,12 @@ defaultproperties
      ManualLines(1)="Toggles the laser sight. While active, reduces the hipfire spread, but broadcasts the user's position to the enemy."
      ManualLines(2)="The Weapon Function key attaches a suppressor, reducing recoil, range and noise output and removing the flash.||This weapon is highly effective at very close range."
      SpecialInfo(0)=(Info="60.0;5.0;0.4;-1.0;0.0;0.2;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000)
      MagAmmo=24
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock',Volume=0.650000)
-     ClipHitSound=(Volume=0.650000)
-     ClipOutSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Clipout',Volume=0.650000)
-     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Clipin',Volume=0.650000)
+     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock',Volume=0.850000)
+     ClipOutSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Clipout',Volume=0.850000)
+     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Clipin',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(bUnavailable=True)

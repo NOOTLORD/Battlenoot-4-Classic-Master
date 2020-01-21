@@ -60,7 +60,7 @@ defaultproperties
      FireChaos=0.200000
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds_25.MD24.MD24_Fire',Volume=1.800000,bNoOverride=True)
+     BallisticFireSound=(Sound=Sound'BallisticSounds_25.MD24_Fire',Volume=1.750000)
      FireEndAnim=
      FireAnimRate=1.600000
      FireRate=0.220000

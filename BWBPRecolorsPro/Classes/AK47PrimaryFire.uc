@@ -24,10 +24,10 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_AK47Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_AK47AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_AK47Assault'
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)	 	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.300000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
