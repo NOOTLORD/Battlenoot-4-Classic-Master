@@ -97,7 +97,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipIn',Volume=1.000000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic")
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      CurrentWeaponMode=0
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333000
@@ -139,7 +139,7 @@ defaultproperties
      Description="Originally taken from the design of a bird hunting rifle, the R78 'Raven', is a favourite among military snipers and commando corps. Used to a great extent by the expert marksmen of the New European Army, the Raven, is extremely reliable and capable of incredible damage in a single shot. The added long distance sniping scope makes the R78 one of the most deadly weapons. Of course, the gun is only as good as the soldier using it, with a low clip capacity, long reload times and it's terrible ineffectiveness in close quarters combat."
      DisplayFOV=55.000000
      Priority=33
-     HudColor=(B=50,G=50,R=200)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9

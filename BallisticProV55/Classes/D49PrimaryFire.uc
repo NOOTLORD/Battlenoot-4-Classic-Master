@@ -10,8 +10,6 @@
 //=============================================================================
 class D49PrimaryFire extends BallisticRangeAttenFire;
 
-var   bool			bSecondary;
-
 simulated function PlayFiring()
 {
 //	D49Revolver(Weapon).RevolverFired(ThisModeNum);
@@ -32,18 +30,11 @@ simulated event ModeDoFire()
 			return;
 		case BM_Primary:
 			break;
-		case BM_Secondary:
-			bSecondary = true;
-			break;
 		default:
 			break;
 	}
 	super.ModeDoFire();
-	if (bSecondary)
-		D49Revolver(Weapon).RevolverFired(BM_Secondary);
-	else
 		D49Revolver(Weapon).RevolverFired(BM_Primary);
-	bSecondary = false;
 }
 
 defaultproperties
@@ -62,6 +53,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTD49Revolver'
      DamageTypeHead=Class'BallisticProV55.DTD49RevolverHead'
      DamageTypeArm=Class'BallisticProV55.DTD49Revolver'
+     DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.750000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -71,7 +63,7 @@ defaultproperties
      FireChaos=0.400000
      XInaccuracy=128.000000
      YInaccuracy=128.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.D49.D49-FireSingle',Volume=1.200000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.D49.D49-FireSingle',Volume=1.850000)
      FireAnim="FireSingle"
      FireEndAnim=
      FireRate=0.400000

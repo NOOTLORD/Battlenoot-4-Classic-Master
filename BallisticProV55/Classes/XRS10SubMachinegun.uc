@@ -201,8 +201,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Clipin',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(ModeName="Burst",bUnavailable=True)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-10.000000,Z=12.200000)
 	 SightPivot=(Pitch=512)

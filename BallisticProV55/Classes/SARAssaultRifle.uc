@@ -155,8 +155,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds3.SAR.SAR-ClipIn',Volume=0.900000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True,Value=5.000000)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=350)
      SightOffset=(X=20.000000,Y=-0.010000,Z=12.400000)
@@ -187,7 +187,7 @@ defaultproperties
      Description="With a growing number of operations and battles taking place in urban and industial enviroments, the UTC realized that their ground infantry units were in dire need of a more effective, balanced weapon system for indoor combat. UTC soldiers fighting in the close confines of urban structures and industrial installatons needed a highly compact, reliable and manouverable weapon, but it needed the power to blast through light walls and take down the agile alien forces they were faced with.||The result was the development of the Sub-Assault Rifle, the most well known of which is the S-AR 12. These weapons have the power of an assault rifle, usually using rifle ammunition such as 5.56mm rounds, and the manouverability of a compact sub-machinegun. Accuracy was not an issue due to the extremely short range of most of the encounters in urban combat."
      DisplayFOV=55.000000
      Priority=32
-     HudColor=(G=200,R=100)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4

@@ -168,10 +168,8 @@ defaultproperties
      ClipOutSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipOut',Volume=1.000000)
      ClipInSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipIn',Volume=1.000000)
      ClipInFrame=0.650000
-     bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic")
-     WeaponModes(1)=(ModeName="Mode-2",bUnavailable=True,Value=7.000000)
-     WeaponModes(2)=(bUnavailable=True)
+     bCockOnEmpty=True	 
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-20.000000,Y=-7.400000,Z=45.299999)
@@ -195,7 +193,7 @@ defaultproperties
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AH208Clip'
      Description="Built as a more affordable alternative to the AH104, the AH208 is an alternate design chambered for .44 magnum rounds instead of the usual $100 .600 HEAP ones. It is less accurate than the AH104 and D49, but its 8 round magazine and faster reload times let it put more rounds down range than both. Its significant weight and recoil means it requires both hands to shoot and is harder to control than its revolver and handcannon siblings, a fact that comes into play where range is a concern. While not as popular as its larger .600 cousin, the AH208 packs a formidable punch and is a force to be reckoned with."
      Priority=96
-     HudColor=(G=217)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
@@ -215,7 +213,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.DEagle_FP'
      DrawScale=0.800000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Shader'BallisticRecolors4TexPro.Eagle.Eagle-GoldShine'
+     Skins(1)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-MainSilverEngraved'
      Skins(2)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-Misc'
      Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
      Skins(4)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'

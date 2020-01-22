@@ -218,6 +218,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1',Volume=1.000000)
      ClipInFrame=0.375000
      bCockOnEmpty=True
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     CurrentWeaponMode=0	 
      bCanSkipReload=True
      bAltTriggerReload=True
      bShovelLoad=True
@@ -226,10 +228,6 @@ defaultproperties
      EndShovelAnim="ReloadEnd"
      EndShovelEmptyAnim="ReloadEndEmpty"
      EndShovelAnimRate=1.100000
-     WeaponModes(0)=(ModeName="Single Fire")
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
-     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=32)
      SightOffset=(X=5.000000,Z=11.500000)
@@ -258,7 +256,7 @@ defaultproperties
      AmmoClass(0)=BallisticProV55.Ammo_M763Shell'
      Description="The Avenger single barreled shotgun is the standard spread weapon of the UTC infantry divisions. Its high damage, reliability and good range for a shotgun have made this gun one of the humans' favourites; the M763 has blown open more Krao drones than can be counted. After its many successes, even during trials by the UTC's Reunited Jamaican Army, defending from wave upon wave of Krao minions during the 'Red Storm' Skrith invasion, the Avenger became the standard issue shotgun and a favorite of many forces including the UTC RJA Division."
      Priority=37
-     HudColor=(B=255,R=200)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7

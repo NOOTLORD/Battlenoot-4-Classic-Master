@@ -89,9 +89,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipIn',Volume=0.800000)
      bCockOnEmpty=True
      ClipInFrame=0.700000		
-     WeaponModes(0)=(bUnavailable=True)	 
-     WeaponModes(1)=(bUnavailable=True)
-     CurrentWeaponMode=2
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      ZoomType=ZT_Irons
      ZoomInAnim=
      ZoomOutAnim=
@@ -125,8 +124,8 @@ defaultproperties
      Description="The M46 was one of Black & Wood's first forays into high powered assault weaponry, specifically rifles. As with all of Black & Wood's weapons, the 'Jackal' is incredibly reliable and tough. Used by certain Terran units, the M46 is typically equipped with a short-range optical scope and often various Grenade Launcher attachments. While not quite yet a widely used weapon, its reputation has grown in recent times as heroic stories of Armoured Squadron 190's use of it has spread amongst the bulk of the UTC troops."
      DisplayFOV=55.000000																																																																																																																																					  						 
      Priority=41
+     HudColor=(B=255,G=200,R=200)	 
      CustomCrossHairScale=0.000000
-     HudColor=(G=175)
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4																 					 
      GroupOffset=1

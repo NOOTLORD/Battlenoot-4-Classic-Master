@@ -78,7 +78,8 @@ defaultproperties
      ClipOutSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipOut',Volume=0.800000)
      ClipInSound=(Sound=Sound'BallisticSounds3.USSR.USSR-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
-     WeaponModes(0)=(ModeName="Semi-Auto")
+     bCockOnEmpty=True	 
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      FullZoomFOV=60.000000
@@ -112,7 +113,7 @@ defaultproperties
      AmmoClass(0)=Class'BallisticProV55.Ammo_R9Clip'
      Description="Outstanding reliability and durability in the field are what characterise one of Black & Wood's legendary rifles. Though not widely used by most military forces, the R9 is renowned for its near indestructable design, and superb reliability. Those who use the weapon, mostly snipers, hunters, and specialised squads, swear by it's accuracy and dependability. Often used without fancy features or burdening devices such as optical scopes and similar attachements, the R9 is a true legend with it's users."
      Priority=33
-     HudColor=(G=175)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9

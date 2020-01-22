@@ -129,7 +129,8 @@ defaultproperties
      HandleOnSound=Sound'BallisticSounds2.M925.M925-StandOn'
      HandleOffSound=Sound'BallisticSounds2.M925.M925-StandOff'
      PlayerSpeedFactor=0.750000
-     PlayerJumpFactor=0.800000     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)     TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=5)
+     PlayerJumpFactor=0.800000     
+	 TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)     TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=5)
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M925'
      BigIconCoords=(Y1=36,Y2=235)
@@ -151,6 +152,8 @@ defaultproperties
      ClipOutSound=(Sound=Sound'BallisticSounds2.M925.M925-ShellOut',Volume=0.800000))
      ClipInSound=(Sound=Sound'BallisticSounds2.M925.M925-ShellIn',Volume=0.800000))
      bCockOnEmpty=True
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0	 
      bNoCrosshairInScope=True
      SightPivot=(Pitch=64)
      SightOffset=(X=-18.000000,Z=7.200000)
@@ -165,7 +168,8 @@ defaultproperties
      ViewRecoilFactor=1.000000
 	 AimDamageThreshold=0.000000
      ChaosDeclineTime=1.750000
-     ChaosAimSpread=3072  RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.100000),(InVal=0.300000,OutVal=-0.150000),(InVal=1.000000)))    RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.120000),(InVal=0.300000,OutVal=0.300000),(InVal=0.500000,OutVal=0.550000),(InVal=0.750000,OutVal=0.750000),(InVal=1.000000,OutVal=1.000000)))
+     ChaosAimSpread=3072  
+	 RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.100000),(InVal=0.300000,OutVal=-0.150000),(InVal=1.000000)))    RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.120000),(InVal=0.300000,OutVal=0.300000),(InVal=0.500000,OutVal=0.550000),(InVal=0.750000,OutVal=0.750000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.250000
      RecoilYFactor=0.250000
      RecoilMinRandFactor=0.400000
@@ -183,7 +187,7 @@ defaultproperties
      AmmoClass(0)=Class'BallisticProV55.Ammo_M925Belt'
      Description="The M925 was used during the late stages of the first Human-Skrith war when ballistic weapons first came back into large scale usage. The heavy calibre M925 was extremely effective against the Skrith and their allies and became known as the 'Monster' because it was the first weapon that the Skrith truly feared. Although it has a slower rate of fire than the M353, the 'Monster' has a much heavier bullet and can cause much more damage to an enemy soldier or vehicle in a single shot. It was also used extensively during the 'Wasteland Siege', to hose down thousands of Krao, and proved to be very effective at destroying the alien transport ships, as they were landing."
      Priority=42
-     HudColor=(B=175,G=175,R=175)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=6

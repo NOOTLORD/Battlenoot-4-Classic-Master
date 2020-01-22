@@ -171,7 +171,8 @@ defaultproperties
      ClipOutSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipOut',Volume=0.875000)
      ClipInSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipIn',Volume=0.875000)
      ClipInFrame=0.650000
-     WeaponModes(1)=(bUnavailable=True)	 
+     bCockOnEmpty=True	 
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      CurrentWeaponMode=0
      FullZoomFOV=70.000000
      bNoCrosshairInScope=True
@@ -202,7 +203,7 @@ defaultproperties
      AmmoClass(0)=Class'BallisticProV55.Ammo_SRS600Clip'																	  												  
      Description="Another battlefield favourite produced by high-tech manufacturer, NDTR Industries, the SRS-900 is indeed a fine weapon. Using high velocity 7.62mm ammunition, this rifle causes a lot of damage to the target, but suffers from high recoil, chaos and a low clip capacity. The altered design, can now incorporate a silencer to the end of the barrel, increasing its capabilities as a stealth weapon. This particular model, also features a versatile, red-filter scope, complete with various tactical readouts and indicators, including a range finder, stability metre, elevation indicator, ammo display and stealth meter."
      Priority=40
-     HudColor=(B=50,G=50,R=200)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000								  
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4

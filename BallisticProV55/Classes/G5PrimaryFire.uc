@@ -124,13 +124,14 @@ defaultproperties
      MinMortarRange=1024
      SpawnOffset=(X=10.000000,Y=10.000000,Z=-3.000000)
      bCockAfterFire=True
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)	 
      MuzzleFlashClass=Class'BallisticProV55.G5FlashEmitter'
      FlashScaleFactor=0.600000
      RecoilPerShot=64.000000
      FireChaos=0.500000
      XInaccuracy=4.000000
      YInaccuracy=4.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.G5.G5-Fire1',Volume=1.050000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.G5.G5-Fire1',Volume=1.100000)
      bSplashDamage=True
      bRecommendSplashDamage=True
      FireEndAnim=

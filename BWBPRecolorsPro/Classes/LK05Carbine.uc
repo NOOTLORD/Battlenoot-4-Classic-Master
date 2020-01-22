@@ -222,9 +222,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(3)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=10.000000,Y=-8.550000,Z=24.660000)
      SightDisplayFOV=40.000000
@@ -256,7 +255,7 @@ defaultproperties
      bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05Clip'  
      Priority=41
-     HudColor=(B=24,G=48)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
@@ -274,5 +273,16 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.LK05_FP'
      DrawScale=0.300000
+     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny' 
+     Skins(1)=Texture'BallisticRecolors4TexPro.LK05.LK05-Grip'
+     Skins(2)=Texture'BallisticRecolors4TexPro.LK05.LK05-Stock'
+     Skins(3)=Texture'BallisticRecolors4TexPro.LK05.LK05-Receiver'
+     Skins(4)=Texture'BallisticRecolors4TexPro.LK05.LK05-Bullets'
+     Skins(5)=Texture'BallisticRecolors4TexPro.LK05.LK05-Mag'
+     Skins(6)=Texture'BallisticRecolors4TexPro.LK05.LK05-Silencer'
+     Skins(7)=Texture'BallisticRecolors4TexPro.LK05.LK05-LAM'
+     Skins(8)=Texture'BallisticRecolors4TexPro.LK05.LK05-EOTech'
+     Skins(9)=Shader'BallisticRecolors4TexPro.LK05.LK05-EOTechShader'
+     Skins(10)=Texture'BallisticRecolors4TexPro.LK05.LK05-vertflash'
      AmbientGlow=0
 }

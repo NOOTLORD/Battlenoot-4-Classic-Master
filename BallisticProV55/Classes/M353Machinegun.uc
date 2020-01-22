@@ -114,11 +114,11 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 // End AI Stuff =====	
 										
 defaultproperties
-{
-     BoxOnSound=(Sound=Sound'BallisticSounds2.M353.M353-BoxOn')
-     BoxOffSound=(Sound=Sound'BallisticSounds2.M353.M353-BoxOff')
-     FlapUpSound=(Sound=Sound'BallisticSounds2.M353.M353-FlapUp')
-     FlapDownSound=(Sound=Sound'BallisticSounds2.M353.M353-FlapDown')
+
+     BoxOnSound=(Sound=Sound'BallisticSounds2.M353.M353-BoxOn',Volume=0.750000)
+     BoxOffSound=(Sound=Sound'BallisticSounds2.M353.M353-BoxOff',Volume=0.750000)
+     FlapUpSound=(Sound=Sound'BallisticSounds2.M353.M353-FlapUp',Volume=0.750000)
+     FlapDownSound=(Sound=Sound'BallisticSounds2.M353.M353-FlapDown',Volume=0.750000)
      PlayerSpeedFactor=0.850000
      PlayerJumpFactor=0.900000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
@@ -133,22 +133,19 @@ defaultproperties
      ManualLines(1)="Deploys the machinegun upon the ground or a nearby wall. May also be deployed upon sandbags. Whilst deployed, becomes perfectly accurate, loses its iron sights and gains a reduction in recoil. Locational damage (damage which can target an area on the body) taken from the front is significantly reduced."
      ManualLines(2)="The M353 is a more cumbersome and heavy weapon, and accordingly has poor hipfire and takes some time to aim.||It is effective at medium to long range."
      SpecialInfo(0)=(Info="300.0;25.0;0.7;-1.0;0.4;0.4;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M353.M353-Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M353.M353-Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M353.M353-Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M353.M353-Putaway',Volume=0.325000)
      MagAmmo=100
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds2.M353.M353-Cock')
+     CockSound=(Sound=Sound'BallisticSounds2.M353.M353-Cock',Volume=0.800000)
      ReloadAnim="ReloadStart"
      ReloadAnimRate=1.450000
-     ClipOutSound=(Sound=Sound'BallisticSounds2.M353.M353-ShellOut')
-     ClipInSound=(Sound=Sound'BallisticSounds2.M353.M353-ShellIn')
+     ClipOutSound=(Sound=Sound'BallisticSounds2.M353.M353-ShellOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.M353.M353-ShellIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
-	 WeaponModes(3)=(ModeName="Full Auto",ModeID="WM_FullAuto")
-     CurrentWeaponMode=3
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=128)
      SightOffset=(X=-6.000000,Z=5.350000)
@@ -181,7 +178,7 @@ defaultproperties
      Description="The M353 'Guardian' Machinegun has seen some of the most brutal battles ever recorded in recent history, and has helped win many of them, the most famous being the bloody 'Wasteland Seige' where 12 million Krao were slaughtered along a 500 mile line of defences. Used primarily as a defensive weapon, the M353's incredible rate of fire can quickly and effectively destroy masses of oncoming foes, especially melee attackers. When the secondary mode is activated, the Guardian becomes much more accurate when the user mounts it on the ground, allowing it to be a very effective defensive weapon. With its high rate of fire and high damage, the M353 becomes very inaccurate after just a few rounds and with its high ammo capacity, comes the difficulty of longer reload times than smaller weapons."
      DisplayFOV=50.000000
      Priority=43
-     HudColor=(G=150,R=100)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=6

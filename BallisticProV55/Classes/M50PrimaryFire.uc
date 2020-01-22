@@ -28,11 +28,11 @@ defaultproperties
      WaterRangeAtten=0.800000
      DamageType=Class'BallisticProV55.DTM50Assault'
      DamageTypeHead=Class'BallisticProV55.DTM50AssaultHead'				        
-	 DamageTypeArm=Class'BallisticProV55.DTM50Assault'										  
+	 DamageTypeArm=Class'BallisticProV55.DTM50Assault'	
+     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000) 	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashScaleFactor=0.550000
@@ -45,7 +45,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.M50.M50Fire2',Volume=2.000000,Slot=SLOT_Interact,bNoOverride=False)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.M50.M50Fire2',Volume=1.400000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.110000

@@ -45,7 +45,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.TP_Eagle'
      RelativeLocation=(Z=6.000000)
      DrawScale=0.220000
-     Skins(0)=Shader'BallisticRecolors4TexPro.Eagle.Eagle-GoldShine'
+     Skins(0)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-MainSilverEngraved'
      Skins(1)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-Misc'
      Skins(2)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
      Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'

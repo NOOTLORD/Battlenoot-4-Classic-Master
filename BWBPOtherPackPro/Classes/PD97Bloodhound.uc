@@ -273,8 +273,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-10.000000,Y=-4.400000,Z=12.130000)
@@ -307,7 +306,7 @@ defaultproperties
      Description="Originally a specialist law enforcement weapon, the PD-97 'Bloodhound' has been adapted into a military role, used to control opponents and track their movement upon the battlefield. While less immediately lethal than most other weapons, its tactical repertoire is not to be underestimated."
      DisplayFOV=57.500000
      Priority=24
-     HudColor=(B=250,G=150,R=150)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2

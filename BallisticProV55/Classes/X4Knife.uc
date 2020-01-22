@@ -83,7 +83,7 @@ defaultproperties
      AmmoClass(0)=Class'BallisticProV55.Ammo_X4Knife'
      Description="Much like its predecessor, the X4 is a high quality weapon, manufactured by the renowned Enravion group. The X4 was designed for use in other combat situations, specifically for the Outworld's large urban and industrial sprawls. Made of tougher, heavier and more durable materials, the X4 is not as light or balanced as the X3, and is thus not an easy weapon to use for throwing purposes."
      Priority=13
-     HudColor=(B=25,G=150,R=50)
+     HudColor=(B=255,G=200,R=200)
      CenteredOffsetY=7.000000
      CenteredRoll=0
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"

@@ -96,13 +96,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=1.100000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True) 
-     WeaponModes(1)=(ModeName="Automatic",ModeID="WM_FullAuto")
-     WeaponModes(2)=(bUnavailable=True)	 
-     WeaponModes(3)=(bUnavailable=True)	 
-     WeaponModes(4)=(bUnavailable=True)	
-     WeaponModes(5)=(bUnavailable=True)		 
-     CurrentWeaponMode=1
+     WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")	 
+     CurrentWeaponMode=0
      bNotifyModeSwitch=True
      bNoCrosshairInScope=True
      SightPivot=(Pitch=1024)
@@ -134,7 +129,7 @@ defaultproperties
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKASDrum'
      Description="SKAS-21 Super Shotgun||Manufacturer: UTC Defense Tech|Primary: Variable Fire Buckshot|Secondary: Tri-Barrel Blast"
      Priority=245
-     HudColor=(B=190,G=190,R=190)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7

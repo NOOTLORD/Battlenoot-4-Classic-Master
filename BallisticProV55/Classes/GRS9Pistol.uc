@@ -140,8 +140,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-15.000000,Z=5.900000)
      SightDisplayFOV=40.000000
@@ -169,7 +169,7 @@ defaultproperties
      AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9Clip'
      Description="The GRS9 from Drake & Co. is used primarily by inner core planets for law enforcement purposes. The additional laser unit adds an alternative attack to the GRS9. The laser unit can be held down, for up to 3.5 seconds, releasing a searing beam upon enemies. This drains the rechargeable battery however, which must be left to replenish when empty."
      Priority=9
-     HudColor=(B=25,G=25,R=200)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2

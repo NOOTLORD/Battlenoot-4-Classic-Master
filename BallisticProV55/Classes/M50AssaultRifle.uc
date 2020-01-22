@@ -74,18 +74,18 @@ defaultproperties
      ManualLines(1)="Launches a grenade from the underslung launcher. This grenade has an arming delay and will ricochet from targets hit during this arming period, dealing minor damage. The arming delay can be used to shoot around corners."
      ManualLines(2)="A TX409-Tactical Video camera system is also included with this weapon. It allows the user to deploy a tactical camera to any surface using the Weapon Function key. To survey an area from a safe distance using the gun-mounted LCD, press Weapon Function again. Care should always be taken to deploy TX409-TV cameras in a hidden location to prevent them from being destroyed by enemies.||The M50 is effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;25.0;0.9;80.0;0.7;0.7;0.4")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.325000)
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds2.M50.M50Cock',Volume=0.600000)
-     ClipHitSound=(Sound=Sound'BallisticSounds2.M50.M50ClipHit',Volume=0.600000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.M50.M50ClipOut',Volume=0.600000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.M50.M50ClipIn',Volume=0.600000)
+     CockSound=(Sound=Sound'BallisticSounds2.M50.M50Cock',Volume=0.850000)
+     ClipHitSound=(Sound=Sound'BallisticSounds2.M50.M50ClipHit',Volume=0.850000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.M50.M50ClipOut',Volume=0.850000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.M50.M50ClipIn',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True,Value=5.000000)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0	 
      bNoCrosshairInScope=True
      SightPivot=(Pitch=200)
      SightOffset=(Y=0.050000,Z=12.130000)
@@ -115,7 +115,7 @@ defaultproperties
      AmmoClass(0)=Class'BallisticProV55.Ammo_M50Clip'
      Description="Enravion's crowning achievement, the M50 is the most extensively used weapon in the UTC military corps. The M50 is renowned for its accuracy, damage and reliability in the field. The sturdy M50 was extensively used in both wars and has helped annihilate countless Skrith, Krao and Cryon warriors. The weapon also has the advantage of launching a grenade from the attached M900, for flushing out enemies."
      Priority=41
-     HudColor=(B=170,G=170,R=210)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4

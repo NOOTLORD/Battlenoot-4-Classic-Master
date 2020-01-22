@@ -70,8 +70,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_ClipIn',Volume=0.875000)
      ClipInFrame=0.760000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True)
-     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=200)
 	 SightZoomFactor=0
@@ -100,7 +100,7 @@ defaultproperties
      AmmoClass(0)=Class'BallisticProV55.Ammo_XMK5Clip''
      Description="NDTR's recent line of urban submachineguns, specfically the XMk5, has garnered attention from various UTC units operating in such environments. The XMk5 is often, and is indeed encouraged to be, fitted with all manner of attachments designed by NDTR as well. While many of the attachments are 'standard' sights, grenade launchers, flash lights and laser sights, there are other more peculiar devices. One of the most popular of these, is a unique, air-powered, dart launcher. The most commonly used dart, is one that stuns and poisons the victim, making them easy prey for the XMk5's primary bullet fire mode."
      Priority=41
-     HudColor=(G=150,R=225)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3

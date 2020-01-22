@@ -66,8 +66,7 @@ defaultproperties
      ClipOutSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Out',Volume=0.850000)
      ClipInFrame=0.850000
      bCockOnEmpty=True
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",Value=1.000000)
      CurrentWeaponMode=0
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333300
@@ -114,7 +113,7 @@ defaultproperties
      Description="X83 Anti-Material Rifle||Manufacturer: Evravion Combat Solutions |Primary: Single Powerful Shot|Secondary: Activate Zooming Scope|Special: (Scoped) Activate Night Vision/Detector|Special: (Unscoped) Mount X-83 A1||Enravion's high powered X-83 A1 Anti-Material Rifle is a fearsome sight on the modern day battlefield. With an effective range of about 1.1 miles, the X-83 can target and eliminate infantry and light vehicles with ease and at range using its specialized .50 cal N6-BMG HEAP rounds. This special operations weapon, designed to disable key targets like parked aircraft and APCs, was used extensively prior to the Skrith wars."
      DisplayFOV=55.000000
      Priority=207
-     HudColor=(B=175,G=175,R=175)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9
@@ -133,9 +132,9 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.X83A1_1st'
      DrawScale=0.450000
-     Skins(0)=Shader'BallisticRecolors3TexPro.X82.X82SkinShine'
+     Skins(0)=Texture'BallisticRecolors3TexPro.X82.X82Skin'
      Skins(1)=Texture'UT2004Weapons.Pickups.ClassicSniperAmmoT'
-     Skins(2)=Shader'BallisticRecolors3TexPro.X82.X82SkinShine'
+     Skins(2)=Texture'BallisticRecolors3TexPro.X82.X82Skin'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=0
 }

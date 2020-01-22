@@ -23,12 +23,12 @@ var() BUtil.FullSound	DryFireSound;		// Sound for trying to fire empty chamber
 
 var() rotator			CylinderRotation;	// Rotation aplied to drum
 var	  bool				bRevCocked;			// Is it cocked? (for effect only)
+
 // Type of fire
 enum EBarrelMode
 {
 	BM_Neither,
 	BM_Primary,
-	BM_Secondary,
 	BM_Both
 };
 // State of a shell (slot in drum)
@@ -68,11 +68,7 @@ simulated function RevolverFired(EBarrelMode BarrelsFired)
 		Shells[PrimaryShell].ShellState = SS_Fired;
 		SetBoneScale(PrimaryShell, 0.0, Shells[PrimaryShell].BulletName);
 	}
-	if ((BarrelsFired >= BM_Secondary) && Shells[SecondaryShell].ShellState == SS_Loaded)
-	{
-		Shells[SecondaryShell].ShellState = SS_Fired;
-		SetBoneScale(SecondaryShell, 0.0, Shells[SecondaryShell].BulletName);
-	}
+	
 	CylinderRotation.Roll-=10922;
 	SetBoneRotation('Revolver', CylinderRotation,0,1.0);
 
@@ -346,11 +342,10 @@ function float SuggestDefenseStyle()	{	return -0.5;	}
 
 defaultproperties
 {
-     RevReloadSound=(Sound=Sound'BallisticSounds2.D49.D49-Click',Volume=0.400000,Radius=48.000000,Pitch=1.000000)
-     RevOpenSound=(Sound=Sound'BallisticSounds2.D49.D49-Open',Volume=0.500000,Radius=48.000000,Pitch=1.000000)
-     RevCloseSound=(Sound=Sound'BallisticSounds2.D49.D49-Close',Volume=0.500000,Radius=48.000000,Pitch=1.000000)
-     RevSpinSound=(Sound=Sound'BallisticSounds2.D49.D49-Spin',Volume=0.500000,Radius=48.000000,Pitch=1.000000)
-     DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.700000)
+     RevReloadSound=(Sound=Sound'BallisticSounds2.D49.D49-Click',Volume=1.000000)
+     RevOpenSound=(Sound=Sound'BallisticSounds2.D49.D49-Open',Volume=1.000000)
+     RevCloseSound=(Sound=Sound'BallisticSounds2.D49.D49-Close',Volume=1.000000)
+     RevSpinSound=(Sound=Sound'BallisticSounds2.D49.D49-Spin',Volume=1.000000)
      Shells(0)=(BulletName="Bullet1",ShellName="Shell1",NextShell=2)
      Shells(1)=(BulletName="Bullet4",ShellName="Shell4",NextShell=3)
      Shells(2)=(BulletName="Bullet2",ShellName="Shell2",NextShell=4)
@@ -369,20 +364,18 @@ defaultproperties
      ManualLines(1)="Fires both barrels at once. Twice as much recoil as the single fire with lower sustained damage output."
      ManualLines(2)="The D49 is very effective at close range. However, it suffers from a cripplingly long reload time. When dual wielded, both pistols will fire simultaneously, allowing the altfire to be used for an extremely powerful attack."
      SpecialInfo(0)=(Info="120.0;10.0;0.6;50.0;1.0;0.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout')
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway')
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=6
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds2.D49.D49-Cock',Volume=0.750000)
+     CockSound=(Sound=Sound'BallisticSounds2.D49.D49-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
      ClipHitSound=(Volume=0.750000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellOut',Volume=0.750000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn',Volume=0.750000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellOut',Volume=1.000000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn',Volume=1.000000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     bAltTriggerReload=True
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-30.000000,Y=-0.400000,Z=14.500000)

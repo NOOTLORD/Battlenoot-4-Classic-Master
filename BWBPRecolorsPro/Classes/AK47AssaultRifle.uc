@@ -141,8 +141,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipIn',Volume=0.900000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(bUnavailable=True,ModeID="WM_None")
-     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=64)
      SightOffset=(X=10.000000,Y=-10.020000,Z=20.600000)
@@ -175,7 +175,7 @@ defaultproperties
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK470Clip'
      Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
      Priority=65
-     HudColor=(G=100)
+     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000	 
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4

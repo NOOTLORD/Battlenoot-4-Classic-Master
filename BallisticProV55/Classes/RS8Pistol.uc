@@ -275,8 +275,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-15.000000,Z=8.700000)
