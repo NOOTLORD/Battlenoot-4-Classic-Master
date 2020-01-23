@@ -425,7 +425,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.D49Revolver'
      DrawScale=0.220000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Shader'BallisticWeapons2.D49.D49-Shiney'
-     Skins(2)=Shader'BallisticWeapons2.D49.D49Shells-Shiney'
+     Skins(1)=Texture'BallisticWeapons2.D49.D49RevolverSkin'
+     Skins(2)=Texture'BallisticWeapons2.D49.D49ShellsSkin'
      AmbientGlow=0
 }

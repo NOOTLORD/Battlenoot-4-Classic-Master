@@ -32,5 +32,5 @@ defaultproperties
      ReloadAnimRate=1.400000
      Mesh=SkeletalMesh'BWBPOtherPackAnim.Bloodhound_TP'
      RelativeLocation=(Z=11.000000)
-     DrawScale=0.200000
+     DrawScale=0.150000	 
 }

@@ -252,5 +252,7 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticProAnims.XK2SMG'
      DrawScale=0.200000
+     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+     Skins(1)=Texture'BallisticWeapons2.XK2.XK2Skin' 
      AmbientGlow=0
 }

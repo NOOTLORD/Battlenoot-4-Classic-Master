@@ -243,7 +243,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.LK05SecondaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000
@@ -273,16 +273,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.LK05_FP'
      DrawScale=0.300000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny' 
-     Skins(1)=Texture'BallisticRecolors4TexPro.LK05.LK05-Grip'
-     Skins(2)=Texture'BallisticRecolors4TexPro.LK05.LK05-Stock'
-     Skins(3)=Texture'BallisticRecolors4TexPro.LK05.LK05-Receiver'
-     Skins(4)=Texture'BallisticRecolors4TexPro.LK05.LK05-Bullets'
-     Skins(5)=Texture'BallisticRecolors4TexPro.LK05.LK05-Mag'
-     Skins(6)=Texture'BallisticRecolors4TexPro.LK05.LK05-Silencer'
-     Skins(7)=Texture'BallisticRecolors4TexPro.LK05.LK05-LAM'
-     Skins(8)=Texture'BallisticRecolors4TexPro.LK05.LK05-EOTech'
-     Skins(9)=Shader'BallisticRecolors4TexPro.LK05.LK05-EOTechShader'
-     Skins(10)=Texture'BallisticRecolors4TexPro.LK05.LK05-vertflash'
      AmbientGlow=0
 }

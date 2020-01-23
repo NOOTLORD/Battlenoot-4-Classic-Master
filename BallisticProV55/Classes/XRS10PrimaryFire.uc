@@ -166,7 +166,7 @@ defaultproperties
      XInaccuracy=64.000000
      YInaccuracy=64.000000
      SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-SilenceFire',Volume=0.400000,Radius=48.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Fire',Volume=1.600000)
+     BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Fire',Volume=1.200000)
      bPawnRapidFireAnim=True
      FireRate=0.090000
      AmmoClass=Class'BallisticProV55.Ammo_XRS10Clip'

@@ -267,10 +267,10 @@ defaultproperties
      MagAmmo=5
      CockAnimRate=1.250000
 	 ReloadAnimRate=0.800000
-     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock',Volume=1.200000)
-     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit',Volume=1.200000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut',Volume=1.200000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000)
+     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock',Volume=1.200000,Radius=8.000000)
+     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit',Volume=1.200000,Radius=8.000000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut',Volume=1.200000,Radius=8.000000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000,Radius=8.000000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")

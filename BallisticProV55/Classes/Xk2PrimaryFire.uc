@@ -158,7 +158,7 @@ defaultproperties
      XInaccuracy=48.000000
      YInaccuracy=48.000000
      SilencedFireSound=(Sound=Sound'BallisticSounds2.XK2.XK2-SilenceFire',Volume=0.650000,Radius=48.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Fire',Volume=0.800000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Fire',Volume=0.600000)
      bPawnRapidFireAnim=True
      FireRate=0.090000
      AmmoClass=Class'BallisticProV55.Ammo_XK2Clip'
