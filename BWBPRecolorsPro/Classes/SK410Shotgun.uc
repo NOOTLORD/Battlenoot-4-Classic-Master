@@ -154,8 +154,8 @@ defaultproperties
      ManualLines(0)="Fires shotgun blasts with wide spread. These blasts inflict heavy damage and knock the enemy back."
      ManualLines(1)="Fires a single slug with an arming delay. Whilst unarmed, it will reflect from struck walls or surfaces. Deals good impact damage and minor radius damage."
      ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Effective at close to medium range depending upon active mode."
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
      MagAmmo=8
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-Cock',Volume=1.000000)
@@ -200,7 +200,7 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
-     GroupOffset=7
+     GroupOffset=3
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
      IconMaterial=Texture'BallisticRecolors3TexPro.SK410.SmallIcon_SK410'

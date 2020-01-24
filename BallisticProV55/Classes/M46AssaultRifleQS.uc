@@ -77,8 +77,8 @@ defaultproperties
      ManualLines(1)="Deploys a mine. These mines can be detonated with the Weapon Function key shortly after being placed for severe damage. Mines can be picked up with the Use key."
      ManualLines(2)="Effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;25.0;0.9;70.0;0.9;0.2;0.7")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.415000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.415000)
      MagAmmo=25
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000	 																																									   																					   						  
@@ -127,7 +127,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)	 
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=4																 					 
+     InventoryGroup=3															 					 
      GroupOffset=1
      PlayerViewOffset=(X=5.000000,Y=4.750000,Z=-8.000000)
      PlayerViewPivot=(Pitch=384)														 								

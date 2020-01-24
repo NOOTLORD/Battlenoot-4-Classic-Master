@@ -4567,7 +4567,7 @@ static function String GetManual()
 
 defaultproperties
 {
-	 AimDisplacementDurationMult=1.000000
+	 AimDisplacementDurationMult=0.000000
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=2.000000
@@ -4588,13 +4588,13 @@ defaultproperties
      CockSelectAnim="PulloutFancy"
      CockSelectAnimRate=1.250000
      CockingBringUpTime=0.700000
-     CockSound=(Volume=0.500000,Radius=64.000000,Pitch=1.000000,bAtten=True)
+     CockSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
      ReloadAnim="Reload"
      ReloadAnimRate=1.000000
      ReloadEmptyAnim="ReloadEmpty"
-     ClipHitSound=(Volume=0.500000,Radius=64.000000,Pitch=1.000000,bAtten=True)
-     ClipOutSound=(Volume=0.500000,Radius=64.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipInSound=(Volume=0.500000,Radius=64.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipHitSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=0.900000
      StartShovelAnimRate=1.000000
      EndShovelAnimRate=1.000000

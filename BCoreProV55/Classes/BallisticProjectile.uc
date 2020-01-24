@@ -599,15 +599,15 @@ defaultproperties
      DamageModLimb=0.750000
      ShakeRadius=-1.000000
      bWarnEnemy=True
-     MotionBlurRadius=-1.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=5.000000
+     MotionBlurRadius=0.000000
+     MotionBlurFactor=0.000000
+     MotionBlurTime=0.000000
      ShakeRotMag=(X=256.000000,Y=256.000000,Z=256.000000)
      ShakeRotRate=(X=2500.000000,Y=2500.000000,Z=2500.000000)
-     ShakeRotTime=6.000000
+     ShakeRotTime=0.000000
      ShakeOffsetMag=(X=10.000000,Y=10.000000,Z=20.000000)
      ShakeOffsetRate=(X=200.000000,Y=200.000000,Z=200.000000)
-     ShakeOffsetTime=6.000000
+     ShakeOffsetTime=0.000000
      MaxSpeed=0.000000
      DamageRadius=0.000000
      DrawType=DT_StaticMesh

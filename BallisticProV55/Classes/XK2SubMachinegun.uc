@@ -193,8 +193,8 @@ defaultproperties
      ManualLines(1)="Attaches a suppressor. Reduces recoil and noise output, hides the flash, but reduces range."
      ManualLines(2)="Effective from the hip and at close range."
      SpecialInfo(0)=(Info="120.0;10.0;0.6;60.0;0.3;0.1;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000))
-     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000))
+     BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.350000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.350000)
      MagAmmo=40
      CockSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Cock',Volume=0.850000)
      ClipHitSound=(Volume=0.600000)

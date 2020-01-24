@@ -39,7 +39,7 @@ defaultproperties
      FireChaos=0.300000
      XInaccuracy=310.000000
      YInaccuracy=310.000000
-     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-Single',Volume=1.600000)
+     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-Fire',Volume=1.600000)
      FireAnim="FireRot"
      FireEndAnim=
      FireAnimRate=1.500000

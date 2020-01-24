@@ -214,8 +214,8 @@ defaultproperties
      BigIconCoords=(Y1=36,Y2=225)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     BringUpSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-PullOut',Volume=0.325000)
-     PutDownSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-PullOut',Volume=0.425000)
+     PutDownSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-Putaway',Volume=0.425000)
      MagAmmo=32
      CockSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-Cock',Volume=0.800000)
      ClipOutSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagOut',Volume=0.800000)
@@ -223,6 +223,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=10.000000,Y=-8.550000,Z=24.660000)
@@ -258,7 +260,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=4
+     InventoryGroup=3
      PlayerViewOffset=(X=-6.000000,Y=12.000000,Z=-17.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'

@@ -781,8 +781,8 @@ defaultproperties
      ManualLines(1)="Toggles the guidance laser. With the guidance laser active, rockets will fly towards the point indicated by the laser at any given time."
      ManualLines(2)="When firing a mortar rocket. the Weapon Function key will cause the player to view through the rocket's nose camera.|As a bazooka, the G5 has no recoil. With the laser in use, its hipfire is stable, however it will always be lowered when the player jumps. The weapon is effective at medium to long range and with height advantage."
      SpecialInfo(0)=(Info="300.0;35.0;1.0;80.0;0.8;0.0;1.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.G5.G5-Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.G5.G5-Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.G5.G5-Pullout',Volume=0.370000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.G5.G5-Putaway',Volume=0.370000)
      MagAmmo=2
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=1.000000)

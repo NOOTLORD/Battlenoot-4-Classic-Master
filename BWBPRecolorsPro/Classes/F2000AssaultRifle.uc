@@ -197,8 +197,8 @@ defaultproperties
      ManualLines(0)="Powerful 5.56mm fire. Has a fast fire rate and high sustained DPS, but excessive recoil."
      ManualLines(1)="Launches a cryogenic grenade. Upon impact, freezes nearby enemies, slowing their movement. The effect is proportional to their distance from the epicentre. This attack will also extinguish the fires of an FP7 grenade."
      ManualLines(2)="The Weapon Special key attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible.||Effective at close to medium range."
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.325000))
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.325000))
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.425000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.425000)
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-BoltPull',Volume=0.950000)
@@ -209,6 +209,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=6.000000,Y=-6.350000,Z=23.150000)
@@ -240,7 +242,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=4
+     InventoryGroup=3
      PlayerViewOffset=(X=0.500000,Y=12.000000,Z=-18.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'

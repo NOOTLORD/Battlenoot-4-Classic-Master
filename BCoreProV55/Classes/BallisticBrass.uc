@@ -190,7 +190,7 @@ defaultproperties
      bAddOwnerVelocity=True
      bHitSounds=True
      HitSoundVolume=0.400000
-     HitSoundRadius=64.000000
+     HitSoundRadius=32.000000
      DrawType=DT_StaticMesh
      Physics=PHYS_Falling
      LifeSpan=16.000000

@@ -158,8 +158,8 @@ defaultproperties
      ManualLines(0)="Launches a grenade. Fire rate, damage and explosive radius are good. These grenades have an arming delay and if striking a surface when unarmed will ricochet. Direct impacts will always result in explosion."
      ManualLines(1)="Employs a manually controlled grenade. Pressing altfire again detonates the grenade."
      ManualLines(2)="Effective with height advantage and at medium range."
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.475000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000)
      MagAmmo=6
      ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=0.650000)
      ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=0.650000)
@@ -167,6 +167,8 @@ defaultproperties
      StartShovelAnim="ReloadStart"
      EndShovelAnim="ReloadEnd"
      WeaponModes(0)=(ModeName="Timed",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=512)

@@ -86,8 +86,8 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
      bWT_Machinegun=True
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.475000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000)
      MagAmmo=12
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-CockLong',Volume=1.100000)
@@ -132,7 +132,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=7
+     InventoryGroup=3
      GroupOffset=4
      PlayerViewOffset=(X=-4.000000,Y=1.000000,Z=-10.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SKASAttachment'

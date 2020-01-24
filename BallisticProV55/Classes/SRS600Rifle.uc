@@ -162,8 +162,8 @@ defaultproperties
      ManualLines(1)="Attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible."
      ManualLines(2)="Effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;20.0;0.9;75.0;1.0;0.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.375000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.375000)
      MagAmmo=20
      CockAnimRate=1.200000
      CockSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-Cock',Volume=0.875000)
@@ -206,7 +206,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000								  
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=4
+     InventoryGroup=3
      GroupOffset=6				  
      PlayerViewOffset=(X=2.000000,Y=9.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'

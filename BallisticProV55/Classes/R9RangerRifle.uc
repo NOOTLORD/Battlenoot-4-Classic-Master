@@ -68,8 +68,8 @@ defaultproperties
      ManualLines(1)="As primary, except fires subsonic rounds. Loses damage over range but has lower recoil, lesser flash and is quieter."
      ManualLines(2)="As a long-ranged weapon lacking a scope, it has a reasonably quick aiming time. Does not use tracer rounds. Cumbersome to use in close combat."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;50.0;1.0;0.2;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.395000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.395000)
      MagAmmo=15
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticSounds3.USSR.USSR-Cock',Volume=0.800000)
@@ -116,7 +116,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=9
+     InventoryGroup=3
      GroupOffset=3
      PlayerViewOffset=(Y=9.500000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.R9Attachment'
@@ -131,6 +131,6 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticProAnims.USSR'
      DrawScale=0.500000
-     Skins(4)=Shader'R9A_tex.R9_body_SH1'
+     Skins(4)=Texture'BallisticTextures3.Weapons.USSRSkin'	 
      AmbientGlow=0
 }

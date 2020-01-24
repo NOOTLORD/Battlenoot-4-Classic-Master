@@ -37,7 +37,7 @@ defaultproperties
      SliceAnims(3)="Slash4"
      FatiguePerStrike=0.060000
      bCanBackstab=False
-     TraceRange=(Min=130.000000,Max=130.000000)
+     TraceRange=(Min=40.000000,Max=40.000000)
      Damage=55.000000
      DamageHead=55.000000
      DamageLimb=55.000000
@@ -47,7 +47,7 @@ defaultproperties
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     BallisticFireSound=(Sound=SoundGroup'BallisticSounds_25.X4.X4_Melee',Volume=1.100000,Radius=378.000000,bAtten=True)
+     BallisticFireSound=(Sound=SoundGroup'BallisticSounds_25.X4.X4_Melee',Volume=1.100000,Radius=8.000000,bAtten=True)
      bAISilent=True
      FireAnim="Slash1"
      FireAnimRate=1.500000

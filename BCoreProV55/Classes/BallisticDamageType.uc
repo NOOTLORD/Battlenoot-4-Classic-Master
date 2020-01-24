@@ -347,12 +347,9 @@ defaultproperties
      ArmorHitType=255
      InvasionDamageScaling=1.000000
      DamageIdent="Unknown"
-     AimDisplacementDuration=0.600000
+     bDisplaceAim=False
      bSimpleDeathMessages=True
-     MinMotionBlurDamage=10.000000
-     MotionBlurDamageRange=80.000000
-     MotionBlurFactor=4.000000
-     MotionBlurTime=3.000000
+     bUseMotionBlur=False
      bDetonatesGoop=True
      bKUseTearOffMomentum=True
      bExtraMomentumZ=False

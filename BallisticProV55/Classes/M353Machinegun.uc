@@ -133,8 +133,8 @@ defaultproperties
      ManualLines(1)="Deploys the machinegun upon the ground or a nearby wall. May also be deployed upon sandbags. Whilst deployed, becomes perfectly accurate, loses its iron sights and gains a reduction in recoil. Locational damage (damage which can target an area on the body) taken from the front is significantly reduced."
      ManualLines(2)="The M353 is a more cumbersome and heavy weapon, and accordingly has poor hipfire and takes some time to aim.||It is effective at medium to long range."
      SpecialInfo(0)=(Info="300.0;25.0;0.7;-1.0;0.4;0.4;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M353.M353-Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M353.M353-Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M353.M353-Pullout',Volume=0.395000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M353.M353-Putaway',Volume=0.395000)
      MagAmmo=100
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticSounds2.M353.M353-Cock',Volume=0.800000)
@@ -181,7 +181,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=6
+     InventoryGroup=3
      PlayerViewOffset=(X=2.000000,Y=3.500000,Z=-4.000000)
      AttachmentClass=Class'BallisticProV55.M353Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M353'

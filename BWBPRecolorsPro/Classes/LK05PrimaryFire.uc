@@ -269,7 +269,7 @@ defaultproperties
      XInaccuracy=48.000000
      YInaccuracy=48.000000
      SilencedFireSound=(Sound=Sound'PackageSounds4Pro.Misc.F2000-SilFire',Volume=0.500000,Radius=192.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.LK05.LK05-RapidFire',Volume=0.975000)
+     BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-Fire',Volume=0.975000)
      bPawnRapidFireAnim=True
      FireEndAnim=
      AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05Clip'

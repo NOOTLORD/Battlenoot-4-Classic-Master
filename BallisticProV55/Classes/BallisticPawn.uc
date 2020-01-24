@@ -126,7 +126,6 @@ var 	name 			ReloadAnim, CockingAnim, MeleeAnim, MeleeOffhandAnim, MeleeAltAnim;
 var 	float 				ReloadAnimRate, CockAnimRate, MeleeAnimRate;
 var 	bool				bOffhandStrike;
 
-var config array<string> Spammers;
 // Cover from decorations -----------------------------
 var array<Actor> CoverAnchors;
 
@@ -395,19 +394,6 @@ simulated function TickFX(float DeltaTime)
 	}
 }
 
-static function bool IsSpammer(Pawn Other)
-{
-	local int i;
-	
-	for(i=0;i<default.Spammers.Length;i++)
-	{
-		if (Locs(Other.PlayerReplicationInfo.PlayerName) == default.Spammers[i])
-			return true;
-	}
-	
-	return false;
-}
-
 event HitWall(vector HitNormal, actor Wall)
 {
 	if (Controller != None)
@@ -570,12 +556,6 @@ simulated function SetWeaponAttachment(xWeaponAttachment NewAtt)
 		else 
 		{
 			IdleWeaponAnim = IdleHeavyAnim;
-			if (IsSpammer(self))
-			{
-				IdleHeavyAnim='SPAM_Idle';
-				FireHeavyRapidAnim='SPAM_Burst';
-				FireHeavyBurstAnim='SPAM_Fire';
-			}
 		}
 	}
 }
@@ -2553,16 +2533,7 @@ defaultproperties
      LowImpactVelocity=500.000000
      TimeBetweenImpacts=1.000000
      NewDeResSound=SoundGroup'BallisticSounds2.Misc.DeRes'
-     MeleeAnim="Melee_Smack"
-     Spammers(0)="jawjaw"
-     Spammers(1)="~michie~"
-     Spammers(2)="nesme"
-     Spammers(3)="damn_skippy"
-     Spammers(4)="dekai"
-     Spammers(5)="racerx"
-     Spammers(6)="<-drweed->"
-     Spammers(7)="mantas_venom"
-     Spammers(8)="anhager"
+     MeleeAnim="Melee_Smack" 
      Fades(0)=Texture'BallisticProTextures.Icons.stealth_8'
      Fades(1)=Texture'BallisticProTextures.Icons.stealth_16'
      Fades(2)=Texture'BallisticProTextures.Icons.stealth_24'
@@ -2580,8 +2551,8 @@ defaultproperties
      Fades(14)=Texture'BallisticProTextures.Icons.stealth_120'
      Fades(15)=Texture'BallisticProTextures.Icons.stealth_128'
      UDamageSound=Sound'BallisticSounds3.Udamage.UDamageFire'
-	 GruntVolume=0.150000
-     FootstepVolume=0.300000
+	 GruntVolume=0.100000
+     FootstepVolume=0.150000
      DeResTime=2.000000
      RagdollLifeSpan=10.000000
      RagDeathUpKick=0.000000

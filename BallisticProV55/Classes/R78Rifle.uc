@@ -85,8 +85,8 @@ defaultproperties
      ManualLines(0)="Bolt-action sniper rifle fire. High damage, long range, slow fire rate and unusually quiet compared to other weapons in its class."
      ManualLines(1)="Engages the scope."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;60.0;10.0;0.0;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.395000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.395000)
 	 PutDownTime=0.5
      MagAmmo=7
      CockAnim="CockQuick"
@@ -142,7 +142,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=9
+     InventoryGroup=3
      GroupOffset=2
      PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.R78Attachment'

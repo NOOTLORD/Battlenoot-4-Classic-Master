@@ -50,7 +50,7 @@ defaultproperties
      AimedFireAnim="SightFire"
      RecoilPerShot=256.000000
      FireChaos=0.150000
-     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=1.350000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_FireDart',Volume=1.750000)
      PreFireAnim=
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"

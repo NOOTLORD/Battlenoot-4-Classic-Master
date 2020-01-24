@@ -94,13 +94,13 @@ defaultproperties
      ManualLines(1)="Melee attack using the tazer. Like other melee attacks, gains damage the longer the altfire key is held (up to 1.5 seconds). Deals more damage from behind. Inflicts a medium-duration blind upon enemies when impacting and knocks them away from the user."
      ManualLines(2)="Weapon Function engages a flashlight which illuminates dark areas.||This weapon is extremely effective at close range."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;40.0;0.0;1.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.325000))
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.325000))
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
 	 PutDownAnimRate=1.5
 	 PutDownTime=0.35
      MagAmmo=5
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Cock',Volume=1.000000)
+     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Cock',Volume=0.850000)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.500000
      ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-ShellIn',Volume=1.000000)
@@ -146,7 +146,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=7
+     InventoryGroup=3
      GroupOffset=3
      PlayerViewOffset=(Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'

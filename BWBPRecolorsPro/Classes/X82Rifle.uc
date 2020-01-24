@@ -55,8 +55,8 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      SpecialInfo(0)=(Info="360.0;35.0;1.0;80.0;10.0;0.0;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.425000)
+     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.425000)
      MagAmmo=5
      CockAnimPostReload="Cock"
      CockAnimRate=1.500000
@@ -116,7 +116,7 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=9
+     InventoryGroup=3
      GroupOffset=5
      PlayerViewOffset=(X=4.000000,Y=6.000000,Z=-7.500000)
      BobDamping=1.800000
