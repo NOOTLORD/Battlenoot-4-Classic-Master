@@ -11,10 +11,10 @@
 class BallisticOutfittingWeaponsTab extends UT2K4TabPanel config(BallisticProV55);
 
 // Use GUILoadOutItems to select weapons. This control has some text with an image that cycles when you click on it
-var automated GUILoadOutItem Item_Melee, Item_SideArm, Item_Primary, Item_Secondary, Item_Grenade;
-var automated GUIComboBox	 cb_Melee, cb_SideArm, cb_Primary, cb_Secondary, cb_Grenade;
-var automated moComboBox		cb_Presets;
-var Automated GUIImage Box_Melee, Box_SideArm, Box_Primary, Box_Secondary, Box_Grenade, Box_Streak1, Box_Streak2, Box_Streak3, MeleeBack, SideArmBack, PrimaryBack, SecondaryBack, GrenadeBack;
+var automated GUILoadOutItem Item_SideArm, Item_Primary, Item_Grenade;
+var automated GUIComboBox	 cb_SideArm, cb_Primary, cb_Grenade;
+var automated moComboBox	 cb_Presets;
+var Automated GUIImage       Box_SideArm, Box_Primary, Box_Secondary, Box_Grenade, MeleeBack, SideArmBack, PrimaryBack, GrenadeBack;
 var Automated GUIButton BDone, BCancel, BSavePreset;
 var automated GUILabel	l_Receiving;
 var BallisticOutfittingMenu p_Anchor;
@@ -41,7 +41,6 @@ struct WeaponItemInfo
 };
 
 var array<WeaponItemInfo> sortedPrimaries;
-var array<WeaponItemInfo> sortedSecondaries;
 
 var int NumPresets;
 
@@ -94,7 +93,6 @@ function ShowPanel(bool bShow)
 			bWeaponsLoaded=True;
 		}
 	
-		cb_Melee.List.bSorted=true;
 		cb_SideArm.List.bSorted=true;
 		cb_Grenade.List.bSorted=true;
 	}
@@ -119,16 +117,6 @@ function LoadWeapons()
 	local int lastIndex;
 	
 	// Load the weapons into their GUILoadOutItems
-
-	for(i=0;i<COI.GroupLength(0);i++)
-	{
-		if (GetItemInfo(0, i, IC, IMat, ICN, ICrds))
-		{
-			Item_Melee.AddItem(IC, IMat, ICN, ICrds);
-   			cb_Melee.AddItem(IC, ,ICN);
-	   		cb_Melee.SetText(QuickListText);
-   		}
-	}
 
 	for(i=0;i<COI.GroupLength(1);i++)
 	{
@@ -166,29 +154,6 @@ function LoadWeapons()
 		cb_Primary.SetText(QuickListText);
 	}
 
-	for(i=0;i<COI.GroupLength(3);i++)
-		FillItemInfos(3, i);
-		
-	lastIndex = -1;
-		
-	for(i=0; i<sortedSecondaries.Length; i++)
-	{
-		if (sortedSecondaries[i].InventoryGroup > lastIndex)
-		{
-			lastIndex = sortedSecondaries[i].InventoryGroup;
-			cb_Secondary.MyListBox.List.Add(class'BallisticTab_OutfittingPro'.static.GetHeading(lastIndex),None,"",true);
-		}
-		
-		Item_Secondary.AddItem(
-			sortedSecondaries[i].ItemCap, 
-			sortedSecondaries[i].ItemImage, 
-			sortedSecondaries[i].ItemClassName, 
-			sortedSecondaries[i].ImageCoords
-			);
-		cb_Secondary.AddItem(sortedSecondaries[i].ItemCap,  ,sortedSecondaries[i].ItemClassName);
-		cb_Secondary.SetText(QuickListText);
-	}
-
 	for(i=0;i<COI.GroupLength(4);i++)
 	{
 		if (GetItemInfo(4, i, IC, IMat, ICN, ICrds))
@@ -199,10 +164,8 @@ function LoadWeapons()
    		}
 	}
 	
-	Item_Melee.SetItem(SavedLoadOuts[CurrentIndex].Weapons[0]);
 	Item_SideArm.SetItem(SavedLoadOuts[CurrentIndex].Weapons[1]);
 	Item_Primary.SetItem(SavedLoadOuts[CurrentIndex].Weapons[2]);
-	Item_Secondary.SetItem(SavedLoadOuts[CurrentIndex].Weapons[3]);
 	Item_Grenade.SetItem(SavedLoadOuts[CurrentIndex].Weapons[4]);
 	
 	//Add Random and None forcibly as separate items here.
@@ -306,38 +269,6 @@ function FillItemInfos(int Group, int Index)
 			}
 		}
 	}
-	
-	else
-	{
-		if (sortedSecondaries.Length == 0)
-			sortedSecondaries[sortedSecondaries.Length] = WInfo;
-		else 
-		{	
-			for (i = 0; i < sortedSecondaries.Length; ++i)
-			{
-				if (WInfo.InventoryGroup < sortedSecondaries[i].InventoryGroup)
-				{
-					sortedSecondaries.Insert(i, 1);
-					sortedSecondaries[i] = WInfo;
-					break;
-				}
-				
-				if (WInfo.InventoryGroup == sortedSecondaries[i].InventoryGroup)
-					if (StrCmp(WInfo.ItemCap, sortedSecondaries[i].ItemCap, 6, True) <= 0)
-					{	
-						sortedSecondaries.Insert(i, 1);
-						sortedSecondaries[i] = WInfo;
-						break;
-					}
-				
-				if (i == sortedSecondaries.Length - 1)
-				{
-					sortedSecondaries[sortedSecondaries.Length] = WInfo;
-					break;
-				}
-			}
-		}
-	}
 }
 
 
@@ -351,14 +282,10 @@ function bool InternalOnClick(GUIComponent Sender)
     if (Sender==BSavePreset) //SAVE PRESET
 	{
 			SavedLoadouts[cb_Presets.GetIndex()].PresetName = cb_Presets.GetText();
-		if (Item_Melee.Items.length > Item_Melee.Index)
-			SavedLoadouts[cb_Presets.GetIndex()].Weapons[0] = Item_Melee.Items[Item_Melee.Index].Text;
 		if (Item_SideArm.Items.length > Item_SideArm.Index)
 			SavedLoadouts[cb_Presets.GetIndex()].Weapons[1] = Item_SideArm.Items[Item_SideArm.Index].Text;
 		if (Item_Primary.Items.length > Item_Primary.Index)
 			SavedLoadouts[cb_Presets.GetIndex()].Weapons[2] = Item_Primary.Items[Item_Primary.Index].Text;
-		if (Item_Secondary.Items.length > Item_Secondary.Index)
-			SavedLoadouts[cb_Presets.GetIndex()].Weapons[3] = Item_Secondary.Items[Item_Secondary.Index].Text;
 		if (Item_Grenade.Items.length > Item_Grenade.Index)
 			SavedLoadouts[cb_Presets.GetIndex()].Weapons[4] = Item_Grenade.Items[Item_Grenade.Index].Text;
 		SaveConfig();	
@@ -370,25 +297,17 @@ function SaveWeapons()
 {
 		SavedLoadouts[cb_Presets.GetIndex()].PresetName = cb_Presets.GetText();
 			
-		if (Item_Melee.Items.length > Item_Melee.Index)
-			SavedLoadouts[cb_Presets.GetIndex()].Weapons[0] = Item_Melee.Items[Item_Melee.Index].Text;
 		if (Item_SideArm.Items.length > Item_SideArm.Index)
 			SavedLoadouts[cb_Presets.GetIndex()].Weapons[1] = Item_SideArm.Items[Item_SideArm.Index].Text;
 		if (Item_Primary.Items.length > Item_Primary.Index)
 			SavedLoadouts[cb_Presets.GetIndex()].Weapons[2] = Item_Primary.Items[Item_Primary.Index].Text;
-		if (Item_Secondary.Items.length > Item_Secondary.Index)
-			SavedLoadouts[cb_Presets.GetIndex()].Weapons[3] = Item_Secondary.Items[Item_Secondary.Index].Text;
 		if (Item_Grenade.Items.length > Item_Grenade.Index)
 			SavedLoadouts[cb_Presets.GetIndex()].Weapons[4] = Item_Grenade.Items[Item_Grenade.Index].Text;
 
-		if (Item_Melee.Items.length > Item_Melee.Index)
-			class'Mut_Outfitting'.default.LoadOut[0] = Item_Melee.Items[Item_Melee.Index].Text;
 		if (Item_SideArm.Items.length > Item_SideArm.Index)
 			class'Mut_Outfitting'.default.LoadOut[1] = Item_SideArm.Items[Item_SideArm.Index].Text;
 		if (Item_Primary.Items.length > Item_Primary.Index)
 			class'Mut_Outfitting'.default.LoadOut[2] = Item_Primary.Items[Item_Primary.Index].Text;
-		if (Item_Secondary.Items.length > Item_Secondary.Index)
-			class'Mut_Outfitting'.default.LoadOut[3] = Item_Secondary.Items[Item_Secondary.Index].Text;
 		if (Item_Grenade.Items.length > Item_Grenade.Index)
 			class'Mut_Outfitting'.default.LoadOut[4] = Item_Grenade.Items[Item_Grenade.Index].Text;
 		
@@ -405,43 +324,24 @@ function InternalOnChange(GUIComponent Sender)
 	if (COI == None || !COI.bWeaponsReady)
 		return;
 		
-	if (Sender == cb_Melee)
-		Item_Melee.SetItem(cb_Melee.GetExtra());
 		
 	else if (Sender == cb_SideArm)
 		Item_SideArm.SetItem(cb_SideArm.GetExtra());
 	else if (Sender == cb_Primary)
 		Item_Primary.SetItem(cb_Primary.GetExtra());
-	else if (Sender == cb_Secondary)
-		Item_Secondary.SetItem(cb_Secondary.GetExtra());
 	else if (Sender == cb_Grenade)
 		Item_Grenade.SetItem(cb_Grenade.GetExtra());
 		
 	else if (Sender == cb_Presets && cb_Presets.GetExtra() != "")
 	{
-		Item_Melee.SetItem(SavedLoadOuts[cb_Presets.GetIndex()].Weapons[0]);
 		Item_SideArm.SetItem(SavedLoadOuts[cb_Presets.GetIndex()].Weapons[1]);
 		Item_Primary.SetItem(SavedLoadOuts[cb_Presets.GetIndex()].Weapons[2]);
-		Item_Secondary.SetItem(SavedLoadOuts[cb_Presets.GetIndex()].Weapons[3]);
 		Item_Grenade.SetItem(SavedLoadOuts[cb_Presets.GetIndex()].Weapons[4]);
 	}
 }
 
 defaultproperties
 {
-     Begin Object Class=GUILoadOutItem Name=MeleeImage
-         NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
-         Caption="Melee"
-         WinTop=0.040000
-         WinLeft=0.100000
-         WinWidth=0.200000
-         WinHeight=0.200000
-         OnRendered=MeleeImage.InternalOnDraw
-         OnClick=MeleeImage.InternalOnClick
-         OnRightClick=MeleeImage.InternalOnRightClick
-     End Object
-     Item_Melee=GUILoadOutItem'BallisticProV55.BallisticOutfittingWeaponsTab.MeleeImage'
-
      Begin Object Class=GUILoadOutItem Name=SideArmImage
          NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
          Caption="Sidearm"
@@ -468,24 +368,11 @@ defaultproperties
      End Object
      Item_Primary=GUILoadOutItem'BallisticProV55.BallisticOutfittingWeaponsTab.PrimaryImage'
 
-     Begin Object Class=GUILoadOutItem Name=SecondaryImage
-         NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
-         Caption="Secondary Weapon"
-         WinTop=0.340000
-         WinLeft=0.550000
-         WinWidth=0.200000
-         WinHeight=0.200000
-         OnRendered=SecondaryImage.InternalOnDraw
-         OnClick=SecondaryImage.InternalOnClick
-         OnRightClick=SecondaryImage.InternalOnRightClick
-     End Object
-     Item_Secondary=GUILoadOutItem'BallisticProV55.BallisticOutfittingWeaponsTab.SecondaryImage'
-
      Begin Object Class=GUILoadOutItem Name=GrenadeImage
          NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
          Caption="Grenades"
-         WinTop=0.040000
-         WinLeft=0.700000
+         WinTop=0.350000
+         WinLeft=0.550000
          WinWidth=0.200000
          WinHeight=0.200000
          OnRendered=GrenadeImage.InternalOnDraw
@@ -493,19 +380,6 @@ defaultproperties
          OnRightClick=GrenadeImage.InternalOnRightClick
      End Object
      Item_Grenade=GUILoadOutItem'BallisticProV55.BallisticOutfittingWeaponsTab.GrenadeImage'
-
-     Begin Object Class=GUIComboBox Name=cb_MeleeComBox
-         MaxVisibleItems=16
-         Hint="Quick list of gear."
-         WinTop=0.250000
-         WinLeft=0.102148
-         WinWidth=0.196094
-         WinHeight=0.040000
-         TabOrder=0
-         OnChange=BallisticOutfittingWeaponsTab.InternalOnChange
-         OnKeyEvent=cb_MeleeComBox.InternalOnKeyEvent
-     End Object
-     cb_Melee=GUIComboBox'BallisticProV55.BallisticOutfittingWeaponsTab.cb_MeleeComBox'
 
      Begin Object Class=GUIComboBox Name=cb_SideArmBox
          MaxVisibleItems=16
@@ -533,24 +407,11 @@ defaultproperties
      End Object
      cb_Primary=GUIComboBox'BallisticProV55.BallisticOutfittingWeaponsTab.cb_PrimaryComBox'
 
-     Begin Object Class=GUIComboBox Name=cb_SecondaryComBox
-         MaxVisibleItems=16
-         Hint="Quick list of secondary weapons."
-         WinTop=0.550000
-         WinLeft=0.550977
-         WinWidth=0.196094
-         WinHeight=0.040000
-         TabOrder=0
-         OnChange=BallisticOutfittingWeaponsTab.InternalOnChange
-         OnKeyEvent=cb_SecondaryComBox.InternalOnKeyEvent
-     End Object
-     cb_Secondary=GUIComboBox'BallisticProV55.BallisticOutfittingWeaponsTab.cb_SecondaryComBox'
-
      Begin Object Class=GUIComboBox Name=cb_GrenadeComBox
          MaxVisibleItems=16
          Hint="Quick list of grenades and traps."
-         WinTop=0.250000
-         WinLeft=0.702148
+         WinTop=0.550000
+         WinLeft=0.550977
          WinWidth=0.196094
          WinHeight=0.040000
          TabOrder=0
@@ -562,7 +423,7 @@ defaultproperties
      Begin Object Class=moComboBox Name=co_PresetsCB
          ComponentJustification=TXTA_Left
          CaptionWidth=0.400000
-         Caption="Presets"
+         Caption="Preset:"
          OnCreateComponent=co_PresetsCB.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Choose a preset replacements configuration, or type a new preset name here and click 'Save' to make the current configuration a new preset."
@@ -572,17 +433,6 @@ defaultproperties
          OnChange=BallisticOutfittingWeaponsTab.InternalOnChange
      End Object
      cb_Presets=moComboBox'BallisticProV55.BallisticOutfittingWeaponsTab.co_PresetsCB'
-
-     Begin Object Class=GUIImage Name=ImageBoxMelee
-         Image=Texture'2K4Menus.NewControls.Display99'
-         ImageStyle=ISTY_Stretched
-         WinTop=0.030000
-         WinLeft=0.087500
-         WinWidth=0.225000
-         WinHeight=0.240000
-         RenderWeight=0.002000
-     End Object
-     Box_Melee=GUIImage'BallisticProV55.BallisticOutfittingWeaponsTab.ImageBoxMelee'
 
      Begin Object Class=GUIImage Name=ImageBoxSideArm
          Image=Texture'2K4Menus.NewControls.Display99'
@@ -606,7 +456,7 @@ defaultproperties
      End Object
      Box_Primary=GUIImage'BallisticProV55.BallisticOutfittingWeaponsTab.ImageBoxPrimary'
 
-     Begin Object Class=GUIImage Name=ImageBoxSecondary
+     Begin Object Class=GUIImage Name=ImageBoxGrenade
          Image=Texture'2K4Menus.NewControls.Display99'
          ImageStyle=ISTY_Stretched
          WinTop=0.337500
@@ -615,29 +465,7 @@ defaultproperties
          WinHeight=0.240000
          RenderWeight=0.002000
      End Object
-     Box_Secondary=GUIImage'BallisticProV55.BallisticOutfittingWeaponsTab.ImageBoxSecondary'
-
-     Begin Object Class=GUIImage Name=ImageBoxGrenade
-         Image=Texture'2K4Menus.NewControls.Display99'
-         ImageStyle=ISTY_Stretched
-         WinTop=0.030000
-         WinLeft=0.687500
-         WinWidth=0.225000
-         WinHeight=0.240000
-         RenderWeight=0.002000
-     End Object
      Box_Grenade=GUIImage'BallisticProV55.BallisticOutfittingWeaponsTab.ImageBoxGrenade'
-
-     Begin Object Class=GUIImage Name=MeleeBackImage
-         Image=Texture'Engine.MenuBlack'
-         ImageStyle=ISTY_Stretched
-         WinTop=0.050000
-         WinLeft=0.100000
-         WinWidth=0.200000
-         WinHeight=0.240000
-         RenderWeight=0.003000
-     End Object
-     MeleeBack=GUIImage'BallisticProV55.BallisticOutfittingWeaponsTab.MeleeBackImage'
 
      Begin Object Class=GUIImage Name=SideArmBackImage
          Image=Texture'Engine.MenuBlack'
@@ -661,22 +489,11 @@ defaultproperties
      End Object
      PrimaryBack=GUIImage'BallisticProV55.BallisticOutfittingWeaponsTab.PrimaryBackImage'
 
-     Begin Object Class=GUIImage Name=SecondaryBackImage
+     Begin Object Class=GUIImage Name=GrenadeBackImage
          Image=Texture'Engine.MenuBlack'
          ImageStyle=ISTY_Stretched
          WinTop=0.350000
          WinLeft=0.550000
-         WinWidth=0.200000
-         WinHeight=0.200000
-         RenderWeight=0.003000
-     End Object
-     SecondaryBack=GUIImage'BallisticProV55.BallisticOutfittingWeaponsTab.SecondaryBackImage'
-
-     Begin Object Class=GUIImage Name=GrenadeBackImage
-         Image=Texture'Engine.MenuBlack'
-         ImageStyle=ISTY_Stretched
-         WinTop=0.050000
-         WinLeft=0.700000
          WinWidth=0.200000
          WinHeight=0.200000
          RenderWeight=0.003000
@@ -707,11 +524,11 @@ defaultproperties
      End Object
      l_Receiving=GUILabel'BallisticProV55.BallisticOutfittingWeaponsTab.l_Receivinglabel'
 
-     SavedLoadouts(0)=(PresetName="DEFAULT",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
-     SavedLoadouts(1)=(PresetName="DEFAULT2",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
-     SavedLoadouts(2)=(PresetName="DEFAULT3",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
-     SavedLoadouts(3)=(PresetName="DEFAULT4",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
-     SavedLoadouts(4)=(PresetName="DEFAULT5",Weapons[0]="BallisticProV55.A909SkrithBlades",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[3]="BWBPRecolors3Pro.A49SkrithBlaster",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(0)=(PresetName="DEFAULT1",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(1)=(PresetName="DEFAULT2",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(2)=(PresetName="DEFAULT3",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(3)=(PresetName="DEFAULT4",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
+     SavedLoadouts(4)=(PresetName="DEFAULT5",Weapons[1]="BallisticProV55.A42SkrithPistol",Weapons[2]="BallisticProV55.A73SkrithRifle",Weapons[4]="BWBPRecolors3Pro.G28Grenade")
      QuickListText="QuickList"
      ReceivingText(0)="Receiving..."
      ReceivingText(1)="Loading..."

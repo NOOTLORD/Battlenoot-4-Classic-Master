@@ -4634,7 +4634,7 @@ defaultproperties
      OffsetAdjustTime=0.300000
      AimSpread=96
      ViewRecoilFactor=1.000000
-     AimDamageThreshold=100.000000
+     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.640000
      ChaosSpeedThreshold=6000.000000
      ChaosAimSpread=1536

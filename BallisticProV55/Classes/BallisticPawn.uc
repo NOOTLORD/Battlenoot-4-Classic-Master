@@ -580,7 +580,7 @@ simulated event SetAnimAction(name NewAction)
 				AnimBlendParams(1, 1, 0.0, 0.2, FireRootBone);
 				PlayAnim(ReloadAnim, ReloadAnimRate, 0.25, 1);
 				FireState=FS_PlayOnce;
-				bResetAnimationAction=True;
+				bResetAnimationAction=True;			
 			}
 			else AnimAction = '';
 			return;

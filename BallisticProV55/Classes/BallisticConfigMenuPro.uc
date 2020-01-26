@@ -20,7 +20,6 @@ var automated GUITabControl	c_Tabs;
 var() editconst noexport BallisticTab_RulesPro			p_Rules;
 var() editconst noexport BallisticTab_PreferencesPro	p_Options;
 var() editconst noexport BallisticTab_BloodPro			p_Blood;
-var() editconst noexport BallisticTab_SwappingsPro		p_Swap;
 var() editconst noexport BallisticTab_OutfittingPro	p_Loadout;
 var() editconst noexport BallisticTab_LoadoutPro		p_LoadoutNew;
 var() editconst noexport BallisticTab_ProSettings 		p_ProSettings;
@@ -39,7 +38,6 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 	p_ProSettings	= BallisticTab_ProSettings(c_Tabs.AddTab(ProSettingsTabLabel,"BallisticProV55.BallisticTab_ProSettings",,ProSettingsTabHint));
 	p_Options	 = BallisticTab_PreferencesPro(c_Tabs.AddTab(OptionsTabLabel,"BallisticProV55.BallisticTab_PreferencesPro",,OptionsTabHint));
 	p_Blood		 = BallisticTab_BloodPro(c_Tabs.AddTab(BloodTabLabel,"BallisticProV55.BallisticTab_BloodPro",,BloodTabHint));
-	p_Swap		 = BallisticTab_SwappingsPro(c_Tabs.AddTab(SwapTabLabel,"BallisticProV55.BallisticTab_SwappingsPro",,SwapTabHint));
 	p_Loadout	 = BallisticTab_OutfittingPro(c_Tabs.AddTab(LoadoutTabLabel,"BallisticProV55.BallisticTab_OutfittingPro",,LoadoutTabHint));
 	p_LoadoutNew = BallisticTab_LoadoutPro(c_Tabs.AddTab(LoadoutNewTabLabel,"BallisticProV55.BallisticTab_LoadoutPro",,LoadoutNewTabHint));
 }
@@ -83,7 +81,6 @@ function bool InternalOnClick(GUIComponent Sender)
 			 case p_Rules:		p_Rules.LoadSettings(); break;
 			 case p_Options:	p_Options.LoadSettings(); break;
 			 case p_Blood:		p_Blood.LoadSettings(); break;
-			 case p_Swap:		p_Swap.LoadSettings(); break;
 			 case p_Loadout:	p_Loadout.LoadSettings(); break;
 			 case p_LoadoutNew:	p_LoadoutNew.LoadSettings(); break;
 			 case p_ProSettings:   p_ProSettings.LoadSettings(); break;
@@ -97,7 +94,6 @@ function bool InternalOnClick(GUIComponent Sender)
 			 case p_Rules:		p_Rules.DefaultSettings(); break;
 			 case p_Options:	p_Options.DefaultSettings(); break;
 			 case p_Blood:		p_Blood.DefaultSettings(); break;
-			 case p_Swap:		p_Swap.DefaultSettings(); break;
 			 case p_Loadout:	p_Loadout.DefaultSettings(); break;
 			 case p_LoadoutNew:	p_LoadoutNew.DefaultSettings(); break;
 			 case p_ProSettings:   p_ProSettings.DefaultSettings(); break;
@@ -134,7 +130,6 @@ function LoadSettings()
 	p_Rules.LoadSettings();
 	p_Options.LoadSettings();
 	p_Blood.LoadSettings();
-	p_Swap.LoadSettings();
 	p_Loadout.LoadSettings();
 	p_LoadoutNew.LoadSettings();
 	p_ProSettings.LoadSettings();
@@ -145,7 +140,6 @@ function SaveSettings()
 	p_Rules.SaveSettings();
 	p_Options.SaveSettings();
 	p_Blood.SaveSettings();
-	p_Swap.SaveSettings();
 	p_Loadout.SaveSettings();
 	p_LoadoutNew.SaveSettings();
 	p_ProSettings.SaveSettings();
@@ -156,7 +150,6 @@ function DefaultSettings()
 	p_Rules.DefaultSettings();
 	p_Options.DefaultSettings();
 	p_Blood.DefaultSettings();
-	p_Swap.DefaultSettings();
 	p_Loadout.DefaultSettings();
 	p_LoadoutNew.DefaultSettings();
 	p_ProSettings.DefaultSettings();
@@ -272,8 +265,6 @@ defaultproperties
      OptionsTabHint="Configure your own personal preferences."
      BloodTabLabel="Blood"
      BloodTabHint="Configure Ballistic blood and gore settings."
-     SwapTabLabel="Swapping"
-     SwapTabHint="Adjust how and which weapons are spawned by the 'Ballistic Weapons' mutator."
      LoadoutTabLabel="Loadout"
      LoadoutTabHint="Change how and which weapons are used by the 'Ballistic Loadout' mutator."
      LoadoutNewTabLabel="Evolution Loadout"
