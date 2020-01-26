@@ -85,6 +85,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	 
      bNoCrosshairInScope=True
      SightPivot=(Pitch=200)
@@ -134,10 +136,10 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.M50Assault'
      DrawScale=0.300000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Shader'BallisticWeapons2.M50.M50Skin1Shiney'
-     Skins(2)=Shader'BallisticWeapons2.M50.M50Skin2Shiney'
+     Skins(1)=Texture'BallisticWeapons2.M50.M50SkinA'
+     Skins(2)=Texture'BallisticWeapons2.M50.M50SkinB'
      Skins(3)=Combiner'BallisticUI2.M50.NoiseComb'
      Skins(4)=Texture'BallisticWeapons2.M50.M50Laser'
      Skins(5)=Texture'BallisticWeapons2.M50.M50Gren'
-     AmbientGlow=0
+     AmbientGlow=10
 }

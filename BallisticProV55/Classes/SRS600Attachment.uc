@@ -93,5 +93,5 @@ defaultproperties
      bRapidFire=True
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticProAnims.SRSEO-3rd'
-     DrawScale=0.250000
+     DrawScale=0.240000
 }

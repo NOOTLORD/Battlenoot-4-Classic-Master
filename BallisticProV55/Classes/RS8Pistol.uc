@@ -276,6 +276,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-15.000000,Z=8.700000)
@@ -323,5 +325,5 @@ defaultproperties
      DrawScale=0.300000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BWAddPack-RS-Skins.RS8.RS8Skin'
-     AmbientGlow=0
+     AmbientGlow=10
 }

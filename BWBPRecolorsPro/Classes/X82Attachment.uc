@@ -99,5 +99,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.X83A1_3rd'
      RelativeLocation=(X=-17.000000,Z=2.000000)
      RelativeRotation=(Pitch=32768)
-     DrawScale=0.250000
+     DrawScale=0.225000
 }

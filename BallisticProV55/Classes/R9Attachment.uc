@@ -134,7 +134,7 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
      FlashMode=MU_Primary 	
-     FlashScale=1.550000
+     FlashScale=1.250000
 	 LightMode=MU_Primary
      ImpactManagers(0)=Class'BallisticProV55.IM_Bullet''
      BrassClass=Class'BallisticProV55.Brass_Rifle'
@@ -151,6 +151,6 @@ defaultproperties
      ReloadAnim="Reload_AR"
      CockingAnim="Cock_RearPull"
      Mesh=SkeletalMesh'BallisticAnims3.USSR-3rd'
-     DrawScale=0.160000
+     DrawScale=0.140000
      Skins(0)=Texture'BallisticTextures3.Weapons.USSRSkin'	 
 }

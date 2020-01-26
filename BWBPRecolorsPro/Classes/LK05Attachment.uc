@@ -82,4 +82,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.TP_LK05'
      RelativeRotation=(Pitch=32768)
      PrePivot=(X=1.000000,Z=-3.000000)
+     DrawScale=0.325000	 
 }

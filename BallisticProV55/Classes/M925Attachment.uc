@@ -77,9 +77,9 @@ simulated function FlashMuzzleFlash(byte Mode)
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
-     FlashMode=MU_Primary 
-     FlashScale=1.000000		 
-     LightMode=MU_Primary	 
+     FlashMode=MU_Primary
+     FlashScale=1.000000 
+     LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_BigMG'
      BrassMode=MU_Primary
@@ -99,5 +99,5 @@ defaultproperties
      bHeavy=True
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.M925-3rd'
-     DrawScale=0.120000
+     DrawScale=0.110000
 }

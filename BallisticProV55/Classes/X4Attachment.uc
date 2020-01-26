@@ -25,5 +25,5 @@ defaultproperties
      MeleeStrikeAnim="Blade_Stab"
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims_25.X4_3rd'
-     DrawScale=0.175000
+     DrawScale=0.125000
 }

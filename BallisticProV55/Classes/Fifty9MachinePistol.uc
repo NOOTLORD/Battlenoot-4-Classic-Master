@@ -133,6 +133,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	
      bNoCrosshairInScope=True
 	 SightPivot=(Pitch=512)
@@ -181,5 +183,5 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticProAnims.UZI'
      DrawScale=0.300000
-     AmbientGlow=0
+     AmbientGlow=10
 }

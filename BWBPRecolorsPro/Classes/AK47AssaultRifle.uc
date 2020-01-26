@@ -199,5 +199,5 @@ defaultproperties
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticRecolors3TexPro.AK490.AK490-Main'
      Skins(2)=Texture'BallisticRecolors3TexPro.AK490.AK490-Misc'
-     AmbientGlow=0
+     AmbientGlow=10
 }

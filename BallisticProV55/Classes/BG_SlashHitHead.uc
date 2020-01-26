@@ -9,44 +9,6 @@ class BG_SlashHitHead extends DGVEmitter
 
 defaultproperties
 {
-     DisableDGV(1)=1
-     DisableDGV(2)=1
-     DisableDGV(3)=1
-     DisableDGV(5)=1
-     bModifyLossRange=False
-     Begin Object Class=SpriteEmitter Name=SpriteEmitter29
-         UseCollision=True
-         FadeOut=True
-         RespawnDeadParticles=False
-         SpinParticles=True
-         DampRotation=True
-         UniformSize=True
-         AutomaticInitialSpawning=False
-         UseRandomSubdivision=True
-         Acceleration=(Z=-400.000000)
-         ExtentMultiplier=(X=0.300000,Y=0.300000,Z=0.300000)
-         DampingFactorRange=(X=(Min=0.000000,Max=0.000000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
-         ColorScale(0)=(Color=(B=255,G=255,R=255,A=255))
-         ColorScale(1)=(RelativeTime=1.000000,Color=(B=255,G=255,R=255,A=255))
-         ColorMultiplierRange=(X=(Min=0.600000,Max=0.800000),Y=(Min=0.600000,Max=0.600000),Z=(Min=0.600000,Max=0.600000))
-         FadeOutStartTime=1.820000
-         MaxParticles=8
-         StartLocationOffset=(X=5.000000)
-         SpinsPerSecondRange=(X=(Max=2.000000))
-         StartSpinRange=(X=(Max=1.000000))
-         StartSizeRange=(X=(Min=1.000000,Max=3.000000),Y=(Min=1.000000,Max=3.000000),Z=(Min=1.000000,Max=3.000000))
-         InitialParticlesPerSecond=100.000000
-         DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticBloodPro.Sprites.HeadBits'
-         TextureUSubdivisions=4
-         TextureVSubdivisions=4
-         SecondsBeforeInactive=0.000000
-         MinSquaredVelocity=1000.000000
-         LifetimeRange=(Min=2.000000,Max=2.000000)
-         StartVelocityRange=(X=(Min=-100.000000,Max=-10.000000),Y=(Min=25.000000,Max=200.000000),Z=(Min=100.000000,Max=150.000000))
-     End Object
-     Emitters(0)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter29'
-
      Begin Object Class=SpriteEmitter Name=SpriteEmitter30
          FadeOut=True
          FadeIn=True
@@ -79,7 +41,7 @@ defaultproperties
          StartVelocityRange=(X=(Min=-50.000000),Y=(Min=-10.000000,Max=10.000000),Z=(Max=30.000000))
          VelocityLossRange=(X=(Min=1.500000,Max=1.500000),Y=(Min=1.500000,Max=1.500000),Z=(Min=3.000000,Max=3.000000))
      End Object
-     Emitters(1)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter30'
+     Emitters(0)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter30'
 
      Begin Object Class=TrailEmitter Name=TrailEmitter6
          TrailShadeType=PTTST_PointLife
@@ -106,7 +68,7 @@ defaultproperties
          LifetimeRange=(Min=0.500000,Max=0.500000)
          StartVelocityRange=(X=(Min=-120.000000,Max=-35.000000),Y=(Min=-60.000000,Max=60.000000),Z=(Min=-100.000000,Max=25.000000))
      End Object
-     Emitters(2)=TrailEmitter'BallisticProV55.BG_SlashHitHead.TrailEmitter6'
+     Emitters(1)=TrailEmitter'BallisticProV55.BG_SlashHitHead.TrailEmitter6'
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter31
          UseDirectionAs=PTDU_Up
@@ -144,7 +106,7 @@ defaultproperties
          LifetimeRange=(Min=0.500000,Max=0.500000)
          StartVelocityRange=(X=(Min=-100.000000,Max=-50.000000),Y=(Min=-50.000000,Max=50.000000),Z=(Min=-100.000000,Max=100.000000))
      End Object
-     Emitters(3)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter31'
+     Emitters(2)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter31'
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter11
          UseDirectionAs=PTDU_Up
@@ -175,7 +137,7 @@ defaultproperties
          LifetimeRange=(Min=1.000000,Max=1.000000)
          StartVelocityRange=(X=(Min=-100.000000,Max=10.000000),Y=(Min=50.000000,Max=400.000000),Z=(Max=25.000000))
      End Object
-     Emitters(4)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter11'
+     Emitters(3)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter11'
 
      Begin Object Class=SpriteEmitter Name=SpriteEmitter12
          FadeOut=True
@@ -208,7 +170,7 @@ defaultproperties
          LifetimeRange=(Min=1.000000,Max=1.000000)
          StartVelocityRange=(X=(Min=-50.000000,Max=10.000000),Y=(Max=35.000000),Z=(Min=50.000000,Max=100.000000))
      End Object
-     Emitters(5)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter12'
+     Emitters(4)=SpriteEmitter'BallisticProV55.BG_SlashHitHead.SpriteEmitter12'
 
      AutoDestroy=True
 }

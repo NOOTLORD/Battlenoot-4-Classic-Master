@@ -56,7 +56,7 @@ defaultproperties
      ScopedTracerOffset=(Y=-14.000000,Z=-2.000000)
      MuzzleFlashClass=Class'BallisticProV55.M46FlashEmitter'
      FlashMode=MU_Primary 
-     FlashScale=1.000000	 
+     FlashScale=0.750000	 
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_M46AR'
@@ -77,5 +77,5 @@ defaultproperties
      bRapidFire=True
 	 bHeavy=True
      Mesh=SkeletalMesh'BallisticAnims_25.OA-AR_3rd'
-     DrawScale=0.275000
+     DrawScale=0.225000
 }

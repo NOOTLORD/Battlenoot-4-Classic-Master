@@ -376,6 +376,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-30.000000,Y=-0.400000,Z=14.500000)
@@ -427,5 +429,5 @@ defaultproperties
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons2.D49.D49RevolverSkin'
      Skins(2)=Texture'BallisticWeapons2.D49.D49ShellsSkin'
-     AmbientGlow=0
+     AmbientGlow=10
 }

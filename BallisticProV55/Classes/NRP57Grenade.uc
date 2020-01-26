@@ -72,6 +72,8 @@ defaultproperties
      SpecialInfo(0)=(Info="60.0;5.0;0.25;30.0;0.0;0.0;0.4")
      BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway',Volume=0.325000)
+     WeaponModes(0)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=1
      AimAdjustTime=100.000000
      AimDamageThreshold=0.000000
@@ -101,5 +103,5 @@ defaultproperties
      ItemName="NRP-57 Grenade"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'
      DrawScale=0.400000
-     AmbientGlow=0
+     AmbientGlow=10
 }

@@ -80,6 +80,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True	 
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      FullZoomFOV=60.000000
@@ -132,5 +134,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.USSR'
      DrawScale=0.500000
      Skins(4)=Texture'BallisticTextures3.Weapons.USSRSkin'	 
-     AmbientGlow=0
+     AmbientGlow=10
 }

@@ -71,6 +71,8 @@ defaultproperties
      ClipInFrame=0.760000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=200)
@@ -118,5 +120,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticProAnims.OA-SMG'
      DrawScale=0.450000
-     AmbientGlow=0
+     AmbientGlow=10
 }

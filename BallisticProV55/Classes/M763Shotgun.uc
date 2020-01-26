@@ -36,8 +36,6 @@ simulated event AnimEnded (int Channel, name anim, float frame, float rate)
 	// Modified stuff from Engine.Weapon
 	if ((ClientState == WS_ReadyToFire || (ClientState == WS_None && Instigator.Weapon == self)) && ReloadState == RS_None)
     {
-		if (MeleeState < MS_Held)
-			bPreventReload=false;
 		if (Channel == 0 && (bNeedReload || ((FireMode[0] == None || !FireMode[0].bIsFiring) && (FireMode[1] == None || !FireMode[1].bIsFiring))) && MeleeState < MS_Held)
 			PlayIdle();
     }
@@ -219,6 +217,8 @@ defaultproperties
      ClipInFrame=0.375000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	 
      bCanSkipReload=True
      bAltTriggerReload=True

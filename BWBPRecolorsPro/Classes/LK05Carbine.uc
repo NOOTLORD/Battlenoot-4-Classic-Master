@@ -275,5 +275,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.LK05_FP'
      DrawScale=0.300000
-     AmbientGlow=0
+     AmbientGlow=10
 }

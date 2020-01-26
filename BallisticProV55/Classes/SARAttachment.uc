@@ -33,6 +33,5 @@ defaultproperties
      bRapidFire=True
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims3.SAR-3rd'
-     DrawScale=0.100000
-     SoundRadius=256.000000
+     DrawScale=0.085000
 }

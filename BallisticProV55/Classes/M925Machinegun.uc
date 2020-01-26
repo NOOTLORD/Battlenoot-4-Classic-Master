@@ -153,6 +153,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.M925.M925-ShellIn',Volume=0.800000)
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	 
      bNoCrosshairInScope=True
      SightPivot=(Pitch=64)
@@ -211,5 +213,5 @@ defaultproperties
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(4)=Texture'BallisticWeapons2.M925.M925AmmoBox'
      Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=0
+     AmbientGlow=10
 }

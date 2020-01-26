@@ -188,5 +188,5 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BWBP4-Anims.Glock'
      DrawScale=0.150000
-     AmbientGlow=0
+     AmbientGlow=10
 }

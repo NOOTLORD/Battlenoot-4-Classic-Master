@@ -95,5 +95,5 @@ defaultproperties
      ItemName="X4 Knife"
      Mesh=SkeletalMesh'BallisticAnims_25.X4'
      DrawScale=0.300000
-     AmbientGlow=0				  
+     AmbientGlow=10			  
 }

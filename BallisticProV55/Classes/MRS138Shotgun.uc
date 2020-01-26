@@ -107,6 +107,8 @@ defaultproperties
      ClipInFrame=0.375000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	 
      bCanSkipReload=True
      bShovelLoad=True
@@ -165,5 +167,5 @@ defaultproperties
      Skins(1)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Skin'
      Skins(2)=Texture'BWAddPack-RS-Skins.MRS138.MRS138HeatShield'
      Skins(3)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Shell'	 
-     AmbientGlow=0
+     AmbientGlow=10
 }

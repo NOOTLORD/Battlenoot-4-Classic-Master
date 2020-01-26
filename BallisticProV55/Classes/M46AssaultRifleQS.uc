@@ -90,6 +90,8 @@ defaultproperties
      bCockOnEmpty=True
      ClipInFrame=0.700000		
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      ZoomType=ZT_Irons
      ZoomInAnim=
@@ -143,5 +145,5 @@ defaultproperties
      LightRadius=4.000000					   																									   						 
      Mesh=SkeletalMesh'BallisticProAnims.OA-AR-RDS'
      DrawScale=0.300000	 
-     AmbientGlow=0
+     AmbientGlow=10
 }

@@ -202,6 +202,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-10.000000,Z=12.200000)
@@ -252,5 +254,5 @@ defaultproperties
      Skins(1)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Skin'
      Skins(2)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Laser'
      Skins(3)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Silencer'
-     AmbientGlow=0
+     AmbientGlow=10
 }

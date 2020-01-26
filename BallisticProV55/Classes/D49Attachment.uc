@@ -162,5 +162,5 @@ defaultproperties
 	 ReloadAnim="Reload_Pistol"
      ReloadAnimRate=0.350000
      Mesh=SkeletalMesh'BallisticAnims2.D49-3rd'
-     DrawScale=0.150000
+     DrawScale=0.125000
 }

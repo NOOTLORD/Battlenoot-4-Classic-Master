@@ -164,6 +164,8 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagIn',Volume=1.000000)
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      bNoCrosshairInScope=True
@@ -218,5 +220,5 @@ defaultproperties
      Skins(1)=Texture'BallisticRecolors3TexPro.SK410.SK410-C-CamoSnow'
      Skins(2)=Texture'BallisticRecolors3TexPro.SK410.SK410-Misc'
      Skins(3)=Shader'BallisticRecolors3TexPro.SK410.SK410-LightsOn'
-     AmbientGlow=0
+     AmbientGlow=10
 }

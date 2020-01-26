@@ -431,8 +431,8 @@ defaultproperties
 {
      Begin Object Class=GUILoadOutItem Name=MeleeImage
          NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
-         Caption="Gear"
-         WinTop=0.050000
+         Caption="Melee"
+         WinTop=0.040000
          WinLeft=0.100000
          WinWidth=0.200000
          WinHeight=0.200000
@@ -445,7 +445,7 @@ defaultproperties
      Begin Object Class=GUILoadOutItem Name=SideArmImage
          NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
          Caption="Sidearm"
-         WinTop=0.050000
+         WinTop=0.040000
          WinLeft=0.400000
          WinWidth=0.200000
          WinHeight=0.200000
@@ -458,7 +458,7 @@ defaultproperties
      Begin Object Class=GUILoadOutItem Name=PrimaryImage
          NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
          Caption="Primary Weapon"
-         WinTop=0.350000
+         WinTop=0.340000
          WinLeft=0.250000
          WinWidth=0.200000
          WinHeight=0.200000
@@ -471,7 +471,7 @@ defaultproperties
      Begin Object Class=GUILoadOutItem Name=SecondaryImage
          NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
          Caption="Secondary Weapon"
-         WinTop=0.350000
+         WinTop=0.340000
          WinLeft=0.550000
          WinWidth=0.200000
          WinHeight=0.200000
@@ -484,7 +484,7 @@ defaultproperties
      Begin Object Class=GUILoadOutItem Name=GrenadeImage
          NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
          Caption="Grenades"
-         WinTop=0.050000
+         WinTop=0.040000
          WinLeft=0.700000
          WinWidth=0.200000
          WinHeight=0.200000

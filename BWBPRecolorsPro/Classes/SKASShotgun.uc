@@ -96,7 +96,9 @@ defaultproperties
      ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=1.100000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")	 
+     WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
+	 WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True) 
      CurrentWeaponMode=0
      bNotifyModeSwitch=True
      bNoCrosshairInScope=True
@@ -148,5 +150,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.SKASShotgunFP'
      DrawScale=0.260000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=0
+     AmbientGlow=10
 }

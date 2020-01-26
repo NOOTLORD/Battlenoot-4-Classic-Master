@@ -31,5 +31,5 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.TP_AK490'
      RelativeRotation=(Pitch=32768)
-     DrawScale=0.350000
+     DrawScale=0.265000
 }

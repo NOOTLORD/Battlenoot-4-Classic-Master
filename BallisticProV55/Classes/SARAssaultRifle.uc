@@ -156,6 +156,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=350)
@@ -205,7 +207,8 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticProAnims.SAR'
      DrawScale=0.300000
-     AmbientGlow=0
-     SoundPitch=56
-     SoundRadius=32.000000
+     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+     Skins(1)=Texture'BallisticTextures3.Weapons.SARSkin'
+     Skins(2)=Texture'BallisticTextures3.Weapons.SAR-SightCross'
+     AmbientGlow=10	 
 }

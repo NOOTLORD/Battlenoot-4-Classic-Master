@@ -52,7 +52,7 @@ defaultproperties
      FlashScaleFactor=0.525000
      BrassClass=Class'BallisticProV55.Brass_GRSNine'
      BrassBone="tip"
-     BrassOffset=(X=-42.500000,Y=7.000000,Z=2.500000)
+     BrassOffset=(X=-42.500000,Y=4.500000,Z=1.000000)
      RecoilPerShot=256.000000
      FireChaos=0.140000
      XInaccuracy=96.000000
@@ -60,7 +60,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-Fire',Volume=1.400000)
      FireEndAnim=
      FireAnimRate=1.500000
-     FireRate=0.150000
+     FireRate=0.12500
      AmmoClass=Class'BallisticProV55.Ammo_GRS9Clip'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)

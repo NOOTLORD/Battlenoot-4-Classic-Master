@@ -725,30 +725,6 @@ defaultproperties
      End Object
      BBox5=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox5Button'
 
-     Begin Object Class=GUIButton Name=BBox6Button
-         Caption="Streak 1"
-         Hint="View the list of weapons in the 'Streak 1' box"
-         WinTop=0.980000
-         WinLeft=0.225000
-         WinWidth=0.150000
-         TabOrder=0
-         OnClick=BallisticTab_OutfittingPro.InternalOnClick
-         OnKeyEvent=BBox6Button.InternalOnKeyEvent
-     End Object
-     BBox6=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox6Button'
-
-     Begin Object Class=GUIButton Name=BBox7Button
-         Caption="Streak 2"
-         Hint="View the list of weapons in the 'Streak 2' box"
-         WinTop=0.980000
-         WinLeft=0.625000
-         WinWidth=0.150000
-         TabOrder=0
-         OnClick=BallisticTab_OutfittingPro.InternalOnClick
-         OnKeyEvent=BBox7Button.InternalOnKeyEvent
-     End Object
-     BBox7=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox7Button'
-
      Begin Object Class=GUIScrollTextBox Name=WeaponDescription
          CharDelay=0.001500
          EOLDelay=0.250000

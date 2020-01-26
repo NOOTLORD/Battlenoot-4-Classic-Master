@@ -98,6 +98,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333000
@@ -112,8 +114,8 @@ defaultproperties
      SightOffset=(X=10.000000,Y=-1.600000,Z=17.000000)
      SightingTime=0.450000
      MinZoom=2.000000
-     MaxZoom=16.000000
-     ZoomStages=8
+     MaxZoom=2.000000	 
+     ZoomStages=0
      GunLength=80.000000
      CrouchAimFactor=0.600000
      SightAimFactor=0.150000
@@ -157,5 +159,5 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticProAnims.R78A1Rifle'
      DrawScale=0.450000
-     AmbientGlow=0
+     AmbientGlow=10
 }

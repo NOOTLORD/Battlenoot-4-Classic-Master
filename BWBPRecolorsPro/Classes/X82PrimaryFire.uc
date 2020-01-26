@@ -29,7 +29,7 @@ defaultproperties
      FlashScaleFactor=0.400000
      BrassClass=Class'BWBPRecolorsPro.Brass_X82rifle'
      BrassBone="breach"
-     BrassOffset=(X=-50.000000,Y=1.500000,Z=2.500000)
+     BrassOffset=(X=-50.000000,Y=1.500000,Z=1.500000)
      RecoilPerShot=1024.000000
      VelocityRecoil=255.000000
      FireChaos=0.700000

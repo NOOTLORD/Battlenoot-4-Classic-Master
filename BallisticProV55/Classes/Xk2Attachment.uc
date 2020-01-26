@@ -50,5 +50,5 @@ defaultproperties
      bRapidFire=True
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.Xk2-3rd'
-     DrawScale=0.110000
+     DrawScale=0.100000
 }

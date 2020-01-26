@@ -220,5 +220,5 @@ defaultproperties
      Skins(1)=Texture'BallisticRecolors4TexPro.MGL.MGL-Main'
      Skins(2)=Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase'
      Skins(3)=Shader'BallisticRecolors4TexPro.MGL.MGL-HolosightGlow'
-     AmbientGlow=0
+     AmbientGlow=10
 }

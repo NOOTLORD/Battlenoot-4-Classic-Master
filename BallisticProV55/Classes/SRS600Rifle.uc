@@ -173,6 +173,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True	 
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      FullZoomFOV=70.000000
      bNoCrosshairInScope=True
@@ -206,8 +208,8 @@ defaultproperties
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000								  
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
-     GroupOffset=6				  
+     InventoryGroup=4	
+     GroupOffset=6	 
      PlayerViewOffset=(X=2.000000,Y=9.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
      IconMaterial=Texture'BallisticProTextures.SRS.SmallIcon_SRSM2'
@@ -225,5 +227,5 @@ defaultproperties
      Skins(1)=Texture'BWBP3-Tex.SRS900.SRS900Scope'
      Skins(2)=Texture'BWBP3-Tex.SRS900.SRS900Ammo'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=0		 
+     AmbientGlow=10 
 }

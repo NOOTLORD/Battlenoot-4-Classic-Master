@@ -112,7 +112,7 @@ defaultproperties
      TracerChance=0.500000
      TraceRange=(Min=500.000000,Max=2000.000000)
      MaxWallSize=16.000000
-     MaxWalls=2
+     MaxWalls=1
      FireSpreadMode=FSM_Scatter
      ShotTypeString="shots"
 }

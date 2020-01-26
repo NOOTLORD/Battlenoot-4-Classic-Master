@@ -220,5 +220,5 @@ defaultproperties
      Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
      Skins(4)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'
      Skins(5)=Shader'BallisticRecolors4TexPro.Eagle.Eagle-SightDotGreen'
-     AmbientGlow=0
+     AmbientGlow=10
 }

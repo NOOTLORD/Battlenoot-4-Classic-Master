@@ -203,6 +203,8 @@ defaultproperties
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightPivot=(Pitch=256)
@@ -254,5 +256,5 @@ defaultproperties
      DrawScale=0.200000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons2.XK2.XK2Skin' 
-     AmbientGlow=0
+     AmbientGlow=10
 }

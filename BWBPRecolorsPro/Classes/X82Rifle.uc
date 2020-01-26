@@ -67,6 +67,8 @@ defaultproperties
      ClipInFrame=0.850000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",Value=1.000000)
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333300
@@ -80,8 +82,8 @@ defaultproperties
      SightOffset=(X=13.000000,Y=-1.600000,Z=7.200000)
      SightingTime=0.650000
      MinZoom=2.000000
-     MaxZoom=32.000000
-     ZoomStages=10
+     MaxZoom=2.000000	 
+     ZoomStages=0
      GunLength=80.000000
      CrouchAimFactor=0.700000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
@@ -136,5 +138,5 @@ defaultproperties
      Skins(1)=Texture'UT2004Weapons.Pickups.ClassicSniperAmmoT'
      Skins(2)=Texture'BallisticRecolors3TexPro.X82.X82Skin'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=0
+     AmbientGlow=10
 }

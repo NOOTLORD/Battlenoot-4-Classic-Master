@@ -791,6 +791,8 @@ defaultproperties
      ClipOutSound=(Sound=Sound'BallisticSounds2.G5.G5-Load',Volume=1.000000)
      ClipInSound=(Sound=Sound'BallisticSounds2.G5.G5-LoadHatch',Volume=1.000000)
      WeaponModes(0)=(ModeName="Rocket")
+     WeaponModes(1)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	 
      bCanSkipReload=True
      bShovelLoad=True
@@ -851,5 +853,5 @@ defaultproperties
      LightRadius=12.000000
      Mesh=SkeletalMesh'BallisticAnims2.G5Bazooka'
      DrawScale=0.300000
-     AmbientGlow=0
+     AmbientGlow=10
 }

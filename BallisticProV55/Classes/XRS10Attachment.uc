@@ -47,5 +47,5 @@ defaultproperties
      bRapidFire=True
      bAltRapidFire=True
      Mesh=SkeletalMesh'BWBP1-Anims.XRS10-3rd'
-     DrawScale=0.100000
+     DrawScale=0.075000
 }

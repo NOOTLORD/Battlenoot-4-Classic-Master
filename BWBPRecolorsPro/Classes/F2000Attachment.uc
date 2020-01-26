@@ -67,5 +67,5 @@ defaultproperties
      bRapidFire=True
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.MARS3_TP'
-     DrawScale=1.000000
+     DrawScale=0.825000
 }

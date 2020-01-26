@@ -66,5 +66,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.3RD-SKAS'
      RelativeLocation=(X=-2.000000,Z=7.000000)
      RelativeRotation=(Pitch=32768)
-     DrawScale=0.130000
+     DrawScale=0.115000
 }
