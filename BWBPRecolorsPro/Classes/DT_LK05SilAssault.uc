@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for LK05 Carbine Silenced 
+// Damage type class for LK05 Carbine Silenced 
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

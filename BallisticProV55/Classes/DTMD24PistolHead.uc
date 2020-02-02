@@ -1,7 +1,5 @@
 //=============================================================================
-// DTMD24PistolHead.
-//
-// Damage type for the MD24 Pistol headshots
+// Damage type class for MD24 Pistol headshots
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

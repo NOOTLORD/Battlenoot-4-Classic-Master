@@ -1,19 +1,12 @@
 //=============================================================================
-// M353Attachment.
-//
-// 3rd person weapon attachment for M353 Machinegun
+// 3rd person weapon class for M353 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M353Attachment extends BallisticAttachment;
-
-simulated Event PostNetBeginPlay()
-{
-	super.PostNetBeginPlay();
-	if (BallisticTurret(Instigator) != None)
-		bHidden=true;
-}
 
 // Return the location of the muzzle.
 simulated function Vector GetTipLocation()
@@ -22,8 +15,6 @@ simulated function Vector GetTipLocation()
 
 	if (Instigator != None && Instigator.IsFirstPerson() && PlayerController(Instigator.Controller).ViewTarget == Instigator)
 		C =Instigator.Weapon.GetBoneCoords('tip');
-	else if (BallisticTurret(Instigator) != None)
-		C = Instigator.GetBoneCoords('tip');
 	else
 		C = GetBoneCoords('tip');
 	if (Instigator != None && VSize(C.Origin - Instigator.Location) > 250)
@@ -36,8 +27,6 @@ simulated function Vector GetEjectorLocation(optional out Rotator EjectorAngle)
     local Coords C;
 	if (Instigator != None && Instigator.IsFirstPerson() && PlayerController(Instigator.Controller).ViewTarget == Instigator)
 		C = Instigator.Weapon.GetBoneCoords(BrassBone);
-	else if (BallisticTurret(Instigator) != None)
-		C = Instigator.GetBoneCoords(BrassBone);
 	else
 		C = GetBoneCoords(BrassBone);
 	if (Instigator != None && VSize(C.Origin - Instigator.Location) > 200)
@@ -65,10 +54,7 @@ simulated function FlashMuzzleFlash(byte Mode)
 	{
 		if (AltMuzzleFlash == None)
 		{
-			if (BallisticTurret(Instigator) != None)
-				class'BUtil'.static.InitMuzzleFlash (AltMuzzleFlash, AltMuzzleFlashClass, DrawScale*1.666, Instigator, AltFlashBone);
-			else
-				class'BUtil'.static.InitMuzzleFlash (AltMuzzleFlash, AltMuzzleFlashClass, DrawScale*FlashScale, self, AltFlashBone);
+		    class'BUtil'.static.InitMuzzleFlash (AltMuzzleFlash, AltMuzzleFlashClass, DrawScale*FlashScale, self, AltFlashBone);
 		}
 		AltMuzzleFlash.Trigger(self, Instigator);
 		if (bRandomFlashRoll)	SetBoneRotation(AltFlashBone, R, 0, 1.f);
@@ -77,10 +63,7 @@ simulated function FlashMuzzleFlash(byte Mode)
 	{
 		if (MuzzleFlash == None)
 		{
-			if (BallisticTurret(Instigator) != None)
-				class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, DrawScale*1.666, Instigator, FlashBone);
-			else
-				class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, DrawScale*FlashScale, self, FlashBone);
+			class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, DrawScale*FlashScale, self, FlashBone);
 		}
 		MuzzleFlash.Trigger(self, Instigator);
 		if (bRandomFlashRoll)	SetBoneRotation(FlashBone, R, 0, 1.f);
@@ -91,7 +74,7 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.M353FlashEmitter'
      FlashMode=MU_Primary
-     FlashScale=1.000000
+     FlashScale=0.600000
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_MG'

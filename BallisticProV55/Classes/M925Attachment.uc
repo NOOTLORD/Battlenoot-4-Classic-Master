@@ -1,7 +1,5 @@
 //=============================================================================
-// M925Attachment.
-//
-// 3rd person weapon attachment for M925 Machinegun
+// 3rd person weapon class for M925 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -78,7 +76,7 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
      FlashMode=MU_Primary
-     FlashScale=1.000000 
+     FlashScale=0.650000 
      LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_BigMG'

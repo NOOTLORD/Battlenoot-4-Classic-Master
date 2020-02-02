@@ -1,7 +1,5 @@
 //=============================================================================
-// NRP57PrimaryFire.
-//
-// NRP57 Grenade thrown overhand
+// Primaryfire class for NRP57 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -14,13 +12,13 @@ defaultproperties
 {
      NoClipPreFireAnim="ThrowNoClip"
      SpawnOffset=(X=25.000000,Y=10.000000,Z=2.000000)
-     BrassClass=Class'BallisticProV55.Brass_GClip'
+     BrassClass=Class'BallisticProV55.Brass_Grenade'
      BrassBone="tip"
      BrassOffset=(X=10.000000)
      BallisticFireSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Throw',Volume=0.500000,Radius=32.000000,bAtten=True)
      PreFireAnim="PrepThrow"
      FireAnim="Throw"
-     AmmoClass=Class'BallisticProV55.Ammo_NRP57Grenade'
+     AmmoClass=Class'BallisticProV55.Ammo_NRP57_Grenade'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

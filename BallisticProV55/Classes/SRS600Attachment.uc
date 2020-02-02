@@ -1,7 +1,5 @@
 //=============================================================================
-// SRS600Attachment.
-//
-// 3rd person weapon attachment for SRS600 Battle Rifle
+// 3rd person weapon class for SRS-600-Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

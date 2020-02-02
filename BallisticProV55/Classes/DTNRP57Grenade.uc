@@ -1,7 +1,5 @@
 //=============================================================================
-// DTNRP57Grenade.
-//
-// Damage type for the NRP57 Grenade
+// Damage type class for NRP57 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

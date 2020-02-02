@@ -1,8 +1,5 @@
 //=============================================================================
-// R78PrimaryFire.
-//
-// Very accurate, long ranged and powerful bullet fire. Headshots are
-// especially dangerous.
+// Primaryfire class for R78 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -40,7 +37,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BallisticSounds2.R78.R78-Fire',Volume=1.650000)
      FireEndAnim=
      FireRate=1.000000
-     AmmoClass=Class'BallisticProV55.Ammo_R78Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_R78_Sniper'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

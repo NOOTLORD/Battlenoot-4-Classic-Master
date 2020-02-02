@@ -1,7 +1,5 @@
 //=============================================================================
-// DTM46AssaultHead.
-//
-// DamageType for M46 headshots
+// Damage type class for M46 Assault Rifle headshots
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

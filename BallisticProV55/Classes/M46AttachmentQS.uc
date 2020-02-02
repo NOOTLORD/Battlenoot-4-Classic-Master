@@ -1,11 +1,11 @@
 //=============================================================================
-// M46Attachment.
-//
-// 3rd person weapon attachment for M46QS Assault Rifle
+// 3rd person weapon class for M46 Assault Rifle
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M46AttachmentQS extends BallisticAttachment;
 
@@ -59,7 +59,7 @@ defaultproperties
      FlashScale=0.750000	 
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     BrassClass=Class'BallisticProV55.Brass_M46AR'
+     BrassClass=Class'BallisticProV55.Brass_M46_Rifle'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None

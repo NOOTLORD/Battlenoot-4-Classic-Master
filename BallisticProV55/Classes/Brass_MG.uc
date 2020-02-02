@@ -1,7 +1,5 @@
 //=============================================================================
-// Brass_MG.
-//
-// A machinegun shell casing
+// Brass class for Machinegun type weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

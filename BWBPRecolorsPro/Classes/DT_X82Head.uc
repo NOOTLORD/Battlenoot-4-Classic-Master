@@ -1,5 +1,5 @@
 //=============================================================================
-// DamageType for X82 Sniper Rifle headshot
+// Damage type class for X82 Sniper Rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

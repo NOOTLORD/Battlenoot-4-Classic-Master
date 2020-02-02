@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_BWFire.
-//
-// DT with some standard defaults for BW fires
+// Damage type class for guns that use fire to damage the player
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

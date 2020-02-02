@@ -1,7 +1,5 @@
 //=============================================================================
-// SARPrimaryFire.
-//
-// Average power, 600RpM, rifle range, low accuracy assault rifle fire.
+// Primaryfire class for Sub Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -89,9 +87,9 @@ defaultproperties
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.500000
-     BrassClass=Class'BallisticProV55.Brass_SAR'
+     BrassClass=Class'BallisticProV55.Brass_SAR_Rifle'
      BrassBone="tip"
-     BrassOffset=(X=-102.500000,Y=-7.500000,Z=-2.500000)
+     BrassOffset=(X=-102.500000,Y=-5.500000,Z=-2.000000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=256.000000
      FireChaos=0.022000
@@ -103,7 +101,7 @@ defaultproperties
      bModeExclusive=False
      FireEndAnim=
      FireRate=0.100000
-     AmmoClass=Class'BallisticProV55.Ammo_SARClip'
+     AmmoClass=Class'BallisticProV55.Ammo_SAR_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

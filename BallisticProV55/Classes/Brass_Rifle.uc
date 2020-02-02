@@ -1,7 +1,5 @@
 //=============================================================================
-// Brass_Rifle.
-//
-// A rifle shell casing
+// Brass class for Rifle type weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

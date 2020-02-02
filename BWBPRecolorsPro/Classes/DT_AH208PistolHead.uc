@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for AH208 Pistol headshot
+// Damage type class for AH208 Pistol headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

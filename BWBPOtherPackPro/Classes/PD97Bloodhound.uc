@@ -1,5 +1,5 @@
 //===========================================================================
-// Main weapon class for PD-97 Bloodhound
+// Weapon class for PD-97 Bloodhound
 //
 // adapting code by Nolan "Dark Carnivour" Richert
 // Aspects of which are copyright (c) 2006 RuneStorm. All rights reserved.
@@ -304,7 +304,7 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      bShowChargingBar=False
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPOtherPackPro.Ammo_PD97Drum'	 
+     AmmoClass(0)=Class'BWBPOtherPackPro.Ammo_PD97_Pistol'	 
      Description="Originally a specialist law enforcement weapon, the PD-97 'Bloodhound' has been adapted into a military role, used to control opponents and track their movement upon the battlefield. While less immediately lethal than most other weapons, its tactical repertoire is not to be underestimated."
      DisplayFOV=57.500000
      Priority=24
@@ -318,7 +318,7 @@ defaultproperties
      AttachmentClass=Class'BWBPOtherPackPro.PD97Attachment'
      IconMaterial=Texture'BWBPOtherPackTex.Bloodhound.Icon_PD97'
      IconCoords=(X2=127,Y2=31)
-     ItemName="PD-97 'Bloodhound'"
+     ItemName="PD-97 Pistol"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

@@ -1,10 +1,12 @@
 //=============================================================================
-// NRP57Rolled.
+// NRP57 Rolled projectile class
 //
 // Is no longer Karma-based due to desynch issues.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class NRP57Rolled extends NRP57Thrown;
 

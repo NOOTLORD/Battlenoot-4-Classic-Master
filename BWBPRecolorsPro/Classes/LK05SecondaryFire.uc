@@ -1,5 +1,5 @@
 //=============================================================================
-// LK-05 Carbine SecondaryFire.
+// Secondaryfire class for LK-05 Carbine
 //
 // Silencer
 //
@@ -23,7 +23,7 @@ defaultproperties
      bWaitForRelease=True
      bModeExclusive=False
      FireRate=1.300000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'
      AmmoPerFire=0
      BotRefireRate=0.300000
 }

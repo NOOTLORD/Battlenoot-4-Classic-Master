@@ -1,7 +1,5 @@
 //=============================================================================
-// Brass_Pistol.
-//
-// A pistol shell casing
+// Brass class for Pistol type weapons	
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

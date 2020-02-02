@@ -1,4 +1,6 @@
 // Streaks for Invasion. Work based on score and are ini-config only.
+// Modified by (NL)NOOTLORD
+//=============================================================================
 class BallisticOutfittingInvKillstreakRules extends GameRules
 	config(BallisticProV55);
 

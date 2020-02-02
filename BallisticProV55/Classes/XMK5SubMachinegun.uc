@@ -1,7 +1,5 @@
 //=============================================================================
-// XMK5SubMachinegun.
-//
-// XMK5 SubMachinegun, a powerful SubMachinegun with an attached dart launcher for stunning and poisoning your prey.
+// Weapon class for XMK5 SubMachinegun
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -99,7 +97,7 @@ defaultproperties
      PutDownTime=0.350000
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_XMK5Clip''
+     AmmoClass(0)=Class'BallisticProV55.Ammo_XMK5_SMG'
      Description="NDTR's recent line of urban submachineguns, specfically the XMk5, has garnered attention from various UTC units operating in such environments. The XMk5 is often, and is indeed encouraged to be, fitted with all manner of attachments designed by NDTR as well. While many of the attachments are 'standard' sights, grenade launchers, flash lights and laser sights, there are other more peculiar devices. One of the most popular of these, is a unique, air-powered, dart launcher. The most commonly used dart, is one that stuns and poisons the victim, making them easy prey for the XMk5's primary bullet fire mode."
      Priority=41
      HudColor=(B=255,G=200,R=200)

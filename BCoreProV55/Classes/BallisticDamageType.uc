@@ -8,6 +8,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticDamageType extends WeaponDamageType config(BallisticProV55);
 

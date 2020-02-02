@@ -1,7 +1,5 @@
 //=============================================================================
-// DTMRS138ShotgunHead.
-//
-// Damage type for headshots with the MRS138 Shotgun
+// Damage type class for MRS-138 Shotgun headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

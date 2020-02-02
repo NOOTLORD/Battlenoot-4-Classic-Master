@@ -1,13 +1,11 @@
 //=============================================================================
-// M46AssaultRifle.
-//
-// M46 Assault Rifle, a powerful full auto assault rifle with a limited scope.
-// Also has proximity grenade launcher secondary. It can be used to plant discreet devices to blow players to hell when they pass.
-// Grenades also stick to players and vehicles, automatically triggering the mine.
+// Weapon class for M46 Assault Rifle 
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M46AssaultRifleQS extends BallisticWeapon;
 
@@ -119,7 +117,7 @@ defaultproperties
      FireModeClass(0)=Class'BallisticProV55.M46PrimaryFireQS'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_M46Clip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_M46_Rifle'
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.700000
      CurrentRating=0.700000

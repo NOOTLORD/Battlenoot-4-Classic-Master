@@ -1,7 +1,5 @@
 //=============================================================================
-// DTFifty9SMG.
-//
-// Damage type for the Fifty9 SMG
+// Damage type class for Fifty-9 MachinePistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

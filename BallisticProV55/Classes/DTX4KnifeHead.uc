@@ -1,7 +1,5 @@
 //=============================================================================
-// DTX4KnifeHead.
-//
-// DamageType for the X4 headshots
+// Damage type class for X4 Knife headshots
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

@@ -1,7 +1,5 @@
 //=============================================================================
-// G5Rocket.
-//
-// Rocket projectile for the G5 RPG.
+// G5Rocket projectile class
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

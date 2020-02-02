@@ -1,7 +1,5 @@
 //=============================================================================
-// DTG5MortarRadius.
-//
-// DamageType for the G5 Bazooka mortar rocket radius
+// Damage type class for G5 Bazooka mortar rocket radius
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

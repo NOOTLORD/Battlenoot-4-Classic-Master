@@ -1,10 +1,12 @@
 //=============================================================================
-// MRS138Attachment.
+// 3rd person weapon class for MRS138 Shotgun
 //
 // Third person attachment for MRS138 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MRS138Attachment extends BallisticShotgunAttachment;
 
@@ -16,7 +18,7 @@ defaultproperties
      FlashScale=0.800000	 
      LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Shell'
-     BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
+     BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for AK47 Assault Rifle 
+// Damage type class for AK47 Assault Rifle 
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

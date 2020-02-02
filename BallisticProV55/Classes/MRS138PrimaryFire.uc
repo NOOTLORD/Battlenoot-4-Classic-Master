@@ -1,5 +1,5 @@
 //=============================================================================
-// MRS138PrimaryFire.
+// Primaryfire class for MRS138 Shotgun
 //
 // Stronger than the M763, but has a shorter range, wider spread and slower fire rate.
 //
@@ -71,7 +71,7 @@ defaultproperties
      bPenetrate=False 					
      MuzzleFlashClass=Class'BallisticProV55.MRS138FlashEmitter'
      FlashScaleFactor=0.400000
-     BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
+     BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
      BrassOffset=(X=34.000000,Y=-7.500000,Z=13.000000)
      RecoilPerShot=1280.000000
      FireChaos=0.400000
@@ -81,7 +81,7 @@ defaultproperties
      FireAnim="FireCombined"
      FireEndAnim=
      FireRate=0.430000
-     AmmoClass=Class'BallisticProV55.Ammo_MRS138Shells'
+     AmmoClass=Class'BallisticProV55.Ammo_MRS138_Shotgun'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

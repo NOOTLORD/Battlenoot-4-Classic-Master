@@ -1,10 +1,5 @@
 //=============================================================================
-// R78Rifle.
-//
-// Powerful, accurate semi automatic rifle with good power and reasonable
-// reload time, but low clip capacity. Secondary fire makes it the weapon it is
-// by providing a powerful scope. Holding secondary zooms in further initially,
-// but the player can still use Prev and Next weapon to adjust.
+// Weapon class for R78 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -137,7 +132,7 @@ defaultproperties
      CurrentRating=0.800000
      bSniping=True
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_R78Clip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_R78_Sniper'
      Description="Originally taken from the design of a bird hunting rifle, the R78 'Raven', is a favourite among military snipers and commando corps. Used to a great extent by the expert marksmen of the New European Army, the Raven, is extremely reliable and capable of incredible damage in a single shot. The added long distance sniping scope makes the R78 one of the most deadly weapons. Of course, the gun is only as good as the soldier using it, with a low clip capacity, long reload times and it's terrible ineffectiveness in close quarters combat."
      DisplayFOV=55.000000
      Priority=33

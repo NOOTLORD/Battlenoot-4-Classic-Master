@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for MGL Grenade Launcher
+// Primaryfire class for MGL Grenade Launcher
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -23,7 +23,7 @@ defaultproperties
      bModeExclusive=False
      FireForce="AssaultRifleAltFire"
      FireRate=0.850000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_MGLDrum'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_MGL_Launcher'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

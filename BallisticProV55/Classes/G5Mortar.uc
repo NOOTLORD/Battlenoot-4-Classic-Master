@@ -1,5 +1,5 @@
 //=============================================================================
-// G5Mortar.
+// G5Mortar projectile class
 //
 // Big fancy mortar-like heat seeking rocket. First, its given a target by
 // player's aim, then it starts by going up as high as possible before coming

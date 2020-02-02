@@ -1,5 +1,5 @@
 //=============================================================================
-// Fifty9PrimaryFire.
+// Primaryfire class for Fifty-9 Machine Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -61,10 +61,10 @@ defaultproperties
      bPenetrate=False
      bCockAfterEmpty=True
      bDryUncock=True
-     MuzzleFlashClass=Class'BallisticProV55.Fifty9FlashEmitter'
+     MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashBone="Muzzle"
-     FlashScaleFactor=0.375000
-     BrassClass=Class'BallisticProV55.Brass_Uzi'
+     FlashScaleFactor=0.225000
+     BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
      BrassOffset=(X=-26.000000,Y=1.500000,Z=-1.750000)
      AimedFireAnim="SightFire"
      RecoilPerShot=140.000000
@@ -74,7 +74,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BallisticSounds2.UZI.UZI-Fire',Volume=0.450000)
      bPawnRapidFireAnim=True
      FireRate=0.072000
-     AmmoClass=Class'BallisticProV55.Ammo_FiftyClip'
+     AmmoClass=Class'BallisticProV55.Ammo_Fifty_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// RS8PrimaryFire.
+// Primaryfire class for RS8 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -169,13 +169,13 @@ defaultproperties
      FireChaos=0.250000
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilenceFire',Volume=0.700000,bAtten=True)
+     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilenceFire',Volume=0.750000,bAtten=True)
      BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Fire',Volume=1.750000)
      bPawnRapidFireAnim=True
 	 FireEndAnim=
      FireAnimRate=1.500000
      FireRate=0.225000
-     AmmoClass=Class'BallisticProV55.Ammo_RS8Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_RS8_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for MGL Grenade Launcher grenade radius
+// Damage type class for MGL Grenade Launcher grenade radius
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

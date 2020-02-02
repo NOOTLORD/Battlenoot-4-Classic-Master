@@ -1,5 +1,5 @@
 //=============================================================================
-// DamageType for the PD97 dart 
+// Damage type class for PD97 dart 
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

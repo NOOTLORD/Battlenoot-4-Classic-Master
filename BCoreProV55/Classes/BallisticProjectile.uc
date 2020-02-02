@@ -15,11 +15,11 @@
 // - Fixed offset bug.
 // - Fixed double / triple damage bug.
 // - Modified TearOff code, not sure if this works compared to version defined in subclass
-
-
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticProjectile extends Projectile
 	abstract

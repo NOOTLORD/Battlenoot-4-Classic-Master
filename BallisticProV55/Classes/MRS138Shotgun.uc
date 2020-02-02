@@ -1,7 +1,5 @@
 //=============================================================================
-// MRS138Shotgun.
-//
-// A combat shotgun
+// Weapon class for MRS138 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -141,7 +139,7 @@ defaultproperties
      CurrentRating=0.800000
      bMeleeWeapon=True
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_MRS138Shells'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_MRS138_Shotgun'
      Description="Also from the first line of Drake & Co weaponry, the MRS138 Combat Shotgun is an excellent close-range weapon. It is outfitted with a tactical light and tazer attachment to increase its effectiveness as a crowd control and civilian weapon. The tazer is an effective tool for stunning enemies and inflicting slight damage, leaving them blinded and disoriented for a few seconds, while the flash light can be used for locating those which hide in the dark."
      DisplayFOV=50.000000
      Priority=36

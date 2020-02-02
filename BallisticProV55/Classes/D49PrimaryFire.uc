@@ -1,7 +1,5 @@
 //=============================================================================
-// D49PrimaryFire.
-//
-// BANG! You're dead!
+// Primaryfire class for D49 Revolver
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -58,7 +56,7 @@ defaultproperties
      PenetrateForce=0
      bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
-     FlashScaleFactor=0.800000
+     FlashScaleFactor=0.600000
      RecoilPerShot=1024.000000
      FireChaos=0.400000
      XInaccuracy=128.000000
@@ -67,7 +65,7 @@ defaultproperties
      FireAnim="FireSingle"
      FireEndAnim=
      FireRate=0.400000
-     AmmoClass=Class'BallisticProV55.Ammo_D49Bullets'
+     AmmoClass=Class'BallisticProV55.Ammo_D49_Revolver'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for SKAS-21 Shotgun
+// Primaryfire class for SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -32,7 +32,7 @@ defaultproperties
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
      FlashScaleFactor=1.150000
-     BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
+     BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
      BrassOffset=(X=-21.000000,Y=-2.000000,Z=-1.000000)
      RecoilPerShot=450.000000
      VelocityRecoil=180.000000
@@ -44,7 +44,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.500000
      FireRate=0.300000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_SKASDrum'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_SKAS_Shotgun'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

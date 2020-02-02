@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for MGL Grenade Launcher
+// 3rd person weapon class for MGL Grenade Launcher
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -10,9 +10,9 @@ class MGLAttachment extends BallisticAttachment;
 
 defaultproperties
 {
-     MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
+     MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
      FlashMode=MU_Primary 
-     FlashScale=0.900000	 
+     FlashScale=0.400000	 
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      InstantMode=MU_Primary
@@ -30,5 +30,5 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.Conqueror_TP'
      RelativeRotation=(Pitch=32768)
-     DrawScale=0.300000
+     DrawScale=0.250000
 }

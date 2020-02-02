@@ -1,8 +1,5 @@
 //=============================================================================
-// M925PrimaryFire.
-//
-// Very powerful bullet at slower than normal MG fire rate. Strong recoil moves
-// player back, pitches muzzle and destabalizes the weapon.
+// Primaryfire class for M925 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -42,8 +39,9 @@ defaultproperties
      bPenetrate=False
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
+     FlashScaleFactor=0.650000	 
      BrassClass=Class'BallisticProV55.Brass_BigMG'
-     BrassOffset=(X=-25.000000,Y=1.000000,Z=-5.000000)
+     BrassOffset=(X=-24.000000,Y=1.000000,Z=-5.000000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=300.000000
      VelocityRecoil=128.000000
@@ -55,7 +53,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.150000
-     AmmoClass=Class'BallisticProV55.Ammo_M925Belt'
+     AmmoClass=Class'BallisticProV55.Ammo_M925_MG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

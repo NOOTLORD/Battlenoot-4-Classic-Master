@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+//=============================================================================
 class BallisticOutfittingKillstreakRules extends GameRules;
 
 var Mut_Outfitting Mut;

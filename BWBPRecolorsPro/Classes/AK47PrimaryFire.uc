@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for AK-470 Assault Rifle
+// Primaryfire class for AK-470 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -29,10 +29,10 @@ defaultproperties
      PenetrateForce=0
      bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashScaleFactor=0.300000
+     FlashScaleFactor=0.250000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassBone="tip"
-     BrassOffset=(X=-60.000000,Y=0.500000)
+     BrassOffset=(X=-60.000000,Y=0.500000,Z=1.000000)
      RecoilPerShot=220.000000
      FireChaos=0.045000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
@@ -42,7 +42,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.115000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_AK470Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_AK470_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

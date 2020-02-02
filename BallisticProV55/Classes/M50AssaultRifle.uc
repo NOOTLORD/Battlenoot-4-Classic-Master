@@ -1,13 +1,10 @@
 //=============================================================================
-// M50AssaultRifle.
-//
-// M50 Assault Rifle, aka the Reaper. High fire rate, good damage, good accuracy, good range, FullAuto, Burst, Semi-Auto
-// Has grenade launcher secondary.
-// Weapon special deploys a camera on the wall, then press to switch between play and cam view. Get camera back by
-// moving near it, and pressing Use.
+// Weapon class for M50 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M50AssaultRifle extends BallisticWeapon;
 
@@ -114,7 +111,7 @@ defaultproperties
      AIRating=0.600000
      CurrentRating=0.600000
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_M50Clip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_M50_Rifle'
      Description="Enravion's crowning achievement, the M50 is the most extensively used weapon in the UTC military corps. The M50 is renowned for its accuracy, damage and reliability in the field. The sturdy M50 was extensively used in both wars and has helped annihilate countless Skrith, Krao and Cryon warriors. The weapon also has the advantage of launching a grenade from the attached M900, for flushing out enemies."
      Priority=41
      HudColor=(B=255,G=200,R=200)

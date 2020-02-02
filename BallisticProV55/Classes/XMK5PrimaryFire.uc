@@ -1,7 +1,5 @@
 //=============================================================================
-// XMK5PrimaryFire.
-//
-// Standard SubMachinegun bullets, bang bang!
+// Primaryfire class for XMK5 SubMachinegun
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -34,7 +32,7 @@ defaultproperties
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.XMk5FlashEmitter'
      FlashScaleFactor=0.400000
-     BrassClass=Class'BallisticProV55.Brass_XMK5SMG'
+     BrassClass=Class'BallisticProV55.Brass_XMK5_SMG'
      BrassOffset=(X=-19.000000,Z=-3.750000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=130.000000
@@ -46,7 +44,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.100000
-     AmmoClass=Class'BallisticProV55.Ammo_XMK5Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_XMK5_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,8 +1,10 @@
 //=============================================================================
-// 3rd person weapon attachment for X82 Sniper Rifle
+// 3rd person weapon class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class X82Attachment extends BallisticAttachment;
 
@@ -83,7 +85,7 @@ defaultproperties
      FlashScale=1.000000	 
      LightMode=MU_Primary		 
      ImpactManager=Class'BallisticProV55.IM_Bullet' 
-     BrassClass=Class'BWBPRecolorsPro.Brass_X82rifle'
+     BrassClass=Class'BWBPRecolorsPro.Brass_X82_Sniper'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None	 

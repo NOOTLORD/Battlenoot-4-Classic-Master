@@ -2,6 +2,8 @@
 // Additional Rules tab.
 //
 // Contains additional game rules for BallisticPro.
+//
+// Modified by (NL)NOOTLORD
 //=====================================
 
 class BallisticTab_ProSettings extends UT2K4TabPanel;

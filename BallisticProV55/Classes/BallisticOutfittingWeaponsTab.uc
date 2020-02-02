@@ -7,6 +7,8 @@
 // by Nolan "Dark Carnivour" Richert.
 // Modified by Azarael
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticOutfittingWeaponsTab extends UT2K4TabPanel config(BallisticProV55);
 

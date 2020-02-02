@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for SKAS-21 Shotgun
+// 3rd person weapon class for SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -51,10 +51,10 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.MRT6FlashEmitter'
      FlashMode=MU_Primary 	 
-     FlashScale=2.000000
+     FlashScale=2.500000
      LightMode=MU_Primary		 
      ImpactManager=Class'BallisticProV55.IM_Shell'
-     BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
+     BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None

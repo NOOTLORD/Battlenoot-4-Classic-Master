@@ -1,7 +1,5 @@
 //=============================================================================
-// MarlinPrimaryFire.
-//
-// Accurate rifle fire for Deermaster
+// Primaryfire class for Marlin Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -99,7 +97,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.250000
      FireRate=0.900000
-     AmmoClass=Class'BallisticProV55.Ammo_MarlinBullet'
+     AmmoClass=Class'BallisticProV55.Ammo_Marlin_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

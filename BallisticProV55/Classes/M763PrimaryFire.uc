@@ -1,11 +1,10 @@
 //=============================================================================
-// M763PrimaryFire.
-//
-// Powerful, ranged shotgun blast.
-// Now automatic, due to inability to balance it any other way.
+// Primaryfire class for M763 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M763PrimaryFire extends BallisticProShotgunFire;
 
@@ -116,7 +115,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.100000
      FireRate=0.750000
-     AmmoClass=Class'BallisticProV55.Ammo_M763Shell'
+     AmmoClass=Class'BallisticProV55.Ammo_M763_Shotgun'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

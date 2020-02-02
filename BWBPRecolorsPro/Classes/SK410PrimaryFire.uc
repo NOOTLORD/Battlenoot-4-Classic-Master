@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for SK-410 Shotgun
+// Primaryfire class for SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -82,7 +82,7 @@ defaultproperties
      bPenetrate=False
      MuzzleFlashClass=Class'BWBPRecolorsPro.SK410HeatEmitter'
      FlashScaleFactor=0.750000
-     BrassClass=Class'BWBPRecolorsPro.Brass_SK410shotgun'
+     BrassClass=Class'BWBPRecolorsPro.Brass_SK410_Shotgun'
      BrassOffset=(X=-48.000000,Y=2.500000,Z=-4.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=700.000000
@@ -94,7 +94,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=2.250000
      FireRate=0.220000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410_Shotgun'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

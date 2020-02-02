@@ -1,5 +1,7 @@
 //=============================================================================
 // AD_ImpactDecal
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class AD_ImpactDecal extends BallisticDecal
 	placeable

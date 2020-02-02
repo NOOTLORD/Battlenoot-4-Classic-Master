@@ -1,7 +1,5 @@
 //=============================================================================
-// DTXK2SMGHead.
-//
-// Damage type for the XK2 SMG headshots
+// Damage type class for XK2 Submachine Gun headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,7 +1,5 @@
 //=============================================================================
-// Brass_BigMG.
-//
-// A big machinegun shell casing
+// Brass class for Heavy Machinegun type weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -12,7 +10,7 @@ class Brass_BigMG extends BWBrass_Default;
 
 defaultproperties
 {
-     StartVelocity=(Y=35.000000,Z=70.000000)
+     StartVelocity=(Y=35.000000,Z=80.000000)
      bAddOwnerVelocity=False
      HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyRifleRound'

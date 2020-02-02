@@ -1,7 +1,5 @@
 //=============================================================================
-// DTSARRifle.
-//
-// Damage type for the SAR12
+// Damage type class for Sub Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

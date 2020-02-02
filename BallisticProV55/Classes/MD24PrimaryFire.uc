@@ -1,7 +1,5 @@
 //=============================================================================
-// MD24PrimaryFire.
-//
-// Decent pistol shots that are accurate if the gun is steady enough
+// Primaryfire class for MD24 Pistol
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -64,7 +62,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.600000
      FireRate=0.220000
-     AmmoClass=Class'BallisticProV55.Ammo_MD24Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_MD24_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

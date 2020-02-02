@@ -1,7 +1,5 @@
 //=============================================================================
-// DTM50Assault.
-//
-// DamageType for the M50 assault rifle primary fire
+// Damage type class for M50 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

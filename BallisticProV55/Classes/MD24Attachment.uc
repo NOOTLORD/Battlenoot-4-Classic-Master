@@ -1,11 +1,11 @@
 //=============================================================================
-// MD24Attachment.
-//
-// 3rd person weapon attachment for MD24 Pistol
+// 3rd person weapon class for MD24 Pistol
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MD24Attachment extends HandgunAttachment;
 

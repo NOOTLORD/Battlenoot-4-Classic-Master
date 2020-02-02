@@ -1,7 +1,5 @@
 //=============================================================================
-// DTXMK5SubMachinegunHead.
-//
-// DamageType for XMK5 headshots
+// Damage type class for XMK5 Submachine Gun headshots
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

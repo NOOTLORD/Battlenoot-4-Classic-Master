@@ -1,5 +1,5 @@
 //=============================================================================
-// Main weapon class for X82 Sniper Rifle
+// Weapon class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -111,7 +111,7 @@ defaultproperties
      CurrentRating=0.800000
      bSniping=True
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_X82Clip'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_X82_Sniper'
      Description="X83 Anti-Material Rifle||Manufacturer: Evravion Combat Solutions |Primary: Single Powerful Shot|Secondary: Activate Zooming Scope|Special: (Scoped) Activate Night Vision/Detector|Special: (Unscoped) Mount X-83 A1||Enravion's high powered X-83 A1 Anti-Material Rifle is a fearsome sight on the modern day battlefield. With an effective range of about 1.1 miles, the X-83 can target and eliminate infantry and light vehicles with ease and at range using its specialized .50 cal N6-BMG HEAP rounds. This special operations weapon, designed to disable key targets like parked aircraft and APCs, was used extensively prior to the Skrith wars."
      DisplayFOV=55.000000
      Priority=207

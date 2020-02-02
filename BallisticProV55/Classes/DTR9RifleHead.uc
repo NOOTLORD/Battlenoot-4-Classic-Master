@@ -1,7 +1,5 @@
 //=============================================================================
-// DTR9RifleHead.
-//
-// Damage type for the R9 Rifle headshots
+// Damage type class for R9 Rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

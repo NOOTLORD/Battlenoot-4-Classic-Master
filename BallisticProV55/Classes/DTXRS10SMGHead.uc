@@ -1,7 +1,5 @@
 //=============================================================================
-// DTXRS10SMGHead.
-//
-// Damage type for the XRS10 SMG headshots
+// Damage type class for XRS10 SMG headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

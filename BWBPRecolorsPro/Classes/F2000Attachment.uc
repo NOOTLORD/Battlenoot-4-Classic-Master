@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for MARS-3 Assault Rifle
+// 3rd person weapon class for MARS-3 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

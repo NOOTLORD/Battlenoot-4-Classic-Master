@@ -1,7 +1,5 @@
 //=============================================================================
-// D49Attachment.
-//
-// ThirdPersonActor for to D49Revolver
+// 3rd person weapon class for D49 Revolver
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -144,10 +142,10 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      FlashMode=MU_Primary 
-     FlashScale=0.400000	 
+     FlashScale=0.300000	 
      LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     BrassClass=Class'BallisticProV55.Brass_Magnum'
+     BrassClass=Class'BallisticProV55.Brass_D49_Revolver'
      BrassMode=MU_Primary	 
      BrassBone="MagnumWhole"
      InstantMode=MU_Primary

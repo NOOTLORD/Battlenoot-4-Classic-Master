@@ -1,7 +1,5 @@
 //=============================================================================
-// DTGRS9PistolHead.
-//
-// Damage type for GRS9 Pistol headshots
+// Damage type class for GRS-9 Pistol headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

@@ -1,7 +1,5 @@
 //=============================================================================
-// DTMRS138Shotgun.
-//
-// Damage type for MRS138 Shotgun
+// Damage type class for MRS-138 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

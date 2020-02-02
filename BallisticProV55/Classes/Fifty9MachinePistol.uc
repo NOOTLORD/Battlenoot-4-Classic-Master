@@ -1,8 +1,5 @@
 //=============================================================================
-// Fifty9MachinePistol.
-//
-// Dual wieldable weapon with select-fire, bullet style primary, melee blades
-// for secondary and a special togglable stock that affect aim properties.
+// Weapon class for Fifty-9 Machine Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -163,7 +160,7 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      bShowChargingBar=False
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_FiftyClip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_Fifty_SMG'
      Description="Krome Firepower is a reletively new arms company, with the aim of producing guns with 'style'. The Fifty-9 is one such weapon. Taking an original small arm, and replacing certain parts, adding new attachments, custom paint jobs, etc. Krome weapons are designed for civilian purposes, self defense, bounty hunters, enthusiasts, and collectors. This particular model comes with attached Krome blades, to add some extra flair to the weapon."
      Priority=31
      HudColor=(B=255,G=200,R=200)
@@ -174,7 +171,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.Fifty9Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_Fifty9'
      IconCoords=(X2=127,Y2=31)
-     ItemName="Fifty-9 Machine Pistol"
+     ItemName="Fifty-9 Submachine gun"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

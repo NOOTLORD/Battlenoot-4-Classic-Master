@@ -1,11 +1,5 @@
 //=============================================================================
-// NRP57Grenade.
-//
-// Little yellow hand grenade. Primary to throw far and bounce well, secondary
-// to roll along ground and reload to release clip at any time. This gives the
-// user a few seconds to get rid of the thing before it blows up in their hand.
-// The pineapple is not too effective a weapon in the hands of the amatuer, but
-// once the user masters the timing, it will become a very deadly toy.
+// Weapon class for NRP57 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -88,7 +82,7 @@ defaultproperties
      CurrentRating=0.850000
      bShowChargingBar=False
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57Grenade'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57_Grenade'
      Description="One of Black & Wood's most famous devices, the versatile NRP57 is a UTC favourite. Once the pin is pulled, it can be held ready as long as needed. The longer it is held, the further it will be thrown. The 3 second timer can be shortened by releasing the clip prior to throwing, but this greatly increases the risk of termination. The NRP57 is an effective tool which can be bounced around corners, lobbed over obstacles and has a high damage and a decent radius of effect, but it's true power lies in the soldier's ability to time the detonation and speed according to the distance of the target. The most famous story involving the Pineapple tells how the UTC Phobos Marines painted it yellow and rigged it for the unsuspecting Skrith who had, over the decades, developed an incredible taste for the terran fruit."
      Priority=7
      HudColor=(B=255,G=200,R=200)	 
@@ -100,7 +94,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.NRP57Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_NRP57'
      IconCoords=(X2=127,Y2=31)
-     ItemName="NRP-57 Grenade"
+     ItemName="NRP57 Grenade"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'
      DrawScale=0.400000
      AmbientGlow=10

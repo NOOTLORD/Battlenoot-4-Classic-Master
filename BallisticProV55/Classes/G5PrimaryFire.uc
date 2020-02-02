@@ -1,7 +1,5 @@
 //=============================================================================
-// G5PrimaryFire.
-//
-// Rocket launching primary fire for G5
+// Primaryfire class for G5 Bazooka
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -136,7 +134,7 @@ defaultproperties
      bRecommendSplashDamage=True
      FireEndAnim=
      FireRate=0.800000
-     AmmoClass=Class'BallisticProV55.Ammo_G5Rocket'
+     AmmoClass=Class'BallisticProV55.Ammo_G5_Bazooka'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,7 +1,5 @@
 //=============================================================================
-// DTMarlinRifleHead.
-//
-// Damage type for the Deermaster Rifle headshots
+// Damage type class for Redwood 6000 Rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

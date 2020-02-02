@@ -1,10 +1,5 @@
 //=============================================================================
-// M353Machinegun.
-//
-// The "Guardian" M353 Machinegun has an extremely high fire rate, high ammo
-// capacity and decent damage, but is extremely inacurate and can quickly fight
-// its way from its owner's control. Secondary allows the user to mount the
-// weapon on the ground by crouching.
+// Weapon class for M353 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -176,7 +171,7 @@ defaultproperties
      AIRating=0.7500000
      CurrentRating=0.7500000
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_M353Belt'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_M353_MG'
      Description="The M353 'Guardian' Machinegun has seen some of the most brutal battles ever recorded in recent history, and has helped win many of them, the most famous being the bloody 'Wasteland Seige' where 12 million Krao were slaughtered along a 500 mile line of defences. Used primarily as a defensive weapon, the M353's incredible rate of fire can quickly and effectively destroy masses of oncoming foes, especially melee attackers. When the secondary mode is activated, the Guardian becomes much more accurate when the user mounts it on the ground, allowing it to be a very effective defensive weapon. With its high rate of fire and high damage, the M353 becomes very inaccurate after just a few rounds and with its high ammo capacity, comes the difficulty of longer reload times than smaller weapons."
      DisplayFOV=50.000000
      Priority=43

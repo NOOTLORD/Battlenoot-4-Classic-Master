@@ -1,5 +1,5 @@
 //=============================================================================
-// Main weapon class for AK-470 Assault Rifle
+// Weapon class for AK-470 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -174,7 +174,7 @@ defaultproperties
      AIRating=0.700000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK470Clip'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK470_Rifle'
      Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
      Priority=65
      HudColor=(B=255,G=200,R=200)

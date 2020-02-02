@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for AH208 Pistol
+// Damage type class for AH208 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

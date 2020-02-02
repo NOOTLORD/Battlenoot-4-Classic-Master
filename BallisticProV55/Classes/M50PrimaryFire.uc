@@ -1,10 +1,5 @@
 //=============================================================================
-// M50PrimaryFire.
-//
-// Very automatic, bullet style instant hit. Shots are long ranged, powerful
-// and accurate when used carefully. The dissadvantages are severely screwed up
-// accuracy after firing a shot or two and the rapid rate of fire means ammo
-// dissapeares quick.
+// Primaryfire class for M50 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -49,7 +44,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.110000
-     AmmoClass=Class'BallisticProV55.Ammo_M50Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_M50_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

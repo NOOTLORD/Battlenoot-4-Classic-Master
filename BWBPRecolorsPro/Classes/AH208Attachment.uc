@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for AH-208 Pistol
+// 3rd person weapon class for AH-208 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -23,7 +23,7 @@ defaultproperties
 	 FlashMode=MU_Primary
      FlashBone="Muzzle"
      AltFlashBone="Muzzle"
-     FlashScale=0.275000
+     FlashScale=0.200000
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
 	 BrassMode=MU_Primary

@@ -1,5 +1,5 @@
 //=============================================================================
-// DamageType for the PD97 dart poisoning
+// Damage type class for PD97 dart poisoning
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

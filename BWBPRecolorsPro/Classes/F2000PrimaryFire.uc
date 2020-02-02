@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for MARS-3 Assault Rifle
+// Primaryfire class for MARS-3 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -177,7 +177,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.095000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_F2000Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_F2000_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// SARAttachment.
+// 3rd person weapon class for Sub Assault Rifle
 //
 // 3rd person weapon attachment for SAR Assault
 //
@@ -17,7 +17,7 @@ defaultproperties
      FlashScale=0.750000	 
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     BrassClass=Class'BallisticProV55.Brass_SAR'
+     BrassClass=Class'BallisticProV55.Brass_SAR_Rifle'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None	 

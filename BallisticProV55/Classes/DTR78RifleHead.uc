@@ -1,9 +1,5 @@
 //=============================================================================
-// DTR78RifleHead.
-//
-// Damage type for the R78 Sniper Rifle headshots
-//
-// Removed A1 designation, as M16 and M4 death messages rarely list it.
+// Damage type class for R78 Sniper Rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

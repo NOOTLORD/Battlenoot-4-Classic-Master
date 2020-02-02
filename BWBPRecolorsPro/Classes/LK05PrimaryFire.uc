@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for LK-05 Carbine
+// Primaryfire class for LK-05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -272,7 +272,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-Fire',Volume=0.975000)
      bPawnRapidFireAnim=True
      FireEndAnim=
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'
      FireRate=0.095000
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)

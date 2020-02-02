@@ -1,5 +1,11 @@
 //=============================================================================
-// M46PrimaryFireQS.
+// Primaryfire class for M46 Assault Rifle
+//
+// by Logan "BlackEagle" Richert.
+// uses code by Nolan "Dark Carnivour" Richert.
+// Copyright© 2011 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M46PrimaryFireQS extends BallisticRangeAttenFire;
 
@@ -25,8 +31,8 @@ defaultproperties
      bPenetrate=False	   				
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M46FlashEmitter'
-     FlashScaleFactor=0.500000
-     BrassClass=Class'BallisticProV55.Brass_M46AR'
+     FlashScaleFactor=0.400000
+     BrassClass=Class'BallisticProV55.Brass_M46_Rifle'
      BrassOffset=(X=-12.000000,Y=3.000000,Z=-4.500000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=180.000000
@@ -36,7 +42,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.135000
-     AmmoClass=Class'BallisticProV55.Ammo_M46Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_M46_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

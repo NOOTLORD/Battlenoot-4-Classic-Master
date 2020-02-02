@@ -1,7 +1,5 @@
 //=============================================================================
-// DTGRS9Pistol.
-//
-// Damage type for the GRS9 Pistol
+// Damage type class for GRS-9 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

@@ -1,7 +1,5 @@
 //=============================================================================
-// DTSRS600RifleHead.
-//
-// DamageType for SRS600 Battle Rifle headshots
+// Damage type class for SRS-600 Rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

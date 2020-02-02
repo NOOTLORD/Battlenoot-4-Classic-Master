@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for teleport lamer scum.
+// Damage type class for teleport lamer scum.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

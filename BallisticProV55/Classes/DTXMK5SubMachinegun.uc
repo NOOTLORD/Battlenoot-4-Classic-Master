@@ -1,7 +1,5 @@
 //=============================================================================
-// DTXMK5SubMachinegun.
-//
-// DamageType for the XMK5 submachinegun primary fire
+// Damage type class for XMK5 Submachine Gun
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for X82 Sniper Rifle
+// Primaryfire class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -27,7 +27,7 @@ defaultproperties
      bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.M925FlashEmitter'
      FlashScaleFactor=0.400000
-     BrassClass=Class'BWBPRecolorsPro.Brass_X82rifle'
+     BrassClass=Class'BWBPRecolorsPro.Brass_X82_Sniper'
      BrassBone="breach"
      BrassOffset=(X=-50.000000,Y=1.500000,Z=1.500000)
      RecoilPerShot=1024.000000
@@ -36,7 +36,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Fire',Volume=1.400000)
      FireEndAnim=
      FireRate=0.900000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_X82Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_X82_Sniper'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

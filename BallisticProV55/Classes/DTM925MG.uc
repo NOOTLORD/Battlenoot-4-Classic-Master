@@ -1,7 +1,5 @@
 //=============================================================================
-// DTM925MG.
-//
-// Damage type for the M925 Machinegun
+// Damage type class for M925 Machinegun 
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

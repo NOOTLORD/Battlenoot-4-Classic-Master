@@ -1,5 +1,5 @@
 //=============================================================================
-// NRP57Thrown.
+// NRP57 Thrown projectile class
 //
 // No longer karma based to prevent desynch.
 //

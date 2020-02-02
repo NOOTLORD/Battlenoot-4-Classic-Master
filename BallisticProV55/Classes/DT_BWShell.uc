@@ -1,5 +1,5 @@
 //=============================================================================
-// DTShell.
+// Damage type class for Shell loaded weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,5 +1,5 @@
 //=============================================================================
-// NRP57Trail.
+// NRP57 Trail
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

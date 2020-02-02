@@ -1,7 +1,5 @@
 //=============================================================================
-// DTMarlinRifle.
-//
-// Damage type for the Deermaster Rifle
+// Damage type class for Redwood 6000 Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

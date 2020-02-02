@@ -1,10 +1,10 @@
 //=============================================================================
-// M763Shotgun.
-//
-// The M763 pump-action shotgun, aka the Avenger
+// Weapon class for M763 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M763Shotgun extends BallisticProShotgun;
 
@@ -253,7 +253,7 @@ defaultproperties
      AIRating=0.750000
      CurrentRating=0.750000
      bCanThrow=False
-     AmmoClass(0)=BallisticProV55.Ammo_M763Shell'
+     AmmoClass(0)=BallisticProV55.Ammo_M763_Shotgun'
      Description="The Avenger single barreled shotgun is the standard spread weapon of the UTC infantry divisions. Its high damage, reliability and good range for a shotgun have made this gun one of the humans' favourites; the M763 has blown open more Krao drones than can be counted. After its many successes, even during trials by the UTC's Reunited Jamaican Army, defending from wave upon wave of Krao minions during the 'Red Storm' Skrith invasion, the Avenger became the standard issue shotgun and a favorite of many forces including the UTC RJA Division."
      Priority=37
      HudColor=(B=255,G=200,R=200)

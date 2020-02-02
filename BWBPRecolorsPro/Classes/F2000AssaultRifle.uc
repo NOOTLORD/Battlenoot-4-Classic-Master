@@ -1,5 +1,5 @@
 //=============================================================================
-// Main weapon class for MARS-3 Assault Rifle
+// Weapon class for MARS-3 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -236,7 +236,7 @@ defaultproperties
      AIRating=0.750000
      CurrentRating=0.750000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_F2000Clip'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_F2000_Rifle'
      Description="The 3 variant of the Modular Assault Rifle System is one of many rifles built under NDTR Industries' MARS project. The project, which was aimed to produce a successor to the army's current M50 and M30 rifles, has produced a number of functional prototypes. ||The 3 variant is a short barreled model designed for CQC use with non-standard ammunition. Field tests have shown excellent results when loaded with Snowstorm or Firestorm rounds, and above-average performance with Zero-G, toxic and electro rounds. This specific MARS-3 is loaded with Snowstorm XII rounds and is set to fire at a blistering 850 RPM. Enemies hit with this ammunition will be chilled and slowed."
      Priority=65
      HudColor=(B=255,G=200,R=200)

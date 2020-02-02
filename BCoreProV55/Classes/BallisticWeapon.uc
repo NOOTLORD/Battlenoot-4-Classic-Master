@@ -25,6 +25,8 @@
 // by Nolan "Dark Carnivour" Richert
 // upgraded/fixed by Azarael
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticWeapon extends Weapon
 	abstract

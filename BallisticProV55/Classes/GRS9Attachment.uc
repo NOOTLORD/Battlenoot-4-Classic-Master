@@ -1,7 +1,5 @@
 //=============================================================================
-// GRS9Attachment.
-//
-// 3rd person weapon attachment for GRS9 Pistol
+// 3rd person weapon class for GRS9 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -17,7 +15,7 @@ defaultproperties
      FlashScale=0.650000	 
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
-     BrassClass=Class'BallisticProV55.Brass_GRSNine'
+     BrassClass=Class'BallisticProV55.Brass_GRS9_Pistol'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None

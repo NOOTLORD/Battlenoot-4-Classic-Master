@@ -1,7 +1,5 @@
 //=============================================================================
-// G5Attachment.
-//
-// 3rd person weapon attachment for G5 Bazooka
+// 3rd person weapon class for G5 bazooka
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

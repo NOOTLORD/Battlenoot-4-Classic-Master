@@ -1,7 +1,5 @@
 //=============================================================================
-// Brass_Shotgun.
-//
-// A Shotgun shell casing
+// Brass class for Shotgun type weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

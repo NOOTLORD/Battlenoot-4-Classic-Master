@@ -1,5 +1,5 @@
 //=============================================================================
-// Main Primaryfire class for AH-208 Pistol
+// Primaryfire class for AH-208 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -47,7 +47,7 @@ defaultproperties
      PenetrateForce=0
      bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
-     FlashScaleFactor=0.250000
+     FlashScaleFactor=0.200000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassBone="tip"
      BrassOffset=(X=-125.000000,Y=-5.000000,Z=7.500000)
@@ -59,7 +59,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-Fire',Volume=1.800000)
      FireEndAnim=
      FireRate=0.600000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208Clip'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

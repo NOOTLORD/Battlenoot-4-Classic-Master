@@ -1,5 +1,5 @@
 //=============================================================================
-// RS8Attachment.
+// 3rd person weapon class for RS8 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -25,7 +25,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      FlashMode=MU_Both 
-     FlashScale=0.500000	 
+     FlashScale=0.475000	 
      LightMode=MU_Primary	 
      FlashBone="tip"
      AltFlashBone="tip2"

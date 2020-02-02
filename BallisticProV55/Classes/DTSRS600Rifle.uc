@@ -1,7 +1,5 @@
 //=============================================================================
-// DTSRS600Rifle.
-//
-// DamageType for the SRS600 Battle Rifle
+// Damage type class for SRS-600 Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

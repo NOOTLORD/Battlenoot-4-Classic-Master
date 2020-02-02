@@ -1,10 +1,10 @@
 //=============================================================================
-// M763Attachment.
-//
-// 3rd person weapon attachment for M763 Shotgun
+// 3rd person weapon class for M763 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M763Attachment extends BallisticShotgunAttachment
 	DependsOn(M763GasControl);
@@ -169,7 +169,7 @@ defaultproperties
      FireClass=Class'BallisticProV55.M763PrimaryFire'																	 
      MuzzleFlashClass=Class'BallisticProV55.M763FlashEmitter'
      FlashMode=MU_Primary 
-     FlashScale=1.800000	 
+     FlashScale=1.500000	 
      LightMode=MU_Primary	    
 	 ImpactManager=Class'BallisticProV55.IM_Shell'													  	
      BrassClass=Class'BallisticProV55.Brass_Shotgun'

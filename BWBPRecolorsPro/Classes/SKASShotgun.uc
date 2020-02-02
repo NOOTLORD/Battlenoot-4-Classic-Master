@@ -1,5 +1,5 @@
 //=============================================================================
-// Main weapon class for SKAS-21 Shotgun
+// Weapon class for SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -128,7 +128,7 @@ defaultproperties
      CurrentRating=0.850000
      bShowChargingBar=False	 
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKASDrum'
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKAS_Shotgun'
      Description="SKAS-21 Super Shotgun||Manufacturer: UTC Defense Tech|Primary: Variable Fire Buckshot|Secondary: Tri-Barrel Blast"
      Priority=245
      HudColor=(B=255,G=200,R=200)

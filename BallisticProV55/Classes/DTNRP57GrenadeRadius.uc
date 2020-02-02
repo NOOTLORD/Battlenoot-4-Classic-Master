@@ -1,7 +1,5 @@
 //=============================================================================
-// DTNRP57GrenadeRadius.
-//
-// Damage type for the NRP57 Grenade radius damage
+// Damage type class for NRP57 Grenade radius
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

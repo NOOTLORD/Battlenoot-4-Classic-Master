@@ -1,10 +1,5 @@
 //=============================================================================
-// M925Machinegun.
-//
-// Big 50 Cal machinegun with tons of power, a slow fire rate and horrific
-// recoil. Based on standard machingun with belt and box, it comes with a
-// secondary stand mod for improved accuracy and stability. Heavy MG is lowered
-// when sprinting and slows player movement speed.
+// Weapon class for M925 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -186,7 +181,7 @@ defaultproperties
      AIRating=0.700000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_M925Belt'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_M925_MG'
      Description="The M925 was used during the late stages of the first Human-Skrith war when ballistic weapons first came back into large scale usage. The heavy calibre M925 was extremely effective against the Skrith and their allies and became known as the 'Monster' because it was the first weapon that the Skrith truly feared. Although it has a slower rate of fire than the M353, the 'Monster' has a much heavier bullet and can cause much more damage to an enemy soldier or vehicle in a single shot. It was also used extensively during the 'Wasteland Siege', to hose down thousands of Krao, and proved to be very effective at destroying the alien transport ships, as they were landing."
      Priority=42
      HudColor=(B=255,G=200,R=200)

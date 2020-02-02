@@ -1,7 +1,5 @@
 //=============================================================================
-// DTM353MGHead.
-//
-// Damage type for the M353 Machinegun headshot
+// Damage type class for M353 Machinegun headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

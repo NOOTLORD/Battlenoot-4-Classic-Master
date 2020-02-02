@@ -1,7 +1,5 @@
 //=============================================================================
-// DTM925MGHead.
-//
-// Damage type for the M925 Machinegun headshots
+// Damage type class for M925 Machinegun headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

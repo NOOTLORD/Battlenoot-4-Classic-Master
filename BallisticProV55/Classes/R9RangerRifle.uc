@@ -1,11 +1,5 @@
 //=============================================================================
-// R9RangerRifle.
-//
-// A simple, semi-auto, unscoped, accuracte, medium to high power, long range
-// rifle. Secondary fire is iron sights. Has a decent Mag. Not too great at
-// mobile combat. Suffers from long-gun.
-// A handy when you need a quick to opertate rifle for fighting at medium to
-// long range. (Works pretty well close-up too!)
+// Weapon class for R9 Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -112,7 +106,7 @@ defaultproperties
      AIRating=0.800000
      CurrentRating=0.800000
 	 bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_R9Clip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_R9_Rifle'
      Description="Outstanding reliability and durability in the field are what characterise one of Black & Wood's legendary rifles. Though not widely used by most military forces, the R9 is renowned for its near indestructable design, and superb reliability. Those who use the weapon, mostly snipers, hunters, and specialised squads, swear by it's accuracy and dependability. Often used without fancy features or burdening devices such as optical scopes and similar attachements, the R9 is a true legend with it's users."
      Priority=33
      HudColor=(B=255,G=200,R=200)
@@ -124,7 +118,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.R9Attachment'
      IconMaterial=Texture'BallisticTextures3.ui.SmallIcon_R9'
      IconCoords=(X2=127,Y2=31)
-     ItemName="R9 Ranger Rifle"
+     ItemName="R9 Rifle"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

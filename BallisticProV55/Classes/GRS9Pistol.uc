@@ -1,8 +1,5 @@
 //=============================================================================
-// GRS9Pistol.
-//
-// Glock style low power, high capacity, low recoil, high accuracy light pistol
-// with low power burning laser attachment.
+// Weapon class for GRS9 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -168,7 +165,7 @@ defaultproperties
      PutDownAnimRate=1.500000
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9Clip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9_Pistol'
      Description="The GRS9 from Drake & Co. is used primarily by inner core planets for law enforcement purposes. The additional laser unit adds an alternative attack to the GRS9. The laser unit can be held down, for up to 3.5 seconds, releasing a searing beam upon enemies. This drains the rechargeable battery however, which must be left to replenish when empty."
      Priority=9
      HudColor=(B=255,G=200,R=200)

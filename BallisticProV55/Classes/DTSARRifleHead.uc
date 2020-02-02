@@ -1,7 +1,5 @@
 //=============================================================================
-// DTSARRifleHead.
-//
-// Damage type for the SAR12 headshots
+// Damage type class for Sub Assault Rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

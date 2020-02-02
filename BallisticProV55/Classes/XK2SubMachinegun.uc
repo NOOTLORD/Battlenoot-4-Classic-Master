@@ -1,13 +1,10 @@
 //=============================================================================
-// XK2SubMachinegun.
-//
-// A light, very rapid fire SMG which can be silenced. Low damage, fairly low
-// recoil, but unstable aim and burns through ammo fast. Silencer makes it very
-// hard to detect by removing tracers, using a small muzzle flash and making
-// low noise of course.
+// Weapon class for XK2 SubMachinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XK2SubMachinegun extends BallisticWeapon;
 
@@ -232,7 +229,7 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_XK2Clip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_XK2_SMG'
      Description="Yet another high quality weapon by Black & Wood, the XK2 is a light-weight, silenceable sub-machinegun. It has a very fast rate of fire, but its low velocity bullets make it less dangerous than other weapons. However, these low velocity rounds do allow the weapon to be easily silenced, turning it into an effective stealth weapon, used by many law enforcement organisations, and Black-Ops military units alike. The weapon's high rate of fire, and quick reload times, means that the soldier can pump out rounds quicker than even the M353, making it very useful for cover-fire."
      DisplayFOV=55.000000
      Priority=32

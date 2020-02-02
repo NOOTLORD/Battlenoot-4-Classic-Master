@@ -1,11 +1,5 @@
 //=============================================================================
-// D49Revolver.
-//
-// A powerful handgun that behaves like a revolver. Primary fire is a single
-// powerful round, secondary fire both barrels at once, if possible.
-// Info is stored for the state of each of the six chambers in order to ensure
-// proper behaviour. This way the dry firing of empty chambers and altering the
-// appearance of fired and missing shells is possible.
+// Weapon class for D49 Revolver
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -147,7 +141,7 @@ simulated function Notify_ClipOutOfSight()
 		{
 			Start = Instigator.Location + Instigator.EyePosition() + class'BUtil'.static.AlignedOffset(Instigator.GetViewRotation(), vect(5,1,-5));
 			for(i=0;i<Empties;i++)
-				Spawn(class'Brass_Magnum', self,, Start+VRand()*2, Instigator.GetViewRotation() + rot(8192,0,0));
+				Spawn(class'Brass_D49_Revolver', self,, Start+VRand()*2, Instigator.GetViewRotation() + rot(8192,0,0));
 		}
 	}
 	if (Role == ROLE_Authority && ThirdPersonActor!= None)
@@ -403,7 +397,7 @@ defaultproperties
      CurrentRating=0.600000
      bSniping=True
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_D49Bullets'	 
+     AmmoClass(0)=Class'BallisticProV55.Ammo_D49_Revolver'	 
      Description="Another fine weapon designed by the acclaimed 'Black & Wood' company, the D49 revolver is a true hand cannon. Based on weapons of old, the D49 was intended for non-military use, but rather for self defense and civilian purposes. The dual-barrel design has made it a favourite among it's users, capable of causing massive damage if used correctly, able to easily kill an armored Terran."
      DisplayFOV=50.000000
      Priority=22

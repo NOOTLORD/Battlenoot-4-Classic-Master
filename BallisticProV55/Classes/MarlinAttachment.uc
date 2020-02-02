@@ -1,10 +1,10 @@
 //=============================================================================
-// MarlinAttachment.
-//
-// 3rd person weapon attachment for Deermaster Rifle
+// 3rd person weapon class for Marlin Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class MarlinAttachment extends BallisticAttachment;
 

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for MGL Grenade Launcher grenade 
+// Damage type class for MGL Grenade Launcher grenade 
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

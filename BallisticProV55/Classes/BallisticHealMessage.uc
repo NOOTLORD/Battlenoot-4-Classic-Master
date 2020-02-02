@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+//=============================================================================
 class BallisticHealMessage extends LocalMessage;
 
 static function string GetString(

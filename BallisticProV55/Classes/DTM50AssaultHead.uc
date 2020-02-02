@@ -1,7 +1,5 @@
 //=============================================================================
-// DTM50AssaultHead.
-//
-// DamageType for M50 headshots
+// Damage type class for M50 Assault Rifle headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

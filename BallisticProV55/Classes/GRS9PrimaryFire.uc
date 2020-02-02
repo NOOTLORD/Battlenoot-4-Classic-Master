@@ -1,7 +1,5 @@
 //=============================================================================
-// GRS9PrimaryFire.
-//
-// Low power, low range, low recoil pistol fire
+// Primaryfire class for GRS9 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -50,7 +48,7 @@ defaultproperties
      bPenetrate=False					
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.525000
-     BrassClass=Class'BallisticProV55.Brass_GRSNine'
+     BrassClass=Class'BallisticProV55.Brass_GRS9_Pistol'
      BrassBone="tip"
      BrassOffset=(X=-42.500000,Y=4.500000,Z=1.000000)
      RecoilPerShot=256.000000
@@ -61,7 +59,7 @@ defaultproperties
      FireEndAnim=
      FireAnimRate=1.500000
      FireRate=0.12500
-     AmmoClass=Class'BallisticProV55.Ammo_GRS9Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_GRS9_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

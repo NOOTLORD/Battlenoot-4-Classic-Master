@@ -1,5 +1,5 @@
 //=============================================================================
-// Special muzzleflash for SK-410 Shotgun
+// Special muzzleflash class for SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

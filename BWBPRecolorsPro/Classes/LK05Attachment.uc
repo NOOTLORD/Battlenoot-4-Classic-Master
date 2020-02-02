@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for LK-05 Carbine
+// 3rd person weapon class for LK-05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -63,7 +63,7 @@ defaultproperties
      AltMuzzleFlashClass=Class'BWBPRecolorsPro.LK05SilencedFlash'
      FlashMode=MU_Both 
      AltFlashBone="tip2"
-     FlashScale=0.400000
+     FlashScale=0.300000
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Rifle'

@@ -1,5 +1,5 @@
 //=============================================================================
-// T10CloudControl.
+// M763GasControl.
 //
 // An invisible actor responsible for handling a system of T10 gas clouds. It
 // does the damage using the could to find victims and ensures that players

@@ -1,5 +1,5 @@
 //=============================================================================
-// Main weapon class for LK-05 Carbine
+// Weapon class for LK-05 Carbine
 //
 // by Sarge.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -255,7 +255,7 @@ defaultproperties
      AIRating=0.70000
      CurrentRating=0.700000
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05Clip'  
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'  
      Priority=41
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000

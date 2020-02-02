@@ -1,8 +1,5 @@
 //=============================================================================
-// SRS600PrimaryFire.
-//
-// Automatic fire. Battle rifle class - has a longer range and better accuracy than ARs, but main class has
-// inferior hipfire.
+// Primaryfire class for SRS-600-Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -190,7 +187,7 @@ defaultproperties
      ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-1',Volume=1.000000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
-     FlashScaleFactor=0.450000
+     FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassOffset=(X=-10.000000,Y=1.000000,Z=-1.500000)
      AimedFireAnim="AimedFire"
@@ -204,7 +201,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.170000
-     AmmoClass=Class'BallisticProV55.Ammo_SRS600Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_SRS600_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,9 +1,5 @@
 //=============================================================================
-// SRS600Rifle.
-//
-// An automatic rifle with elements of both a sniper rifle and assault rifle.
-// More powerful than M50, but less firerate and more recoil.
-// Can be silenced.
+// Weapon class for SRS-600-Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -202,7 +198,7 @@ defaultproperties
      AIRating=0.80000
      CurrentRating=0.80000
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_SRS600Clip'																	  												  
+     AmmoClass(0)=Class'BallisticProV55.Ammo_SRS600_Rifle'																	  												  
      Description="Another battlefield favourite produced by high-tech manufacturer, NDTR Industries, the SRS-900 is indeed a fine weapon. Using high velocity 7.62mm ammunition, this rifle causes a lot of damage to the target, but suffers from high recoil, chaos and a low clip capacity. The altered design, can now incorporate a silencer to the end of the barrel, increasing its capabilities as a stealth weapon. This particular model, also features a versatile, red-filter scope, complete with various tactical readouts and indicators, including a range finder, stability metre, elevation indicator, ammo display and stealth meter."
      Priority=40
      HudColor=(B=255,G=200,R=200)
@@ -214,7 +210,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
      IconMaterial=Texture'BallisticProTextures.SRS.SmallIcon_SRSM2'
      IconCoords=(X2=127,Y2=31)
-     ItemName="SRS-600 Battle Rifle"
+     ItemName="SRS-600 Rifle"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

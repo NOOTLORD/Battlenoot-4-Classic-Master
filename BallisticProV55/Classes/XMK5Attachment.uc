@@ -1,7 +1,5 @@
 //=============================================================================
-// XMK5Attachment.
-//
-// 3rd person weapon attachment for XMK5 SubMachinegun
+// 3rd person weapon class for XMK5 SubMachinegun
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -19,7 +17,7 @@ defaultproperties
      FlashBone="tip"	 
 	 LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
-     BrassClass=Class'BallisticProV55.Brass_XMK5SMG'
+     BrassClass=Class'BallisticProV55.Brass_XMK5_SMG'
      BrassMode=MU_Primary	
      InstantMode=MU_Primary
      TrackAnimMode=MU_None	 

@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for PD-97 Bloodhound
+// 3rd person weapon class for PD-97 Bloodhound
 //
 // by Azarael
 // adapting code by Nolan "Dark Carnivour" Richert
@@ -13,7 +13,7 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashMode=MU_Primary 
-	 FlashScale=0.250000
+	 FlashScale=0.350000
      ImpactManager=Class'BallisticProV55.IM_Bullet' 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassMode=MU_None	 

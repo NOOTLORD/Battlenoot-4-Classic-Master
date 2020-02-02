@@ -1,9 +1,5 @@
 //=============================================================================
-// G5Bazooka.
-//
-// Big rocket launcher. Fires a dangerous, not too slow moving rocket, with
-// high damage and a fair radius. Low clip capacity, long reloading times and
-// hazardous close combat temper the beast though.
+// Weapon class for G5 Bazooka
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -831,7 +827,7 @@ defaultproperties
      AIRating=0.800000
      CurrentRating=0.800000
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_G5Rocket'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_G5_Bazooka'
      Description="Based on the original design by the legendary maniac Pirate, Var Dehidra, the G5 has undergone many alterations to become what it is today. The original bandit version was constructed by Var Dehidra to blast open armored cash transportation vehicles. Its name is derived from one of Dehidra's favourite targets, the G5 CTV 4x. It is now a very deadly weapon, used to destroy everything from tanks and structures to Skrith hordes and aircraft. The bombardement attack is a recent addition, replacing the original, primitive heat seeking function that caused it to target CTVs or backfire on the pirates' own craft, provided mainly for use in outdoor environments to destroy all manner of moving targets. The latest model also features a laser-painter device, allowing the user to guide the rocket wherever they wish."
      Priority=44
      CenteredOffsetY=10.000000
@@ -844,7 +840,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.G5Attachment'
      IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_G5'
      IconCoords=(X2=127,Y2=31)
-     ItemName="G5 Missile Launcher"
+     ItemName="G5 Bazooka"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=25

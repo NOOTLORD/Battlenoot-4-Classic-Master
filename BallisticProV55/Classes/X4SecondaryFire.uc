@@ -1,9 +1,6 @@
 //=============================================================================
 // X4SecondaryFire.
 //
-// Hold fire to draw back the weapon and release to slash out at your opponent.
-// Good for sneaking up on enemies and tearing out their various bits and pieces.
-//
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
@@ -25,7 +22,7 @@ defaultproperties
      WallHitPoint=1
      NumSwipePoints=3
      FatiguePerStrike=0.200000
-     TraceRange=(Min=40.000000,Max=40.000000)
+     TraceRange=(Min=100.000000,Max=100.000000)
      Damage=90.000000
      DamageType=Class'BallisticProV55.DTX4Knife'
      DamageTypeHead=Class'BallisticProV55.DTX4KnifeHead'
@@ -41,7 +38,7 @@ defaultproperties
      bFireOnRelease=True
      PreFireAnim="PrepMelee"
      FireAnim="Melee"
-     AmmoClass=Class'BallisticProV55.Ammo_X4Knife'
+     AmmoClass=Class'BallisticProV55.Ammo_X4_Knife'
      AmmoPerFire=0
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)

@@ -1,7 +1,5 @@
 //=============================================================================
-// DTG5BazookaRadius.
-//
-// DamageType for the G5 Bazooka radius
+// Damage type class for G5 Bazooka radius
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

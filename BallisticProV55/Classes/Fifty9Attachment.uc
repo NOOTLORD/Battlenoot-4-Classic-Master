@@ -1,7 +1,5 @@
 //=============================================================================
-// Fifty9Attachment.
-//
-// 3rd person weapon attachment for the Fifty 9
+// 3rd person weapon class for Fifty-9 Machine Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -12,17 +10,17 @@ class Fifty9Attachment extends HandgunAttachment;
 
 defaultproperties
 {
-     MuzzleFlashClass=Class'BallisticProV55.Fifty9FlashEmitter'
+     MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashMode=MU_Primary 
-     FlashScale=0.800000	 
+     FlashScale=0.350000	 
      LightMode=MU_Primary	
      FlashBone="Muzzle"	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
-     BrassClass=Class'BallisticProV55.Brass_Uzi'
+     BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
      BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None
-     TracerClass=Class'BallisticProV55.TraceEmitter_FiftyNine'
+     TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
      TracerMode=MU_Primary	 
      TracerChance=0.500000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'

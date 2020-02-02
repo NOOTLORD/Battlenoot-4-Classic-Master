@@ -1,11 +1,5 @@
 //=============================================================================
-// M353PrimaryFire.
-//
-// Extremely automatic, bullet style instant hit. Shots are long ranged,
-// powerful and sort of accurate when gun is mountued and used carefully.
-// Accuracy decreases very quickly especially if player is moving and the
-// ridiculous fire rate makes it even worse. Mounting the gun can solve the
-// problem though.
+// Primaryfire class for M353 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -45,9 +39,9 @@ defaultproperties
      bPenetrate=False
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M353FlashEmitter'
-     FlashScaleFactor=0.700000
+     FlashScaleFactor=0.350000
      BrassClass=Class'BallisticProV55.Brass_MG'
-     BrassOffset=(X=-14.50000,Y=3.500000,Z=-2.000000)
+     BrassOffset=(X=-14.50000,Y=2.500000,Z=-2.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=120.000000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
@@ -57,7 +51,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.065000
-     AmmoClass=Class'BallisticProV55.Ammo_M353Belt'
+     AmmoClass=Class'BallisticProV55.Ammo_M353_MG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

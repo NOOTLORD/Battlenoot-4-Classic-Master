@@ -1,6 +1,5 @@
 //=============================================================================
 // XK2FlashEmitter.
-
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

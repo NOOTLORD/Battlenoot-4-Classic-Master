@@ -1,8 +1,5 @@
 //=============================================================================
-// XK2PrimaryFire.
-//
-// Very rapid, weak fire for XK2 SMG. can be silenced to reduce chances of
-// detection and damage of weapon.
+// Primaryfire class for XK2 SubMachinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -157,11 +154,11 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     SilencedFireSound=(Sound=Sound'BallisticSounds2.XK2.XK2-SilenceFire',Volume=0.650000,bAtten=True)
+     SilencedFireSound=(Sound=Sound'BallisticSounds2.XK2.XK2-SilenceFire',Volume=0.750000,bAtten=True)
      BallisticFireSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Fire',Volume=0.600000)
      bPawnRapidFireAnim=True
      FireRate=0.090000
-     AmmoClass=Class'BallisticProV55.Ammo_XK2Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_XK2_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for SK410 Shotgun
+// Damage type class for SK410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

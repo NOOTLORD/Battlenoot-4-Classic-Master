@@ -1,7 +1,5 @@
 //=============================================================================
-// XRS10SubMachinegun.
-//
-// A one hand machine-pistol with laser sight and silencer.
+// Weapon class for XRS10 SubMachinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -229,7 +227,7 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_XRS10Clip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_XRS10_SMG'
      Description="The XRS10 is a small, silencable Sub-Machinegun, constructed by newcomer arms company, Drake & Co. Based on a design from many years ago, the XRS10 is a short, medium-range weapon, using .40 calibre ammunition. The weapon has a medium rate-of-fire, fair damage, and a decent magazine capacity, yet can generate much recoil and chaos. The new model, features silencer and blue-light laser sight, to give it some more edge in stealthier situations."
      Priority=27
      HudColor=(B=255,G=200,R=200)
@@ -241,7 +239,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.XRS10Attachment'
      IconMaterial=Texture'BWAddPack-RS-Skins.XRS10.SmallIcon_XRS10'
      IconCoords=(X2=127,Y2=31)
-     ItemName="XRS-10 Machine Pistol"
+     ItemName="XRS-10 Submachine gun"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

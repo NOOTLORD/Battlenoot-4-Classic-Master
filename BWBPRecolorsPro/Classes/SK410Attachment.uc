@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon attachment for SK-410 Shotgun
+// 3rd person weapon class for SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -16,7 +16,7 @@ defaultproperties
      FlashScale=1.200000
      LightMode=MU_Primary		 
      ImpactManager=Class'BallisticProV55.IM_Shell'
-     BrassClass=Class'BWBPRecolorsPro.Brass_SK410shotgun'
+     BrassClass=Class'BWBPRecolorsPro.Brass_SK410_Shotgun'
      BrassMode=MU_Primary 
      InstantMode=MU_Primary
      TrackAnimMode=MU_None	 

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for X82 Sniper Rifle
+// Damage type class for X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

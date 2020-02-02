@@ -1,8 +1,5 @@
 //=============================================================================
-// R9PrimaryFire.
-//
-// Accurate medium-high power rifle fire.
-// Unwieldy from the hip.
+// Primaryfire class for R9 Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -103,7 +100,7 @@ defaultproperties
      BallisticFireSound=(Sound=Sound'BallisticSounds3.USSR.USSR-Fire',Volume=0.800000)
      FireEndAnim=
      FireRate=0.300000
-     AmmoClass=Class'BallisticProV55.Ammo_R9Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_R9_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

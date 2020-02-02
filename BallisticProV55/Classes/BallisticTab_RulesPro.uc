@@ -6,7 +6,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
-
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticTab_RulesPro extends UT2K4TabPanel;
 

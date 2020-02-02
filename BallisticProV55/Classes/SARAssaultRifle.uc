@@ -1,5 +1,5 @@
 //=============================================================================
-// SARAssaultRifle.
+// Weapon class for Sub Assault Rifle
 //
 // Highly compact, but innacurate assault rifle with switchable stock,
 // flash, large mag, quick reloading and red-dot sights.
@@ -185,7 +185,7 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
 	 bShowChargingBar=False
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_SARClip'
+     AmmoClass(0)=Class'BallisticProV55.Ammo_SAR_Rifle'
      Description="With a growing number of operations and battles taking place in urban and industial enviroments, the UTC realized that their ground infantry units were in dire need of a more effective, balanced weapon system for indoor combat. UTC soldiers fighting in the close confines of urban structures and industrial installatons needed a highly compact, reliable and manouverable weapon, but it needed the power to blast through light walls and take down the agile alien forces they were faced with.||The result was the development of the Sub-Assault Rifle, the most well known of which is the S-AR 12. These weapons have the power of an assault rifle, usually using rifle ammunition such as 5.56mm rounds, and the manouverability of a compact sub-machinegun. Accuracy was not an issue due to the extremely short range of most of the encounters in urban combat."
      DisplayFOV=55.000000
      Priority=32
@@ -198,7 +198,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.SARAttachment'
      IconMaterial=Texture'BallisticTextures3.ui.SmallIcon_SAR12'
      IconCoords=(X2=127,Y2=31)
-     ItemName="Sub-Assault Rifle 12"
+     ItemName="Sub-Assault Rifle"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

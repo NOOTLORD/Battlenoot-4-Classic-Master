@@ -1,10 +1,10 @@
 //=============================================================================
-// DTNRP57RolledRadius.
-//
-// Damage type for the Rolled NRP57 Grenade radius damage
+// Damage type class for Rolled NRP57 Grenade radius
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DTNRP57RolledRadius extends DT_BWExplode;
 

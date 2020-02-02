@@ -23,7 +23,7 @@ defaultproperties
      DamageDescription=",Explode,Hazard,NonSniper,"
      bLocationalHit=False
      bThrowRagdoll=True
-     GibModifier=2.000000
+     GibModifier=1.000000
      bDisplaceAim=False
      bUseMotionBlur=False	 
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'

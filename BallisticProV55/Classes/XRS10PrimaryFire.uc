@@ -1,5 +1,5 @@
 //=============================================================================
-// XRS10PrimaryFire.
+// Primaryfire class for XRS10 SubMachinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved. 
@@ -165,11 +165,11 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.320000,OutVal=1),(InVal=0.500000,OutVal=1.500000),(InVal=1.000000,OutVal=2.250000)))
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-SilenceFire',Volume=0.400000,bAtten=True)
+     SilencedFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-SilenceFire',Volume=0.600000,bAtten=True)
      BallisticFireSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Fire',Volume=1.700000)
      bPawnRapidFireAnim=True
      FireRate=0.090000
-     AmmoClass=Class'BallisticProV55.Ammo_XRS10Clip'
+     AmmoClass=Class'BallisticProV55.Ammo_XRS10_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

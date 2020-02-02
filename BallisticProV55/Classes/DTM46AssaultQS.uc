@@ -1,7 +1,5 @@
 //=============================================================================
-// DTM46Assault.
-//
-// DamageType for the M46 assault rifle primary fire
+// Damage type class for M46 Assault Rifle
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

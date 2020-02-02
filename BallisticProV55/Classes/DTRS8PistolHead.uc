@@ -1,7 +1,5 @@
 //=============================================================================
-// DTRS8PistolHead.
-//
-// Damage type for the RS8 Pistol Headshots
+// Damage type class for RS8 Pistol headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,8 +1,6 @@
 //=============================================================================
 // X4PrimaryFire.
 //
-// Rapid swinging of the knife. Effective in an insane melee.
-//
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
 // Copyright© 2011 RuneStorm. All Rights Reserved.
@@ -37,7 +35,7 @@ defaultproperties
      SliceAnims(3)="Slash4"
      FatiguePerStrike=0.060000
      bCanBackstab=False
-     TraceRange=(Min=40.000000,Max=40.000000)
+     TraceRange=(Min=100.000000,Max=100.000000)
      Damage=55.000000
      DamageHead=55.000000
      DamageLimb=55.000000
@@ -52,7 +50,7 @@ defaultproperties
      FireAnim="Slash1"
      FireAnimRate=1.500000
      FireRate=0.350000
-     AmmoClass=Class'BallisticProV55.Ammo_X4Knife'
+     AmmoClass=Class'BallisticProV55.Ammo_X4_Knife'
      AmmoPerFire=0
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)

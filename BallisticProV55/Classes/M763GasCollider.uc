@@ -1,5 +1,5 @@
 //=============================================================================
-// T10Cloud.
+// M763GasCollider
 //
 // A cloud of gas from the T10 grenade. The controller wil damage the actors this is touching
 //

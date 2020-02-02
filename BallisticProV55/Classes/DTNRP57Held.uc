@@ -1,7 +1,5 @@
 //=============================================================================
-// DTNRP57Held.
-//
-// Damage type for unreleased NRP57
+// Damage type class for held NRP57
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
