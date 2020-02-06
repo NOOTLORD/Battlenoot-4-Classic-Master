@@ -33,7 +33,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M46FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_M46_Rifle'
-     BrassOffset=(X=-12.000000,Y=3.000000,Z=-4.500000)
+     BrassOffset=(X=-18.000000,Y=4.000000,Z=-3.000000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=180.000000
      FireChaos=0.045000

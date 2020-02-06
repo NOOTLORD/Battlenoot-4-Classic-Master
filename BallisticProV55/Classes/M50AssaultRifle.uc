@@ -58,7 +58,7 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     LCDCamOnTex=Shader'BallisticUI2.M50.M50LCDTex_SD'					   
+     LCDCamOnTex=Texture'BallisticUI2.M50.M50LCDTex'					   
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M50'
@@ -135,7 +135,7 @@ defaultproperties
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons2.M50.M50SkinA'
      Skins(2)=Texture'BallisticWeapons2.M50.M50SkinB'
-     Skins(3)=Combiner'BallisticUI2.M50.NoiseComb'
+     Skins(3)=Texture'BallisticUI2.M50.M50LCDTex'
      Skins(4)=Texture'BallisticWeapons2.M50.M50Laser'
      Skins(5)=Texture'BallisticWeapons2.M50.M50Gren'
      AmbientGlow=10
