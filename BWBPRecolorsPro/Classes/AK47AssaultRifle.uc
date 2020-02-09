@@ -70,17 +70,6 @@ simulated function Notify_ClipOut()
 	}
 }
 
-simulated function float RateSelf()
-{
-	if (!HasAmmo())
-		CurrentRating = 0;
-	else if (Ammo[0].AmmoAmount < 1 && MagAmmo < 1)
-		CurrentRating = Instigator.Controller.RateWeapon(self)*0.3;
-	else
-		return Super.RateSelf();
-	return CurrentRating;
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -199,5 +188,5 @@ defaultproperties
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticRecolors3TexPro.AK490.AK490-Main'
      Skins(2)=Texture'BallisticRecolors3TexPro.AK490.AK490-Misc'
-     AmbientGlow=10
+     AmbientGlow=5
 }

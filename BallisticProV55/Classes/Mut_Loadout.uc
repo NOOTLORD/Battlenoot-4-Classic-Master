@@ -368,9 +368,6 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 				return true;
 		return false;
 	}
-	// No weapon pickups unless they are dropped. Dropped BWs are owned by the weapon that dropped them
-	else if (WeaponPickup(Other) != None && Other.Owner == None)
-		return false;
 	// No ammo pickups
 	else if (Ammo(Other) != None && IP_AmmoPack(Other) == None)
 		return false;

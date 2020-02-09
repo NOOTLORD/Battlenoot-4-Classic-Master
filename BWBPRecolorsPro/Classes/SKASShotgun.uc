@@ -10,18 +10,9 @@ class SKASShotgun extends BallisticProShotgun;
 
 var() sound      	QuickCockSound;
 
-simulated function float RateSelf()
-{
-	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
-		CurrentRating = Super.RateSelf() * 0.2;
-	else
-		return Super.RateSelf();
-	return CurrentRating;
-}
-
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -150,5 +141,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolors4AnimPro.SKASShotgunFP'
      DrawScale=0.260000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=10
+     AmbientGlow=5
 }

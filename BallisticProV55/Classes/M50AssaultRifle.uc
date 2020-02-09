@@ -10,19 +10,9 @@ class M50AssaultRifle extends BallisticWeapon;
 
 var() Material	LCDCamOnTex;		//
 
-simulated function float RateSelf()
-{
-	if (!HasAmmo())
-		CurrentRating = 0;
-	else if (Ammo[0].AmmoAmount < 1 && MagAmmo < 1)
-		CurrentRating = Instigator.Controller.RateWeapon(self)*0.3;
-	else
-		return Super.RateSelf();
-}
-
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -52,7 +42,6 @@ function float SuggestAttackStyle()	{	return 0.0;	}
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()	{	return 0.0;	}
-
 
 // End AI Stuff =====
 
@@ -138,5 +127,5 @@ defaultproperties
      Skins(3)=Texture'BallisticUI2.M50.M50LCDTex'
      Skins(4)=Texture'BallisticWeapons2.M50.M50Laser'
      Skins(5)=Texture'BallisticWeapons2.M50.M50Gren'
-     AmbientGlow=10
+     AmbientGlow=5
 }

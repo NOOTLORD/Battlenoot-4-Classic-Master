@@ -115,7 +115,6 @@ simulated function Notify_CockAimed()
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
-
 // Fire pressed. Change weapon if out of ammo, reload if empty mag or skip reloading if possible
 simulated function FirePressed(float F)
 {
@@ -141,18 +140,9 @@ simulated function FirePressed(float F)
 	}
 }
 
-simulated function float RateSelf()
-{
-	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
-		CurrentRating = Super.RateSelf() * 0.2;
-	else
-		return Super.RateSelf();
-	return CurrentRating;
-}
-
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -188,8 +178,6 @@ function float SuggestDefenseStyle()
 {
 	return -0.5;
 }
-
-// End AI Stuff =====
 
 // End AI Stuff =====
 
@@ -274,5 +262,5 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticProAnims.M763_FP'
      DrawScale=0.500000
-     AmbientGlow=0
+     AmbientGlow=5
 }

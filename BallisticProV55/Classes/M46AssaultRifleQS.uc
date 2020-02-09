@@ -9,25 +9,10 @@
 //=============================================================================
 class M46AssaultRifleQS extends BallisticWeapon;
 
-simulated event RenderOverlays (Canvas C)
-{
-	Super(BallisticWeapon).RenderOverlays(C);
-}
-
-simulated function float RateSelf()
-{
-	if (!HasAmmo())
-		CurrentRating = 0;
-	else if (Ammo[0].AmmoAmount < 1 && MagAmmo < 1)
-		CurrentRating = Instigator.Controller.RateWeapon(self)*0.3;
-	else
-		return Super.RateSelf();
-	return CurrentRating;
-}
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -143,5 +128,5 @@ defaultproperties
      LightRadius=4.000000					   																									   						 
      Mesh=SkeletalMesh'BallisticProAnims.OA-AR-RDS'
      DrawScale=0.300000	 
-     AmbientGlow=10
+     AmbientGlow=5
 }

@@ -79,18 +79,9 @@ simulated function Notify_CockSim()
 
 simulated function Notify_BrassOut();
 
-simulated function float RateSelf()
-{
-	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
-		CurrentRating = Super.RateSelf() * 0.2;
-	else
-		return Super.RateSelf();
-	return CurrentRating;
-}
-
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -220,5 +211,5 @@ defaultproperties
      Skins(1)=Texture'BallisticRecolors3TexPro.SK410.SK410-C-CamoSnow'
      Skins(2)=Texture'BallisticRecolors3TexPro.SK410.SK410-Misc'
      Skins(3)=Shader'BallisticRecolors3TexPro.SK410.SK410-LightsOn'
-     AmbientGlow=10
+     AmbientGlow=5
 }

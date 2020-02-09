@@ -10,8 +10,8 @@
 class XMK5SubMachinegun extends BallisticWeapon;
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -118,5 +118,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticProAnims.OA-SMG'
      DrawScale=0.450000
-     AmbientGlow=10
+     AmbientGlow=5
 }

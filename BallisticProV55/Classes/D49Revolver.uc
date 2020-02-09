@@ -302,8 +302,8 @@ simulated function bool CheckWeaponMode (int Mode)
 }
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -423,5 +423,5 @@ defaultproperties
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons2.D49.D49RevolverSkin'
      Skins(2)=Texture'BallisticWeapons2.D49.D49ShellsSkin'
-     AmbientGlow=10
+     AmbientGlow=5
 }

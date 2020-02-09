@@ -327,5 +327,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BWBPOtherPackAnim.Bloodhound_FP'
      DrawScale=0.200000
-     AmbientGlow=10
+     AmbientGlow=5
 }

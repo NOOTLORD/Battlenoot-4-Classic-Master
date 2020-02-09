@@ -719,8 +719,8 @@ simulated function Notify_G5HideRocket ()
 }
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -849,5 +849,5 @@ defaultproperties
      LightRadius=12.000000
      Mesh=SkeletalMesh'BallisticAnims2.G5Bazooka'
      DrawScale=0.300000
-     AmbientGlow=10
+     AmbientGlow=5
 }

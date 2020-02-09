@@ -124,21 +124,9 @@ simulated function PlayReload()
 		SetBoneScale (0, 0.0, SilencerBone);
 }
 
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-		return true;
-	return false;	//This weapon is empty
-}
-
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -252,5 +240,5 @@ defaultproperties
      Skins(1)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Skin'
      Skins(2)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Laser'
      Skins(3)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Silencer'
-     AmbientGlow=10
+     AmbientGlow=5
 }

@@ -51,17 +51,6 @@ simulated function PositionSights ()
 		SetBoneRotation('TopHandle', class'BUtil'.static.RSmerp(SightingPhase, rot(0,0,0), rot(0,0,-8192)));
 }
 
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
 simulated function SetScopeBehavior()
 {
 	bUseNetAim = default.bUseNetAim || bScopeView;
@@ -96,8 +85,8 @@ simulated function SetScopeBehavior()
 }
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 // tells bot whether to charge or back off while using this weapon
@@ -192,5 +181,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticProAnims.M353Machinegun'
      DrawScale=0.350000
-     AmbientGlow=10
+     AmbientGlow=5
 }

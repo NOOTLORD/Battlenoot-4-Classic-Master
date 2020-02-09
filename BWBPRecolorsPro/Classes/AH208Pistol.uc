@@ -95,19 +95,7 @@ simulated function PlayCocking(optional byte Type)
 		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
 	else
 		PlayAnim(CockAnim, CockAnimRate, 0.2);
-}
-
-// Secondary fire doesn't count for this weapon
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (!bNoMag && FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}											   							
+}										   							
 
 // AI Interface =====
 // choose between regular or alt-fire
@@ -220,5 +208,5 @@ defaultproperties
      Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
      Skins(4)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'
      Skins(5)=Shader'BallisticRecolors4TexPro.Eagle.Eagle-SightDotGreen'
-     AmbientGlow=10
+     AmbientGlow=5
 }

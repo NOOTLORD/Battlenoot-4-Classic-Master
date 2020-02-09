@@ -80,8 +80,8 @@ simulated function PlayReload()
 }
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -185,5 +185,5 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BWBP4-Anims.Glock'
      DrawScale=0.150000
-     AmbientGlow=10
+     AmbientGlow=5
 }

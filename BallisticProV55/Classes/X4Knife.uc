@@ -13,6 +13,7 @@ class X4Knife extends BallisticMeleeWeapon;
 
 // AI Interface =====					 
 // choose between regular or alt-fire
+
 function byte BestMode()
 {
 	local Bot B;
@@ -46,6 +47,7 @@ function float SuggestDefenseStyle()
 {
 	return -1;
 }
+
 // End AI Stuff =====
 
 defaultproperties
@@ -93,5 +95,5 @@ defaultproperties
      ItemName="X4 Knife"
      Mesh=SkeletalMesh'BallisticAnims_25.X4'
      DrawScale=0.300000
-     AmbientGlow=10			  
+     AmbientGlow=5	  
 }

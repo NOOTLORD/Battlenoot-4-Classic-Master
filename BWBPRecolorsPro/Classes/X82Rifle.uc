@@ -9,8 +9,8 @@
 class X82Rifle extends BallisticWeapon;
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -138,5 +138,5 @@ defaultproperties
      Skins(1)=Texture'UT2004Weapons.Pickups.ClassicSniperAmmoT'
      Skins(2)=Texture'BallisticRecolors3TexPro.X82.X82Skin'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=10
+     AmbientGlow=5
 }

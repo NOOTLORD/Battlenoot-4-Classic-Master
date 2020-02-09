@@ -21,6 +21,7 @@ simulated function bool CheckWeaponMode (int Mode)
 }	
 															 
 // AI Interface =====
+// choose between regular or alt-fire
 
 function byte BestMode()	{	return 0;	}
 
@@ -128,5 +129,5 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticProAnims.USSR'
      DrawScale=0.500000
      Skins(4)=Texture'BallisticTextures3.Weapons.USSRSkin'	 
-     AmbientGlow=10
+     AmbientGlow=5
 }

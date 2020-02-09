@@ -9,6 +9,7 @@
 class NRP57Grenade extends BallisticHandGrenade;
 
 // AI Interface =====
+
 function byte BestMode()
 {
 	local Bot B;
@@ -97,5 +98,5 @@ defaultproperties
      ItemName="NRP57 Grenade"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'
      DrawScale=0.400000
-     AmbientGlow=10
+     AmbientGlow=5
 }

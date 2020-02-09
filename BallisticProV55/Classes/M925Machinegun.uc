@@ -35,17 +35,6 @@ simulated function Notify_M925HandleOff()
 	PlaySound(HandleOffSound,,0.5);
 }
 
-simulated function bool HasAmmo()
-{
-	//First Check the magazine
-	if (FireMode[0] != None && MagAmmo >= FireMode[0].AmmoPerFire)
-		return true;
-	//If it is a non-mag or the magazine is empty
-	if (Ammo[0] != None && FireMode[0] != None && Ammo[0].AmmoAmount >= FireMode[0].AmmoPerFire)
-			return true;
-	return false;	//This weapon is empty
-}
-
 simulated function SetScopeBehavior()
 {
 	bUseNetAim = default.bUseNetAim || bScopeView;
@@ -80,8 +69,8 @@ simulated function SetScopeBehavior()
 }
 
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -208,5 +197,5 @@ defaultproperties
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(4)=Texture'BallisticWeapons2.M925.M925AmmoBox'
      Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     AmbientGlow=10
+     AmbientGlow=5
 }

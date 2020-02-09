@@ -23,18 +23,9 @@ simulated function Notify_CockAimed()
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
-simulated function float RateSelf()
-{
-	if (PlayerController(Instigator.Controller) != None && Ammo[0].AmmoAmount <=0 && MagAmmo <= 0)
-		CurrentRating = Super.RateSelf() * 0.2;
-	else
-		return Super.RateSelf();
-	return CurrentRating;
-}
-
 // AI Interface =====
-
 // choose between regular or alt-fire
+
 function byte BestMode()	{	return 0;	}
 
 function float GetAIRating()
@@ -165,5 +156,5 @@ defaultproperties
      Skins(1)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Skin'
      Skins(2)=Texture'BWAddPack-RS-Skins.MRS138.MRS138HeatShield'
      Skins(3)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Shell'	 
-     AmbientGlow=10
+     AmbientGlow=5
 }
