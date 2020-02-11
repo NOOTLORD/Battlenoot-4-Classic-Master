@@ -12,7 +12,7 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
      FlashMode=MU_Primary 
-     FlashScale=1.500000	 
+     FlashScale=1.600000	 
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassClass=Class'BallisticProV55.Brass_Rifle'

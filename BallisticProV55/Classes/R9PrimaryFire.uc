@@ -91,7 +91,7 @@ defaultproperties
      ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-1',Volume=1.000000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
-     FlashScaleFactor=0.900000
+     FlashScaleFactor=0.750000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassOffset=(X=-50.000000,Y=-2.000000,Z=4.000000)
      AimedFireAnim="AimedFire"

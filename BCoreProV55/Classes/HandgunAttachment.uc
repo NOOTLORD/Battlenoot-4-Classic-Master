@@ -72,6 +72,7 @@ simulated function FlashMuzzleFlash(byte Mode)
 	if (bIsSlave)
 		SlaveAlpha = 1.0;
 }
+
 simulated function FlashWeaponLight(byte Mode)
 {
 	if (LightMode == MU_None || (LightMode == MU_Secondary && Mode == 0) || (LightMode == MU_Primary && Mode != 0))

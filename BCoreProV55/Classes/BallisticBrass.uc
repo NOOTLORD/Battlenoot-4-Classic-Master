@@ -189,7 +189,7 @@ defaultproperties
      RandomDir=(Pitch=2048,Yaw=2048)
      StartVelocity=(Y=20.000000,Z=100.000000)
      LifeTimeScale=1.000000
-     bAddOwnerVelocity=True
+     bAddOwnerVelocity=False
      bHitSounds=True
      HitSoundVolume=0.400000
      HitSoundRadius=32.000000
