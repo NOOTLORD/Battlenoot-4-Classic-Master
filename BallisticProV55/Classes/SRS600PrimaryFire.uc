@@ -189,7 +189,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassOffset=(X=-10.000000,Y=1.000000,Z=-1.500000)
+     BrassOffset=(X=-14.000000,Y=1.000000,Z=-1.500000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=240.000000
      FireChaos=0.065000

@@ -25,7 +25,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
      FlashMode=MU_Both 
-     FlashScale=0.450000	 
+     FlashScale=0.425000	 
      LightMode=MU_Primary	 
      FlashBone="tip"
      AltFlashBone="tip2"
