@@ -63,7 +63,7 @@ defaultproperties
      TracerChance=0.500000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.950000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimPro.3RD-SKAS'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.3RD-SKAS'
      RelativeLocation=(X=-2.000000,Z=7.000000)
      RelativeRotation=(Pitch=32768)
      DrawScale=0.115000

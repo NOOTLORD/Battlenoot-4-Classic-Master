@@ -225,7 +225,7 @@ function InternalOnChange(GUIComponent Sender)
 defaultproperties
 {
      Begin Object Class=GUILoadOutItem Name=Streak1Image
-         NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
+         NAImage=Texture'BallisticUI.Icons.BigIcon_NA'
          Caption="4 Kills"
          WinTop=0.200000
          WinLeft=0.250000
@@ -238,7 +238,7 @@ defaultproperties
      Item_Streak1=GUILoadOutItem'BallisticProV55.BallisticTeamOutfittingKillstreaksTab.Streak1Image'
 
      Begin Object Class=GUILoadOutItem Name=Streak2Image
-         NAImage=Texture'BallisticUI2.Icons.BigIcon_NA'
+         NAImage=Texture'BallisticUI.Icons.BigIcon_NA'
          Caption="9 Kills"
          WinTop=0.200000
          WinLeft=0.550000

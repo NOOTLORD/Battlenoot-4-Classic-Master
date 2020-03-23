@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for MARS-3 Assault Rifle
+// Weapon class for F2000 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -179,7 +179,7 @@ defaultproperties
      ScopeBone="EOTech"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticRecolors4TexPro.MARS.BigIcon_F2000Alt'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_F2000'
      BigIconCoords=(X1=32,Y1=40,X2=475)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -190,11 +190,11 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.425000)
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-BoltPull',Volume=0.950000)
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-BoltPull',Volume=0.950000)
      ReloadAnimRate=1.350000
-     ClipHitSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagFiddle',Volume=0.950000)
-     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagOut',Volume=0.950000)
-     ClipInSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-MagIn',Volume=0.950000)
+     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagFiddle',Volume=0.950000)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagOut',Volume=0.950000)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagIn',Volume=0.950000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
@@ -235,16 +235,16 @@ defaultproperties
      PlayerViewOffset=(X=0.500000,Y=12.000000,Z=-18.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'
-     IconMaterial=Texture'BallisticRecolors4TexPro.MARS.SmallIcon_F2000Alt'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_F2000'
      IconCoords=(X2=127,Y2=31)
-     ItemName="MARS-3 Assault Rifle"
+     ItemName="F2000 Assault Rifle"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.MARS3_FP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.F2000_FP'
      DrawScale=0.300000
      AmbientGlow=5
 }

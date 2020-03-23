@@ -51,7 +51,7 @@ defaultproperties
      PlayerSpeedFactor=0.800000
      PlayerJumpFactor=0.800000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
-     BigIconMaterial=Texture'BallisticRecolors3TexPro.X82.BigIcon_X82'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_X82'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      SpecialInfo(0)=(Info="360.0;35.0;1.0;80.0;10.0;0.0;0.0")
@@ -60,10 +60,10 @@ defaultproperties
      MagAmmo=5
      CockAnimPostReload="Cock"
      CockAnimRate=1.500000
-     CockSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Charge',Volume=0.850000)
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-Charge',Volume=0.850000)
      ReloadAnimRate=0.400000
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.X82.X82-In',Volume=0.850000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.X82.X82-Out',Volume=0.850000)
+     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-In',Volume=0.850000)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-Out',Volume=0.850000)
      ClipInFrame=0.850000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",Value=1.000000)
@@ -72,7 +72,7 @@ defaultproperties
      CurrentWeaponMode=0
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333300
-     ScopeViewTex=Texture'BallisticRecolors3TexPro.X82.X82ScopeView'
+     ScopeViewTex=Texture'BallisticRecolorsTex.X82.X82ScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
      FullZoomFOV=20.000000
@@ -123,7 +123,7 @@ defaultproperties
      PlayerViewOffset=(X=4.000000,Y=6.000000,Z=-7.500000)
      BobDamping=1.800000
      AttachmentClass=Class'BWBPRecolorsPro.X82Attachment'
-     IconMaterial=Texture'BallisticRecolors3TexPro.X82.SmallIcon_X82'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_X82'
      IconCoords=(X2=127,Y2=31)
      ItemName="X82 Sniper Rifle"
      LightType=LT_Pulse
@@ -132,11 +132,11 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimPro.X83A1_1st'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.X82_FP'
      DrawScale=0.450000
-     Skins(0)=Texture'BallisticRecolors3TexPro.X82.X82Skin'
+     Skins(0)=Texture'BallisticRecolorsTex.X82.X82Skin'
      Skins(1)=Texture'UT2004Weapons.Pickups.ClassicSniperAmmoT'
-     Skins(2)=Texture'BallisticRecolors3TexPro.X82.X82Skin'
+     Skins(2)=Texture'BallisticRecolorsTex.X82.X82Skin'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=5
 }

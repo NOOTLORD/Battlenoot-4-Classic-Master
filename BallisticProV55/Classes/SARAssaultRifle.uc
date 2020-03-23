@@ -121,7 +121,7 @@ defaultproperties
 	 CurrentRating=0.72
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticTextures3.ui.BigIcon_SAR12'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SAR'
      BigIconCoords=(Y1=24,Y2=250)
      SightFXClass=Class'BallisticProV55.SARSightDot'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -136,11 +136,11 @@ defaultproperties
      MagAmmo=40
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds3.SAR.SAR-Cock',Volume=0.900000)
+     CockSound=(Sound=Sound'BallisticSounds2.SAR.SAR-Cock',Volume=0.900000)
      ReloadAnimRate=1.100000
      ClipHitSound=(Volume=0.625000)
-     ClipOutSound=(Sound=Sound'BallisticSounds3.SAR.SAR-ClipOut',Volume=0.900000)
-     ClipInSound=(Sound=Sound'BallisticSounds3.SAR.SAR-ClipIn',Volume=0.900000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.SAR.SAR-ClipOut',Volume=0.900000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.SAR.SAR-ClipIn',Volume=0.900000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
@@ -184,7 +184,7 @@ defaultproperties
      GroupOffset=4
      PlayerViewOffset=(X=5.000000,Y=9.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.SARAttachment'
-     IconMaterial=Texture'BallisticTextures3.ui.SmallIcon_SAR12'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SAR'
      IconCoords=(X2=127,Y2=31)
      ItemName="Sub-Assault Rifle"
      LightType=LT_Pulse
@@ -193,10 +193,10 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticProAnims.SAR'
+     Mesh=SkeletalMesh'BallisticAnims2.SAR'
      DrawScale=0.300000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticTextures3.Weapons.SARSkin'
-     Skins(2)=Texture'BallisticTextures3.Weapons.SAR-SightCross'
+     Skins(1)=Texture'BallisticWeapons2.Weapons.SARSkin'
+     Skins(2)=Texture'BallisticWeapons2.Weapons.SAR-SightCross'
      AmbientGlow=5 
 }

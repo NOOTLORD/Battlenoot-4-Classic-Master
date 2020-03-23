@@ -19,5 +19,5 @@ defaultproperties
      StartVelocity=(X=20.000000,Y=0.000000)
      bHitSounds=False
      StaticMesh=StaticMesh'BallisticHardware2.Brass.GrenadeClip'
-     DrawScale=0.300000
+     DrawScale=0.250000
 }

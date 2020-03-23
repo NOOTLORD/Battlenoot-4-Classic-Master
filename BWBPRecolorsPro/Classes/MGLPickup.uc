@@ -10,8 +10,8 @@ class MGLPickup extends BallisticWeaponPickup
 	placeable;
 
 #exec OBJ LOAD FILE=BallisticEffects.utx
-#exec OBJ LOAD FILE=BallisticRecolors4TexPro.utx
-#exec OBJ LOAD FILE=BallisticRecolors4StaticProExp.usx
+#exec OBJ LOAD FILE=BallisticRecolorsTex.utx
+#exec OBJ LOAD FILE=BallisticRecolorsStatic.usx
 
 //Fixed by (NL)NOOTLORD
 //===========================================================================
@@ -22,34 +22,34 @@ class MGLPickup extends BallisticWeaponPickup
 //===========================================================================
 static function StaticPrecache(LevelInfo L)
 {
-	L.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-Main');
-	L.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-Holosight');
-	L.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-Screen');
-	L.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase');
+	L.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-Main');
+	L.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-Holosight');
+	L.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-Screen');
+	L.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-ScreenBase');
 }
 
 simulated function UpdatePrecacheMaterials()
 {
-	Level.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-Main');
-	Level.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-Holosight');
-	Level.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-Screen');
-	Level.AddPrecacheMaterial(Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase');
+	Level.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-Main');
+	Level.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-Holosight');
+	Level.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-Screen');
+	Level.AddPrecacheMaterial(Texture'BallisticRecolorsTex.MGL.MGL-ScreenBase');
 }
 
 simulated function UpdatePrecacheStaticMeshes()
 {
-	Level.AddPrecacheStaticMesh(StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickup');
-	Level.AddPrecacheStaticMesh(StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickupLow');
+	Level.AddPrecacheStaticMesh(StaticMesh'BallisticRecolorsStatic.MGL.MGLPickup');
+	Level.AddPrecacheStaticMesh(StaticMesh'BallisticRecolorsStatic.MGL.MGLPickupLow');
 }
 
 defaultproperties
 {
-     LowPolyStaticMesh=StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickupLow'
+     LowPolyStaticMesh=StaticMesh'BallisticRecolorsStatic.MGL.MGLPickupLow'
      InventoryType=Class'BWBPRecolorsPro.MGLauncher'
      RespawnTime=5.000000
      PickupMessage="You picked up the Conqueror multiple grenade launcher."
      PickupSound=Sound'BallisticSounds2.M763.M763Putaway'
-     StaticMesh=StaticMesh'BallisticRecolors4StaticProExp.MGL.MGLPickup'
+     StaticMesh=StaticMesh'BallisticRecolorsStatic.MGL.MGLPickup'
      Physics=PHYS_None
      DrawScale=0.900000
      CollisionHeight=3.000000

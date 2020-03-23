@@ -148,7 +148,7 @@ defaultproperties
      FlyByMode=MU_Primary
      ReloadAnim="Reload_AR"
      CockingAnim="Cock_RearPull"
-     Mesh=SkeletalMesh'BallisticAnims3.USSR-3rd'
+     Mesh=SkeletalMesh'BallisticAnims2.R9_3rd'
      DrawScale=0.140000
-     Skins(0)=Texture'BallisticTextures3.Weapons.USSRSkin'	 
+     Skins(0)=Texture'BallisticWeapons2.R9.USSRSkin'	 
 }

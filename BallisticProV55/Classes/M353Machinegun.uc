@@ -107,7 +107,7 @@ defaultproperties
      PlayerJumpFactor=0.900000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=4.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M353'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M353'
      BigIconCoords=(Y1=50,Y2=240)
      SightFXClass=Class'BallisticProV55.M353SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -170,7 +170,7 @@ defaultproperties
      InventoryGroup=3
      PlayerViewOffset=(X=2.000000,Y=3.500000,Z=-4.000000)
      AttachmentClass=Class'BallisticProV55.M353Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M353'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M353'
      IconCoords=(X2=127,Y2=31)
      ItemName="M353 Light Machine Gun"
      LightType=LT_Pulse
@@ -179,7 +179,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticProAnims.M353Machinegun'
+     Mesh=SkeletalMesh'BallisticAnims2.M353Machinegun'
      DrawScale=0.350000
      AmbientGlow=5
 }

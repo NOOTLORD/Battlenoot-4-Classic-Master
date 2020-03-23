@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for MARS-3 Assault Rifle
+// 3rd person weapon class for F2000 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -66,6 +66,6 @@ defaultproperties
      ReloadAnimRate=0.800000
      bRapidFire=True
      bAltRapidFire=True
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.MARS3_TP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.F2000_TP'
      DrawScale=0.825000
 }

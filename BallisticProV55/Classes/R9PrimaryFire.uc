@@ -8,8 +8,6 @@
 //=============================================================================
 class R9PrimaryFire extends BallisticRangeAttenFire;
 
-#exec OBJ LOAD File="BallisticProSounds.uax"
-
 //// server propagation of firing ////
 function ServerPlayFiring()
 {
@@ -84,11 +82,11 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTR9Rifle'
      DamageTypeHead=Class'BallisticProV55.DTR9RifleHead'
      DamageTypeArm=Class'BallisticProV55.DTR9Rifle'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-1',Volume=1.000000)
+     ClipFinishSound=(Sound=Sound'BallisticSounds2.Misc.ClipEnd-1',Volume=1.000000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
      FlashScaleFactor=0.750000
@@ -97,7 +95,7 @@ defaultproperties
      AimedFireAnim="AimedFire"
      RecoilPerShot=384.000000
      FireChaos=0.450000
-     BallisticFireSound=(Sound=Sound'BallisticSounds3.USSR.USSR-Fire',Volume=0.800000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.R9.R9-Fire',Volume=0.800000)
      FireEndAnim=
      FireRate=0.300000
      AmmoClass=Class'BallisticProV55.Ammo_R9_Rifle'

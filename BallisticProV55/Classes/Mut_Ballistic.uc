@@ -867,7 +867,7 @@ defaultproperties
 {
      Replacements(0)=(OldItemName="XPickups.HealthPack",NewItemNames=("BallisticProV55.IP_HealthKit"))
      Replacements(1)=(OldItemName="XPickups.UDamagePack",NewItemNames=("BallisticProV55.IP_UDamage"))
-     UDamageSnd=Sound'BallisticSounds3.Udamage.UDamageFire'
+     UDamageSnd=Sound'BallisticSounds2.Udamage.UDamageFire'
      ItemGroup="Ballistic"
      bSpawnUniqueItems=True
      bPickupsChange=True

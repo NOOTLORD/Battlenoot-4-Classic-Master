@@ -8,8 +8,6 @@
 //=============================================================================
 class M925Machinegun extends BallisticMachinegun;
 
-#exec OBJ LOAD FILE=BallisticProTextures.utx
-
 simulated function TickAim(float DT)
 {
 	Super(BallisticWeapon).TickAim(DT);
@@ -116,7 +114,7 @@ defaultproperties
      PlayerJumpFactor=0.800000     
 	 TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)     TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=5)
      AIReloadTime=4.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M925'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M925'
      BigIconCoords=(Y1=36,Y2=235)
      SightFXClass=Class'BallisticProV55.M925SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -180,7 +178,7 @@ defaultproperties
      GroupOffset=1
      PlayerViewOffset=(X=9.000000,Y=5.000000,Z=-7.000000)
      AttachmentClass=Class'BallisticProV55.M925Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M925'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M925'
      IconCoords=(X2=127,Y2=31)
      ItemName="M925 Heavy Machine Gun"
      LightType=LT_Pulse
@@ -189,9 +187,9 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=6.000000
-     Mesh=SkeletalMesh'BallisticProAnims.M925MG'
+     Mesh=SkeletalMesh'BallisticAnims2.M925MG'
      DrawScale=0.140000
-     Skins(0)=Texture'BallisticProTextures.M925.M925Masked'
+     Skins(0)=Texture'BallisticWeapons2.M925.M925Masked'
      Skins(1)=Texture'BallisticWeapons2.M925.M925Small'
      Skins(2)=Texture'BallisticWeapons2.M925.M925HeatShield'
      Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'

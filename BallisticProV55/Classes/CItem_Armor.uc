@@ -25,5 +25,4 @@ defaultproperties
      ItemName="Armor"
      ItemAmount="+25"
      Description="Extra Armor.|Provides 25 additional starting armor."
-     Icon=Texture'BWEliminationTex.ui.Icon_Armor'
 }

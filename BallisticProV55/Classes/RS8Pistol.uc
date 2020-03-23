@@ -237,12 +237,12 @@ defaultproperties
      SilencerOffAnim="SilencerOff"
      SilencerOnSound=Sound'BallisticSounds2.XK2.XK2-SilenceOn'
      SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
-     SilencerOnTurnSound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilencerTurn'
-     SilencerOffTurnSound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-SilencerTurn'
+     SilencerOnTurnSound=Sound'BallisticSounds1.Pistol.RSP-SilencerTurn'
+     SilencerOffTurnSound=Sound'BallisticSounds1.Pistol.RSP-SilencerTurn'
      bShouldDualInLoadout=False
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_RS8'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_RS8'
      BigIconCoords=(X1=64,Y1=70,X2=418)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -254,11 +254,11 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=10
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-Cock',Volume=0.800000)
+     CockSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-Cock',Volume=0.800000)
      ReloadAnimRate=1.250000
      ClipHitSound=(Volume=0.600000)
-     ClipOutSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-ClipOut',Volume=0.800000)
-     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.Pistol.RSP-ClipIn',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
@@ -298,7 +298,7 @@ defaultproperties
      GroupOffset=7
      PlayerViewOffset=(X=3.000000,Y=9.000000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.RS8Attachment'
-     IconMaterial=Texture'BWAddPack-RS-Skins.RS8.SmallIcon_RS8'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_RS8'
      IconCoords=(X2=127,Y2=31)
      ItemName="RS8 Pistol"
      LightType=LT_Pulse
@@ -307,9 +307,9 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BWBP1-Anims.RS8'
+     Mesh=SkeletalMesh'BallisticAnims1.RS8'
      DrawScale=0.300000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BWAddPack-RS-Skins.RS8.RS8Skin'
+     Skins(1)=Texture'BallisticWeapons1.RS8.M1911-Skin'
      AmbientGlow=5
 }

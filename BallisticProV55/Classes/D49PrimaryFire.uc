@@ -65,6 +65,7 @@ defaultproperties
      FireAnim="FireSingle"
      FireEndAnim=
      FireRate=0.400000
+	 AimedFireAnim="SightFire"
      AmmoClass=Class'BallisticProV55.Ammo_D49_Revolver'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)

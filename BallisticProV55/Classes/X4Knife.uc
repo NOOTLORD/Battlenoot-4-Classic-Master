@@ -54,7 +54,7 @@ defaultproperties
 {
      PlayerSpeedFactor=1.150000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     BigIconMaterial=Texture'BallisticTextures_25.X4.BigIcon_X4'
+     BigIconMaterial=Texture'BallisticUI.Icons.X4.BigIcon_X4'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      ManualLines(0)="Slashes with the knife. Solid damage output and short range."
@@ -90,10 +90,10 @@ defaultproperties
      GroupOffset=3
      PlayerViewOffset=(X=4.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.X4Attachment'
-     IconMaterial=Texture'BallisticTextures_25.X4.SmallIcon_X4'
+     IconMaterial=Texture'BallisticUI.Icons.X4.SmallIcon_X4
      IconCoords=(X2=128,Y2=32)
      ItemName="X4 Knife"
-     Mesh=SkeletalMesh'BallisticAnims_25.X4'
+     Mesh=SkeletalMesh'BallisticAnims1.X4'
      DrawScale=0.300000
      AmbientGlow=5	  
 }

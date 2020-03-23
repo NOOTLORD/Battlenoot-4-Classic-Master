@@ -118,7 +118,7 @@ defaultproperties
      bShouldDualInLoadout=False
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BWBP4-Tex.Glock.BigIcon_Glock'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_GRS-9
      BigIconCoords=(Y1=30,Y2=230)
      SightFXBone="SightBone"
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -130,11 +130,11 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=15
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-Cock',Volume=0.700000)
+     CockSound=(Sound=Sound'BallisticSounds1.Glock.Glk-Cock',Volume=0.700000)
      ReloadAnimRate=1.350000
-     ClipHitSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipHit',Volume=0.800000)
-     ClipOutSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipOut',Volume=0.800000)
-     ClipInSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-ClipIn',Volume=0.800000)
+     ClipHitSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipHit',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Burst Fire",ModeID="WM_Burst",Value=3.000000)
@@ -174,7 +174,7 @@ defaultproperties
      InventoryGroup=2
      PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-9.000000)
      AttachmentClass=Class'BallisticProV55.GRS9Attachment'
-     IconMaterial=Texture'BWBP4-Tex.Glock.SmallIcon_Glock'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_GRS-9
      IconCoords=(X2=127,Y2=31)
      ItemName="GRS-9 Pistol"
      LightType=LT_Pulse
@@ -183,7 +183,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BWBP4-Anims.Glock'
+     Mesh=SkeletalMesh'BallisticAnims1.Glock'
      DrawScale=0.150000
      AmbientGlow=5
 }

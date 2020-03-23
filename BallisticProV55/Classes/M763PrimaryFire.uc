@@ -97,7 +97,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTM763Shotgun'
      DamageTypeHead=Class'BallisticProV55.DTM763ShotgunHead'
      DamageTypeArm=Class'BallisticProV55.DTM763Shotgun'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.7500000)	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.7500000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False			   					 					

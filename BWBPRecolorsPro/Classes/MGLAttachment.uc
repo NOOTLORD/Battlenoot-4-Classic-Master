@@ -28,7 +28,7 @@ defaultproperties
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.500000
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.Conqueror_TP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.Conqueror_TP'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.250000
 }

@@ -111,7 +111,7 @@ defaultproperties
      BulletBone2="Bullet2"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticRecolors3TexPro.AK490.BigIcon_AK490'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AK-470'
      BigIconCoords=(Y1=32,Y2=220)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -123,11 +123,11 @@ defaultproperties
      MagAmmo=25
      CockAnimPostReload="ReloadEndCock"
      CockingBringUpTime=1.300000
-     CockSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-Cock',Volume=0.900000)
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-Cock',Volume=0.900000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipHit',Volume=0.900000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipOut',Volume=0.900000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.AK47.AK47-ClipIn',Volume=0.900000)
+     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-ClipHit',Volume=0.900000)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-ClipOut',Volume=0.900000)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-ClipIn',Volume=0.900000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
@@ -174,7 +174,7 @@ defaultproperties
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.AK47Attachment'
-     IconMaterial=Texture'BallisticRecolors3TexPro.AK490.SmallIcon_AK490'
+     IconMaterial=Texture'BallisticUI.Icons.AK-470.SmallIcon_AK-470'
      IconCoords=(X2=127,Y2=31)
      ItemName="AK-470 Assault Rifle"
      LightType=LT_Pulse
@@ -183,10 +183,10 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimPro.AK490_FPNew'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.AK490_FP'
      DrawScale=0.350000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolors3TexPro.AK490.AK490-Main'
-     Skins(2)=Texture'BallisticRecolors3TexPro.AK490.AK490-Misc'
+     Skins(1)=Texture'BallisticRecolorsTex.AK490.AK490-Main'
+     Skins(2)=Texture'BallisticRecolorsTex.AK490.AK490-Misc'
      AmbientGlow=5
 }

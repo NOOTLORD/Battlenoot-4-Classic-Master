@@ -18,7 +18,7 @@ simulated event PostBeginPlay()
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter0
-         StaticMesh=StaticMesh'BallisticRecolors4StaticPro.MARS.MARSMuzzleFlash'
+         StaticMesh=StaticMesh'BallisticRecolorsStatic.MARS.MARSMuzzleFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

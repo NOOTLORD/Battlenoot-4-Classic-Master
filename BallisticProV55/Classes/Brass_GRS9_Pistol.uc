@@ -11,5 +11,5 @@ class Brass_GRS9_Pistol extends Brass_Pistol;
 defaultproperties
 {
      StartVelocity=(Y=20.000000)
-     Skins(0)=Texture'BWBP4-Tex.Brass.Cart_Silver'
+     Skins(0)=Texture'BallisticEffects.Brass.Cart_Silver'
 }

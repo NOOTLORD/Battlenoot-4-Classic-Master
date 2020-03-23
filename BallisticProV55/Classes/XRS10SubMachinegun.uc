@@ -171,7 +171,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_XRS10'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XRS10'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
@@ -182,9 +182,9 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000)
      MagAmmo=24
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock',Volume=0.850000)
-     ClipOutSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Clipout',Volume=0.850000)
-     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Clipin',Volume=0.850000)
+     CockSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Cock',Volume=0.850000)
+     ClipOutSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Clipout',Volume=0.850000)
+     ClipInSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Clipin',Volume=0.850000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
@@ -225,7 +225,7 @@ defaultproperties
      GroupOffset=3
      PlayerViewOffset=(X=5.000000,Y=11.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.XRS10Attachment'
-     IconMaterial=Texture'BWAddPack-RS-Skins.XRS10.SmallIcon_XRS10'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XRS10'
      IconCoords=(X2=127,Y2=31)
      ItemName="XRS-10 Submachine gun"
      LightType=LT_Pulse
@@ -234,11 +234,11 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticProAnims.XRS10'
+     Mesh=SkeletalMesh'BallisticAnims1.XRS10'
      DrawScale=0.200000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Skin'
-     Skins(2)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Laser'
-     Skins(3)=Texture'BWAddPack-RS-Skins.XRS10.XRS10Silencer'
+     Skins(1)=Texture'BallisticWeapons1.XRS10.XRS10Skin'
+     Skins(2)=Texture'BallisticWeapons1.XRS10.XRS10Laser'
+     Skins(3)=Texture'BallisticWeapons1.XRS10.XRS10Silencer'
      AmbientGlow=5
 }

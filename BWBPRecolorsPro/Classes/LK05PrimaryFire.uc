@@ -235,8 +235,8 @@ function DoFireEffect()
 
 defaultproperties
 {
-     FireSoundLoop=Sound'PackageSounds4Pro.Misc.F2000-FireLoopSil'
-     FireSoundLoopBegin=Sound'PackageSounds4Pro.Misc.F2000-SilFire'
+     FireSoundLoop=Sound'BallisticRecolorsSounds.MARS.F2000-FireLoopSil'
+     FireSoundLoopBegin=Sound'BallisticRecolorsSounds.MARS.F2000-SilFire'
      SMuzzleFlashClass=Class'BWBPRecolorsPro.LK05SilencedFlash'
      SFlashBone="tip2"
      SFlashScaleFactor=1.000000
@@ -254,7 +254,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_LK05Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_LK05AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_LK05Assault'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.750000)		 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.750000)		 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False 
@@ -268,8 +268,8 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     SilencedFireSound=(Sound=Sound'PackageSounds4Pro.Misc.F2000-SilFire',Volume=0.500000,Radius=192.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-Fire',Volume=0.975000)
+     SilencedFireSound=(Sound=Sound'BallisticRecolorsSounds.MARS.F2000-SilFire',Volume=0.500000,Radius=192.000000,bAtten=True)
+     BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Fire',Volume=0.975000)
      bPawnRapidFireAnim=True
      FireEndAnim=
      AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'

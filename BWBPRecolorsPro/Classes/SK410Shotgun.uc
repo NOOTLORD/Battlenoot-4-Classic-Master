@@ -137,7 +137,7 @@ defaultproperties
 {
      BulletBone="Bullet1"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     BigIconMaterial=Texture'BallisticRecolors3TexPro.SK410.BigIcon_SK410'
+     BigIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SK410'
      BigIconCoords=(Y1=40)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
@@ -149,10 +149,10 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
      MagAmmo=8
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-Cock',Volume=1.000000)
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagOut',Volume=1.000000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-MagIn',Volume=1.000000)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-MagOut',Volume=1.000000)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-MagIn',Volume=1.000000)
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -196,7 +196,7 @@ defaultproperties
      GroupOffset=3
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
-     IconMaterial=Texture'BallisticRecolors3TexPro.SK410.SmallIcon_SK410'
+     IconMaterial=Texture'BallisticUI.Icons.BigIcon_SK410'
      IconCoords=(X2=127,Y2=35)
      ItemName="SK-410 Shotgun"
      LightType=LT_Pulse
@@ -205,11 +205,11 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimPro.SK410_FP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_FP'
      DrawScale=0.350000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolors3TexPro.SK410.SK410-C-CamoSnow'
-     Skins(2)=Texture'BallisticRecolors3TexPro.SK410.SK410-Misc'
-     Skins(3)=Shader'BallisticRecolors3TexPro.SK410.SK410-LightsOn'
+     Skins(1)=Texture'BallisticRecolorsTex.SK410.SK410-C-CamoSnow'
+     Skins(2)=Texture'BallisticRecolorsTex.SK410.SK410-Misc'
+     Skins(3)=Shader'BallisticRecolorsTex.SK410.SK410-LightsOn'
      AmbientGlow=5
 }

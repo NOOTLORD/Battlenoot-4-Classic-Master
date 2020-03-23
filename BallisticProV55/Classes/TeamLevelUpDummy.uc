@@ -5,6 +5,4 @@ class TeamLevelUpDummy extends DummyWeapon
 
 defaultproperties
 {
-     BigIconMaterial=Texture'BallisticProTextures.Icons.TeamAssist'
-     ItemName="Donation"
 }

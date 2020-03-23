@@ -168,7 +168,7 @@ defaultproperties
      PlayerSpeedFactor=1.050000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_XK2'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XK2'
      BigIconCoords=(X1=24,X2=450)
      SightFXClass=Class'BallisticProV55.XK2SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -228,7 +228,7 @@ defaultproperties
      GroupOffset=1
      PlayerViewOffset=(X=4.000000,Y=8.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.Xk2Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_XK2'
+     IconMaterial=BallisticUI.Icons.SmallIcon_XK2'
      IconCoords=(X2=127,Y2=31)
      ItemName="XK2 Submachine Gun"
      LightType=LT_Pulse
@@ -237,7 +237,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticProAnims.XK2SMG'
+     Mesh=SkeletalMesh'BallisticAnims2.XK2SMG'
      DrawScale=0.200000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons2.XK2.XK2Skin' 

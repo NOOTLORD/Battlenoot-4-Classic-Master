@@ -8,8 +8,6 @@
 //=============================================================================
 class MGLauncher extends BallisticWeapon;
 
-var() Material	MatDef;
-var() Material	MatArmed;
 var() Rotator	DrumRot;
 
 simulated function AnimEnded (int Channel, name anim, float frame, float rate)
@@ -136,11 +134,9 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
-     MatDef=Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase'
-     MatArmed=Texture'BallisticRecolors4TexPro.MGL.MGL-Screen'
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     BigIconMaterial=Texture'BallisticRecolors4TexPro.MGL.BigIcon_MGL'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MGL'
      IdleTweenTime=0.000000
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Hazardous=True
@@ -197,7 +193,7 @@ defaultproperties
      InventoryGroup=8
      PlayerViewOffset=(X=5.000000,Y=-1.000000,Z=-7.000000)
      AttachmentClass=Class'BWBPRecolorsPro.MGLAttachment'
-     IconMaterial=Texture'BallisticRecolors4TexPro.MGL.SmallIcon_MGL'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MGL'
      IconCoords=(X2=127,Y2=35)
      ItemName="MGL Grenade Launcher"
      LightType=LT_Pulse
@@ -206,11 +202,11 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.Conqueror_FP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.Conqueror_FP'
      DrawScale=0.130000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolors4TexPro.MGL.MGL-Main'
-     Skins(2)=Texture'BallisticRecolors4TexPro.MGL.MGL-ScreenBase'
-     Skins(3)=Shader'BallisticRecolors4TexPro.MGL.MGL-HolosightGlow'
+     Skins(1)=Texture'BallisticRecolorsTex.MGL.MGL-Main'
+     Skins(2)=Texture'BallisticRecolorsTex.MGL.MGL-ScreenBase'
+     Skins(3)=Shader'BallisticRecolorsTex.MGL.MGL-HolosightGlow'
      AmbientGlow=5
 }

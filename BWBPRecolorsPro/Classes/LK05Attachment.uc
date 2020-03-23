@@ -79,7 +79,7 @@ defaultproperties
      FlyByMode=MU_Both	 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=1.200000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.TP_LK05'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.TP_LK05'
      RelativeRotation=(Pitch=32768)
      PrePivot=(X=1.000000,Z=-3.000000)
      DrawScale=0.325000	 

@@ -63,7 +63,7 @@ function float SuggestDefenseStyle()	{	return 0.9;	}
 defaultproperties
 {
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_R78'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R78'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      ManualLines(0)="Bolt-action sniper rifle fire. High damage, long range, slow fire rate and unusually quiet compared to other weapons in its class."
@@ -73,8 +73,9 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.395000)
 	 PutDownTime=0.5
      MagAmmo=7
-     CockAnim="CockQuick"
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.TEC.RSMP-Cock',Volume=1.000000)
+     CockAnim="Cock"
+	 CockAnimRate=1.250000	
+     CockSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
      ClipHitSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipHit',Volume=1.000000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipOut',Volume=1.000000)
@@ -88,7 +89,7 @@ defaultproperties
      ZoomType=ZT_Logarithmic
      ScopeXScale=1.333000
      ZoomInAnim="ZoomIn"
-     ScopeViewTex=Texture'BallisticUI2.R78.RifleScopeView'
+     ScopeViewTex=Texture'BallisticUI.R78.RifleScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
      FullZoomFOV=20.000000
@@ -132,7 +133,7 @@ defaultproperties
      GroupOffset=2
      PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.R78Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_R78'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_R78'
      IconCoords=(X2=127,Y2=31)
      ItemName="R78A1 Sniper Rifle"
      LightType=LT_Pulse
@@ -141,7 +142,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticProAnims.R78A1Rifle'
+     Mesh=SkeletalMesh'BallisticAnims2.R78A1Rifle'
      DrawScale=0.450000
      AmbientGlow=5
 }

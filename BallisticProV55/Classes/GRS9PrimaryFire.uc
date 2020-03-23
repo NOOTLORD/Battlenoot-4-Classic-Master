@@ -42,7 +42,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTGRS9Pistol'
      DamageTypeHead=Class'BallisticProV55.DTGRS9PistolHead'
      DamageTypeArm=Class'BallisticProV55.DTGRS9Pistol'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryPistol',Volume=1.000000)
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=1.000000)
      KickForce=0
      PenetrateForce=0
      bPenetrate=False					
@@ -55,7 +55,7 @@ defaultproperties
      FireChaos=0.140000
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     BallisticFireSound=(Sound=Sound'BWBP4-Sounds.Glock.Glk-Fire',Volume=1.400000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds1.Glock.Glk-Fire',Volume=1.400000)
      FireEndAnim=
      FireAnimRate=1.500000
      FireRate=0.12500

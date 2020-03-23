@@ -22,7 +22,7 @@ defaultproperties
      PickupSound=Sound'BallisticSounds2.Health.HealthKitPickup'
      PickupForce="HealthPack"
      DrawType=DT_StaticMesh
-     StaticMesh=StaticMesh'BallisticHardware2.Health.HealthKit'
+     StaticMesh=StaticMesh'BallisticHardware1.Health.HealthKit'
      AmbientGlow=0
      ScaleGlow=0.600000
      TransientSoundVolume=0.700000

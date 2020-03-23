@@ -24,7 +24,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_AK47Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_AK47AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_AK47Assault'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)	 	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -38,7 +38,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     BallisticFireSound=(Sound=SoundGroup'PackageSounds4Pro.AK47.AK47-Fire',Volume=1.150000,Slot=SLOT_Interact,bNoOverride=False)
+     BallisticFireSound=(Sound=SoundGroup'BallisticRecolorsSounds.AK47.AK47-Fire',Volume=1.150000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.115000

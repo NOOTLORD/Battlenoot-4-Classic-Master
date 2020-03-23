@@ -90,6 +90,6 @@ defaultproperties
      ReloadAnim="Reload_AR"
      bRapidFire=True
      bAltRapidFire=True
-     Mesh=SkeletalMesh'BallisticProAnims.SRSEO-3rd'
+     Mesh=SkeletalMesh'BallisticAnims1.SRS600_3rd'
      DrawScale=0.240000
 }

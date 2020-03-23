@@ -8,7 +8,7 @@
 //=============================================================================
 class G5Bazooka extends BallisticWeapon;
 
-#EXEC OBJ LOAD FILE=BallisticUI2.utx
+#EXEC OBJ LOAD FILE=BallisticUI.utx
 
 var() BUtil.FullSound	HatchSound;
 var   bool				bCamView;
@@ -441,8 +441,8 @@ simulated event DrawTargeting (Canvas C)
 	C.SetPos(V.X, V.Y);
 	V2 = C.WorldToScreen(Target.Location + Y*Target.CollisionRadius - Z*Target.CollisionHeight);
 	C.SetDrawColor(255,255,255,255);
-//	C.DrawTile(Texture'BallisticUI2.G5.G5Targetbox', V2.X - V.X, V2.Y - V.Y, 0, 0, 1, 1);
-	C.DrawTileStretched(Texture'BallisticUI2.G5.G5Targetbox', (V2.X - V.X) + 32*ScaleFactor, (V2.Y - V.Y) + 32*ScaleFactor);
+//	C.DrawTile(Texture'BallisticUI.G5.G5Targetbox', V2.X - V.X, V2.Y - V.Y, 0, 0, 1, 1);
+	C.DrawTileStretched(Texture'BallisticUI.G5.G5Targetbox', (V2.X - V.X) + 32*ScaleFactor, (V2.Y - V.Y) + 32*ScaleFactor);
 }
 
 simulated function KillLaserDot()
@@ -602,11 +602,11 @@ simulated event RenderOverlays( Canvas Canvas )
 		Canvas.Style = ERenderStyle.STY_Alpha;
 		Canvas.SetPos(0,0);
 		Canvas.DrawColor.A = 48;
-		Canvas.DrawTile( Material'BallisticUI2.M50.Noise1', Canvas.SizeX, Canvas.SizeY, 0.0, 0.0, 256, 256 ); // !! hardcoded size
+		Canvas.DrawTile( Material'BallisticUI.M50.Noise1', Canvas.SizeX, Canvas.SizeY, 0.0, 0.0, 256, 256 ); // !! hardcoded size
 		// Tunnel vision
 		Canvas.DrawColor.A = 255;
 		Canvas.SetPos(0,0);
-		Canvas.DrawTile( Material'BallisticUI2.M50.M50CamView', Canvas.SizeX, Canvas.SizeY, 0.0, 0.0, 1024, 1024 ); // !! hardcoded size
+		Canvas.DrawTile( Material'BallisticUI.M50.M50CamView', Canvas.SizeX, Canvas.SizeY, 0.0, 0.0, 1024, 1024 ); // !! hardcoded size
 	}
     else
         OldRenderOverlays(Canvas);
@@ -765,7 +765,7 @@ defaultproperties
      LaserChaosAimSpread=256
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=4.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_G5'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_G5'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Hazardous=True
@@ -800,7 +800,7 @@ defaultproperties
      ScopeXScale=1.333000
      ZoomInAnim="ZoomIn"
      ZoomOutAnim="ZoomOut"
-     ScopeViewTex=Texture'BallisticUI2.G5.G5ScopeView'
+     ScopeViewTex=Texture'BallisticUI.G5.G5ScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
      FullZoomFOV=10.000000
@@ -838,7 +838,7 @@ defaultproperties
      InventoryGroup=8
      PlayerViewOffset=(X=10.000000,Y=10.500000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_G5'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5'
      IconCoords=(X2=127,Y2=31)
      ItemName="G5 Bazooka"
      LightType=LT_Pulse

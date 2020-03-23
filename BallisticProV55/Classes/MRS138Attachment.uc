@@ -27,6 +27,6 @@ defaultproperties
 	 TracerChance=1.000000
      SingleFireAnim="RifleHip_FireCock"
      SingleAimedFireAnim="RifleAimed_FireCock"
-     Mesh=SkeletalMesh'BWBP1-Anims.MRS138-3rd'
+     Mesh=SkeletalMesh'BallisticAnims1.MRS138-3rd'
      DrawScale=0.080000
 }

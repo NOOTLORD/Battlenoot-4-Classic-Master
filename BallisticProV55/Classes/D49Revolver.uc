@@ -207,11 +207,6 @@ simulated function BringUp(optional Weapon PrevWeapon)
 
 	SetBoneRotation('Hammer', rot(0,0,0));
 	Super.BringUp(PrevWeapon);
-
-	if (IsSlave())
-		HandgunGroup = Othergun.HandgunGroup;
-	else
-		HandgunGroup = default.HandgunGroup;
 }
 
 simulated state Raising
@@ -227,6 +222,7 @@ Begin:
 		PlayIdle();
 	GotoState('');
 }
+
 simulated state Lowering
 {
 Begin:
@@ -268,13 +264,7 @@ simulated function CommonCockGun(optional byte Type)
 	if (!bRevCocked)
 		SafePlayAnim('Cock', 1.0, 0.2);
 }
-
-// Change some properties when using sights...
-simulated function SetScopeBehavior()
-{
-	super.SetScopeBehavior();
-	bUseNetAim = default.bUseNetAim || bScopeView;
-}													   
+												   
 simulated function ApplyAimRotation()
 {
 	ApplyAimToView();
@@ -350,7 +340,7 @@ defaultproperties
      HandgunGroup=1
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_D49'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_D49'
      SightFXClass=Class'BallisticProV55.D49SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -409,7 +399,7 @@ defaultproperties
      PlayerViewOffset=(X=-2.000000,Y=13.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=512)
      AttachmentClass=Class'BallisticProV55.D49Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_D49'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_D49'
      IconCoords=(X2=127,Y2=31)
      ItemName="D49 Revolver"
      LightType=LT_Pulse
@@ -418,7 +408,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticProAnims.D49Revolver'
+     Mesh=SkeletalMesh'BallisticAnims2.D49Revolver'
      DrawScale=0.220000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons2.D49.D49RevolverSkin'

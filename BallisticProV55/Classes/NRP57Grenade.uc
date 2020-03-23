@@ -55,7 +55,7 @@ defaultproperties
      ClipReleaseSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-ClipOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
      PinPullSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-PinOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_NRP57'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_NRP57'
      BigIconCoords=(Y1=16,Y2=245)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Hazardous=True
@@ -93,7 +93,7 @@ defaultproperties
      PlayerViewOffset=(X=8.000000,Y=10.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=1024,Yaw=-1024)
      AttachmentClass=Class'BallisticProV55.NRP57Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_NRP57'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_NRP57'
      IconCoords=(X2=127,Y2=31)
      ItemName="NRP57 Grenade"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'

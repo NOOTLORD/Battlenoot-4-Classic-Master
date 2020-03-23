@@ -94,11 +94,11 @@ defaultproperties
      TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Primary
-     FlyBySound=(Sound=Sound'PackageSounds4Pro.X82.X82-FlyBy',Volume=1.500000)
+     FlyBySound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-FlyBy',Volume=1.500000)
      FlyByMode=MU_Primary	 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimPro.X83A1_3rd'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.X82_3rd'
      RelativeLocation=(X=-17.000000,Z=2.000000)
      RelativeRotation=(Pitch=32768)
      DrawScale=0.225000

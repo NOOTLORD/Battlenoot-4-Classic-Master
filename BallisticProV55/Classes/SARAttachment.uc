@@ -32,6 +32,6 @@ defaultproperties
      bHeavy=True
      bRapidFire=True
      bAltRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims3.SAR-3rd'
+     Mesh=SkeletalMesh'BallisticAnims2.SAR-3rd'
      DrawScale=0.085000
 }

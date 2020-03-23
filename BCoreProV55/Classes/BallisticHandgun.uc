@@ -1704,9 +1704,9 @@ simulated function MeleeReleaseImpl()
 
 defaultproperties
 {
-	 AimDisplacementDurationMult=0.5
+	 AimDisplacementDurationMult=0.0
      SupportHandBone="Root01"
-     bShouldDualInLoadout=True
+     bShouldDualInLoadout=False
      TrackSpeed=18000.000000
      SingleHeldRate=0.300000
      PlayerSpeedFactor=1.100000

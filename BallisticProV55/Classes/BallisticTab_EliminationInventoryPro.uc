@@ -787,5 +787,4 @@ defaultproperties
      StatSnprEffCaption="Sniper Efficiency: "
      StatStgnEffCaption="Shotgun Efficiency: "
      StatHzrdEffCaption="Hazard Efficiency: "
-     BoxTex=Texture'BWEliminationTex.ui.SelectionBox'
 }

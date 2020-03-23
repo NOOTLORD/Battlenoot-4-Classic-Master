@@ -46,7 +46,7 @@ defaultproperties
      PlayerSpeedFactor=1.050000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticTextures_25.OA-SMG.BigIcon_OASMG'
+     BigIconMaterial=Texture'BallisticUI.Icons.OA-SMG.BigIcon_XMK5'
      BigIconCoords=(Y1=16,Y2=210)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -62,10 +62,10 @@ defaultproperties
 	 CurrentRating=0.8
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_Cock',Volume=0.875000)
+     CockSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_Cock',Volume=0.875000)
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_ClipOut',Volume=0.875000)
-     ClipInSound=(Sound=Sound'BallisticSounds_25.OA-SMG.OA-SMG_ClipIn',Volume=0.875000)
+     ClipOutSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_ClipOut',Volume=0.875000)
+     ClipInSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_ClipIn',Volume=0.875000)
      ClipInFrame=0.760000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
@@ -75,7 +75,7 @@ defaultproperties
      bNoCrosshairInScope=True
      SightPivot=(Pitch=200)
 	 SightZoomFactor=0
-     SightOffset=(X=1.000000,Z=17.750000)
+     SightOffset=(X=1.000000,Z=14.600000)
      SightDisplayFOV=40.000000
      SightingTime=0.250000
      GunLength=40.000000
@@ -107,7 +107,7 @@ defaultproperties
      GroupOffset=2
      PlayerViewOffset=(X=2.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.XMK5Attachment'
-     IconMaterial=Texture'BallisticTextures_25.OA-SMG.SmallIcon_OASMG'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XMK5'
      IconCoords=(X2=127,Y2=31)
      ItemName="XMk5 Submachine Gun"
      LightType=LT_Pulse
@@ -116,7 +116,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticProAnims.OA-SMG'
+     Mesh=SkeletalMesh'BallisticAnims1.OA-SMG'
      DrawScale=0.450000
      AmbientGlow=5
 }

@@ -42,11 +42,11 @@ defaultproperties
      CockingAnim="Cock_RearPull"
      ReloadAnimRate=0.850000
      CockAnimRate=0.900000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.TP_Eagle'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.TP_Eagle'
      RelativeLocation=(Z=6.000000)
      DrawScale=0.175000
-     Skins(0)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-MainSilverEngraved'
-     Skins(1)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-Misc'
-     Skins(2)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
-     Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'
+     Skins(0)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
+     Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc'
+     Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-ScopeGold'
+     Skins(3)=Texture'BallisticRecolorsTex.Eagle.Eagle-FrontSilver'
 }

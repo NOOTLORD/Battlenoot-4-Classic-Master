@@ -184,7 +184,7 @@ function float SuggestDefenseStyle()
 defaultproperties
 {
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M763'
+     BigIconMaterial=Texture'BallisticUI.Icons.SmallIcon_M763'
      BigIconCoords=(Y1=35,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
@@ -251,7 +251,7 @@ defaultproperties
      GroupOffset=2
      PlayerViewOffset=(Y=12.000000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.M763Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M763'
+     IconMaterial=Texture'BallisticUI.Icons.BigIcon_M763'
      IconCoords=(X2=127,Y2=31)
      ItemName="M763 Shotgun"
      LightType=LT_Pulse
@@ -260,7 +260,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticProAnims.M763_FP'
+     Mesh=SkeletalMesh'BallisticAnims2.M763_FP'
      DrawScale=0.500000
      AmbientGlow=5
 }

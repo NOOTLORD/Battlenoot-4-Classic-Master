@@ -69,10 +69,10 @@ defaultproperties
      ManualLines(0)="Automatic fire has moderate spread, moderate damage, short range and fast fire rate.||Manual fire has tight spread, long range, good damage and low fire rate."
      ManualLines(1)="Multi-shot attack. Loads a shell into each of the barrels, then fires them all at once. Very high damage, short range and wide spread."
      ManualLines(2)="Extremely effective at close range."
-     QuickCockSound=Sound'PackageSounds4Pro.SKAS.SKAS-Cock'
+     QuickCockSound=Sound'BallisticRecolorsSounds.SKAS.SKAS-Cock'
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=2)
      TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
-     BigIconMaterial=Texture'BallisticRecolors3TexPro.SKAS.BigIcon_SKAS'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SKAS'
      BigIconCoords=(Y1=24)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
@@ -81,10 +81,10 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000)
      MagAmmo=12
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-CockLong',Volume=1.100000)
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.SKAS.SKAS-CockLong',Volume=1.100000)
      ReloadAnimRate=1.550000
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipOut1',Volume=1.100000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.SKAS.SKAS-ClipIn',Volume=1.100000)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.SKAS.SKAS-ClipOut1',Volume=1.100000)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.SKAS.SKAS-ClipIn',Volume=1.100000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
@@ -129,7 +129,7 @@ defaultproperties
      GroupOffset=4
      PlayerViewOffset=(X=-4.000000,Y=1.000000,Z=-10.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SKASAttachment'
-     IconMaterial=Texture'BallisticRecolors3TexPro.SKAS.SmallIcon_SKAS'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SKAS'
      IconCoords=(X2=127,Y2=30)
      ItemName="SKAS-21 Shotgun"
      LightType=LT_Pulse
@@ -138,7 +138,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimPro.SKASShotgunFP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.SKASShotgun_FP'
      DrawScale=0.260000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=5

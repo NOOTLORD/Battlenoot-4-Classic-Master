@@ -51,7 +51,7 @@ defaultproperties
 {
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticTextures_25.OA-AR.BigIcon_OAAR'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M46'
      BigIconCoords=(Y1=40,Y2=235)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -65,11 +65,11 @@ defaultproperties
      MagAmmo=25
      CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000	 																																									   																					   						  
-     CockSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_Cock',Volume=0.800000)
+     CockSound=(Sound=Sound'BallisticSounds1.OA-AR.OA-AR_Cock',Volume=0.800000)
      ReloadAnimRate=1.250000						
-     ClipHitSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipHit',Volume=0.800000)
-     ClipOutSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipOut',Volume=0.800000)
-     ClipInSound=(Sound=Sound'BallisticSounds_25.OA-AR.OA-AR_ClipIn',Volume=0.800000)
+     ClipHitSound=(Sound=Sound'BallisticSounds1.OA-AR.OA-AR_ClipHit',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BallisticSounds1.OA-AR.OA-AR_ClipOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BallisticSounds1.OA-AR.OA-AR_ClipIn',Volume=0.800000)
      bCockOnEmpty=True
      ClipInFrame=0.700000		
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
@@ -117,7 +117,7 @@ defaultproperties
      PlayerViewOffset=(X=5.000000,Y=4.750000,Z=-8.000000)
      PlayerViewPivot=(Pitch=384)														 								
      AttachmentClass=Class'BallisticProV55.M46AttachmentQS'
-     IconMaterial=Texture'BallisticTextures_25.OA-AR.SmallIcon_OAAR'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M46'
      IconCoords=(X2=127,Y2=31)																								  
      ItemName="M46 Assault Rifle"
      LightType=LT_Pulse
@@ -126,7 +126,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000					   																									   						 
-     Mesh=SkeletalMesh'BallisticProAnims.OA-AR-RDS'
+     Mesh=SkeletalMesh'BallisticAnims1.OA-AR-RDS'
      DrawScale=0.300000	 
      AmbientGlow=5
 }

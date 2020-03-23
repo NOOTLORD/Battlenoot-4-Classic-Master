@@ -92,6 +92,6 @@ defaultproperties
      ReloadAnimRate=1.500000
      bHeavy=True
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims2.Machinegun-3rd'
+     Mesh=SkeletalMesh'BallisticAnims2.M353Machinegun-3rd'
      DrawScale=0.325000
 }

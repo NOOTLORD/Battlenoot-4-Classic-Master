@@ -80,7 +80,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTMarlinRifle'
      DamageTypeHead=Class'BallisticProV55.DTMarlinRifleHead'
      DamageTypeArm=Class'BallisticProV55.DTMarlinRifle'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 
 	 KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -93,7 +93,7 @@ defaultproperties
      AimedFireAnim="SightFireCock"
      RecoilPerShot=1536.000000
      FireChaos=0.800000
-     BallisticFireSound=(Sound=Sound'BWBP4-Sounds.Marlin.Mar-Fire',Volume=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds1.Marlin.Mar-Fire',Volume=1.000000)
      FireEndAnim=
      FireAnimRate=1.250000
      FireRate=0.900000

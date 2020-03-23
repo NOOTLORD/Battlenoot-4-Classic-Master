@@ -135,10 +135,10 @@ defaultproperties
      SilencerBone="Silencer"
      SilencerOnAnim="SilencerOn"
      SilencerOffAnim="SilencerOff"
-     SilencerOnSound=Sound'BWBP3-Sounds.SRS900.SRS-SilencerOn'
-     SilencerOffSound=Sound'BWBP3-Sounds.SRS900.SRS-SilencerOff'
+     SilencerOnSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOn'
+     SilencerOffSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOff'
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
-     BigIconMaterial=Texture'BallisticProTextures.SRS.BigIcon_SRSM2'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SRS600'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -150,10 +150,10 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.375000)
      MagAmmo=20
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-Cock',Volume=0.875000)
-     ClipHitSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipHit',Volume=0.875000)
-     ClipOutSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipOut',Volume=0.875000)
-     ClipInSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-ClipIn',Volume=0.875000)
+     CockSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-Cock',Volume=0.875000)
+     ClipHitSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipHit',Volume=0.875000)
+     ClipOutSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipOut',Volume=0.875000)
+     ClipInSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipIn',Volume=0.875000)
      ClipInFrame=0.650000
      bCockOnEmpty=True	 
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
@@ -196,7 +196,7 @@ defaultproperties
      GroupOffset=6	 
      PlayerViewOffset=(X=2.000000,Y=9.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
-     IconMaterial=Texture'BallisticProTextures.SRS.SmallIcon_SRSM2'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SRS600'
      IconCoords=(X2=127,Y2=31)
      ItemName="SRS-600 Rifle"
      LightType=LT_Pulse
@@ -205,11 +205,10 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticProAnims.SRSEO-1st'
+     Mesh=SkeletalMesh'BallisticAnims1.SRS600_FP'
      DrawScale=0.500000
-     Skins(0)=Texture'BallisticProTextures.SRS.SRSNSGrey'
-     Skins(1)=Texture'BWBP3-Tex.SRS900.SRS900Scope'
-     Skins(2)=Texture'BWBP3-Tex.SRS900.SRS900Ammo'
-     Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+     Skins(0)=Texture'BallisticWeapons1.SRS.SRS-600Main'
+     Skins(1)=Texture'BallisticWeapons1.SRS600Ammo'
+     Skins(2)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=5
 }

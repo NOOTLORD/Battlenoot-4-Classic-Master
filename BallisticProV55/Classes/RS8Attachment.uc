@@ -45,6 +45,6 @@ defaultproperties
      ReloadAnimRate=1.400000
      bRapidFire=True
      bAltRapidFire=True
-     Mesh=SkeletalMesh'BWBP1-Anims.RS8-3rd'	 
+     Mesh=SkeletalMesh'BallisticAnims1.RS8-3rd'	 
      DrawScale=0.150000
 }

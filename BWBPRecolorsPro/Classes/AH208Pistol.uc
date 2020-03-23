@@ -140,7 +140,7 @@ defaultproperties
      BulletBone="Bullet"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
-     BigIconMaterial=Texture'BallisticRecolors4TexPro.Eagle.BigIcon_Eagle'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AH208-Pistol'
      BigIconCoords=(X1=47,Y1=16,X2=455,Y2=245)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=8
@@ -151,10 +151,10 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.400000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.400000)
      MagAmmo=7
-     CockSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-Cock',Volume=1.500000)
-     ClipHitSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipHit',Volume=1.500000)
-     ClipOutSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipOut',Volume=1.500000)
-     ClipInSound=(Sound=Sound'PackageSounds4Pro.Eagle.Eagle-ClipIn',Volume=1.500000)
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-Cock',Volume=1.500000)
+     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipHit',Volume=1.500000)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipOut',Volume=1.500000)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipIn',Volume=1.500000)
      ClipInFrame=0.650000
      bCockOnEmpty=True	 
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
@@ -191,7 +191,7 @@ defaultproperties
      PlayerViewOffset=(Y=19.500000,Z=-30.000000)
      BobDamping=1.200000
      AttachmentClass=Class'BWBPRecolorsPro.AH208Attachment'
-     IconMaterial=Texture'BallisticRecolors4TexPro.Eagle.SmallIcon_Eagle'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_AH208-Pistol'
      IconCoords=(X2=127,Y2=31)
      ItemName="AH-208 Pistol"
      LightType=LT_Pulse
@@ -200,13 +200,13 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.DEagle_FP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.DEagle_FP'
      DrawScale=0.800000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-MainSilverEngraved'
-     Skins(2)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-Misc'
-     Skins(3)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-ScopeGold'
-     Skins(4)=Texture'BallisticRecolors4TexPro.Eagle.Eagle-FrontSilver'
-     Skins(5)=Shader'BallisticRecolors4TexPro.Eagle.Eagle-SightDotGreen'
+     Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
+     Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc'
+     Skins(3)=Texture'BallisticRecolorsTex.Eagle.Eagle-ScopeGold'
+     Skins(4)=Texture'BallisticRecolorsTex.Eagle.Eagle-FrontSilver'
+     Skins(5)=Shader'BallisticRecolorsTex.Eagle.Eagle-SightDotGreen'
      AmbientGlow=5
 }

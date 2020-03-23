@@ -25,7 +25,7 @@ defaultproperties
      TracerChance=0.500000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.900000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimPro.SK410Third'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_TP'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.200000
      PrePivot=(X=1.000000,Z=-5.000000)

@@ -180,11 +180,11 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTSRS600Rifle'
      DamageTypeHead=Class'BallisticProV55.DTSRS600RifleHead'
      DamageTypeArm=Class'BallisticProV55.DTSRS600Rifle'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     ClipFinishSound=(Sound=Sound'BallisticSounds3.Misc.ClipEnd-1',Volume=1.000000)
+     ClipFinishSound=(Sound=Sound'BallisticSounds2.Misc.ClipEnd-1',Volume=1.000000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashScaleFactor=0.400000
@@ -196,8 +196,8 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=32.000000
      YInaccuracy=32.000000
-     SilencedFireSound=(Sound=Sound'BWBP3-Sounds.SRS900.SRS-SilenceFire',Volume=0.700000,Radius=128.000000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'BWBP3-Sounds.SRS-Fire',Volume=1.600000,Slot=SLOT_Interact,bNoOverride=False)
+     SilencedFireSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-SilenceFire',Volume=0.700000,Radius=128.000000,bAtten=True)
+     BallisticFireSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-Fire',Volume=1.600000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.170000

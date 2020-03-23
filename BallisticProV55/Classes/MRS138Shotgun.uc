@@ -75,7 +75,7 @@ function float SuggestDefenseStyle()
 defaultproperties
 {
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_MRS138'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MRS138'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
@@ -89,10 +89,10 @@ defaultproperties
 	 PutDownTime=0.35
      MagAmmo=5
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-Cock',Volume=0.850000)
+     CockSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-Cock',Volume=0.850000)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.500000
-     ClipInSound=(Sound=Sound'BWAddPack-RS-Sounds.MRS38.RSS-ShellIn',Volume=1.000000)
+     ClipInSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-ShellIn',Volume=1.000000)
      ClipInFrame=0.375000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
@@ -141,7 +141,7 @@ defaultproperties
      GroupOffset=3
      PlayerViewOffset=(Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'
-     IconMaterial=Texture'BWAddPack-RS-Skins.MRS138.SmallIcon_MRS138'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MRS138'
      IconCoords=(X2=127,Y2=31)
      ItemName="MRS-138 Shotgun"
      LightType=LT_Pulse
@@ -150,11 +150,11 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticProAnims.MRS138Shotgun'
+     Mesh=SkeletalMesh'BallisticAnims1.MRS138Shotgun'
      DrawScale=0.400000	 
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Skin'
-     Skins(2)=Texture'BWAddPack-RS-Skins.MRS138.MRS138HeatShield'
-     Skins(3)=Texture'BWAddPack-RS-Skins.MRS138.MRS138Shell'	 
+     Skins(1)=Texture'BallisticWeapons1.MRS138.MRS138Skin'
+     Skins(2)=Texture'BallisticWeapons1.MRS138.MRS138HeatShield'
+     Skins(3)=Texture'BallisticEffects.Brass.MRS138Shell'	 
      AmbientGlow=5
 }

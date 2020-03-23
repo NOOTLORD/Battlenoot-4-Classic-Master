@@ -25,5 +25,4 @@ defaultproperties
      ItemName="Health"
      ItemAmount="+25"
      Description="Extra Health.|Provides 25 bonus starting health."
-     Icon=Texture'BWEliminationTex.ui.Icon_Health'
 }

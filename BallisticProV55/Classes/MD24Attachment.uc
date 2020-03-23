@@ -34,7 +34,7 @@ defaultproperties
      ReloadAnimRate=1.400000
      CockAnimRate=0.800000
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims_25.MD24_3rd'
+     Mesh=SkeletalMesh'BallisticAnims1.MD24_3rd'
      DrawScale=0.250000
 }
 

@@ -12,5 +12,5 @@ defaultproperties
 {
      StartVelocity=(Y=45.000000,Z=35.000000)
      DrawScale3D=(X=0.600000)
-     Skins(0)=Texture'BWAddPack-RS-Skins.MRS138.Cart_RSShell'
+     Skins(0)=Texture'BallisticEffects.Brass.MRS138Shell'
 }

@@ -110,7 +110,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_Fifty9'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_Fifty9'
      BigIconCoords=(Y1=24)
      SightFXClass=Class'BallisticProV55.Fifty9SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -169,7 +169,7 @@ defaultproperties
      InventoryGroup=2
      PlayerViewOffset=(X=14.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.Fifty9Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_Fifty9'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_Fifty9'
      IconCoords=(X2=127,Y2=31)
      ItemName="Fifty-9 Submachine gun"
      LightType=LT_Pulse
@@ -178,7 +178,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticProAnims.UZI'
+     Mesh=SkeletalMesh'BallisticAnims2.UZI'
      DrawScale=0.300000
      AmbientGlow=5
 }

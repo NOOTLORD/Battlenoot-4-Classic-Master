@@ -122,7 +122,7 @@ defaultproperties
      MinMortarRange=1024
      SpawnOffset=(X=10.000000,Y=10.000000,Z=-3.000000)
      bCockAfterFire=True
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.000000)	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 
      MuzzleFlashClass=Class'BallisticProV55.G5FlashEmitter'
      FlashScaleFactor=0.600000
      RecoilPerShot=64.000000

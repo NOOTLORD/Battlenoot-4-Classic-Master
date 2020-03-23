@@ -33,7 +33,7 @@ defaultproperties
      DamageType=Class'BallisticProV55.DTM925MG'
      DamageTypeHead=Class'BallisticProV55.DTM925MGHead'
      DamageTypeArm=Class'BallisticProV55.DTM925MG'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=1.120000)	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.120000)	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False

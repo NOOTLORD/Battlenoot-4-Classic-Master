@@ -51,5 +51,5 @@ defaultproperties
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyShell'
      DrawScale=0.110000
 	 DrawScale3D=(X=0.700000,Y=0.700000,Z=0.700000)
-     Skins(0)=Texture'BallisticRecolors3TexPro.SK410.Cart_ShotgunHE'
+     Skins(0)=Texture'BallisticRecolorsTex.SK410.Cart_ShotgunHE'
 }

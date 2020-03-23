@@ -76,7 +76,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_SK410Shotgun'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_SK410ShotgunHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_SK410Shotgun'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.650000)
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.650000)
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -90,7 +90,7 @@ defaultproperties
      FireChaos=0.400000
      XInaccuracy=400.000000
      YInaccuracy=400.000000
-     BallisticFireSound=(Sound=Sound'PackageSounds4Pro.SK410.SK410-Fire',Volume=1.600000)
+     BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Fire',Volume=1.600000)
      FireEndAnim=
      FireAnimRate=2.250000
      FireRate=0.220000

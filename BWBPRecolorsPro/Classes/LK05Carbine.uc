@@ -192,23 +192,23 @@ defaultproperties
      ManualLines(2)="The Weapon Function key, when used, first cycles between the weapon's laser sight and flashlight, and then activates both at once. Activate again to disable both. The laser sight reduces the spread of the hipfire, but compromises stealth.||Effective at close and medium range."																												   																																																																																																																			  
      SilencerBone="Silencer"
      SilencerBone2="Silencer2"
-     SilencerOnSound=Sound'BWBP3-Sounds.SRS900.SRS-SilencerOn'
-     SilencerOffSound=Sound'BWBP3-Sounds.SRS900.SRS-SilencerOff'
+     SilencerOnSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOn'
+     SilencerOffSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOff'
      SilencerOnAnim="SilencerOn"
      SilencerOffAnim="SilencerOff"
      ScopeBone="EOTech"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticRecolors4TexPro.LK05.BigIcon_LK05'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_LK-05'
      BigIconCoords=(Y1=36,Y2=225)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     BringUpSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-PullOut',Volume=0.425000)
-     PutDownSound=(Sound=Sound'PackageSounds4Pro.MJ51.MJ51-Putaway',Volume=0.425000)
+     BringUpSound=(Sound=Sound'BallisticRecolorsSounds.M4.M4-PullOut',Volume=0.425000)
+     PutDownSound=(Sound=Sound'BallisticRecolorsSounds.M4.M4-Putaway',Volume=0.425000)
      MagAmmo=32
-     CockSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-Cock',Volume=0.800000)
-     ClipOutSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagOut',Volume=0.800000)
-     ClipInSound=(Sound=Sound'PackageSounds4ProExp.LK05.LK05-MagIn',Volume=0.800000)
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Cock',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagOut',Volume=0.800000)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
@@ -253,7 +253,7 @@ defaultproperties
      PlayerViewOffset=(X=-6.000000,Y=12.000000,Z=-17.000000)
      BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'
-     IconMaterial=Texture'BallisticRecolors4TexPro.LK05.SmallIcon_LK05'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_LK-05'
      IconCoords=(X2=127,Y2=31)
      ItemName="LK-05 Carbine"
      LightType=LT_Pulse
@@ -262,7 +262,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticRecolors4AnimProExp.LK05_FP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.LK05_FP'
      DrawScale=0.300000
      AmbientGlow=5
 }

@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for MARS-3 Assault Rifle
+// Primaryfire class for F2000 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -157,7 +157,7 @@ defaultproperties
      DamageType=Class'BWBPRecolorsPro.DT_F2000Assault'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_F2000AssaultHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_F2000Assault'
-     DryFireSound=(Sound=Sound'BallisticSounds3.Misc.DryRifle',Volume=0.750000)	 	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.750000)	 	 
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
@@ -172,8 +172,8 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     SilencedFireSound=(Sound=Sound'PackageSounds4ProExp.MARS.F2000-SilFire2',Volume=0.500000,bAtten=True)
-     BallisticFireSound=(Sound=Sound'PackageSounds4ProExp.MARS.MARS-Fire',Volume=1.500000,Slot=SLOT_Interact,bNoOverride=False)
+     SilencedFireSound=(Sound=Sound'BallisticRecolorsSounds.MARS.F2000-SilFire2',Volume=0.500000,bAtten=True)
+     BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-Fire',Volume=1.500000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.095000

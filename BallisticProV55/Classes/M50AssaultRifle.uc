@@ -47,10 +47,10 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     LCDCamOnTex=Texture'BallisticUI2.M50.M50LCDTex'					   
+     LCDCamOnTex=Texture'BallisticUI.M50.M50LCDTex'					   
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI2.Icons.BigIcon_M50'
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M50'
      BigIconCoords=(Y1=40,Y2=235)
      SightFXClass=Class'BallisticProV55.M50SightLEDs'	 
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -110,7 +110,7 @@ defaultproperties
      GroupOffset=3
      PlayerViewOffset=(X=1.000000,Y=7.000000,Z=-8.000000)
      AttachmentClass=Class'BallisticProV55.M50Attachment'
-     IconMaterial=Texture'BallisticUI2.Icons.SmallIcon_M50'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M50'
      IconCoords=(X2=127,Y2=31)
      ItemName="M50 Assault Rifle"
      LightType=LT_Pulse
@@ -119,12 +119,12 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticProAnims.M50Assault'
+     Mesh=SkeletalMesh'BallisticAnims2.M50Assault'
      DrawScale=0.300000
      Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons2.M50.M50SkinA'
      Skins(2)=Texture'BallisticWeapons2.M50.M50SkinB'
-     Skins(3)=Texture'BallisticUI2.M50.M50LCDTex'
+     Skins(3)=Texture'BallisticUI.M50.M50LCDTex'
      Skins(4)=Texture'BallisticWeapons2.M50.M50Laser'
      Skins(5)=Texture'BallisticWeapons2.M50.M50Gren'
      AmbientGlow=5
