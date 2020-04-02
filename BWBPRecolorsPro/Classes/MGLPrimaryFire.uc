@@ -33,4 +33,5 @@ defaultproperties
      ProjectileClass=Class'BWBPRecolorsPro.MGLGrenadeTimed'
 	 BotRefireRate=0.5
      WarnTargetPct=0.75
+	 aimerror=750.000000
 }

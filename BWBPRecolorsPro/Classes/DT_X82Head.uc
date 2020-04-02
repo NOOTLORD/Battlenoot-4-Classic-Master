@@ -32,8 +32,6 @@ defaultproperties
      DeathStrings(0)="%k blew %o's skull away with a .50 Cal bullet."
      DeathStrings(1)="%o was decapitated by %k's anti-materiel round."
      DeathStrings(2)="%k scored a .50 Cal headshot on hapless %o."
-     HipString="Luck"
-     AimedString="Scoped"
      bSnipingDamage=True
      bHeaddie=True
      DamageIdent="Sniper"

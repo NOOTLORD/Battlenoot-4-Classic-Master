@@ -7,6 +7,8 @@
 // by Nolan "Dark Carnivour" Richert.
 // Modified by Azarael
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD 						   
 //=============================================================================
 class BallisticTeamOutfittingMenu extends UT2K4GUIPage config(BallisticProV55);
 
@@ -16,7 +18,6 @@ var automated GUIHeader MyHeader;
 var automated GUITabControl c_Tabs;
 
 var() editconst noexport BallisticTeamOutfittingWeaponsTab p_Weapons;
-var() editconst noexport BallisticTeamOutfittingKillstreaksTab p_Killstreaks;
 
 var() localized string HeaderCaption;
 var() localized string WeaponsTabLabel, WeaponsTabHint, KillstreaksTabLabel, KillstreaksTabHint;
@@ -29,14 +30,12 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 
 	MyHeader.DockedTabs = c_Tabs;
 	p_Weapons = BallisticTeamOutfittingWeaponsTab(c_Tabs.AddTab(WeaponsTabLabel, "BallisticProV55.BallisticTeamOutfittingWeaponsTab",,WeaponsTabHint));
-	p_Killstreaks = BallisticTeamOutfittingKillstreaksTab(c_Tabs.AddTab(KillstreaksTabLabel, "BallisticProV55.BallisticTeamOutfittingKillstreaksTab",,KillstreaksTabHint));
 }
 
 function SetupCOI(ClientTeamOutfittingInterface newCOI)
 {
 	COI = newCOI;
 	p_Weapons.COI = COI;
-	p_Killstreaks.COI = COI;
 }
 
 function InternalOnChange(GUIComponent Sender)
@@ -64,7 +63,6 @@ function bool InternalOnClick(GUIComponent Sender)
 	else if (Sender==BDone) // DONE
 	{
 		SaveSettings();
-		COI.LoadoutChanged(class'Mut_TeamOutfitting'.default.LoadOut, class'Mut_TeamOutfitting'.default.Killstreaks);
 		Controller.CloseMenu();
 	}
 	return true;
@@ -73,7 +71,6 @@ function bool InternalOnClick(GUIComponent Sender)
 function SaveSettings()
 {
 	p_Weapons.SaveWeapons();
-	p_Killstreaks.SaveStreaks();
 }
 
 defaultproperties
@@ -140,8 +137,6 @@ defaultproperties
      HeaderCaption="Loadout"
      WeaponsTabLabel="Weapons"
      WeaponsTabHint="Select your default weapons."
-     KillstreaksTabLabel="Killstreaks"
-     KillstreaksTabHint="Select your killstreak weapons."
      bRenderWorld=True
      bAllowedAsLast=True
      OnKeyEvent=BallisticTeamOutfittingMenu.InternalOnKeyEvent

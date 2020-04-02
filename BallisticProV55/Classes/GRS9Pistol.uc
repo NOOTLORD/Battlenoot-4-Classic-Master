@@ -148,6 +148,7 @@ defaultproperties
 	 SightZoomFactor=0
      SightAimFactor=0.050000
      SprintChaos=0.050000
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
      AimAdjustTime=100.000000
      AimSpread=16
      AimDamageThreshold=0.000000

@@ -14,7 +14,6 @@ defaultproperties
      DeathStrings(1)="%k's G5 mortar took %o to heaven."
      DeathStrings(2)="%o took an express trip to hell thanks to %k's G5 mortar."
      SimpleKillString="G5 Bazooka Mortar"
-     AimedString="Scoped"
      DamageIdent="Ordnance"
      bDisplaceAim=False
      bUseMotionBlur=False	 

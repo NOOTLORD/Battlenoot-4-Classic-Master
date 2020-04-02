@@ -10,14 +10,6 @@ class SK410Shotgun extends BallisticProShotgun;
 
 var name			BulletBone;
 
-function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
-{
-	if (MeleeState >= MS_Held)
-		Momentum *= 0.5;
-	
-	super.AdjustPlayerDamage( Damage, InstigatedBy, HitLocation, Momentum, DamageType);
-}
-
 simulated function BringUp(optional Weapon PrevWeapon)
 {
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)

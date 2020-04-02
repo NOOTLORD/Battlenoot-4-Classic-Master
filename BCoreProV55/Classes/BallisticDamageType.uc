@@ -16,7 +16,6 @@ class BallisticDamageType extends WeaponDamageType config(BallisticProV55);
 var() localized Array<string>	DeathStrings;					// Multiple deathstrings may be interesting...
 var() localized Array<string>	FemaleSuicides, MaleSuicides;	// Multiple suicide messages
 var() localized string			SimpleKillString, SimpleSuicideString;
-var() localized string			HipString, AimedString;
 var() localized string			His, Her, Himself, Herself, Him, MHer, He, She;
 
 var() float							EffectChance;		// Chance of blood effect appearing
@@ -150,12 +149,6 @@ static function SwitchText(out string Text, string Replace, string With)
 	Text = Text $ Input;
 }
 
-static function bool IsAimed(PlayerController PC)
-{
-	if (PC.Pawn != None && BallisticWeapon(PC.Pawn.Weapon) != None && BallisticWeapon(PC.Pawn.Weapon).SightingState != SS_None)
-		return true;
-	return false;
-}
 
 // Random messages
 static function string DeathMessage(PlayerReplicationInfo Killer, PlayerReplicationInfo Victim)
@@ -171,8 +164,6 @@ static function string DeathMessage(PlayerReplicationInfo Killer, PlayerReplicat
 			if(default.SimpleKillString == "")
 				t = default.WeaponClass.default.ItemName;
 			else t = default.SimpleKillString;
-			if(default.HipString != "")
-				t @= default.HipString;
 			if (default.DamageIdent == "Melee" && default.WeaponClass.default.InventoryGroup != 1)
 				t @= "Melee";
 			if (default.bHeaddie)
@@ -202,7 +193,6 @@ static function string ScopedDeathMessage(PlayerReplicationInfo Killer, PlayerRe
 		else t = default.SimpleKillString;
 		if (default.DamageIdent == "Melee" && default.WeaponClass.default.InventoryGroup != 1)
 			t @= "Melee";
-		t @= default.AimedString;
 		if (default.bHeaddie)
 			t @= "Headshot";
 		s = "%k ["$t$"] %o";
@@ -335,7 +325,6 @@ static function bool DoSeverStump (Pawn Victim, name Bone, vector HitRay, int Da
 
 defaultproperties
 {
-     AimedString="Aimed"
      His="his"
      Her="her"
      Himself="himself"

@@ -75,7 +75,7 @@ defaultproperties
      MagAmmo=7
      CockAnim="Cock"
 	 CockAnimRate=1.250000	
-     CockSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Cock',Volume=1.000000)
+     CockSound=(Sound=Sound'BallisticSounds2.R78.R78-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
      ClipHitSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipHit',Volume=1.000000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipOut',Volume=1.000000)

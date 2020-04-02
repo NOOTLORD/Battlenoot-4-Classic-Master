@@ -74,9 +74,9 @@ defaultproperties
      BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
      BrassOffset=(X=35.000000,Y=-7.500000,Z=13.000000)
      RecoilPerShot=1280.000000
-     FireChaos=0.400000
-     XInaccuracy=250.000000
-     YInaccuracy=250.000000
+     FireChaos=0.200000
+     XInaccuracy=200.000000
+     YInaccuracy=200.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-Fire',Volume=1.500000)
      FireAnim="FireCombined"
      FireEndAnim=

@@ -87,9 +87,9 @@ defaultproperties
      AimedFireAnim="SightFire"
      RecoilPerShot=700.000000
      VelocityRecoil=180.000000
-     FireChaos=0.400000
-     XInaccuracy=400.000000
-     YInaccuracy=400.000000
+     FireChaos=0.200000
+     XInaccuracy=200.000000
+     YInaccuracy=200.000000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Fire',Volume=1.600000)
      FireEndAnim=
      FireAnimRate=2.250000

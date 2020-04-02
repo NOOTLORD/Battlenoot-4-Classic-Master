@@ -11,13 +11,11 @@
 //=============================================================================
 class BallisticTab_PreferencesPro extends UT2K4TabPanel;
 
-var automated moCheckbox	ch_UseBrass, ch_MSmoke, ch_SimpleDeathMessages, ch_OldCrosshairs, ch_MotionBlur;
-
+var automated moCheckbox	ch_UseBrass, ch_MSmoke, ch_SimpleDeathMessages, ch_OldCrosshairs, ch_BloodFX;
 var automated moComboBox	co_WeaponDet, co_EffectDet;
-var automated moFloatEdit	fl_BrassTime;
-
+var automated moFloatEdit	fl_BrassTime, fl_BloodTimeScale;
+var automated moSlider		sl_GibMulti;
 var			  int			OldWeaponDet;
-
 var BallisticConfigMenuPro		p_Anchor;
 var bool					bInitialized;
 
@@ -45,7 +43,9 @@ function LoadSettings()
 	fl_BrassTime.SetValue(class'BallisticBrass'.default.LifeTimeScale);
 	ch_SimpleDeathMessages.Checked(class'BallisticDamageType'.default.bSimpleDeathMessages);
 	ch_OldCrosshairs.Checked(class'BallisticWeapon'.default.bOldCrosshairs);
-	ch_MotionBlur.Checked(class'BallisticMod'.default.bUseMotionBlur);	
+	ch_BloodFX.Checked(class'BloodManager'.default.bUseBloodEffects);
+	fl_BloodTimeScale.SetValue(class'AD_BloodDecal'.default.StayScale);
+	sl_GibMulti.SetValue(class'BloodManager'.default.GibMultiplier);
 
 	for (i=1;i<6;i+=2)
 	    co_EffectDet.AddItem(class'UT2K4Tab_DetailSettings'.default.DetailLevels[i] ,,string(i));
@@ -70,7 +70,9 @@ function SaveSettings()
 	class'BallisticMod'.default.bMuzzleSmoke 			= ch_MSmoke.IsChecked();
 	class'BallisticBrass'.default.LifeTimeScale			= fl_BrassTime.GetValue();
 	class'BallisticDamageType'.default.bSimpleDeathMessages	= ch_SimpleDeathMessages.IsChecked();
-	class'BallisticMod'.default.bUseMotionBlur 				= false; //ch_MotionBlur.IsChecked();	
+	class'AD_BloodDecal'.default.StayScale			= fl_BloodTimeScale.GetValue();
+	class'BloodManager'.default.bUseBloodEffects	= ch_BloodFX.IsChecked();
+	class'BloodManager'.default.GibMultiplier		= sl_GibMulti.GetValue();
 	
 	class'BallisticDamageType'.static.StaticSaveConfig();
 	class'Mut_Ballistic'.static.StaticSaveConfig();
@@ -78,6 +80,10 @@ function SaveSettings()
 	class'BallisticBrass'.static.StaticSaveConfig();
 	class'BallisticPlayer'.static.StaticSaveConfig();
 	class'BallisticWeapon'.static.StaticSaveConfig();
+	class'BWBloodControl'.static.StaticSaveConfig();
+	class'BloodManager'.static.StaticSaveConfig();
+	class'BallisticGib'.static.StaticSaveConfig();
+	class'AD_BloodDecal'.static.StaticSaveConfig();	
 
 	if (co_WeaponDet.GetIndex() != OldWeaponDet)
 	{
@@ -95,7 +101,9 @@ function DefaultSettings()
 	ch_OldCrosshairs.Checked(false);
 	ch_MSmoke.Checked(true);
 	ch_SimpleDeathMessages.Checked(true);
-	ch_MotionBlur.Checked(false);	
+	ch_BloodFX.Checked(false);
+	fl_BloodTimeScale.SetValue(1.0);
+	sl_GibMulti.SetValue(1);	
 }
 
 defaultproperties
@@ -194,16 +202,43 @@ defaultproperties
      End Object
      ch_OldCrosshairs=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_OldCrosshairsCheck'
 	 
-     Begin Object Class=moCheckBox Name=ch_MotionBlurCheck
+     Begin Object Class=moCheckBox Name=ch_BloodFXCheck
          ComponentJustification=TXTA_Left
          CaptionWidth=0.900000
-         Caption="Motion Blur"
-         OnCreateComponent=ch_MotionBlurCheck.InternalOnCreateComponent
+         Caption="Blood Particle Effects"
+         OnCreateComponent=ch_BloodFXCheck.InternalOnCreateComponent
          IniOption="@Internal"
-         Hint="Enable the use of motion blur effects. WARNING: This may have undesirable effects on some machines!"
+         Hint="Toggles blood effects when damaging players."
          WinTop=0.450000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
-     ch_MotionBlur=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_MotionBlurCheck'	 
+     ch_BloodFX=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_BloodFXCheck'
+	 
+     Begin Object Class=moFloatEdit Name=fl_BloodTimeScaleFloat
+         MinValue=0.000000
+         MaxValue=100.000000
+         ComponentJustification=TXTA_Left
+         CaptionWidth=0.700000
+         Caption="Blood Stay Scale"
+         OnCreateComponent=fl_BloodTimeScaleFloat.InternalOnCreateComponent
+         IniOption="@Internal"
+         Hint="Scales the life time of blood effects. 0 = Forever."
+         WinTop=0.500000
+         WinLeft=0.250000
+         WinHeight=0.040000
+     End Object
+     fl_BloodTimeScale=moFloatEdit'BallisticProV55.BallisticTab_PreferencesPro.fl_BloodTimeScaleFloat'
+
+     Begin Object Class=moSlider Name=sl_GibMultiSlider
+         MaxValue=20.000000
+         bIntSlider=True
+         Caption="Gib Multiplier"
+         OnCreateComponent=sl_GibMultiSlider.InternalOnCreateComponent
+         Hint="Multiplies number of gibs spawned. 1 = Normal, 0 = None. WARNING: Higher than 1 may kill performance!"
+         WinTop=0.550000
+         WinLeft=0.250000
+         WinHeight=0.040000
+     End Object
+     sl_GibMulti=moSlider'BallisticProV55.BallisticTab_PreferencesPro.sl_GibMultiSlider'	 
 }

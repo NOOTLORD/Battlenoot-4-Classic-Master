@@ -16,7 +16,6 @@ defaultproperties
      DeathStrings(3)="%k's Raven tucked into some delicious %o."
      DeathStrings(4)="%k's Raven strike ended %o's farcical existence."
      DeathStrings(5)="%o never even saw %k's R78 bullet coming."
-     AimedString="Scoped"
      bSnipingDamage=True
      DamageIdent="Sniper"
      bDisplaceAim=False

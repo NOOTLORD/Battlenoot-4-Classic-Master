@@ -13,8 +13,6 @@ defaultproperties
      DeathStrings(0)="%o was bombarded by %k's G5."
      DeathStrings(1)="%o flung %vs into the path of %k's G5 mortar."
      FemaleSuicides(0)="%o forgot where she left one of her mortar rockets."
-     MaleSuicides(0)="%o forgot where he left one of his mortar rockets."
-     AimedString="Scoped"
      DamageIdent="Ordnance"
      bDisplaceAim=False
      bUseMotionBlur=False 

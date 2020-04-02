@@ -13,7 +13,6 @@ defaultproperties
      DeathStrings(0)="%k tore up %o with a .50 BMG sniper round."
      DeathStrings(1)="%o lost %vh life to %k's X-83 A1."
      DeathStrings(2)="%o was shattered by %k's .50 Cal sniper."
-     AimedString="Scoped"
      bSnipingDamage=True
      DamageIdent="Sniper"
      AimDisplacementDamageThreshold=0.000000

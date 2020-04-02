@@ -24,7 +24,7 @@ defaultproperties
      TracerMode=MU_Primary	 
      TracerChance=0.500000
      ReloadAnim="Reload_AR"
-     ReloadAnimRate=0.900000
+     ReloadAnimRate=0.900000	 
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_TP'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.200000

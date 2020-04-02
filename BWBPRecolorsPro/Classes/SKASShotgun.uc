@@ -8,8 +8,6 @@
 //=============================================================================
 class SKASShotgun extends BallisticProShotgun;
 
-var() sound      	QuickCockSound;
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -69,7 +67,6 @@ defaultproperties
      ManualLines(0)="Automatic fire has moderate spread, moderate damage, short range and fast fire rate.||Manual fire has tight spread, long range, good damage and low fire rate."
      ManualLines(1)="Multi-shot attack. Loads a shell into each of the barrels, then fires them all at once. Very high damage, short range and wide spread."
      ManualLines(2)="Extremely effective at close range."
-     QuickCockSound=Sound'BallisticRecolorsSounds.SKAS.SKAS-Cock'
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=2)
      TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SKAS'

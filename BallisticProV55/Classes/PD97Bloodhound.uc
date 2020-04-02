@@ -284,9 +284,10 @@ defaultproperties
 	 SightZoomFactor=0
      SightAimFactor=0.150000
      JumpChaos=0.200000
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
      AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
+     AimDamageThreshold=0.000000 
 	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=0.450000
      ChaosSpeedThreshold=7500.000000

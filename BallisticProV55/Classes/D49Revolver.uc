@@ -367,6 +367,7 @@ defaultproperties
      SightOffset=(X=-30.000000,Y=-0.400000,Z=14.500000)
      SightingTime=0.200000
      SightAimFactor=0.150000
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
      AimAdjustTime=100.000000
 	 SightZoomFactor=0
      AimSpread=16

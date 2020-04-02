@@ -1,7 +1,9 @@
 //=============================================================================
 // Mut_TeamOutfitting.
 //
-// It's Loadout, but per-team.
+// It's Loadout, but for invasion
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Mut_TeamOutfitting extends Mut_Ballistic
 	config(BallisticProV55);
@@ -885,6 +887,6 @@ defaultproperties
      BlueLoadoutGroup6(0)="BallisticProV55.MRocketLauncher"
      BlueLoadoutGroup6(1)="BallisticProV55.M75Railgun"
      bHideLockers=True
-     FriendlyName="BallisticPro: Team Loadout"
-     Description="Team-based Ballistic Loadout."
+     FriendlyName="BallisticPro: Invasion Loadout"
+     Description="Invasion based Ballistic Loadout."
 }

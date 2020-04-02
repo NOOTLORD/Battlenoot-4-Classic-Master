@@ -10,7 +10,7 @@ class IE_EMP extends BallisticEmitter
 simulated event PreBeginPlay()
 {
 	if ( !FastTrace(Location + Vector(Rotation)*8 ,Level.GetLocalPlayerController().ViewTarget.Location) )
-		Emitters[9].ZTest = true;
+		Emitters[7].ZTest = true;
 	Super.PreBeginPlay();
 }
 

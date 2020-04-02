@@ -37,7 +37,7 @@ simulated function BringUp(optional Weapon PrevWeapon)
 	{
 		IdleAnim = 'Idle';
 		ReloadAnim = 'Reload';
-		SelectAnim = 'SuperPullout';
+		SelectAnim = 'Pullout';
 		BringUpTime=default.BringUpTime;
 	}
 
@@ -167,6 +167,7 @@ defaultproperties
      SightingTime=0.200000
 	 SightZoomFactor=0
      GunLength=4.000000
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
      AimAdjustTime=100.000000
      AimSpread=16	 
      AimDamageThreshold=0.000000

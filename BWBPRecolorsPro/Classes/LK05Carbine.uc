@@ -234,7 +234,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     FireModeClass(1)=Class'BWBPRecolorsPro.LK05SecondaryFire'
      IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000

@@ -16,7 +16,7 @@ class BallisticOutfittingWeaponsTab extends UT2K4TabPanel config(BallisticProV55
 var automated GUILoadOutItem Item_SideArm, Item_Primary, Item_Grenade;
 var automated GUIComboBox	 cb_SideArm, cb_Primary, cb_Grenade;
 var automated moComboBox	 cb_Presets;
-var Automated GUIImage       Box_SideArm, Box_Primary, Box_Secondary, Box_Grenade, MeleeBack, SideArmBack, PrimaryBack, GrenadeBack;
+var Automated GUIImage       Box_SideArm, Box_Primary, Box_Grenade, SideArmBack, PrimaryBack, GrenadeBack;
 var Automated GUIButton BDone, BCancel, BSavePreset;
 var automated GUILabel	l_Receiving;
 var BallisticOutfittingMenu p_Anchor;

@@ -21,14 +21,11 @@ var automated GUITabControl	c_Tabs;
 
 var() editconst noexport BallisticTab_RulesPro			p_Rules;
 var() editconst noexport BallisticTab_PreferencesPro	p_Options;
-var() editconst noexport BallisticTab_BloodPro			p_Blood;
 var() editconst noexport BallisticTab_OutfittingPro	p_Loadout;
-var() editconst noexport BallisticTab_LoadoutPro		p_LoadoutNew;
-var() editconst noexport BallisticTab_ProSettings 		p_ProSettings;
 
 
 var() localized string 	HeaderCaption;
-var() localized string	RulesTabLabel,RulesTabHint, OptionsTabLabel,OptionsTabHint, BloodTabLabel,BloodTabHint, SwapTabLabel,SwapTabHint,LoadoutTabLabel,LoadoutTabHint,LoadoutNewTabLabel,LoadoutNewTabHint,ProSettingsTabLabel,ProSettingsTabHint;
+var() localized string	RulesTabLabel,RulesTabHint, OptionsTabLabel,OptionsTabHint, BloodTabLabel,BloodTabHint, SwapTabLabel,SwapTabHint,LoadoutTabLabel,LoadoutTabHint;
 var()		  string	DetailSettings[9];
 
 function InitComponent(GUIController MyController, GUIComponent MyOwner)
@@ -37,11 +34,8 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 
 	MyHeader.DockedTabs = c_Tabs;
 	p_Rules		 = BallisticTab_RulesPro(c_Tabs.AddTab(RulesTabLabel,"BallisticProV55.BallisticTab_RulesPro",,RulesTabHint));
-	p_ProSettings	= BallisticTab_ProSettings(c_Tabs.AddTab(ProSettingsTabLabel,"BallisticProV55.BallisticTab_ProSettings",,ProSettingsTabHint));
 	p_Options	 = BallisticTab_PreferencesPro(c_Tabs.AddTab(OptionsTabLabel,"BallisticProV55.BallisticTab_PreferencesPro",,OptionsTabHint));
-	p_Blood		 = BallisticTab_BloodPro(c_Tabs.AddTab(BloodTabLabel,"BallisticProV55.BallisticTab_BloodPro",,BloodTabHint));
 	p_Loadout	 = BallisticTab_OutfittingPro(c_Tabs.AddTab(LoadoutTabLabel,"BallisticProV55.BallisticTab_OutfittingPro",,LoadoutTabHint));
-	p_LoadoutNew = BallisticTab_LoadoutPro(c_Tabs.AddTab(LoadoutNewTabLabel,"BallisticProV55.BallisticTab_LoadoutPro",,LoadoutNewTabHint));
 }
 
 function InternalOnChange(GUIComponent Sender)
@@ -82,10 +76,7 @@ function bool InternalOnClick(GUIComponent Sender)
 		{
 			 case p_Rules:		p_Rules.LoadSettings(); break;
 			 case p_Options:	p_Options.LoadSettings(); break;
-			 case p_Blood:		p_Blood.LoadSettings(); break;
 			 case p_Loadout:	p_Loadout.LoadSettings(); break;
-			 case p_LoadoutNew:	p_LoadoutNew.LoadSettings(); break;
-			 case p_ProSettings:   p_ProSettings.LoadSettings(); break;
 		}
 
 	}
@@ -95,10 +86,7 @@ function bool InternalOnClick(GUIComponent Sender)
 		{
 			 case p_Rules:		p_Rules.DefaultSettings(); break;
 			 case p_Options:	p_Options.DefaultSettings(); break;
-			 case p_Blood:		p_Blood.DefaultSettings(); break;
 			 case p_Loadout:	p_Loadout.DefaultSettings(); break;
-			 case p_LoadoutNew:	p_LoadoutNew.DefaultSettings(); break;
-			 case p_ProSettings:   p_ProSettings.DefaultSettings(); break;
 		}
 	}
 	return true;
@@ -131,30 +119,21 @@ function LoadSettings()
 {
 	p_Rules.LoadSettings();
 	p_Options.LoadSettings();
-	p_Blood.LoadSettings();
 	p_Loadout.LoadSettings();
-	p_LoadoutNew.LoadSettings();
-	p_ProSettings.LoadSettings();
 }
 
 function SaveSettings()
 {
 	p_Rules.SaveSettings();
 	p_Options.SaveSettings();
-	p_Blood.SaveSettings();
 	p_Loadout.SaveSettings();
-	p_LoadoutNew.SaveSettings();
-	p_ProSettings.SaveSettings();
 }
 
 function DefaultSettings()
 {
 	p_Rules.DefaultSettings();
 	p_Options.DefaultSettings();
-	p_Blood.DefaultSettings();
 	p_Loadout.DefaultSettings();
-	p_LoadoutNew.DefaultSettings();
-	p_ProSettings.DefaultSettings();
 }
 
 final function string GetDisplayString(string ConfigString)
@@ -265,14 +244,8 @@ defaultproperties
      RulesTabHint="Adjust rules and settings that affect the behaviour of the game."
      OptionsTabLabel="Preferences"
      OptionsTabHint="Configure your own personal preferences."
-     BloodTabLabel="Blood"
-     BloodTabHint="Configure Ballistic blood and gore settings."
      LoadoutTabLabel="Loadout"
      LoadoutTabHint="Change how and which weapons are used by the 'Ballistic Loadout' mutator."
-     LoadoutNewTabLabel="Evolution Loadout"
-     LoadoutNewTabHint="Adjust the loadout and requirement settings for the 'Ballistic Evolution Loadout' mutator."
-     ProSettingsTabLabel="Additional Game Rules"
-     ProSettingsTabHint="BallisticPro specific game settings, affecting walk and crouch speed."
      DetailSettings(0)="UltraLow"
      DetailSettings(1)="VeryLow"
      DetailSettings(2)="Low"

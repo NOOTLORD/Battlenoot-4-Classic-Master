@@ -33,8 +33,6 @@ defaultproperties
      DeathStrings(1)="%k's R78 bullet turned %o's face into hamburger."
      DeathStrings(2)="%o's head was preyed upon by %k's Raven."
      DeathStrings(3)="%k's expert marksmanship brought an end to %o's paltry attempts at stealth."
-     HipString="Luck"
-     AimedString="Scoped"
      bSnipingDamage=True
      bHeaddie=True
      DamageIdent="Sniper"

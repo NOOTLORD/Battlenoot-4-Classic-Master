@@ -9,8 +9,6 @@ defaultproperties
 {
      DeathStrings(0)="%o was knocked into next week by %k's unarmed G5."
      SimpleKillString="G5 Bazooka Impact"
-     HipString="Luck"
-     AimedString="Scoped"
      DamageIdent="Ordnance"
      bDisplaceAim=False
      bUseMotionBlur=False	 

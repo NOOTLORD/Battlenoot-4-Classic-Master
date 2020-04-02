@@ -20,7 +20,6 @@ defaultproperties
      MaleSuicides(0)="%o splattered the walls with his gibs using a G5."
      MaleSuicides(1)="%o blasted himself across the map with a G5."
      MaleSuicides(2)="%o blew himself into a chunky haze with the G5."
-     AimedString="Scoped"
      DamageIdent="Ordnance"
      bDisplaceAim=False
      bUseMotionBlur=False	 

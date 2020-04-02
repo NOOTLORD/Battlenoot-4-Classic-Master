@@ -36,9 +36,9 @@ defaultproperties
      BrassOffset=(X=-21.000000,Y=-2.000000,Z=-1.000000)
      RecoilPerShot=450.000000
      VelocityRecoil=180.000000
-     FireChaos=0.300000
-     XInaccuracy=310.000000
-     YInaccuracy=310.000000
+     FireChaos=0.150000
+     XInaccuracy=200.000000
+     YInaccuracy=200.000000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.SKAS.SKAS-Fire',Volume=1.600000)
      FireAnim="FireRot"
      FireEndAnim=

@@ -12,165 +12,9 @@ class BallisticMeleeWeapon extends BallisticWeapon
 	HideDropDown
 	CacheExempt;
 
-var   bool			bBlocked;		// Currently blocking
-var() name			BlockUpAnim;	// Anim for going into blocking
-var() name			BlockDownAnim;	// Anim when blocking stops
-var() name			BlockIdleAnim;	// Anim when in block mode and idle
-
-var float				MeleeSpreadAngle;
-
-replication
-{
-	reliable if ( Role<ROLE_Authority )
-		ServerSetBlocked;
-}
-
-simulated function TickDisplacement(float DT)
-{
-	if (AimDisplacementEndTime > Level.TimeSeconds)
-	{
-		AimDisplacementFactor = FMin (AimDisplacementFactor + DT/0.2, 0.75);
-		if (!bServerReloading)
-			bServerReloading = True;
-	}
-	else 
-	{
-		AimDisplacementFactor = FMax(AimDisplacementFactor-DT/0.35, 0);
-		if (bServerReloading)
-			bServerReloading=False;
-	}
-}
-
-simulated function PostBeginPlay()
-{
-	Super.PostBeginPlay();
-	MeleeSpreadAngle = BallisticMeleeFire(BFireMode[0]).GetCrosshairInaccAngle();
-}
-
-function ServerSetBlocked(bool NewValue)
-{
-	bBlocked=NewValue;
-}
-
 simulated function float ChargeBar()
 {
 	return MeleeFatigue;
-}
-
-//simulated function DoWeaponSpecial(optional byte i)
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (bBlocked)
-		return;
-	bBlocked=true;
-	ServerSetBlocked(bBlocked);
-	if (!IsFiring())
-		PlayAnim(BlockUpAnim, 1.5);
-	IdleAnim = BlockIdleAnim;
-}
-//simulated function DoWeaponSpecialRelease(optional byte i)
-exec simulated function WeaponSpecialRelease(optional byte i)
-{
-	if (!bBlocked)
-		return;
-	bBlocked=false;
-	ServerSetBlocked(bBlocked);
-	if (!IsFiring())
-		PlayAnim(BlockDownAnim, 1.5);
-	IdleAnim = default.IdleAnim;
-}
-
-function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
-{
-	local class<BallisticDamageType> BDT;
-	
-	if (InstigatedBy != None && InstigatedBy.Controller != None && InstigatedBy.Controller.SameTeamAs(InstigatorController))
-		return;
-		
-	BDT = class<BallisticDamageType>(DamageType);
-	
-	if (VSize(Instigator.Location - InstigatedBy.Location) < 512 && VSize(Momentum) < 60)
-		Momentum = vect(0,0,0);
-	else Momentum *= 0.5;
-		
-	if (bBerserk)
-		Damage *= 0.75;
-	
-	if (BDT != None)
-	{
-		if (bBlocked && !IsFiring() && level.TimeSeconds > LastFireTime + 1 && BDT.default.bCanBeBlocked &&
-		Normal(HitLocation-(Instigator.Location+Instigator.EyePosition())) Dot Vector(Instigator.GetViewRotation()) > 0.4)
-		{
-			Damage = 0;
-			BallisticAttachment(ThirdPersonActor).UpdateBlockHit();
-			if (instigatedBy != None && BallisticWeapon(instigatedBy.Weapon) != None)
-				BallisticWeapon(instigatedBy.Weapon).ApplyBlockFatigue();
-			return;
-		}
-	}
-}
-
-simulated event AnimEnd (int Channel)
-{
-    local name anim;
-    local float frame, rate;
-
-    GetAnimParams(0, anim, frame, rate);
-
-	if (bBlocked && (anim == FireMode[0].FireAnim || anim == FireMode[1].FireAnim))
-	{
-		PlayAnim(BlockUpAnim, 1.5);
-		IdleAnim = BlockIdleAnim;
-	}
-	else
-	{
-		if (!bBlocked)
-			IdleAnim = default.IdleAnim;
-		Super.AnimEnd(Channel);
-	}
-}
-
-//Draws simple crosshairs to accurately describe hipfire at any FOV and resolution.
-simulated function DrawCrosshairs(canvas C)
-{
-	local float 		ShortBound, LongBound;
-	local float 		OffsetAdjustment;
-
-	// Draw weapon specific Crosshairs
-	if (bOldCrosshairs || (bScopeView && bNoCrosshairInScope))
-		return;
-
-	//C.SetDrawColor(150,150,255,255);
-	C.DrawColor = class'HUD'.default.CrosshairColor;
-	
-	ShortBound = 2;
-	LongBound= 10;
-	
-	OffsetAdjustment = C.ClipX / 2;
-	OffsetAdjustment *= tan (MeleeSpreadAngle) / tan((Instigator.Controller.FovAngle/2) * 0.01745329252);
-	
-	//hor
-	C.SetPos((C.ClipX / 2) - (LongBound + OffsetAdjustment), (C.ClipY/2) - (ShortBound/2));
-	C.DrawTileStretched(Texture'Engine.WhiteTexture', LongBound, ShortBound);
-	
-	C.SetPos((C.ClipX / 2) + OffsetAdjustment, (C.ClipY/2) - (ShortBound/2));
-	C.DrawTileStretched(Texture'Engine.WhiteTexture', LongBound, ShortBound);
-	
-	//ver
-	C.SetPos((C.ClipX / 2) - (ShortBound/2), (C.ClipY/2) - (LongBound + OffsetAdjustment/3));
-	C.DrawTileStretched(Texture'Engine.WhiteTexture', ShortBound, LongBound);
-	
-	C.SetPos((C.ClipX / 2) - (Shortbound/2), (C.ClipY/2) + OffsetAdjustment/3);
-	C.DrawTileStretched(Texture'Engine.WhiteTexture', ShortBound, LongBound);
-	
-	
-	//centre square
-	if (bDrawCrosshairDot)
-	{
-		C.DrawColor.A = 255;
-		C.SetPos((C.ClipX - ShortBound)/2, (C.ClipY - ShortBound)/2);
-		C.DrawTileStretched(Texture'Engine.WhiteTexture', ShortBound, ShortBound);
-	}
 }
 
 simulated event Tick (Float DT)
@@ -242,9 +86,6 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
-     BlockUpAnim="PrepBlock"
-     BlockDownAnim="EndBlock"
-     BlockIdleAnim="BlockIdle"
      InventorySize=2
 	 bNoMag=True
      bNonCocking=True
@@ -261,5 +102,5 @@ defaultproperties
      ChaosAimSpread=0
      RecoilDeclineTime=4.000000
      RecoilDeclineDelay=0.750000
-     bShowChargingBar=True
+     bShowChargingBar=False
 }
