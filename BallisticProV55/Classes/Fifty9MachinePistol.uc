@@ -122,7 +122,7 @@ defaultproperties
      SpecialInfo(0)=(Info="120.0;10.0;0.8;40.0;0.0;0.4;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000)
-     MagAmmo=24
+     MagAmmo=25
      CockSound=(Sound=Sound'BallisticSounds2.UZI.UZI-Cock',Volume=0.900000)
      ClipHitSound=(Volume=0.600000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.UZI.UZI-ClipOut',Volume=0.900000)

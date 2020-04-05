@@ -8,6 +8,14 @@
 //=============================================================================
 class GRS9Pistol extends BallisticHandgun;
 
+simulated function PlayIdle()
+{
+	super.PlayIdle();
+
+	if (!bPendingSightUp || SightingState != SS_None || bScopeView || !CanPlayAnim(IdleAnim, ,"IDLE"))
+		return;
+	FreezeAnimAt(0.0);
+}				  
 // Change some properties when using sights...
 simulated function SetScopeBehavior()
 {

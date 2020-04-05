@@ -25,6 +25,7 @@ defaultproperties
      bMetallic=True
      bDisplaceAim=False
      bUseMotionBlur=False
+     FlashScale=0.000000	 
      DamageDescription=",Slash,"
      bInstantHit=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.Knife.KnifeFlesh'

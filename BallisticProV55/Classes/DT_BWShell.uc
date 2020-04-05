@@ -15,7 +15,7 @@ defaultproperties
      DamageDescription=",Shell,"
      bDisplaceAim=False
      bUseMotionBlur=False
-     FlashScale=0.300000
+     FlashScale=0.000000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000
 }

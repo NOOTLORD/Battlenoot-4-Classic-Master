@@ -251,6 +251,7 @@ defaultproperties
      SpareShellBones(3)="SpareShell4"
      SpareShellBones(4)="SpareShell5"
      bShouldDualInLoadout=False
+	 InventorySize=6				 
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_PD97'
@@ -313,7 +314,6 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-	 InventorySize=6
      GroupOffset=6
      PlayerViewOffset=(X=5.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.PD97Attachment'

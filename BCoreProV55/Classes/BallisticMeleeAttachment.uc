@@ -71,7 +71,7 @@ function UpdateBlockHit()
 
 defaultproperties
 {
-     MeleeAltStrikeAnim="Blade_Stab"
+     MeleeAltStrikeAnim="Blade_Smash"
      IdleHeavyAnim="Blade_Idle"
      IdleRifleAnim="Blade_Idle"
      MeleeStrikeAnim="Blade_Swing"

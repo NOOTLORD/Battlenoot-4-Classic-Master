@@ -46,6 +46,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticHandgun extends BallisticWeapon
 	abstract;
@@ -1525,20 +1527,6 @@ simulated state PendingCocking extends PendingDualAction
 	simulated function HandgunLowered (BallisticHandgun Other)	{ global.HandgunLowered(Other); if (Other == Othergun) Super.CommonCockGun();	}
 	function ServerStartReload (optional byte i){}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Draw slave weapon info on the HUD
 simulated function NewDrawWeaponInfo(Canvas C, float YPos)

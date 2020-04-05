@@ -47,8 +47,6 @@ var   byte				DoubleJumpsLeft;
 var   float				LastDoubleJumpTime;
 var	bool					bResetAnimationAction;
 
-var	bool					bPreventHealing;
-
 var 	globalconfig	bool	bLocalDisableAnimation;
 var 						bool	bDisablePawnAnimation;
 var	globalconfig	array<String> ModelWhitelist;
@@ -154,14 +152,14 @@ simulated function PostBeginPlay()
 	super.PostBeginPlay();
 
 	if (class'BallisticReplicationInfo'.default.bNoDodging)
-		bCanWallDodge = false;
+		bCanWallDodge = true;
 }
 
 simulated event PostNetBeginPlay()
 {
 	super.PostNetBeginPlay();
 	if (class'BallisticReplicationInfo'.default.bNoDodging)
-		bCanWallDodge = false;
+		bCanWallDodge = true;
 	if (!class'BallisticReplicationInfo'.default.bBrightPlayers)
 	{
 		bDramaticLighting=False;
@@ -513,6 +511,10 @@ simulated function AssignInitialPose()
 			}
 		}		
 		//log( "Skeleton "$recx.Skeleton$" Species "$recx.Species );
+		if (  recx.Species.default.SpeciesName == "Alien" )
+			 LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdAlien');
+		else if (  recx.Species.default.SpeciesName == "Juggernaut" )
+			 LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rd');														 
 		if ( recx.Sex ~= "Female" && PlayerReplicationInfo.CharacterName != "July")
 			LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdFemale');	 
 		else LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rd');
@@ -544,11 +546,12 @@ simulated function SetWeaponAttachment(xWeaponAttachment NewAtt)
 		FireRifleRapidAnim = BAtt.RapidAimedFireAnim;
 		
 		MeleeAnim = BAtt.MeleeStrikeAnim;
+		IdleRestAnim = BAtt.IdleHeavyAnim;							
 	
 		if (BallisticMeleeAttachment(NewAtt) != None)
 		{
 			MeleeAltAnim = BallisticMeleeAttachment(NewAtt).MeleeAltStrikeAnim;
-			IdleWeaponAnim = IdleRifleAnim;
+			IdleWeaponAnim = IdleHeavyAnim;
 		}
 
 		else 
@@ -762,9 +765,6 @@ function bool GiveAttributedHealth(int HealAmount, int HealMax, pawn Healer, opt
 {
 	local int OldHealth;
 	
-	if (bPreventHealing && bProjTarget)
-		return false;
-	
 	OldHealth = Health;
 	
 	if (Health < HealMax)
@@ -788,10 +788,7 @@ function bool GiveAttributedHealth(int HealAmount, int HealMax, pawn Healer, opt
 }
 
 function bool GiveHealth(int HealAmount, int HealMax)
-{
-	if (bPreventHealing && bProjTarget)
-		return false;
-	
+{	
 	return Super.GiveHealth(HealAmount, HealMax);	
 }
 
@@ -2522,7 +2519,7 @@ defaultproperties
      CrouchedPct=0.350000
 	 SuperHealthMax=100.000000		
 	 HeadHeight=0.000000
-     HeadRadius=0.000000
+     HeadRadius=13.000000
      TransientSoundVolume=0.100000
      Begin Object Class=KarmaParamsSkel Name=PawnKParams
          KConvulseSpacing=(Max=2.200000)

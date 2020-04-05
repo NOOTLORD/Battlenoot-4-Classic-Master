@@ -703,23 +703,11 @@ defaultproperties
      End Object
      BBox3=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox3Button'
 
-     Begin Object Class=GUIButton Name=BBox4Button
-         Caption="Secondary"
-         Hint="View the list of weapons in the 'Secondary' box"
-         WinTop=0.940000
-         WinLeft=0.625000
-         WinWidth=0.150000
-         TabOrder=0
-         OnClick=BallisticTab_OutfittingPro.InternalOnClick
-         OnKeyEvent=BBox4Button.InternalOnKeyEvent
-     End Object
-     BBox4=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox4Button'
-
      Begin Object Class=GUIButton Name=BBox5Button
          Caption="Grenade"
          Hint="View the list of weapons in the 'Grenade' box"
          WinTop=0.940000
-         WinLeft=0.825000
+         WinLeft=0.625000
          WinWidth=0.150000
          TabOrder=0
          OnClick=BallisticTab_OutfittingPro.InternalOnClick

@@ -72,7 +72,7 @@ defaultproperties
      Damage=14.000000
      DamageHead=14.000000
      DamageLimb=14.000000
-     RangeAtten=0.500000
+     RangeAtten=0.400000
      DamageType=Class'BWBPRecolorsPro.DT_SK410Shotgun'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_SK410ShotgunHead'
      DamageTypeArm=Class'BWBPRecolorsPro.DT_SK410Shotgun'
@@ -85,8 +85,8 @@ defaultproperties
      BrassClass=Class'BWBPRecolorsPro.Brass_SK410_Shotgun'
      BrassOffset=(X=-48.000000,Y=2.500000,Z=-4.000000)
      AimedFireAnim="SightFire"
-     RecoilPerShot=700.000000
-     VelocityRecoil=180.000000
+     RecoilPerShot=600.000000
+     VelocityRecoil=0.000000
      FireChaos=0.200000
      XInaccuracy=200.000000
      YInaccuracy=200.000000

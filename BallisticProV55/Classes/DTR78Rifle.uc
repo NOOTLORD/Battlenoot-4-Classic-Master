@@ -24,7 +24,6 @@ defaultproperties
      DeathString="%o was silenced by %k's R78."
      FemaleSuicide="%o held her R78 the wrong way around."
      MaleSuicide="%o held his R78 the wrong way around."
-     FlashScale=0.300000
      VehicleDamageScaling=0.150000
      InvasionDamageScaling=1.000000	 
 }

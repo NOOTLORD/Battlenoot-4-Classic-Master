@@ -23,7 +23,6 @@ defaultproperties
      DeathString="%k exorcised %o with R9 rounds."
      FemaleSuicide="%o exorcised herself."
      MaleSuicide="%o exorcised himself."
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000	 
 }

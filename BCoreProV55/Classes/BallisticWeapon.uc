@@ -1114,6 +1114,11 @@ simulated function StartScopeView()
 	}
 	SetScopeView(true);
 	
+	if ( PlayerController(InstigatorController).bBehindView )
+		bNoCrosshairInScope = False;
+	else
+		bNoCrosshairInScope = default.bNoCrosshairInScope;	
+		
 	//Take down normal crosshairs if the weapon has none in scope view
 	if (bNoCrosshairInScope)
 	{
@@ -1807,27 +1812,28 @@ simulated function MeleeHoldImpl()
 	}
 }
 
-function AddMeleeChargeSpeed()
+function AddSpeedModification(float value)
 {
-	local float NewSpeed;
-	
-	if (SprintControl != None && SprintControl.bSprinting)
+	if (value > 1f && SprintControl != None && SprintControl.bSprinting)
 		PlayerSprint(false);
-	PlayerSpeedFactor = FMin(PlayerSpeedFactor * 1.15, 1.15);
-	NewSpeed = Instigator.default.GroundSpeed * PlayerSpeedFactor;
-	if (ComboSpeed(xPawn(Instigator).CurrentCombo) != None)
-		NewSpeed *= 1.4;
-	if (Instigator.GroundSpeed != NewSpeed)
-		Instigator.GroundSpeed = NewSpeed;
+	PlayerSpeedFactor = FMin(PlayerSpeedFactor * value, value);
+
+	UpdateSpeed();
 }
 
-function RemoveMeleeChargeSpeed()
+function RemoveSpeedModification(float value)
+{
+	if (value > 1f && SprintControl != None && SprintControl.bSprinting)
+		PlayerSprint(true);
+	PlayerSpeedFactor = default.PlayerSpeedFactor;
+
+	UpdateSpeed();
+}
+
+function UpdateSpeed()
 {
 	local float NewSpeed;
 	
-	if (SprintControl != None && SprintControl.bSprinting)
-		PlayerSprint(true);
-	PlayerSpeedFactor = default.PlayerSpeedFactor;
 	NewSpeed = Instigator.default.GroundSpeed * PlayerSpeedFactor;
 	if (ComboSpeed(xPawn(Instigator).CurrentCombo) != None)
 		NewSpeed *= 1.4;
@@ -1844,7 +1850,7 @@ function ServerMeleeHold()
 	MeleeFireMode.HoldStartTime = Level.TimeSeconds;
 	MeleeFireMode.PlayPreFire();
 	GunLength = 1;
-	AddMeleeChargeSpeed();
+	AddSpeedModification(1.15);
 	bPreventReload = True;
 }
 
@@ -1887,7 +1893,7 @@ final function ServerMeleeRelease()
 		MeleeFireMode.PlayFiring();
 	else MeleeFireMode.ServerPlayFiring();
 	MeleeFireMode.DoFireEffect();
-	RemoveMeleeChargeSpeed();
+	RemoveSpeedModification(1.15);
 	GunLength = default.GunLength;
 	//Trace, damage code
 	//Fire delay
@@ -3608,7 +3614,7 @@ simulated function bool CheckScope()
 	if (AimDisplacementEndTime > Level.TimeSeconds)
 		return false;
 	
-	if ((ReloadState != RS_None && ReloadState != RS_Cocking) || (Instigator.Controller.bRun == 0 && Instigator.Physics == PHYS_Walking) || (Instigator.Physics == PHYS_Falling && VSize(Instigator.Velocity) > Instigator.GroundSpeed * 1.5) || (SprintControl != None && SprintControl.bSprinting)) //should stop recoil issues where player takes momentum and knocked out of scope, also helps dodge
+	if ((ReloadState != RS_None && ReloadState != RS_Cocking) || (Instigator.Controller.bRun == 0 && Instigator.Physics == PHYS_Walking) || (Instigator.Physics == PHYS_Falling && VSize(Instigator.Velocity) > Instigator.GroundSpeed * 2.5) || (SprintControl != None && SprintControl.bSprinting)) //should stop recoil issues where player takes momentum and knocked out of scope, also helps dodge
 	{
 		StopScopeView();
 		return false;
@@ -4075,15 +4081,25 @@ simulated function ClientJumped()
 
 simulated function AddRecoil (float Amount, optional byte Mode)
 {
+	local float AdjustedHipRecoilFactor;
+	
 	LastFireTime = Level.TimeSeconds;
+	
 	if (bAimDisabled || Amount == 0)
 		return;
+		
 	Amount *= BCRepClass.default.RecoilScale;
+	
 	if (Instigator.bIsCrouched && VSize(Instigator.Velocity) < 30)
 		Amount *= CrouchAimFactor;
+		
 	if (!bScopeView)
-
-	Amount *= HipRecoilFactor;
+	{
+			AdjustedHipRecoilFactor = default.HipRecoilFactor;
+		
+		Amount *= AdjustedHipRecoilFactor;
+	}
+	
 	Recoil = FMin(RecoilMax, Recoil + Amount);
 	if (!bUseNetAim || Role == ROLE_Authority)
 	{
@@ -4503,7 +4519,7 @@ simulated function DisplayDebug(Canvas Canvas, out float YL, out float YPos)
 	super.DisplayDebug(Canvas, YL, YPos);
 
     Canvas.SetDrawColor(255,128,0);
-    s = "Ballistic Weapon: ReloadeState: ";
+    s = "Ballistic Weapon: ReloadState: ";
 	Switch( ReloadState )
 	{
 	   	case RS_None: s=s$"None"; break;
@@ -4565,8 +4581,7 @@ static function String GetManual()
 	S $= class'GUIComponent'.static.MakeColorCode(default.HeaderColor)$"Additional Information"$class'GUIComponent'.static.MakeColorCode(default.TextColor)$"|";
 	S $= default.ManualLines[2];
 	return S;
-}
-
+}  
 defaultproperties
 {
 	 AimDisplacementDurationMult=0.000000

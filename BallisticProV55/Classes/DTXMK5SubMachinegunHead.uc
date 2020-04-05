@@ -45,7 +45,6 @@ defaultproperties
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     FlashScale=0.300000
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
      VehicleDamageScaling=0.000000

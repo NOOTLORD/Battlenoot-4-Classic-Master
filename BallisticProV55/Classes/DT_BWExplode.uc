@@ -25,7 +25,8 @@ defaultproperties
      bThrowRagdoll=True
      GibModifier=1.000000
      bDisplaceAim=False
-     bUseMotionBlur=False	 
+     bUseMotionBlur=False
+     FlashScale=0.000000	 
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'
      GibPerterbation=0.500000
      KDamageImpulse=20000.000000

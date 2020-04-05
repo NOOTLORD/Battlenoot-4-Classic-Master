@@ -127,6 +127,7 @@ function PlayFiring()
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
+    ClientPlayForceFeedback(FireForce);  // jdf											   
     FireCount++;
 	// End code from normal PlayFiring()
 

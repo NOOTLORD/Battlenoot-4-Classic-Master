@@ -26,21 +26,17 @@ function InitEffects()
 function SetSilenced(bool bSilenced)
 {
 	bAISilent = bSilenced;
-	if (bSilenced)
+	if (!bSilenced)
 	{
-     	RecoilPerShot *= 0.8;
-		Damage *= 0.85;
-		RangeAtten *= 1.15; //intentional to improve long range damage
-		XInaccuracy *= 0.5;
-		YInaccuracy *= 0.5;
+		XInaccuracy *= 2;
+		YInaccuracy *= 2;
+		CutOffStartRange *= 1.25;
 	}
 	else
 	{
-     	RecoilPerShot = default.RecoilPerShot;
-		Damage = default.Damage;
-		RangeAtten = default.RangeAtten;
 		XInaccuracy = default.XInaccuracy;
 		YInaccuracy = default.YInaccuracy;
+		CutOffStartRange = default.CutOffStartRange;
 	}
 }
 

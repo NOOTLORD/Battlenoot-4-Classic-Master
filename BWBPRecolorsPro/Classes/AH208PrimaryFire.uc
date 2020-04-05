@@ -28,9 +28,9 @@ function PlayFiring()
 
 defaultproperties
 {
-     CutOffDistance=6144.000000
-     CutOffStartRange=4096.000000
-     TraceRange=(Min=15000.000000,Max=15000.000000)
+     CutOffDistance=2560.000000
+     CutOffStartRange=1024.000000
+     TraceRange=(Min=6000.000000,Max=6000.000000)
      WaterRangeFactor=0.800000
      MaxWallSize=24.000000
      MaxWalls=1
@@ -54,8 +54,8 @@ defaultproperties
      RecoilPerShot=1024.000000
      VelocityRecoil=300.000000
      FireChaos=0.350000
-     XInaccuracy=1.000000
-     YInaccuracy=1.000000
+     XInaccuracy=32.000000
+     YInaccuracy=32.000000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-Fire',Volume=1.800000)
      FireEndAnim=
      FireRate=0.600000

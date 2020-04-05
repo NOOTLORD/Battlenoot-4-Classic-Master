@@ -16,8 +16,7 @@ defaultproperties
      DeathStrings(2)="%k's dart poison eventually overcame %o's fragile constitution."
      SimpleKillString="PD97 Poison"
      DamageIdent="Sidearm"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	 
      DamageDescription=",Poison,GearSafe,NonSniper,"
      WeaponClass=Class'BallisticProV55.PD97Bloodhound'

@@ -181,7 +181,7 @@ defaultproperties
      SpecialInfo(0)=(Info="60.0;5.0;0.4;-1.0;0.0;0.2;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000)
-     MagAmmo=24
+     MagAmmo=25
      CockSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Cock',Volume=0.850000)
      ClipOutSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Clipout',Volume=0.850000)
      ClipInSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Clipin',Volume=0.850000)

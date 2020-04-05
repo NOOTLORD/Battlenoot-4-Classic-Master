@@ -21,7 +21,6 @@ defaultproperties
      FemaleSuicide="%o nailed herself with the M50."
      MaleSuicide="%o nailed himself with the M50."
      bFastInstantHit=True
-     FlashScale=0.300000
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
      VehicleDamageScaling=0.000000

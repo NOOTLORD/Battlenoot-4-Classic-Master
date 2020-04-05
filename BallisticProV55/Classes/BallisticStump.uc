@@ -12,7 +12,7 @@ defaultproperties
 {
      DrawType=DT_StaticMesh
      StaticMesh=StaticMesh'BWGoreHardwarePro.Stumps.LimbStump'
-     AmbientGlow=16
+     AmbientGlow=5
      bUnlit=False
      bHardAttach=True
 }

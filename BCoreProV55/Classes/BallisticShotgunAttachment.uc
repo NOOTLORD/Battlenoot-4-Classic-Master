@@ -57,7 +57,7 @@ simulated function InstantFireEffects(byte Mode)
 		
 		Start = Instigator.Location + Instigator.EyePosition();
 		
-		for (i=0;i<FireClass.default.TraceCount;i++)
+		for (i=0; i < FireClass.default.TraceCount; i++)
 		{
 			mHitActor = None;
 			

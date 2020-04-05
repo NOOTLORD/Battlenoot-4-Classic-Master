@@ -42,7 +42,7 @@ function EjectBrass()
 
 defaultproperties
 {
-     CutOffDistance=1024.000000
+     CutOffDistance=1280.000000
      CutOffStartRange=512.000000
      WaterRangeFactor=0.400000
      MaxWallSize=24.000000
@@ -82,6 +82,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
 	 BotRefireRate=0.99
-     WarnTargetPct=0.2	 
+     WarnTargetPct=0.2
      aimerror=750.000000
 }

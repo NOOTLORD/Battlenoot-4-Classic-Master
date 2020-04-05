@@ -16,9 +16,8 @@ defaultproperties
      DeathStrings(2)="%o was implanted with %k's PD97 dart."
      SimpleKillString="PD97 Dart"
      DamageIdent="Sidearm"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	 
+     bDisplaceAim=False
+     bUseMotionBlur=False		 
      WeaponClass=Class'BallisticProV55.PD97Bloodhound'
      DeathString="%o was nailed by %k's PD97 stun dart."
      FemaleSuicide="%o became her own PD97 dartboard."

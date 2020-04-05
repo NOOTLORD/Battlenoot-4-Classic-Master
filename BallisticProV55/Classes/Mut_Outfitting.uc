@@ -560,7 +560,7 @@ function String SpawnStreakWeapon(string WeaponString, Pawn Other, byte GroupSlo
 		{
 			SpawnAmmo(KR.default.FireModeClass[0].default.AmmoClass, Other);
 			if (KR.default.FireModeClass[0].default.AmmoClass != KR.default.FireModeClass[1].default.AmmoClass)
-				SpawnAmmo(KR.default.FireModeClass[1].default.AmmoClass, Other);
+				SpawnAmmo(KR.default.FireModeClass[0].default.AmmoClass, Other);
 		}
 		
 		if (BallisticPawn(Other) != None)

@@ -143,7 +143,7 @@ defaultproperties
      SFlashScaleFactor=0.500000
 	 TraceRange=(Min=4000.000000,Max=4000.000000)
      CutOffDistance=2048.000000
-     CutOffStartRange=256.000000
+     CutOffStartRange=512.000000
      WaterRangeFactor=0.450000
      MaxWallSize=24.000000
      MaxWalls=1
@@ -158,7 +158,7 @@ defaultproperties
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=1.000000)	 
      KickForce=0
      PenetrateForce=0
-     bPenetrate=False	 
+     bPenetrate=False
      ClipFinishSound=(Volume=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashBone="Muzzle"

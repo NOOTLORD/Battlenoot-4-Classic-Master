@@ -191,6 +191,7 @@ defaultproperties
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
+	 CockAnimRate=1.25				   
      bNoCrosshairInScope=True
      SightPivot=(Pitch=256)
      SightOffset=(X=5.000000,Z=12.700000)

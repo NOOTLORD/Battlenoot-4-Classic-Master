@@ -25,7 +25,7 @@ defaultproperties
          ColorMultiplierRange=(X=(Min=0.400000,Max=0.700000),Y=(Min=0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
          Opacity=0.760000
          FadeOutStartTime=0.190000
-         MaxParticles=1
+         MaxParticles=3
          SpinsPerSecondRange=(X=(Max=0.100000))
          StartSpinRange=(X=(Max=1.000000))
          SizeScale(0)=(RelativeSize=0.200000)

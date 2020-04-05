@@ -21,7 +21,6 @@ defaultproperties
      DeathString="%o was stuffed like a turkey by %k's MD24."
      FemaleSuicide="%o blasted herself with an MD24."
      MaleSuicide="%o blasted himself with an MD24."
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000
 }

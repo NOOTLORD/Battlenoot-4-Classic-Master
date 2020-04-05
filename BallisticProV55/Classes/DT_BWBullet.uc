@@ -44,13 +44,11 @@ defaultproperties
      bSeverPreventsBlood=True
 	 bDisplaceAim=False
      bUseMotionBlur=False
+	 FlashScale=0.000000
      bInstantHit=True
      bRagdollBullet=True
      bBulletHit=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'
-     FlashScale=0.000000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000
-
-
 }

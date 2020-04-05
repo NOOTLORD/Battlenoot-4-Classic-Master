@@ -51,9 +51,10 @@ defaultproperties
      RecoilPerShot=256.000000
      FireChaos=0.150000
      BallisticFireSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_FireDart',Volume=1.750000)
+     PreFireAnim=				 
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"
-     FireRate=0.400000	 
+     FireRate=0.400000
      AmmoClass=Class'BallisticProV55.Ammo_PD97_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)

@@ -189,10 +189,10 @@ defaultproperties
      RandomDir=(Pitch=2048,Yaw=2048)
      StartVelocity=(Y=20.000000,Z=100.000000)
      LifeTimeScale=1.000000
-     bAddOwnerVelocity=False
+     bAddOwnerVelocity=True
      bHitSounds=True
      HitSoundVolume=0.400000
-     HitSoundRadius=32.000000
+     HitSoundRadius=64.000000
      DrawType=DT_StaticMesh
      Physics=PHYS_Falling
      LifeSpan=16.000000

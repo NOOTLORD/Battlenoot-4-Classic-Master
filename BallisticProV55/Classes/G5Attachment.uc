@@ -138,6 +138,8 @@ defaultproperties
      BrassMode=MU_None
      InstantMode=MU_None
      TrackAnimMode=MU_None	 
+	 ReloadAnim="Reload_MG"
+	 ReloadAnimRate=1.500000						 
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.Bazooka-3rd'
      DrawScale=0.230000

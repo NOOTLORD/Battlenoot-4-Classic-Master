@@ -150,8 +150,8 @@ defaultproperties
      Speed=500.000000
      MaxSpeed=6500.000000
      LifeSpan=0.000000
-     AmbientGlow=0
-     bUnlit=True
+     AmbientGlow=60
+     bUnlit=False
      CollisionRadius=4.000000
      CollisionHeight=4.000000
 }

@@ -40,7 +40,7 @@ struct WeaponInfo
 	var() config IntBox		SmallIconCoords;
 	var() config int			InventoryGroup;
 	var() config Material	BigIconMaterial;
-	var()	config byte		InventorySize;
+	var() config byte		InventorySize;
 	var() config bool			bIsBW;
 };
 
@@ -169,17 +169,12 @@ defaultproperties
      Weapons(15)=(ClassName="BWBPRecolorsPro.F2000AssaultRifle",ItemName="F2000 Assault Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_F2000',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=4,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_F2000',InventorySize=7,bIsBW=True)
      Weapons(16)=(ClassName="BallisticProV55.SRS600Rifle",ItemName="SRS-600 Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SRS600',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=4,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SRS600',InventorySize=7,bIsBW=True)
 	 Weapons(17)=(ClassName="BallisticProV55.SARAssaultRifle",ItemName="Sub-Assault Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SAR',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=4,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SAR',InventorySize=7,bIsBW=True)
-     Weapons(18)=(ClassName="BallisticProV55.M353Machinegun",ItemName="M353 Machinegun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_M353',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=6,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M353',bIsBW=True)	 
-     Weapons(19)=(ClassName="BallisticProV55.M925Machinegun",ItemName="M925 Machinegun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_M925',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=6,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M925',bIsBW=True) 
-     Weapons(20)=(ClassName="BallisticProV55.M763Shotgun",ItemName="M763 Shotgun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_M763',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=7,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M763',bIsBW=True)
-     Weapons(21)=(ClassName="BallisticProV55.MRS138Shotgun",ItemName="MRS138 Shotgun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_MRS138',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=7,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MRS138',bIsBW=True)
-     Weapons(22)=(ClassName="BWBPRecolorsPro.SK410Shotgun",ItemName="SK-410 Shotgun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SK410',SmallIconCoords=(X2=127,Y2=35),InventoryGroup=7,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SK410',InventorySize=7,bIsBW=True)
-     Weapons(23)=(ClassName="BWBPRecolorsPro.SKASShotgun",ItemName="SKAS-21 Shotgun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SKAS',SmallIconCoords=(X2=127,Y2=30),InventoryGroup=7,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SKAS',InventorySize=7,bIsBW=True)
-     Weapons(24)=(ClassName="BallisticProV55.R78Rifle",ItemName="R78A1 Sniper Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_R78',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=9,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R78',bIsBW=True)
-     Weapons(25)=(ClassName="BallisticProV55.R9RangerRifle",ItemName="R9 Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_R9',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=9,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R9',InventorySize=7,bIsBW=True)
-     Weapons(26)=(ClassName="BallisticProV55.MarlinRifle",ItemName="Redwood 6000 Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_Marlin',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=9,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_Marlin',InventorySize=7,bIsBW=True)
-     Weapons(27)=(ClassName="BWBPRecolorsPro.X82Rifle",ItemName="X82 Sniper Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_X82',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=9,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_X82',InventorySize=7,bIsBW=True)
-     Weapons(28)=(ClassName="BWBPRecolorsPro.MGLauncher",ItemName="MGL Grenade Launcher",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_MGL',SmallIconCoords=(X2=127,Y2=35),InventoryGroup=8,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MGL',InventorySize=7,bIsBW=True)
-     Weapons(29)=(ClassName="BallisticProV55.G5Bazooka",ItemName="G5 Bazooka",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=8,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_G5',bIsBW=True)
-     Weapons(30)=(ClassName="BallisticProV55.NRP57Grenade",ItemName="NRP57 Grenade",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_NRP57',SmallIconCoords=(X2=127,Y2=31),BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_NRP57',bIsBW=True)
+     Weapons(18)=(ClassName="BallisticProV55.M763Shotgun",ItemName="M763 Shotgun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_M763',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=7,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M763',bIsBW=True)
+     Weapons(19)=(ClassName="BallisticProV55.MRS138Shotgun",ItemName="MRS138 Shotgun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_MRS138',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=7,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MRS138',bIsBW=True)
+     Weapons(20)=(ClassName="BWBPRecolorsPro.SK410Shotgun",ItemName="SK-410 Shotgun",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SK410',SmallIconCoords=(X2=127,Y2=35),InventoryGroup=7,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SK410',InventorySize=7,bIsBW=True)
+     Weapons(21)=(ClassName="BallisticProV55.R78Rifle",ItemName="R78A1 Sniper Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_R78',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=9,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R78',bIsBW=True)
+     Weapons(22)=(ClassName="BallisticProV55.R9RangerRifle",ItemName="R9 Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_R9',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=9,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R9',InventorySize=7,bIsBW=True)
+     Weapons(23)=(ClassName="BallisticProV55.MarlinRifle",ItemName="Redwood 6000 Rifle",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_Marlin',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=9,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_Marlin',InventorySize=7,bIsBW=True)
+     Weapons(24)=(ClassName="BallisticProV55.G5Bazooka",ItemName="G5 Bazooka",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5',SmallIconCoords=(X2=127,Y2=31),InventoryGroup=8,BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_G5',bIsBW=True)
+     Weapons(25)=(ClassName="BallisticProV55.NRP57Grenade",ItemName="NRP57 Grenade",SmallIconMaterial=Texture'BallisticUI.Icons.SmallIcon_NRP57',SmallIconCoords=(X2=127,Y2=31),BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_NRP57',bIsBW=True)
 }

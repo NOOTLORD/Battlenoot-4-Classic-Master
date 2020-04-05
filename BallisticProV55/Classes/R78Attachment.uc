@@ -48,7 +48,7 @@ defaultproperties
      FlyByMode=MU_Primary	 
      ReloadAnim="Reload_AR"
      CockingAnim="Cock_RearPull"
-     CockAnimRate=1.200000
+     CockAnimRate=1.100000
      Mesh=SkeletalMesh'BallisticAnims2.Rifle-3rd'
      DrawScale=0.200000
 }

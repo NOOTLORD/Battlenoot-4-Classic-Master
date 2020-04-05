@@ -63,7 +63,8 @@ defaultproperties
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
      FlyByMode=MU_Both 
      ReloadAnim="Reload_AR"
-     ReloadAnimRate=0.800000
+     ReloadAnimRate=0.900000
+	 CockingAnim="Cock_RearPull"							 
      bRapidFire=True
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticRecolorsAnims.F2000_TP'

@@ -34,7 +34,7 @@ defaultproperties
      DeathStrings(2)="%o swallowed %k's AH208 Eagle round whole."
      DeathStrings(3)="%k gave a new meaning of 'Eagle Eye' to %o."
      bHeaddie=True
-     DamageIdent="Killstreak"
+     DamageIdent="Pistol"
      AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
      bUseMotionBlur=False	

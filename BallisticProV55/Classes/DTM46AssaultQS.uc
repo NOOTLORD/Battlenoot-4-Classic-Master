@@ -23,7 +23,6 @@ defaultproperties
      FemaleSuicide="%o's Jackal tore her to shreds."
      MaleSuicide="%o's Jackal tore him to shreds."
      bFastInstantHit=True
-     FlashScale=0.300000
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
      VehicleDamageScaling=0.000000

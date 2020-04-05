@@ -81,13 +81,14 @@ simulated function DestroyEffects()
 defaultproperties
 {
      HipSpreadFactor=6.000000
-     CutOffDistance=3072.000000
-     CutOffStartRange=1536.000000
+	 MaxSpreadFactor=2.000000
+     CutOffDistance=1536.000000
+     CutOffStartRange=378.000000
      TraceCount=7
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerChance=1.000000
      ImpactManager=Class'BallisticProV55.IM_Shell'
-     TraceRange=(Min=7500.000000,Max=7500.000000)
+     TraceRange=(Min=4000.000000,Max=6000.000000)
      MaxWallSize=24.000000	 
      MaxWalls=1
      Damage=15.000000
@@ -107,13 +108,13 @@ defaultproperties
      BrassOffset=(X=-32.000000,Y=1.000000,Z=1.000000)
      AimedFireAnim="FireCombinedSight"
      RecoilPerShot=1024.000000
-     FireChaos=0.050000
+     FireChaos=0.650000
      XInaccuracy=150.000000
      YInaccuracy=150.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.M763.M763Fire1',Volume=1.900000)
      FireAnim="FireCombined"
      FireEndAnim=
-     FireAnimRate=1.100000
+     FireAnimRate=1.000000
      FireRate=0.750000
      AmmoClass=Class'BallisticProV55.Ammo_M763_Shotgun'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -122,7 +123,7 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-     BotRefireRate=0.900000
-     WarnTargetPct=0.100000
+     BotRefireRate=0.700000
+     WarnTargetPct=0.500000
      aimerror=750.000000
 }

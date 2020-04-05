@@ -195,7 +195,7 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.375000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.375000)
 	 PutDownAnimRate=1.5
-	 PutDownTime=0.35					 				  
+	 PutDownTime=0.35
      MagAmmo=7
      CockAnimRate=1.700000
      CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock1',Volume=0.400000)
@@ -220,7 +220,7 @@ defaultproperties
      SightPivot=(Pitch=32)
      SightOffset=(X=5.000000,Z=11.500000)
      SightDisplayFOV=40.000000
-     SightingTime=0.300000
+     SightingTime=0.350000
      GunLength=48.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimAdjustTime=100.000000
@@ -253,7 +253,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.M763Attachment'
      IconMaterial=Texture'BallisticUI.Icons.BigIcon_M763'
      IconCoords=(X2=127,Y2=31)
-     ItemName="M763 Shotgun"
+     ItemName="M763 Shotgun"						  
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=25

@@ -17,14 +17,15 @@ static function DoBloodEffects( vector HitLocation, float Damage, vector Momentu
 defaultproperties
 {
      BloodManagerName="BallisticProV55.BloodMan_Blunt"
-     FlashThreshold=50
-     bCanBeBlocked=True
+     FlashThreshold=0
+     bCanBeBlocked=False
      DamageDescription=",Blunt,"
      bInstantHit=True
      bNeverSevers=True
 	 bDisplaceAim=False
-     bUseMotionBlur=False	
+     bUseMotionBlur=False
+     FlashScale=0.000000	 
      PawnDamageSounds(0)=Sound'BallisticSounds2.M763.M763SmashFlesh'
      VehicleDamageScaling=0.000000
-     VehicleMomentumScaling=0.100000
+     VehicleMomentumScaling=0.000000
 }

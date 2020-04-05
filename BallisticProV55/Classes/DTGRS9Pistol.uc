@@ -21,7 +21,6 @@ defaultproperties
      DeathString="%k prosecuted %o with %kh GRS-9."
      FemaleSuicide="%o prosecuted herself with the GRS-9."
      MaleSuicide="%o prosecuted himself with the GRS-9."
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000
 }

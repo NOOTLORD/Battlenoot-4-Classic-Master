@@ -14,7 +14,7 @@ defaultproperties
      DeathStrings(1)="%k's AH208 blasted out %o's spine."
      DeathStrings(2)="%o got on the wrong side of %k's AH208."
      DeathStrings(3)="%o got in the way of %k's rampaging AH208."
-     DamageIdent="Killstreak"
+     DamageIdent="Pistol"
      AimDisplacementDamageThreshold=0.000000
      AimDisplacementDuration=0.000000
      bUseMotionBlur=False	

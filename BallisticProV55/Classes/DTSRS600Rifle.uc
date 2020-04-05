@@ -25,7 +25,6 @@ defaultproperties
      FemaleSuicide="%o nailed herself with the SRS-600."
      MaleSuicide="%o nailed himself with the SRS-600."
      bFastInstantHit=True
-     FlashScale=0.300000
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
      VehicleDamageScaling=0.000000

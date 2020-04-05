@@ -208,6 +208,19 @@ simulated function BringUp(optional Weapon PrevWeapon)
 	SetBoneRotation('Hammer', rot(0,0,0));
 	Super.BringUp(PrevWeapon);
 }
+simulated function bool PutDown()
+{
+	if (super.PutDown())
+	{
+		if (Instigator.IsLocallyControlled())
+		{
+			bRevCocked=false;
+			SetBoneRotation('Hammer', rot(0,0,0));
+		}
+		return true;
+	}
+	return false;
+}				
 
 simulated state Raising
 {
@@ -265,6 +278,12 @@ simulated function CommonCockGun(optional byte Type)
 		SafePlayAnim('Cock', 1.0, 0.2);
 }
 												   
+// Change some properties when using sights...
+simulated function SetScopeBehavior()
+{
+	super.SetScopeBehavior();
+	bUseNetAim = default.bUseNetAim || bScopeView;
+}
 simulated function ApplyAimRotation()
 {
 	ApplyAimToView();

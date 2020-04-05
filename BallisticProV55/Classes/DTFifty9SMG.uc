@@ -24,7 +24,6 @@ defaultproperties
      FemaleSuicide="%o Fifty-9ed herself."
      MaleSuicide="%o Fifty-9ed himself."
      bFastInstantHit=True
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000
 }

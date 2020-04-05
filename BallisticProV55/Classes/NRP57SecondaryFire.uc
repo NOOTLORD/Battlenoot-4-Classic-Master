@@ -12,5 +12,6 @@ defaultproperties
      SpawnOffset=(Z=-14.000000)
      PreFireAnim="PrepRoll"
      FireAnim="Roll"
+     AmmoClass=Class'BallisticProV55.Ammo_NRP57_Grenade'	 
      ProjectileClass=Class'BallisticProV55.NRP57Rolled'
 }

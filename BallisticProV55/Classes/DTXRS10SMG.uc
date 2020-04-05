@@ -23,7 +23,6 @@ defaultproperties
      FemaleSuicide="%o silenced herself."
      MaleSuicide="%o silenced himself."
      bFastInstantHit=True
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000
 }

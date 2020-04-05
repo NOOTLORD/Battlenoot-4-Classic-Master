@@ -831,7 +831,7 @@ defaultproperties
      Description="Based on the original design by the legendary maniac Pirate, Var Dehidra, the G5 has undergone many alterations to become what it is today. The original bandit version was constructed by Var Dehidra to blast open armored cash transportation vehicles. Its name is derived from one of Dehidra's favourite targets, the G5 CTV 4x. It is now a very deadly weapon, used to destroy everything from tanks and structures to Skrith hordes and aircraft. The bombardement attack is a recent addition, replacing the original, primitive heat seeking function that caused it to target CTVs or backfire on the pirates' own craft, provided mainly for use in outdoor environments to destroy all manner of moving targets. The latest model also features a laser-painter device, allowing the user to guide the rocket wherever they wish."
      Priority=44
      CenteredOffsetY=10.000000
-     CenteredRoll=0	 
+     CenteredRoll=0
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"

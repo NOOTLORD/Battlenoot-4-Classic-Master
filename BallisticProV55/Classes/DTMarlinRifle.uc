@@ -25,7 +25,6 @@ defaultproperties
      DeathString="%o was hounded by %k's Marlin Rifle."
      FemaleSuicide="%o hunted herself to extinction."
      MaleSuicide="%o hunted himself to extinction."
-     FlashScale=0.300000
      VehicleDamageScaling=0.000000
      InvasionDamageScaling=1.000000
 }
