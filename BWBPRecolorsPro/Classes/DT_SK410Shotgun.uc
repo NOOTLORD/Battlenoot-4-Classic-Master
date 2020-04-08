@@ -15,10 +15,8 @@ defaultproperties
      DeathStrings(2)="%k's SK-410 blasted %o out of the Eastern Bloc."
      DeathStrings(3)="%k gave %o an iron curtain of explosive shotgun shells."
      DeathStrings(4)="%k redistributed %kh wealth of HE shotshells to %o."
-     bIgniteFires=True
      DamageIdent="Shotgun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	
      DamageDescription=",Bullet,Flame,"
      WeaponClass=Class'BWBPRecolorsPro.SK410Shotgun'

@@ -35,12 +35,10 @@ defaultproperties
      DeathStrings(3)="%o was shown the true meaning of No Excuses by %k's SK-410."
      DeathStrings(4)="%o's frostbitten face was warmed by %k's SK-410."
      EffectChance=0.500000
-     bIgniteFires=True
      bHeaddie=True
      DamageIdent="Shotgun"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
+     bDisplaceAim=False
+     bUseMotionBlur=False
      DamageDescription=",Bullet,Flame,"
      WeaponClass=Class'BWBPRecolorsPro.SK410Shotgun'
      DeathString="With the aid of %k SK-410, %o's head revolted successfully from %vh body."

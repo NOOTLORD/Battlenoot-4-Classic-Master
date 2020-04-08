@@ -16,8 +16,7 @@ defaultproperties
      DeathStrings(3)="%o was silently downed by %k's LK05."
      SimpleKillString="LK-05 Advanced Carbine Suppressed"
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.LK05Carbine'
      DeathString="%k quietly eliminated %o with the LK05."

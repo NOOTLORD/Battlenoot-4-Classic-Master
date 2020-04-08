@@ -32,5 +32,5 @@ defaultproperties
      ReloadAnimRate=1.250000
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims1.OA-SMG_3rd'
-     DrawScale=0.265000
+     DrawScale=0.275000
 }

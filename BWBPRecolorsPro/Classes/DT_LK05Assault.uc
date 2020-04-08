@@ -15,9 +15,8 @@ defaultproperties
      DeathStrings(2)="%k engaged and eliminated %o with an LK05."
      DeathStrings(3)="%k removed %o from the battlefield via LK05."
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
+     bDisplaceAim=False
+     bUseMotionBlur=False
      WeaponClass=Class'BWBPRecolorsPro.LK05Carbine'
      DeathString="%k's LK05 confirmed a kill on %o."
      FemaleSuicide="%o took the easy way out with an LK05."

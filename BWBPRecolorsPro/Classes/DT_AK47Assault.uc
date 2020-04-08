@@ -16,9 +16,8 @@ defaultproperties
      DeathStrings(3)="%o was executed under the order of Czar %k and %kh AK."
      DeathStrings(4)="%o was liberated by Comrade %k's AK-490."
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
+     bDisplaceAim=False
+     bUseMotionBlur=False
      WeaponClass=Class'BWBPRecolorsPro.AK47AssaultRifle'
      DeathString="%o was destroyed by the Russian might of %k."
      FemaleSuicide="%o shot herself with an Awesome Kelly-490."

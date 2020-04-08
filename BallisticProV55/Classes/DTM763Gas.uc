@@ -22,17 +22,11 @@ defaultproperties
      MaleSuicides(2)="%o was overcome by his own fumes."
      MaleSuicides(3)="%o soiled himself to death."
      SimpleKillString="M763 Gas Shell"
-     FlashThreshold=0
-     FlashV=(Y=2000.000000)
-     FlashF=0.300000
-     bDetonatesBombs=False
      bIgnoredOnLifts=True
      DamageIdent="Grenade"
      DamageDescription=",Gas,GearSafe,Hazard,"
-     MinMotionBlurDamage=1.000000
-     MotionBlurDamageRange=20.000000
-     MotionBlurFactor=6.000000
-     bUseMotionBlur=True
+     bDisplaceAim=False
+     bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.M763Shotgun'
      DeathString="%o choked to death in a cloud of %k's toxic gas."
      FemaleSuicide="%o gassed herself."

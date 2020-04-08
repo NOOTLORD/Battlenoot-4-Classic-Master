@@ -34,9 +34,8 @@ defaultproperties
      DeathStrings(2)="%k blew the Borscht out of %o's head with an AK490."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
+     bDisplaceAim=False
+     bUseMotionBlur=False
      WeaponClass=Class'BWBPRecolorsPro.AK47AssaultRifle'
      DeathString="%o's face was rearranged by Comrade %k's AK490."
      FemaleSuicide="%o shot heads with bullets."

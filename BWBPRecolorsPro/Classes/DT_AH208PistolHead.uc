@@ -35,8 +35,7 @@ defaultproperties
      DeathStrings(3)="%k gave a new meaning of 'Eagle Eye' to %o."
      bHeaddie=True
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.AH208Pistol'
      DeathString="%k blasted away at %o's skull with %kh AH208."

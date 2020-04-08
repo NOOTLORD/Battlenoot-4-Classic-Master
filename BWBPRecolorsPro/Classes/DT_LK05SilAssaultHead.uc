@@ -35,8 +35,7 @@ defaultproperties
      SimpleKillString="LK-05 Advanced Carbine Suppressed"
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.LK05Carbine'
      DeathString="%o's head was picked off by %k's silent LK05."

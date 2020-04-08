@@ -1,12 +1,12 @@
 //=============================================================================
-// Damage type class for Sub Assault Rifle headshots
+// DT_MP40Head.
+//
+// DamageType for MP40 headshots
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2007 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //=============================================================================
-class DTSARRifleHead extends DT_BWBullet;
+class DT_FMPMachinePistolHead extends DT_BWBullet;
 
 // HeadShot stuff from old sniper damage ------------------
 static function IncrementKills(Controller Killer)
@@ -29,24 +29,23 @@ static function IncrementKills(Controller Killer)
 
 defaultproperties
 {
-     DeathStrings(0)="%o's head was hallowed by %k's compact carbine."
-     DeathStrings(1)="%k trounced %o's head with %kh sub-assault rifle."
-     DeathStrings(2)="%k's S-AR 12 rounds snaked their way into %o's skull."
-     DeathStrings(3)="%o got %vh head routed by %k's S-AR 12."
-     DeathStrings(4)="%o's head was taken out by %k's sub-assault rifle."
-     EffectChance=0.500000
+     DeathStrings(0)="%o was lobotomized by %k's FMP bullets."
+     DeathStrings(1)="%k's FMP-2012 bullets invaded %o's head."
+     DeathStrings(2)="%k's FMP-2012 reduced %o's head to sauerkraut."
      bHeaddie=True
-     DamageIdent="Assault"
+     DamageIdent="SMG"
      bDisplaceAim=False
      bUseMotionBlur=False
-     WeaponClass=Class'BallisticProV55.SARAssaultRifle'
-     DeathString="%o's head was hallowed by %k's SAR12."
-     FemaleSuicide="%o routed herself."
-     MaleSuicide="%o routed himself."
+     WeaponClass=Class'BWBPRecolorsPro.FMPMachinePistol'
+     DeathString="%o was lobotomized by %k's FMP bullets."
+     FemaleSuicide="%o shot herself in the face."
+     MaleSuicide="%o shot himself in the face."
      bFastInstantHit=True
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
-     VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
+     GibPerterbation=0.200000
+     KDamageImpulse=1000.000000
+	 VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000
 }

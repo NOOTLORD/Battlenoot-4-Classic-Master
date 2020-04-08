@@ -34,8 +34,7 @@ defaultproperties
      DeathStrings(2)="%k tactically disabled %o with a MARS-3 bullet to the head."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.F2000AssaultRifle'
      DeathString="%o's brain shut down under %k's MARS-3 fire."

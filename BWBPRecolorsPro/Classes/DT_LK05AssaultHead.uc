@@ -34,9 +34,8 @@ defaultproperties
      DeathStrings(2)="%k's LK05 turned %o's head into a pink mist."
      bHeaddie=True
      DamageIdent="Assault"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
+     bDisplaceAim=False
+     bUseMotionBlur=False
      WeaponClass=Class'BWBPRecolorsPro.LK05Carbine'
      DeathString="%o had %vh brain shredded by %k's MJ51."
      FemaleSuicide="%o took the easy way out."

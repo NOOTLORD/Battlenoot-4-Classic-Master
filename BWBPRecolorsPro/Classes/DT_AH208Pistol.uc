@@ -15,9 +15,8 @@ defaultproperties
      DeathStrings(2)="%o got on the wrong side of %k's AH208."
      DeathStrings(3)="%o got in the way of %k's rampaging AH208."
      DamageIdent="Pistol"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
-     bUseMotionBlur=False	
+     bDisplaceAim=False
+     bUseMotionBlur=False
      WeaponClass=Class'BWBPRecolorsPro.AH208Pistol'
      DeathString="%k took %o out with his .44 handcannon."
      FemaleSuicide="%o pointed her AH208 backwards."

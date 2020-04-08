@@ -15,8 +15,7 @@ defaultproperties
      DeathStrings(2)="%k savagely lit %o up with MARS-3 fire."
      DeathStrings(3)="%k terminated %o with an accurate MARS burst."
      DamageIdent="Assault"	
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
+     bDisplaceAim=False
      bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.F2000AssaultRifle'
      DeathString="%k's MARS-3 riddled %o with bulletholes."
