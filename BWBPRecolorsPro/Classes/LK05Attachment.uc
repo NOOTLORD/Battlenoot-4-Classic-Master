@@ -20,6 +20,12 @@ replication
 		bSilenced;
 }
 
+simulated event PostBeginPlay()
+{
+	super.PostBeginPlay();
+	SetBoneScale (0, 0.0, 'SantasFrozenSphinctre');
+}
+
 simulated event PostNetReceive()
 {
 	if (bSilenced != bOldSilenced)
@@ -42,12 +48,6 @@ function IAOverride(bool bSilenced)
 		SetBoneScale (0, 0.0, 'SantasFrozenSphinctre');
 }
 
-simulated event PostBeginPlay()
-{
-	super.PostBeginPlay();
-	SetBoneScale (0, 0.0, 'SantasFrozenSphinctre');
-}
-
 function InitFor(Inventory I)
 {
 	Super.InitFor(I);
@@ -63,7 +63,7 @@ defaultproperties
      AltMuzzleFlashClass=Class'BWBPRecolorsPro.LK05SilencedFlash'
      FlashMode=MU_Both 
      AltFlashBone="tip2"
-     FlashScale=0.300000
+     FlashScale=1.750000
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Rifle'
@@ -79,8 +79,8 @@ defaultproperties
      FlyByMode=MU_Both	 
      ReloadAnim="Reload_AR"
      ReloadAnimRate=1.200000
-     Mesh=SkeletalMesh'BallisticRecolorsAnims.TP_LK05'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.LK05_TP'
      RelativeRotation=(Pitch=32768)
      PrePivot=(X=1.000000,Z=-3.000000)
-     DrawScale=0.325000	 
+     DrawScale=0.080000	 
 }

@@ -185,8 +185,5 @@ defaultproperties
      LightRadius=4.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.AK490_FP'
      DrawScale=0.350000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolorsTex.AK490.AK490-Main'
-     Skins(2)=Texture'BallisticRecolorsTex.AK490.AK490-Misc'
      AmbientGlow=5
 }

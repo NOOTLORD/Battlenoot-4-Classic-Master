@@ -205,9 +205,5 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Conqueror_FP'
      DrawScale=0.130000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolorsTex.MGL.MGL-Main'
-     Skins(2)=Texture'BallisticRecolorsTex.MGL.MGL-ScreenBase'
-     Skins(3)=Shader'BallisticRecolorsTex.MGL.MGL-HolosightGlow'
      AmbientGlow=5
 }

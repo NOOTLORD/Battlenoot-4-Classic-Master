@@ -134,9 +134,6 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 defaultproperties
 {
      RDSBone="RedDotSight"
-     MuzzBone="Compensator"
-     LAMBone="LAM"
-     ScopeBone="Scope"
      BulletBone="Bullet"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
@@ -201,13 +198,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticRecolorsAnims.DEagle_FP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.Eagle_FP'
      DrawScale=0.800000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
-     Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc'
-     Skins(3)=Texture'BallisticRecolorsTex.Eagle.Eagle-ScopeGold'
-     Skins(4)=Texture'BallisticRecolorsTex.Eagle.Eagle-FrontSilver'
-     Skins(5)=Shader'BallisticRecolorsTex.Eagle.Eagle-SightDotGreen'
      AmbientGlow=5
 }

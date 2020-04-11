@@ -200,9 +200,5 @@ defaultproperties
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_FP'
      DrawScale=0.350000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticRecolorsTex.SK410.SK410-C-CamoSnow'
-     Skins(2)=Texture'BallisticRecolorsTex.SK410.SK410-Misc'
-     Skins(3)=Shader'BallisticRecolorsTex.SK410.SK410-LightsOn'
      AmbientGlow=5
 }

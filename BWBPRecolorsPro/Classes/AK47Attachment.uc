@@ -29,7 +29,7 @@ defaultproperties
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.800000
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticRecolorsAnims.TP_AK490'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.AK490_TP'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.265000
 }

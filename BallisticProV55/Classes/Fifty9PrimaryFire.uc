@@ -65,7 +65,7 @@ defaultproperties
      FlashBone="Muzzle"
      FlashScaleFactor=0.225000
      BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
-     BrassOffset=(X=-26.000000,Y=1.500000,Z=-1.750000)
+     BrassOffset=(X=-25.000000,Y=1.500000,Z=-1.750000)
      AimedFireAnim="SightFire"
      RecoilPerShot=140.000000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))

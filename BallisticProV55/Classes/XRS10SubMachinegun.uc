@@ -222,7 +222,6 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-     GroupOffset=3
      PlayerViewOffset=(X=5.000000,Y=11.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.XRS10Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XRS10'
@@ -236,9 +235,5 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims1.XRS10'
      DrawScale=0.200000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticWeapons1.XRS10.XRS10Skin'
-     Skins(2)=Texture'BallisticWeapons1.XRS10.XRS10Laser'
-     Skins(3)=Texture'BallisticWeapons1.XRS10.XRS10Silencer'
      AmbientGlow=5
 }

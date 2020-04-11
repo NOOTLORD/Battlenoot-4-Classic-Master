@@ -151,10 +151,6 @@ defaultproperties
      LightBrightness=150.000000
      LightRadius=5.000000
      Mesh=SkeletalMesh'BallisticAnims1.MRS138Shotgun'
-     DrawScale=0.400000	 
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticWeapons1.MRS138.MRS138Skin'
-     Skins(2)=Texture'BallisticWeapons1.MRS138.MRS138HeatShield'
-     Skins(3)=Texture'BallisticEffects.Brass.MRS138Shell'	 
+     DrawScale=0.400000	 	 
      AmbientGlow=5
 }

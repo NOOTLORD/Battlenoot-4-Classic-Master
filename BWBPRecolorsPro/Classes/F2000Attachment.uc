@@ -11,6 +11,12 @@ class F2000Attachment extends BallisticAttachment;
 var	  BallisticWeapon		myWeap;
 var Vector		SpawnOffset;
 
+simulated event PostBeginPlay()
+{
+	super.PostBeginPlay();
+	SetBoneScale (0, 0.0, 'SilencerBone');
+}
+
 simulated function Vector GetTipLocation()
 {
     local Vector X, Y, Z, Loc;
