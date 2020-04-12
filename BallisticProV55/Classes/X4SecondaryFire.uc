@@ -24,9 +24,9 @@ defaultproperties
      FatiguePerStrike=0.200000
      TraceRange=(Min=100.000000,Max=100.000000)
      Damage=90.000000
-     DamageType=Class'BallisticProV55.DTX4Knife'
-     DamageTypeHead=Class'BallisticProV55.DTX4KnifeHead'
-     DamageTypeArm=Class'BallisticProV55.DTX4Knife'
+     DamageType=Class'BallisticProV55.DT_X4Knife'
+     DamageTypeHead=Class'BallisticProV55.DT_X4KnifeHead'
+     DamageTypeArm=Class'BallisticProV55.DT_X4Knife'
      KickForce=0
      PenetrateForce=0
      bPenetrate=False

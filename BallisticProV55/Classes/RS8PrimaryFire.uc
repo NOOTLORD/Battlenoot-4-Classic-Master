@@ -152,9 +152,9 @@ defaultproperties
      DamageLimb=27.000000
      RangeAtten=0.250000
      WaterRangeAtten=0.400000
-     DamageType=Class'BallisticProV55.DTRS8Pistol'
-     DamageTypeHead=Class'BallisticProV55.DTRS8PistolHead'
-     DamageTypeArm=Class'BallisticProV55.DTRS8Pistol'
+     DamageType=Class'BallisticProV55.DT_RS8Pistol'
+     DamageTypeHead=Class'BallisticProV55.DT_RS8PistolHead'
+     DamageTypeArm=Class'BallisticProV55.DT_RS8Pistol'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=1.000000)	 
      KickForce=0
      PenetrateForce=0

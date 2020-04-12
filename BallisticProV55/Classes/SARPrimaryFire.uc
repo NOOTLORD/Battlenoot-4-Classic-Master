@@ -77,9 +77,9 @@ defaultproperties
      DamageLimb=25.000000
      RangeAtten=0.350000
      WaterRangeAtten=0.800000
-     DamageType=Class'BallisticProV55.DTSARRifle'
-     DamageTypeHead=Class'BallisticProV55.DTSARRifleHead'
-     DamageTypeArm=Class'BallisticProV55.DTSARRifle'
+     DamageType=Class'BallisticProV55.DT_SARRifle'
+     DamageTypeHead=Class'BallisticProV55.DT_SARRifleHead'
+     DamageTypeArm=Class'BallisticProV55.DT_SARRifle'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.100000)	  
      KickForce=0
      PenetrateForce=0

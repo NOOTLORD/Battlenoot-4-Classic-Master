@@ -159,6 +159,6 @@ defaultproperties
      FlyByMode=MU_Primary
 	 ReloadAnim="Reload_Pistol"
      ReloadAnimRate=0.350000
-     Mesh=SkeletalMesh'BallisticAnims2.D49-3rd'
+     Mesh=SkeletalMesh'BallisticAnims2.D49_TP'
      DrawScale=0.125000
 }

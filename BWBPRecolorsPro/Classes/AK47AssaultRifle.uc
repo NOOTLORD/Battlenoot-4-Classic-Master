@@ -8,68 +8,6 @@
 //=============================================================================
 class AK47AssaultRifle extends BallisticWeapon;
 
-var name			BulletBone, BulletBone2;
-
-simulated event AnimEnd (int Channel)
-{
-    local name anim;
-    local float frame, rate;
-
-    GetAnimParams(0, anim, frame, rate);
-
-	if (Anim == 'Fire' || Anim == 'ReloadEmpty')
-	{
-		if (MagAmmo - BFireMode[0].ConsumedLoad < 2)
-		{
-			SetBoneScale(2,0.0,BulletBone);
-			SetBoneScale(3,0.0,BulletBone2);
-		}
-	}
-	super.AnimEnd(Channel);
-}
-
-simulated function BringUp(optional Weapon PrevWeapon)
-{	
-	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
-	{
-		SetBoneScale(2,0.0,BulletBone);
-		SetBoneScale(3,0.0,BulletBone2);
-	}
-
-	super.BringUp(PrevWeapon);
-}
-// Animation notify for when cocking action starts. Used to time sounds
-simulated function Notify_CockSim()
-{
-	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
-}
-
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2)
-		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
-	else
-		PlayAnim(CockAnim, CockAnimRate, 0.2);
-}
-
-// Animation notify for when the clip is stuck in
-simulated function Notify_ClipUp()
-{
-	SetBoneScale(2,1.0,BulletBone);
-	SetBoneScale(3,1.0,BulletBone2);
-}
-
-simulated function Notify_ClipOut()
-{
-	Super.Notify_ClipOut();
-
-	if(MagAmmo < 1)
-	{
-		SetBoneScale(2,0.0,BulletBone);
-		SetBoneScale(3,0.0,BulletBone2);
-	}
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -107,13 +45,11 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     BulletBone="Bullet1"
-     BulletBone2="Bullet2"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AK-470'
      BigIconCoords=(Y1=32,Y2=220)
-     BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+     BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      bWT_Bullet=True
      ManualLines(0)="Automatic 7.62mm fire. Higher sustained damage than other weapons in its class, but greater recoil and inferior hipfire ability."
      ManualLines(1)="Prepares a melee attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. If lacking a knife, becomes a blunt attack, dealing lower base damage but inflicting a short-duration blinding effect when striking. This attack inflicts more damage from behind."
@@ -121,6 +57,7 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.400000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.400000)
      MagAmmo=25
+     ReloadEmptyAnim="Reload"	 
      CockAnimPostReload="ReloadEndCock"
      CockingBringUpTime=1.300000
      CockSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-Cock',Volume=0.900000)

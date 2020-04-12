@@ -247,11 +247,11 @@ defaultproperties
 {
      TurnRate=49152.000000
      AccelSpeed=750.000000
-     MyRadiusDamageType=Class'BallisticProV55.DTG5MortarRadius'
+     MyRadiusDamageType=Class'BallisticProV55.DT_G5MortarRadius'
      Speed=3500.000000
      MaxSpeed=5000.000000
      DamageRadius=378.000000
-     MyDamageType=Class'BallisticProV55.DTG5Mortar'
+     MyDamageType=Class'BallisticProV55.DT_G5Mortar'
      LifeSpan=0.000000
      bFullVolume=True
      CollisionRadius=4.000000

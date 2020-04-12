@@ -8,14 +8,11 @@
 //=============================================================================
 class SK410Shotgun extends BallisticProShotgun;
 
-var name			BulletBone;
-
 simulated function BringUp(optional Weapon PrevWeapon)
 {
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
 	{
-		SetBoneScale(0,0.0,BulletBone);
-		ReloadAnim = 'ReloadEmpty';
+		ReloadAnim = 'Reload';
 	}
 	else
 		ReloadAnim = 'Reload';
@@ -27,25 +24,16 @@ simulated function BringUp(optional Weapon PrevWeapon)
 simulated function PlayReload()
 {
     if (MagAmmo < 1)
-       ReloadAnim='ReloadEmpty';
+       ReloadAnim='Reload';
     else
        ReloadAnim='Reload';
 
 	SafePlayAnim(ReloadAnim, ReloadAnimRate, , 0, "RELOAD");
 }
 
-// Animation notify for when the clip is stuck in
-simulated function Notify_ClipUp()
-{
-	SetBoneScale(0,1.0,BulletBone);
-}
-
 simulated function Notify_ClipOut()
 {
 	Super.Notify_ClipOut();
-
-	if(MagAmmo < 1)
-		SetBoneScale(0,0.0,BulletBone);
 }
 
 simulated event AnimEnd (int Channel)
@@ -55,10 +43,9 @@ simulated event AnimEnd (int Channel)
 
     GetAnimParams(0, anim, frame, rate);
 
-	if (Anim == 'Fire' || Anim == 'ReloadEmpty')
+	if (Anim == 'Fire' || Anim == 'Reload')
 	{
 		if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
-			SetBoneScale(0,0.0,BulletBone);
 	}
 	super.AnimEnd(Channel);
 }
@@ -127,13 +114,11 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
-     BulletBone="Bullet1"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SK410'
      BigIconCoords=(Y1=40)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
-     bWT_Machinegun=True
      ManualLines(0)="Fires shotgun blasts with wide spread. These blasts inflict heavy damage and knock the enemy back."
      ManualLines(1)="Fires a single slug with an arming delay. Whilst unarmed, it will reflect from struck walls or surfaces. Deals good impact damage and minor radius damage."
      ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Effective at close to medium range depending upon active mode."
@@ -141,6 +126,7 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
      MagAmmo=8
+     ReloadEmptyAnim="Reload"	 
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
@@ -151,7 +137,6 @@ defaultproperties
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
-     bNotifyModeSwitch=True
      bNoCrosshairInScope=True
      SightPivot=(Pitch=150)
      SightOffset=(X=-8.000000,Y=-10.000000,Z=22.500000)

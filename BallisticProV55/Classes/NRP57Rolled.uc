@@ -26,5 +26,5 @@ defaultproperties
      FireModeNum=1
      DetonateDelay=3.000000
      ImpactDamage=15
-     MyRadiusDamageType=Class'BallisticProV55.DTNRP57RolledRadius'
+     MyRadiusDamageType=Class'BallisticProV55.DT_NRP57RolledRadius'
 }

@@ -239,7 +239,6 @@ defaultproperties
      SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
      SilencerOnTurnSound=Sound'BallisticSounds1.Pistol.RSP-SilencerTurn'
      SilencerOffTurnSound=Sound'BallisticSounds1.Pistol.RSP-SilencerTurn'
-     bShouldDualInLoadout=False
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_RS8'
@@ -307,9 +306,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims1.RS8'
+     Mesh=SkeletalMesh'BallisticAnims1.RS8_FP'
      DrawScale=0.300000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticWeapons1.RS8.M1911-Skin'
      AmbientGlow=5
 }

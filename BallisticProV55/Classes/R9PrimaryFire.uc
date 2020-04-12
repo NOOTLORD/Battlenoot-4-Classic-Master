@@ -79,9 +79,9 @@ defaultproperties
      DamageHead=130.000000
      DamageLimb=65.000000
      WaterRangeAtten=0.800000
-     DamageType=Class'BallisticProV55.DTR9Rifle'
-     DamageTypeHead=Class'BallisticProV55.DTR9RifleHead'
-     DamageTypeArm=Class'BallisticProV55.DTR9Rifle'
+     DamageType=Class'BallisticProV55.DT_R9Rifle'
+     DamageTypeHead=Class'BallisticProV55.DT_R9RifleHead'
+     DamageTypeArm=Class'BallisticProV55.DT_R9Rifle'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 
      KickForce=0
      PenetrateForce=0

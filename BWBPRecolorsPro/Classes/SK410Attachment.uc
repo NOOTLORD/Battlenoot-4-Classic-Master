@@ -25,6 +25,7 @@ defaultproperties
      TracerChance=0.500000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.900000
+	 CockingAnim="Cock_RearPull"	 
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_TP'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.200000

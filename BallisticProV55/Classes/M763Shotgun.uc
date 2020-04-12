@@ -214,7 +214,6 @@ defaultproperties
      StartShovelAnim="ReloadStart"
      StartShovelAnimRate=1.100000
      EndShovelAnim="ReloadEnd"
-     EndShovelEmptyAnim="ReloadEndEmpty"
      EndShovelAnimRate=1.100000
      bNoCrosshairInScope=True
      SightPivot=(Pitch=32)

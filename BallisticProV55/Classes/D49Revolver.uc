@@ -355,7 +355,6 @@ defaultproperties
      Shells(3)=(BulletName="Bullet5",ShellName="Shell5",NextShell=5)
      Shells(4)=(BulletName="Bullet3",ShellName="Shell3",NextShell=1)
      Shells(5)=(BulletName="Bullet6",ShellName="Shell6")
-     bShouldDualInLoadout=False
      HandgunGroup=1
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
@@ -428,10 +427,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticAnims2.D49Revolver'
+     Mesh=SkeletalMesh'BallisticAnims2.D49_FP'
      DrawScale=0.220000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticWeapons2.D49.D49RevolverSkin'
-     Skins(2)=Texture'BallisticWeapons2.D49.D49ShellsSkin'
      AmbientGlow=5
 }

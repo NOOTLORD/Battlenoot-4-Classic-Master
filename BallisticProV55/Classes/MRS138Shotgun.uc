@@ -8,14 +8,6 @@
 //=============================================================================
 class MRS138Shotgun extends BallisticProShotgun;
 
-function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
-{
-	if (MeleeState >= MS_Held)
-		Momentum *= 0.5;
-	
-	super.AdjustPlayerDamage( Damage, InstigatedBy, HitLocation, Momentum, DamageType);
-}
-
 // Animation notify for when cocking action starts. Used to time sounds
 simulated function Notify_CockAimed()
 {
@@ -150,7 +142,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticAnims1.MRS138Shotgun'
+     Mesh=SkeletalMesh'BallisticAnims1.MRS138_FP'
      DrawScale=0.400000	 	 
      AmbientGlow=5
 }

@@ -64,9 +64,9 @@ defaultproperties
      DamageHead=16.000000
      DamageLimb=11.000000
      RangeAtten=0.400000
-     DamageType=Class'BallisticProV55.DTMRS138Shotgun'
-     DamageTypeHead=Class'BallisticProV55.DTMRS138ShotgunHead'
-     DamageTypeArm=Class'BallisticProV55.DTMRS138Shotgun'
+     DamageType=Class'BallisticProV55.DT_MRS138Shotgun'
+     DamageTypeHead=Class'BallisticProV55.DT_MRS138ShotgunHead'
+     DamageTypeArm=Class'BallisticProV55.DT_MRS138Shotgun'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.700000)	 
      KickForce=0
      PenetrateForce=0

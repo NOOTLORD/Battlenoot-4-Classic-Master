@@ -119,13 +119,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticAnims2.M50Assault'
+     Mesh=SkeletalMesh'BallisticAnims2.M50_FP'
      DrawScale=0.300000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticWeapons2.M50.M50SkinA'
-     Skins(2)=Texture'BallisticWeapons2.M50.M50SkinB'
-     Skins(3)=Texture'BallisticUI.M50.M50LCDTex'
-     Skins(4)=Texture'BallisticWeapons2.M50.M50Laser'
-     Skins(5)=Texture'BallisticWeapons2.M50.M50Gren'
      AmbientGlow=5
 }

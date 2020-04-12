@@ -488,6 +488,7 @@ function WeapUIFire(float F)
 		ClientPlaySound(WeapUIFail);
 	bIsInWeaponUI = false;
 }
+
 // Close UI, don't switch weapon
 function WeapUIAltFire(float F)
 {
@@ -495,6 +496,7 @@ function WeapUIAltFire(float F)
 	bAltFire = 0;
 	bIsInWeaponUI = false;
 }
+
 // Make sorted lists of all available weapons
 function ListItems()
 {
@@ -638,24 +640,10 @@ exec simulated function BWStats()
 }
 
 // Weapon stats
-exec simulated function Stats()
-{
-	ClientOpenMenu ("BallisticProV55.BallisticWeaponStatsMenu");
-}
-
-// Weapon stats
-exec simulated function Manual()
-{
-	ClientOpenMenu ("BallisticProV55.BallisticWeaponStatsMenu");
-}
-
-// Weapon stats
 exec simulated function BWManual()
 {
 	ClientOpenMenu ("BallisticProV55.BallisticWeaponStatsMenu");
 }
-
-// Cheat to get all BW weapons...
 
 exec simulated function Reloaded()
 {

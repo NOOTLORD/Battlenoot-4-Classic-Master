@@ -123,8 +123,8 @@ defaultproperties
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SAR'
      BigIconCoords=(Y1=24,Y2=250)
-     SightFXClass=Class'BallisticProV55.SARSightDot'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+     SightFXClass=Class'BallisticProV55.SARSightDot'	 
      bWT_Bullet=True
      bWT_Machinegun=True
      ManualLines(0)="Automatic 5.56mm fire. Slightly shorter range than full-size assault rifles. Low damage and moderate recoil by default."
@@ -193,10 +193,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims2.SAR'
+     Mesh=SkeletalMesh'BallisticAnims2.SAR_FP'
      DrawScale=0.300000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticWeapons2.Weapons.SARSkin'
-     Skins(2)=Texture'BallisticWeapons2.Weapons.SAR-SightCross'
      AmbientGlow=5 
 }

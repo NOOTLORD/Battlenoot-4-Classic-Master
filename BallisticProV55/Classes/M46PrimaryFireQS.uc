@@ -22,9 +22,9 @@ defaultproperties
      DamageLimb=30.000000
      RangeAtten=0.40000
      WaterRangeAtten=0.800000
-     DamageType=Class'BallisticProV55.DTM46AssaultQS'
-     DamageTypeHead=Class'BallisticProV55.DTM46AssaultQSHead'
-     DamageTypeArm=Class'BallisticProV55.DTM46AssaultQS'
+     DamageType=Class'BallisticProV55.DT_M46AssaultQS'
+     DamageTypeHead=Class'BallisticProV55.DT_M46AssaultQSHead'
+     DamageTypeArm=Class'BallisticProV55.DT_M46AssaultQS'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.120000)
      KickForce=0
      PenetrateForce=0

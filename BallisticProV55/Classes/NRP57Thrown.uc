@@ -1,8 +1,6 @@
 //=============================================================================
 // NRP57 Thrown projectile class
 //
-// No longer karma based to prevent desynch.
-//
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
@@ -52,14 +50,14 @@ defaultproperties
      DampenFactorParallel=0.600000
      DetonateDelay=3.000000
      ImpactDamage=15
-     ImpactDamageType=Class'BallisticProV55.DTNRP57Grenade'
+     ImpactDamageType=Class'BallisticProV55.DT_NRP57Grenade'
      ImpactManager=Class'BallisticProV55.IM_NRP57Grenade'
      TrailClass=Class'BallisticProV55.NRP57Trail'
      TrailOffset=(X=1.600000,Z=6.400000)
-     MyRadiusDamageType=Class'BallisticProV55.DTNRP57GrenadeRadius'
+     MyRadiusDamageType=Class'BallisticProV55.DT_NRP57GrenadeRadius'
      SplashManager=Class'BallisticProV55.IM_ProjWater'
-     ShakeRadius=512.000000
-     MotionBlurRadius=512.000000
+     ShakeRadius=0.000000
+     MotionBlurRadius=0.000000
 	 bCoverPenetrator=False
      MotionBlurFactor=0.000000
      MotionBlurTime=0.000000
@@ -69,7 +67,7 @@ defaultproperties
      MaxSpeed=1500.000000
      Damage=225.000000
      DamageRadius=512.000000
-     MyDamageType=Class'BallisticProV55.DTNRP57Grenade'
+     MyDamageType=Class'BallisticProV55.DT_NRP57Grenade'
      ImpactSound=SoundGroup'BallisticSounds2.NRP57.NRP57-Concrete'
      StaticMesh=StaticMesh'BallisticHardware2.NRP57.Pineapple'
      AmbientGlow=40

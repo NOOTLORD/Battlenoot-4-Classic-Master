@@ -177,9 +177,9 @@ defaultproperties
      DamageLimb=40.000000
      RangeAtten=0.450000
      WaterRangeAtten=0.800000
-     DamageType=Class'BallisticProV55.DTSRS600Rifle'
-     DamageTypeHead=Class'BallisticProV55.DTSRS600RifleHead'
-     DamageTypeArm=Class'BallisticProV55.DTSRS600Rifle'
+     DamageType=Class'BallisticProV55.DT_SRS600Rifle'
+     DamageTypeHead=Class'BallisticProV55.DT_SRS600RifleHead'
+     DamageTypeArm=Class'BallisticProV55.DT_SRS600Rifle'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)
      KickForce=0
      PenetrateForce=0

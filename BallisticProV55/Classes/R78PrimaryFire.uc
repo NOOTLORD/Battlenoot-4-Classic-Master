@@ -18,9 +18,9 @@ defaultproperties
      DamageHead=160.000000
      DamageLimb=80.000000
      WaterRangeAtten=0.800000
-     DamageType=Class'BallisticProV55.DTR78Rifle'
-     DamageTypeHead=Class'BallisticProV55.DTR78RifleHead'
-     DamageTypeArm=Class'BallisticProV55.DTR78Rifle'
+     DamageType=Class'BallisticProV55.DT_R78Rifle'
+     DamageTypeHead=Class'BallisticProV55.DT_R78RifleHead'
+     DamageTypeArm=Class'BallisticProV55.DT_R78Rifle'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.900000)	 
      KickForce=0
      PenetrateForce=0

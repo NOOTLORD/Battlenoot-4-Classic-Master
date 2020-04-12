@@ -95,9 +95,9 @@ defaultproperties
      DamageHead=15.000000
      DamageLimb=15.000000
      RangeAtten=0.40000
-     DamageType=Class'BallisticProV55.DTM763Shotgun'
-     DamageTypeHead=Class'BallisticProV55.DTM763ShotgunHead'
-     DamageTypeArm=Class'BallisticProV55.DTM763Shotgun'
+     DamageType=Class'BallisticProV55.DT_M763Shotgun'
+     DamageTypeHead=Class'BallisticProV55.DT_M763ShotgunHead'
+     DamageTypeArm=Class'BallisticProV55.DT_M763Shotgun'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.7500000)	 
      KickForce=0
      PenetrateForce=0

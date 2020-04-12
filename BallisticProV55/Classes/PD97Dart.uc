@@ -83,7 +83,7 @@ defaultproperties
 {
      ImpactManager=Class'BallisticProV55.IM_XMK5Dart'
      TrailClass=Class'BallisticProV55.PineappleTrail'
-     MyRadiusDamageType=Class'BallisticProV55.DTPD97Dart'
+     MyRadiusDamageType=Class'BallisticProV55.DT_PD97Dart'
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=0.000000
      MotionBlurRadius=0.000000
@@ -93,7 +93,7 @@ defaultproperties
      ShakeOffsetTime=0.000000	 
      Speed=15000.000000
      Damage=3.000000
-     MyDamageType=Class'BallisticProV55.DTPD97Dart'
+     MyDamageType=Class'BallisticProV55.DT_PD97Dart'
      StaticMesh=StaticMesh'BallisticHardware1.OA-SMG.OA-SMG_Dart'
      LifeSpan=2.500000
      bIgnoreTerminalVelocity=True

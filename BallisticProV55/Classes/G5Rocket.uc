@@ -124,14 +124,14 @@ defaultproperties
      ImpactSounds(5)=Sound'XEffects.Impact2'
      ImpactDamage=100.000000
      ImpactMomentumTransfer=2000.000000
-     ImpactDamageType=Class'BallisticProV55.DTG5Unarmed'
+     ImpactDamageType=Class'BallisticProV55.DT_G5Unarmed'
      ArmingDelay=0.200000
      ImpactManager=Class'BallisticProV55.IM_RPG'
      bRandomStartRotaion=False
      AccelSpeed=5000.000000
      TrailClass=Class'BallisticProV55.G5RocketTrail'
      TrailOffset=(X=-14.000000)
-     MyRadiusDamageType=Class'BallisticProV55.DTG5BazookaRadius'
+     MyRadiusDamageType=Class'BallisticProV55.DT_G5BazookaRadius'
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=378.000000
      MotionBlurRadius=512.000000
@@ -148,7 +148,7 @@ defaultproperties
      Damage=150.000000
      DamageRadius=328.000000
      MomentumTransfer=90000.000000
-     MyDamageType=Class'BallisticProV55.DTG5Bazooka'
+     MyDamageType=Class'BallisticProV55.DT_G5Bazooka'
      LightType=LT_Steady
      LightEffect=LE_QuadraticNonIncidence
      LightHue=25

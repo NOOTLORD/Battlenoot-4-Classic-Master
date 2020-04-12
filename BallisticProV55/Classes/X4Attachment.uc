@@ -24,6 +24,6 @@ defaultproperties
      WaterTracerMode=MU_Both								  
      MeleeStrikeAnim="Blade_Stab"
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims1.X4_3rd'
+     Mesh=SkeletalMesh'BallisticAnims1.X4_TP'
      DrawScale=0.125000
 }

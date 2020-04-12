@@ -10,7 +10,7 @@
 class BallisticHandGrenade extends BallisticWeapon
 	abstract;
 
-var()	bool				bCookable;			// This grenade can be cooked off.
+var() bool				bCookable;			// This grenade can be cooked off.
 var   float				ClipReleaseTime;	//Time when clip was released
 var() name				ClipReleaseAnim;	//Anim to play when clip is released
 
@@ -514,7 +514,7 @@ defaultproperties
      PutDownAnimRate=1.500000
      PutDownTime=1.000000
      BringUpTime=1.000000
-     bShowChargingBar=True
+     bShowChargingBar=False
      Priority=1
      ItemName="Hand Grenade"
 }

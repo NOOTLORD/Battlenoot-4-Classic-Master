@@ -559,7 +559,7 @@ function String SpawnStreakWeapon(string WeaponString, Pawn Other, byte GroupSlo
 		if (class<BallisticWeapon>(KR) != None && !class<BallisticWeapon>(KR).default.bNoMag)
 		{
 			SpawnAmmo(KR.default.FireModeClass[0].default.AmmoClass, Other);
-			if (KR.default.FireModeClass[0].default.AmmoClass != KR.default.FireModeClass[1].default.AmmoClass)
+			if (KR.default.FireModeClass[0].default.AmmoClass != KR.default.FireModeClass[0].default.AmmoClass)
 				SpawnAmmo(KR.default.FireModeClass[0].default.AmmoClass, Other);
 		}
 		
@@ -604,7 +604,6 @@ static function Weapon SpawnWeapon(class<weapon> newClass, Pawn P)
 		else
 		{
 			newWeapon.AddAmmo(newClass.default.AmmoClass[0].default.InitialAmount, 0);
-			newWeapon.AddAmmo(newClass.default.AmmoClass[1].default.InitialAmount, 1);
 			if (BallisticWeapon(newWeapon) != None)
 			{
 				BallisticWeapon(newWeapon).MagAmmo = BallisticWeapon(newWeapon).default.MagAmmo;

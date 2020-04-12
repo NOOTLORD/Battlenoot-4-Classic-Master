@@ -250,13 +250,12 @@ defaultproperties
      SpareShellBones(2)="SpareShell3"
      SpareShellBones(3)="SpareShell4"
      SpareShellBones(4)="SpareShell5"
-     bShouldDualInLoadout=False
 	 InventorySize=6				 
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_PD97'
-     IdleTweenTime=0.000000
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+     IdleTweenTime=0.000000	 
      bWT_Bullet=True
      bWT_Heal=True
      ManualLines(0)="Fires projectile darts. Upon striking an enemy, these darts release a cloud of pink gas which allows the path of the enemy to be tracked. The darts will also deal damage over time. Upon striking an ally, the darts heal over time instead of dealing damage."

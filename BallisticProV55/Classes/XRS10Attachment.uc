@@ -46,6 +46,6 @@ defaultproperties
      ReloadAnimRate=1.650000
      bRapidFire=True
      bAltRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims1.XRS10-3rd'
+     Mesh=SkeletalMesh'BallisticAnims1.XRS10_TP'
      DrawScale=0.075000
 }

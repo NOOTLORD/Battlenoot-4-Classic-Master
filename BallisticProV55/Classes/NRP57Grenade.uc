@@ -50,7 +50,7 @@ defaultproperties
      HeldDamage=100
      HeldRadius=350
      HeldMomentum=75000
-     HeldDamageType=Class'BallisticProV55.DTNRP57Held'
+     HeldDamageType=Class'BallisticProV55.DT_NRP57Held'
      GrenadeSmokeClass=Class'BallisticProV55.NRP57Trail'
      ClipReleaseSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-ClipOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
      PinPullSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-PinOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
@@ -96,7 +96,7 @@ defaultproperties
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_NRP57'
      IconCoords=(X2=127,Y2=31)
      ItemName="NRP57 Grenade"
-     Mesh=SkeletalMesh'BallisticAnims2.NRP57Grenade'
+     Mesh=SkeletalMesh'BallisticAnims2.NRP57_FP'
      DrawScale=0.400000
      AmbientGlow=5
 }

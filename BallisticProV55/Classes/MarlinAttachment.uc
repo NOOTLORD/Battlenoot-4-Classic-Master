@@ -26,7 +26,7 @@ defaultproperties
      WaterTracerMode=MU_Primary	 
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
      FlyByMode=MU_Primary
-     Mesh=SkeletalMesh'BallisticAnims1.Marlin-3rd'	 
+     Mesh=SkeletalMesh'BallisticAnims1.Marlin_TP'	 
      DrawScale=0.125000
 }
 

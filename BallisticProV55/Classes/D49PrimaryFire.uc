@@ -48,9 +48,9 @@ defaultproperties
      DamageLimb=60.000000
      RangeAtten=0.3500000
      WaterRangeAtten=0.200000
-     DamageType=Class'BallisticProV55.DTD49Revolver'
-     DamageTypeHead=Class'BallisticProV55.DTD49RevolverHead'
-     DamageTypeArm=Class'BallisticProV55.DTD49Revolver'
+     DamageType=Class'BallisticProV55.DT_D49Revolver'
+     DamageTypeHead=Class'BallisticProV55.DT_D49RevolverHead'
+     DamageTypeArm=Class'BallisticProV55.DT_D49Revolver'
      DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.750000)	 
      KickForce=0
      PenetrateForce=0

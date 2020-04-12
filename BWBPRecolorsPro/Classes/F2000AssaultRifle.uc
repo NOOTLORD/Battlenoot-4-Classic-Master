@@ -188,15 +188,16 @@ defaultproperties
      ManualLines(2)="The Weapon Special key attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible.||Effective at close to medium range."
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.425000)
+     ReloadAnimRate=1.350000	 
      CockAnimPostReload="ReloadEndCock"
+     ReloadEmptyAnim="Reload"	 
      CockAnimRate=1.250000
+     bCockOnEmpty=True	 
      CockSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-BoltPull',Volume=0.950000)
-     ReloadAnimRate=1.350000
      ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagFiddle',Volume=0.950000)
      ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagOut',Volume=0.950000)
      ClipInSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagIn',Volume=0.950000)
      ClipInFrame=0.650000
-     bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 

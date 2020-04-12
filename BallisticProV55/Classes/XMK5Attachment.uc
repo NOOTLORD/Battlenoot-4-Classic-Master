@@ -31,6 +31,6 @@ defaultproperties
      ReloadAnim="Reload_AR"
      ReloadAnimRate=1.250000
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims1.OA-SMG_3rd'
+     Mesh=SkeletalMesh'BallisticAnims1.XMK5_TP'
      DrawScale=0.275000
 }

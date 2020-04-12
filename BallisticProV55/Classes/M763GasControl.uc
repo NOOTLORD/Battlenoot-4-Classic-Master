@@ -103,6 +103,6 @@ simulated function Destroyed()
 defaultproperties
 {
      Damage=9
-     DamageType=Class'BallisticProV55.DTM763Gas'
+     DamageType=Class'BallisticProV55.DT_M763Gas'
      bHidden=True
 }

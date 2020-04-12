@@ -165,7 +165,7 @@ defaultproperties
      SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
      SilencerOnTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      SilencerOffTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
-     PlayerSpeedFactor=1.050000
+     PlayerSpeedFactor=1.100000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XK2'
@@ -238,9 +238,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims2.XK2SMG'
+     Mesh=SkeletalMesh'BallisticAnims2.XK2_FP'
      DrawScale=0.200000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(1)=Texture'BallisticWeapons2.XK2.XK2Skin' 
      AmbientGlow=5
 }

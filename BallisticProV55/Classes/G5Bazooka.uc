@@ -847,7 +847,7 @@ defaultproperties
      LightSaturation=100
      LightBrightness=192.000000
      LightRadius=12.000000
-     Mesh=SkeletalMesh'BallisticAnims2.G5Bazooka'
+     Mesh=SkeletalMesh'BallisticAnims2.G5_FP'
      DrawScale=0.300000
      AmbientGlow=5
 }

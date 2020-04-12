@@ -9,7 +9,6 @@
 //=============================================================================
 class M46AssaultRifleQS extends BallisticWeapon;
 
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -45,8 +44,6 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 // End AI Stuff =====
 
-defaultproperties
-{
 defaultproperties
 {
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
@@ -126,7 +123,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=4.000000					   																									   						 
-     Mesh=SkeletalMesh'BallisticAnims1.OA-AR-RDS'
+     Mesh=SkeletalMesh'BallisticAnims1.M46_FP'
      DrawScale=0.300000	 
      AmbientGlow=5
 }

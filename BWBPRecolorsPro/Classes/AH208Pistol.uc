@@ -8,20 +8,7 @@
 //=============================================================================
 class AH208Pistol extends BallisticWeapon;
 
-var(AH208Pistol) name		RDSBone;			// Bone to use for hiding Red Dot Sight
-var(AH208Pistol) name		MuzzBone;			// Bone to use for hiding Compensator
-var(AH208Pistol) name		LAMBone;			// Bone to use for hiding LAM
-var(AH208Pistol) name		ScopeBone;			// Bone to use for hiding scope
 var(AH208Pistol) name		BulletBone;			// Bone to use for hiding bullet
-
-simulated function PostBeginPlay()
-{
-	Super.PostBeginPlay();
-	
-	SetBoneScale (0, 0.0, ScopeBone);
-	SetBoneScale (3, 0.0, MuzzBone);
-	SetBoneScale (5, 0.0, LAMBone);
-}
 
 simulated function BringUp(optional Weapon PrevWeapon)
 {
@@ -133,7 +120,6 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 
 defaultproperties
 {
-     RDSBone="RedDotSight"
      BulletBone="Bullet"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000

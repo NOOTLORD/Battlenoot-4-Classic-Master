@@ -134,7 +134,7 @@ defaultproperties
 {
      Damage=2.000000
      BaseDuration=10.000000
-     DamageType=Class'BallisticProV55.DTPD97Poison'
+     DamageType=Class'BallisticProV55.DT_PD97Poison'
      Begin Object Class=SpriteEmitter Name=SpriteEmitter0
          FadeOut=True
          SpinParticles=True

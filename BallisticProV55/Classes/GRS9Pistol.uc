@@ -123,13 +123,12 @@ defaultproperties
 {
 	 AIRating=0.6
 	 CurrentRating=0.6
-     bShouldDualInLoadout=False
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_GRS-9
      BigIconCoords=(Y1=30,Y2=230)
-     SightFXBone="SightBone"
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+     SightFXBone="SightBone"	 
      ManualLines(0)="Automatic fire. Short ranged, but has higher DPS than most pistols. Recoil is moderate."
      ManualLines(1)="Projects a laser beam. Has extremely low DPS, but consistent damage over range and recharges over time."
      ManualLines(2)="The Weapon Function key causes a hitscan single-shot beam to be projected from the unit, dealing good damage. The GRS-9 is effective at close range."
@@ -192,7 +191,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims1.Glock'
+     Mesh=SkeletalMesh'BallisticAnims1.Glock_FP'
      DrawScale=0.150000
      AmbientGlow=5
 }

@@ -22,9 +22,9 @@ defaultproperties
      DamageLimb=26.000000
      RangeAtten=0.2500000
      WaterRangeAtten=0.300000
-     DamageType=Class'BallisticProV55.DTXMK5SubMachinegun'
-     DamageTypeHead=Class'BallisticProV55.DTXMK5SubMachinegunHead'
-     DamageTypeArm=Class'BallisticProV55.DTXMK5SubMachinegun'
+     DamageType=Class'BallisticProV55.DT_XMK5SMG'
+     DamageTypeHead=Class'BallisticProV55.DT_XMK5SMGHead'
+     DamageTypeArm=Class'BallisticProV55.DT_XMK5SMG'
      KickForce=0
      PenetrateForce=0
      bPenetrate=False

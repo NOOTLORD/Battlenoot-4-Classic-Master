@@ -139,6 +139,7 @@ defaultproperties
      PlayerSpeedFactor=0.750000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=15)
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AmmoPack'
+     BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      bWT_Grenade=True
      SpecialInfo(0)=(Info="0.0;5.0;-999.0;25.0;-999.0;0.0;0.5")
      BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout')
@@ -155,7 +156,7 @@ defaultproperties
      Priority=20
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=0
-     PickupClass=Class'BWBPRecolorsPro.L8GIPickup'
+     PickupClass=Class'BWBPRecolorsPro.L8GIPickup'	 
      PlayerViewOffset=(X=8.000000,Y=10.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=1024,Yaw=-1024)
      BobDamping=1.000000

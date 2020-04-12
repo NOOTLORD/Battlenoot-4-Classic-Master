@@ -39,9 +39,9 @@ defaultproperties
      Damage=55.000000
      DamageHead=55.000000
      DamageLimb=55.000000
-     DamageType=Class'BallisticProV55.DTX4Knife'
-     DamageTypeHead=Class'BallisticProV55.DTX4KnifeHead'
-     DamageTypeArm=Class'BallisticProV55.DTX4Knife'
+     DamageType=Class'BallisticProV55.DT_X4Knife'
+     DamageTypeHead=Class'BallisticProV55.DT_X4KnifeHead'
+     DamageTypeArm=Class'BallisticProV55.DT_X4Knife'
      KickForce=0
      PenetrateForce=0
      bPenetrate=False

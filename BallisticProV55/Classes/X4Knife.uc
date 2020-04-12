@@ -93,7 +93,7 @@ defaultproperties
      IconMaterial=Texture'BallisticUI.Icons.X4.SmallIcon_X4
      IconCoords=(X2=128,Y2=32)
      ItemName="X4 Knife"
-     Mesh=SkeletalMesh'BallisticAnims1.X4'
+     Mesh=SkeletalMesh'BallisticAnims1.X4_FP'
      DrawScale=0.300000
      AmbientGlow=5	  
 }

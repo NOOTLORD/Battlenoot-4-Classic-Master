@@ -141,9 +141,9 @@ defaultproperties
      DamageLimb=28.000000
      RangeAtten=0.250000
      WaterRangeAtten=0.400000
-     DamageType=Class'BallisticProV55.DTXRS10SMG'
-     DamageTypeHead=Class'BallisticProV55.DTXRS10SMGHead'
-     DamageTypeArm=Class'BallisticProV55.DTXRS10SMG'
+     DamageType=Class'BallisticProV55.DT_XRS10SMG'
+     DamageTypeHead=Class'BallisticProV55.DT_XRS10SMGHead'
+     DamageTypeArm=Class'BallisticProV55.DT_XRS10SMG'
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.750000)	 
      KickForce=0
      PenetrateForce=0

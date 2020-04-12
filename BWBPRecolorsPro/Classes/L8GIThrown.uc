@@ -21,8 +21,6 @@ replication
 
 simulated event Timer()
 {
-	local xPawn HitPawn;
-
 	if (StartDelay > 0)
 	{
 		StartDelay = 0;
@@ -32,20 +30,6 @@ simulated event Timer()
 		InitProjectile();
 		return;
 	}
-	if (HitActor != None)
-	{
-		HitPawn = xPawn(HitActor);
-		if ( Instigator == None || Instigator.Controller == None )
-			HitPawn.SetDelayedDamageInstigatorController( InstigatorController );
-		/*if (Instigator.GetTeamNum() == HitPawn.GetTeamNum() && level.Game.bTeamGame)
-		{
-			HitPawn.GiveHealth(HealingAmount, GetHealMax(HitPawn));
-		}
-		else*/
-			class'BallisticDamageType'.static.GenericHurt (HitActor, Damage, Instigator, Location, MomentumTransfer * (HitActor.Location - Location), MyDamageType);
-//		HitActor.TakeDamage(Damage, Instigator, Location, MomentumTransfer * (HitActor.Location - Location), MyDamageType);
-	}
-	Explode(Location, vect(0,0,1));
 }
 
 
@@ -73,7 +57,6 @@ simulated event HitWall(vector HitNormal, actor Wall)
 
 simulated event ProcessTouch( actor Other, vector HitLocation )
 {
-	local float BoneDist;
 	local xPawn HitPawn;
 
 	if (Other == Instigator && (!bCanHitOwner))
@@ -82,58 +65,22 @@ simulated event ProcessTouch( actor Other, vector HitLocation )
 		return;
 
 	HitPawn = xPawn(Other);
-
-	if ( Instigator == None || Instigator.Controller == None )
-		Other.SetDelayedDamageInstigatorController( InstigatorController );
-	if (PlayerImpactType == PIT_Detonate || DetonateOn == DT_Impact)
-	{
-		class'BallisticDamageType'.static.GenericHurt (Other, ImpactDamage, Instigator, HitLocation, MomentumTransfer * Normal(Velocity), ImpactDamageType);
-//		Other.TakeDamage(ImpactDamage, Instigator, HitLocation, MomentumTransfer * Normal(Velocity), ImpactDamageType);
-		HitActor = Other;
-		Explode(HitLocation, Normal(HitLocation-Other.Location));
-		return;
-	}
+		
 	if ( PlayerImpactType == PIT_Bounce || (PlayerImpactType == PIT_Stick && (VSize (Velocity) < MinStickVelocity)) )
 	{
 		HitWall (Normal(HitLocation - Other.Location), Other);
-		if (Instigator.GetTeamNum() == HitPawn.GetTeamNum() && level.Game.bTeamGame)
-		{
-
 			GiveAmmo(HitPawn);
 			if (HealSound != None)
 				PlaySound(HealSound, SLOT_Interact );
-			Destroy();//go to another function and make a healing emitter effect, then destroy
-		}
-		else
-		{
-			class'BallisticDamageType'.static.GenericHurt (Other, ImpactDamage, Instigator, HitLocation, Velocity, ImpactDamageType);
-//			Other.TakeDamage(ImpactDamage, Instigator, HitLocation, Velocity, ImpactDamageType);
-		}
 	}
 	
-	else if ( PlayerImpactType == PIT_Stick && Base == None )
-	{
-		SetPhysics(PHYS_None);
-		if (DetonateOn == DT_ImpactTimed)
-			SetTimer(DetonateDelay, false);
-		HitActor = Other;
-		if (Other != Instigator && Other.DrawType == DT_Mesh)
-			Other.AttachToBone( Self, Other.GetClosestBone( Location, Velocity, BoneDist) );
-		else
-			SetBase (Other);
-		class'BallisticDamageType'.static.GenericHurt (Other, ImpactDamage, Instigator, HitLocation, Velocity, ImpactDamageType);
-//		Other.TakeDamage(ImpactDamage, Instigator, HitLocation, Velocity, ImpactDamageType);
-		SetRotation (Rotator(Velocity));
-		Velocity = vect(0,0,0);
-	}
 	if (PlayerImpactType == PIT_Detonate || DetonateOn == DT_Impact)
-	{
-		class'BallisticDamageType'.static.GenericHurt (Other, ImpactDamage, Instigator, HitLocation, MomentumTransfer * Normal(Velocity), ImpactDamageType);
-//		Other.TakeDamage(ImpactDamage, Instigator, HitLocation, MomentumTransfer * Normal(Velocity), ImpactDamageType);
-		HitActor = Other;
-		Explode(HitLocation, Normal(HitLocation-Other.Location));
-		return;
-	}
+	{		
+		HitWall (Normal(HitLocation - Other.Location), Other);
+			GiveAmmo(HitPawn);
+			if (HealSound != None)
+				PlaySound(HealSound, SLOT_Interact );		
+	}	
 }
 
 function GiveAmmo( actor Other )
@@ -144,9 +91,6 @@ function GiveAmmo( actor Other )
 	local bool bGetIt;
 	local Ammunition A;
 
-
-	if ( Pawn(Other).GiveHealth(5, Pawn(Other).HealthMax) )
-		bGetIt=true;
 	// First go through our inventory and revive all the ghosts
 	for (Inv=Pawn(Other).Inventory; Inv!=None && /*!Inv.IsA('L8GIAmmoPack') &&*/ Count < 1000; Count++)
 	{
@@ -200,30 +144,15 @@ function GiveAmmo( actor Other )
 	}
 }
 
-function int GetHealMax(Pawn P)
-{
-	if (bSuperHeal)
-		return P.SuperHealthMax;
-
-	return P.HealthMax;
-}
-
 defaultproperties
 {
 	 Speed=600.000000
 	 MaxSpeed=600.000000
-     HealingAmount=5
      HealSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
      RandomSpin=1024.000000
      bNoInitialSpin=True
-     ImpactDamage=10.000000
-     ImpactDamageType=Class'BWBPRecolorsPro.DT_AmmoPack'
      TrailOffset=(X=1.600000,Z=6.400000)
      SplashManager=Class'BallisticProV55.IM_ProjWater'
-     Damage=0.000000
-     DamageRadius=250.000000
-     MyDamageType=Class'BWBPRecolorsPro.DT_AmmoPack'
-     ImpactSound=SoundGroup'BallisticSounds2.NRP57.NRP57-Concrete'
      StaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackHi'
      DrawScale=0.350000
      Skins(0)=Texture'BallisticRecolorsTex.AmmoPack.L8GISkin'
@@ -231,4 +160,6 @@ defaultproperties
      CollisionHeight=15.000000
      bBounce=True
      RotationRate=(Roll=0)
+     AmbientGlow=40
+     bUnlit=False	 
 }

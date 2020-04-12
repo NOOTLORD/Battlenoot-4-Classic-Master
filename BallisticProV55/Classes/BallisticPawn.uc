@@ -2317,13 +2317,7 @@ function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector mo
 					warn("No damagetype for damage by "$instigatedby$" with weapon "$InstigatedBy.Weapon);
 			DamageType = class'DamageType';
 		}
- 
-		if ( Role < ROLE_Authority )
-		{
-			log(self$" client damage type "$damageType$" by "$instigatedBy);
-			return;
-		}
- 
+  
 		if ( Health <= 0 )
 			return;
 			

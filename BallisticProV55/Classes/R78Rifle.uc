@@ -142,7 +142,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=150.000000
      LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticAnims2.R78A1Rifle'
+     Mesh=SkeletalMesh'BallisticAnims2.R78_FP'
      DrawScale=0.450000
      AmbientGlow=5
 }

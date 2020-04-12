@@ -47,6 +47,6 @@ defaultproperties
      CockAnimRate=0.900000
      bRapidFire=True
      bAltRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims2.Xk2-3rd'
+     Mesh=SkeletalMesh'BallisticAnims2.Xk2_TP'
      DrawScale=0.125000
 }

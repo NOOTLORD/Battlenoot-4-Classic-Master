@@ -233,7 +233,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims1.XRS10'
+     Mesh=SkeletalMesh'BallisticAnims1.XRS10_FP'
      DrawScale=0.200000
      AmbientGlow=5
 }

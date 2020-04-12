@@ -4676,9 +4676,9 @@ defaultproperties
      CenteredOffsetY=0.000000
      CenteredRoll=500
      CustomCrosshair=7
-     BobDamping=1.700000
+     BobDamping=1.750000
      ItemName="BallisticWeapon"
      LightPeriod=3
-     AmbientGlow=12
+     AmbientGlow=5
      TransientSoundVolume=0.500000
 }
