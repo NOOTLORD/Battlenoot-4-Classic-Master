@@ -1,7 +1,10 @@
 //=============================================================================
-// FMP Attachment
+// 3rd person weapon class for FMP MachinePistol
 //
-// FMP-2012's 3rd
+// by Sarge.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class FMPAttachment extends BallisticAttachment;
 

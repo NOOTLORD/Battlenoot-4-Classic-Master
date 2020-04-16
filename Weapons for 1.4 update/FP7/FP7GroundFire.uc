@@ -1,12 +1,10 @@
 //=============================================================================
-// FP7GroundFire.
-//
-// A small patch of fire. This is an emitter, but it also does the server side
-// damage stuff. These will fall to the ground and stay wherever they land.
-// This is spaawned on server for damage and on clients for effects.
+// GroundFire class for FP7 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class FP7GroundFire extends BallisticEmitter
 	placeable;

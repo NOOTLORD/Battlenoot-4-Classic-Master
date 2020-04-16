@@ -97,13 +97,13 @@ function DefaultSettings()
 	co_EffectDet.SetIndex(2);
 	co_WeaponDet.SilentSetIndex(OldWeaponDet);
 	ch_UseBrass.Checked(true);
-	fl_BrassTime.SetValue(1.0);
+	fl_BrassTime.SetValue(0.10);
 	ch_OldCrosshairs.Checked(false);
-	ch_MSmoke.Checked(true);
+	ch_MSmoke.Checked(false);
 	ch_SimpleDeathMessages.Checked(true);
-	ch_BloodFX.Checked(false);
-	fl_BloodTimeScale.SetValue(1.0);
-	sl_GibMulti.SetValue(1);	
+	ch_BloodFX.Checked(true);
+	fl_BloodTimeScale.SetValue(0.10);
+	sl_GibMulti.SetValue(0);	
 }
 
 defaultproperties

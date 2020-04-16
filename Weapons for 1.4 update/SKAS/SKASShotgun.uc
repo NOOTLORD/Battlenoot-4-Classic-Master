@@ -8,11 +8,6 @@
 //=============================================================================
 class SKASShotgun extends BallisticProShotgun;
 
-simulated function Notify_BrassOut()
-{
-//	BFireMode[0].EjectBrass();
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -136,12 +131,11 @@ defaultproperties
      ItemName="SKAS-21 Shotgun"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
-     LightHue=25
+     LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=5.000000
-     Mesh=SkeletalMesh'BallisticRecolorsAnims.SKASShotgun_FP'
+     LightBrightness=130.000000
+     LightRadius=3.000000
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.SKAS_FP'
      DrawScale=0.260000
-     Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=5
 }

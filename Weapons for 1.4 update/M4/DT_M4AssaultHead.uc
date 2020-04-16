@@ -1,10 +1,10 @@
 //=============================================================================
-// DTM4AssaultHead.
-//
-// DamageType for MJ51 headshots
+// Damage type class for M4 Carbine headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_M4AssaultHead extends DT_BWBullet;
 

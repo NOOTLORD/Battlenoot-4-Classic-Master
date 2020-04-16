@@ -59,7 +59,6 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.425000)
      MagAmmo=5
      CockAnimPostReload="Cock"
-     CockAnimRate=1.500000
      CockSound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-Charge',Volume=0.850000)
      ReloadAnimRate=0.400000
      ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-In',Volume=0.850000)
@@ -121,7 +120,6 @@ defaultproperties
      InventoryGroup=9
      GroupOffset=2
      PlayerViewOffset=(X=4.000000,Y=6.000000,Z=-7.500000)
-     BobDamping=1.800000
      AttachmentClass=Class'BWBPRecolorsPro.X82Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_X82'
      IconCoords=(X2=127,Y2=31)
@@ -130,8 +128,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=5.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.X82_FP'
      DrawScale=0.450000
      AmbientGlow=5

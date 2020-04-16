@@ -660,7 +660,7 @@ defaultproperties
      FlashBone="tip"
      FlashScaleFactor=1.000000
      BrassBone="ejector"
-     bReleaseFireOnDie=True
+     bReleaseFireOnDie=False
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))
      FireSpreadMode=FSM_Circle
      UnjamMethod=UJM_Cock

@@ -1,10 +1,10 @@
 //=============================================================================
-// M30PrimaryFire.
+// Primaryfire class for FMP MachinePistol
 //
-//[11:09:19 PM] Captain Xavious: make sure its noted to be an assault rifle
-//[11:09:26 PM] Marc Moylan: lol Calypto
-//[11:09:28 PM] Matteo 'Azarael': mp40 effective range
-//[11:09:29 PM] Matteo 'Azarael': miles
+// by Sarge.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class FMPPrimaryFire extends BallisticRangeAttenFire;
 
@@ -31,7 +31,7 @@ defaultproperties
      FlashScaleFactor=0.300000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassBone="tip"
-     BrassOffset=(X=-52.500000,Y=2.000000)
+     BrassOffset=(X=-53.500000,Y=2.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=98.000000
      FireChaos=0.050000
@@ -42,7 +42,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.120000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_FMPMachinePistol'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_FMP_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

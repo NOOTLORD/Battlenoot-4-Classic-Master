@@ -1,14 +1,10 @@
 //=============================================================================
-// NRP57Thrown.
-//
-// A fancy Karama based grenaded that is thrown high and bounces easily off
-// walls. Detonates 4 seconds after clip is released. The pineapple is not too
-// effective a weapon in the hands of the amatuer, but once the user masters
-// the timing, it will become a very deadly toy. Throw directly at opponents to
-// provide them with a nasty concussion.
+// XM84 Thrown projectile class
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XM84Thrown extends BallisticPineapple;
 

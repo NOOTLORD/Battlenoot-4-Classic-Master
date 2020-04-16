@@ -1,12 +1,12 @@
 //=============================================================================
-// DTM4A1AssaultHead.
-//
-// DamageType for MJ51 headshots
+// Damage type class for RS04 Pistol headshots
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+// Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
-class DT_M4A1AssaultHead extends DT_BWBullet;
+class DT_RS04PistolHead extends DT_BWBullet;
 
 // HeadShot stuff from old sniper damage ------------------
 static function IncrementKills(Controller Killer)
@@ -29,23 +29,23 @@ static function IncrementKills(Controller Killer)
 
 defaultproperties
 {
-     DeathStrings(0)="%o got %vh brain shredded by %k's M4A1."
-     DeathStrings(1)="%o lost his head thanks to %k's M4A1."
-     DeathStrings(2)="%k's M4A1 lifted %o's head off %vh shoulders."
+     DeathStrings(0)="%o was force fed %k's RS04 bullets."
+     DeathStrings(1)="%k's lodged some RS04 bullets in %o's head."
+     DeathStrings(2)="%o took %k's RS04 round right in the eye."
+     DeathStrings(3)="%k removed %o's head with a .45 RS04 bullet."
      bHeaddie=True
-     DamageIdent="Assault"
+     DamageIdent="Pistol"
      bDisplaceAim=False
-     bUseMotionBlur=False
-     WeaponClass=Class'BWBPRecolorsPro.M4A1Carbine'
-     DeathString="%o had %vh brain shredded by %k's M4A1."
-     FemaleSuicide="%o took the easy way out."
-     MaleSuicide="%o took the easy way out."
-     bFastInstantHit=True
+     bUseMotionBlur=False	
+     WeaponClass=Class'BallisticProV55.RS04Pistol'
+     DeathString="%o's brain shut down under %k's RS04 fire."
+     FemaleSuicide="%o HEADSHOT SELF?!"
+     MaleSuicide="%o HEADSHOT SELF?!"
      bAlwaysSevers=True
      bSpecial=True
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
 	 VehicleDamageScaling=0.000000
-     InvasionDamageScaling=1.000000	 
+     InvasionDamageScaling=1.000000
 }

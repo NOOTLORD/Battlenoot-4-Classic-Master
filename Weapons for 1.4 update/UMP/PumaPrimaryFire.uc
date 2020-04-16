@@ -1,11 +1,10 @@
 //=============================================================================
-// PumaSecondaryFire.
-//
-// A grenade that bonces off walls and detonates a certain time after impact
-// Good for scaring enemies out of dark corners and not much else
+// Primaryfire class for Puma Repeater
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class PumaPrimaryFire extends BallisticRangeAttenFire;
 
@@ -33,6 +32,7 @@ defaultproperties
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassBone="tip"
      BrassOffset=(X=-52.500000,Y=2.000000)
+     FireAnim="SightFire"	 
      AimedFireAnim="SightFire"
      RecoilPerShot=98.000000
      FireChaos=0.050000
@@ -43,7 +43,7 @@ defaultproperties
      bPawnRapidFireAnim=True
      FireEndAnim=
      FireRate=0.100000
-     AmmoClass=Class'BWBPRecolorsPro.Ammo_Puma'
+     AmmoClass=Class'BWBPRecolorsPro.Ammo_Puma_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

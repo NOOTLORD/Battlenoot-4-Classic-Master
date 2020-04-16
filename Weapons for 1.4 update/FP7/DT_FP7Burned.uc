@@ -1,11 +1,10 @@
 //=============================================================================
-// DTFP7Burned.
-//
-// Damage type for FP7 fires.
-// Melts stuff.
-//
+// Damage type for players caught by FP7 fires.
+// 
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_FP7Burned extends DT_BWFire;
 
@@ -16,10 +15,7 @@ defaultproperties
      DeathStrings(2)="%o stopped, dropped and rolled around in %k's inferno."
      DeathStrings(3)="%o was roasted to a cinder by %k's FP7."
      bIgnoredOnLifts=True
-     InvasionDamageScaling=1.000000
      DamageIdent="Grenade"
-	 AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
 	 bDisplaceAim=False
      bUseMotionBlur=False
      WeaponClass=Class'BallisticProV55.FP7Grenade'
@@ -30,4 +26,5 @@ defaultproperties
      PawnDamageSounds(0)=Sound'BallisticSounds1.FP7.FP7BurnFlesh'
      KDamageImpulse=20000.000000
 	 VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 	 
 }

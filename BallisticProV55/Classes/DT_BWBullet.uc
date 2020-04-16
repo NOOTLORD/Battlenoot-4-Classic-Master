@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_BWBullet.
-//
-// Base damage type that will play some pawn impact sounds for bullets
+// Damage type class for Bullet loaded weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,10 +1,10 @@
 //=============================================================================
-// DT_BWMiscDamage.
-//
-// Padding to prevent DoBloodEffects on BWPawns
+// Damage type class for Misc Damage
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWMiscDamage extends BallisticDamageType;
 

@@ -52,7 +52,7 @@ defaultproperties
      AmmoAmount=30
      MaxDesireability=0.320000
      InventoryType=Class'BCoreProV55.BallisticAmmo'
-     PickupMessage="You picked up some Ballistic ammo"
+     PickupMessage="Received Ammo"
      PickupForce="FlakAmmoPickup"
      DrawType=DT_StaticMesh
      AmbientGlow=0

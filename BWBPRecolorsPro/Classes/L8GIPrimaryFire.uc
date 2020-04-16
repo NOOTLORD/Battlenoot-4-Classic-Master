@@ -1,10 +1,10 @@
 //=============================================================================
-// FP7PrimaryFire.
-//
-// FP7 Grenade thrown overhand
+// Primaryfire class for L8 Ammo Pack
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class L8GIPrimaryFire extends BallisticGrenadeFire;
 
@@ -17,11 +17,11 @@ defaultproperties
      PreFireAnim="PrepThrow"
      FireAnim="Throw"
      AmmoClass=Class'BWBPRecolorsPro.Ammo_L8GI'
-     ShakeRotMag=(X=32.000000,Y=8.000000)
-     ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=1.500000
-     ShakeOffsetMag=(X=-3.000000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=1.500000
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPRecolorsPro.L8GIThrown'
 }

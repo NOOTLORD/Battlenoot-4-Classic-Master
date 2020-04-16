@@ -234,7 +234,6 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
      PlayerViewOffset=(X=0.500000,Y=12.000000,Z=-18.000000)
-     BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_F2000'
      IconCoords=(X2=127,Y2=31)
@@ -243,8 +242,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=4.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.F2000_FP'
      DrawScale=0.300000
      AmbientGlow=5

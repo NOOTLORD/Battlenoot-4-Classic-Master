@@ -843,10 +843,10 @@ defaultproperties
      ItemName="G5 Bazooka"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
-     LightHue=25
-     LightSaturation=100
-     LightBrightness=192.000000
-     LightRadius=12.000000
+     LightHue=30
+     LightSaturation=150
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims2.G5_FP'
      DrawScale=0.300000
      AmbientGlow=5

@@ -667,22 +667,10 @@ defaultproperties
      End Object
      BRemoveAll=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.RemoveAllButton'
 
-     Begin Object Class=GUIButton Name=BBox1Button
-         Caption="Melee"
-         Hint="View the list of weapons in the 'Melee' box"
-         WinTop=0.940000
-         WinLeft=0.025000
-         WinWidth=0.150000
-         TabOrder=0
-         OnClick=BallisticTab_OutfittingPro.InternalOnClick
-         OnKeyEvent=BBox1Button.InternalOnKeyEvent
-     End Object
-     BBox1=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox1Button'
-
      Begin Object Class=GUIButton Name=BBox2Button
          Caption="Sidearm"
          Hint="View the list of weapons in the 'Sidearm' box"
-         WinTop=0.940000
+         WinTop=0.970000
          WinLeft=0.225000
          WinWidth=0.150000
          TabOrder=0
@@ -694,7 +682,7 @@ defaultproperties
      Begin Object Class=GUIButton Name=BBox3Button
          Caption="Primary"
          Hint="View the list of weapons in the 'Primary' box"
-         WinTop=0.940000
+         WinTop=0.970000
          WinLeft=0.425000
          WinWidth=0.150000
          TabOrder=0
@@ -706,7 +694,7 @@ defaultproperties
      Begin Object Class=GUIButton Name=BBox5Button
          Caption="Grenade"
          Hint="View the list of weapons in the 'Grenade' box"
-         WinTop=0.940000
+         WinTop=0.970000
          WinLeft=0.625000
          WinWidth=0.150000
          TabOrder=0
@@ -714,7 +702,7 @@ defaultproperties
          OnKeyEvent=BBox5Button.InternalOnKeyEvent
      End Object
      BBox5=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox5Button'
-
+	 
      Begin Object Class=GUIScrollTextBox Name=WeaponDescription
          CharDelay=0.001500
          EOLDelay=0.250000
@@ -730,7 +718,7 @@ defaultproperties
          bAcceptsInput=False
          bNeverFocus=True
      End Object
-     lb_Desc=GUIScrollTextBox'BallisticProV55.BallisticTab_OutfittingPro.WeaponDescription'
+     lb_Desc=GUIScrollTextBox'BallisticProV55.BallisticTab_OutfittingPro.WeaponDescription'	 
 
      Begin Object Class=moCheckBox Name=ch_AllWeapsCheck
          ComponentJustification=TXTA_Left
@@ -762,21 +750,17 @@ defaultproperties
      End Object
      fl_ChangeInterval=moFloatEdit'BallisticProV55.BallisticTab_OutfittingPro.fl_ChangeIntervalFloat'
 
-     BoxNames(0)="Melee"
-     BoxNames(1)="Sidearm"
-     BoxNames(2)="Primary"
-     BoxNames(3)="Secondary"
-     BoxNames(4)="Grenade"
+     BoxNames(0)="Sidearm"
+     BoxNames(1)="Primary"
+     BoxNames(2)="Grenade"
      Headings(0)="Melee"
      Headings(1)="Sidearms"
-     Headings(2)="Sub Machineguns"
-     Headings(3)="Assault Rifles"
-     Headings(4)="Energy Weapons"
-     Headings(5)="Heavy Machineguns"
-     Headings(6)="Shotguns"
-     Headings(7)="Ordnance"
-     Headings(8)="Sniper Rifles"
-     Headings(9)="Grenades"
-     Headings(10)="Miscellaneous"
-     Headings(11)="Non-BW"
+     Headings(2)="SMG's"
+     Headings(3)="Rifles"
+     Headings(4)="Machineguns"
+     Headings(5)="Shotguns"
+     Headings(6)="Snipers"
+     Headings(7)="Abilities"
+     Headings(8)="Miscellaneous"
+     Headings(9)="Non-BW"
 }

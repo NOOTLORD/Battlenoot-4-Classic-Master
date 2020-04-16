@@ -179,10 +179,10 @@ defaultproperties
      ItemName="SK-410 Shotgun"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
-     LightHue=25
+     LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=5.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_FP'
      DrawScale=0.350000
      AmbientGlow=5

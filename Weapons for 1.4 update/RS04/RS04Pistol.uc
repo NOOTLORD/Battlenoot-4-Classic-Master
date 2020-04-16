@@ -1,12 +1,12 @@
 //=============================================================================
-// Weapon class for GRS9 Pistol
+// Weapon class for RS04 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2007 RuneStorm. All Rights Reserved.
+// Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
-class GRS9Pistol extends BallisticHandgun;
+class RS04Pistol extends BallisticHandGun;
 
 simulated function PlayIdle()
 {
@@ -15,14 +15,14 @@ simulated function PlayIdle()
 	if (!bPendingSightUp || SightingState != SS_None || bScopeView || !CanPlayAnim(IdleAnim, ,"IDLE"))
 		return;
 	FreezeAnimAt(0.0);
-}				  
+}
+
 // Change some properties when using sights...
 simulated function SetScopeBehavior()
 {
-	super.SetScopeBehavior();
+	super(BallisticHandgun).SetScopeBehavior();
 
 	bUseNetAim = default.bUseNetAim || bScopeView;
-	
 	if (Hand < 0)
 		SightOffset.Y = default.SightOffset.Y * -1;
 }
@@ -38,7 +38,7 @@ simulated function PlayCocking(optional byte Type)
 simulated function BringUp(optional Weapon PrevWeapon)
 {
 	Super.BringUp(PrevWeapon);
-
+	
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
 	{
 		IdleAnim = 'OpenIdle';
@@ -49,7 +49,7 @@ simulated function BringUp(optional Weapon PrevWeapon)
 		IdleAnim = 'Idle';
 		ReloadAnim = 'Reload';
 	}
-}
+}	
 
 simulated event AnimEnd (int Channel)
 {
@@ -111,50 +111,42 @@ function float GetAIRating()
 
 	return class'BUtil'.static.DistanceAtten(Rating, 0.35, Dist, 768, 2048); 
 }
+
 // tells bot whether to charge or back off while using this weapon
-function float SuggestAttackStyle()	{	return 0.8;	}
+function float SuggestAttackStyle()	{	return 0.1;	}
 
 // tells bot whether to charge or back off while defending against this weapon
-function float SuggestDefenseStyle()	{	return -0.8;	}
+function float SuggestDefenseStyle()	{	return 0.5;	}
 
 // End AI Stuff =====
 
 defaultproperties
 {
-	 AIRating=0.6
-	 CurrentRating=0.6
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_GRS-9
-     BigIconCoords=(Y1=30,Y2=230)
+     AIReloadTime=1.500000
+     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_RS04'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     SightFXBone="SightBone"	 
-     ManualLines(0)="Automatic fire. Short ranged, but has higher DPS than most pistols. Recoil is moderate."
-     ManualLines(1)="Projects a laser beam. Has extremely low DPS, but consistent damage over range and recharges over time."
-     ManualLines(2)="The Weapon Function key causes a hitscan single-shot beam to be projected from the unit, dealing good damage. The GRS-9 is effective at close range."
-     SpecialInfo(0)=(Info="120.0;8.0;-999.0;25.0;0.0;0.0;-999.0")
+     bWT_Bullet=True
+     SpecialInfo(0)=(Info="60.0;6.0;1.0;110.0;0.2;0.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
-     MagAmmo=15
-     CockAnimRate=1.200000
+     MagAmmo=8
      CockSound=(Sound=Sound'BallisticSounds1.Glock.Glk-Cock',Volume=0.700000)
-     ReloadAnimRate=1.350000
      ClipHitSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipHit',Volume=0.800000)
      ClipOutSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipOut',Volume=0.800000)
      ClipInSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
-     bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Burst Fire",ModeID="WM_Burst",Value=3.000000)
+     bCockOnEmpty=True	 
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
-     bNoCrosshairInScope=True
-     SightOffset=(X=-15.000000,Z=5.900000)
+     SightOffset=(X=-20.000000,Y=-1.890000,Z=17.000000)
+	 SightPivot=(Roll=-256)
      SightDisplayFOV=40.000000
      SightingTime=0.200000
-	 SightZoomFactor=0
-     SightAimFactor=0.050000
-     SprintChaos=0.050000
+	 SightZoomFactor=0	 
+     SightAimFactor=0.100000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
      AimAdjustTime=100.000000
      AimSpread=16
@@ -162,36 +154,39 @@ defaultproperties
      ChaosDeclineTime=0.450000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=384
-     RecoilYawFactor=0.000000
+     RecoilYawFactor=0.200000
      RecoilXFactor=0.250000
      RecoilYFactor=0.250000
      RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.150000
-     FireModeClass(0)=Class'BallisticProV55.GRS9PrimaryFire'
+     RecoilDeclineDelay=0.250000
+     FireModeClass(0)=Class'BallisticProV55.RS04PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     SelectAnimRate=1.500000
-     PutDownAnimRate=1.500000
+     PutDownTime=0.600000
+     BringUpTime=0.800000	 
      SelectForce="SwitchToAssaultRifle"
+     AIRating=0.600000
+     CurrentRating=0.600000
      bCanThrow=False
-     AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9_Pistol'
-     Description="The GRS9 from Drake & Co. is used primarily by inner core planets for law enforcement purposes. The additional laser unit adds an alternative attack to the GRS9. The laser unit can be held down, for up to 3.5 seconds, releasing a searing beam upon enemies. This drains the rechargeable battery however, which must be left to replenish when empty."
-     Priority=9
+     AmmoClass(0)=Class'BallisticProV55.Ammo_RS04_Pistol'
+     Description="RS04 .45 Compact||Manufacturer: Drake & Co Firearms|Primary: .45 Fire|Secondary: Flashlight||A brand new precision handgun designed by Drake & Co firearms, the Redstrom .45 is to be the military version of the current 10mm RS8. Dubbed the RS04, this unique and accurate pistol is still in its prototype stages. The .45 HV rounds used in the RS04 prototype allow for much improved stopping power at the expense of clip capacity and recoil. Current features include a tactical flashlight and a quick loading double shot firemode. Currently undergoing combat testing by private military contractors, the 8-round Redstrom is seen frequently in the battlefields of corporate warfare. The RS04 .45 Compact model is the latest variant."
+     Priority=17
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-     PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-9.000000)
-     AttachmentClass=Class'BallisticProV55.GRS9Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_GRS-9
+     GroupOffset=6
+     PlayerViewOffset=(Y=9.000000,Z=-14.000000)
+     AttachmentClass=Class'BallisticProV55.RS04Attachment'
+     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_RS04'
      IconCoords=(X2=127,Y2=31)
-     ItemName="GRS-9 Pistol"
+     ItemName="RS04 Pistol"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=2.250000
-     Mesh=SkeletalMesh'BallisticAnims1.Glock_FP'
-     DrawScale=0.150000
-     AmbientGlow=5
+     Mesh=SkeletalMesh'BallisticAnims2.RS04_FP'
+     DrawScale=0.350000
+     AmbientGlow=5	 
 }

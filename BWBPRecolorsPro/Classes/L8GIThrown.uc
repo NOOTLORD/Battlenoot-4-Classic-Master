@@ -1,10 +1,10 @@
 //=============================================================================
-// FP7Thrown.
-//
-// Thrown overhand FP7. Spawns fires on detonation.
+// L8 Ammo Pack Thrown projectile class
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class L8GIThrown extends BallisticGrenade;
 
@@ -146,8 +146,8 @@ function GiveAmmo( actor Other )
 
 defaultproperties
 {
-	 Speed=600.000000
-	 MaxSpeed=600.000000
+	 Speed=500.000000
+	 MaxSpeed=500.000000
      HealSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
      RandomSpin=1024.000000
      bNoInitialSpin=True

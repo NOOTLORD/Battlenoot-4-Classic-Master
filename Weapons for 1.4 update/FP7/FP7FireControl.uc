@@ -1,11 +1,10 @@
 //=============================================================================
-// FP7FireControl.
-//
-// This is spawned when a fire grenade explodes. It lights up players, plays
-// sounds and effects and spawns all other sub fire stuff...
+// Fire control class for FP7 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class FP7FireControl extends Actor;
 
@@ -17,10 +16,10 @@ struct HitPawnInfo
 	var float HitTime;
 };
 
-var 	int				Ident;
+var int				Ident;
 var() float			DamageRadius;			// Radius in which to immolate players
 var	bool			bHeld;					// This fire was detonated in hand. Use held messages
-var	Vector		GroundFireSpots[MAX_FIRE_SPOTS];	// Vectors sent to client to tell it where to spawn fires
+var	Vector		    GroundFireSpots[MAX_FIRE_SPOTS];	// Vectors sent to client to tell it where to spawn fires
 var() class<BCImpactManager>	ImpactManager;	// Impact manager to spawn on final hit
 var	array<HitPawnInfo>	HitPawnData;
 var	float			Damage, BaseDamage;
@@ -43,7 +42,6 @@ function Reset()
 function TryDamage (Pawn Victim, float Interval, class<DamageType> DamageType)
 {	
 	local int Index;
-	local Vector XYVel;
 
 	Index = FindIndex(Victim);
 
@@ -51,13 +49,6 @@ function TryDamage (Pawn Victim, float Interval, class<DamageType> DamageType)
 	{
 		HitPawnData[Index].HitTime = Level.TimeSeconds;
 		class'BallisticDamageType'.static.GenericHurt (Victim, Damage, Instigator, Victim.Location, vect(0,0,0), DamageType);
-		if ( /*Instigator != Victim &&*/ Victim.Controller != None && Victim.Controller.SameTeamAs(Instigator.Controller))
-		{
-			//bog down allies attempting to crawl through this fp7's fire
-			XYVel = -Victim.Velocity;
-			XYVel.Z = 0;
-			Victim.AddVelocity(XYVel + RepulsionForceMag * Normal(Victim.Location - Location) + vect(0,0,20));
-		}
 	}
 }
 
@@ -247,7 +238,7 @@ defaultproperties
      bAlwaysRelevant=True
      RemoteRole=ROLE_SimulatedProxy
      AmbientSound=Sound'BallisticSounds1.FP7.FP7FireLoop'
-     LifeSpan=10.000000
+     LifeSpan=5.000000
      bFullVolume=True
      SoundVolume=255
      SoundRadius=256.000000

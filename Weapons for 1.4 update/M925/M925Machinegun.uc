@@ -116,8 +116,8 @@ defaultproperties
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M925'
      BigIconCoords=(Y1=36,Y2=235)
+     BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      SightFXClass=Class'BallisticProV55.M925SightLEDs'
-     BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
      ManualLines(0)="Automatic .50 cal fire. High damage per shot, but high recoil and slow fire rate. Sustained damage output is excellent. As a machinegun, it has a very long effective range. Large magazine capacity allows the weapon to fire for a long time, but the reload time is long."
@@ -186,15 +186,9 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=6.000000
-     Mesh=SkeletalMesh'BallisticAnims2.M925MG'
+     LightBrightness=130.000000
+     LightRadius=3.000000
+     Mesh=SkeletalMesh'BallisticAnims2.M925_FP'
      DrawScale=0.140000
-     Skins(0)=Texture'BallisticWeapons2.M925.M925Masked'
-     Skins(1)=Texture'BallisticWeapons2.M925.M925Small'
-     Skins(2)=Texture'BallisticWeapons2.M925.M925HeatShield'
-     Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-     Skins(4)=Texture'BallisticWeapons2.M925.M925AmmoBox'
-     Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      AmbientGlow=5
 }

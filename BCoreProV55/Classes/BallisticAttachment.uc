@@ -761,6 +761,7 @@ defaultproperties
      FlashBone="tip"
      AltFlashBone="tip"
      FlashScale=1.000000
+     LightMode=MU_Primary	 
      BrassBone="ejector"
      TrackAnimMode=MU_None
      TracerChance=1.000000

@@ -23,18 +23,6 @@ replication
 		ServerSwitchSilencer;
 }
 
-simulated function PlayerSprint (bool bSprinting)
-{
-	if (BCRepClass.default.bNoJumpOffset)
-		return;
-	if (bScopeView && Instigator.IsLocallyControlled())
-		StopScopeView();
-	if (bAimDisabled)
-		return;
-	SetNewAimOffset(CalcNewAimOffset(), AimAdjustTime);
-	Reaim(0.05, AimAdjustTime, 0.05);
-}
-
 simulated function PlayIdle()
 {
 	super.PlayIdle();
@@ -44,6 +32,7 @@ simulated function PlayIdle()
 	FreezeAnimAt(0.0);
 }
 
+// Change some properties when using sights...
 simulated function SetScopeBehavior()
 {
 	super(BallisticHandgun).SetScopeBehavior();
@@ -52,6 +41,7 @@ simulated function SetScopeBehavior()
 	if (Hand < 0)
 		SightOffset.Y = default.SightOffset.Y * -1;
 }
+
 simulated function PlayCocking(optional byte Type)
 {
 	if (Type == 2)
@@ -305,7 +295,7 @@ defaultproperties
      LightHue=30
      LightSaturation=150
      LightBrightness=130.000000
-     LightRadius=3.000000
+     LightRadius=2.250000
      Mesh=SkeletalMesh'BallisticAnims1.RS8_FP'
      DrawScale=0.300000
      AmbientGlow=5

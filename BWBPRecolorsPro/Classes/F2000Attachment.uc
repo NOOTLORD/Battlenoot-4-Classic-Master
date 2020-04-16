@@ -14,7 +14,7 @@ var Vector		SpawnOffset;
 simulated event PostBeginPlay()
 {
 	super.PostBeginPlay();
-	SetBoneScale (0, 0.0, 'SilencerBone');
+	SetBoneScale (0, 0.0, 'Suppressor');
 }
 
 simulated function Vector GetTipLocation()

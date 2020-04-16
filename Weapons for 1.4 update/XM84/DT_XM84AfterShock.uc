@@ -1,8 +1,10 @@
 //=============================================================================
-// DTMRS138Tazer.
-//?/ a/sf/ a/s/ Headache grenades!
+// Damage type for the XM84 Grenade Aftershock
+//
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_XM84AfterShock extends DT_BWMiscDamage;
 

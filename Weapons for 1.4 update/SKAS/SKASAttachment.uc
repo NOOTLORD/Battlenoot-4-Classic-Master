@@ -8,43 +8,6 @@
 //=============================================================================
 class SKASAttachment extends BallisticShotgunAttachment;
 
-simulated function FlashMuzzleFlash(byte Mode)
-{
-	local rotator R;
-
-	if (FlashMode == MU_None || (FlashMode == MU_Secondary && Mode == 0) || (FlashMode == MU_Primary && Mode != 0))
-		return;
-	if (Instigator.IsFirstPerson() && PlayerController(Instigator.Controller).ViewTarget == Instigator)
-		return;
-
-	if (AltMuzzleFlashClass != None && AltMuzzleFlash == None)
-		class'BUtil'.static.InitMuzzleFlash (AltMuzzleFlash, AltMuzzleFlashClass, DrawScale*FlashScale, self, AltFlashBone);
-	if (MuzzleFlashClass != None && MuzzleFlash == None)
-		class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, DrawScale*FlashScale, self, FlashBone);
-		
-	R = Instigator.Rotation;
-	R.Pitch = Rotation.Pitch;
-	
-	if (Mode == 0 || Mode == 1)
-	{
-		MuzzleFlash.Trigger(self, Instigator);
-	}
-
-}
-
-function SKASUpdateHit(Actor HitActor, vector HitLocation, vector HitNormal, int HitSurf, optional bool bIsRight)
-{
-	mHitNormal = HitNormal;
-	mHitActor = HitActor;
-	mHitLocation = HitLocation;
-	if (bIsRight)
-		FiringMode = 2;
-	else
-		FiringMode = 1;
-	FireCount++;
-	ThirdPersonEffects();
-}
-
 defaultproperties
 {
      FireClass=Class'BWBPRecolorsPro.SKASPrimaryFire'													 
@@ -63,7 +26,7 @@ defaultproperties
      TracerChance=0.500000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.950000
-     Mesh=SkeletalMesh'BallisticRecolorsAnims.3RD-SKAS'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.SKAS_TP'
      RelativeLocation=(X=-2.000000,Z=7.000000)
      RelativeRotation=(Pitch=32768)
      DrawScale=0.115000

@@ -1,5 +1,10 @@
 //=============================================================================
-// FP7Pickup.
+// Pickup class for L8 Ammo Pack
+//
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class L8GIPickup extends BallisticWeaponPickup
 	placeable;
@@ -27,7 +32,7 @@ defaultproperties
      bWeaponStay=False
      InventoryType=Class'BWBPRecolorsPro.L8GIAmmoPack'
      RespawnTime=16.000000
-     PickupMessage="You picked up the L8 GI Ammunition Pack"
+     PickupMessage="Received Ammo"
      PickupSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
      StaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackHi'
      bOrientOnSlope=True

@@ -43,7 +43,6 @@ function float SuggestDefenseStyle()	{	return -0.6;	}
 
 defaultproperties
 {
-     PlayerSpeedFactor=1.100000
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.OA-SMG.BigIcon_XMK5'
@@ -114,8 +113,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=4.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims1.XMK5_FP'
      DrawScale=0.450000
      AmbientGlow=5

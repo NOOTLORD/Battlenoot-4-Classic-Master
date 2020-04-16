@@ -1,10 +1,10 @@
 //=============================================================================
-// DTM4A1Assault.
-//
-// DamageType for the MJ51 assault rifle primary fire
+// Damage type class for M4A1 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_M4A1Assault extends DT_BWBullet;
 

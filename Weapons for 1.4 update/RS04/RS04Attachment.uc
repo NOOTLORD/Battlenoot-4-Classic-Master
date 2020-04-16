@@ -1,34 +1,37 @@
 //=============================================================================
-// 3rd person weapon class for MGL Grenade Launcher
+// 3rd person weapon class for for RS04 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+// Copyright(c) 2006 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
-class MGLAttachment extends BallisticAttachment;
+class RS04Attachment extends HandgunAttachment;
 
 defaultproperties
 {
-     MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
+     MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashMode=MU_Primary 
-     FlashScale=0.400000	 
+     FlashScale=0.425000	 
      LightMode=MU_Primary	 
+     FlashBone="tip"	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
+     BrassClass=Class'BallisticProV55.Brass_Pistol'
+	 BrassMode=MU_Primary
      InstantMode=MU_Primary
      TrackAnimMode=MU_None
-     TracerClass=Class'BallisticProV55.TraceEmitter_Default'
      TracerMode=MU_Primary
-     TracerChance=1.000000	 
-     TracerMix=-3
+     TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Primary
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
      FlyByMode=MU_Primary	 
-     ReloadAnim="Reload_AR"
-     ReloadAnimRate=0.500000
+     ReloadAnim="Reload_Pistol"
+     CockingAnim="Cock_RearPull"
+     ReloadAnimRate=1.400000
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticRecolorsAnims.Conqueror_TP'
+     Mesh=SkeletalMesh'BallisticAnims2.RS04_TP'
      RelativeRotation=(Pitch=32768)
-     DrawScale=0.250000
+     DrawScale=0.210000
+     PrePivot=(Z=-2.000000)
 }

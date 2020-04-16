@@ -173,7 +173,6 @@ defaultproperties
      InventoryGroup=2
      GroupOffset=14
      PlayerViewOffset=(Y=19.500000,Z=-30.000000)
-     BobDamping=1.200000
      AttachmentClass=Class'BWBPRecolorsPro.AH208Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_AH208-Pistol'
      IconCoords=(X2=127,Y2=31)
@@ -182,8 +181,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=4.000000
+     LightBrightness=130.000000
+     LightRadius=2.250000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Eagle_FP'
      DrawScale=0.800000
      AmbientGlow=5

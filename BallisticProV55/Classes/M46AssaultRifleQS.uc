@@ -121,8 +121,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=4.000000					   																									   						 
+     LightBrightness=130.000000
+     LightRadius=3.000000				   																									   						 
      Mesh=SkeletalMesh'BallisticAnims1.M46_FP'
      DrawScale=0.300000	 
      AmbientGlow=5

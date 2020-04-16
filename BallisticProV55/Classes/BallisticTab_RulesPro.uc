@@ -81,17 +81,17 @@ function SaveSettings()
 
 function DefaultSettings()
 {
-	sl_Accuracy.SetValue(1.0);
-	sl_Recoil.SetValue(1.0);	
+	sl_Accuracy.SetValue(0.30);
+	sl_Recoil.SetValue(0.25);	
 	ch_StableSprint.Checked(false);
-	ch_NoLongGun.Checked(false);
+	ch_NoLongGun.Checked(true);
 	fl_Damage.SetValue(1.0);
 	fl_VDamage.SetValue(1.0);	
-	ch_NoDodging.Checked(false);
+	ch_NoDodging.Checked(true);
 	ch_DoubleJump.Checked(false);
 	fl_HeadPct.SetValue(1.5);
 	fl_LimbPct.SetValue(0.75);
-	ch_LimitCarry.Checked(False);
+	ch_LimitCarry.Checked(True);
 	int_MaxWeps.SetValue(1);
 }
 

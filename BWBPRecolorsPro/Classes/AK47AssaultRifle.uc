@@ -109,7 +109,6 @@ defaultproperties
      InventoryGroup=3
      GroupOffset=5
      PlayerViewOffset=(X=-4.000000,Y=13.000000,Z=-16.000000)
-     BobDamping=2.000000
      AttachmentClass=Class'BWBPRecolorsPro.AK47Attachment'
      IconMaterial=Texture'BallisticUI.Icons.AK-470.SmallIcon_AK-470'
      IconCoords=(X2=127,Y2=31)
@@ -118,8 +117,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=4.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.AK490_FP'
      DrawScale=0.350000
      AmbientGlow=5

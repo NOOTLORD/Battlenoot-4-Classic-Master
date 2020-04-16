@@ -1,10 +1,10 @@
 //=============================================================================
-// DT_BWBlunt.
-//
-// Base damage type that will play some pawn impact sounds for blunt hits
+// Damage type class for Blunt weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWBlunt extends BallisticDamageType;
 

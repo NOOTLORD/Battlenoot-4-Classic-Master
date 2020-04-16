@@ -1,10 +1,10 @@
 //=============================================================================
-// DTXM84Held.
-//
-// Damage type for unreleased XM84
+// Damage type for the held XM84 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_XM84Held extends DT_BWExplode;
 

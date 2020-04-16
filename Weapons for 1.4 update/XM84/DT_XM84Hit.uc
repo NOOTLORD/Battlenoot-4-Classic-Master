@@ -1,10 +1,10 @@
 //=============================================================================
-// DTXM84Hit.
-//
 // Damage type for the XM84 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_XM84Hit extends DT_BWBlunt;
 

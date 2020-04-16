@@ -1,10 +1,10 @@
 //=============================================================================
-// DT_MP40Chest.
-//
-// DamageType for the FMP-2012
+// Damage type class for FMP MachinePistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_FMPMachinePistol extends DT_BWBullet;
 

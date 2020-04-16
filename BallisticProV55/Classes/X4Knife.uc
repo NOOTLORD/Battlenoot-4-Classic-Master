@@ -9,8 +9,6 @@
 //=============================================================================
 class X4Knife extends BallisticMeleeWeapon;
 
-#exec OBJ LOAD File=BallisticSounds3.uax
-
 // AI Interface =====					 
 // choose between regular or alt-fire
 

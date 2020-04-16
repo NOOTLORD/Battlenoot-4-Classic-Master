@@ -91,7 +91,7 @@ defaultproperties
      bSplashDamage=True
      bRecommendSplashDamage=True
      bTossed=True
-     bFireOnRelease=True
+     bFireOnRelease=False
      FireRate=1.200000
      BotRefireRate=0.500000
 }

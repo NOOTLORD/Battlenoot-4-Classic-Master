@@ -203,15 +203,9 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=5.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims1.SRS600_FP'
      DrawScale=0.500000
-     Skins(0)=Texture'BallisticWeapons1.SRS.SRS-600Main'
-     Skins(1)=Texture'BallisticWeapons1.SRS600Ammo'
-	 Skins(2)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
-     Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-	 Skins(4)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
-	 Skins(5)=Shader'BallisticWeapons1.SRS600.SRS-SelfIllum'
      AmbientGlow=5
 }

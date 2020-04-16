@@ -1,10 +1,10 @@
 //=============================================================================
-// PumaAttachment.
-//
-// Yeah this is the shield gun's.
+// 3rd person weapon class for Puma Repeater
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class PumaAttachment extends BallisticAttachment;
 

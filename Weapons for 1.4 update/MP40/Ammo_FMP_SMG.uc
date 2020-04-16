@@ -1,15 +1,15 @@
 //=============================================================================
-// Ammo class for M4 Carbine
+// Ammo class for FMP-MachinePistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
-class Ammo_M4A1_Rifle extends BallisticAmmo;
+class Ammo_FMP_SMG extends BallisticAmmo;
 
 defaultproperties
 {
-     MaxAmmo=192
-     InitialAmount=96
+     MaxAmmo=120
+	 InitialAmount=90
 }

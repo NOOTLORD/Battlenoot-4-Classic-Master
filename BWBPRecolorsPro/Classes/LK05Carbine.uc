@@ -203,8 +203,8 @@ defaultproperties
      BigIconCoords=(Y1=36,Y2=225)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     BringUpSound=(Sound=Sound'BallisticRecolorsSounds.M4.M4-PullOut',Volume=0.425000)
-     PutDownSound=(Sound=Sound'BallisticRecolorsSounds.M4.M4-Putaway',Volume=0.425000)
+     BringUpSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-PullOut',Volume=0.425000)
+     PutDownSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-Putaway',Volume=0.425000)
      MagAmmo=32
      CockSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Cock',Volume=0.800000)
      ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagOut',Volume=0.800000)
@@ -259,8 +259,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=4.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.LK05_FP'
      DrawScale=0.300000
      AmbientGlow=5

@@ -1,10 +1,10 @@
 //=============================================================================
-// M4Attachment.
-//
-// 3rd person weapon attachment for M4 Carbine
+// 3rd person weapon class for for M4A1 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class M4A1Attachment extends BallisticAttachment;
 

@@ -1,16 +1,16 @@
 //=============================================================================
-// Ammo class for MGL Grenade Launcher
+// Ammo class for FP7 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
-class Ammo_MGL_Launcher extends BallisticAmmo;
+class Ammo_FP7_Grenade extends BallisticAmmo;
 
 defaultproperties
 {
      bNoPackResupply=True
-     MaxAmmo=12
-     InitialAmount=12
+     MaxAmmo=1
+     InitialAmount=1
 }

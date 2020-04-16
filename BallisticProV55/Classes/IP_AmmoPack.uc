@@ -157,7 +157,7 @@ defaultproperties
      LowPolyStaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackLo'
      LowPolyDist=500.000000
      MaxDesireability=0.700000
-     PickupMessage="You picked up an ammo pack."
+     PickupMessage="Received Ammo"
      PickupSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
      PickupForce="HealthPack"
      StaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackHi'

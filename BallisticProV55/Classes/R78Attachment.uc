@@ -8,26 +8,6 @@
 //=============================================================================
 class R78Attachment extends BallisticAttachment;
 
-simulated function Vector GetTipLocation()
-{
-    local Coords C;
-    local Vector X, Y, Z;
-
-	if (Instigator.IsFirstPerson())
-	{
-		if (R78Rifle(Instigator.Weapon).bScopeView)
-		{
-			Instigator.Weapon.GetViewAxes(X,Y,Z);
-			return Instigator.Location + X*20 + Z*5;
-		}
-		else
-			C = Instigator.Weapon.GetBoneCoords('tip');
-	}
-	else
-		C = GetBoneCoords('tip');
-    return C.Origin;
-}
-
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'

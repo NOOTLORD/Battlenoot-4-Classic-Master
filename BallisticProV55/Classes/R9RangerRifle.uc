@@ -122,8 +122,8 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=5.000000
+     LightBrightness=130.000000
+     LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims2.R9_FP'
      DrawScale=0.500000
      Skins(4)=Texture'BallisticWeapons2.Weapons.USSRSkin'	 

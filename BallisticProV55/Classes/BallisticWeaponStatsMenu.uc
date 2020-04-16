@@ -123,13 +123,12 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 	Box_Desc.bVisible = False;
 	
 	cb_Display.AddItem("Statistics");
-	cb_Display.AddItem("Manual");
 
 	cb_Display.bReadOnly = True;
 
 	LoadList();
 	bInitialized = true;
-	cb_Display.SetIndex(1);
+	cb_Display.SetIndex(0);
 	SwitchDisplay(cb_Display.GetIndex());
 	UpdateInfo();
 }
@@ -266,7 +265,6 @@ function UpdateInfo()
 		WeaponIcon.Image = BW.default.BigIconMaterial;
 		l_WeaponCaption.Caption = BW.default.ItemName;
 		l_WeaponCaption.TextColor = BW.default.HUDColor;
-		sb_Desc.SetContent(BW.static.GetManual());
 		
 		//pri
 		db_DShot.Caption = FS.Damage;

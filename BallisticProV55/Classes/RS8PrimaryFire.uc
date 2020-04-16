@@ -159,7 +159,6 @@ defaultproperties
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     ClipFinishSound=(Volume=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashBone="Muzzle"
      FlashScaleFactor=0.350000

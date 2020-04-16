@@ -8,28 +8,18 @@
 //=============================================================================
 class AH208Attachment extends HandgunAttachment;
 
-simulated function PostBeginPlay()
-{
-	Super.PostBeginPlay();
-	
-	SetBoneScale (0, 0.0, 'Scope');
-	SetBoneScale (1, 0.0, 'Compensator');
-	SetBoneScale (2, 0.0, 'LAM');
-}
-
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
 	 FlashMode=MU_Primary
      FlashBone="Muzzle"
-     AltFlashBone="Muzzle"
      FlashScale=0.200000
+     LightMode=MU_Primary 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
 	 BrassMode=MU_Primary
      BrassBone="Scope"
 	 InstantMode=MU_Primary
-     LightMode=MU_Primary
 	 TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
 	 TracerMode=MU_Primary

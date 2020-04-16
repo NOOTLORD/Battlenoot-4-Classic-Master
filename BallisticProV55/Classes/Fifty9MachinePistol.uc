@@ -8,68 +8,6 @@
 //=============================================================================
 class Fifty9MachinePistol extends BallisticWeapon;
 
-// This uhhh... thing is added to allow manual drawing of brass OVER the muzzle flash
-struct UziBrass
-{
-	var() actor Actor;
-	var() float KillTime;
-};
-var   array<UziBrass>	UziBrassList;
-
-simulated function RenderSightFX(Canvas Canvas)
-{
-	local coords C;
-
-	if (SightFX != None)
-	{
-		C = GetBoneCoords(SightFXBone);
-		SightFX.SetLocation(C.Origin);
-		if (RenderedHand < 0)
-			SightFX.SetRotation( OrthoRotation(C.XAxis, -C.YAxis, C.ZAxis) - rot(0,0,8192) );
-		else
-			SightFX.SetRotation( OrthoRotation(C.XAxis, C.YAxis, C.ZAxis)  + rot(0,0,8192) );
-		Canvas.DrawActor(SightFX, false, false, DisplayFOV);
-	}
-}
-
-simulated event RenderOverlays( Canvas Canvas )
-{
-	local int i;
-
-	super.RenderOverlays (Canvas);
-
-	if (UziBrassList.length < 1)
-		return;
-
-    bDrawingFirstPerson = true;
-    for (i=UziBrassList.length-1;i>=0;i--)
-    {
-    	if (UziBrassList[i].Actor == None)
-    		continue;
-	    Canvas.DrawActor(UziBrassList[i].Actor, false, false, Instigator.Controller.FovAngle);
-    	if (UziBrassList[i].KillTime <= level.TimeSeconds)
-    	{
-    		UziBrassList[i].Actor.bHidden=false;
-    		UziBrassList.Remove(i,1);
-    	}
-    }
-    bDrawingFirstPerson = false;
-}
-
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2)
-		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
-	else
-		PlayAnim(CockAnim, CockAnimRate, 0.2);
-}
-
-simulated function PostBeginPlay()
-{
-	SetBoneRotation('tip', rot(0,0,8192));
-	super.PostbeginPlay();
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 

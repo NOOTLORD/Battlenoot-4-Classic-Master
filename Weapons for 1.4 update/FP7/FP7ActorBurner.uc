@@ -1,11 +1,10 @@
 //=============================================================================
-// FP7ActorBurner.
-//
-// Fire attached to players. This is spawned on server to do damage and on
-// client for effects.
+// Burn actor for FP7 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class FP7ActorBurner extends BallisticEmitter
 	placeable;

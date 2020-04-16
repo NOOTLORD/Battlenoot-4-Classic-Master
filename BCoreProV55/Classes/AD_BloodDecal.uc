@@ -27,7 +27,7 @@ function StopExpanding ()
 
 defaultproperties
 {
-     StayScale=1.000000
+     StayScale=0.100000
      bClipBSP=True
      bClipStaticMesh=True
 }

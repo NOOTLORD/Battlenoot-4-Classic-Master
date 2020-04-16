@@ -1,10 +1,10 @@
 //=============================================================================
-// DTXM84GrenadeRadius.
-//
-// Damage type for the XM84 Grenade radius damage
+// Damage type for the XM84 Grenade radius
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_XM84GrenadeRadius extends DT_BWExplode;
 

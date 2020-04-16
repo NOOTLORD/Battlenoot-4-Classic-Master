@@ -1,10 +1,9 @@
 //=============================================================================
-// DT_BWExplode.
-//
-// Base damage type that implements some gore for explosions
+// Damage type class for guns that use explosions to damage the player
 //
 // by Nolan "Dark Carnivour" Richert.
-// Copyright(c) 2005 RuneStorm. All Rights Reserved.//
+// Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
 // Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_BWExplode extends BallisticDamageType;

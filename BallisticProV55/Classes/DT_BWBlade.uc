@@ -1,7 +1,5 @@
 //=============================================================================
-// DT_BWBlade.
-//
-// Base damage type that will play some pawn impact sounds for blades
+// Damage type for the Blade Weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

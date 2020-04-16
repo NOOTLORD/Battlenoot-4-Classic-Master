@@ -208,17 +208,17 @@ static function DoSeverStump(Pawn Victim, name Bone, vector HitRay, float Damage
 defaultproperties
 {
      SplatRange=384.000000
-     DecalChance=1.000000
+     DecalChance=0.000000
      EffectChance=1.000000
-     DripperThreshold=10.000000
-     DripperChance=0.500000
+     DripperThreshold=0.000000
+     DripperChance=0.000000
      bUseBloodSplats=True
-     bUseBloodExplodes=True
-     bUseStumps=True
-     bUseChunks=True
+     bUseBloodExplodes=False
+     bUseStumps=False
+     bUseChunks=False
      bUseBloodEffects=True
-     bUseScreenFX=True
-     GibMultiplier=1
+     bUseScreenFX=False
+     GibMultiplier=0
      DrawType=DT_None
      RemoteRole=ROLE_SimulatedProxy
      LifeSpan=2.000000

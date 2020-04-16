@@ -109,8 +109,8 @@ defaultproperties
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M353'
      BigIconCoords=(Y1=50,Y2=240)
-     SightFXClass=Class'BallisticProV55.M353SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+     SightFXClass=Class'BallisticProV55.M353SightLEDs'	 
      bWT_Bullet=True
      bWT_Machinegun=True
      ManualLines(0)="Automatic 5.56mm fire. Has a high rate of fire, moderate damage and good sustained damage output. As a machinegun, it has a very long effective range. Large magazine capacity allows the weapon to fire for a long time, but the reload time is long."
@@ -177,9 +177,9 @@ defaultproperties
      LightEffect=LE_NonIncidence
      LightHue=30
      LightSaturation=150
-     LightBrightness=150.000000
-     LightRadius=4.000000
-     Mesh=SkeletalMesh'BallisticAnims2.M353Machinegun'
+     LightBrightness=130.000000
+     LightRadius=3.000000
+     Mesh=SkeletalMesh'BallisticAnims2.M353_FP'
      DrawScale=0.350000
      AmbientGlow=5
 }

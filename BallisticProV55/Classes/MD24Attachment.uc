@@ -15,8 +15,7 @@ defaultproperties
      FlashMode=MU_Primary  
      FlashScale=0.200000
      LightMode=MU_Primary
-     FlashBone="Muzzle"
-     AltFlashBone="Muzzle"	 
+     FlashBone="Muzzle"	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassMode=MU_Primary

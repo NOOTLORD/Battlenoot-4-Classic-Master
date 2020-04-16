@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for F2000 Assault Rifle headshots
+// Damage type class for Puma Repeater headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,10 +1,10 @@
 //=============================================================================
-// DTFP7Grenade.
-//
 // Damage type for the FP7 Grenade hit
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_FP7Grenade extends DT_BWBlunt;
 
@@ -14,10 +14,7 @@ defaultproperties
      BloodManagerName="BallisticProV55.BloodMan_BluntSmall"
      bDetonatesBombs=False
      bIgnoredOnLifts=True
-     InvasionDamageScaling=1.000000
      DamageIdent="Grenade"
-     AimDisplacementDamageThreshold=0.000000
-     AimDisplacementDuration=0.000000
 	 bDisplaceAim=False
      bUseMotionBlur=False
      DamageDescription=",Blunt,Hazard,"
@@ -29,4 +26,5 @@ defaultproperties
      GibPerterbation=0.500000
      KDamageImpulse=20000.000000
 	 VehicleDamageScaling=0.000000
+     InvasionDamageScaling=1.000000	 	 
 }

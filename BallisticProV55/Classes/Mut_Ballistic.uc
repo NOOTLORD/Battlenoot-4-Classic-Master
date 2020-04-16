@@ -869,9 +869,9 @@ defaultproperties
      Replacements(1)=(OldItemName="XPickups.UDamagePack",NewItemNames=("BallisticProV55.IP_UDamage"))
      UDamageSnd=Sound'BallisticSounds2.Udamage.UDamageFire'
      ItemGroup="Ballistic"
-     bSpawnUniqueItems=True
-     bPickupsChange=True
-     bRandomDefaultWeapons=True
+     bSpawnUniqueItems=False
+     bPickupsChange=False
+     bRandomDefaultWeapons=False
      CamUpdateRate="0"
      CamRateOptions(0)="No Update"
      CamRateOptions(1)="Slow 2 FPS"

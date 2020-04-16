@@ -1,10 +1,10 @@
 //=============================================================================
-// DT_MP40Head.
-//
-// DamageType for MP40 headshots
+// Damage type class for FMP MachinePistol headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class DT_FMPMachinePistolHead extends DT_BWBullet;
 

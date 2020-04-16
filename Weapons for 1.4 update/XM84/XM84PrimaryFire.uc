@@ -1,10 +1,10 @@
 //=============================================================================
-// XM84PrimaryFire.
-//
-// XM84 Grenade thrown overhand
+// Primaryfire class for XM84 Flashbang
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XM84PrimaryFire extends BallisticGrenadeFire;
 
@@ -20,11 +20,11 @@ defaultproperties
      FireAnim="Throw"
      FireRate=2.000000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_XM84_Grenade'
-     ShakeRotMag=(X=32.000000,Y=8.000000)
-     ShakeRotRate=(X=10000.000000,Y=10000.000000,Z=10000.000000)
-     ShakeRotTime=1.500000
-     ShakeOffsetMag=(X=-3.000000)
-     ShakeOffsetRate=(X=-1000.000000)
-     ShakeOffsetTime=1.500000
+     ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeRotTime=0.000000
+     ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
+     ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
+	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPRecolorsPro.XM84Thrown'
 }
