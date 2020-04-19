@@ -125,7 +125,7 @@ defaultproperties
      ImpactDamage=100.000000
      ImpactMomentumTransfer=2000.000000
      ImpactDamageType=Class'BallisticProV55.DT_G5Unarmed'
-     ArmingDelay=0.200000
+     ArmingDelay=0.000001
      ImpactManager=Class'BallisticProV55.IM_RPG'
      bRandomStartRotaion=False
      AccelSpeed=5000.000000

@@ -59,25 +59,26 @@ simulated event HitWall(vector HitNormal, actor Wall)
 
 defaultproperties
 {
+     DampenFactor=0.250000
      PlayerImpactType=PIT_Detonate
      bNoInitialSpin=True
      bAlignToVelocity=True
      DetonateDelay=2.500000
-     ImpactDamage=80
+     ImpactDamage=80.000000
      ImpactDamageType=Class'BWBPRecolorsPro.DT_MGLGrenade'
      ImpactManager=Class'BWBPRecolorsPro.IM_MGLGrenade'
      TrailClass=Class'BWBPRecolorsPro.MGLNadeTrail'
      MyRadiusDamageType=Class'BWBPRecolorsPro.DT_MGLGrenadeRadius'
      SplashManager=Class'BallisticProV55.IM_ProjWater'
-     ShakeRadius=512.000000
-     MotionBlurRadius=400.000000
+     ShakeRadius=0.000000
+     MotionBlurRadius=0.000000
      MotionBlurFactor=0.000000
      MotionBlurTime=0.000000
      ShakeRotTime=0.000000
      ShakeOffsetTime=0.000000
      bCoverPenetrator=False	 
      Speed=1750.000000
-     Damage=145.000000
+     Damage=65.000000
      DamageRadius=300.000000
      MyDamageType=Class'BWBPRecolorsPro.DT_MGLGrenadeRadius'
      ImpactSound=Sound'BallisticRecolorsSounds.MGL.FLAK-GrenadeBounce'

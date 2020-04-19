@@ -144,9 +144,9 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Burst Fire",ModeID="WM_Burst",Value=3.000000)
+     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)
+     WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-15.000000,Z=5.900000)

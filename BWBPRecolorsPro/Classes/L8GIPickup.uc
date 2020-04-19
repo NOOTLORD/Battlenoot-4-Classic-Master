@@ -37,7 +37,7 @@ defaultproperties
      StaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackHi'
      bOrientOnSlope=True
      Physics=PHYS_None
-     DrawScale=0.350000
+     DrawScale=0.250000
      Skins(0)=Texture'BallisticRecolorsTex.AmmoPack.L8GISkin'
      CollisionRadius=16.000000
      CollisionHeight=15.000000

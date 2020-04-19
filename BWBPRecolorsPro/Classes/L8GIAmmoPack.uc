@@ -49,11 +49,8 @@ function float SuggestDefenseStyle()	{	return -0.5;	}
 
 defaultproperties
 {
-     HealAmount=5.000000
+
      HealSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
-     HeldDamage=200
-     HeldRadius=250
-     HeldMomentum=55000
      GrenadeSmokeClass=Class'BallisticProV55.NRP57Trail'
      ClipReleaseSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-ClipOut',Volume=0.000000,Radius=0.000000,Pitch=1.000000,bAtten=True)	 
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=15)
@@ -87,5 +84,5 @@ defaultproperties
      ItemName="L8 GI Ammunition Pack"
      Mesh=SkeletalMesh'BallisticRecolorsAnims.AmmoPack_FP'
      DrawScale=0.400000
-     Skins(0)=Texture'BallisticRecolorsTex.AmmoPack.L8GISkin'
+	 AmbientGlow=5
 }

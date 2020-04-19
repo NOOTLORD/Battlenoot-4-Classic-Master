@@ -15,7 +15,7 @@ var IP_L8GIAmmoPack AmmoPack1;
 
 replication
 {
-	reliable if (Role==ROLE_Authority)
+	reliable if (Role == ROLE_Authority)
 		SpawnPack, AmmoPack1;
 }
 
@@ -66,7 +66,7 @@ simulated event ProcessTouch( actor Other, vector HitLocation )
 
 	HitPawn = xPawn(Other);
 		
-	if ( PlayerImpactType == PIT_Bounce || (PlayerImpactType == PIT_Stick && (VSize (Velocity) < MinStickVelocity)) )
+	if ( PlayerImpactType == PIT_Stick || (PlayerImpactType == PIT_Bounce))
 	{
 		HitWall (Normal(HitLocation - Other.Location), Other);
 			GiveAmmo(HitPawn);
@@ -149,17 +149,17 @@ defaultproperties
 	 Speed=500.000000
 	 MaxSpeed=500.000000
      HealSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
-     RandomSpin=1024.000000
-     bNoInitialSpin=True
+     RandomSpin=0.000000
+     bNoInitialSpin=True 
      TrailOffset=(X=1.600000,Z=6.400000)
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      StaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackHi'
-     DrawScale=0.350000
+     DrawScale=0.250000
      Skins(0)=Texture'BallisticRecolorsTex.AmmoPack.L8GISkin'
      CollisionRadius=16.000000
      CollisionHeight=15.000000
-     bBounce=True
+     bBounce=False
      RotationRate=(Roll=0)
-     AmbientGlow=40
+     AmbientGlow=5
      bUnlit=False	 
 }
