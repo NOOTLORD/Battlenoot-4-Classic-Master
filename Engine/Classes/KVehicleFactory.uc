@@ -5,7 +5,7 @@
 class KVehicleFactory extends SVehicleFactory 
 	placeable;
 
-#exec Texture Import File=Textures\S_KVehFact.pcx Name=S_KVehFact Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_KVehFact.bmp Name=S_KVehFact Mips=Off MASKED=1
 
 var()	class<KVehicle>		KVehicleClass;
 

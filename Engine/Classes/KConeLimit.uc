@@ -2,7 +2,7 @@
 // The Cone Limit joint class.
 //=============================================================================
 
-#exec Texture Import File=Textures\S_KConeLimit.pcx Name=S_KConeLimit Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_KConeLimit.bmp Name=S_KConeLimit Mips=Off MASKED=1
 
 class KConeLimit extends KConstraint
     native

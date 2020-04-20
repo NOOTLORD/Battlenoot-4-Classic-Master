@@ -4,6 +4,5 @@ class VertexColor extends RenderedMaterial
 	
 defaultproperties
 {
-	// MT_VertexColor
-	MaterialType=2048
+     MaterialType=2048
 }

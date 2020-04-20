@@ -92,3 +92,6 @@ function ReloadAll( optional bool bParam );
 // server querying
 function GetServerDetails( out GameInfo.ServerResponseLine ServerState );
 
+defaultproperties
+{
+}

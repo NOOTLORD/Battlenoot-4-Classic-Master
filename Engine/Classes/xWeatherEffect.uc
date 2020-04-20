@@ -69,29 +69,23 @@ var transient array<Volume>     pclBlockers;
 
 defaultproperties
 {
-    Texture=S_Actor
-    bHidden=false
-    bHiddenEd=false
-    Physics=PHYS_None
-    bUnlit=true
-    bNetTemporary=false
-    bGameRelevant=true
-    RemoteRole=ROLE_SimulatedProxy
-    DrawType=DT_Particle
-    Style=STY_Translucent
-
-	DrawScale=4.000000
-    maxPclEyeDist=590.0
-    numCols=4.0
-    numRows=4.0
-    Position=(X=(Min=-300,Max=300),Y=(Min=-300,Max=300),Z=(Min=-100,Max=300))
-    Speed=(Min=100,Max=200)
-    Life=(Min=3,Max=4)
-	WeatherType=WT_Snow
-    Size=(Min=4,Max=5)
-    deviation=0.4
-    numParticles=1024
-    spawnVel=(X=0.0,Y=0.0,Z=-1.0)
-    bNoDelete=true
-    bHighDetail=True
+     WeatherType=WT_Snow
+     numParticles=1024
+     deviation=0.400000
+     maxPclEyeDist=590.000000
+     numCols=4.000000
+     numRows=4.000000
+     spawnVel=(Z=-1.000000)
+     Position=(X=(Min=-300.000000,Max=300.000000),Y=(Min=-300.000000,Max=300.000000),Z=(Min=-100.000000,Max=300.000000))
+     Speed=(Min=100.000000,Max=200.000000)
+     Life=(Min=3.000000,Max=4.000000)
+     Size=(Min=4.000000,Max=5.000000)
+     DrawType=DT_Particle
+     bNoDelete=True
+     bHighDetail=True
+     RemoteRole=ROLE_SimulatedProxy
+     DrawScale=4.000000
+     Style=STY_Translucent
+     bUnlit=True
+     bGameRelevant=True
 }

@@ -48,9 +48,6 @@ function Reset()
 
 defaultproperties
 {
-	RetriggerAction=RTA_Retrigger
-	StopAfterPeriod=0.5
-	TriggeredTime=-1.0
-	Reverse=False
-	Triggered=False
+     RetriggerAction=RTA_Retrigger
+     StopAfterPeriod=0.500000
 }

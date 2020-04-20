@@ -16,6 +16,6 @@ var() float VOffset;
 
 defaultproperties
 {
-	UScale=1.0
-	VScale=1.0
+     UScale=1.000000
+     VScale=1.000000
 }

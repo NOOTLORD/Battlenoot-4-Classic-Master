@@ -10,6 +10,6 @@ var()	SceneSubtitles.ESST_Mode SubTitleMode;
 
 defaultproperties
 {
-	Icon=SubActionTrigger
-	Desc="SubTitle"
+     Icon=Texture'Engine.SubActionTrigger'
+     Desc="SubTitle"
 }

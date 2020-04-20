@@ -209,86 +209,40 @@ static function PrecacheContent(LevelInfo Level)
 
 defaultproperties
 {
-	mParticleType=PT_Sprite
-	mSpawningType=ST_Sphere
-	mRegen=true
-	mRegenPause=false
-	mStartParticles=1
-	mMaxParticles=50
-	mDelayRange(0)=0.0
-	mDelayRange(1)=0.0
-	mLifeRange(0)=4.000000
-	mLifeRange(1)=4.000000
-	mRegenRange(0)=1.00000
-	mRegenRange(1)=1.00000
-	mRegenDist=0.0
-
-	mDirDev=(X=0.0,Y=0.0,Z=0.0)
-	mPosDev=(X=0.0,Y=0.0,Z=0.0)
-	mMassRange(0)=0.0
-	mMassRange(1)=0.0
-	mCollision=false
-	mRandOrient=false
-	mSpinRange(0)=0.0
-	mSpinRange(1)=0.0
-
-	mSizeRange(0)=10.00000
-	mSizeRange(1)=10.00000
-	mSpeedRange(0)=40.00000
-	mSpeedRange(1)=40.00000
-    mOwnerVelocityFactor=0.0
-	mGrowthRate=0.0
-	mColorRange(0)=(R=255,G=255,B=255,A=255)
-	mColorRange(1)=(R=255,G=255,B=255,A=255)
-	mAttenuate=true
-	mRandTextures=false
-	mTileAnimation=false
-	mNumTileColumns=1
-	mNumTileRows=1
-	mUseMeshNodes=false
-	mPosRelative=false
-	//mRandMeshes=
-
-	Texture=S_Emitter
-	Skins(0)=S_Emitter
-	bHiddenEd=false
-	bDirectional=true
-	SystemHandle=-1
-
-	// inherited vars
-    DrawType=DT_Particle
-    Style=STY_Normal
-	Physics=PHYS_None
-	bUnlit=true
-	bNetTemporary=true
-	bGameRelevant=true
-	RemoteRole=ROLE_None
-
-	CollisionRadius=+0.00000
-	CollisionHeight=+0.00000
-	ScaleGlow=1.0
-
-	// ver 1.1
-	mColElasticity=0.5
-
-	// ver 1.2
-	mAttenKa=0.2
-	mAttenKb=1.0
-	mAttenFunc=ATF_LerpInOut
-	mAirResistance=0.4
-
-    bCollideActors=false
-	bCallPreSpawn=true
-    bAcceptsProjectors=false
-    
-    mSpawnVecB=(X=0.0,Y=0.0,Z=0.05)
-
-    bActorShadows=false
-    bForceAffected=false
-
-    LightEffect=LE_QuadraticNonIncidence
-    bNetInitialRotation=false
-
-	bSuspendWhenNotVisible=true
-	bNotOnDedServer=true
+     mRegen=True
+     mStartParticles=1
+     mMaxParticles=50
+     mLifeRange(0)=4.000000
+     mLifeRange(1)=4.000000
+     mRegenRange(0)=1.000000
+     mRegenRange(1)=1.000000
+     bSuspendWhenNotVisible=True
+     mSpawnVecB=(Z=0.050000)
+     mSpeedRange(0)=40.000000
+     mSpeedRange(1)=40.000000
+     mAirResistance=0.400000
+     mSizeRange(0)=10.000000
+     mSizeRange(1)=10.000000
+     mColorRange(0)=(B=255,G=255,R=255,A=255)
+     mColorRange(1)=(B=255,G=255,R=255,A=255)
+     mAttenuate=True
+     mAttenKa=0.200000
+     mAttenKb=1.000000
+     mNumTileColumns=1
+     mNumTileRows=1
+     mColElasticity=0.500000
+     bCallPreSpawn=True
+     LightEffect=LE_QuadraticNonIncidence
+     DrawType=DT_Particle
+     bAcceptsProjectors=False
+     bNetTemporary=True
+     RemoteRole=ROLE_None
+     Texture=Texture'Engine.S_Emitter'
+     Skins(0)=Texture'Engine.S_Emitter'
+     bUnlit=True
+     bGameRelevant=True
+     CollisionRadius=0.000000
+     CollisionHeight=0.000000
+     bNotOnDedServer=True
+     bDirectional=True
 }

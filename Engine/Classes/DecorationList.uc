@@ -6,7 +6,7 @@ class DecorationList extends KeyPoint
 	placeable
 	native;
 
-#exec Texture Import File=Textures\DecorationList.pcx Name=S_DecorationList Mips=Off MASKED=1
+#exec Texture Import File=Textures\DecorationList.bmp Name=S_DecorationList Mips=Off MASKED=1
 
 struct DecorationType
 {

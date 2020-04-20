@@ -150,17 +150,17 @@ state FallingPickup
 
 defaultproperties
 {
-    bAmbientGlow=true
-	CollisionRadius=+36.0
-	CollisionHeight=+30.0
-    Physics=PHYS_Rotating 
-    RotationRate=(Yaw=32768)
-    PickupMessage="You got a weapon"
-    RespawnTime=30.000000
-    Texture=Texture'Engine.S_Weapon'
-    MaxDesireability=0.5000
-    AmbientGlow=128
-    bPredictRespawns=true
-    bWeaponStay=true
-    CullDistance=+6500.0
+     bWeaponStay=True
+     MaxDesireability=0.500000
+     bAmbientGlow=True
+     bPredictRespawns=True
+     RespawnTime=30.000000
+     PickupMessage="You got a weapon"
+     CullDistance=6500.000000
+     Physics=PHYS_Rotating
+     Texture=Texture'Engine.S_Weapon'
+     AmbientGlow=128
+     CollisionRadius=36.000000
+     CollisionHeight=30.000000
+     RotationRate=(Yaw=32768)
 }

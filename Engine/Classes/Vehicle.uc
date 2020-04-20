@@ -1934,81 +1934,56 @@ function bool IsArtillery()
 
 defaultproperties
 {
-	bAdjustDriversHead=true
-	LandMovementState=PlayerDriving
-	bVehicleShadows=true
-	bDrawVehicleShadow=true
-	bDontPossess=true
-	bUseCompressedPosition=false
-	bCanPickupInventory=false
-	Team=255
-	OldTeam=255
-	PrevTeam=255
-
-	Steering=0
-    Throttle=0
-
-	EjectMomentum=1000
-	ExitPositions(0)=(X=0,Y=0,Z=0)
-
-	EntryPosition=(X=0,Y=0,Z=0)
-	EntryRadius=100.0
-
-	DrivePos=(X=0,Y=0,Z=0)
-	bZeroPCRotOnEntry=true
-	bRelativeExitPos=true
-	bPCRelativeFPRotation=true
-
-	TPCamLookat=(X=-100,Y=0,Z=100)
-	TPCamWorldOffset=(X=0,Y=0,Z=0)
-	TPCamDistance=600
-	TPCamDistRange=(Min=50,Max=1500)
-	CameraSpeed=500
-	bDesiredBehindView=true
-
-	MaxViewYaw=16000
-	MaxViewPitch=16000
-
-	TransEffects(0)="XEffects.TransEffectRed"
-	TransEffects(1)="XEffects.TransEffectBlue"
-
-	DriveAnim=Vehicle_Driving
-	CollisionRadius=+120.0
-	CollisionHeight=+50.0
-	SightRadius=+15000.0
-	ShadowMaxTraceDist=+350
-	ShadowCullDistance=1500.0
-	bForceSkelUpdate=true
-	bCanBeBaseForPawns=True
-
-	MomentumMult=4.0
-	DriverDamageMult=1.0
-	VehiclePositionString="in a vehicle"
-	VehicleNameString="Vehicle"
-
-	LockOnClassString="Onslaught.ONSOnslaughtMessage"
-
-	RanOverDamageType=class'DamRanOver'
-	CrushedDamageType=class'Crushed'
-    bAllowViewChange=true
-	LinkHealMult=0.35
-	VehicleLostTime=0.0
-	NetUpdateFrequency=4
-	NetPriority=1
-
-	CenterSpringForce="SpringONSHoverBike"
-	CenterSpringRangePitch=2000
-	CenterSpringRangeRoll=2000
-
-	bDriverHoldsFlag=true
-	bCanCarryFlag=true
-
-	WalkingPct=+1.0
-	CrouchedPct=+1.0
-
-	MaxDesireability=0.5
-
-	ObjectiveGetOutDist=1000.0
-	WaterDamage=0.0
-	LockWarningInterval=+1.5
+     bVehicleShadows=True
+     bDrawVehicleShadow=True
+     bRelativeExitPos=True
+     bZeroPCRotOnEntry=True
+     bPCRelativeFPRotation=True
+     bAllowViewChange=True
+     bAdjustDriversHead=True
+     bDesiredBehindView=True
+     bDriverHoldsFlag=True
+     bCanCarryFlag=True
+     Team=255
+     OldTeam=255
+     PrevTeam=255
+     EjectMomentum=1000.000000
+     DriveAnim="Vehicle_Driving"
+     EntryRadius=100.000000
+     TPCamDistance=600.000000
+     CenterSpringForce="SpringONSHoverBike"
+     CenterSpringRangePitch=2000
+     CenterSpringRangeRoll=2000
+     TPCamLookat=(X=-100.000000,Z=100.000000)
+     CameraSpeed=500.000000
+     TPCamDistRange=(Min=50.000000,Max=1500.000000)
+     MaxViewYaw=16000
+     MaxViewPitch=16000
+     TransEffects(0)="XEffects.TransEffectRed"
+     TransEffects(1)="XEffects.TransEffectBlue"
+     ShadowMaxTraceDist=350.000000
+     ShadowCullDistance=1500.000000
+     MomentumMult=4.000000
+     DriverDamageMult=1.000000
+     LockOnClassString="Onslaught.ONSOnslaughtMessage"
+     LockWarningInterval=1.500000
+     VehiclePositionString="in a vehicle"
+     VehicleNameString="Vehicle"
+     RanOverDamageType=Class'Engine.DamRanOver'
+     CrushedDamageType=Class'Engine.Crushed'
+     LinkHealMult=0.350000
+     MaxDesireability=0.500000
+     ObjectiveGetOutDist=1000.000000
+     bCanBeBaseForPawns=True
+     bDontPossess=True
+     bUseCompressedPosition=False
+     SightRadius=15000.000000
+     WalkingPct=1.000000
+     CrouchedPct=1.000000
+     LandMovementState="PlayerDriving"
+     NetUpdateFrequency=4.000000
+     NetPriority=1.000000
+     bForceSkelUpdate=True
+     CollisionRadius=120.000000
+     CollisionHeight=50.000000
 }

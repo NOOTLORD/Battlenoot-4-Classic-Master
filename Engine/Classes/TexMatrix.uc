@@ -8,3 +8,7 @@ cpptext
 }
 
 var Matrix Matrix;
+
+defaultproperties
+{
+}

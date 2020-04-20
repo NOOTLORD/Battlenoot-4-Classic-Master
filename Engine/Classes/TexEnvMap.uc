@@ -16,6 +16,6 @@ var() enum ETexEnvMapType
 
 defaultproperties
 {
-	EnvMapType=EM_CameraSpace
-	TexCoordCount=TCN_3DCoords
+     EnvMapType=EM_CameraSpace
+     TexCoordCount=TCN_3DCoords
 }

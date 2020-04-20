@@ -184,20 +184,18 @@ function bool InvertLook()
 
 defaultproperties
 {
-    MinAccelComponent=0.1f
-    DampeningFactor=30.f
-    VelScale=0.0134f // (xPawn.default.GroundSpeed / InputMax)
-    AccelScale=4.655 // (xPawn.default.AccelRate / xPawn.default.GroundSpeed)
-    bInvertVLook=true
-    HLookRateMax=1500.f
-    VLookRateMax=750.f
-    HScale=0.f
-    HExponent=1.f
-    VScale=0.f
-    VExponent=1.f
-    SelectedPresetName="Hybrid"
-    LookPresets(0)=(PresetName="Linear",HScale=0.f,HExponent=1.f,VScale=0.f,VExponent=1.f)
-    LookPresets(1)=(PresetName="Exponential",HScale=0.f,HExponent=2.f,VScale=0.f,VExponent=2.f)
-    LookPresets(2)=(PresetName="Hybrid",HScale=0.5f,HExponent=4.f,VScale=0.5f,VExponent=4.f)
-    LookPresets(3)=(PresetName="Custom",HScale=0.5f,HExponent=4.f,VScale=0.5f,VExponent=4.f)
+     HExponent=1.000000
+     HLookRateMax=1500.000000
+     VExponent=1.000000
+     VLookRateMax=750.000000
+     bInvertVLook=True
+     LookPresets(0)=(PresetName="Linear",HExponent=1.000000,VExponent=1.000000)
+     LookPresets(1)=(PresetName="Exponential",HExponent=2.000000,VExponent=2.000000)
+     LookPresets(2)=(PresetName="Hybrid",HScale=0.500000,HExponent=4.000000,VScale=0.500000,VExponent=4.000000)
+     LookPresets(3)=(PresetName="Custom",HScale=0.500000,HExponent=4.000000,VScale=0.500000,VExponent=4.000000)
+     SelectedPresetName="Hybrid"
+     VelScale=0.013400
+     AccelScale=4.655000
+     DampeningFactor=30.000000
+     MinAccelComponent=0.100000
 }

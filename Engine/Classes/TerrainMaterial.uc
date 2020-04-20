@@ -21,6 +21,5 @@ var const bool FirstPass;
 
 defaultproperties
 {
-	// MT_TerrainMaterial
-	MaterialType=256
+     MaterialType=256
 }

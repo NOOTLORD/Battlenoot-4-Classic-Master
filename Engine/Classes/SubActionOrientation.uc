@@ -10,6 +10,6 @@ var(Orientation)	Orientation		CamOrientation;
 
 defaultproperties
 {
-	Icon=SubActionOrientation
-	Desc="Orientation"
+     Icon=Texture'Engine.SubActionOrientation'
+     Desc="Orientation"
 }

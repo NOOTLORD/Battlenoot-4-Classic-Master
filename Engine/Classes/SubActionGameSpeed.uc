@@ -10,6 +10,6 @@ var(GameSpeed)	range	GameSpeed;
 
 defaultproperties
 {
-	Icon=SubActionGameSpeed
-	Desc="Game Speed"
+     Icon=Texture'Engine.SubActionGameSpeed'
+     Desc="Game Speed"
 }

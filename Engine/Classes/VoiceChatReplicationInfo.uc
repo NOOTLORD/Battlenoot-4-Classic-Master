@@ -250,38 +250,31 @@ simulated function string GetTitle( VoiceChatRoom Room )
 	return PublicChannelNames[Room.ChannelIndex];
 }
 
-DefaultProperties
+defaultproperties
 {
-	NetPriority=3.001
-	ChatRoomClass=class'Engine.VoiceChatRoom'
-	PublicChannelNames(0)="Public"
-	PublicChannelNames(1)="Local"
-
-	InstalledCodec[0]=(Codec="CODEC_48NB",CodecName="Less Bandwidth",CodecDescription="(4.8kbps) - Uses less bandwidth, but sound is not as clear.")
-	InstalledCodec[1]=(Codec="CODEC_96WB",CodecName="Better Quality",CodecDescription="(9.6kbps) - Uses more bandwidth, but sound is much clearer.")
-
-	VCDisplayText[0]="Enable Voice Chat"
-	VCDisplayText[1]="Enable local Channel"
-	VCDisplayText[2]="Local Chat Range"
-	VCDisplayText[3]="Local Chat Radius"
-	VCDisplayText[4]="Allowed VoIP Codecs"
-	VCDisplayText[5]="Allowed VoIP LAN Codecs"
-
-	VCDescText[0]="Enable voice chat on the server."
-	VCDescText[1]="Determines whether the \"local\" voice chat channel is created, which allows players to broadcast voice transmissions to all players in the immediate vicinity."
-	VCDescText[2]="Maximum distance at which a broadcast on the local channel may be heard"
-	VCDescText[3]="Distance at which local broadcasts begin to fade"
-	VCDescText[4]="Configure which codecs exist on the server and should be used in Internet games."
-	VCDescText[5]="Configure which codecs exist on the server and should be used in LAN games."
-
-	bEnableVoiceChat=True
-	bAllowLocalBroadcast=True
-
-	LocalBroadcastRange=1000
-	DefaultBroadcastRadius=20
-
-	VoIPInternetCodecs[0]="CODEC_48NB"
-
-	VoIPLANCodecs[0]="CODEC_48NB"
-	VoIPLANCodecs[1]="CODEC_96WB"
+     PublicChannelNames(0)="Public"
+     PublicChannelNames(1)="Local"
+     VCDisplayText(0)="Enable Voice Chat"
+     VCDisplayText(1)="Enable local Channel"
+     VCDisplayText(2)="Local Chat Range"
+     VCDisplayText(3)="Local Chat Radius"
+     VCDisplayText(4)="Allowed VoIP Codecs"
+     VCDisplayText(5)="Allowed VoIP LAN Codecs"
+     VCDescText(0)="Enable voice chat on the server."
+     VCDescText(1)="Determines whether the "local" voice chat channel is created, which allows players to broadcast voice transmissions to all players in the immediate vicinity."
+     VCDescText(2)="Maximum distance at which a broadcast on the local channel may be heard"
+     VCDescText(3)="Distance at which local broadcasts begin to fade"
+     VCDescText(4)="Configure which codecs exist on the server and should be used in Internet games."
+     VCDescText(5)="Configure which codecs exist on the server and should be used in LAN games."
+     ChatRoomClass=Class'Engine.VoiceChatRoom'
+     InstalledCodec(0)=(Codec="CODEC_48NB",CodecName="Less Bandwidth",CodecDescription="(4.8kbps) - Uses less bandwidth, but sound is not as clear.")
+     InstalledCodec(1)=(Codec="CODEC_96WB",CodecName="Better Quality",CodecDescription="(9.6kbps) - Uses more bandwidth, but sound is much clearer.")
+     VoIPInternetCodecs(0)="CODEC_48NB"
+     VoIPLANCodecs(0)="CODEC_48NB"
+     VoIPLANCodecs(1)="CODEC_96WB"
+     bEnableVoiceChat=False
+     bAllowLocalBroadcast=False
+     LocalBroadcastRange=0.000000
+     DefaultBroadcastRadius=0.000000
+     NetPriority=3.000000
 }

@@ -96,12 +96,12 @@ static function GetAllCharacters(out array<string> Chars);
 
 defaultproperties
 {
-	NetUpdateFrequency=2
-	TeamName="Team"
-	TeamColor=(R=255,G=0,B=0,A=255)
-	AltTeamColor=(R=200,G=0,B=0,A=255)
-	ColorNames(0)="Red"
-	ColorNames(1)="Blue"
-	ColorNames(2)="Green"
-	ColorNames(3)="Gold"
+     TeamName="Team"
+     TeamColor=(R=255,A=255)
+     AltTeamColor=(R=200,A=255)
+     ColorNames(0)="Red"
+     ColorNames(1)="Blue"
+     ColorNames(2)="Green"
+     ColorNames(3)="Gold"
+     NetUpdateFrequency=2.000000
 }

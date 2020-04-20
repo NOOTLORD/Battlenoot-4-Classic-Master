@@ -27,7 +27,5 @@ static function int PickRandomTauntFor(controller C, bool bNoMature, bool bNoHum
 
 defaultproperties
 {
-	bStatic=false
-	LifeSpan=+10.0
-    RemoteRole=ROLE_None
+     LifeSpan=10.000000
 }

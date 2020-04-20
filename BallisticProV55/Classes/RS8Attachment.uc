@@ -34,8 +34,9 @@ defaultproperties
 	 BrassMode=MU_Both
      InstantMode=MU_Both
      TrackAnimMode=MU_None
-     TracerMode=MU_Primary
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
+	 TracerMode=MU_Primary
+     TracerChance=1.000000	 
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)

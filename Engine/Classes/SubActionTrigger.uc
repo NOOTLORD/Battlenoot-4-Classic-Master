@@ -10,6 +10,6 @@ var(Trigger)	name	EventName;		// The event to trigger
 
 defaultproperties
 {
-	Icon=SubActionTrigger
-	Desc="Trigger"
+     Icon=Texture'Engine.SubActionTrigger'
+     Desc="Trigger"
 }

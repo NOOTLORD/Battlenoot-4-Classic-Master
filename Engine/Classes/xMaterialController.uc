@@ -163,13 +163,8 @@ simulated event Trigger( Actor Other, Pawn EventInstigator )
 
 defaultproperties
 {
-	MatTickValue=1.0
-	RemoteRole=ROLE_SimulatedProxy
-	bHidden=false
-	bStatic=false
-	bStasis=false
-	bMovable=true
-	bNoDelete=true
-	MatTriggerAction=MTA_NoAction
-	MatTickFunc=MTF_PulseConstantColor
+     MatTriggerAction=MTA_NoAction
+     MatTickValue=1.000000
+     bNoDelete=True
+     RemoteRole=ROLE_SimulatedProxy
 }

@@ -6,7 +6,7 @@ class Teleporter extends SmallNavigationPoint
 	placeable
 	native;
 
-#exec Texture Import File=Textures\Teleport.pcx Name=S_Teleport Mips=Off MASKED=1
+#exec Texture Import File=Textures\Teleport.bmp Name=S_Teleport Mips=Off MASKED=1
 
 //-----------------------------------------------------------------------------
 // Teleporter URL can be one of the following forms:
@@ -299,12 +299,12 @@ event int SpecialCost(Pawn Other, ReachSpec Path)
 
 defaultproperties
 {
-	RemoteRole=ROLE_SimulatedProxy
-	bChangesYaw=true
-	bEnabled=True
-	bDirectional=True
-	SoundVolume=128
-	bCollideActors=True
-	Texture=S_Teleport
-	bSpecialForced=true
+     bChangesYaw=True
+     bEnabled=True
+     bSpecialForced=True
+     RemoteRole=ROLE_SimulatedProxy
+     Texture=Texture'Engine.S_Teleport'
+     SoundVolume=128
+     bCollideActors=True
+     bDirectional=True
 }

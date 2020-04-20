@@ -2,9 +2,9 @@ class Projector extends Actor
 	placeable
 	native;
 
-#exec Texture Import File=Textures\Proj_IconMasked.pcx Name=Proj_Icon Mips=Off MASKED=1
-#exec Texture Import file=Textures\GRADIENT_Fade.tga Name=GRADIENT_Fade Mips=Off UCLAMPMODE=CLAMP VCLAMPMODE=CLAMP DXT=3
-#exec Texture Import file=Textures\GRADIENT_Clip.tga Name=GRADIENT_Clip Mips=Off UCLAMPMODE=CLAMP VCLAMPMODE=CLAMP DXT=3
+#exec Texture Import File=Textures\Proj_IconMasked.bmp Name=Proj_Icon Mips=Off MASKED=1
+#exec Texture Import file=Textures\GRADIENT_Fade.dds Name=GRADIENT_Fade Mips=Off UCLAMPMODE=CLAMP VCLAMPMODE=CLAMP DXT=3
+#exec Texture Import file=Textures\GRADIENT_Clip.dds Name=GRADIENT_Clip Mips=Off UCLAMPMODE=CLAMP VCLAMPMODE=CLAMP DXT=3
 
 
 // Projector blending operation.

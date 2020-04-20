@@ -61,9 +61,7 @@ native final function ResetTrail();
 
 defaultproperties
 {
-	TrailLocation=PTTL_AttachedToParticle
-	TrailShadeType=PTTST_None
-	MaxPointsPerTrail=30
-	DistanceThreshold=2.0
-	MaxTrailTwistAngle=16384
+     MaxPointsPerTrail=30
+     DistanceThreshold=2.000000
+     MaxTrailTwistAngle=16384
 }

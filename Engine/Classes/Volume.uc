@@ -61,7 +61,7 @@ State AssociatedTouch
 
 defaultproperties
 {
-	bCollideActors=True
-	LocationName="unspecified"
-	bSkipActorPropertyReplication=true
+     LocationName="unspecified"
+     bSkipActorPropertyReplication=True
+     bCollideActors=True
 }

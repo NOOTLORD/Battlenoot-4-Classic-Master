@@ -10,6 +10,6 @@ var(FOV)	range		FOV;
 
 defaultproperties
 {
-	Icon=SubActionFOV
-	Desc="FOV"
+     Icon=Texture'Engine.SubActionFOV'
+     Desc="FOV"
 }

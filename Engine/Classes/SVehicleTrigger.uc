@@ -51,20 +51,12 @@ function Reset()
 	bEnabled = BACKUP_bEnabled;
 }
 
-//=============================================================================
-// defaultproperties
-//=============================================================================
-
 defaultproperties
 {
-	bEnabled=true
-	bHardAttach=true
-    bHidden=true
-	bCollideActors=false
-    bStatic=false
-    CollisionRadius=+0080.000000
-	CollisionHeight=+0400.000000
-	bCollideWhenPlacing=false
-	bOnlyAffectPawns=true
-    RemoteRole=ROLE_None
+     bEnabled=True
+     bOnlyAffectPawns=True
+     bHardAttach=True
+     CollisionRadius=80.000000
+     CollisionHeight=400.000000
+     bCollideActors=False
 }

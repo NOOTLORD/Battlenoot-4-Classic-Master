@@ -5,7 +5,7 @@
 class Trigger extends Triggers
 	native;
 
-#exec Texture Import File=Textures\Trigger.pcx Name=S_Trigger Mips=Off MASKED=1
+#exec Texture Import File=Textures\Trigger.bmp Name=S_Trigger Mips=Off MASKED=1
 
 //-----------------------------------------------------------------------------
 // Trigger variables.
@@ -362,7 +362,7 @@ function UnTouch( actor Other )
 
 defaultproperties
 {
-	 Texture=S_Trigger
      bInitiallyActive=True
-     InitialState=NormalTrigger
+     InitialState="NormalTrigger"
+     Texture=Texture'Engine.S_Trigger'
 }

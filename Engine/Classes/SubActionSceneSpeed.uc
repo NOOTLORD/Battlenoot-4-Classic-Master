@@ -10,6 +10,6 @@ var(SceneSpeed)	range	SceneSpeed;
 
 defaultproperties
 {
-	Icon=SubActionSceneSpeed
-	Desc="Scene Speed"
+     Icon=Texture'Engine.SubActionSceneSpeed'
+     Desc="Scene Speed"
 }

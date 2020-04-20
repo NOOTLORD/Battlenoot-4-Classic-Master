@@ -106,9 +106,8 @@ simulated function bool RemoveChild(VoiceChatRoom Child)     { return false; }
 // Called from VoiceReplicationInfo when a player changes team
 simulated function bool NotifyTeamChange(PlayerReplicationInfo PRI, int NewTeamIndex) { return false; }
 
-DefaultProperties
+defaultproperties
 {
-	RemoteRole=ROLE_None
-	ChannelIndex=-1
-	TeamIndex=255
+     ChannelIndex=-1
+     TeamIndex=255
 }

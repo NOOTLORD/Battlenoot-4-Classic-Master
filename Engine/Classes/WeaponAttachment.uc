@@ -65,10 +65,10 @@ function UpdateHit(Actor HitActor, vector HitLocation, vector HitNormal);
 
 defaultproperties
 {
-	bReplicateInstigator=true
-	FiringSpeed=+1.0
-	bActorShadows=true
-	BeaconColor=(G=255,A=255)
-	NetUpdateFrequency=8
-	CullDistance=4000.0
+     FiringSpeed=1.000000
+     BeaconColor=(G=255,A=255)
+     CullDistance=4000.000000
+     bActorShadows=True
+     bReplicateInstigator=True
+     NetUpdateFrequency=8.000000
 }

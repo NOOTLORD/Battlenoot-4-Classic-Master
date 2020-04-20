@@ -1,4 +1,4 @@
-#exec Texture Import File=Textures\S_FluidSurfOsc.pcx Name=S_FluidSurfOsc Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_FluidSurfOsc.bmp Name=S_FluidSurfOsc Mips=Off MASKED=1
 
 //=============================================================================
 // FluidSurfaceOscillator.

@@ -7,7 +7,7 @@ class KConstraint extends KActor
 	placeable
 	native;
 
-#exec Texture Import File=Textures\S_KConstraint.pcx Name=S_KConstraint Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_KConstraint.bmp Name=S_KConstraint Mips=Off MASKED=1
 
 cpptext
 {

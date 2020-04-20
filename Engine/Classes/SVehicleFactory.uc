@@ -6,7 +6,7 @@ class SVehicleFactory extends Actor
 	native
 	placeable;
 
-#exec Texture Import File=Textures\S_KVehFact.pcx Name=S_KVehFact Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_KVehFact.bmp Name=S_KVehFact Mips=Off MASKED=1
 
 var()	class<Vehicle>		VehicleClass;
 
@@ -72,13 +72,12 @@ event Trigger( Actor Other, Pawn EventInstigator )
 	}
 }
 
-
 defaultproperties
 {
-	MaxVehicleCount=1
-	bHidden=true
-	Texture=S_KVehFact
-	RemoteRole=ROLE_None
-	bNoDelete=True
-	bDirectional=true
+     MaxVehicleCount=1
+     bHidden=True
+     bNoDelete=True
+     RemoteRole=ROLE_None
+     Texture=Texture'Engine.S_KVehFact'
+     bDirectional=True
 }

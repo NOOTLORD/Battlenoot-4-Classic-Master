@@ -9,6 +9,20 @@
 class MGLauncher extends BallisticWeapon;
 
 var() Rotator	DrumRot;
+var() name		NadeBone0;
+
+simulated function Notify_ReloadStart()
+{
+    DrumRot.Roll = 0;
+        SetBoneRotation('drum',DrumRot);	
+		
+	SetBoneScale (0, 0.0, NadeBone0);			
+}
+
+simulated function Notify_ReloadFinished()
+{	
+	SetBoneScale (0, 1.0, NadeBone0);			
+}
 
 simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 {
@@ -50,7 +64,7 @@ simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 	{
 		ReloadState = RS_Shovel;
 		PlayShovelLoop();
-		return;
+		return;	
 	}
 	// Shovel loop ended, start it again
 	if (ReloadState == RS_PostShellIn)
@@ -134,6 +148,7 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
+     NadeBone0="S6"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MGL'
@@ -150,15 +165,21 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.475000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000)
      MagAmmo=6
+     ReloadAnim="ReloadLoop"
+     ReloadAnimRate=1.250000	 
      ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=0.650000)
      ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=0.650000)
      ClipInFrame=0.325000
-     StartShovelAnim="ReloadStart"
-     EndShovelAnim="ReloadEnd"
      WeaponModes(0)=(ModeName="Timed",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
+     bCanSkipReload=True
+     bShovelLoad=True
+     StartShovelAnim="ReloadStart"
+     StartShovelAnimRate=1.250000
+     EndShovelAnim="ReloadEnd"
+     EndShovelAnimRate=1.250000	 
      bNoCrosshairInScope=True
      SightPivot=(Pitch=512)
      SightOffset=(X=-30.000000,Y=12.450000,Z=14.850000)

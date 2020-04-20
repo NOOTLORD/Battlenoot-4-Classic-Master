@@ -21,7 +21,7 @@ class Actor extends Object
 	nativereplication;
 
 // Imported data (during full rebuild).
-#exec Texture Import File=Textures\S_Actor.pcx Name=S_Actor Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_Actor.bmp Name=S_Actor Mips=Off MASKED=1
 
 //-----------------------------------------------------------------------------
 // Lighting.

@@ -47,9 +47,6 @@ var int texmodifier_dummy;  // hammer padding. disregard.  --ryan.
 
 defaultproperties
 {
-	TexCoordSource=TCS_NoChange
-	TexCoordCount=TCN_2DCoords
-	TexCoordProjected=False
-	// MT_Modifier | MT_TexModifier
-	MaterialType=4097
+     TexCoordSource=TCS_NoChange
+     MaterialType=4097
 }

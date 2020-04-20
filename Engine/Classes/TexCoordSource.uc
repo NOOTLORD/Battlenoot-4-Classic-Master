@@ -12,6 +12,5 @@ cpptext
 
 defaultproperties
 {
-	SourceChannel=0
-	TexCoordSource=TCS_Stream0
+     TexCoordSource=TCS_Stream0
 }

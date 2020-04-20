@@ -17,6 +17,5 @@ var float PanOffset;
 
 defaultproperties
 {
-	PanRate=0.1
-	PanDirection=(Yaw=0)
+     PanRate=0.100000
 }

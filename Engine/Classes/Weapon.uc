@@ -1935,69 +1935,44 @@ simulated function WeaponFire GetFireMode( byte Mode )
 
 defaultproperties
 {
-    DrawType=DT_Mesh
-    Style=STY_Normal
-    PlayerViewOffset=(X=0,Y=0,Z=0)
-    InventoryGroup=1
-
-    FireModeClass(0)=None
-    FireModeClass(1)=None
-
-    // animation //
-    IdleAnim=Idle
-    RestAnim=Rest
-    AimAnim=Aim
-    RunAnim=Run
-    SelectAnim=Select
-    PutDownAnim=Down
-
-    IdleAnimRate=1.0
-    RestAnimRate=1.0
-    AimAnimRate=1.0
-    RunAnimRate=1.0
-
-    // other useful stuff //
-    MessageNoAmmo=" has no ammo"
-    DisplayFOV=90.0
-    bCanThrow=true
-
-    AIRating=0.5
-    CurrentRating=0.5
-
-    AttachmentClass=class'WeaponAttachment'
-
-    NetPriority=3.0
-    ScaleGlow=1.5
-    AmbientGlow=20
-    MaxLights=6
-    SoundVolume=255
-    HudColor=(r=255,g=255,b=0,a=255)
-
-    CenteredOffsetY=-10.0
-    CenteredRoll=2000
-	CenteredYaw=0
-
-	bUseOldWeaponMesh=False
-	ExchangeFireModes=0
-	CustomCrosshair=0
-	CustomCrossHairColor=(R=255,G=255,B=255,A=255)
-	CustomCrossHairScale=+1.0
-	CustomCrossHairTexture=None
-	CustomCrossHairTextureName="Crosshairs.Hud.Crosshair_Cross1"
-
-    OldCenteredOffsetY=-10.0
-    OldCenteredRoll=2000
-	OldCenteredYaw=0
-	OldDrawScale=+1.0
-
-    SelectAnimRate=1.3636
-    PutDownAnimRate=1.3636
-	BringUpTime=+0.33
-	PutDownTime=+0.33
-
-	MinReloadPct=+0.5
-	NetUpdateFrequency=2
-
-	bNoAmmoInstances=true
-    bNetNotify=true
+     IdleAnim="Idle"
+     RestAnim="rest"
+     AimAnim="Aim"
+     RunAnim="Run"
+     SelectAnim="Select"
+     PutDownAnim="Down"
+     IdleAnimRate=1.000000
+     RestAnimRate=1.000000
+     AimAnimRate=1.000000
+     RunAnimRate=1.000000
+     SelectAnimRate=1.363600
+     PutDownAnimRate=1.363600
+     PutDownTime=0.330000
+     BringUpTime=0.330000
+     AIRating=0.500000
+     CurrentRating=0.500000
+     bCanThrow=False
+     bNoAmmoInstances=True
+     OldDrawScale=1.000000
+     OldCenteredOffsetY=-10.000000
+     OldCenteredRoll=2000
+     MessageNoAmmo=" has no ammo"
+     DisplayFOV=90.000000
+     HudColor=(G=255,R=255,A=255)
+     CenteredOffsetY=-10.000000
+     CenteredRoll=2000
+     CustomCrossHairColor=(B=255,G=255,R=255,A=255)
+     CustomCrossHairScale=1.000000
+     CustomCrossHairTextureName="Crosshairs.Hud.Crosshair_Cross1"
+     MinReloadPct=0.500000
+     InventoryGroup=1
+     AttachmentClass=Class'Engine.WeaponAttachment'
+     DrawType=DT_Mesh
+     NetUpdateFrequency=2.000000
+     NetPriority=3.000000
+     AmbientGlow=5
+     MaxLights=6
+     ScaleGlow=1.500000
+     SoundVolume=255
+     bNetNotify=True
 }

@@ -13,7 +13,7 @@ class NavigationPoint extends Actor
 #exec Texture Import File=Textures\SpwnAI.bmp Name=S_NavP Mips=Off MASKED=1
 
 // not used currently
-#exec Texture Import File=Textures\SiteLite.pcx Name=S_Alarm Mips=Off MASKED=1
+#exec Texture Import File=Textures\SiteLite.bmp Name=S_Alarm Mips=Off MASKED=1
 
 //------------------------------------------------------------------------------
 // NavigationPoint variables

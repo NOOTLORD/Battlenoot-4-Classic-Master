@@ -95,36 +95,24 @@ simulated function Touch(Actor Other)
 
 defaultproperties
 {
-    DrawType=DT_Particle
-	Texture=S_Emitter
-    Dampening=0.5
-    DampeningRange=(Min=-4.0,Max=4.0)
-    MovementClamp=(Min=-50.0,Max=50.0)
-    ForceClamp=(Min=-20.0,Max=20.0)   
-    Tension=0.4
-    RestTension=0.4
-    CheckCollision=true
-    Noise=0.1
-    NoiseForce=(Min=-1.0,Max=1.0)
-    NoiseTimer=(Min=2.0,Max=3.0)
-	ProcType=MT_Water
-    bNoDelete=true
-    bStatic=false
-    bRigidEdges=false
-    ForceAttenuation=1.0
-    InfluenceRadius=0.0
-
-    bStaticLighting=False	
-	bCollideActors=True
-	bCollideWorld=False
-    bProjTarget=True
-	bBlockActors=False
-	bBlockNonZeroExtentTraces=True
-	bBlockZeroExtentTraces=True
-	bWorldGeometry=False
-    bUseCylinderCollision=true
-    CollisionHeight=80.0
-    CollisionRadius=80.0
-
-    bLightingVisibility=false
+     Dampening=0.500000
+     DampeningRange=(Min=-4.000000,Max=4.000000)
+     MovementClamp=(Min=-50.000000,Max=50.000000)
+     ForceClamp=(Min=-20.000000,Max=20.000000)
+     ForceAttenuation=1.000000
+     Tension=0.400000
+     RestTension=0.400000
+     CheckCollision=True
+     Noise=0.100000
+     NoiseForce=(Min=-1.000000,Max=1.000000)
+     NoiseTimer=(Min=2.000000,Max=3.000000)
+     DrawType=DT_Particle
+     bLightingVisibility=False
+     bNoDelete=True
+     Texture=Texture'Engine.S_Emitter'
+     CollisionRadius=80.000000
+     CollisionHeight=80.000000
+     bCollideActors=True
+     bProjTarget=True
+     bUseCylinderCollision=True
 }

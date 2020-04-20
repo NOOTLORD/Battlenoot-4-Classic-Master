@@ -39,10 +39,8 @@ var float CurrentVJitter;
 
 defaultproperties
 {
-	UOscillationRate=1
-	VOscillationRate=1
-	UOscillationAmplitude=0.1
-	VOscillationAmplitude=0.1
-	UOscillationType=OT_Pan
-	VOscillationType=OT_Pan
+     UOscillationRate=1.000000
+     VOscillationRate=1.000000
+     UOscillationAmplitude=0.100000
+     VOscillationAmplitude=0.100000
 }

@@ -57,15 +57,11 @@ function Reset()
 
 defaultproperties
 {
-	RetriggerAction=RTA_Retrigger
-	StopAfterPeriod=0.5
-	TriggeredTime=-1.0
-	Reverse=False
-	Triggered=False
-	UOscillationPhase=0
-	VOscillationPhase=0.25
-	UOscillationRate=0
-	VOscillationRate=0.5
-	UOscillationAmplitude=0
-	VOscillationAmplitude=0.5
+     RetriggerAction=RTA_Retrigger
+     StopAfterPeriod=0.500000
+     UOscillationRate=0.000000
+     VOscillationRate=0.500000
+     VOscillationPhase=0.250000
+     UOscillationAmplitude=0.000000
+     VOscillationAmplitude=0.500000
 }

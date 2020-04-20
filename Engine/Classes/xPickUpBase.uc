@@ -101,21 +101,13 @@ function SpawnPickup()
 
 defaultproperties
 {
-	RemoteRole=ROLE_None
-	bStatic=true
-    DrawType=DT_Mesh
-    Style=STY_Normal
-    CollisionRadius=+35.0
-	CollisionHeight=+35.0
-
-    SpawnHeight=+50.0000
-
-    // don't collide with anything!
-    bCollideActors=False
-    bCollideWorld=False
-    bBlockActors=False
-    bProjTarget=True
-
-    AmbientGlow=64
-    CullDistance=+7000.0
+     SpawnHeight=50.000000
+     DrawType=DT_Mesh
+     CullDistance=7000.000000
+     bStatic=True
+     RemoteRole=ROLE_None
+     AmbientGlow=64
+     CollisionRadius=35.000000
+     CollisionHeight=35.000000
+     bProjTarget=True
 }

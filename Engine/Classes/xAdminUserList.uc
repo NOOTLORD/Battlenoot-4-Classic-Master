@@ -88,5 +88,4 @@ local int i;
 
 defaultproperties
 {
-
 }

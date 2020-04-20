@@ -139,7 +139,7 @@ static function string HtmlDecode(string src)
 defaultproperties
 {
      SpecialChars(0)=(Plain="&",Coded="&amp;")
-     SpecialChars(1)=(Plain=""",Coded="&quot;")
+     SpecialChars(1)=(Plain="\"",Coded="&quot;")
      SpecialChars(2)=(Plain=" ",Coded="&nbsp;")
      SpecialChars(3)=(Plain="<",Coded="&lt;")
      SpecialChars(4)=(Plain=">",Coded="&gt;")

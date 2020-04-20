@@ -86,12 +86,9 @@ var const transient int	__LastUpdateTime[2];
 
 defaultproperties
 {
-	Specular=1
-	LODSet=LODSET_World
-	EnvMapTransformType=EMTT_ViewSpace
-	MipZero=(R=64,G=128,B=64,A=0)
-	MaxColor=(R=255,G=255,B=255,A=255)
-	DetailScale=8.0
-	// MT_BitmapMaterial | MT_Texture
-	MaterialType=8256
+     DetailScale=8.000000
+     MipZero=(B=64,G=128,R=64)
+     MaxColor=(B=255,G=255,R=255,A=255)
+     LODSet=LODSET_World
+     MaterialType=8256
 }

@@ -275,7 +275,6 @@ static function int LengthOfLadder(int ladder) {
 
 defaultproperties
 {
-     CTFMatches(0)=MatchInfo'Engine.LadderInfo.CTFMatchInfo1'
      OpenNextLadderAtRung(0)=3
      OpenNextLadderAtRung(1)=3
      OpenNextLadderAtRung(2)=2

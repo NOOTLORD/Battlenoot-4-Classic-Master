@@ -125,28 +125,17 @@ simulated function Destroyed()
 }
 
 // Includes properties from KActor
+
 defaultproperties
 {
-	VehicleMass=1.0
-    Physics=PHYS_Karma
-	bEdShouldSnap=True
-	bStatic=False
-	bShadowCast=False
-	bCollideActors=True
-	bCollideWorld=False
-    bProjTarget=True
-	bBlockActors=True
-	bBlockNonZeroExtentTraces=True
-	bBlockZeroExtentTraces=True
-	bWorldGeometry=False
-	bBlockKarma=True
-	bAcceptsProjectors=True
-	bCanBeBaseForPawns=True
-	bAlwaysRelevant=false
-	RemoteRole=ROLE_SimulatedProxy
-	bNetInitialRotation=True
-	bSpecialCalcView=True
-	bDramaticLighting=True
-	FlipTorque=300
-	FlipTime=2
+     VehicleMass=1.000000
+     FlipTorque=300.000000
+     FlipTime=2.000000
+     bSpecialCalcView=True
+     bDramaticLighting=True
+     bNetInitialRotation=True
+     Physics=PHYS_Karma
+     bCollideWorld=False
+     bBlockKarma=True
+     bEdShouldSnap=True
 }

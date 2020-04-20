@@ -480,36 +480,23 @@ function Actor Trace
 
 defaultproperties
 {
-	TransientSoundVolume=+0.5
-	TransientSoundRadius=+400.0
-
-    PreFireAnim=PreFire
-    FireAnim=Fire
-    FireLoopAnim=FireLoop
-    FireEndAnim=FireEnd
-    ReloadAnim=Reload
-
-    PreFireAnimRate=1.0
-    FireAnimRate=1.0
-    FireLoopAnimRate=1.0
-    FireEndAnimRate=1.0
-    ReloadAnimRate=1.0
-    TweenTime=0.1
-
-    PreFireTime=0.0
-    FireRate=0.5
-
-    bModeExclusive=true
-
-    // AI //
-    bSplashDamage=false
-    bRecommendSplashDamage=false
-    BotRefireRate=0.95
-    bTossed=false
-    bLeadTarget=false
-    bInstantHit=true
-    ProjectileClass=None
-	AimError=600
-
-    DamageAtten=1.0
+     bInstantHit=True
+     bModeExclusive=True
+     TransientSoundVolume=0.500000
+     TransientSoundRadius=400.000000
+     PreFireAnim="PreFire"
+     FireAnim="Fire"
+     FireLoopAnim="FireLoop"
+     FireEndAnim="FireEnd"
+     ReloadAnim="Reload"
+     PreFireAnimRate=1.000000
+     FireAnimRate=1.000000
+     FireLoopAnimRate=1.000000
+     FireEndAnimRate=1.000000
+     ReloadAnimRate=1.000000
+     TweenTime=0.100000
+     FireRate=0.500000
+     BotRefireRate=0.950000
+     aimerror=600.000000
+     DamageAtten=1.000000
 }

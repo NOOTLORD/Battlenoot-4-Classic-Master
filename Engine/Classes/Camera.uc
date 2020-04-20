@@ -5,7 +5,7 @@ class Camera extends PlayerController
 	native;
 
 // Sprite.
-#exec Texture Import File=Textures\S_Camera.pcx Name=S_Camera Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_Camera.bmp Name=S_Camera Mips=Off MASKED=1
 
 defaultproperties
 {

@@ -9,7 +9,7 @@ class ZoneInfo extends Info
 	native
 	placeable;
 
-#exec Texture Import File=Textures\ZoneInfo.pcx Name=S_ZoneInfo Mips=Off MASKED=1
+#exec Texture Import File=Textures\ZoneInfo.bmp Name=S_ZoneInfo Mips=Off MASKED=1
 
 //-----------------------------------------------------------------------------
 // Zone properties.
@@ -105,16 +105,16 @@ event ActorLeaving( actor Other );
 
 defaultproperties
 {
-     KillZ=-10000.0
+     KillZ=-10000.000000
+     AmbientSaturation=255
+     DistanceFogColor=(B=128,G=128,R=128)
+     DistanceFogStart=3000.000000
+     DistanceFogEnd=8000.000000
+     DistanceFogBlendTime=1.000000
+     TexUPanSpeed=1.000000
+     TexVPanSpeed=1.000000
+     DramaticLightingScale=1.200000
      bStatic=True
      bNoDelete=True
-     Texture=S_ZoneInfo
-     AmbientSaturation=255
-	 DistanceFogColor=(R=128,G=128,B=128,A=0)
-	 DistanceFogStart=3000
-	 DistanceFogEnd=8000
-	 DistanceFogBlendTime=1.0
-     TexUPanSpeed=+00001.000000
-     TexVPanSpeed=+00001.000000
-     DramaticLightingScale=1.2
+     Texture=Texture'Engine.S_ZoneInfo'
 }

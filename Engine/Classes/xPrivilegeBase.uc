@@ -11,7 +11,6 @@ event Created()
 	// Build a list of accessible privileges ?
 }
 
-
 defaultproperties
 {
 }

@@ -14,8 +14,8 @@ cpptext
 defaultproperties
 {
      bHidden=True
-     CollisionRadius=+00040.000000
-     CollisionHeight=+00040.000000
-     bCollideActors=True
      RemoteRole=ROLE_None
+     CollisionRadius=40.000000
+     CollisionHeight=40.000000
+     bCollideActors=True
 }

@@ -5,7 +5,7 @@ class Emitter extends Actor
 	native
 	placeable;
 
-#exec Texture Import File=Textures\S_Emitter.pcx  Name=S_Emitter Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_Emitter.tga  Name=S_Emitter Mips=Off MASKED=1
 
 
 var()	export	editinline	array<ParticleEmitter>	Emitters;

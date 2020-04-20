@@ -1,7 +1,7 @@
 class ShadowBitmapMaterial extends BitmapMaterial
 	native;
 
-#exec Texture Import file=Textures\blobshadow.tga Name=BlobTexture Mips=On UCLAMPMODE=CLAMP VCLAMPMODE=CLAMP DXT=3
+#exec Texture Import file=Textures\blobshadow.dds Name=BlobTexture Mips=On UCLAMPMODE=CLAMP VCLAMPMODE=CLAMP DXT=3
 
 var const transient pointer TextureInterfaces[2];
 

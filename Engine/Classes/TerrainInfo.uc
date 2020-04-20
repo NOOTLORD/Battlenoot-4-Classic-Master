@@ -4,10 +4,10 @@ class TerrainInfo extends Info
 	native
 	placeable;
 
-#exec Texture Import File=Textures\Terrain_info.pcx Name=S_TerrainInfo Mips=Off MASKED=1
-#exec Texture Import File=Textures\S_WhiteCircle.pcx Name=S_WhiteCircle Mips=Off MASKED=1
-#exec Texture Import File=Textures\Bad.pcx Name=TerrainBad Mips=Off
-#exec Texture Import File=Textures\DecoPaint.pcx Name=DecoPaint Mips=Off
+#exec Texture Import File=Textures\Terrain_info.bmp Name=S_TerrainInfo Mips=Off MASKED=1
+#exec Texture Import File=Textures\S_WhiteCircle.bmp Name=S_WhiteCircle Mips=Off MASKED=1
+#exec Texture Import File=Textures\Bad.bmp Name=TerrainBad Mips=Off
+#exec Texture Import File=Textures\DecoPaint.bmp Name=DecoPaint Mips=Off
 
 struct NormalPair
 {
@@ -138,13 +138,11 @@ native final function PokeTerrain( vector WorldLocation, int Radius, int MaxDept
 
 defaultproperties
 {
-	Texture=S_TerrainInfo
-	TerrainScale=(X=64,Y=64,Z=64)
-	bStatic=True
-	bStaticLighting=True
-	bWorldGeometry=true
-    bHidden=true
-	TerrainSectorSize=16
-	bKCollisionHalfRes=False
-     bUseDynamicLights=true
+     TerrainSectorSize=16
+     TerrainScale=(X=64.000000,Y=64.000000,Z=64.000000)
+     bUseDynamicLights=True
+     bStatic=True
+     bWorldGeometry=True
+     Texture=Texture'Engine.S_TerrainInfo'
+     bStaticLighting=True
 }

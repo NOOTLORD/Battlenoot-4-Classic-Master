@@ -37,5 +37,4 @@ var() rotator OscillationPhase;
 
 defaultproperties
 {
-	TexRotationType=TR_FixedRotation
 }

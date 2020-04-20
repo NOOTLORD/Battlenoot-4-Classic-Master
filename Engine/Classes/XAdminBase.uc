@@ -8,6 +8,6 @@
 class xAdminBase extends object
 	abstract;
 
- 
- 
-
+defaultproperties
+{
+} 

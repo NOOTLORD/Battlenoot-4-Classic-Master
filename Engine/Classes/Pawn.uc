@@ -2783,7 +2783,7 @@ defaultproperties
      WalkingPct=0.500000
      CrouchedPct=0.500000
      MaxFallSpeed=1200.000000
-     PitchUpLimit=18000
+     PitchUpLimit=16700
      PitchDownLimit=49153
      BaseEyeHeight=64.000000
      EyeHeight=54.000000

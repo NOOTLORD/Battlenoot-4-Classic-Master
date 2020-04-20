@@ -28,3 +28,7 @@ function Touch( Actor Other )
 			UsedBy(Pawn(Other));
 	}
 }
+
+defaultproperties
+{
+}

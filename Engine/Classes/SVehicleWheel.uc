@@ -76,16 +76,14 @@ var		transient const pointer		KContact;
 
 defaultproperties
 {
-	HandbrakeSlipFactor=1.0
-	HandbrakeFrictionFactor=1.0
-	Softness=0.05
-	PenScale=1.0
-	WheelInertia=1.0
-	SteerType=VST_Fixed
-	SuspensionTravel=50.0
-	SuspensionMaxRenderTravel=50.0
-	WheelRadius=35
-	BoneRollAxis=AXIS_X
-	BoneSteerAxis=AXIS_Z
-	SupportBoneAxis=AXIS_Y
+     BoneSteerAxis=AXIS_Z
+     WheelRadius=35.000000
+     Softness=0.050000
+     PenScale=1.000000
+     WheelInertia=1.000000
+     SuspensionTravel=50.000000
+     HandbrakeSlipFactor=1.000000
+     HandbrakeFrictionFactor=1.000000
+     SuspensionMaxRenderTravel=50.000000
+     SupportBoneAxis=AXIS_Y
 }

@@ -209,7 +209,6 @@ defaultproperties
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	 
      bCanSkipReload=True
-     bAltTriggerReload=True
      bShovelLoad=True
      StartShovelAnim="ReloadStart"
      StartShovelAnimRate=1.100000

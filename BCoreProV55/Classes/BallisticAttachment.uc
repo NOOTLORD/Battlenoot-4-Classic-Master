@@ -764,6 +764,7 @@ defaultproperties
      LightMode=MU_Primary	 
      BrassBone="ejector"
      TrackAnimMode=MU_None
+     TracerMode=MU_Primary		 
      TracerChance=1.000000
      FlyBySound=(Volume=0.500000,Radius=64.000000,Pitch=1.000000)
      FlyByMode=MU_Both

@@ -38,7 +38,6 @@ simulated function bool MapVoteEnabled() { return false; }
 simulated function bool KickVoteEnabled() { return false; }
 simulated function bool MatchSetupEnabled() { return false; }
 
-DefaultProperties
+defaultproperties
 {
-
 }

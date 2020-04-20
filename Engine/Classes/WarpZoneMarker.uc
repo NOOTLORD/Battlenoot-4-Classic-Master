@@ -60,5 +60,5 @@ function Actor SpecialHandling(Pawn Other)
 defaultproperties
 {
      bCollideWhenPlacing=False
-	 bHiddenEd=true
+     bHiddenEd=True
 }

@@ -19,7 +19,5 @@ function Timer()
 
 defaultproperties
 {
-	TimerFrequency=1
-	bStatic=false
-	RemoteRole=ROLE_None
+     TimerFrequency=1.000000
 }
