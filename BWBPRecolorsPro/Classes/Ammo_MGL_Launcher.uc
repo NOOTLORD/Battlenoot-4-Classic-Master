@@ -11,6 +11,6 @@ class Ammo_MGL_Launcher extends BallisticAmmo;
 defaultproperties
 {
      bNoPackResupply=True
-     MaxAmmo=12
-     InitialAmount=12
+     MaxAmmo=6
+     InitialAmount=6
 }

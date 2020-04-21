@@ -239,3 +239,4 @@ defaultproperties
      MasterServerPort=27900
      TargetQueryName="MasterUplink"
 }
+
