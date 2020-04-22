@@ -2605,7 +2605,7 @@ function bool CanAttack(Actor Other)
     // check that target is within range
     Dist = VSize(Instigator.Location - Other.Location);
 
-    if (Dist > FireMode[0].MaxRange() && Dist > FireMode[1].MaxRange())
+    if (Dist > FireMode[0].MaxRange())
 	{
 		if (!bNoMag && BotShouldReload())
 			BotReload();

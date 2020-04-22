@@ -180,9 +180,9 @@ defaultproperties
      StartShovelAnimRate=1.250000
      EndShovelAnim="ReloadEnd"
      EndShovelAnimRate=1.250000	 
-     bNoCrosshairInScope=True
+     bNoCrosshairInScope=False
      SightPivot=(Pitch=512)
-     SightOffset=(X=-30.000000,Y=12.450000,Z=14.850000)
+     SightOffset=(X=-30.000000,Y=12.485000,Z=11.750000)
      GunLength=48.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4096)
      AimAdjustTime=100.000000
