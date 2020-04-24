@@ -24,6 +24,6 @@ defaultproperties
      bFastInstantHit=True
      GibPerterbation=0.100000
      KDamageImpulse=3000.000000
-	 VehicleDamageScaling=0.000000
+	 VehicleDamageScaling=0.500000
      InvasionDamageScaling=1.000000
 }

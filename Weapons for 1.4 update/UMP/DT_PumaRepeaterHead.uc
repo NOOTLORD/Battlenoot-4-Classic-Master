@@ -46,6 +46,6 @@ defaultproperties
      PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
      GibPerterbation=0.200000
      KDamageImpulse=1000.000000
-	 VehicleDamageScaling=0.000000
+	 VehicleDamageScaling=0.500000
      InvasionDamageScaling=1.000000
 }

@@ -28,7 +28,6 @@ defaultproperties
      bArmorStops=False
      bCauseConvulsions=False
      bDelayedDamage=True
-     VehicleMomentumScaling=0.500000
-	 VehicleDamageScaling=0.000000
+	 VehicleDamageScaling=0.500000
      InvasionDamageScaling=1.000000
 }

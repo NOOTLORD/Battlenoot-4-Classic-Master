@@ -117,6 +117,7 @@ defaultproperties
      bShowChargingBar=False
      bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKAS_Shotgun'
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_SKAS_Shotgun'	 
      Description="SKAS-21 Super Shotgun||Manufacturer: UTC Defense Tech|Primary: Variable Fire Buckshot|Secondary: Tri-Barrel Blast"
      Priority=245
      HudColor=(B=255,G=200,R=200)
@@ -124,7 +125,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
      GroupOffset=4
-     PlayerViewOffset=(X=-4.000000,Y=1.000000,Z=-10.000000)
+     PlayerViewOffset=(X=-2.000000,Y=-1.000000,Z=-10.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SKASAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SKAS'
      IconCoords=(X2=127,Y2=30)

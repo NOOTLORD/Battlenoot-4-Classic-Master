@@ -161,13 +161,14 @@ defaultproperties
      bShowChargingBar=False
      bCanThrow=False	 
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_XM84_Grenade'
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_XM84_Grenade'	 
      Description="The XM84 Heavy Disruptor grenade is an advanced electromagnetic pulsar weapon designed for incapacitation and disorientation. State of the art field psionic generators ensure the XM84 can tackle all types of targets. A fission criticality-inducing core combined with the Tandem MS flux generator gives the XM84 the destructive ability to strip away energy shields and fry any electrical system without a Warship-Grade Faraday cage. Warning: Long term exposure to armed XM84s is known to cause acute radiation poisoning and cerebral hemorrhaging. Proximity to a disruptive burst will cause permanent memory loss and irreversible neurological damage."
      Priority=142
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=0
-     PlayerViewOffset=(X=8.000000,Y=10.000000,Z=-12.000000)
+     PlayerViewOffset=(X=14.000000,Y=14.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=1024,Yaw=-1024)
      AttachmentClass=Class'BWBPRecolorsPro.XM84Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XM84'

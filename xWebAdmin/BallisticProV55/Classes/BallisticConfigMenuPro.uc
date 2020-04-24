@@ -1,0 +1,261 @@
+//=============================================================================
+// BallisticConfigMenuPro.
+//
+// This menu is like an options menu for the Ballistic Weapons mod.
+// It has settings for the mutator and game like rules and so on which are kept
+// server side and preference type options that are kept client side.
+// OK: saves and exits, Cancel: exits without save, Reset: undoes all changes
+// Defaults: resets everything to default
+//
+// by Nolan "Dark Carnivour" Richert.
+// Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
+//=============================================================================
+class BallisticConfigMenuPro extends UT2K4GUIPage;
+
+var Automated GUIImage		MyBack;
+var Automated GUIButton		BDone, BCancel, BReset, BDefault, BPurge;
+var automated GUIHeader		MyHeader;
+var automated GUITabControl	c_Tabs;
+
+var() editconst noexport BallisticTab_RulesPro			p_Rules;
+var() editconst noexport BallisticTab_PreferencesPro	p_Options;
+var() editconst noexport BallisticTab_OutfittingPro	p_Loadout;
+
+
+var() localized string 	HeaderCaption;
+var() localized string	RulesTabLabel,RulesTabHint, OptionsTabLabel,OptionsTabHint, BloodTabLabel,BloodTabHint, SwapTabLabel,SwapTabHint,LoadoutTabLabel,LoadoutTabHint;
+var()		  string	DetailSettings[9];
+
+function InitComponent(GUIController MyController, GUIComponent MyOwner)
+{
+    Super.Initcomponent(MyController, MyOwner);
+
+	MyHeader.DockedTabs = c_Tabs;
+	p_Rules		 = BallisticTab_RulesPro(c_Tabs.AddTab(RulesTabLabel,"BallisticProV55.BallisticTab_RulesPro",,RulesTabHint));
+	p_Options	 = BallisticTab_PreferencesPro(c_Tabs.AddTab(OptionsTabLabel,"BallisticProV55.BallisticTab_PreferencesPro",,OptionsTabHint));
+	p_Loadout	 = BallisticTab_OutfittingPro(c_Tabs.AddTab(LoadoutTabLabel,"BallisticProV55.BallisticTab_OutfittingPro",,LoadoutTabHint));
+}
+
+function InternalOnChange(GUIComponent Sender)
+{
+    if (GUITabButton(Sender)==none)
+        return;
+
+    MyHeader.SetCaption(HeaderCaption@"|"@GUITabButton(Sender).Caption);
+}
+
+function bool InternalOnKeyEvent(out byte Key, out byte State, float delta)
+{
+	if (Key == 0x0D && State == 3)	// Enter
+		return InternalOnClick(BDone);
+	else if (Key == 0x1B && State == 3)	// Escape
+		return InternalOnClick(BCancel);
+
+	return false;
+}
+
+function bool InternalOnClick(GUIComponent Sender)
+{
+	if (Sender==BCancel) // CANCEL
+		Controller.CloseMenu();
+	else if (Sender==BPurge) // ???
+	{
+		PurgeSettings();
+		LoadSettings();
+	}
+	else if (Sender==BDone) // DONE
+	{
+		SaveSettings();
+		Controller.CloseMenu();
+	}
+	else if (Sender==BReset) // RESET
+	{
+		switch (c_Tabs.ActiveTab.MyPanel)
+		{
+			 case p_Rules:		p_Rules.LoadSettings(); break;
+			 case p_Options:	p_Options.LoadSettings(); break;
+			 case p_Loadout:	p_Loadout.LoadSettings(); break;
+		}
+
+	}
+	else if (Sender==BDefault) // DEFAULTS
+	{
+		switch (c_Tabs.ActiveTab.MyPanel)
+		{
+			 case p_Rules:		p_Rules.DefaultSettings(); break;
+			 case p_Options:	p_Options.DefaultSettings(); break;
+			 case p_Loadout:	p_Loadout.DefaultSettings(); break;
+		}
+	}
+	return true;
+}
+
+function PurgeSettings()
+{
+	local int i;
+	local array<CacheManager.WeaponRecord> Recs;
+	local class<BallisticWeapon> Weap;
+
+	class'CacheManager'.static.GetWeaponList(Recs);
+	for (i=0;i<Recs.Length;i++)
+	{
+		Weap = class<BallisticWeapon>(DynamicLoadObject(Recs[i].ClassName, class'Class'));
+		if (Weap != None)
+			Weap.static.StaticClearConfig();
+	}
+	class'BallisticWeapon'.static.StaticClearConfig();
+	class'BWBloodControl'.static.StaticClearConfig();
+	class'BloodManager'.static.StaticClearConfig();
+	class'AD_BloodDecal'.static.StaticClearConfig();
+	class'Mut_Ballistic'.static.StaticClearConfig();
+	class'BallisticMod'.static.StaticClearConfig();
+	class'AD_ImpactDecal'.static.StaticClearConfig();
+	class'BallisticPawn'.static.StaticClearConfig();
+	class'Rules_Ballistic'.static.StaticClearConfig();
+}
+function LoadSettings()
+{
+	p_Rules.LoadSettings();
+	p_Options.LoadSettings();
+	p_Loadout.LoadSettings();
+}
+
+function SaveSettings()
+{
+	p_Rules.SaveSettings();
+	p_Options.SaveSettings();
+	p_Loadout.SaveSettings();
+}
+
+function DefaultSettings()
+{
+	p_Rules.DefaultSettings();
+	p_Options.DefaultSettings();
+	p_Loadout.DefaultSettings();
+}
+
+final function string GetDisplayString(string ConfigString)
+{
+	local int i;
+	for(i=0;i<9;i++)
+		if (DetailSettings[i] ~= ConfigString)
+			return class'UT2K4Tab_DetailSettings'.default.DetailLevels[i];
+	return "";
+}
+
+final function string GetConfigString(string DisplayString)
+{
+	local int i;
+	for(i=0;i<9;i++)
+		if (class'UT2K4Tab_DetailSettings'.default.DetailLevels[i] ~= DisplayString)
+			return DetailSettings[i];
+	return "";
+}
+
+defaultproperties
+{
+     Begin Object Class=GUIImage Name=BackImage
+         Image=Texture'2K4Menus.NewControls.Display95'
+         ImageStyle=ISTY_Stretched
+         WinLeft=0.100000
+         WinWidth=0.800000
+         WinHeight=1.000000
+         RenderWeight=0.001000
+     End Object
+     MyBack=GUIImage'BallisticProV55.BallisticConfigMenuPro.BackImage'
+
+     Begin Object Class=GUIButton Name=DoneButton
+         Caption="OK"
+         Hint="Save settings and exit menu."
+         WinTop=0.900000
+         WinLeft=0.200000
+         WinWidth=0.100000
+         TabOrder=0
+         OnClick=BallisticConfigMenuPro.InternalOnClick
+         OnKeyEvent=DoneButton.InternalOnKeyEvent
+     End Object
+     bDone=GUIButton'BallisticProV55.BallisticConfigMenuPro.DoneButton'
+
+     Begin Object Class=GUIButton Name=CancelButton
+         Caption="CANCEL"
+         Hint="Exit menu without saving."
+         WinTop=0.900000
+         WinLeft=0.700000
+         WinWidth=0.100000
+         TabOrder=1
+         OnClick=BallisticConfigMenuPro.InternalOnClick
+         OnKeyEvent=CancelButton.InternalOnKeyEvent
+     End Object
+     bCancel=GUIButton'BallisticProV55.BallisticConfigMenuPro.CancelButton'
+
+     Begin Object Class=GUIButton Name=BResetButton
+         Caption="RESET"
+         Hint="Undo all changes."
+         WinTop=0.900000
+         WinLeft=0.375000
+         WinWidth=0.100000
+         TabOrder=1
+         OnClick=BallisticConfigMenuPro.InternalOnClick
+         OnKeyEvent=CancelButton.InternalOnKeyEvent
+     End Object
+     bReset=GUIButton'BallisticProV55.BallisticConfigMenuPro.BResetButton'
+
+     Begin Object Class=GUIButton Name=BDefaultButton
+         Caption="DEFAULTS"
+         Hint="Load default settings."
+         WinTop=0.900000
+         WinLeft=0.525000
+         WinWidth=0.100000
+         TabOrder=1
+         OnClick=BallisticConfigMenuPro.InternalOnClick
+         OnKeyEvent=CancelButton.InternalOnKeyEvent
+     End Object
+     bDefault=GUIButton'BallisticProV55.BallisticConfigMenuPro.BDefaultButton'
+
+     Begin Object Class=GUIHeader Name=DaBeegHeader
+         bUseTextHeight=True
+         Caption="Ballistic Settings"
+         FontScale=FNS_Medium
+         WinLeft=0.100000
+         WinWidth=0.800000
+         WinHeight=1.000000
+     End Object
+     MyHeader=GUIHeader'BallisticProV55.BallisticConfigMenuPro.DaBeegHeader'
+
+     Begin Object Class=GUITabControl Name=PageTabs
+         bDockPanels=True
+         TabHeight=0.040000
+         BackgroundStyleName="TabBackground"
+         WinLeft=0.110000
+         WinWidth=0.780000
+         WinHeight=0.040000
+         RenderWeight=0.490000
+         TabOrder=3
+         bAcceptsInput=True
+         OnActivate=PageTabs.InternalOnActivate
+         OnChange=BallisticConfigMenuPro.InternalOnChange
+     End Object
+     c_Tabs=GUITabControl'BallisticProV55.BallisticConfigMenuPro.PageTabs'
+
+     HeaderCaption="Ballistic Settings"
+     RulesTabLabel="Game Rules"
+     RulesTabHint="Adjust rules and settings that affect the behaviour of the game."
+     OptionsTabLabel="Preferences"
+     OptionsTabHint="Configure your own personal preferences."
+     LoadoutTabLabel="Loadout"
+     LoadoutTabHint="Change how and which weapons are used by the 'Ballistic Loadout' mutator."
+     DetailSettings(0)="UltraLow"
+     DetailSettings(1)="VeryLow"
+     DetailSettings(2)="Low"
+     DetailSettings(3)="Lower"
+     DetailSettings(4)="Normal"
+     DetailSettings(5)="Higher"
+     DetailSettings(6)="High"
+     DetailSettings(7)="VeryHigh"
+     DetailSettings(8)="UltraHigh"
+     bRenderWorld=True
+     bAllowedAsLast=True
+     OnKeyEvent=BallisticConfigMenuPro.InternalOnKeyEvent
+}

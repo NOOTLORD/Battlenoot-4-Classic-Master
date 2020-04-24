@@ -89,7 +89,8 @@ defaultproperties
      PutDownTime=0.500000
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_FMP_SMG'	 
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_FMP_SMG'
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_FMP_SMG'	 
      Description="FMP-2012 Machine Pistol||Manufacturer: Black & Wood|Primary: Accurate Rifle Fire|Secondary: Attach Smoke Grenade||The MJ51 is a 3-round burst carbine based off the popular M50 assault rifle. It fires the 5.56mm UTC round and is more controllable than its larger cousin, though at the expense of long range accuracy and power. While the S-AR 12 is the UTC's weapon of choice for close range engagements, the MJ51 is often seen in the hands of MP and urban security details. When paired with its native CM3 Rifle Grenade attachment, the MJ51 makes an efficient riot control weapon."
      Priority=41
      HudColor=(B=255,G=200,R=200)
@@ -97,7 +98,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
      GroupOffset=2	 
-     PlayerViewOffset=(X=-5.000000,Y=12.000000,Z=-15.000000)
+     PlayerViewOffset=(X=-2.500000,Y=12.000000,Z=-15.000000)
      AttachmentClass=Class'BWBPRecolorsPro.FMPAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MP40'
      IconCoords=(X2=127,Y2=31)

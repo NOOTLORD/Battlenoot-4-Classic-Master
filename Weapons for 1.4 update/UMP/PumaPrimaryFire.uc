@@ -28,7 +28,7 @@ defaultproperties
      PenetrateForce=0
      bPenetrate=False 
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashScaleFactor=0.300000
+     FlashScaleFactor=0.250000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassBone="tip"
      BrassOffset=(X=-52.500000,Y=2.000000)

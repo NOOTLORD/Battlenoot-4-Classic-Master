@@ -79,7 +79,7 @@ defaultproperties
      bNoCrosshairInScope=True
      SightPivot=(Roll=-1024)
      SightOffset=(X=13.000000,Y=-1.600000,Z=7.200000)
-     SightingTime=0.650000
+     SightingTime=0.500000
      MinZoom=2.000000
      MaxZoom=2.000000
      ZoomStages=0
@@ -111,6 +111,7 @@ defaultproperties
      bSniping=True
      bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_X82_Sniper'
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_X82_Sniper'	 
      Description="X82 Rifle||Manufacturer: Evravion Combat Solutions |Primary: Single Powerful Shot|Secondary: Activate Zooming Scope|Special: (Scoped) Activate Night Vision/Detector|Special: (Unscoped) Mount X-83 A1||Enravion's high powered X-83 A1 Anti-Material Rifle is a fearsome sight on the modern day battlefield. With an effective range of about 1.1 miles, the X-83 can target and eliminate infantry and light vehicles with ease and at range using its specialized .50 cal N6-BMG HEAP rounds. This special operations weapon, designed to disable key targets like parked aircraft and APCs, was used extensively prior to the Skrith wars."
      DisplayFOV=55.000000
      Priority=207
@@ -119,7 +120,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=9
      GroupOffset=2
-     PlayerViewOffset=(X=4.000000,Y=6.000000,Z=-7.500000)
+     PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-7.500000)
      AttachmentClass=Class'BWBPRecolorsPro.X82Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_X82'
      IconCoords=(X2=127,Y2=31)

@@ -869,7 +869,7 @@ defaultproperties
      RadarScale=0.200000
      RadarTrans=255.000000
      IconScale=1.000000
-     RadarPosX=1.000000
+     RadarPosX=.100000
      RadarPosY=0.100000
      RadarMaxRange=500000.000000
      HealthBarBackMat=Texture'InterfaceContent.Menu.BorderBoxD'

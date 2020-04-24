@@ -161,6 +161,7 @@ defaultproperties
      CurrentRating=0.7500000
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_M353_MG'
+     AmmoClass(1)=Class'BallisticProV55.Ammo_M353_MG'	 
      Description="The M353 'Guardian' Machinegun has seen some of the most brutal battles ever recorded in recent history, and has helped win many of them, the most famous being the bloody 'Wasteland Seige' where 12 million Krao were slaughtered along a 500 mile line of defences. Used primarily as a defensive weapon, the M353's incredible rate of fire can quickly and effectively destroy masses of oncoming foes, especially melee attackers. When the secondary mode is activated, the Guardian becomes much more accurate when the user mounts it on the ground, allowing it to be a very effective defensive weapon. With its high rate of fire and high damage, the M353 becomes very inaccurate after just a few rounds and with its high ammo capacity, comes the difficulty of longer reload times than smaller weapons."
      DisplayFOV=50.000000
      Priority=43
@@ -168,7 +169,7 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
-     PlayerViewOffset=(X=2.000000,Y=3.500000,Z=-4.000000)
+     PlayerViewOffset=(X=4.000000,Y=3.000000,Z=-4.000000)
      AttachmentClass=Class'BallisticProV55.M353Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M353'
      IconCoords=(X2=127,Y2=31)

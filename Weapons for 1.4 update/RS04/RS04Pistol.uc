@@ -168,6 +168,7 @@ defaultproperties
      CurrentRating=0.600000
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_RS04_Pistol'
+     AmmoClass(1)=Class'BallisticProV55.Ammo_RS04_Pistol'	 
      Description="RS04 .45 Compact||Manufacturer: Drake & Co Firearms|Primary: .45 Fire|Secondary: Flashlight||A brand new precision handgun designed by Drake & Co firearms, the Redstrom .45 is to be the military version of the current 10mm RS8. Dubbed the RS04, this unique and accurate pistol is still in its prototype stages. The .45 HV rounds used in the RS04 prototype allow for much improved stopping power at the expense of clip capacity and recoil. Current features include a tactical flashlight and a quick loading double shot firemode. Currently undergoing combat testing by private military contractors, the 8-round Redstrom is seen frequently in the battlefields of corporate warfare. The RS04 .45 Compact model is the latest variant."
      Priority=17
      HudColor=(B=255,G=200,R=200)
@@ -175,7 +176,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
      GroupOffset=6
-     PlayerViewOffset=(Y=9.000000,Z=-14.000000)
+     PlayerViewOffset=(X=4.000000,Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BallisticProV55.RS04Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_RS04'
      IconCoords=(X2=127,Y2=31)

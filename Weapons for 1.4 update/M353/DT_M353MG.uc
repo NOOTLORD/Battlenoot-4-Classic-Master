@@ -21,6 +21,6 @@ defaultproperties
      FemaleSuicide="%o shot herself in the foot with the M353."
      MaleSuicide="%o shot himself in the foot with the M353."
      bFastInstantHit=True
-     VehicleDamageScaling=0.000000
+     VehicleDamageScaling=0.500000
      InvasionDamageScaling=1.000000	 
 }

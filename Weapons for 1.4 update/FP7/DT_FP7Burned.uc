@@ -25,6 +25,6 @@ defaultproperties
      bDelayedDamage=True
      PawnDamageSounds(0)=Sound'BallisticSounds1.FP7.FP7BurnFlesh'
      KDamageImpulse=20000.000000
-	 VehicleDamageScaling=0.000000
+     VehicleDamageScaling=1.500000
      InvasionDamageScaling=1.000000	 	 
 }

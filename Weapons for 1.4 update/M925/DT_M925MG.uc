@@ -23,6 +23,6 @@ defaultproperties
      FemaleSuicide="%o caught her face in the belt feed of her M925."
      MaleSuicide="%o caught his face in the belt feed of his M925."
      bFastInstantHit=True
-     VehicleDamageScaling=0.000000
+     VehicleDamageScaling=0.500000
      InvasionDamageScaling=1.000000	 
 }

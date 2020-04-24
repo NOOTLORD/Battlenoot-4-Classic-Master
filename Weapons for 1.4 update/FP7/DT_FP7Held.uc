@@ -26,6 +26,6 @@ defaultproperties
      bSkeletize=True
      GibPerterbation=0.100000
      KDamageImpulse=200.000000 
-	 VehicleDamageScaling=0.000000
+     VehicleDamageScaling=1.500000
      InvasionDamageScaling=1.000000	 	 
 }

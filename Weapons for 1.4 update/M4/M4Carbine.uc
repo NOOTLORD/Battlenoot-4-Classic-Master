@@ -111,13 +111,14 @@ defaultproperties
      CurrentRating=0.600000
      bCanThrow=False	 
      Description="MJ51 Carbine||Manufacturer: Majestic Firearms 12|Primary: 5.56mm CAP Rifle Fire|Secondary: Attach Smoke Grenade||The MJ51 is a 3-round burst carbine based off the popular M50 assault rifle. Unlike the M50 and SAR though, it fires a shorter 5.56mm CAP round and is more controllable than its larger cousin, though this comes at the expense of long range accuracy and power. While the S-AR 12 is the UTC's weapon of choice for close range engagements, the MJ51 is often seen in the hands of MP and urban security details. When paired with its native MOA-C Rifle Grenade attachment, the MJ51 makes an efficient riot control weapon. |Majestic Firearms 12 designed their MJ51 carbine alongside their MOA-C Chaff Grenade to produce a rifle with grenade launching capabilities without the need of a bulky launcher that has to be sperately maintained. Utilizing a hardened tungsten barrel and an advanced rifle grenade design, a soldier is able to seamlessly ready a grenade projectile without having to rechamber specilized rounds"
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_M4_Rifle'     
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_M4_Rifle' 
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_M4_Rifle'	 
 	 Priority=41
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
-     PlayerViewOffset=(X=-8.000000,Y=10.000000,Z=-14.000000)
+     PlayerViewOffset=(X=-6.000000,Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BWBPRecolorsPro.M4Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M4'
      IconCoords=(X2=127,Y2=31)

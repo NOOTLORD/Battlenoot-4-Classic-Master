@@ -89,13 +89,14 @@ defaultproperties
      bShowChargingBar=False
      bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_Puma_SMG'	 	 
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_Puma_SMG'		 
      Description="PUMA-77 Repeating Pulse Rifle||Manufacturer: Majestic Firearms 12|Primary: Programmable Smart Round|Secondary: Shield Projector||The Type-77 RPR, a well known pulse weapon used during the Skrith wars, is one of the more recognizable light grenade launchers on the market. It was used extensively by the UTC as the PUMA-77 before their widespread adoption of the SRAC-21/G as the automatic grenade launcher of choice. This powerful weapon differs from other conventional grenade launchers in that it utilizes specialized fission batteries as ammunition, which both power and act as the carrier of the projectile. The projectiles themselves can be programmed by the side-mounted rangefinding module and allow soldiers to selectively airburst the rounds to hit targets behind cover. The PUMA-77s seen here are equipped with Frontier Tech's lightweight X57 shield projector, which is a scaled down version of the heavy portable shields used during the first Skrith war."
      Priority=45
      HudColor=(B=255,G=200,R=200)	 
      CustomCrossHairScale=0.000000	 
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
-     PlayerViewOffset=(X=-4.000000,Y=6.000000,Z=-11.000000)
+     PlayerViewOffset=(X=0.000000,Y=6.000000,Z=-11.000000)
      AttachmentClass=Class'BWBPRecolorsPro.PumaAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_PUMA'
      IconCoords=(X2=127,Y2=35)

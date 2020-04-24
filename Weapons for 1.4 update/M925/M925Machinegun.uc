@@ -170,6 +170,7 @@ defaultproperties
      CurrentRating=0.700000
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_M925_MG'
+	 AmmoClass(1)=Class'BallisticProV55.Ammo_M925_MG' 
      Description="The M925 was used during the late stages of the first Human-Skrith war when ballistic weapons first came back into large scale usage. The heavy calibre M925 was extremely effective against the Skrith and their allies and became known as the 'Monster' because it was the first weapon that the Skrith truly feared. Although it has a slower rate of fire than the M353, the 'Monster' has a much heavier bullet and can cause much more damage to an enemy soldier or vehicle in a single shot. It was also used extensively during the 'Wasteland Siege', to hose down thousands of Krao, and proved to be very effective at destroying the alien transport ships, as they were landing."
      Priority=42
      HudColor=(B=255,G=200,R=200)
@@ -177,7 +178,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
      GroupOffset=1
-     PlayerViewOffset=(X=9.000000,Y=5.000000,Z=-7.000000)
+     PlayerViewOffset=(X=11.000000,Y=4.500000,Z=-7.000000)
      AttachmentClass=Class'BallisticProV55.M925Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M925'
      IconCoords=(X2=127,Y2=31)
