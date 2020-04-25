@@ -15,6 +15,12 @@ var byte DrumPos;
 
 var array<Name> ShellBones[5];
 var array<Name> SpareShellBones[5];
+var() name		Drumbone;
+
+simulated function Notify_Hidedrum()
+{		
+	SetBoneScale (0, 0.0, Drumbone);	
+}
 
 simulated function ShellFired()
 {
@@ -35,12 +41,14 @@ simulated function BringUp(optional Weapon PrevWeapon)
 
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
 	{
-		IdleAnim = 'OpenIdle';
+		if (IdleAnim == 'Idle')
+			IdleAnim = 'OpenIdle';
 		ReloadAnim = 'OpenReload';
 	}
 	else
 	{
-		IdleAnim = 'Idle';
+		if (IdleAnim == 'OpenIdle')
+			IdleAnim = 'Idle';
 		ReloadAnim = 'Reload';
 	}
 }
@@ -49,8 +57,7 @@ simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 {	
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
 	{
-		if (IdleAnim == 'Idle')
-			IdleAnim = 'OpenIdle';
+		IdleAnim = 'OpenIdle';
 		ReloadAnim = 'OpenReload';
 	}
 	else
@@ -61,8 +68,7 @@ simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 			if (anim == FireMode[0].FireAnim)
 				CycleDrum();
 		}
-		if (IdleAnim == 'OpenIdle')
-			IdleAnim = 'Idle';
+		IdleAnim = 'Idle';
 		ReloadAnim = 'Reload';
 	}
 
@@ -91,29 +97,9 @@ simulated function AnimEnded (int Channel, name anim, float frame, float rate)
 			PlayIdle();
     }
 	// End stuff from Engine.Weapon
-
-	// Start Shovel ended, move on to Shovel loop
-	if (ReloadState == RS_StartShovel)
-	{
-		ReloadState = RS_Shovel;
-		PlayShovelLoop();
-		return;
-	}
-	// Shovel loop ended, start it again
-	if (ReloadState == RS_PostShellIn)
-	{
-		if (MagAmmo >= default.MagAmmo || Ammo[0].AmmoAmount < 1 )
-		{
-			PlayShovelEnd();
-			ReloadState = RS_EndShovel;
-			return;
-		}
-		ReloadState = RS_Shovel;
-		PlayShovelLoop();
-		return;
-	}
+	
 	// End of reloading, either cock the gun or go to idle
-	if (ReloadState == RS_PostClipIn || ReloadState == RS_EndShovel)
+	if (ReloadState == RS_PostClipIn)
 	{
 		if (bNeedCock && MagAmmo > 0)
 			CommonCockGun();
@@ -191,24 +177,6 @@ function LostControl(PD97DartControl DC)
 	}
 }
 
-simulated function vector ConvertFOVs (vector InVec, float InFOV, float OutFOV, float Distance)
-{
-	local vector ViewLoc, Outvec, Dir, X, Y, Z;
-	local rotator ViewRot;
-
-	ViewLoc = Instigator.Location + Instigator.EyePosition();
-	ViewRot = Instigator.GetViewRotation();
-	Dir = InVec - ViewLoc;
-	GetAxes(ViewRot, X, Y, Z);
-
-    OutVec.X = Distance / tan(OutFOV * PI / 360);
-    OutVec.Y = (Dir dot Y) * (Distance / tan(InFOV * PI / 360)) / (Dir dot X);
-    OutVec.Z = (Dir dot Z) * (Distance / tan(InFOV * PI / 360)) / (Dir dot X);
-    OutVec = OutVec >> ViewRot;
-
-	return OutVec + ViewLoc;
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -238,6 +206,7 @@ function float GetAIRating()
 
 defaultproperties
 {
+     Drumbone="SpareDrum"
 	 AIRating=0.5
 	 CurrentRating=0.5
      ShellBones(0)="Shell1"
@@ -315,7 +284,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
      GroupOffset=6
-     PlayerViewOffset=(X=5.000000,Y=8.000000,Z=-10.000000)
+     PlayerViewOffset=(X=10.000000,Y=10.500000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.PD97Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon-PD97'
      IconCoords=(X2=127,Y2=31)

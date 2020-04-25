@@ -259,6 +259,7 @@ defaultproperties
      SightDisplayFOV=40.000000
      SightingTime=0.200000
      SightAimFactor=0.150000
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
      AimAdjustTime=100.000000
      AimSpread=16
      AimDamageThreshold=0.000000
@@ -286,7 +287,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
      GroupOffset=7
-     PlayerViewOffset=(X=3.000000,Y=9.000000,Z=-12.000000)
+     PlayerViewOffset=(X=12.000000,Y=12.500000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.RS8Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_RS8'
      IconCoords=(X2=127,Y2=31)

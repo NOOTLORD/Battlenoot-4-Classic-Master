@@ -153,7 +153,7 @@ defaultproperties
      FlashBone="tip"
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassOffset=(X=-36.000000,Y=1.500000,Z=-0.500000)
+     BrassOffset=(X=-40.000000,Y=1.500000,Z=-0.500000)
      AimedFireAnim="SightFire"
      RecoilPerShot=190.000000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.320000,OutVal=1),(InVal=0.500000,OutVal=1.500000),(InVal=1.000000,OutVal=2.250000)))

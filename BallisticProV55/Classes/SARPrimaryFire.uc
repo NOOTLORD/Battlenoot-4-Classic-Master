@@ -89,7 +89,7 @@ defaultproperties
      FlashScaleFactor=0.500000
      BrassClass=Class'BallisticProV55.Brass_SAR_Rifle'
      BrassBone="tip"
-     BrassOffset=(X=-111.000000,Y=-5.500000,Z=-4.000000)
+     BrassOffset=(X=-111.000000,Y=-3.500000,Z=-4.250000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=200.000000
      FireChaos=0.015000

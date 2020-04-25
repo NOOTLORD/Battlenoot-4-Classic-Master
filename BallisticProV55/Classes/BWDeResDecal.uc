@@ -6,18 +6,18 @@ class BWDeResDecal extends BallisticDecal;
 defaultproperties
 {
      bRandomRotate=True
-     StayTime=3.500000
-     ZoomDist=-32.000000
+     StayTime=0.000000
+     ZoomDist=-0.000000
      FrameBufferBlendingOp=PB_Add
      ProjTexture=Combiner'BallisticBloodPro.DeRez.Symbol-Com'
      FOV=1
-     MaxTraceDistance=128
+     MaxTraceDistance=0
      bProjectParticles=False
      bProjectActor=False
-     bClipBSP=True
-     bClipStaticMesh=True
+     bClipBSP=False
+     bClipStaticMesh=False
      bProjectOnUnlit=True
      FadeInTime=0.500000
      bStatic=False
-     DrawScale=0.400000
+     DrawScale=0.000000
 }

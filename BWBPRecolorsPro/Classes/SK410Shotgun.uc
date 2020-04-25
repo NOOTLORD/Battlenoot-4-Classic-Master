@@ -173,7 +173,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=7
      GroupOffset=3
-     PlayerViewOffset=(X=0.000000,Y=13.000000,Z=-16.000000)
+     PlayerViewOffset=(X=0.000000,Y=14.500000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
      IconMaterial=Texture'BallisticUI.Icons.BigIcon_SK410'
      IconCoords=(X2=127,Y2=35)

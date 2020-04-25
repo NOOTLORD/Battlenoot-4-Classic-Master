@@ -43,7 +43,7 @@ function SpawnProjectile (Vector Start, Rotator Dir)
 
 defaultproperties
 {
-     SpawnOffset=(X=15.000000,Y=15.000000,Z=-20.000000)
+     SpawnOffset=(X=15.000000,Y=29.000000,Z=-20.000000)
      DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=0.850000)	 
 	 MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.250000

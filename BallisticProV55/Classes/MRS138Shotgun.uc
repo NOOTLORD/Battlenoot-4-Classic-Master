@@ -8,11 +8,18 @@
 //=============================================================================
 class MRS138Shotgun extends BallisticProShotgun;
 
+var name			ShellBone;
+
 // Animation notify for when cocking action starts. Used to time sounds
 simulated function Notify_CockAimed()
 {
 	bNeedCock = False;
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
+}
+
+simulated function Notify_Hideshell()
+{
+	SetBoneScale(0,0.0,ShellBone);
 }
 
 // AI Interface =====
@@ -66,6 +73,7 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
+     ShellBone="shell"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MRS138'
      BigIconCoords=(Y1=36,Y2=230)
@@ -120,7 +128,6 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.800000
      CurrentRating=0.800000
-     bMeleeWeapon=True
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_MRS138_Shotgun'
      AmmoClass(1)=Class'BallisticProV55.Ammo_MRS138_Shotgun'	 
@@ -132,7 +139,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=3
      GroupOffset=3
-     PlayerViewOffset=(Y=10.000000,Z=-14.000000)
+     PlayerViewOffset=(X=7.500000,Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MRS138'
      IconCoords=(X2=127,Y2=31)

@@ -107,8 +107,8 @@ defaultproperties
      BrassClass=Class'BallisticProV55.Brass_Shotgun'
      BrassOffset=(X=-32.000000,Y=1.000000,Z=1.000000)
      AimedFireAnim="FireCombinedSight"
-     RecoilPerShot=1024.000000
-     FireChaos=0.650000
+     RecoilPerShot=512.000000
+     FireChaos=0.450000
      XInaccuracy=150.000000
      YInaccuracy=150.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.M763.M763Fire1',Volume=1.900000)

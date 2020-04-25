@@ -50,7 +50,7 @@ defaultproperties
      FlashScaleFactor=0.525000
      BrassClass=Class'BallisticProV55.Brass_GRS9_Pistol'
      BrassBone="tip"
-     BrassOffset=(X=-45.000000,Y=4.500000,Z=5.000000)
+     BrassOffset=(X=-50.000000,Y=4.500000,Z=2.500000)
      RecoilPerShot=256.000000
      FireChaos=0.140000
      XInaccuracy=96.000000
