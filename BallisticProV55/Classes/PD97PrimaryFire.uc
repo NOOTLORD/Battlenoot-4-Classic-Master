@@ -64,5 +64,4 @@ defaultproperties
 	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BallisticProV55.PD97Dart'
      BotRefireRate=0.700000
-     WarnTargetPct=0.300000
 }

@@ -33,7 +33,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M46FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_M46_Rifle'
-     BrassOffset=(X=-18.000000,Y=4.000000,Z=-3.000000)
+     BrassOffset=(X=-17.000000,Y=1.500000,Z=-2.500000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=180.000000
      FireChaos=0.045000
@@ -48,7 +48,6 @@ defaultproperties
      ShakeRotTime=0.000000
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
-	 ShakeOffsetTime=0.000000				 
-     WarnTargetPct=0.200000
+	 ShakeOffsetTime=0.000000			 
      aimerror=750.000000
 }

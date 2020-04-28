@@ -31,7 +31,7 @@ defaultproperties
      FlashScaleFactor=0.800000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      bBrassOnCock=True
-     BrassOffset=(X=-32.500000,Y=2.500000,Z=-3.500000)
+     BrassOffset=(X=-48.000000,Y=-6.000000,Z=6.500000)
      RecoilPerShot=1536.000000
      FireChaos=0.500000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.R78.R78-Fire',Volume=1.650000)
@@ -44,7 +44,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-	 BotRefireRate=0.4
-	 WarnTargetPct=0.5
+	 BotRefireRate=0.400000
      aimerror=750.000000
 }

@@ -2499,15 +2499,15 @@ defaultproperties
      NewDeResSound=SoundGroup'BallisticSounds2.Misc.DeRes'
      MeleeAnim="Melee_Smack" 
      UDamageSound=Sound'BallisticSounds2.Udamage.UDamageFire'
-	 GruntVolume=0.100000
-     FootstepVolume=0.150000
+	 GruntVolume=0.050000
+     FootstepVolume=0.115000
      DeResTime=2.000000
      RagdollLifeSpan=10.000000
      RagDeathUpKick=0.000000
      bCanWalkOffLedges=True
      bSpecialHUD=True
      Visibility=64
-     GroundSpeed=360.000000
+     GroundSpeed=350.000000
      LadderSpeed=280.000000
      WalkingPct=0.900000
      CrouchedPct=0.350000
@@ -2523,8 +2523,8 @@ defaultproperties
          KStartEnabled=True
          KVelDropBelowThreshold=-1.000000
          bHighDetailOnly=False
-         KFriction=0.600000
-         KRestitution=0.300000
+         KFriction=1.750000
+         KRestitution=0.100000
          KImpactThreshold=500.000000
      End Object
      KParams=KarmaParamsSkel'BallisticProV55.BallisticPawn.PawnKParams'

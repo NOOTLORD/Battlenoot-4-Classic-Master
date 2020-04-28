@@ -32,7 +32,7 @@ defaultproperties
      FlashBone="Muzzle"
      FlashScaleFactor=0.230000
      BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
-     BrassOffset=(X=-37.500000,Y=0.000000,Z=1.500000)
+     BrassOffset=(X=-39.000000,Y=-2.500000,Z=3.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=140.000000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
@@ -40,7 +40,7 @@ defaultproperties
      YInaccuracy=64.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.UZI.UZI-Fire',Volume=0.450000)
      bPawnRapidFireAnim=True
-     FireRate=0.072000
+     FireRate=0.073000
      AmmoClass=Class'BallisticProV55.Ammo_Fifty_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -48,7 +48,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-	 BotRefireRate=0.99
-     WarnTargetPct=0.2
+	 BotRefireRate=0.990000
      aimerror=750.000000
 }

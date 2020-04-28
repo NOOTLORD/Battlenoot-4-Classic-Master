@@ -89,7 +89,7 @@ defaultproperties
      FlashScaleFactor=0.900000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      bBrassOnCock=True
-     BrassOffset=(X=-100.000000,Y=-20.000000,Z=15.000000)
+     BrassOffset=(X=-108.000000,Y=-17.500000,Z=14.500000)
      AimedFireAnim="SightFireCock"
      RecoilPerShot=1536.000000
      FireChaos=0.800000
@@ -104,7 +104,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-	 BotRefireRate=0.7
-     WarnTargetPct=0.5
+	 BotRefireRate=0.700000
      aimerror=750.000000
 }

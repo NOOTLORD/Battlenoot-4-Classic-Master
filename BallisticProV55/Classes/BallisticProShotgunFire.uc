@@ -14,7 +14,7 @@ var int	 MaxSpreadFactor;
 
 function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLocation, int PenetrateCount, int WallCount, Vector WaterHitLocation)
 {
-	local float  DamageFactor;
+	local float  DamageFactor;						   
 
 	DamageFactor = 1;
 
@@ -44,6 +44,10 @@ simulated function vector GetFireSpread()
 	local float fX;
     local Rotator R;
 	
+	if (BW.BCRepClass.default.bRelaxedHipFire)
+		AdjustedHipSpreadFactor = default.HipSpreadFactor * 0.5;
+	else
+		AdjustedHipSpreadFactor = default.HipSpreadFactor;
 	if (BW.bScopeView || BW.bAimDisabled)
 		return super.GetFireSpread();
 	else

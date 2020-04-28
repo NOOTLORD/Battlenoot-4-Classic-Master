@@ -347,7 +347,7 @@ defaultproperties
      Begin Object Class=GUILoadOutItem Name=SideArmImage
          NAImage=Texture'BallisticUI.Icons.BigIcon_NA'
          Caption="Sidearm"
-         WinTop=0.040000
+         WinTop=0.035000
          WinLeft=0.400000
          WinWidth=0.200000
          WinHeight=0.200000
@@ -373,7 +373,7 @@ defaultproperties
      Begin Object Class=GUILoadOutItem Name=GrenadeImage
          NAImage=Texture'BallisticUI.Icons.BigIcon_NA'
          Caption="Abilities"
-         WinTop=0.350000
+         WinTop=0.340000
          WinLeft=0.550000
          WinWidth=0.200000
          WinHeight=0.200000

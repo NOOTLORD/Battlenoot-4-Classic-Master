@@ -74,7 +74,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.MRS138FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
-     BrassOffset=(X=35.000000,Y=-7.500000,Z=13.000000)
+     BrassOffset=(X=17.500000,Y=-7.500000,Z=15.000000)
      RecoilPerShot=400.000000
      FireChaos=0.200000
      XInaccuracy=200.000000
@@ -90,7 +90,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-	 BotRefireRate=0.7
-     WarnTargetPct=0.5
+	 BotRefireRate=0.700000
      aimerror=750.000000
 }

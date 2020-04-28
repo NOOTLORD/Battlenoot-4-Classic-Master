@@ -13,20 +13,6 @@ var() class<Actor>				SMuzzleFlashClass;
 var() Name						SFlashBone;
 var() float						SFlashScaleFactor;
 
-simulated function FireRecoil ()
-{
-	if (!BW.bReaiming)
-		BW.Reaim(level.TimeSeconds-Weapon.LastRenderTime, , FireChaos,,,0.15);
-	BW.AddRecoil(RecoilPerShot, ThisModeNum);
-	if (VelocityRecoil != 0)
-	{
-		if (Instigator.Physics == PHYS_Falling)
-			Instigator.Velocity -= Vector(Instigator.GetViewRotation()) * VelocityRecoil * 0.25;
-		else
-			Instigator.Velocity -= Vector(Instigator.GetViewRotation()) * VelocityRecoil;
-	}
-}
-
 function InitEffects()
 {
 	if (AIController(Instigator.Controller) != None)
@@ -59,16 +45,8 @@ simulated function DestroyEffects()
 	Super.DestroyEffects();
 	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
 }
-
-/*
 // End effect functions ----------------------------------------------------
-function float GetDamage (Actor Other, vector HitLocation, vector Dir, out Actor Victim, optional out class<DamageType> DT)
-{
-	if (SRS600Rifle(Weapon).bSilenced)
-		return Super.GetDamage (Other, HitLocation, Dir, Victim, DT) * 0.8;
-	else
-		return Super.GetDamage (Other, HitLocation, Dir, Victim, DT);
-}*/
+
 
 simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
 {
@@ -208,6 +186,5 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-     WarnTargetPct=0.200000
      aimerror=750.000000
 }

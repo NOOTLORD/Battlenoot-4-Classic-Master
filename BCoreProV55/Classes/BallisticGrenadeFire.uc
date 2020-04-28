@@ -87,6 +87,7 @@ function SpawnProjectile (Vector Start, Rotator Dir)
 
 defaultproperties
 {
+     bWaitForRelease=True
      bAISilent=True
      bSplashDamage=True
      bRecommendSplashDamage=True

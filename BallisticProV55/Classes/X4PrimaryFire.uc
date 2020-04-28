@@ -59,5 +59,4 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      BotRefireRate=0.9900000
-     WarnTargetPct=0.300000
 }

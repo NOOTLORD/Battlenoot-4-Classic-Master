@@ -22,7 +22,7 @@ defaultproperties
      TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerMode=MU_Primary	 
-     TracerChance=0.500000
+     TracerChance=1.000000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.900000
 	 CockingAnim="Cock_RearPull"	 

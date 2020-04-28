@@ -635,7 +635,7 @@ function GetFromServerCache(UT2K4Browser_ServersList List)
 defaultproperties
 {
      bStandardServersOnly=False
-     CurrentGameType="Onslaught.ONSOnslaughtGame"
+     CurrentGameType="UT2k4Assault.ASGameInfo"
      InternetSettingsPage="GUI2K4.UT2K4InternetSettingsPage"
      Begin Object Class=moComboBox Name=GameTypeCombo
          bReadOnly=True
@@ -671,23 +671,22 @@ defaultproperties
      End Object
      t_Footer=UT2k4Browser_Footer'GUI2K4.UT2k4ServerBrowser.FooterPanel'
 
-
-     PanelClass(0)="GUI2K4.UT2K4Browser_ServerListPageInternet"	 
+     PanelClass(0)="GUI2K4.UT2K4Browser_ServerListPageFavorites"
      PanelClass(1)="GUI2K4.UT2K4Browser_ServerListPageLAN"
-     PanelClass(2)="GUI2K4.UT2K4Browser_ServerListPageFavorites"	 
+     PanelClass(2)="GUI2K4.UT2K4Browser_ServerListPageInternet"	 
      PanelClass(3)="GUI2K4.UT2K4Browser_ServerListPageBuddy"
      PanelClass(4)="GUI2K4.UT2K4Browser_MOTD"
-     PanelClass(5)="GUI2K4.UT2K4Browser_IRC"	 
-	 PanelCaption(0)="Internet"
+     PanelClass(5)="GUI2K4.UT2K4Browser_IRC"
+     PanelCaption(0)="Favorites"	 
      PanelCaption(1)="LAN"	 
-     PanelCaption(2)="Favorites"
+	 PanelCaption(2)="Internet"
      PanelCaption(3)="Buddies"
      PanelCaption(4)="News"
-     PanelCaption(5)="Chat"	 
-     PanelHint(0)="Choose from hundreds of UT2004 servers across the world"	 
+     PanelCaption(5)="Chat"	 	
+     PanelHint(0)="Choose a server to join from among your favorites"	 
      PanelHint(1)="View all UT2004 servers currently running on your LAN"
-     PanelHint(2)="Choose a server to join from among your favorites"	 
-     PanelHint(3)="See where your buddies are currently playing, or join them in the game"
+     PanelHint(2)="Choose from hundreds of UT2004 servers across the world"	 
+	 PanelHint(3)="See where your buddies are currently playing, or join them in the game"
      PanelHint(4)="Get the latest news from Epic"
      PanelHint(5)="UT2004 integrated IRC client"	 
      bCheckResolution=True

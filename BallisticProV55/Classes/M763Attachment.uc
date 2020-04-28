@@ -22,7 +22,7 @@ defaultproperties
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerMode=MU_Primary	 
-     TracerChance=0.500000								  
+     TracerChance=1.000000							  
      SingleFireAnim="RifleHip_FireCock"
      SingleAimedFireAnim="RifleAimed_FireCock"
      Mesh=SkeletalMesh'BallisticAnims2.M763_TP'

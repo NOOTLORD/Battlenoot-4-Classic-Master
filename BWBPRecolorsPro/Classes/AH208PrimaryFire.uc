@@ -50,7 +50,7 @@ defaultproperties
      FlashScaleFactor=0.200000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassBone="tip"
-     BrassOffset=(X=-130.000000,Y=-5.000000,Z=9.000000)
+     BrassOffset=(X=-150.000000,Y=-5.000000,Z=9.000000)
      RecoilPerShot=1024.000000
      VelocityRecoil=300.000000
      FireChaos=0.350000
@@ -67,6 +67,5 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      BotRefireRate=0.900000
-     WarnTargetPct=0.100000
      aimerror=750.000000
 }

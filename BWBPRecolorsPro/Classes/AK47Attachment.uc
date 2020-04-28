@@ -21,7 +21,7 @@ defaultproperties
 	 TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
 	 TracerMode=MU_Primary
-	 TracerChance=0.500000
+	 TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Primary
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)

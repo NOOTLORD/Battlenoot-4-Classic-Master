@@ -2470,7 +2470,7 @@ defaultproperties
      DeResLiftVel=(Points=(,(InVal=2.500000,OutVal=32.000000),(InVal=100.000000,OutVal=32.000000)))
      DeResLiftSoftness=(Points=((OutVal=0.300000),(InVal=2.500000,OutVal=0.050000),(InVal=100.000000,OutVal=0.050000)))
      DeResLateralFriction=0.300000
-     RagdollLifeSpan=13.000000
+     RagdollLifeSpan=5.000000
      RagInvInertia=4.000000
      RagDeathVel=200.000000
      RagShootStrength=8000.000000
@@ -2481,7 +2481,7 @@ defaultproperties
      RagImpactSounds(1)=Sound'GeneralImpacts.Wet.Breakbone_02'
      RagImpactSounds(2)=Sound'GeneralImpacts.Wet.Breakbone_03'
      RagImpactSoundInterval=0.500000
-     RagImpactVolume=2.500000
+     RagImpactVolume=2.250000
      TransOutEffect(0)=Class'XEffects.NewTransDeresRed'
      TransOutEffect(1)=Class'XEffects.NewTransDeresBlue'
      PlacedCharacterName="Jakob"

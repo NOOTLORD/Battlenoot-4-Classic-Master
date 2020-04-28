@@ -18,7 +18,7 @@ defaultproperties
 {
      HealingAmount=50
      bAmbientGlow=False
-     PickupMessage="You picked up a Health Kit +"
+     PickupMessage="Recieved health +"
      PickupSound=Sound'BallisticSounds2.Health.HealthKitPickup'
      PickupForce="HealthPack"
      DrawType=DT_StaticMesh

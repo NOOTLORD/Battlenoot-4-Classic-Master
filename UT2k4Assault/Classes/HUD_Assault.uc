@@ -2004,11 +2004,11 @@ defaultproperties
      ObjectiveScale=1.000000
      bOnHUDObjectiveNotification=True
      bShowInfoPods=True
-     bShow3DArrow=True
+     bShow3DArrow=False
      bObjectiveReminder=True
      bDrawRadar=True
      bDrawRadarCardinalPoints=True
-     bShowWillowWhisp=True
+     bShowWillowWhisp=False
      OBJ_ReAppearTime=7.000000
      OBJ_FadedOutTime=6.000000
      ASRadarScale=0.200000
@@ -2034,23 +2034,23 @@ defaultproperties
      OldObjectiveProgress=255
      RoundTimeBackGround=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=168,Y1=211,X2=334,Y2=255),TextureScale=0.530000,OffsetY=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      ReinforceBackground=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=168,Y1=211,X2=334,Y2=255),TextureScale=0.530000,PosY=0.060000,OffsetY=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-     TeleportBackground=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=168,Y1=211,X2=334,Y2=255),TextureScale=0.530000,PosY=0.180000,OffsetY=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+     TeleportBackground=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=168,Y1=211,X2=334,Y2=255),TextureScale=0.000000,PosY=0.180000,OffsetY=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      VSBackground=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=168,Y1=211,X2=334,Y2=255),TextureScale=0.530000,PosY=0.120000,OffsetY=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      RoundTimeIcon=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=150,Y1=356,X2=184,Y2=389),TextureScale=0.530000,DrawPivot=DP_MiddleLeft,OffsetX=15,OffsetY=28,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      ReinforceIcon=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=111,Y1=355,X2=144,Y2=390),TextureScale=0.530000,DrawPivot=DP_MiddleLeft,PosY=0.060000,OffsetX=15,OffsetY=28,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-     TeleportIcon=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=429,Y1=136,X2=489,Y2=173),TextureScale=0.400000,DrawPivot=DP_MiddleLeft,PosY=0.180000,OffsetX=9,OffsetY=37,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+     TeleportIcon=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=429,Y1=136,X2=489,Y2=173),TextureScale=0.000000,DrawPivot=DP_MiddleLeft,PosY=0.180000,OffsetX=9,OffsetY=37,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      VSIcon=(WidgetTexture=Texture'AS_FX_TX.Icons.ScoreBoard_Objective_Final',RenderStyle=STY_Alpha,TextureCoords=(X2=128,Y2=128),TextureScale=0.170000,DrawPivot=DP_MiddleLeft,PosY=0.120000,OffsetX=37,OffsetY=90,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      ReinforcePulse=(WidgetTexture=FinalBlend'HUDContent.Generic.HUDPulse',RenderStyle=STY_Alpha,TextureCoords=(X1=342,Y1=438,X2=406,Y2=502),TextureScale=0.500000,DrawPivot=DP_MiddleLeft,PosY=0.060000,OffsetX=1,OffsetY=28,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-     TeleportPulse=(WidgetTexture=FinalBlend'HUDContent.Generic.HUDPulse',RenderStyle=STY_Alpha,TextureCoords=(X1=342,Y1=438,X2=406,Y2=502),TextureScale=0.500000,DrawPivot=DP_MiddleLeft,PosY=0.180000,OffsetX=1,OffsetY=28,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+     TeleportPulse=(WidgetTexture=FinalBlend'HUDContent.Generic.HUDPulse',RenderStyle=STY_Alpha,TextureCoords=(X1=342,Y1=438,X2=406,Y2=502),TextureScale=0.000000,DrawPivot=DP_MiddleLeft,PosY=0.180000,OffsetX=1,OffsetY=28,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      VSPulse=(WidgetTexture=FinalBlend'HUDContent.Generic.HUDPulse',RenderStyle=STY_Alpha,TextureCoords=(X1=342,Y1=438,X2=406,Y2=502),TextureScale=0.500000,DrawPivot=DP_MiddleLeft,PosY=0.120000,OffsetX=1,OffsetY=28,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      RoundTimeBackGroundDisc=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=119,Y1=258,X2=173,Y2=313),TextureScale=0.530000,OffsetX=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      ReinforceBackGroundDisc=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=119,Y1=258,X2=173,Y2=313),TextureScale=0.530000,PosY=0.060000,OffsetX=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-     TeleportBackgroundDisc=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=119,Y1=258,X2=173,Y2=313),TextureScale=0.530000,PosY=0.180000,OffsetX=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+     TeleportBackgroundDisc=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=119,Y1=258,X2=173,Y2=313),TextureScale=0.000000,PosY=0.180000,OffsetX=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      VSBackgroundDisc=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=119,Y1=258,X2=173,Y2=313),TextureScale=0.530000,PosY=0.120000,OffsetX=5,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      RoundTimeSeparator=(WidgetTexture=Texture'HUDContent.Generic.HUD',RenderStyle=STY_Alpha,TextureCoords=(X1=495,Y1=91,X2=503,Y2=112),TextureScale=0.540000,DrawPivot=DP_MiddleLeft,OffsetX=100,OffsetY=28,ScaleMode=SM_Right,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      RoundTimeMinutes=(RenderStyle=STY_Alpha,MinDigitCount=2,TextureScale=0.540000,DrawPivot=DP_MiddleLeft,OffsetX=20,OffsetY=27,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      RoundTimeSeconds=(RenderStyle=STY_Alpha,MinDigitCount=2,TextureScale=0.540000,DrawPivot=DP_MiddleLeft,OffsetX=110,OffsetY=27,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255),bPadWithZeroes=1)
      ReinforceSprNum=(RenderStyle=STY_Alpha,MinDigitCount=2,TextureScale=0.540000,DrawPivot=DP_MiddleLeft,PosY=0.060000,OffsetX=60,OffsetY=27,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255),bPadWithZeroes=1)
-     TeleportSprNum=(RenderStyle=STY_Alpha,MinDigitCount=2,TextureScale=0.540000,DrawPivot=DP_MiddleLeft,PosY=0.180000,OffsetX=60,OffsetY=27,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255),bPadWithZeroes=1)
+     TeleportSprNum=(RenderStyle=STY_Alpha,MinDigitCount=2,TextureScale=0.000000,DrawPivot=DP_MiddleLeft,PosY=0.180000,OffsetX=60,OffsetY=27,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255),bPadWithZeroes=1)
      HudColorHighLight=(B=32,G=192)
 }

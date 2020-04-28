@@ -8,133 +8,6 @@
 //=============================================================================
 class F2000AssaultRifle extends BallisticWeapon;
 
-var   bool		bSilenced;				// Silencer on. Silenced
-var() name		SilencerBone;			// Bone to use for hiding silencer
-var() name		SilencerOnAnim;			// Think hard about this one...
-var() name		SilencerOffAnim;		//
-var() sound		SilencerOnSound;		// Silencer stuck on sound
-var() sound		SilencerOffSound;		//
-var() sound		SilencerOnTurnSound;	// Silencer screw on sound
-var() sound		SilencerOffTurnSound;	//
-
-var(F2000AssaultRifle) name		ScopeBone;			// Bone to use for hiding scope
-
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerSwitchSilencer;
-}
-
-//=====================================================================
-// SUPPRESSOR CODE
-//=====================================================================
-function ServerSwitchSilencer(bool bNewValue)
-{
-	bSilenced = bNewValue;
-	SwitchSilencer(bSilenced);
-	F2000PrimaryFire(BFireMode[0]).SetSilenced(bNewValue);
-}
-
-//simulated function DoWeaponSpecial(optional byte i)
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (ReloadState != RS_None)
-		return;
-	if (Clientstate != WS_ReadyToFire)
-		return;
-	TemporaryScopeDown(0.5);
-	bSilenced = !bSilenced;
-	ServerSwitchSilencer(bSilenced);
-	SwitchSilencer(bSilenced);
-}
-
-simulated function SwitchSilencer(bool bNewValue)
-{
-	if (Role == ROLE_Authority)
-		bServerReloading=True;
-	ReloadState = RS_GearSwitch;
-	
-	if (bNewValue)
-		PlayAnim(SilencerOnAnim);
-	else
-		PlayAnim(SilencerOffAnim);
-}
-
-simulated function Notify_MARSSilencerOn()
-{
-	PlaySound(SilencerOnSound,,0.5);
-}
-simulated function Notify_MARSSilencerOnTurn()
-{
-	PlaySound(SilencerOnTurnSound,,0.5);
-}
-simulated function Notify_MARSSilencerOff()
-{
-	PlaySound(SilencerOffSound,,0.5);
-}
-simulated function Notify_MARSSilencerOffTurn()
-{
-	PlaySound(SilencerOffTurnSound,,0.5);
-}
-simulated function Notify_MARSSilencerShow()
-{
-	SetBoneScale (0, 1.0, SilencerBone);
-}
-simulated function Notify_MARSSilencerHide()
-{
-	SetBoneScale (0, 0.0, SilencerBone);
-}
-
-simulated function PlayReload()
-{
-	if (MagAmmo < 1)
-		SetBoneScale (1, 0.0, 'Bullet');
-
-	super.PlayReload();
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
-}
-simulated function Notify_ClipOutOfSight()
-{
-	SetBoneScale (1, 1.0, 'Bullet');
-}
-
-simulated function BringUp(optional Weapon PrevWeapon)
-{
-	Super.BringUp(PrevWeapon);
-
-	if (AIController(Instigator.Controller) != None)
-		bSilenced = (FRand() > 0.5);
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
-
-	Instigator.AmbientSound = UsedAmbientSound;
-	Instigator.SoundVolume = default.SoundVolume;
-	Instigator.SoundPitch = default.SoundPitch;
-	Instigator.SoundRadius = default.SoundRadius;
-	Instigator.bFullVolume = true;
-}
-
-simulated function bool PutDown()
-{
-	if (Super.PutDown())
-	{
-		Instigator.AmbientSound = UsedAmbientSound;
-		Instigator.SoundVolume = default.SoundVolume;
-		Instigator.SoundPitch = default.SoundPitch;
-		Instigator.SoundRadius = default.SoundRadius;
-		Instigator.bFullVolume = false;
-		return true;
-	}
-	return false;
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -169,20 +42,13 @@ function float SuggestDefenseStyle()	{	return -0.4;	}
 
 defaultproperties
 {
-     SilencerBone="tip2"
-     SilencerOnAnim="SilencerOn"
-     SilencerOffAnim="SilencerOff"
-     SilencerOnSound=Sound'BallisticSounds2.XK2.XK2-SilenceOn'
-     SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
-     SilencerOnTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
-     SilencerOffTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
-     ScopeBone="EOTech"
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_F2000'
      BigIconCoords=(X1=32,Y1=40,X2=475)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
+     bWT_Machinegun=True	 
      ManualLines(0)="Powerful 5.56mm fire. Has a fast fire rate and high sustained DPS, but excessive recoil."
      ManualLines(1)="Launches a cryogenic grenade. Upon impact, freezes nearby enemies, slowing their movement. The effect is proportional to their distance from the epicentre. This attack will also extinguish the fires of an FP7 grenade."
      ManualLines(2)="The Weapon Special key attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible.||Effective at close to medium range."

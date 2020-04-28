@@ -43,9 +43,9 @@ defaultproperties
      WaterRangeFactor=0.800000
      MaxWallSize=24.000000
      MaxWalls=1
-     Damage=60.000000
-     DamageHead=120.000000
-     DamageLimb=60.000000
+     Damage=45.000000
+     DamageHead=90.000000
+     DamageLimb=45.000000
      RangeAtten=0.3500000
      WaterRangeAtten=0.200000
      DamageType=Class'BallisticProV55.DT_D49Revolver'
@@ -72,9 +72,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-	 bInstantHit=True
-	 bLeadTarget=False   
-	 BotRefireRate=0.7
-     WarnTargetPct=0.4
+	 BotRefireRate=0.700000
      aimerror=750.000000
 }

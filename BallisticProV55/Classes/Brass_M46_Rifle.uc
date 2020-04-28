@@ -11,7 +11,7 @@ class Brass_M46_Rifle extends Brass_Rifle;
 
 defaultproperties
 {
-     StartVelocity=(Y=-50.000000,Z=30.000000)
+     StartVelocity=(Y=-50.000000,Z=10.000000)
      DrawScale=0.120000
-     DrawScale3D=(X=0.400000)
+     DrawScale3D=(X=0.200000)
 }

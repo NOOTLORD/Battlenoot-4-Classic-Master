@@ -88,7 +88,7 @@ defaultproperties
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerChance=1.000000
      ImpactManager=Class'BallisticProV55.IM_Shell'
-     TraceRange=(Min=4000.000000,Max=6000.000000)
+     TraceRange=(Min=7500.000000,Max=7500.000000)
      MaxWallSize=24.000000	 
      MaxWalls=1
      Damage=15.000000
@@ -105,7 +105,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M763FlashEmitter'
      FlashScaleFactor=0.390000
      BrassClass=Class'BallisticProV55.Brass_Shotgun'
-     BrassOffset=(X=-32.000000,Y=1.000000,Z=1.000000)
+     BrassOffset=(X=-40.000000,Y=1.000000,Z=3.000000)
      AimedFireAnim="FireCombinedSight"
      RecoilPerShot=512.000000
      FireChaos=0.450000
@@ -124,6 +124,5 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      BotRefireRate=0.700000
-     WarnTargetPct=0.500000
      aimerror=750.000000
 }

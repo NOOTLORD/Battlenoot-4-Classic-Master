@@ -355,41 +355,6 @@ simulated function UpdateHud()
     Super.UpdateHud ();
 }
 
-function DrawVehicleName(Canvas C)
-{
-    local float XL,YL, Fade;
-
-	if (bHideWeaponName)
-    	return;
-
-	if (VehicleDrawTimer>Level.TimeSeconds)
-    {
-	    C.Font = GetMediumFontFor(C);
-        C.DrawColor = WhiteColor;
-
-		Fade = VehicleDrawTimer - Level.TimeSeconds;
-
-        if (Fade<=1)
-        	C.DrawColor.A = 255 * Fade;
-
-		C.Strlen(VehicleName,XL,YL);
-        C.SetPos( (C.ClipX/2) - (XL/2), C.ClipY*0.8-YL);
-        C.DrawText(VehicleName);
-    }
-
-	if ( (PawnOwner != PlayerOwner.Pawn) || (PawnOwner == OldPawn) )
-		return;
-
-	OldPawn = PawnOwner;
-	if ( Vehicle(PawnOwner) == None )
-		VehicleDrawTimer = FMin(VehicleDrawTimer,Level.TimeSeconds + 1);
-	else
-	{
-		VehicleName = Vehicle(PawnOwner).VehicleNameString;
-		VehicleDrawTimer = Level.TimeSeconds+1.5;
-	}
-}
-
 simulated function DrawAdrenaline( Canvas C )
 {
 	if ( !PlayerOwner.bAdrenalineEnabled )

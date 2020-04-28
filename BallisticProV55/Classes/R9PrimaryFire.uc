@@ -91,7 +91,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
      FlashScaleFactor=0.750000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassOffset=(X=-50.000000,Y=-2.000000,Z=4.000000)
+     BrassOffset=(X=-52.500000,Y=-2.000000,Z=4.000000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=384.000000
      FireChaos=0.450000
@@ -105,7 +105,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
-	 BotRefireRate=0.7
-     WarnTargetPct=0.4
+	 BotRefireRate=0.700000
      aimerror=750.000000
 }
