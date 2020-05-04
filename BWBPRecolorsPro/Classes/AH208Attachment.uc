@@ -14,7 +14,7 @@ defaultproperties
 	 FlashMode=MU_Primary
      FlashBone="Muzzle"
      FlashScale=0.200000
-     LightMode=MU_Primary 
+     LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
 	 BrassMode=MU_Primary
@@ -35,4 +35,8 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Eagle_TP'
      RelativeLocation=(Z=6.000000)
      DrawScale=0.175000
+	 Skins(0)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
+	 Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc'
+	 Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-FrontSilver'
+	 Skins(3)=Shader'BallisticRecolorsTex.Eagle.Eagle-SightDotGreen'
 }

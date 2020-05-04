@@ -48,7 +48,6 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 defaultproperties
 {
      LCDCamOnTex=Texture'BallisticUI.M50.M50LCDTex'					   
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M50'
      BigIconCoords=(Y1=40,Y2=235)
@@ -56,9 +55,6 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
-     ManualLines(0)="Automatic 5.56 bullet fire. Low damage per shot with medium range, low penetration and low recoil."
-     ManualLines(1)="Launches a grenade from the underslung launcher. This grenade has an arming delay and will ricochet from targets hit during this arming period, dealing minor damage. The arming delay can be used to shoot around corners."
-     ManualLines(2)="A TX409-Tactical Video camera system is also included with this weapon. It allows the user to deploy a tactical camera to any surface using the Weapon Function key. To survey an area from a safe distance using the gun-mounted LCD, press Weapon Function again. Care should always be taken to deploy TX409-TV cameras in a hidden location to prevent them from being destroyed by enemies.||The M50 is effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;25.0;0.9;80.0;0.7;0.7;0.4")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.375000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.375000)
@@ -99,15 +95,14 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
      CurrentRating=0.600000
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_M50_Rifle'
      AmmoClass(1)=Class'BallisticProV55.Ammo_M50_Rifle'	 
-     Description="Enravion's crowning achievement, the M50 is the most extensively used weapon in the UTC military corps. The M50 is renowned for its accuracy, damage and reliability in the field. The sturdy M50 was extensively used in both wars and has helped annihilate countless Skrith, Krao and Cryon warriors. The weapon also has the advantage of launching a grenade from the attached M900, for flushing out enemies."
+     Description="M50 Assault Rifle"
      Priority=41
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=3
      PlayerViewOffset=(X=5.000000,Y=7.000000,Z=-8.000000)
      AttachmentClass=Class'BallisticProV55.M50Attachment'
@@ -123,4 +118,11 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.M50_FP'
      DrawScale=0.300000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.M50.M50SkinA'
+	 Skins(2)=Texture'BallisticWeapons2.M50.M50SkinB'
+	 Skins(3)=Texture'BN4misc.Albedo.Placeholder_albedo
+	 Skins(4)=Texture'BallisticWeapons2.M50.M50Laser'
+	 Skins(5)=Texture'BallisticWeapons2.M50.M50Gren'
+	 Skins(6)=Texture'BallisticWeapons2.M50.M900Grenade'
 }

@@ -34,4 +34,5 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.UZI_TP'
      DrawScale=0.190000
+	 Skins(0)=Texture'BallisticWeapons2.Fifty9.Fifty9Skin'
 }

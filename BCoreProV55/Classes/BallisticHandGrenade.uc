@@ -504,7 +504,7 @@ defaultproperties
      WeaponModes(0)=(ModeName="Auto Throw",ModeID="WM_None",Value=0.000000)
      WeaponModes(1)=(ModeName="Long Throw",ModeID="WM_None",Value=1.000000)
      WeaponModes(2)=(ModeName="Short Throw",ModeID="WM_None",Value=2.000000)
-     CurrentWeaponMode=0
+     CurrentWeaponMode=1
      bUseSights=False
      SightingTime=0.000000
      GunLength=0.000000
@@ -514,7 +514,6 @@ defaultproperties
      PutDownAnimRate=1.500000
      PutDownTime=1.000000
      BringUpTime=1.000000
-     bShowChargingBar=False
      Priority=1
      ItemName="Hand Grenade"
 }

@@ -29,4 +29,6 @@ defaultproperties
      SingleAimedFireAnim="RifleAimed_FireCock"
      Mesh=SkeletalMesh'BallisticAnims1.MRS138_TP'
      DrawScale=0.080000
+	 Skins(0)=Texture'BallisticWeapons1.MRS138.MRS138Skin'
+	 Skins(1)=Texture'BallisticWeapons1.MRS138.MRS138HeatShield'
 }

@@ -86,6 +86,7 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
+     PlayerSpeedFactor=1.200000
      InventorySize=2
 	 bNoMag=True
      bNonCocking=True
@@ -102,5 +103,4 @@ defaultproperties
      ChaosAimSpread=0
      RecoilDeclineTime=4.000000
      RecoilDeclineDelay=0.750000
-     bShowChargingBar=False
 }

@@ -8,56 +8,6 @@
 //=============================================================================
 class SK410Shotgun extends BallisticProShotgun;
 
-simulated function BringUp(optional Weapon PrevWeapon)
-{
-	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
-	{
-		ReloadAnim = 'Reload';
-	}
-	else
-		ReloadAnim = 'Reload';
-
-	Super.BringUp(PrevWeapon);
-	GunLength = default.GunLength;
-}
-
-simulated function PlayReload()
-{
-    if (MagAmmo < 1)
-       ReloadAnim='Reload';
-    else
-       ReloadAnim='Reload';
-
-	SafePlayAnim(ReloadAnim, ReloadAnimRate, , 0, "RELOAD");
-}
-
-simulated function Notify_ClipOut()
-{
-	Super.Notify_ClipOut();
-}
-
-simulated event AnimEnd (int Channel)
-{
-    local name anim;
-    local float frame, rate;
-
-    GetAnimParams(0, anim, frame, rate);
-
-	if (Anim == 'Fire' || Anim == 'Reload')
-	{
-		if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
-	}
-	super.AnimEnd(Channel);
-}
-
-// Animation notify for when cocking action starts. Used to time sounds
-simulated function Notify_CockSim()
-{
-	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
-}
-
-simulated function Notify_BrassOut();
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -114,14 +64,10 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SK410'
      BigIconCoords=(Y1=40)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
-     ManualLines(0)="Fires shotgun blasts with wide spread. These blasts inflict heavy damage and knock the enemy back."
-     ManualLines(1)="Fires a single slug with an arming delay. Whilst unarmed, it will reflect from struck walls or surfaces. Deals good impact damage and minor radius damage."
-     ManualLines(2)="Has a melee attack. Damage improves over hold time, with a max bonus being reached at 1.5 seconds of holding. As a blunt attack, has lower damage than sharp melee attacks but inflicts a minor blind effect upon striking. Deals more damage from behind.||Effective at close to medium range depending upon active mode."
      SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")																									 
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
@@ -163,15 +109,14 @@ defaultproperties
      BringUpTime=0.600000
      AIRating=0.850000
      CurrentRating=0.850000
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SK410_Shotgun'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_SK410_Shotgun'	 
-     Description="The SK-410 shotgun is a large-bore, compact shotgun based off the popular AK-490 design. While it is illegal on several major planets, this powerful weapon and its signature explosive shotgun shells are almost ubiquitous. A weapon originally designed for breaching use, the SK-410 is now found in the hands of civillians and terrorists throughout the worlds. It had become so prolific with outer colony terrorist groups that the UTC began the SKAS assault weapon program in an effort to find a powerful shotgun of their own."
+     Description="SK-410 Shotgun"
      Priority=245
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=7
+     InventoryGroup=1
      GroupOffset=3
      PlayerViewOffset=(X=0.000000,Y=14.500000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
@@ -187,4 +132,10 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_FP'
      DrawScale=0.350000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.SK410.SK410-C-CamoSnow'
+	 Skins(2)=Texture'BallisticRecolorsTex.SK410.SK410-Misc'
+	 Skins(3)=Shader'BallisticRecolorsTex.SK410.SK410-LightsOn'
+	 Skins(4)=Texture'BallisticRecolorsTex.CYLO.Reflex'
+	 Skins(5)=Shader'BallisticWeapons1.General.RedDotSightShader'
 }

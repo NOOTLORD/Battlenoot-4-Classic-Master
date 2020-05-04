@@ -34,13 +34,9 @@ static function class<BallisticBloodSet> PickBloodSet (Pawn Victim, out int Weig
 	{
 		if (xPawn(Victim) != None)
 		{
-			if (xPawn(Victim)!=None && class<SPECIES_Jugg>(xPawn(Victim).Species) != None)
-				return class'BloodSet_Jugg';
-			else if (Victim.bIsFemale)
+			if (Victim.bIsFemale)
 				return class'BloodSet_DefaultFemale';
 		}
-		if (Victim.PlayerReplicationInfo != None && Victim.PlayerReplicationInfo.CharacterName == "Abaddon")
-			return class'BloodSet_Abaddon';
 	}
 	return class'BloodSetDefault';
 }

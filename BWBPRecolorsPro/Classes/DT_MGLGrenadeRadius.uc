@@ -22,6 +22,6 @@ defaultproperties
      FemaleSuicide="%o found one of her M900 grenades."
      MaleSuicide="%o found one of his M900 grenades."
      bDelayedDamage=True
-     VehicleDamageScaling=0.500000
+     VehicleDamageScaling=1.500000
      InvasionDamageScaling=1.000000
 }

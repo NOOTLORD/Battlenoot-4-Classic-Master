@@ -48,4 +48,5 @@ defaultproperties
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims1.RS8_TP'	 
      DrawScale=0.150000
+	 Skins(0)=Texture'BallisticWeapons1.RS8.M1911-Skin'
 }

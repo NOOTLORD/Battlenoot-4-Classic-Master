@@ -43,9 +43,9 @@ defaultproperties
      WaterRangeFactor=0.800000
      MaxWallSize=24.000000
      MaxWalls=1
-     Damage=45.000000
-     DamageHead=90.000000
-     DamageLimb=45.000000
+     Damage=60.000000
+     DamageHead=70.000000
+     DamageLimb=60.000000
      RangeAtten=0.3500000
      WaterRangeAtten=0.200000
      DamageType=Class'BallisticProV55.DT_D49Revolver'

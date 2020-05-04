@@ -1,13 +1,5 @@
 class xJuggMaleSoundGroup extends xPawnSoundGroup;
 
-
-static function Sound GetHitSound()
-{
-	if ( FRand() < 0.01 )
-		return sound'NewDeath.mj_hit15';
-	return default.PainSounds[rand(default.PainSounds.length)];
-}
-
 defaultproperties
 {
      Sounds(2)=SoundGroup'PlayerSounds.Final.HitUnderWaterJuggMale'

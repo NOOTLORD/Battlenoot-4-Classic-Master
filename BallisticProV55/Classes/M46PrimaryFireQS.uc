@@ -9,6 +9,37 @@
 //=============================================================================
 class M46PrimaryFireQS extends BallisticRangeAttenFire;
 
+//Spawn shell casing for first person
+function EjectBrass()
+{
+	local vector Start, X, Y, Z;
+	local Coords C;
+	local actor BrassActor;
+
+	if (Level.NetMode == NM_DedicatedServer)
+		return;
+	if (!class'BallisticMod'.default.bEjectBrass || Level.DetailMode < DM_High)
+		return;
+	if (BrassClass == None)
+		return;
+	if (!Instigator.IsFirstPerson() || PlayerController(Instigator.Controller).ViewTarget != Instigator)
+		return;
+	if (AIController(Instigator.Controller) != None)
+		return;
+	C = Weapon.GetBoneCoords(BrassBone);
+//	Start = C.Origin + C.XAxis * BrassOffset.X + C.YAxis * BrassOffset.Y + C.ZAxis * BrassOffset.Z;
+    Weapon.GetViewAxes(X,Y,Z);
+	Start = C.Origin + X * BrassOffset.X + Y * BrassOffset.Y + Z * BrassOffset.Z;
+	BrassActor = Spawn(BrassClass, weapon,, Start, Rotator(C.XAxis));
+	if (BrassActor != None)
+	{
+		BrassActor.bHidden=true;
+		M46AssaultRifleQS(Weapon).UziBrassList.length = M46AssaultRifleQS(Weapon).UziBrassList.length + 1;
+		M46AssaultRifleQS(Weapon).UziBrassList[M46AssaultRifleQS(Weapon).UziBrassList.length-1].Actor = BrassActor;
+		M46AssaultRifleQS(Weapon).UziBrassList[M46AssaultRifleQS(Weapon).UziBrassList.length-1].KillTime = level.TimeSeconds + 0.2;
+	}
+}
+
 defaultproperties
 {
      CutOffDistance=3072.000000
@@ -33,7 +64,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M46FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_M46_Rifle'
-     BrassOffset=(X=-17.000000,Y=1.500000,Z=-2.500000)
+     BrassOffset=(X=-17.000000,Y=-1.000000,Z=-3.750000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=180.000000
      FireChaos=0.045000

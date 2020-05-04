@@ -34,9 +34,9 @@ defaultproperties
      WaterRangeFactor=0.800000
      MaxWallSize=24.000000
      MaxWalls=1
-     Damage=90.000000
-     DamageHead=135.000000
-     DamageLimb=90.000000
+     Damage=50.000000
+     DamageHead=70.000000
+     DamageLimb=50.000000
      RangeAtten=0.600000
      WaterRangeAtten=0.800000
      DamageType=Class'BWBPRecolorsPro.DT_AH208Pistol'
@@ -52,7 +52,6 @@ defaultproperties
      BrassBone="tip"
      BrassOffset=(X=-150.000000,Y=-5.000000,Z=9.000000)
      RecoilPerShot=1024.000000
-     VelocityRecoil=300.000000
      FireChaos=0.350000
      XInaccuracy=32.000000
      YInaccuracy=32.000000

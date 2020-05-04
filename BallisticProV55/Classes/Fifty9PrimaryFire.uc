@@ -8,6 +8,38 @@
 //=============================================================================
 class Fifty9PrimaryFire extends BallisticRangeAttenFire;
 
+//Spawn shell casing for first person
+function EjectBrass()
+{
+	local vector Start, X, Y, Z;
+	local Coords C;
+	local actor BrassActor;
+
+	if (Level.NetMode == NM_DedicatedServer)
+		return;
+	if (!class'BallisticMod'.default.bEjectBrass || Level.DetailMode < DM_High)
+		return;
+	if (BrassClass == None)
+		return;
+	if (!Instigator.IsFirstPerson() || PlayerController(Instigator.Controller).ViewTarget != Instigator)
+		return;
+	if (AIController(Instigator.Controller) != None)
+		return;
+	C = Weapon.GetBoneCoords(BrassBone);
+//	Start = C.Origin + C.XAxis * BrassOffset.X + C.YAxis * BrassOffset.Y + C.ZAxis * BrassOffset.Z;
+    Weapon.GetViewAxes(X,Y,Z);
+	Start = C.Origin + X * BrassOffset.X + Y * BrassOffset.Y + Z * BrassOffset.Z;
+	BrassActor = Spawn(BrassClass, weapon,, Start, Rotator(C.XAxis));
+	if (BrassActor != None)
+	{
+		BrassActor.bHidden=true;
+		Fifty9MachinePistol(Weapon).UziBrassList.length = Fifty9MachinePistol(Weapon).UziBrassList.length + 1;
+		Fifty9MachinePistol(Weapon).UziBrassList[Fifty9MachinePistol(Weapon).UziBrassList.length-1].Actor = BrassActor;
+		Fifty9MachinePistol(Weapon).UziBrassList[Fifty9MachinePistol(Weapon).UziBrassList.length-1].KillTime = level.TimeSeconds + 0.2;
+	}
+}
+
+
 defaultproperties
 {
      CutOffDistance=1280.000000
@@ -32,7 +64,7 @@ defaultproperties
      FlashBone="Muzzle"
      FlashScaleFactor=0.230000
      BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
-     BrassOffset=(X=-39.000000,Y=-2.500000,Z=3.000000)
+     BrassOffset=(X=-39.000000,Y=-2.500000,Z=2.000000)
      AimedFireAnim="SightFire"
      RecoilPerShot=140.000000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))

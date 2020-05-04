@@ -822,132 +822,6 @@ simulated event PhysicsVolumeChange( PhysicsVolume NewVolume )
 	}
 }
 
-// Implement blood effects when dead bodies impact with stuff
-// FIXME: Maybe blood manager should do this?
-simulated event KImpact(actor other, vector pos, vector impactVel, vector impactNorm)
-{
-	local float Speed, ImpDir, ImpScale;
-	local BallisticDecal D;
-
-	super.KImpact(other, pos, impactVel, impactNorm);
-
-	if (class'BWBloodControl'.default.bUseBloodImpacts && !class'GameInfo'.static.UseLowGore())
-	{
-		if (!(level.TimeSeconds - LastImpactTime > TimeBetweenImpacts || impactNorm Dot LastImpactNormal < 0.7 || VSize(pos - LastImpactLocation) > 100))
-			return;
-
-		Speed = VSize(ImpactVel);
-		if (Speed < LowImpactVelocity)
-			return;
-
-		LastImpactTime = level.TimeSeconds;
-		LastImpactNormal = impactNorm;
-		LastImpactLocation = pos;
-		if (Speed >= HighImpactVelocity)
-		{
-			if (Normal(Velocity) Dot ImpactNorm > -0.5)
-			{
-				ImpScale = 0.1 + FMin((Speed - HighImpactVelocity) / 800, 0.9);
-			}
-			else
-			{
-				ImpDir = Normal(Velocity) Dot Normal(pos-Location);
-				if (ImpDir > 0.5)
-					ImpScale = 0.6 + impDir * 0.4;
-				else
-					ImpScale = 0.4 + impDir * 0.4;
-				ImpScale *= 0.5 + FMin((Speed - HighImpactVelocity) / 600, 1.0);
-			}
-			if (ImpScale < 0.1)
-				return;
-
-			class<BallisticDecal>(BloodSet.default.HighImpactDecal).default.bWaitForInit = true;
-			D = BallisticDecal(Spawn(BloodSet.default.HighImpactDecal ,self, , pos, Rotator(-impactNorm)));
-			if (D!= None)
-			{
-				D.SetDrawScale(D.DrawScale * ImpScale);
-				D.InitDecal();
-			}
-			class<BallisticDecal>(BloodSet.default.HighImpactDecal).default.bWaitForInit = false;
-		}
-		else
-		{
-			if (Normal(Velocity) Dot ImpactNorm > -0.5)
-			{
-				ImpScale = 0.1 + FMin((Speed - HighImpactVelocity) / 800, 0.9);
-			}
-			else
-			{
-				ImpDir = Normal(Velocity) Dot Normal(pos-Location);
-				if (ImpDir > 0.5)
-					ImpScale = 0.6 + impDir * 0.4;
-				else
-					ImpScale = 0.4 + impDir * 0.4;
-				ImpScale *= 0.5 + FMin((Speed - LowImpactVelocity) / 500, 0.5);
-			}
-
-			if (ImpScale < 0.1)
-				return;
-
-			class<BallisticDecal>(BloodSet.default.LowImpactDecal).default.bWaitForInit = true;
-			D = BallisticDecal(Spawn(BloodSet.default.LowImpactDecal ,self, , pos, Rotator(-impactNorm)));
-			if (D!= None)
-			{
-				D.SetDrawScale(D.DrawScale * ImpScale);
-				D.InitDecal();
-			}
-			class<BallisticDecal>(BloodSet.default.LowImpactDecal).default.bWaitForInit = false;
-		}
-		LastDragLocation = Location;
-	}
-}
-
-// Tick for handling gore effects
-simulated function TickGore(float DT)
-{
-	local rotator R;
-	local int i;
-
-	if (level.NetMode == NM_DedicatedServer || class'GameInfo'.static.NoBlood())
-		return;
-
-	for (i=0;i<LocalHits.length;i++)
-		DoHit(LocalHits[i].Bone, LocalHits[i].DamageType, LocalHits[i].HitRay, LocalHits[i].HitLoc, LocalHits[i].Damage);
-	LocalHits.length = 0;
-
-	// Spawn drag marks
-	if (VSize(Location - LastDragLocation) > MinDragDistance)
-	{
-		if (BloodPool != None)
-		{
-			BloodPool.StopExpanding ();
-			BloodPool = None;
-		}
-		bBloodPoolSpawned=false;
-		if (LastDragLocation == vect(0,0,0))
-			LastDragLocation = Location;
-		else if (class'BWBloodControl'.default.bUseBloodDrags && !class'GameInfo'.static.UseLowGore() && bBleedingCorpse && (!FastTrace(Location - vect(0,0,30), Location)) &&
-			level.DetailMode > DM_Low && BloodSet.default.DragDecal != None)
-		{
-			R = Rotator(Location - LastDragLocation);
-			R.Pitch = -16384;
-			Spawn(BloodSet.default.DragDecal,self,,Location, R);
-		}
-		LastDragLocation = Location;
-		CorpseRestTime = 0;
-	}
-	// Spawn blood pools
-	else if (class'BWBloodControl'.default.bUseBloodPools && bBleedingCorpse && BloodSet.default.BloodPool != None && !PhysicsVolume.bWaterVolume && VSize(Velocity) < MaxPoolVelocity/* && bInitialized*/)
-	{
-		if (/*BloodPool == None*/ !bBloodPoolSpawned && CorpseRestTime > 0.5)
-		{
-			BloodPool = Spawn(BloodSet.default.BloodPool,,, Location, Rotator(vect(0,0,-1)));
-			bBloodPoolSpawned = true;
-		}
-		CorpseRestTime += DT;
-	}
-}
-
 // Get the standard number for the bone name (used when compressing/decomressing hit info)
 simulated function byte GetHitBoneIndex (name BoneName)
 {
@@ -1192,8 +1066,6 @@ simulated event Tick(float DT)
 
 		OldHitCounter = HitCounter;
 	}
-	// Gore tick
-	TickGore(DT);
 
 	// Dissolve DeRes corpses
 	if (bDeRes)
@@ -1705,12 +1577,6 @@ simulated function Setup(xUtil.PlayerRecord rec, optional bool bLoadNow)
 			return;
 	}
 	ResetPhysicsBasedAnim();
-
-	// If you're using an advantage-conferring skin you're going to be as bright as the bloody Sun
-	if (rec.DefaultName == "Jakob")
-		AmbientGlow = 128;
-	else if (rec.DefaultName == "July")
-		AmbientGlow = 64;
 
 	BloodSet = class'BWBloodSetHunter'.static.GetBloodSetFor(self);
 }
@@ -2499,7 +2365,7 @@ defaultproperties
      NewDeResSound=SoundGroup'BallisticSounds2.Misc.DeRes'
      MeleeAnim="Melee_Smack" 
      UDamageSound=Sound'BallisticSounds2.Udamage.UDamageFire'
-	 GruntVolume=0.050000
+	 GruntVolume=0.070000
      FootstepVolume=0.115000
      DeResTime=2.000000
      RagdollLifeSpan=10.000000

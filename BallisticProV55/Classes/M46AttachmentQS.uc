@@ -35,4 +35,8 @@ defaultproperties
 	 bHeavy=True
      Mesh=SkeletalMesh'BallisticAnims1.M46_TP'
      DrawScale=0.225000
+	 Skins(0)=Texture'BallisticWeapons1.OA-AR.OA-AR_Main'
+	 Skins(1)=Texture'BallisticWeapons1.OA-AR.OA-AR_GrenadeLauncher'
+	 Skins(2)=Texture'BallisticWeapons1.OA-AR.OA-AR_Clip'
+	 Skins(3)=FinalBlend'BallisticWeapons1.OA-AR.RDS_FB'
 }

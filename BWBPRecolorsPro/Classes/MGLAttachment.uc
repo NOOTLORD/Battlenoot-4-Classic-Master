@@ -31,4 +31,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Conqueror_TP'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.250000
+	 Skins(0)=Texture'BallisticRecolorsTex.MGL.MGL-Main'
+	 Skins(1)=Texture'BallisticRecolorsTex.MGL.MGL-ScreenBase'
 }

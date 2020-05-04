@@ -169,15 +169,11 @@ defaultproperties
      SilencerOnTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      SilencerOffTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      PlayerSpeedFactor=1.100000
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XRS10'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
-     ManualLines(0)="Automatic machine pistol fire. Moderate damage per bullet and high fire rate. Deals extreme DPS at close range, but has controllability and recoil issues, especially from the hip."
-     ManualLines(1)="Toggles the laser sight. While active, reduces the hipfire spread, but broadcasts the user's position to the enemy."
-     ManualLines(2)="The Weapon Function key attaches a suppressor, reducing recoil, range and noise output and removing the flash.||This weapon is highly effective at very close range."
      SpecialInfo(0)=(Info="60.0;5.0;0.4;-1.0;0.0;0.2;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000)
@@ -214,10 +210,9 @@ defaultproperties
      FireModeClass(0)=Class'BallisticProV55.XRS10PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_XRS10_SMG'
      AmmoClass(1)=Class'BallisticProV55.Ammo_XRS10_SMG'	 
-     Description="The XRS10 is a small, silencable Sub-Machinegun, constructed by newcomer arms company, Drake & Co. Based on a design from many years ago, the XRS10 is a short, medium-range weapon, using .40 calibre ammunition. The weapon has a medium rate-of-fire, fair damage, and a decent magazine capacity, yet can generate much recoil and chaos. The new model, features silencer and blue-light laser sight, to give it some more edge in stealthier situations."
+     Description="XRS-10 Submachine gun"
      Priority=27
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -237,4 +232,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.XRS10_FP'
      DrawScale=0.200000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons1.XRS10.XRS10Skin'
+	 Skins(2)=Texture'BallisticWeapons1.XRS10.XRS10Silencer'
 }

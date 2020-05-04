@@ -31,4 +31,6 @@ defaultproperties
      CockAnimRate=1.100000
      Mesh=SkeletalMesh'BallisticAnims2.R78_TP'
      DrawScale=0.200000
+	 Skins(0)=Texture'BallisticWeapons2.R78.RifleSkin'
+	 Skins(1)=Texture'BallisticWeapons2.R78.ScopeSkin'
 }

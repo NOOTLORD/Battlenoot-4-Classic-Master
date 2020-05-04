@@ -287,7 +287,7 @@ defaultproperties
      bContinue=GUIButton'GUI2K4.UT2K4MidGameMenu.ContMatchButton'
 
      Begin Object Class=GUIButton Name=QuitGameButton
-         Caption="EXIT UT2004"
+         Caption="EXIT BN4 Classic"
          TabOrder=8
          OnClick=UT2K4MidGameMenu.InternalOnClick
          OnKeyEvent=QuitGameButton.InternalOnKeyEvent

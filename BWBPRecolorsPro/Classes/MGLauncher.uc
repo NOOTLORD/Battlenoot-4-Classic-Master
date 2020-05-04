@@ -149,8 +149,6 @@ function float SuggestDefenseStyle()
 defaultproperties
 {
      NadeBone0="S6"
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
-     TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MGL'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      IdleTweenTime=0.000000
@@ -158,9 +156,6 @@ defaultproperties
      bWT_Splash=True
      bWT_Projectile=True
      bWT_Super=True
-     ManualLines(0)="Launches a grenade. Fire rate, damage and explosive radius are good. These grenades have an arming delay and if striking a surface when unarmed will ricochet. Direct impacts will always result in explosion."
-     ManualLines(1)="Employs a manually controlled grenade. Pressing altfire again detonates the grenade."
-     ManualLines(2)="Effective with height advantage and at medium range."
      SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.475000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000)
@@ -205,15 +200,14 @@ defaultproperties
      BringUpTime=0.660000
      AIRating=0.900000
      CurrentRating=0.900000
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_MGL_Launcher'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_MGL_Launcher'
-     Description="The big, bad Conqueror” is an alias to the VDML-6 Multiple Grenade Launcher, designed as a heavier, tactical version of the old world M32, and a more direct way of punting grenades down range, unlike the PUMA’s Airburst grenades or the Longhorn’s smart cluster. Black and Wood designed this weapon to bring down explosives over the Skrith’s plasma barriers with haste, the user can fire timed grenades to flush out any hiders, or impact to wreck enemies without bouncing off of them (note, when fired at a short range, the impact fuse will not engage). But when tactics are needed, the “Conqueror” can also fire remote detonated grenades for traps. So far, the Conqueror has already conquered 2 services and will be seeing more as they come."
+     Description="MGL Grenade Launcher"
      Priority=245
      HudColor=(B=255,G=200,R=200)	 
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=8
+     InventoryGroup=4
      PlayerViewOffset=(X=9.000000,Y=-1.000000,Z=-7.000000)
      AttachmentClass=Class'BWBPRecolorsPro.MGLAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MGL'
@@ -228,4 +222,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Conqueror_FP'
      DrawScale=0.130000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.MGL.MGL-Main'
+	 Skins(2)=Texture'BallisticRecolorsTex.MGL.MGL-ScreenBase'
 }

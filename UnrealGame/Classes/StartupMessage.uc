@@ -74,15 +74,14 @@ defaultproperties
 {
      Stage(0)="Waiting for other players."
      Stage(1)="Waiting for ready signals. You are READY."
-     Stage(2)="The match is about to begin...3"
-     Stage(3)="The match is about to begin...2"
-     Stage(4)="The match is about to begin...1"
-     Stage(5)="The match has begun!"
-     Stage(6)="The match has begun!"
+     Stage(2)="The match is starting...3"
+     Stage(3)="The match is starting...2"
+     Stage(4)="The match is starting in...1"
+     Stage(5)="The match has started!"
+     Stage(6)="The match has started!"
      Stage(7)="OVER TIME!"
      NotReady="You are NOT READY. Press Fire!"
      SinglePlayer="Press FIRE to start!"
-     Riff=Sound'GameSounds.Fanfares.UT2K3Fanfare11'
      bIsConsoleMessage=False
      DrawColor=(G=64,R=32)
 }

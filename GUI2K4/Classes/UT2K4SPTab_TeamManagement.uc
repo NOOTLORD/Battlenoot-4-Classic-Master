@@ -653,7 +653,7 @@ defaultproperties
      imgSelectionFaceBg=GUIImage'GUI2K4.UT2K4SPTab_TeamManagement.SPTMimgSelectionFaceBg'
 
      Begin Object Class=GUIImage Name=SPTMimgSelectionFace
-         Image=Texture'PlayerPictures.cDefault'
+         Image=Texture'PlayerSkins.cDefault'
          ImageStyle=ISTY_Scaled
          WinTop=0.088182
          WinLeft=0.590332
@@ -858,6 +858,6 @@ defaultproperties
      FeeCaption="Fee:"
      HealthCaption="Health:"
      msgFirstDraftYourTeam="First draft your team."
-     EmptySlotImage=Texture'PlayerPictures.cDefault'
+     EmptySlotImage=Texture'PlayerSkins.cDefault'
      PanelCaption="Team Management"
 }

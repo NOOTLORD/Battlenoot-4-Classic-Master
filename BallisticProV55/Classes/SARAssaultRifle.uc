@@ -43,45 +43,6 @@ simulated event RenderOverlays( Canvas Canvas )
     bDrawingFirstPerson = false;
 }
 
-simulated function SetScopeBehavior()
-{
-	bUseNetAim = default.bUseNetAim || bScopeView;
-	if (bScopeView)
-	{
-		ViewAimFactor = 1.0;
-		ViewRecoilFactor = 1.0;
-		AimAdjustTime *= 1.5;
-		AimSpread *= SightAimFactor;
-		ChaosAimSpread *= SightAimFactor;
-	}
-	else
-
-	{
-		//caused flicker coming out of scope - regulated differently for server & client!
-		if(Level.NetMode == NM_DedicatedServer)
-			ViewAimFactor = default.ViewAimFactor;
-
-		ViewRecoilFactor = default.ViewRecoilFactor;
-		AimAdjustTime = default.AimAdjustTime;
-		AimSpread = default.AimSpread;
-		AimSpread *= BCRepClass.default.AccuracyScale;
-		ChaosAimSpread = default.ChaosAimSpread;
-		ChaosAimSpread *= BCRepClass.default.AccuracyScale;
-	}
-}
-
-simulated function PlayReload()
-{
-	if (MagAmmo < 1)
-		SetBoneScale (1, 0.0, 'Bullet');
-
-	super.PlayReload();
-}
-simulated function Notify_ClipOutOfSight()
-{
-	SetBoneScale (1, 1.0, 'Bullet');
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -119,7 +80,6 @@ defaultproperties
 {
 	 AIRating=0.72
 	 CurrentRating=0.72
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SAR'
      BigIconCoords=(Y1=24,Y2=250)
@@ -127,9 +87,6 @@ defaultproperties
      SightFXClass=Class'BallisticProV55.SARSightDot'	 
      bWT_Bullet=True
      bWT_Machinegun=True
-     ManualLines(0)="Automatic 5.56mm fire. Slightly shorter range than full-size assault rifles. Low damage and moderate recoil by default."
-     ManualLines(1)="Engages the frontal flash device. Inflicts a medium-duration blind upon enemies. The effect is more potent the closer the foe is both to the point of aim and to the user."
-     ManualLines(2)="The Weapon Function key engages or disengages the stock. By default, the stock is disengaged, granting the SAR-12 superior hipfire but more recoil than similar weapons. Extending the stock reduces the recoil and widens the hipfire.||Effective at close to medium range, depending upon specialisation."
      SpecialInfo(0)=(Info="240.0;25.0;0.8;90.0;0.0;1.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.375000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.375000)
@@ -171,17 +128,15 @@ defaultproperties
      FireModeClass(0)=Class'BallisticProV55.SARPrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
-	 bShowChargingBar=False
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_SAR_Rifle'
      AmmoClass(1)=Class'BallisticProV55.Ammo_SAR_Rifle'	 
-     Description="With a growing number of operations and battles taking place in urban and industial enviroments, the UTC realized that their ground infantry units were in dire need of a more effective, balanced weapon system for indoor combat. UTC soldiers fighting in the close confines of urban structures and industrial installatons needed a highly compact, reliable and manouverable weapon, but it needed the power to blast through light walls and take down the agile alien forces they were faced with.||The result was the development of the Sub-Assault Rifle, the most well known of which is the S-AR 12. These weapons have the power of an assault rifle, usually using rifle ammunition such as 5.56mm rounds, and the manouverability of a compact sub-machinegun. Accuracy was not an issue due to the extremely short range of most of the encounters in urban combat."
+     Description="Sub-Assault Rifle"
      DisplayFOV=55.000000
      Priority=32
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=4
      PlayerViewOffset=(X=14.000000,Y=13.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.SARAttachment'
@@ -197,4 +152,8 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.SAR_FP'
      DrawScale=0.300000
      AmbientGlow=5 
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.SAR.SARSkin'
+	 Skins(2)=Texture'BallisticWeapons2.SAR.SAR-SightCross'
+	 
 }

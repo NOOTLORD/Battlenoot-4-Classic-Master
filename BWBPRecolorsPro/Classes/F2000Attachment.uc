@@ -33,4 +33,7 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticRecolorsAnims.F2000_TP'
      DrawScale=0.825000
+	 Skins(0)=Texture'BallisticRecolorsTex.MARS.F2000-IronArctic'
+	 Skins(1)=Texture'BallisticRecolorsTex.MARS.F2000-MiscIce'
+	 Skins(2)=Texture'BallisticRecolorsTex.MARS.LK05-EOTech-Ice'
 }

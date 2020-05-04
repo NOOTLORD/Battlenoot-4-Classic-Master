@@ -71,5 +71,14 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.LK05_TP'
      RelativeRotation=(Pitch=32768)
      PrePivot=(X=1.000000,Z=-3.000000)
-     DrawScale=0.080000	 
+     DrawScale=0.080000	
+	 Skins(0)=Texture'BallisticRecolorsTex.LK05.LK05-Silencer'
+	 Skins(1)=Texture'BallisticRecolorsTex.LK05.LK05-Bullets'
+	 Skins(2)=Shader'BallisticRecolorsTex.LK05.LK05-EOTechShader'
+	 Skins(3)=Texture'BallisticRecolorsTex.LK05.LK05-Receiver'
+	 Skins(4)=Texture'BallisticRecolorsTex.LK05.LK05-Grip'
+	 Skins(5)=Texture'BallisticRecolorsTex.LK05.LK05-Grip'
+	 Skins(6)=Texture'BallisticRecolorsTex.LK05.LK05-Stock'
+	 Skins(7)=Texture'BallisticRecolorsTex.LK05.LK05-EOTech'
+	 Skins(8)=Texture'BallisticRecolorsTex.LK05.LK05-Mag'
 }

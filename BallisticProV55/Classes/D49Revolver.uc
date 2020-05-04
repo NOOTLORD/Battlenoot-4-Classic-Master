@@ -277,38 +277,6 @@ simulated function CommonCockGun(optional byte Type)
 	if (!bRevCocked)
 		SafePlayAnim('Cock', 1.0, 0.2);
 }
-												   
-// Change some properties when using sights...
-simulated function SetScopeBehavior()
-{
-	super.SetScopeBehavior();
-	bUseNetAim = default.bUseNetAim || bScopeView;
-}
-simulated function ApplyAimRotation()
-{
-	ApplyAimToView();
-	PlayerViewPivot = default.PlayerViewPivot + (GetAimPivot() + GetRecoilPivot()*0.1) * (DisplayFOV / Instigator.Controller.FovAngle);
-}
-
-// See if firing modes will let us fire another round or not
-simulated function bool CheckWeaponMode (int Mode)
-{
-	if (IsInState('DualAction') || IsInState('PendingDualAction'))
-		return false;
-	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
-		return true;
-	if (Mode > 0 && OtherGun != None && D49Revolver(OtherGun) != None && FireCount < 1)
-		return true;
-	if (FireCount >= WeaponModes[CurrentWeaponMode].Value && (!IsSlave() || WeaponModes[CurrentWeaponMode].ModeID != "WM_SemiAuto" || Othergun.WeaponModes[Othergun.CurrentWeaponMode].ModeID != "WM_SemiAuto" || Othergun.HandgunGroup == HandgunGroup || LastFireTime > level.TimeSeconds-SingleHeldRate))
-		return false;
-	if (Othergun != None && CanAlternate(Mode) && Mode == 0)
-	{
-		if ( (!Othergun.HasAmmoLoaded(Mode) || LastFireTime <= OtherGun.LastFireTime) && FireCount < 1 && Othergun.FireCount < 1 )
-			return true;
-		return false;
-	}
-	return true;
-}
 
 // AI Interface =====
 // choose between regular or alt-fire
@@ -355,16 +323,11 @@ defaultproperties
      Shells(3)=(BulletName="Bullet5",ShellName="Shell5",NextShell=5)
      Shells(4)=(BulletName="Bullet3",ShellName="Shell3",NextShell=1)
      Shells(5)=(BulletName="Bullet6",ShellName="Shell6")
-     HandgunGroup=1
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_D49'
      SightFXClass=Class'BallisticProV55.D49SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     ManualLines(0)="Fires from a single barrel. Powerful, but short-ranged and has high recoil."
-     ManualLines(1)="Fires both barrels at once. Twice as much recoil as the single fire with lower sustained damage output."
-     ManualLines(2)="The D49 is very effective at close range. However, it suffers from a cripplingly long reload time. When dual wielded, both pistols will fire simultaneously, allowing the altfire to be used for an extremely powerful attack."
      SpecialInfo(0)=(Info="120.0;10.0;0.6;50.0;1.0;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
@@ -377,7 +340,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn',Volume=1.000000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
@@ -404,11 +367,9 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
      CurrentRating=0.600000
-     bSniping=True
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_D49_Revolver'	 
      AmmoClass(1)=Class'BallisticProV55.Ammo_D49_Revolver'	 	 
-     Description="Another fine weapon designed by the acclaimed 'Black & Wood' company, the D49 revolver is a true hand cannon. Based on weapons of old, the D49 was intended for non-military use, but rather for self defense and civilian purposes. The dual-barrel design has made it a favourite among it's users, capable of causing massive damage if used correctly, able to easily kill an armored Terran."
+     Description="D49 Revolver"
      DisplayFOV=50.000000
      Priority=22
      HudColor=(B=255,G=200,R=200)
@@ -431,4 +392,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.D49_FP'
      DrawScale=0.220000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.D49.D49RevolverSkin'
+	 Skins(2)=Shader'BallisticWeapons2.D49.D49Shells-Shiney'
 }

@@ -45,18 +45,14 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AK-470'
      BigIconCoords=(Y1=32,Y2=220)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      bWT_Bullet=True
-     ManualLines(0)="Automatic 7.62mm fire. Higher sustained damage than other weapons in its class, but greater recoil and inferior hipfire ability."
-     ManualLines(1)="Prepares a melee attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. If lacking a knife, becomes a blunt attack, dealing lower base damage but inflicting a short-duration blinding effect when striking. This attack inflicts more damage from behind."
-     ManualLines(2)="The Weapon Function key manages the ballistic knife. If a knife is attached, it will be launched, dealing high damage. This attack is hip-accurate and has no recoil. If no knife is attached, one will be attached if available.||This weapon is effective at medium range."
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.400000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.400000)
-     MagAmmo=25
+     MagAmmo=25 
      ReloadEmptyAnim="Reload"	 
      CockAnimPostReload="ReloadEndCock"
      CockingBringUpTime=1.300000
@@ -99,15 +95,14 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.700000
      CurrentRating=0.700000
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AK470_Rifle'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_AK470_Rifle'	 
-     Description="Chambering 7.62mm armor piercing rounds, this rifle is a homage to its distant predecessor, the AK-47. Though the weapons' looks have hardly changed at all, this model features a vastly improved firing mechanism, allowing it to operate in the most punishing of conditions. Equipped with a heavy reinforced stock, launchable ballistic bayonet, and 20 round box mag, this automatic powerhouse is guaranteed to cut through anything in its way. ZVT Exports designed this weapon to be practical and very easy to maintain. With its rugged and reliable design, the AK490 has spread throughout the cosmos and can be found just about anywhere."
+     Description="AK-470 Assault Rifle"
      Priority=65
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000	 
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=5
      PlayerViewOffset=(X=2.000000,Y=15.500000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.AK47Attachment'
@@ -123,4 +118,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.AK490_FP'
      DrawScale=0.350000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.AK490.AK490-Main'
+	 Skins(2)=Texture'BallisticRecolorsTex.AK490.AK490-Misc'
 }

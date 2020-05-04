@@ -17,7 +17,6 @@ var array<string> TutorialMaps;
 var CacheManager.GameRecord CurrentGameType;
 
 // Common
-var automated moCheckBox		ch_OfficialMapsOnly;
 var           GUIButton         b_Primary, b_Secondary;
 
 var() localized string MessageNoInfo, AuthorText, PlayerText;
@@ -29,8 +28,6 @@ var globalconfig string MaplistEditorMenu;
 function InitComponent(GUIController MyController, GUIComponent MyOwner)
 {
    Super.InitComponent(MyController, MyOwner);
-
-    ch_OfficialMapsOnly.Checked(bOnlyShowOfficial);
 }
 
 // Called when a new gametype is selected
@@ -124,37 +121,11 @@ function string GetMapURL( GUITreeList List, int Index )
 	return Item.FullURL;
 }
 
-// Called when the "Only official maps" checkbox is clicked on
-function ChangeMapFilter(GUIComponent Sender)
-{
-	if ( Sender != ch_OfficialMapsOnly )
-		return;
-
-	bOnlyShowOfficial = ch_OfficialMapsOnly.IsChecked();
-	InitMaps();
-}
-
 defaultproperties
 {
-     Begin Object Class=moCheckBox Name=FilterCheck
-         CaptionWidth=0.100000
-         ComponentWidth=0.900000
-         Caption="Only Official Maps"
-         OnCreateComponent=FilterCheck.InternalOnCreateComponent
-         Hint="Hides all maps not created by Epic or Digital Extremes."
-         WinTop=0.949531
-         WinLeft=0.039258
-         WinWidth=0.341797
-         WinHeight=0.030035
-         TabOrder=1
-         OnChange=UT2K4Tab_MainBase.ChangeMapFilter
-     End Object
-     ch_OfficialMapsOnly=moCheckBox'GUI2K4.UT2K4Tab_MainBase.FilterCheck'
-
      MessageNoInfo="No information available!"
      AuthorText="Author"
      PlayerText="players"
-     FilterText="Only Official Maps"
      ClearText="Show All Maps"
      LinkText="Link Setup"
      DefaultText="Default"

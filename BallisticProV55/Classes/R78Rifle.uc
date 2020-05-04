@@ -62,12 +62,9 @@ function float SuggestDefenseStyle()	{	return 0.9;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R78'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     ManualLines(0)="Bolt-action sniper rifle fire. High damage, long range, slow fire rate and unusually quiet compared to other weapons in its class."
-     ManualLines(1)="Engages the scope."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;60.0;10.0;0.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.395000)
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.395000)
@@ -82,7 +79,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.R78.R78-ClipIn',Volume=1.000000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Bolt-Action",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
@@ -124,13 +121,13 @@ defaultproperties
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_R78_Sniper'
      AmmoClass(1)=Class'BallisticProV55.Ammo_R78_Sniper'	 
-     Description="Originally taken from the design of a bird hunting rifle, the R78 'Raven', is a favourite among military snipers and commando corps. Used to a great extent by the expert marksmen of the New European Army, the Raven, is extremely reliable and capable of incredible damage in a single shot. The added long distance sniping scope makes the R78 one of the most deadly weapons. Of course, the gun is only as good as the soldier using it, with a low clip capacity, long reload times and it's terrible ineffectiveness in close quarters combat."
+     Description="R78A1 Sniper Rifle"
      DisplayFOV=55.000000
      Priority=33
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=2
      PlayerViewOffset=(X=12.000000,Y=9.000000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.R78Attachment'
@@ -146,4 +143,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.R78_FP'
      DrawScale=0.450000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.R78.RifleSkin'
+	 Skins(2)=Texture'BallisticWeapons2.R78.ScopeSkin'
 }

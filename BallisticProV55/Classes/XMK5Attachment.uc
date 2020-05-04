@@ -33,4 +33,8 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims1.XMK5_TP'
      DrawScale=0.275000
+	 Skins(0)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Shield'
+	 Skins(1)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Main'
+	 Skins(2)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Clip'
+	 Skins(3)=FinalBlend'BallisticWeapons1.OA-SMG.OA-SMG_SightFB'
 }

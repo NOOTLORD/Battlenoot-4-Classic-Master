@@ -32,4 +32,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.AK490_TP'
      RelativeRotation=(Pitch=32768)
      DrawScale=0.265000
+	 Skins(0)=Texture'BallisticRecolorsTex.AK490.AK490-Misc'
+	 Skins(1)=Texture'BallisticRecolorsTex.AK490.AK490-Main'
 }

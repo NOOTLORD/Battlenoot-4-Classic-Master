@@ -143,4 +143,11 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.G5_TP'
      DrawScale=0.230000
+	 Skins(0)=Texture'BallisticWeapons2.G5.G5Bazooka'
+	 Skins(1)=Texture'BallisticWeapons2.G5.G5Bazooka'
+	 Skins(2)=Texture'BallisticWeapons2.G5.G5Bazooka'
+	 Skins(3)=FinalBlend'BallisticWeapons2.G5.G5RocketFinal'
+	 Skins(4)=Texture'BallisticWeapons2.G5.G5Inner'
+	 Skins(5)=Texture'BallisticWeapons2.G5.G5Scope'
+	 Skins(6)=Texture'BallisticWeapons2.G5.G5Scope'
 }

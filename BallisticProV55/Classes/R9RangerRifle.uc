@@ -7,17 +7,7 @@
 // Modified by (NL)NOOTLORD
 //=============================================================================
 class R9RangerRifle extends BallisticWeapon;
-
-// See if firing modes will let us fire another round or not
-simulated function bool CheckWeaponMode (int Mode)
-{
-	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
-		return true;
-	if ((Mode == 0 && FireCount >= WeaponModes[CurrentWeaponMode].Value) || (Mode == 1 && FireCount >= 2))
-		return false;
-	return true;
-}	
-															 
+													 
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -57,9 +47,6 @@ defaultproperties
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R9'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     ManualLines(0)="Semi-automatic rifle fire. High damage, long range, high penetration and moderate recoil. Sustained damage output is modest."
-     ManualLines(1)="As primary, except fires subsonic rounds. Loses damage over range but has lower recoil, lesser flash and is quieter."
-     ManualLines(2)="As a long-ranged weapon lacking a scope, it has a reasonably quick aiming time. Does not use tracer rounds. Cumbersome to use in close combat."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;50.0;1.0;0.2;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.395000)
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.395000)
@@ -72,7 +59,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.R9.R9-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True	 
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
@@ -104,15 +91,14 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.800000
      CurrentRating=0.800000
-	 bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_R9_Rifle'
      AmmoClass(1)=Class'BallisticProV55.Ammo_R9_Rifle'	 
-     Description="Outstanding reliability and durability in the field are what characterise one of Black & Wood's legendary rifles. Though not widely used by most military forces, the R9 is renowned for its near indestructable design, and superb reliability. Those who use the weapon, mostly snipers, hunters, and specialised squads, swear by it's accuracy and dependability. Often used without fancy features or burdening devices such as optical scopes and similar attachements, the R9 is a true legend with it's users."
+     Description="R9 Rifle"
      Priority=33
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=3
      PlayerViewOffset=(X=10.000000,Y=13.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.R9Attachment'
@@ -126,7 +112,12 @@ defaultproperties
      LightBrightness=130.000000
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims2.R9_FP'
-     DrawScale=0.500000
-     Skins(4)=Texture'BallisticWeapons2.Weapons.USSRSkin'	 
+     DrawScale=0.500000	 
      AmbientGlow=5
+	 Skins(0)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
+	 Skins(1)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
+	 Skins(2)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
+	 Skins(3)=Shader'BallisticWeapons1.SRS600.SRS-SelfIllum'
+     Skins(4)=Texture'BallisticWeapons2.Weapons.USSRSkin'	 
+	 Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 }

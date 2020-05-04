@@ -1,6 +1,5 @@
 #exec OBJ LOAD FILE=XGameShaders.utx
 #exec OBJ LOAD FILE=Crosshairs.utx
-#EXEC OBJ LOAD FILE=LastManStanding.utx
 
 class HudBDeathMatch extends HudBase
     config(User);
@@ -567,11 +566,6 @@ simulated function DrawSpectatingHud (Canvas C)
 
     TextTop = Top + 4;
     GRI = PlayerOwner.GameReplicationInfo;
-
-    C.SetPos(0,Top-8);
-    C.Style=5;
-    C.DrawTile(material'LMSLogoSmall',256*Scale,128*Scale,0,0,256,128);
-    C.Style=1;
 
 	if ( UnrealPlayer(Owner).bDisplayWinner ||  UnrealPlayer(Owner).bDisplayLoser )
 	{

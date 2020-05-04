@@ -48,4 +48,6 @@ defaultproperties
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims1.XRS10_TP'
      DrawScale=0.075000
+	 Skins(0)=Texture'BallisticWeapons1.XRS10.XRS10Skin'
+	 Skins(1)=Texture'BallisticWeapons1.XRS10.XRS10Silencer'
 }

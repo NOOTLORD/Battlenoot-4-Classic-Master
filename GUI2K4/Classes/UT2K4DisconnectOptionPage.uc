@@ -232,7 +232,7 @@ defaultproperties
      b_Reconnect=GUIButton'GUI2K4.UT2K4DisconnectOptionPage.ReconnectButton'
 
      Begin Object Class=GUIButton Name=QuitButton
-         Caption="EXIT UT2004"
+         Caption="EXIT BN4 Classic"
          bAutoSize=True
          WinTop=0.548235
          WinLeft=0.627929

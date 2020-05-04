@@ -64,7 +64,7 @@ defaultproperties
      bNoInitialSpin=True
      bAlignToVelocity=True
      DetonateDelay=2.500000
-     ImpactDamage=80.000000
+     ImpactDamage=85.000000
      ImpactDamageType=Class'BWBPRecolorsPro.DT_MGLGrenade'
      ImpactManager=Class'BWBPRecolorsPro.IM_MGLGrenade'
      TrailClass=Class'BWBPRecolorsPro.MGLNadeTrail'
@@ -78,7 +78,7 @@ defaultproperties
      ShakeOffsetTime=0.000000
      bCoverPenetrator=False	 
      Speed=1750.000000
-     Damage=65.000000
+     Damage=75.000000
      DamageRadius=300.000000
      MyDamageType=Class'BWBPRecolorsPro.DT_MGLGrenadeRadius'
      ImpactSound=Sound'BallisticRecolorsSounds.MGL.FLAK-GrenadeBounce'

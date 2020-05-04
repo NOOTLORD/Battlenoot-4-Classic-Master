@@ -16,16 +16,6 @@ simulated function PlayIdle()
 		return;
 	FreezeAnimAt(0.0);
 }				  
-// Change some properties when using sights...
-simulated function SetScopeBehavior()
-{
-	super.SetScopeBehavior();
-
-	bUseNetAim = default.bUseNetAim || bScopeView;
-	
-	if (Hand < 0)
-		SightOffset.Y = default.SightOffset.Y * -1;
-}
 
 simulated function PlayCocking(optional byte Type)
 {
@@ -123,15 +113,11 @@ defaultproperties
 {
 	 AIRating=0.6
 	 CurrentRating=0.6
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_GRS-9
      BigIconCoords=(Y1=30,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      SightFXBone="SightBone"	 
-     ManualLines(0)="Automatic fire. Short ranged, but has higher DPS than most pistols. Recoil is moderate."
-     ManualLines(1)="Projects a laser beam. Has extremely low DPS, but consistent damage over range and recharges over time."
-     ManualLines(2)="The Weapon Function key causes a hitscan single-shot beam to be projected from the unit, dealing good damage. The GRS-9 is effective at close range."
      SpecialInfo(0)=(Info="120.0;8.0;-999.0;25.0;0.0;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
@@ -144,7 +130,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
@@ -175,7 +161,7 @@ defaultproperties
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9_Pistol'
      AmmoClass(1)=Class'BallisticProV55.Ammo_GRS9_Pistol'	 
-     Description="The GRS9 from Drake & Co. is used primarily by inner core planets for law enforcement purposes. The additional laser unit adds an alternative attack to the GRS9. The laser unit can be held down, for up to 3.5 seconds, releasing a searing beam upon enemies. This drains the rechargeable battery however, which must be left to replenish when empty."
+     Description="GRS-9 Pistol"
      Priority=9
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -195,4 +181,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.Glock_FP'
      DrawScale=0.150000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons1.Glock.Glock_Main'
 }

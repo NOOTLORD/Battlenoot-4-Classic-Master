@@ -43,16 +43,12 @@ function float SuggestDefenseStyle()	{	return -0.6;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.OA-SMG.BigIcon_XMK5'
      BigIconCoords=(Y1=16,Y2=210)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
-     ManualLines(0)="Automatic submachinegun fire. Higher damage per bullet than other SMGs, good range and solid DPS, but higher recoil. Penetration is acceptable."
-     ManualLines(1)="Launches a stun dart. Upon impact with the enemy, deals damage over time and inflicts a blinding effect multiple times upon them."
-     ManualLines(2)="Effective at close range."
      SpecialInfo(0)=(Info="180.0;15.0;0.7;60.0;0.1;0.4;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.385000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.385000)
@@ -95,15 +91,14 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownTime=0.350000
      SelectForce="SwitchToAssaultRifle"
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_XMK5_SMG'
      AmmoClass(1)=Class'BallisticProV55.Ammo_XMK5_SMG'	 
-     Description="NDTR's recent line of urban submachineguns, specfically the XMk5, has garnered attention from various UTC units operating in such environments. The XMk5 is often, and is indeed encouraged to be, fitted with all manner of attachments designed by NDTR as well. While many of the attachments are 'standard' sights, grenade launchers, flash lights and laser sights, there are other more peculiar devices. One of the most popular of these, is a unique, air-powered, dart launcher. The most commonly used dart, is one that stuns and poisons the victim, making them easy prey for the XMk5's primary bullet fire mode."
+     Description="XMk5 Submachine Gun"
      Priority=41
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=2
      PlayerViewOffset=(X=2.000000,Y=6.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.XMK5Attachment'
@@ -119,4 +114,9 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.XMK5_FP'
      DrawScale=0.450000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Main'
+	 Skins(2)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Shield'
+	 Skins(3)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Clip'
+	 Skins(4)=FinalBlend'BallisticWeapons1.OA-SMG.OA-SMG_SightFB'	 
 }

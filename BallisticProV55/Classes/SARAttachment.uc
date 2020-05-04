@@ -35,4 +35,5 @@ defaultproperties
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.SAR_TP'
      DrawScale=0.085000
+	 Skins(0)=Texture'BallisticWeapons2.SAR.SARSkin'
 }

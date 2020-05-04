@@ -93,4 +93,8 @@ defaultproperties
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims1.SRS600_TP'
      DrawScale=0.240000
+     Skins(0)=Texture'BallisticWeapons1.SRS600.SRS-600main'
+     Skins(1)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
+	 Skins(2)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
+	 Skins(3)=Shader'BallisticWeapons1.SRS600.SRS-SelfIllum'	 
 }

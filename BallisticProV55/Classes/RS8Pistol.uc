@@ -36,10 +36,7 @@ simulated function PlayIdle()
 simulated function SetScopeBehavior()
 {
 	super(BallisticHandgun).SetScopeBehavior();
-
 	bUseNetAim = default.bUseNetAim || bScopeView;
-	if (Hand < 0)
-		SightOffset.Y = default.SightOffset.Y * -1;
 }
 
 simulated function PlayCocking(optional byte Type)
@@ -229,15 +226,11 @@ defaultproperties
      SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
      SilencerOnTurnSound=Sound'BallisticSounds1.Pistol.RSP-SilencerTurn'
      SilencerOffTurnSound=Sound'BallisticSounds1.Pistol.RSP-SilencerTurn'
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_RS8'
      BigIconCoords=(X1=64,Y1=70,X2=418)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     ManualLines(0)="Semi-automatic 10mm fire. Moderate damage and fire rate. Has the option of burst fire."
-     ManualLines(1)="Attaches a suppressor, reducing the effective range but removing the flash and reducing the noise output."
-     ManualLines(2)="Weapon Function toggles a laser sight, reducing the hipfire spread."
      SpecialInfo(0)=(Info="0.0;-5.0;-999.0;-1.0;0.0;-999.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
@@ -250,7 +243,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipIn',Volume=0.800000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
@@ -276,10 +269,9 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
 	 CurrentRating=0.6
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_RS8_Pistol'	
      AmmoClass(1)=Class'BallisticProV55.Ammo_RS8_Pistol'		 
-     Description="A fine and reliable weapon, produced by a rather new company, the 10mm RS8 pistol is bound for success. Featuring a 14 round, 10mm magazine, laser sight and silencer, as well as an effective closer range, 3-round burst fire mode. Use the laser sight to see exactly where your gun is aimed, and the silencer when stealth and quietness are required. The RS8 being a fairly recent firearm, first manufactured during the second-war, has not seen as much action as other older pistols, and some critics say it won't be able to stand up to a Cryon, let alone a Skrith!"
+     Description="RS8 Pistol"
      DisplayFOV=65.000000
      Priority=17
      HudColor=(B=255,G=200,R=200)
@@ -301,4 +293,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.RS8_FP'
      DrawScale=0.300000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons1.RS8.M1911-Skin'
 }

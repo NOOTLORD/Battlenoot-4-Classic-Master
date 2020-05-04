@@ -53,13 +53,6 @@ function LoadCommands()
 	for ( i = 0; i < VoiceCommands.Length; i++ )
 		CreateAliasMapping( "speech ACK" @ i, VoiceCommands[i], False );
 
-	//////////////////////////////// FRIENDLY FIRE /////////////////////////////////////////////
-	CreateAliasMapping( "", class'ExtendedConsole'.default.SMStateName[3], True);
-
-	VoiceClass.static.GetAllFFire( VoiceCommands );
-	for ( i = 0; i < VoiceCommands.Length; i++ )
-		CreateAliasMapping( "speech FRIENDLYFIRE" @ i, VoiceCommands[i], False );
-
 	//////////////////////////////// ORDERS /////////////////////////////////////////////
 	CreateAliasMapping( "", class'ExtendedConsole'.default.SMStateName[4], True);
 

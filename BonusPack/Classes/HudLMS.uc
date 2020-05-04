@@ -7,9 +7,6 @@ class HudLMS extends HudCDeathMatch;
 var localized string LivesRemainingString;
 var localized string PlayersRemainString;
 
-
-#EXEC OBJ LOAD FILE=LastManStanding.utx
-
 simulated function DrawSpectatingHud (Canvas C)
 {
 	local string InfoString;
@@ -55,12 +52,6 @@ simulated function DrawSpectatingHud (Canvas C)
 
     TextTop = Top + 4;
     GRI = PlayerOwner.GameReplicationInfo;
-
-    C.SetPos(0,Top-8);
-    C.Style=5;
-    C.DrawTile(material'LMSLogoSmall',256*Scale,128*Scale,0,0,256,128);
-    C.Style=1;
-
 
 	if ( Pawn(PlayerOwner.ViewTarget) != None && Pawn(PlayerOwner.ViewTarget).PlayerReplicationInfo != None )
     {

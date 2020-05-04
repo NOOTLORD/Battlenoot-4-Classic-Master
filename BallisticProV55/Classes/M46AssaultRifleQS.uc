@@ -9,6 +9,38 @@
 //=============================================================================
 class M46AssaultRifleQS extends BallisticWeapon;
 
+// This uhhh... thing is added to allow manual drawing of brass OVER the muzzle flash
+struct UziBrass
+{
+	var() actor Actor;
+	var() float KillTime;
+};
+var   array<UziBrass>	UziBrassList;
+
+simulated event RenderOverlays( Canvas Canvas )
+{
+	local int i;
+
+	super.RenderOverlays(Canvas);
+
+	if (UziBrassList.length < 1)
+		return;
+
+    bDrawingFirstPerson = true;
+    for (i=UziBrassList.length-1;i>=0;i--)
+    {
+    	if (UziBrassList[i].Actor == None)
+    		continue;
+	    Canvas.DrawActor(UziBrassList[i].Actor, false, false, Instigator.Controller.FovAngle);
+    	if (UziBrassList[i].KillTime <= level.TimeSeconds)
+    	{
+    		UziBrassList[i].Actor.bHidden=false;
+    		UziBrassList.Remove(i,1);
+    	}
+    }
+    bDrawingFirstPerson = false;
+}
+
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -46,16 +78,12 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M46'
      BigIconCoords=(Y1=40,Y2=235)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True	 
-     ManualLines(0)="Automatic battle rifle fire. Moderate damage per shot with greater range and penetration than assault rifles. Recoil is moderate."
-     ManualLines(1)="Deploys a mine. These mines can be detonated with the Weapon Function key shortly after being placed for severe damage. Mines can be picked up with the Use key."
-     ManualLines(2)="Effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;25.0;0.9;70.0;0.9;0.2;0.7")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.415000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.415000)
@@ -73,11 +101,6 @@ defaultproperties
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
-     ZoomType=ZT_Irons
-     ZoomInAnim=
-     ZoomOutAnim=
-     ScopeViewTex=None
-     bNoMeshInScope=False
      bNoCrosshairInScope=True							 
      SightPivot=(Pitch=-300,Roll=0)
      SightOffset=(X=-10.000000,Y=0.000000,Z=11.550000)
@@ -98,19 +121,18 @@ defaultproperties
      RecoilDeclineDelay=0.200000																																																															 																																																  						   						   								
      FireModeClass(0)=Class'BallisticProV55.M46PrimaryFireQS'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_M46_Rifle'
      AmmoClass(1)=Class'BallisticProV55.Ammo_M46_Rifle'	 
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.700000
      CurrentRating=0.700000
-     Description="The M46 was one of Black & Wood's first forays into high powered assault weaponry, specifically rifles. As with all of Black & Wood's weapons, the 'Jackal' is incredibly reliable and tough. Used by certain Terran units, the M46 is typically equipped with a short-range optical scope and often various Grenade Launcher attachments. While not quite yet a widely used weapon, its reputation has grown in recent times as heroic stories of Armoured Squadron 190's use of it has spread amongst the bulk of the UTC troops."
+     Description="M46 Assault Rifle"
      DisplayFOV=55.000000																																																																																																																																					  						 
      Priority=41
      HudColor=(B=255,G=200,R=200)	 
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3															 					 
+     InventoryGroup=1														 					 
      GroupOffset=1
      PlayerViewOffset=(X=8.500000,Y=5.000000,Z=-8.000000)
      PlayerViewPivot=(Pitch=384)														 								
@@ -127,4 +149,9 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.M46_FP'
      DrawScale=0.300000	 
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons1.OA-AR.OA-AR_Main'
+	 Skins(2)=Texture'BallisticWeapons1.OA-AR.OA-AR_Clip'
+	 Skins(3)=Texture'BallisticWeapons1.OA-AR.OA-AR_GrenadeLauncher'
+	 Skins(4)=FinalBlend'BallisticWeapons1.OA-AR.RDS_FB'
 }

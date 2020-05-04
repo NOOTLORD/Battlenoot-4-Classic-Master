@@ -220,16 +220,12 @@ defaultproperties
      SpareShellBones(3)="SpareShell4"
      SpareShellBones(4)="SpareShell5"
 	 InventorySize=6				 
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_PD97'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      IdleTweenTime=0.000000	 
      bWT_Bullet=True
      bWT_Heal=True
-     ManualLines(0)="Fires projectile darts. Upon striking an enemy, these darts release a cloud of pink gas which allows the path of the enemy to be tracked. The darts will also deal damage over time. Upon striking an ally, the darts heal over time instead of dealing damage."
-     ManualLines(1)="Launches a tazer. The user must hold down Altfire or the tazer will be retracted. Upon striking an enemy, transmits a current dealing paltry DPS but slowing the enemy movement."
-     ManualLines(2)="Primarily a support weapon, the Bloodhound is most effective when used as part of a team. Nevertheless, sufficient dart hits can cause high damage. The Bloodhound has very low recoil."
      SpecialInfo(0)=(Info="120.0;15.0;0.8;50.0;0.0;0.5;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
@@ -242,7 +238,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000)
      ClipInFrame=0.650000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
+     WeaponModes(0)=(ModeName="Healing Darts",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
@@ -272,11 +268,10 @@ defaultproperties
      PutDownTime=0.600000
      BringUpTime=0.900000
      SelectForce="SwitchToAssaultRifle"
-     bShowChargingBar=False
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_PD97_Pistol'
      AmmoClass(1)=Class'BallisticProV55.Ammo_PD97_Pistol'	 
-     Description="Originally a specialist law enforcement weapon, the PD-97 'Bloodhound' has been adapted into a military role, used to control opponents and track their movement upon the battlefield. While less immediately lethal than most other weapons, its tactical repertoire is not to be underestimated."
+     Description="PD-97 Pistol"
      DisplayFOV=57.500000
      Priority=24
      HudColor=(B=255,G=200,R=200)
@@ -298,4 +293,9 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.Bloodhound_FP'
      DrawScale=0.200000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons1.Bloodhound.BloodhoundMain'
+	 Skins(2)=Texture'BallisticWeapons1.Bloodhound.BloodhoundAmmo'
+	 Skins(3)=Texture'BallisticWeapons1.Bloodhound.BloodhoundAcc'
+	 Skins(4)=Shader'BallisticWeapons1.General.RedDotSightShader'
 }

@@ -4,7 +4,7 @@
 class UT2k4ModelSelect extends LockedFloatingWindow;
 
 #EXEC OBJ LOAD FILE=2K4Menus.utx
-#exec obj load file=PlayerPictures.utx
+#exec obj load file=PlayerSkins.utx
 
 var Material  LockedImage;
 var automated GUIVertImageListBox CharList;
@@ -309,7 +309,7 @@ function bool IsUnlocked( xUtil.PlayerRecord Test )
 
 defaultproperties
 {
-     LockedImage=Texture'PlayerPictures.cDefault'
+     LockedImage=Texture'PlayerSkins.cDefault'
      Begin Object Class=GUIVertImageListBox Name=vil_CharList
          CellStyle=CELL_FixedCount
          NoVisibleRows=3

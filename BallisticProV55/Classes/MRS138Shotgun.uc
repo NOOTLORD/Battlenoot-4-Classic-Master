@@ -74,14 +74,10 @@ function float SuggestDefenseStyle()
 defaultproperties
 {
      ShellBone="shell"
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MRS138'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
-     ManualLines(0)="Automatic 10-gauge shotgun fire. Moderate spread, high damage and fast fire rate. Damage output is excellent. Strong from the hip."
-     ManualLines(1)="Melee attack using the tazer. Like other melee attacks, gains damage the longer the altfire key is held (up to 1.5 seconds). Deals more damage from behind. Inflicts a medium-duration blind upon enemies when impacting and knocks them away from the user."
-     ManualLines(2)="Weapon Function engages a flashlight which illuminates dark areas.||This weapon is extremely effective at close range."
      SpecialInfo(0)=(Info="240.0;25.0;0.5;40.0;0.0;1.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
@@ -95,7 +91,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-ShellIn',Volume=1.000000)
      ClipInFrame=0.375000
      bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Pump-Action",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0	 
@@ -128,16 +124,15 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.800000
      CurrentRating=0.800000
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_MRS138_Shotgun'
      AmmoClass(1)=Class'BallisticProV55.Ammo_MRS138_Shotgun'	 
-     Description="Also from the first line of Drake & Co weaponry, the MRS138 Combat Shotgun is an excellent close-range weapon. It is outfitted with a tactical light and tazer attachment to increase its effectiveness as a crowd control and civilian weapon. The tazer is an effective tool for stunning enemies and inflicting slight damage, leaving them blinded and disoriented for a few seconds, while the flash light can be used for locating those which hide in the dark."
+     Description="MRS-138 Shotgun"
      DisplayFOV=50.000000
      Priority=36
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=3
      PlayerViewOffset=(X=7.500000,Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'
@@ -153,4 +148,8 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.MRS138_FP'
      DrawScale=0.400000	 	 
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons1.MRS138.MRS138Skin'
+	 Skins(2)=Texture'BallisticWeapons1.MRS138.MRS138HeatShield'
+	 Skins(3)=Texture'BallisticEffects.Brass.MRS138Shell'
 }

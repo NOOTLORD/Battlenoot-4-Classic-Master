@@ -55,15 +55,6 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 
 	asb_Scroll.ManageComponent(lb_MapDesc);
 
-	if (CurrentGameType.GameTypeGroup==3)
-	{
-		ch_OfficialMapsOnly.Checked(false);
-		ch_OfficialMapsOnly.DisableMe();
-	}
-	else
-		ch_OfficialMapsOnly.EnableMe();
-
-    sb_Options.ManageComponent(ch_OfficialMapsOnly);
     sb_Options.ManageComponent(b_Maplist);
     sb_Options.ManageComponent(b_Tutorial);
 
@@ -486,12 +477,6 @@ function bool HandleContextSelect(GUIContextMenu Sender, int Index)
 			}
 
 			break;
-
-		case 3:
-			bOnlyShowOfficial = !bOnlyShowOfficial;
-			InitMaps();
-			ch_OfficialMapsOnly.SetComponentValue(bOnlyShowOfficial, True);
-			break;
 		}
 	}
 
@@ -662,19 +647,4 @@ defaultproperties
      MapCaption="Maps"
      BonusVehicles=" (Bonus Vehicles)"
      BonusVehiclesMsg="(Includes Bonus Vehicles)|"
-     Begin Object Class=moCheckBox Name=FilterCheck
-         CaptionWidth=0.100000
-         ComponentWidth=0.900000
-         Caption="Only Official Maps"
-         OnCreateComponent=FilterCheck.InternalOnCreateComponent
-         Hint="Hides all maps not created by Epic or Digital Extremes."
-         WinTop=0.772865
-         WinLeft=0.051758
-         WinWidth=0.341797
-         WinHeight=0.030035
-         TabOrder=1
-         OnChange=UT2K4Tab_MainSP.ChangeMapFilter
-     End Object
-     ch_OfficialMapsOnly=moCheckBox'GUI2K4.UT2K4Tab_MainSP.FilterCheck'
-
 }

@@ -4582,8 +4582,10 @@ static function String GetManual()
 	S $= default.ManualLines[2];
 	return S;
 }  
+
 defaultproperties
 {
+     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
 	 AimDisplacementDurationMult=0.000000
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
@@ -4671,6 +4673,8 @@ defaultproperties
      PutDownTime=0.300000
      BringUpTime=0.300000
      bNoAmmoInstances=False
+	 bShowChargingBar=False
+	 bCanThrow=False
      DisplayFOV=60.000000
      Priority=2
      CenteredOffsetY=0.000000

@@ -649,11 +649,6 @@ simulated function DrawSpectatingHud (Canvas C)
     TextTop = Top + 4;
     GRI = PlayerOwner.GameReplicationInfo;
 
-    C.SetPos(0,Top-8);
-    C.Style=5;
-    C.DrawTile(material'LMSLogoSmall',256*Scale,128*Scale,0,0,256,128);
-    C.Style=1;
-
 	if ( UnrealPlayer(Owner).bDisplayWinner ||  UnrealPlayer(Owner).bDisplayLoser )
 	{
 		if ( UnrealPlayer(Owner).bDisplayWinner )
@@ -1624,5 +1619,5 @@ defaultproperties
      HudColorTeam(0)=(R=200,A=255)
      HudColorTeam(1)=(B=200,G=64,R=50,A=255)
      ConsoleMessagePosX=0.005000
-     ConsoleMessagePosY=0.175000
+     ConsoleMessagePosY=0.225000
 }

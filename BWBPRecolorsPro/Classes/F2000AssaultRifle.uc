@@ -42,16 +42,12 @@ function float SuggestDefenseStyle()	{	return -0.4;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_F2000'
      BigIconCoords=(X1=32,Y1=40,X2=475)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True	 
-     ManualLines(0)="Powerful 5.56mm fire. Has a fast fire rate and high sustained DPS, but excessive recoil."
-     ManualLines(1)="Launches a cryogenic grenade. Upon impact, freezes nearby enemies, slowing their movement. The effect is proportional to their distance from the epicentre. This attack will also extinguish the fires of an FP7 grenade."
-     ManualLines(2)="The Weapon Special key attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible.||Effective at close to medium range."
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.425000)
      ReloadAnimRate=1.350000	 
@@ -91,15 +87,14 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.750000
      CurrentRating=0.750000
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_F2000_Rifle'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_F2000_Rifle'	 
-     Description="The 3 variant of the Modular Assault Rifle System is one of many rifles built under NDTR Industries' MARS project. The project, which was aimed to produce a successor to the army's current M50 and M30 rifles, has produced a number of functional prototypes. ||The 3 variant is a short barreled model designed for CQC use with non-standard ammunition. Field tests have shown excellent results when loaded with Snowstorm or Firestorm rounds, and above-average performance with Zero-G, toxic and electro rounds. This specific MARS-3 is loaded with Snowstorm XII rounds and is set to fire at a blistering 850 RPM. Enemies hit with this ammunition will be chilled and slowed."
+     Description="F2000 Assault Rifle"
      Priority=65
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      PlayerViewOffset=(X=8.000000,Y=13.000000,Z=-18.000000)
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_F2000'
@@ -114,4 +109,8 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.F2000_FP'
      DrawScale=0.300000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.MARS.F2000-IronArctic'
+	 Skins(2)=Texture'BallisticRecolorsTex.MARS.F2000-MiscIce'
+	 Skins(3)=Texture'BallisticRecolorsTex.MARS.LK05-EOTech-Ice'
 }

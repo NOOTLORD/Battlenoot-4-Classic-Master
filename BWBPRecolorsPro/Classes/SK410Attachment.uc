@@ -28,6 +28,9 @@ defaultproperties
 	 CockingAnim="Cock_RearPull"	 
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_TP'
      RelativeRotation=(Pitch=32768)
-     DrawScale=0.200000
      PrePivot=(X=1.000000,Z=-5.000000)
+     DrawScale=0.200000	 
+	 Skins(0)=Shader'BallisticRecolorsTex.SK410.SK410-LightsOn'
+	 Skins(1)=Texture'BallisticRecolorsTex.SK410.SK410-Misc'
+	 Skins(2)=Texture'BallisticRecolorsTex.SK410.SK410-C-CamoSnow'
 }

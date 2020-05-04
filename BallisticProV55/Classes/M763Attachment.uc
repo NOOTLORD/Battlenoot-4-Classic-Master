@@ -27,4 +27,7 @@ defaultproperties
      SingleAimedFireAnim="RifleAimed_FireCock"
      Mesh=SkeletalMesh'BallisticAnims2.M763_TP'
      DrawScale=0.080000
+	 Skins(0)=Texture'BallisticWeapons2.M763.M763Small'
+	 Skins(1)=Texture'BallisticWeapons2.M763.M763Shotgun'
+	 
 }

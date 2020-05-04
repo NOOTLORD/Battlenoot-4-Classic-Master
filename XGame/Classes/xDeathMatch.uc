@@ -8,12 +8,9 @@ class xDeathMatch extends DeathMatch;
 #exec OBJ LOAD FILE=XEffectMat.utx
 #exec OBJ LOAD FILE=WeaponStaticMesh.usx
 #exec OBJ LOAD FILE=NewWeaponPickups.usx
-#exec OBJ LOAD FILE="..\Textures\AW-2004Particles.utx"
-#exec OBJ LOAD FILE=intro_characters.utx
-#exec OBJ LOAD FILE=DemoPlayerSkins.utx
+#exec OBJ LOAD FILE=AW-2004Particles.utx
 #exec OBJ LOAD FILE=PlayerSkins.utx
 #exec OBJ LOAD FILE=InterfaceContent.utx
-#exec OBJ LOAD FILE=LastManStanding.utx
 #exec OBJ LOAD FILE=HUDContent.utx
 
 var globalconfig bool		bCustomPreload;		// if true, precache non-Epic characters as well
@@ -53,13 +50,11 @@ static function PrecacheGameTextures(LevelInfo myLevel)
 	myLevel.AddPrecacheMaterial(Material'Engine.BlobTexture');
  	myLevel.AddPrecacheMaterial(Material'XGameShaders.LEnergy');
 	myLevel.AddPrecacheMaterial(class'NewTransDeresBlue'.Default.Texture);
-	myLevel.AddPrecacheMaterial(Material'intro_characters.BRface1');
 	myLevel.AddPrecacheMaterial(Material'AW-2004Particles.Fire.BlastMark');
 	myLevel.AddPrecacheMaterial(Material'gradient_FADE');
 	myLevel.AddPrecacheMaterial(Material'AW-2004Particles.plasmastar');
 	myLevel.AddPrecacheMaterial(Material'XEffects.BotSpark');
 	myLevel.AddPrecacheMaterial(Material'InterfaceContent.SquareBoxA');
-	myLevel.AddPrecacheMaterial(Material'LastManStanding.LMSLogoSmall');
 	myLevel.AddPrecacheMaterial(Material'XEffectMat.redbolt');
 	myLevel.AddPrecacheMaterial(Material'XEffects.SpeedTrailTex');
 	myLevel.AddPrecacheMaterial(Material'XEffects.pcl_ball');
@@ -84,11 +79,8 @@ static function PrecacheGameTextures(LevelInfo myLevel)
     myLevel.AddPrecacheMaterial(Texture'XEffects.GibBot');
     
     myLevel.AddPrecacheMaterial(Texture'EpicParticles.FlickerFlare2');
-
-	if ( myLevel.IsDemoBuild() )
-		myLevel.AddPrecacheMaterial(Material'DemoPlayerSkins.DemoSkeleton');
-	else
-		myLevel.AddPrecacheMaterial(Texture(DynamicLoadObject("PlayerSkins.Human_Skeleton", class'Material')));
+	
+	myLevel.AddPrecacheMaterial(Texture(DynamicLoadObject("PlayerSkins.Human_Skeleton", class'Material')));
 
 	if ( !Static.NeverAllowTransloc() )
 	{
@@ -120,23 +112,17 @@ static function PrecacheGameTextures(LevelInfo myLevel)
 		((myLevel.bShouldPreload && myLevel.bDesireSkinPreload && !Default.bForceDefaultCharacter) || myLevel.IsDemoBuild()) )
 	{
 		class'xUtil'.static.GetPlayerList(AllPlayerList);
-		if ( !myLevel.IsDemoBuild() )
-		{
-			myLevel.ForceLoadTexture(Texture(DynamicLoadObject("UT2004PlayerSkins.XanMk3V2_abdomen", class'Material')));
-			myLevel.ForceLoadTexture(Texture(DynamicLoadObject("UT2004PlayerSkins.Skaarj_Skeleton_Body", class'Material')));
-		}
+
 		// Filter out 'duplicate' characters - only used in single player
 		// also filter out characters that aren't useable by bots (probably not meant for DM)
 		for(i=0; i<AllPlayerList.Length; i++)
 		{
 			if ( (AllPlayerList[i].Menu != "DUP") && (AllPlayerList[i].BotUse > 0) )
 			{
-				// if no custom preloading, only preload Epic characters - PlayerSkins, UT2004PlayerSkins, MechaSkaarjSkins, NecrisSkins, MetalSkins
+				// if no custom preloading, only preload Epic characters - PlayerSkins
 				if ( Default.bCustomPreload
-					|| (Left(AllPlayerList[i].BodySkinName,12) ~= "PlayerSkins.")
-					|| (Left(AllPlayerList[i].BodySkinName,18) ~= "UT2004PlayerSkins.")
-					|| (Left(AllPlayerList[i].BodySkinName,21) ~= "UT2004ECEPlayerSkins.")
-					|| (Left(AllPlayerList[i].BodySkinName,16) ~= "DemoPlayerSkins.") )
+					|| (Left(AllPlayerList[i].BodySkinName,12) ~= "PlayerSkins"))
+					
 				{
 					PlayerList[PlayerList.Length] = AllPlayerList[i];
 				}
@@ -151,7 +137,7 @@ static function PrecacheGameTextures(LevelInfo myLevel)
 			{
 				if ( (MyLevel.GRI != None) && MyLevel.GRI.bForceTeamSkins  )
 				{
-					if ( class'DMMutator'.Default.bBrightSkins && (Left(PlayerList[i].BodySkinName,12) ~= "PlayerSkins.") )
+					if ( class'DMMutator'.Default.bBrightSkins && (Left(PlayerList[i].BodySkinName,12) ~= "PlayerSkins") )
 						LoadedSkin = Texture(DynamicLoadObject("Bright"$PlayerList[i].BodySkinName$"_0B", class'Material',true));
 					else
 						LoadedSkin = Texture(DynamicLoadObject(PlayerList[i].BodySkinName$"_0", class'Material'));
@@ -163,7 +149,7 @@ static function PrecacheGameTextures(LevelInfo myLevel)
 			else
 			{
 				// preload team skins
-				if ( class'DMMutator'.Default.bBrightSkins && (Left(PlayerList[i].BodySkinName,12) ~= "PlayerSkins.") )
+				if ( class'DMMutator'.Default.bBrightSkins && (Left(PlayerList[i].BodySkinName,12) ~= "PlayerSkins") )
 				{
 					LoadedSkin = Texture(DynamicLoadObject("Bright"$PlayerList[i].BodySkinName$"_0B",Class'Material',true));
 					LoadedSkinBlue = Texture(DynamicLoadObject("Bright"$PlayerList[i].BodySkinName$"_1B",Class'Material',true));

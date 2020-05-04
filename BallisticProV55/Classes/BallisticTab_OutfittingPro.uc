@@ -106,8 +106,6 @@ function LoadList()
 	lb_NewWeapons.CheckList.Add(Headings[5],,"MG",true);
 	lb_NewWeapons.CheckList.Add(Headings[6],,"SNIPER",true);
 	lb_NewWeapons.CheckList.Add(Headings[7],,"HEAVY",true);
-	lb_NewWeapons.CheckList.Add(Headings[8],,"SPECIAL",true);
-	lb_NewWeapons.CheckList.Add(Headings[9],,"TRAPS",true);
 
 	for (j=0;j<12;j++)
 		Index[j] = j+1;
@@ -692,8 +690,8 @@ defaultproperties
      BBox3=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox3Button'
 
      Begin Object Class=GUIButton Name=BBox5Button
-         Caption="Grenade"
-         Hint="View the list of weapons in the 'Grenade' box"
+         Caption="Abilities"
+         Hint="View the list of weapons in the 'Abilities' box"
          WinTop=0.970000
          WinLeft=0.625000
          WinWidth=0.150000
@@ -761,6 +759,4 @@ defaultproperties
      Headings(5)="Shotguns"
      Headings(6)="Snipers"
      Headings(7)="Abilities"
-     Headings(8)="Miscellaneous"
-     Headings(9)="Non-BW"
 }

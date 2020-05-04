@@ -80,7 +80,7 @@ simulated function DestroyEffects()
 
 defaultproperties
 {
-     HipSpreadFactor=6.000000
+     HipSpreadFactor=4.000000
 	 MaxSpreadFactor=2.000000
      CutOffDistance=1536.000000
      CutOffStartRange=378.000000

@@ -28,5 +28,6 @@ defaultproperties
      FlyByMode=MU_Primary
      Mesh=SkeletalMesh'BallisticAnims1.Marlin_TP'	 
      DrawScale=0.125000
+	 Skins(0)=Texture'BallisticWeapons1.Marlin.Marlin_Main'
 }
 

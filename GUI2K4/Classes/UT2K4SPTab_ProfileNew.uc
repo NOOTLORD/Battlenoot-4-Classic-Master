@@ -252,7 +252,7 @@ function AddDefaultBots(UT2K4GameProfile GP)
 	for (i = 0; i < FreeAgents.Length; i++)
 	{
 		if ((FreeAgents[i].Menu ~= "SP") &&
-				((FreeAgents[i].species == class'xGame.SPECIES_Egypt') || (FreeAgents[i].species == class'xGame.SPECIES_Merc')))
+				((FreeAgents[i].species == class'xGame.SPECIES_Merc') || (FreeAgents[i].species == class'xGame.SPECIES_Merc')))
 		{
 			if (FreeAgents[i].DefaultName ~= GP.PlayerCharacter) continue;
 			GP.GetBotPosition(FreeAgents[i].DefaultName, true);

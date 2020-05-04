@@ -21,6 +21,6 @@ defaultproperties
      FemaleSuicide="%o tagged herself with her own grenade."
      MaleSuicide="%o tagged himself with his own grenade."
      bDelayedDamage=True
-     VehicleDamageScaling=0.500000
+     VehicleDamageScaling=1.500000
      InvasionDamageScaling=1.000000	 	 
 }

@@ -166,7 +166,6 @@ defaultproperties
      SilencerOnTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      SilencerOffTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      PlayerSpeedFactor=1.100000
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XK2'
      BigIconCoords=(X1=24,X2=450)
@@ -174,9 +173,6 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
-     ManualLines(0)="Low-velocity submachinegun fire. Low recoil, lower damage than other submachineguns but controllable and excellent hipfire."
-     ManualLines(1)="Attaches a suppressor. Reduces recoil and noise output, hides the flash, but reduces range."
-     ManualLines(2)="Effective from the hip and at close range."
      SpecialInfo(0)=(Info="120.0;10.0;0.6;60.0;0.3;0.1;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.350000)
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.350000)
@@ -217,16 +213,15 @@ defaultproperties
      FireModeClass(0)=Class'BallisticProV55.Xk2PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_XK2_SMG'
      AmmoClass(1)=Class'BallisticProV55.Ammo_XK2_SMG'	 
-     Description="Yet another high quality weapon by Black & Wood, the XK2 is a light-weight, silenceable sub-machinegun. It has a very fast rate of fire, but its low velocity bullets make it less dangerous than other weapons. However, these low velocity rounds do allow the weapon to be easily silenced, turning it into an effective stealth weapon, used by many law enforcement organisations, and Black-Ops military units alike. The weapon's high rate of fire, and quick reload times, means that the soldier can pump out rounds quicker than even the M353, making it very useful for cover-fire."
+     Description="XK2 Submachine Gun"
      DisplayFOV=55.000000
      Priority=32
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      GroupOffset=1
      PlayerViewOffset=(X=10.000000,Y=8.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.Xk2Attachment'
@@ -242,4 +237,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.XK2_FP'
      DrawScale=0.200000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.XK2.XK2Skin'
 }

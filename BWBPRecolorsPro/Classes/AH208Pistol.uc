@@ -121,16 +121,12 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 defaultproperties
 {
      BulletBone="Bullet"
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AH208-Pistol'
      BigIconCoords=(X1=47,Y1=16,X2=455,Y2=245)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=8
      bWT_Bullet=True
-     ManualLines(0)="Powerful .44 fire. Massive damage, long range and excellent fire rate."
-     ManualLines(1)="Prepares a bludgeoning attack, which will be executed upon release. The damage of the attack increases the longer altfire is held, up to 1.5 seconds for maximum damage output. As a blunt attack, has lower base damage compared to bayonets but inflicts a short-duration blinding effect when striking. This attack inflicts more damage from behind."
-     ManualLines(2)="Effective at all ranges."
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.400000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.400000)
      MagAmmo=7
@@ -140,7 +136,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipIn',Volume=1.500000)
      ClipInFrame=0.650000
      bCockOnEmpty=True	 
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
@@ -163,10 +159,9 @@ defaultproperties
      PutDownTime=0.500000
      BringUpTime=1.200000
      SelectForce="SwitchToAssaultRifle"
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'	 
-     Description="Built as a more affordable alternative to the AH104, the AH208 is an alternate design chambered for .44 magnum rounds instead of the usual $100 .600 HEAP ones. It is less accurate than the AH104 and D49, but its 8 round magazine and faster reload times let it put more rounds down range than both. Its significant weight and recoil means it requires both hands to shoot and is harder to control than its revolver and handcannon siblings, a fact that comes into play where range is a concern. While not as popular as its larger .600 cousin, the AH208 packs a formidable punch and is a force to be reckoned with."
+     Description="AH-208 Pistol"
      Priority=96
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -188,4 +183,9 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Eagle_FP'
      DrawScale=0.800000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
+	 Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc'
+	 Skins(3)=Texture'BallisticRecolorsTex.Eagle.Eagle-FrontSilver'
+	 Skins(4)=Shader'BallisticRecolorsTex.Eagle.Eagle-SightDotGreen'	 
 }

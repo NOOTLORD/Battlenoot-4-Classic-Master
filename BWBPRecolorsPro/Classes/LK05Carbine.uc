@@ -187,9 +187,6 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 
 defaultproperties
 {
-     ManualLines(0)="5.56 fire. Higher DPS than comparable weapons, but awkward recoil and highly visible tracers."
-     ManualLines(1)="Attaches or remvoes the suppressor. When active, the suppressor reduces recoil and noise output and hides the muzzle flash, but reduces range."
-     ManualLines(2)="The Weapon Function key, when used, first cycles between the weapon's laser sight and flashlight, and then activates both at once. Activate again to disable both. The laser sight reduces the spread of the hipfire, but compromises stealth.||Effective at close and medium range."																												   																																																																																																																			  
      SilencerBone="Silencer"
      SilencerBone2="Silencer2"
      SilencerOnSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOn'
@@ -197,7 +194,6 @@ defaultproperties
      SilencerOnAnim="SilencerOn"
      SilencerOffAnim="SilencerOff"
      ScopeBone="EOTech"
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_LK-05'
      BigIconCoords=(Y1=36,Y2=225)
@@ -243,15 +239,15 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.70000
      CurrentRating=0.700000
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'  
-     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'  	 
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_LK05_Rifle' 
+     Description="LK-05 Carbine" 	 
      Priority=41
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
-     PlayerViewOffset=(X=-3.000000,Y=12.500000,Z=-17.000000)
+     InventoryGroup=1
+     PlayerViewOffset=(X=-2.000000,Y=12.500000,Z=-17.000000)
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_LK-05'
      IconCoords=(X2=127,Y2=31)
@@ -265,4 +261,13 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.LK05_FP'
      DrawScale=0.300000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.LK05.LK05-Grip'
+	 Skins(2)=Texture'BallisticRecolorsTex.LK05.LK05-Stock'
+	 Skins(3)=Texture'BallisticRecolorsTex.LK05.LK05-Receiver'
+	 Skins(4)=Texture'BallisticRecolorsTex.LK05.LK05-Bullets'
+	 Skins(5)=Texture'BallisticRecolorsTex.LK05.LK05-Mag'
+	 Skins(6)=Texture'BallisticRecolorsTex.LK05.LK05-Silencer'
+	 Skins(7)=Texture'BallisticRecolorsTex.LK05.LK05-EOTech'
+	 Skins(8)=Shader'BallisticRecolorsTex.LK05.LK05-EOTechShader' 
 }

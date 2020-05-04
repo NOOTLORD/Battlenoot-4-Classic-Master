@@ -593,22 +593,6 @@ simulated function CameraView()
 // Draw cam view stuff if in cam view...
 simulated event RenderOverlays( Canvas Canvas )
 {
-	// Do stuff for camera view
-	if ( CurrentRocket != None && PlayerController(Instigator.Controller).ViewTarget == CurrentRocket )
-    {
-		Instigator.SetViewRotation(CurrentRocket.Rotation);
-		// Noise
-		Canvas.SetDrawColor(255,255,255,255);
-		Canvas.Style = ERenderStyle.STY_Alpha;
-		Canvas.SetPos(0,0);
-		Canvas.DrawColor.A = 48;
-		Canvas.DrawTile( Material'BallisticUI.M50.Noise1', Canvas.SizeX, Canvas.SizeY, 0.0, 0.0, 256, 256 ); // !! hardcoded size
-		// Tunnel vision
-		Canvas.DrawColor.A = 255;
-		Canvas.SetPos(0,0);
-		Canvas.DrawTile( Material'BallisticUI.M50.M50CamView', Canvas.SizeX, Canvas.SizeY, 0.0, 0.0, 1024, 1024 ); // !! hardcoded size
-	}
-    else
         OldRenderOverlays(Canvas);
 }
 
@@ -763,7 +747,6 @@ defaultproperties
      LockOnSound=(Sound=Sound'BallisticSounds2.G5.G5-TargetOn',Volume=0.500000,Pitch=1.000000)
      LockOffSound=(Sound=Sound'BallisticSounds2.G5.G5-TargetOff',Volume=0.500000,Pitch=1.000000)
      LaserChaosAimSpread=256
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_G5'
      BigIconCoords=(Y1=36,Y2=230)
@@ -772,10 +755,6 @@ defaultproperties
      bWT_Splash=True
      bWT_Projectile=True
      bWT_Super=True
-	 InventorySize=24				  
-     ManualLines(0)="Fires a rocket. These rockets have an arming delay and will ricochet off surfaces when unarmed.|In Rocket mode, the rocket flies directly to the point of aim.|In Mortar mode, the rocket will fly upwards and then strike downwards upon the point of aim.|When scoped and in Mortar mode, targets focused directly upon by the weapon's scope may be highlighted in red; when this happens, the next Mortar shot will track the target until line of sight is broken. The target is notified of the lockon when the rocket is fired."
-     ManualLines(1)="Toggles the guidance laser. With the guidance laser active, rockets will fly towards the point indicated by the laser at any given time."
-     ManualLines(2)="When firing a mortar rocket. the Weapon Function key will cause the player to view through the rocket's nose camera.|As a bazooka, the G5 has no recoil. With the laser in use, its hipfire is stable, however it will always be lowered when the player jumps. The weapon is effective at medium to long range and with height advantage."
      SpecialInfo(0)=(Info="300.0;35.0;1.0;80.0;0.8;0.0;1.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.G5.G5-Pullout',Volume=0.370000)
      PutDownSound=(Sound=Sound'BallisticSounds2.G5.G5-Putaway',Volume=0.370000)
@@ -826,17 +805,16 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.800000
      CurrentRating=0.800000
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_G5_Bazooka'
      AmmoClass(1)=Class'BallisticProV55.Ammo_G5_Bazooka'	 
-     Description="Based on the original design by the legendary maniac Pirate, Var Dehidra, the G5 has undergone many alterations to become what it is today. The original bandit version was constructed by Var Dehidra to blast open armored cash transportation vehicles. Its name is derived from one of Dehidra's favourite targets, the G5 CTV 4x. It is now a very deadly weapon, used to destroy everything from tanks and structures to Skrith hordes and aircraft. The bombardement attack is a recent addition, replacing the original, primitive heat seeking function that caused it to target CTVs or backfire on the pirates' own craft, provided mainly for use in outdoor environments to destroy all manner of moving targets. The latest model also features a laser-painter device, allowing the user to guide the rocket wherever they wish."
+     Description="G5 Bazooka"
      Priority=44
      CenteredOffsetY=10.000000
      CenteredRoll=0
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=8
+     InventoryGroup=4
      PlayerViewOffset=(X=12.000000,Y=10.000000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5'
@@ -851,4 +829,10 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.G5_FP'
      DrawScale=0.300000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.G5.G5Bazooka'
+	 Skins(2)=Texture'BallisticWeapons2.G5.G5Scope'
+	 Skins(3)=Texture'BallisticWeapons2.G5.G5Inner'
+	 Skins(4)=FinalBlend'BallisticWeapons2.G5.G5RocketFinal'
+	 Skins(5)=Texture'BallisticWeapons2.G5.G5Bazooka'
 }

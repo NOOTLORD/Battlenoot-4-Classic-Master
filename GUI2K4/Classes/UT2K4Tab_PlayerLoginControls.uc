@@ -1071,7 +1071,7 @@ defaultproperties
      b_Spec=GUIButton'GUI2K4.UT2K4Tab_PlayerLoginControls.SpectateButton'
 
      LeaveMPButtonText="Disconnect"
-     LeaveSPButtonText="Forfeit"
+     LeaveSPButtonText="Exit Match"
      SpectateButtonText="Spectate"
      JoinGameButtonText="Join"
      ContextItems(0)="Unignore text"

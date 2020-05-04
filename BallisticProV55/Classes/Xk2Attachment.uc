@@ -49,4 +49,7 @@ defaultproperties
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.Xk2_TP'
      DrawScale=0.125000
+	 Skins(0)=Texture'BallisticWeapons2.XK2.XK2Skin'
+	 Skins(1)=Texture'BallisticWeapons2.XK2.XK2Skin'
+	 Skins(2)=Texture'BallisticWeapons2.XK2.XK2Skin'
 }

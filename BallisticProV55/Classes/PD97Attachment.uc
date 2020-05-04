@@ -32,5 +32,9 @@ defaultproperties
      ReloadAnimRate=1.70000
      Mesh=SkeletalMesh'BallisticAnims1.Bloodhound_TP'
      RelativeLocation=(Z=11.000000)
-     DrawScale=0.150000	 
+     DrawScale=0.150000	
+	 Skins(0)=Texture'BallisticWeapons1.Bloodhound.BloodhoundMain'
+	 Skins(1)=Texture'BallisticWeapons1.Bloodhound.BloodhoundAmmo'
+	 Skins(2)=Texture'BallisticWeapons1.Bloodhound.BloodhoundAcc'
+	 Skins(3)=Shader'BallisticWeapons1.General.RedDotSightShader'
 }

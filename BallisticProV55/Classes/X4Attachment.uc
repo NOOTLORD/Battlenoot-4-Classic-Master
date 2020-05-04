@@ -26,4 +26,5 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims1.X4_TP'
      DrawScale=0.125000
+	 Skins(0)=Texture'BallisticWeapons1.X4.X4_Main'	 
 }

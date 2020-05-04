@@ -33,4 +33,9 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.M50_TP'
      DrawScale=0.160000
+	 Skins(0)=Texture'BallisticWeapons2.M50.M50SkinA'
+	 Skins(1)=Texture'BallisticWeapons2.M50.M50SkinB'
+	 Skins(2)=Texture'BN4misc.Albedo.Placeholder_albedo
+	 Skins(3)=Texture'BallisticWeapons2.M50.M50Laser'
+	 Skins(4)=Texture'BallisticWeapons2.M50.M50Gren'
 }

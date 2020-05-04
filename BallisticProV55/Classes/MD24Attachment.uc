@@ -14,8 +14,8 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashMode=MU_Primary  
      FlashScale=0.200000
-     LightMode=MU_Primary
      FlashBone="Muzzle"	 
+	 LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassMode=MU_Primary
@@ -35,5 +35,7 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims1.MD24_TP'
      DrawScale=0.250000
+	 Skins(0)=Texture'BallisticWeapons1.MD24.MD24_Main'
+	 Skins(1)=Texture'BallisticWeapons1.MD24.MD24_Clip'
 }
 

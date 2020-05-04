@@ -321,7 +321,7 @@ defaultproperties
      ImageFrame=Texture'2K4Menus.Controls.sectionback'
      LeaderFrame=FinalBlend'InterfaceContent.Menu.CharFrame_Final'
      CharFrame=FinalBlend'InterfaceContent.Menu.CharFrame_Final'
-     MysteryPlayer=Texture'PlayerPictures.cDefault'
+     MysteryPlayer=Texture'PlayerSkins.cDefault'
      White=(B=255,G=255,R=255,A=255)
      Yellow=(G=255,R=255,A=255)
      Blue=(B=255,G=64,R=64,A=255)

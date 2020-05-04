@@ -2092,7 +2092,6 @@ simulated function bool CheckValidFemaleDefault()
 simulated function bool CheckValidMaleDefault()
 {
 	return ( (PlacedCharacterName ~= "Jakob")
-			|| (PlacedCharacterName ~= "Gorge")
 			|| (PlacedCharacterName ~= "Malcolm")
 			|| (PlacedCharacterName ~= "Xan")
 			|| (PlacedCharacterName ~= "Brock")
@@ -2567,8 +2566,8 @@ defaultproperties
      LODBias=1.800000
      Texture=Texture'XEffects.RedMarker_t'
      PrePivot=(Z=-5.000000)
-     Skins(0)=Texture'DemoPlayerSkins.Jakob_Body'
-     Skins(1)=Texture'DemoPlayerSkins.Jakob_NewHead'
+     Skins(0)=Texture'PlayerSkins.Jakob_Body'
+     Skins(1)=Texture'PlayerSkins.Jakob_NewHead'
      MaxLights=8
      CollisionRadius=25.000000
      CollisionHeight=44.000000

@@ -132,19 +132,16 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
+     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      SilencerBone="Silencer"
      SilencerOnAnim="SilencerOn"
      SilencerOffAnim="SilencerOff"
      SilencerOnSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOn'
      SilencerOffSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOff'
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SRS600'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
-     ManualLines(0)="High-powered battle rifle fire. Long range, good penetration and high per-shot damage. Recoil is significant."
-     ManualLines(1)="Attaches a suppressor. This reduces the recoil, but also the effective range. The flash is removed and the gunfire becomes less audible."
-     ManualLines(2)="Effective at medium to long range."
      SpecialInfo(0)=(Info="240.0;20.0;0.9;75.0;1.0;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.375000)
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.375000)
@@ -156,7 +153,7 @@ defaultproperties
      ClipInSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipIn',Volume=0.875000)
      ClipInFrame=0.650000
      bCockOnEmpty=True	 
-     WeaponModes(0)=(ModeName="Semi-Automatic",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
@@ -185,15 +182,14 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.80000
      CurrentRating=0.80000
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_SRS600_Rifle'	
      AmmoClass(1)=Class'BallisticProV55.Ammo_SRS600_Rifle'		 
-     Description="Another battlefield favourite produced by high-tech manufacturer, NDTR Industries, the SRS-900 is indeed a fine weapon. Using high velocity 7.62mm ammunition, this rifle causes a lot of damage to the target, but suffers from high recoil, chaos and a low clip capacity. The altered design, can now incorporate a silencer to the end of the barrel, increasing its capabilities as a stealth weapon. This particular model, also features a versatile, red-filter scope, complete with various tactical readouts and indicators, including a range finder, stability metre, elevation indicator, ammo display and stealth meter."
+     Description="SRS-600 Rifle"
      Priority=40
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000								  
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=4	
+     InventoryGroup=1	
      GroupOffset=6	 
      PlayerViewOffset=(X=5.000000,Y=8.500000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
@@ -209,4 +205,10 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.SRS600_FP'
      DrawScale=0.500000
      AmbientGlow=5
+     Skins(0)=Texture'BallisticWeapons1.SRS600.SRS-600main'
+     Skins(1)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
+     Skins(2)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
+     Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(4)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
+	 Skins(5)=Shader'BallisticWeapons1.SRS600.SRS-SelfIllum'	 
 }
