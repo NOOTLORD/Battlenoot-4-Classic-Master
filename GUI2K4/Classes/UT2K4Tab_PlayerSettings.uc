@@ -28,7 +28,6 @@ var automated GUIImage	i_Portrait;
 var automated GUIButton	b_Left, b_Right, b_Pick, b_3DView, b_DropTarget;
 var automated GUIScrollTextBox	lb_Scroll;
 var automated moEditBox		ed_Name;
-var automated moCheckBox	ch_SmallWeaps;
 var automated moComboBox	co_Team, co_Hand, co_Voice;
 var automated moNumericEdit	nu_FOV;
 var automated GUILabel lbl_ModelName;
@@ -39,7 +38,6 @@ var array<class<xVoicePack> > VoiceClasses;
 
 var() string	sChar, sName, sNameD, sCharD, sVoice, sVoiceD;
 var() int		iTeam, iHand, iFOV, iTeamD, iHandD, iFOVD;
-var() bool	bWeaps, bWeapsD;
 var() int		nfov;
 var() xUtil.PlayerRecord PlayerRec;
 var() int YawValue;
@@ -84,7 +82,6 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
     co_SkinPreview.AddItem(Previews[2]);
 
 	i_BG2.Managecomponent(ed_Name);
-    i_BG2.Managecomponent(ch_SmallWeaps);
     i_BG2.Managecomponent(co_Team);
     i_BG2.Managecomponent(co_Hand);
     i_BG2.Managecomponent(co_Voice);
@@ -174,13 +171,6 @@ function SaveSettings()
 	if (iTeam == 255)
 		iTeam = 2;
 
-	if (bWeapsD != bWeaps)
-	{
-		bWeapsD = bWeaps;
-		PC.bSmallWeapons = bWeaps;
-		bSave = True;
-	}
-
 	if (iHandD != iHand)
 	{
 		iHandD = iHand;
@@ -240,7 +230,6 @@ function ResetClicked()
 
 
 	class'Controller'.static.ResetConfig("Handedness");
-	class'PlayerController'.static.ResetConfig("bSmallWeapons");
 	class'PlayerController'.static.ResetConfig("DefaultFOV");
 
 	bTemp = Controller.bCurMenuInitialized;
@@ -289,12 +278,6 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 			sVoiceD = sVoice;
 			break;
 
-		case ch_SmallWeaps:
-			bWeaps = PC.bSmallWeapons;
-			bWeapsD = bWeaps;
-			ch_SmallWeaps.Checked(bWeaps);
-			break;
-
 		case co_Hand:
 			iHand = PC.Handedness + 1;
 			iHandD = iHand;
@@ -337,11 +320,7 @@ function InternalOnChange(GUIComponent Sender)
 		case co_Team:
 			iTeam = co_Team.GetIndex();
 			break;
-
-		case ch_SmallWeaps:
-			bWeaps = ch_SmallWeaps.IsChecked();
-			break;
-
+			
 		case co_Hand:
 			iHand = co_Hand.GetIndex();
 			break;
@@ -846,21 +825,6 @@ defaultproperties
          OnLoadINI=UT2K4Tab_PlayerSettings.InternalOnLoadINI
      End Object
      ed_Name=moEditBox'GUI2K4.UT2K4Tab_PlayerSettings.PlayerName'
-
-     Begin Object Class=moCheckBox Name=PlayerSmallWeap
-         CaptionWidth=0.940000
-         Caption="Small Weapons"
-         OnCreateComponent=PlayerSmallWeap.InternalOnCreateComponent
-         IniOption="@Internal"
-         IniDefault="False"
-         Hint="Makes your first person weapon smaller."
-         WinTop=0.150261
-         WinLeft=0.705430
-         WinWidth=0.266797
-         TabOrder=8
-         OnLoadINI=UT2K4Tab_PlayerSettings.InternalOnLoadINI
-     End Object
-     ch_SmallWeaps=moCheckBox'GUI2K4.UT2K4Tab_PlayerSettings.PlayerSmallWeap'
 
      Begin Object Class=moComboBox Name=PlayerTeam
          bReadOnly=True

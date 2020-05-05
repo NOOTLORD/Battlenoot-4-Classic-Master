@@ -12,14 +12,14 @@ var automated GUISectionBackground i_BG1, i_BG2;
 var automated GUIImage	i_Scale, i_PreviewBG, i_Preview;
 var automated moSlider	sl_Scale, sl_Opacity, sl_Red, sl_Green, sl_Blue;
 var automated moNumericEdit	nu_MsgCount, nu_MsgScale, nu_MsgOffset;
-var automated moCheckBox	ch_Visible, ch_Weapons, ch_Personal, ch_Score, ch_WeaponBar,
-							ch_Portraits,  ch_VCPortraits, ch_DeathMsgs, ch_EnemyNames, ch_CustomColor;
+var automated moCheckBox	ch_Visible, ch_Weapons, ch_Personal, ch_Score,
+							ch_DeathMsgs, ch_EnemyNames, ch_CustomColor;
 
 
 var automated GUIComboBox co_CustomHUD;
 var automated GUIButton b_CustomHUD;
 
-var() bool bVis, bWeapons, bPersonal, bScore, bPortraits, bVCPortraits, bNames, bCustomColor, bNoMsgs, bWeaponBar;
+var() bool bVis, bWeapons, bPersonal, bScore, bNames, bCustomColor, bNoMsgs;
 var() int iCount, iScale, iOffset;
 var() float fScale, fOpacity;
 var() color cCustom;
@@ -49,12 +49,9 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 
 	i_BG1.ManageComponent(ch_Visible);
     i_BG1.ManageComponent(ch_EnemyNames);
-    i_BG1.ManageComponent(ch_WeaponBar);
     i_BG1.ManageComponent(ch_Weapons);
     i_BG1.ManageComponent(ch_Personal);
     i_BG1.ManageComponent(ch_Score);
-    i_BG1.ManageComponent(ch_Portraits);
-    i_BG1.ManageComponent(ch_VCPortraits);
     i_BG1.ManageComponent(ch_DeathMsgs);
     i_BG1.ManageComponent(nu_MsgCount);
     i_BG1.ManageComponent(nu_MsgScale);
@@ -109,17 +106,7 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 		bScore = H.bShowPoints;
 		ch_Score.SetComponentValue(bScore,true);
 		break;
-
-	case ch_WeaponBar:
-		bWeaponBar = H.bShowWeaponBar;
-		ch_WeaponBar.SetComponentValue(bWeaponBar,true);
-		break;
-
-	case ch_Portraits:
-		bPortraits = H.bShowPortrait;
-		ch_Portraits.SetComponentValue(bPortraits,true);
-		break;
-
+		
 	case ch_EnemyNames:
 		bNames = !H.bNoEnemyNames;
 		ch_EnemyNames.SetComponentValue(bNames,true);
@@ -144,11 +131,6 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 		bCustomColor = UsingCustomColor();
 		ch_CustomColor.SetComponentValue(bCustomColor,true);
 		InitializeHUDColor();
-		break;
-
-	case ch_VCPortraits:
-		bVCPortraits = H.bShowPortraitVC;
-		ch_VCPortraits.SetComponentValue(bVCPortraits,true);
 		break;
 
 	default:
@@ -245,24 +227,6 @@ function SaveSettings()
 		bSave = True;
 	}
 
-	if ( H.bShowWeaponBar != bWeaponBar)
-	{
-		H.bShowWeaponBar = bWeaponBar;
-		bSave = True;
-	}
-
-	if ( H.bShowPortrait != bPortraits )
-	{
-		H.bShowPortrait = bPortraits;
-		bSave = True;
-	}
-
-	if ( H.bShowPortraitVC != bVCPortraits )
-	{
-		H.bShowPortraitVC = bVCPortraits;
-		bSave = True;
-	}
-
 	if ( H.bNoEnemyNames == bNames )
 	{
 		H.bNoEnemyNames = !bNames;
@@ -330,9 +294,6 @@ function ResetClicked()
 	class'HUD'.static.ResetConfig("bShowWeaponInfo");
 	class'HUD'.static.ResetConfig("bShowPersonalInfo");
 	class'HUD'.static.ResetConfig("bShowPoints");
-	class'HUD'.static.ResetConfig("bShowWeaponBar");
-	class'HUD'.static.ResetConfig("bShowPortrait");
-	class'HUD'.static.ResetConfig("bShowPortraitVC");
 	class'HUD'.static.ResetConfig("bNoEnemyNames");
 	class'HUD'.static.ResetConfig("ConsoleMessageCount");
 	class'HUD'.static.ResetConfig("ConsoleFontSize");
@@ -413,22 +374,10 @@ function InternalOnChange(GUIComponent Sender)
 	case ch_Score:
 		bScore = ch_Score.IsChecked();
 		break;
-
-	case ch_WeaponBar:
-		bWeaponBar = ch_WeaponBar.IsChecked();
-		break;
-
+		
     case ch_DeathMsgs:
         bNoMsgs = ch_DeathMsgs.IsChecked();
         break;
-
-	case ch_Portraits:
-		bPortraits = ch_Portraits.IsChecked();
-		break;
-
-	case ch_VCPortraits:
-		bVCPortraits = ch_VCPortraits.IsChecked();
-		break;
 
 	case ch_EnemyNames:
 		bNames = ch_EnemyNames.IsChecked();
@@ -792,54 +741,6 @@ defaultproperties
          OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
      End Object
      ch_Score=moCheckBox'GUI2K4.UT2K4Tab_HudSettings.GameHudShowScore'
-
-     Begin Object Class=moCheckBox Name=GameHudShowWeaponBar
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.900000
-         Caption="Weapon Bar"
-         OnCreateComponent=GameHudShowWeaponBar.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Select whether the weapons bar should appear on the HUD"
-         WinTop=0.598593
-         WinLeft=0.050000
-         WinWidth=0.378125
-         TabOrder=2
-         OnChange=UT2K4Tab_HudSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
-     End Object
-     ch_WeaponBar=moCheckBox'GUI2K4.UT2K4Tab_HudSettings.GameHudShowWeaponBar'
-
-     Begin Object Class=moCheckBox Name=GameHudShowPortraits
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.900000
-         Caption="Show Portraits"
-         OnCreateComponent=GameHudShowPortraits.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Display player portraits when text messages are received"
-         WinTop=0.723594
-         WinLeft=0.050000
-         WinWidth=0.378125
-         TabOrder=6
-         OnChange=UT2K4Tab_HudSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
-     End Object
-     ch_Portraits=moCheckBox'GUI2K4.UT2K4Tab_HudSettings.GameHudShowPortraits'
-
-     Begin Object Class=moCheckBox Name=GameHUDShowVCPortraits
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.900000
-         Caption="Show VoIP Portraits"
-         OnCreateComponent=GameHUDShowVCPortraits.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Display player portraits when voice chat messages are received"
-         WinTop=0.723594
-         WinLeft=0.050000
-         WinWidth=0.378125
-         TabOrder=7
-         OnChange=UT2K4Tab_HudSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
-     End Object
-     ch_VCPortraits=moCheckBox'GUI2K4.UT2K4Tab_HudSettings.GameHUDShowVCPortraits'
 
      Begin Object Class=moCheckBox Name=GameDeathMsgs
          ComponentJustification=TXTA_Left

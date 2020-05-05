@@ -179,13 +179,8 @@ defaultproperties
      DroppedRed="dropped the red flag!"
      HasBlue="took the blue flag!"
      HasRed="took the red flag!"
-     Riffs(0)=Sound'GameSounds.Fanfares.UT2K3Fanfare01'
-     Riffs(1)=Sound'GameSounds.Fanfares.UT2K3Fanfare04'
-     Riffs(2)=Sound'GameSounds.Fanfares.UT2K3Fanfare06'
      ReturnSoundNames(0)="Red_Flag_Returned"
      ReturnSoundNames(1)="Blue_Flag_Returned"
-     DroppedSoundNames(0)="Red_Flag_Dropped"
-     DroppedSoundNames(1)="Blue_Flag_Dropped"
      TakenSoundNames(0)="Red_Flag_Taken"
      TakenSoundNames(1)="Blue_Flag_Taken"
      StackMode=SM_Down

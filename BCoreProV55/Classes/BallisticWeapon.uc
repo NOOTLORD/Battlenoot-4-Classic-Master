@@ -4199,25 +4199,14 @@ simulated function NewDrawWeaponInfo(Canvas C, float YPos)
 	{
 		Temp = GetHUDAmmoText(0);
 		if (Temp == "0")
-			C.DrawColor = class'hud'.default.RedColor;
+			C.DrawColor = class'hud'.default.WhiteColor;
 		C.TextSize(Temp, XL, YL);
 		C.CurX = C.ClipX - 20 * ScaleFactor * class'HUD'.default.HudScale - XL;
 		C.CurY = C.ClipY - 120 * ScaleFactor * class'HUD'.default.HudScale - YL;
 		C.DrawText(Temp, false);
 		C.DrawColor = class'hud'.default.WhiteColor;
 	}
-	if (Ammo[1] != None && Ammo[1] != Ammo[0])
-	{
-		Temp = GetHUDAmmoText(1);
-		if (Temp == "0")
-			C.DrawColor = class'hud'.default.RedColor;
-		C.TextSize(Temp, XL, YL);
-		C.CurX = C.ClipX - 160 * ScaleFactor * class'HUD'.default.HudScale - XL;
-		C.CurY = C.ClipY - 120 * ScaleFactor * class'HUD'.default.HudScale - YL;
-		C.DrawText(Temp, false);
-		C.DrawColor = class'hud'.default.WhiteColor;
-	}
-
+	
 	if (CurrentWeaponMode < WeaponModes.length && !WeaponModes[CurrentWeaponMode].bUnavailable && WeaponModes[CurrentWeaponMode].ModeName != "")
 	{
 		C.Font = GetFontSizeIndex(C, -3 + int(2 * class'HUD'.default.HudScale));

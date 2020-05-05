@@ -18,17 +18,15 @@ var localized string	AudioModes[4],
 						AnnounceModes[3];
 
 
-var automated GUISectionBackground	i_BG1, i_BG2, i_BG3;
-var automated moSlider		sl_MusicVol, sl_EffectsVol, sl_VoiceVol, sl_TTS;
+var automated GUISectionBackground	i_BG1, i_BG2;
+var automated moSlider		sl_MusicVol, sl_EffectsVol, sl_VoiceVol;
 var automated moComboBox	co_Mode, co_Voices, co_Announce, co_RewardAnnouncer, co_StatusAnnouncer;
-var automated moCheckbox 	ch_ReverseStereo, ch_MessageBeep, ch_AutoTaunt, ch_TTSIRC, ch_OnlyTeamTTS,
-							ch_MatureTaunts, ch_LowDetail, ch_Default, ch_TTS, ch_VoiceChat;
-var automated moButton      b_VoiceChat;
+var automated moCheckbox 	ch_AutoTaunt, ch_MatureTaunts, ch_Default;
 
-var float	fMusic, fEffects, fTTS;
+var float	fMusic, fEffects;
 var int		iVoice, iMode, iVoiceMode, iAnnounce;
 var string	sStatAnnouncer, sRewAnnouncer;
-var bool	bRev, bBeep, bAuto, bMature, bLow, bCompat, b3DSound, bEAX, bDefault, bTTS, bTTSIRC, bOnlyTeamTTS, bVoiceChat;
+var bool	bAuto, bMature, bCompat, b3DSound, bEAX, bDefault;
 
 function InitComponent(GUIController MyController, GUIComponent MyOwner)
 {
@@ -60,31 +58,16 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 	i_BG2.WinLeft=0.004063;
 	i_BG2.WinTop=0.540831;
 
-	i_BG3.WinWidth=0.475078;
-	i_BG3.WinHeight=0.453045;
-	i_BG3.WinLeft=0.518712;
-	i_BG3.WinTop=0.540831;
-
 	i_BG1.ManageComponent(sl_MusicVol);
 	i_BG1.ManageComponent(sl_EffectsVol);
 	i_BG1.ManageComponent(co_Mode);
-	i_BG1.ManageComponent(ch_LowDetail);
 	i_BG1.ManageComponent(ch_Default);
-	i_BG1.ManageComponent(ch_reverseStereo);
 	i_BG1.ManageComponent(co_Voices);
 	i_BG1.ManageComponent(ch_MatureTaunts);
 	i_BG1.ManageComponent(ch_AutoTaunt);
-	i_BG1.ManageComponent(ch_MessageBeep);
 
 	i_BG2.ManageComponent(sl_VoiceVol);
 	i_BG2.ManageComponent(co_Announce);
-
-//	i_BG3.ManageComponent(sl_TTS);
-	i_BG3.ManageComponent(ch_TTS);
-	i_BG3.ManageComponent(ch_TTSIRC);
-	i_BG3.ManageComponent(ch_OnlyTeamTTS);
-	i_BG3.ManageComponent(ch_VoiceChat);
-	i_BG3.ManageComponent(b_VoiceChat);
 
 	i_BG2.ManageComponent(co_StatusAnnouncer);
 	i_BG2.ManageComponent(co_RewardAnnouncer);
@@ -119,19 +102,12 @@ function ResetClicked()
 	A = class<AudioSubSystem>(DynamicLoadObject(GetNativeClassName("Engine.Engine.AudioDevice"), Class'Class'));
 	A.static.ResetConfig();
 
-	class'Hud'.static.ResetConfig("bMessageBeep");
-	class'LevelInfo'.static.ResetConfig("bLowSoundDetail");
-
 	class'PlayerController'.static.ResetConfig("bAutoTaunt");
 	class'PlayerController'.static.ResetConfig("bNoMatureLanguage");
 	class'PlayerController'.static.ResetConfig("bNoAutoTaunts");
 	class'PlayerController'.static.ResetConfig("bNoVoiceTaunts");
 	class'PlayerController'.static.ResetConfig("bNoVoiceMessages");
 	class'PlayerController'.static.ResetConfig("AnnouncerLevel");
-	class'PlayerController'.static.ResetConfig("bNoTextToSpeechVoiceMessages");
-//	class'PlayerController'.static.ResetConfig("TextToSpeechVoiceVolume");
-	class'PlayerController'.static.ResetConfig("bOnlySpeakTeamText");
-	class'UT2K4IRC_Page'.static.ResetConfig("bIRCTextToSpeechEnabled");
 
 	UnrealPlayerClass = class(DynamicLoadObject("UnrealGame.UnrealPlayer",class'Class'));
 	if ( UnrealPlayerClass != None )
@@ -168,12 +144,7 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 		fEffects = float(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice SoundVolume"));
 		sl_EffectsVol.SetComponentValue(fEffects,true);
 		break;
-/*
-	case sl_TTS:
-		fTTS = PC.TextToSpeechVoiceVolume;
-		sl_TTS.SetComponentValue(fTTS,true);
-		break;
-*/
+
 	case co_Mode:
 		iMode = 1;
 		bIsWin32 = ( ( PlatformIsWindows() ) && ( !PlatformIs64Bit() ) );
@@ -205,12 +176,7 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 		}
 		co_Mode.SilentSetIndex(iMode);
 		break;
-
-	case ch_ReverseStereo:
-		bRev = bool(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice ReverseStereo"));
-		ch_ReverseStereo.SetComponentValue(bRev,true);
-		break;
-
+		
 	case ch_Default:
 		bDefault = bool(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice UseDefaultDriver"));
 		ch_Default.SetComponentValue(bDefault,true);
@@ -223,48 +189,14 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 		co_Voices.SilentSetIndex(iVoiceMode);
 		break;
 
-	case ch_MessageBeep:
-		bBeep = class'HUD'.default.bMessageBeep;
-		ch_MessageBeep.SetComponentValue(bBeep,true);
-		break;
-
 	case ch_AutoTaunt:
 		bAuto = PC.bAutoTaunt;
 		ch_AutoTaunt.SetComponentValue(bAuto,true);
 		break;
 
-	case ch_TTS:
-		bTTS = !PC.bNoTextToSpeechVoiceMessages;
-		ch_TTS.SetComponentValue(bTTS,true);
-		break;
-
-	case ch_OnlyTeamTTS:
-		bOnlyTeamTTS = PC.bOnlySpeakTeamText;
-		ch_OnlyTeamTTs.SetComponentValue(bOnlyTeamTTS,True);
-		break;
-
 	case ch_MatureTaunts:
 		bMature = !PC.bNoMatureLanguage;
 		ch_MatureTaunts.SetComponentValue(bMature,true);
-		break;
-
-	case ch_LowDetail:
-		bLow = PC.Level.bLowSoundDetail;
-
-		// Make sure both are the same - LevelInfo.bLowSoundDetail take priority
-		if ( bLow != bool(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice LowQualitySound" )) )
-		{
-			PC.ConsoleCommand("set ini:Engine.Engine.AudioDevice LowQualitySound"@bLow);
-			PC.ConsoleCommand("SOUND_REBOOT");
-
-			// Restart music.
-			if( PC.Level.Song != "" && PC.Level.Song != "None" )
-				PC.ClientSetMusic( PC.Level.Song, MTRAN_Instant );
-
-			else PC.ClientSetMusic( class'UT2K4MainMenu'.default.MenuSong, MTRAN_Instant );
-		}
-
-		ch_LowDetail.SetComponentValue(bLow,true);
 		break;
 
 	case co_Announce:
@@ -301,16 +233,6 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 				co_RewardAnnouncer.SilentSetIndex(i);
 		}
 
-		break;
-
-	case ch_TTSIRC:
-		bTTSIRC = class'UT2K4IRC_Page'.default.bIRCTextToSpeechEnabled;
-		ch_TTSIRC.SetComponentValue(bTTSIRC,true);
-		break;
-
-	case ch_VoiceChat:
-		bVoiceChat = bool(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice UseVoIP"));
-		ch_VoiceChat.SetComponentValue(bVoiceChat,true);
 		break;
 
 	default:
@@ -371,13 +293,7 @@ function InternalOnChange(GUIComponent Sender)
 			PC.ConsoleCommand("stopsounds");
 			PC.PlaySound(sound'PickupSounds.AdrenelinPickup');
 			break;
-/*
-		case sl_TTS:
-			fTTS = sl_TTS.GetValue();
-		// Do not preview TTS voice volume, since there isn't any way to truly represent the way it will sound in-game
-//				PC.TextToSpeech( "Fo Shizzle my nizzle", fTTS );
-			break;
-*/
+
 		case co_Mode:
 			if ( !bIsWin32 )  // Simple OpenAL abstraction...  --ryan.
 				break;
@@ -400,20 +316,8 @@ function InternalOnChange(GUIComponent Sender)
 			else PC.ClientSetMusic( class'UT2K4MainMenu'.default.MenuSong, MTRAN_Instant );
 			break;
 
-		case ch_ReverseStereo:
-			bRev = ch_ReverseStereo.IsChecked();
-			break;
-
-		case ch_MessageBeep:
-			bBeep = ch_MessageBeep.IsChecked();
-			break;
-
 		case ch_AutoTaunt:
 			bAuto = ch_AutoTaunt.IsChecked();
-			break;
-
-		case ch_TTS:
-			bTTS = ch_TTS.IsChecked();
 			break;
 
 		case ch_MatureTaunts:
@@ -428,21 +332,6 @@ function InternalOnChange(GUIComponent Sender)
 			bDefault = ch_Default.IsChecked();
 			PC.ConsoleCommand("set ini:Engine.Engine.AudioDevice UseDefaultDriver"@bDefault);
 			PC.ConsoleCommand("SOUND_REBOOT");
-			break;
-
-		case ch_LowDetail:
-			bLow = ch_LowDetail.IsChecked();
-
-			PC.Level.bLowSoundDetail = bLow;
-			PC.Level.StaticSaveConfig();
-
-			PC.ConsoleCommand("set ini:Engine.Engine.AudioDevice LowQualitySound"@bLow);
-			PC.ConsoleCommand("SOUND_REBOOT");
-
-			// Restart music.
-			if( PC.Level.Song != "" && PC.Level.Song != "None" )
-				PC.ClientSetMusic( PC.Level.Song, MTRAN_Instant );
-			else PC.ClientSetMusic( class'UT2K4MainMenu'.default.MenuSong, MTRAN_Instant );
 			break;
 
 		case co_Announce:
@@ -482,18 +371,6 @@ function InternalOnChange(GUIComponent Sender)
 			}
 			PC.PlaySound(snd,SLOT_Talk,AnnouncerVol);
 			break;
-
-		case ch_TTSIRC:
-			bTTSIRC = ch_TTSIRC.IsChecked();
-			break;
-
-		case ch_VoiceChat:
-			bVoiceChat = ch_VoiceChat.IsChecked();
-			break;
-
-		case ch_OnlyTeamTTS:
-			bOnlyTeamTTS = ch_OnlyTeamTTS.IsChecked();
-			break;
 	}
 }
 
@@ -517,30 +394,6 @@ function SaveSettings()
 		PC.AnnouncerVolume = iVoice;
 		PC.default.AnnouncerVolume = iVoice;
 		bSave = True;
-	}
-
-/*	if ( PC.TextToSpeechVoiceVolume != fTTS )
-	{
-		PC.TextToSpeechVoiceVolume = fTTS;
-		bSave = True;
-	}
-*/
-	if ( PC.bOnlySpeakTeamText != bOnlyTeamTTS )
-	{
-		PC.bOnlySpeakTeamText = bOnlyTeamTTS;
-		bSave = True;
-	}
-
-	if ( PC.bNoTextToSpeechVoiceMessages == bTTS )
-	{
-		PC.bNoTextToSpeechVoiceMessages = !bTTS;
-		bSave = True;
-	}
-
-	if ( class'UT2K4IRC_Page'.default.bIRCTextToSpeechEnabled != bTTSIRC )
-	{
-		class'UT2K4IRC_Page'.default.bIRCTextToSpeechEnabled = bTTSIRC;
-		class'UT2K4IRC_Page'.static.StaticSaveConfig();
 	}
 
 	if (PC.bNoMatureLanguage == bMature)
@@ -577,31 +430,10 @@ function SaveSettings()
 	if (fEffects != sl_EffectsVol.GetValue())
 		PC.ConsoleCommand("set ini:Engine.Engine.AudioDevice SoundVolume"@fEffects);
 
-	if (bool(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice ReverseStereo")) != bRev)
-		PC.ConsoleCommand("set ini:Engine.Engine.AudioDevice ReverseStereo"@bRev);
-
 	if (bDefault != bool(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice UseDefaultDriver")))
 	{
 		PC.ConsoleCommand("set ini:Engine.Engine.AudioDevice UseDefaultDriver"@bDefault);
 		bReboot = True;
-	}
-
-	if( PC.MyHud != None )
-	{
-		if ( PC.myHUD.bMessageBeep != bBeep )
-		{
-			PC.myHUD.bMessageBeep = bBeep;
-			PC.myHUD.SaveConfig();
-		}
-	}
-
-	else
-	{
-		if ( class'HUD'.default.bMessageBeep != bBeep )
-		{
-			class'HUD'.default.bMessageBeep = bBeep;
-			class'HUD'.static.StaticSaveConfig();
-		}
 	}
 
     if ( !PC.Level.IsDemoBuild() && PC.IsA('UnrealPlayer') )
@@ -618,15 +450,6 @@ function SaveSettings()
     		bSave = True;
     	}
     }
-
-	if (bVoiceChat != bool(PC.ConsoleCommand("get ini:Engine.Engine.AudioDevice UseVoIP")))
-	{
-		if (bVoiceChat)
-			PC.EnableVoiceChat();
-		else PC.DisableVoiceChat();
-
-		bReboot = False;
-	}
 
 	if (bSave)
 		PC.SaveConfig();
@@ -712,16 +535,6 @@ defaultproperties
          OnPreDraw=AudioBK2.InternalPreDraw
      End Object
      i_BG2=GUISectionBackground'GUI2K4.UT2K4Tab_AudioSettings.AudioBK2'
-
-     Begin Object Class=GUISectionBackground Name=AudioBK3
-         Caption="Text To Speech"
-         WinTop=0.004372
-         WinLeft=0.004063
-         WinWidth=0.987773
-         WinHeight=0.517498
-         OnPreDraw=AudioBK3.InternalPreDraw
-     End Object
-     i_BG3=GUISectionBackground'GUI2K4.UT2K4Tab_AudioSettings.AudioBK3'
 
      Begin Object Class=moSlider Name=AudioMusicVolume
          MaxValue=1.000000
@@ -853,40 +666,6 @@ defaultproperties
      End Object
      co_StatusAnnouncer=moComboBox'GUI2K4.UT2K4Tab_AudioSettings.AudioStatusAnnouncer'
 
-     Begin Object Class=moCheckBox Name=AudioReverseStereo
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="Reverse Stereo"
-         OnCreateComponent=AudioReverseStereo.InternalOnCreateComponent
-         IniOption="@Internal"
-         IniDefault="False"
-         Hint="Reverses the left and right audio channels."
-         WinTop=0.405678
-         WinLeft=0.018164
-         WinWidth=0.450000
-         TabOrder=4
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_ReverseStereo=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.AudioReverseStereo'
-
-     Begin Object Class=moCheckBox Name=AudioMessageBeep
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="Message Beep"
-         OnCreateComponent=AudioMessageBeep.InternalOnCreateComponent
-         IniOption="@Internal"
-         IniDefault="True"
-         Hint="Enables a beep when receiving a text message from other players."
-         WinTop=0.405678
-         WinLeft=0.524024
-         WinWidth=0.450000
-         TabOrder=9
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_MessageBeep=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.AudioMessageBeep'
-
      Begin Object Class=moCheckBox Name=AudioAutoTaunt
          ComponentJustification=TXTA_Left
          CaptionWidth=0.940000
@@ -904,38 +683,6 @@ defaultproperties
      End Object
      ch_AutoTaunt=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.AudioAutoTaunt'
 
-     Begin Object Class=moCheckBox Name=IRCTextToSpeech
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="Enable on IRC"
-         OnCreateComponent=IRCTextToSpeech.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Enables Text-To-Speech processing in the IRC client (only messages from active tab is processed)"
-         WinTop=0.755462
-         WinLeft=0.527734
-         WinWidth=0.461134
-         TabOrder=16
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_TTSIRC=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.IRCTextToSpeech'
-
-     Begin Object Class=moCheckBox Name=OnlyTeamTTSCheck
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="Team Messages Only"
-         OnCreateComponent=OnlyTeamTTSCheck.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="If enabled, only team messages will be spoken in team games, unless the match or round is over."
-         WinTop=0.755462
-         WinLeft=0.527734
-         WinWidth=0.461134
-         TabOrder=17
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_OnlyTeamTTS=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.OnlyTeamTTSCheck'
-
      Begin Object Class=moCheckBox Name=AudioMatureTaunts
          ComponentJustification=TXTA_Left
          CaptionWidth=0.940000
@@ -952,88 +699,6 @@ defaultproperties
          OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
      End Object
      ch_MatureTaunts=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.AudioMatureTaunts'
-
-     Begin Object Class=moCheckBox Name=AudioLowDetail
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="Low Sound Detail"
-         OnCreateComponent=AudioLowDetail.InternalOnCreateComponent
-         IniOption="@Internal"
-         IniDefault="False"
-         Hint="Lowers quality of sound."
-         WinTop=0.235052
-         WinLeft=0.018164
-         WinWidth=0.450000
-         TabOrder=2
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_LowDetail=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.AudioLowDetail'
-
-     Begin Object Class=moCheckBox Name=AudioDefaultDriver
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="System Driver"
-         OnCreateComponent=AudioDefaultDriver.InternalOnCreateComponent
-         IniOption="@Internal"
-         IniDefault="False"
-         Hint="Use system installed OpenAL driver"
-         WinTop=0.320365
-         WinLeft=0.018164
-         WinWidth=0.450000
-         TabOrder=3
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_Default=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.AudioDefaultDriver'
-
-     Begin Object Class=moCheckBox Name=AudioEnableTTS
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="Enable In Game"
-         OnCreateComponent=AudioEnableTTS.InternalOnCreateComponent
-         IniOption="@Internal"
-         IniDefault="False"
-         Hint="Enables Text-To-Speech message processing"
-         WinTop=0.685037
-         WinLeft=0.527734
-         WinWidth=0.461134
-         TabOrder=15
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_TTS=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.AudioEnableTTS'
-
-     Begin Object Class=moCheckBox Name=EnableVoiceChat
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.940000
-         Caption="Voice Chat"
-         OnCreateComponent=EnableVoiceChat.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Enables the voice chat system during online matches."
-         WinTop=0.834777
-         WinLeft=0.527734
-         WinWidth=0.461134
-         TabOrder=18
-         OnChange=UT2K4Tab_AudioSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_AudioSettings.InternalOnLoadINI
-     End Object
-     ch_VoiceChat=moCheckBox'GUI2K4.UT2K4Tab_AudioSettings.EnableVoiceChat'
-
-     Begin Object Class=moButton Name=VoiceOptions
-         ButtonCaption="Configure"
-         MenuTitle="Voice Chat Options"
-         MenuClass="GUI2K4.VoiceChatConfig"
-         CaptionWidth=0.500000
-         Caption="Voice Options"
-         OnCreateComponent=VoiceOptions.InternalOnCreateComponent
-         WinTop=0.909065
-         WinLeft=0.527734
-         WinWidth=0.461134
-         WinHeight=0.050000
-         TabOrder=19
-     End Object
-     b_VoiceChat=moButton'GUI2K4.UT2K4Tab_AudioSettings.VoiceOptions'
 
      PanelCaption="Audio"
      WinTop=0.150000

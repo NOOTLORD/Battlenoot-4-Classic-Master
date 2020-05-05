@@ -10,14 +10,12 @@ class UT2K4InternetSettingsPage extends MessageWindow;
 
 var automated GUIButton b_OK, b_Cancel;
 var automated moEditbox ed_PlayerName;
-var automated moComboBox co_Netspeed;
 
 function InitComponent(GUIController InController, GUIComponent InOwner)
 {
 	Super.InitComponent(InController, InOwner);
 
 	SetupPlayerName();
-	SetupNetspeedCombo();
 }
 
 function SetupPlayerName()
@@ -30,16 +28,6 @@ function SetupPlayerName()
 	if ( PC.PlayerReplicationInfo != None )
 		ed_PlayerName.SetText(PC.PlayerReplicationInfo.PlayerName);
 	else ed_PlayerName.SetText( PC.GetURLOption("Name") );
-}
-
-function SetupNetspeedCombo()
-{
-	local int i;
-
-	for ( i = 0; i < ArrayCount(class'UT2K4Tab_GameSettings'.default.NetspeedText); i++ )
-		co_Netspeed.AddItem( class'UT2K4Tab_GameSettings'.default.NetspeedText[i], , GetNetspeedValue(i) );
-
-	co_Netspeed.SetIndex( GetNetspeedIndex(class'Player'.default.ConfiguredInternetSpeed) );
 }
 
 function bool InternalOnClick( GUIComponent Sender )
@@ -61,7 +49,6 @@ event Closed( GUIComponent Sender, bool bCancelled )
 			NewName = "Player";
 
 		PlayerOwner().ConsoleCommand("SetName"@NewName);
-		PlayerOwner().ConsoleCommand("NetSpeed"@co_Netspeed.GetExtra());
 	}
 
 	Super.Closed(Sender,bCancelled);
@@ -129,20 +116,4 @@ defaultproperties
          bStandardized=False
      End Object
      ed_PlayerName=moEditBox'GUI2K4.UT2K4InternetSettingsPage.PlayerNameEditbox'
-
-     Begin Object Class=moComboBox Name=NetspeedComboBox
-         bReadOnly=True
-         bVerticalLayout=True
-         LabelJustification=TXTA_Center
-         ComponentJustification=TXTA_Center
-         Caption="Netspeed: "
-         OnCreateComponent=NetspeedComboBox.InternalOnCreateComponent
-         WinTop=0.401666
-         WinLeft=0.537500
-         WinWidth=0.341250
-         WinHeight=0.090000
-         bStandardized=False
-     End Object
-     co_Netspeed=moComboBox'GUI2K4.UT2K4InternetSettingsPage.NetspeedComboBox'
-
 }

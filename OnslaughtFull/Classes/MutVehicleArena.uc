@@ -50,10 +50,6 @@ static function FillPlayInfo(PlayInfo PlayInfo)
 		VehicleOptions $= VehicleClasses[i] $ ";" $ VehicleClasses[i].default.VehicleNameString;
 	}
 
-	if(class'GUI2K4.UT2K4SP_Main'.default.bEnableTC)
-		VehicleOptions $= ";" $ class'OnslaughtFull.ONSGenericSD' $ ";" $ class'OnslaughtFull.ONSGenericSD'.default.VehicleNameString;
-
-
 	PlayInfo.AddSetting(default.RulesGroup, "ArenaVehicleClassName", default.ArenaDisplayText, 0, 1, "Select", VehicleOptions);
 }
 
