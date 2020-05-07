@@ -141,8 +141,8 @@ defaultproperties
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
-     SightOffset=(X=-20.000000,Y=-7.400000,Z=45.300000)
-     SightDisplayFOV=40.000000
+     SightOffset=(X=-20.000000,Y=-7.400000,Z=41.000000)
+     SightDisplayFOV=60.000000
      SightingTime=0.200000
 	 SightZoomFactor=0
      GunLength=4.000000
@@ -185,7 +185,5 @@ defaultproperties
      AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
-	 Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc'
-	 Skins(3)=Texture'BallisticRecolorsTex.Eagle.Eagle-FrontSilver'
-	 Skins(4)=Shader'BallisticRecolorsTex.Eagle.Eagle-SightDotGreen'	 
+	 Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc' 
 }

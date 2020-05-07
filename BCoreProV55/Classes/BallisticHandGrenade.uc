@@ -307,33 +307,6 @@ simulated function Timer()
 		Super.Timer();
 }
 
-// Aim goes bad when player takes damage
-function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
-{
-	local float DF;
-	
-	if (bBerserk)
-		Damage *= 0.75;
-		
-	if (Level.TimeSeconds < ClipReleaseTime + FuseDelay)
-	{
-		DamageThisCook += Damage;
-		if (Damage >= DropThreshold)
-		{
-			HolderDied();
-			DamageThisCook = 0;
-		}
-	}
-		
-	if (AimKnockScale == 0)
-		return;
-
-	DF = FMin(1, (float(Damage)/AimDamageThreshold) * AimKnockScale);
-	ApplyDamageFactor(DF);
-	ClientPlayerDamaged(255*DF);
-	bForceReaim=true;
-}
-
 simulated function ClientStartReload(optional byte i)
 {
 	ClipReleaseTime = Level.TimeSeconds+0.2;
@@ -504,7 +477,7 @@ defaultproperties
      WeaponModes(0)=(ModeName="Auto Throw",ModeID="WM_None",Value=0.000000)
      WeaponModes(1)=(ModeName="Long Throw",ModeID="WM_None",Value=1.000000)
      WeaponModes(2)=(ModeName="Short Throw",ModeID="WM_None",Value=2.000000)
-     CurrentWeaponMode=1
+     CurrentWeaponMode=0
      bUseSights=False
      SightingTime=0.000000
      GunLength=0.000000

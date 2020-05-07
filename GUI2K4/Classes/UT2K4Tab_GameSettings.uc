@@ -478,7 +478,7 @@ defaultproperties
          OnCreateComponent=PrecacheSkins.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Preloads all player skins, increasing level load time but reducing hitches during network games.  You must have at least 512 MB of system memory to use this option."
-         WinTop=0.707553
+         WinTop=0.667553
          WinLeft=0.540058
          WinWidth=0.403353
          TabOrder=15

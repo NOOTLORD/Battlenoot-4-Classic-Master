@@ -39,7 +39,6 @@ function EjectBrass()
 	}
 }
 
-
 defaultproperties
 {
      CutOffDistance=1280.000000

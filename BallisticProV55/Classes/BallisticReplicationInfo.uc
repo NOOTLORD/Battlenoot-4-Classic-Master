@@ -34,7 +34,6 @@ var struct RepInfo_BW
 	var float	WalkingPercentage;
 	var float	CrouchingPercentage;
 	var bool		bUseRunningAnims;
-	var bool		bUniversalMineLights;
 }BWRep;
 
 replication
@@ -53,7 +52,6 @@ simulated function InitClientVars()
 	bLimitDoubleJumps	= BWRep.bLimitDoubleJumps;
 	WalkingPercentage	= BWRep.WalkingPercentage;
 	CrouchingPercentage = BWRep.CrouchingPercentage;
-	bUniversalMineLights = BWRep.bUniversalMineLights;
 	bUseRunningAnims = BWRep.bUseRunningAnims;
 
 	class.default.bBrightPlayers	= bBrightPlayers;
@@ -61,7 +59,6 @@ simulated function InitClientVars()
 	class.default.bLimitDoubleJumps	= bLimitDoubleJumps;
 	class.default.WalkingPercentage	= WalkingPercentage;
 	class.default.CrouchingPercentage = CrouchingPercentage;
-	class.default.bUniversalMineLights = bUniversalMineLights;
 	class.default.bUseRunningAnims = bUseRunningAnims;
 	super.InitClientVars();
 
@@ -88,7 +85,6 @@ function ServerInitialize()
 	BWRep.bLimitDoubleJumps	= bLimitDoubleJumps;
     BWRep.WalkingPercentage = WalkingPercentage;
     BWRep.CrouchingPercentage = CrouchingPercentage;
-	BWRep.bUniversalMineLights = bUniversalMineLights;
 	BWRep.bUseRunningAnims = bUseRunningAnims;
 
 	super.ServerInitialize();
@@ -114,6 +110,5 @@ defaultproperties
      WalkingPercentage=1.000000
      CrouchingPercentage=0.500000
      bUseRunningAnims=False
-     bUniversalMineLights=False
      ModString="Ballistic Weapons v2.5"
 }

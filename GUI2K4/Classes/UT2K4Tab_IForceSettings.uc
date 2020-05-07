@@ -242,7 +242,7 @@ defaultproperties
          WinLeft=0.502344
          WinWidth=0.421875
          WinHeight=0.045352
-         TabOrder=11
+         TabOrder=9
          OnChange=UT2K4Tab_IForceSettings.InternalOnChange
          OnLoadINI=UT2K4Tab_IForceSettings.InternalOnLoadINI
      End Object

@@ -161,7 +161,7 @@ defaultproperties
      PickupSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
      PickupForce="HealthPack"
      StaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackHi'
-     DrawScale=0.350000
+     DrawScale=0.325000
      CollisionRadius=16.000000
      CollisionHeight=15.000000
 }

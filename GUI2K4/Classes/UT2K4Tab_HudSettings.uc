@@ -626,7 +626,7 @@ defaultproperties
 
      Begin Object Class=moNumericEdit Name=GameHudMessageCount
          MinValue=0
-         MaxValue=8
+         MaxValue=5
          ComponentJustification=TXTA_Left
          CaptionWidth=0.700000
          Caption="Max. Chat Count"
@@ -644,7 +644,7 @@ defaultproperties
 
      Begin Object Class=moNumericEdit Name=GameHudMessageScale
          MinValue=0
-         MaxValue=8
+         MaxValue=4
          ComponentJustification=TXTA_Left
          CaptionWidth=0.700000
          Caption="Chat Font Size"
@@ -704,7 +704,7 @@ defaultproperties
          WinTop=0.181927
          WinLeft=0.050000
          WinWidth=0.378125
-         TabOrder=3
+         TabOrder=1
          OnChange=UT2K4Tab_HudSettings.InternalOnChange
          OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
      End Object
@@ -720,7 +720,7 @@ defaultproperties
          WinTop=0.317343
          WinLeft=0.050000
          WinWidth=0.378125
-         TabOrder=4
+         TabOrder=2
          OnChange=UT2K4Tab_HudSettings.InternalOnChange
          OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
      End Object
@@ -736,7 +736,7 @@ defaultproperties
          WinTop=0.452760
          WinLeft=0.050000
          WinWidth=0.378125
-         TabOrder=5
+         TabOrder=3
          OnChange=UT2K4Tab_HudSettings.InternalOnChange
          OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
      End Object
@@ -745,15 +745,15 @@ defaultproperties
      Begin Object Class=moCheckBox Name=GameDeathMsgs
          ComponentJustification=TXTA_Left
          CaptionWidth=0.900000
-         Caption="No Console Death Messages"
+         Caption="Disable killfeed"
          OnCreateComponent=GameDeathMsgs.InternalOnCreateComponent
          IniOption="@Internal"
          IniDefault="False"
-         Hint="Turn off reporting of death messages in console"
+         Hint="Disable the killfeed"
          WinTop=0.847553
          WinLeft=0.047460
          WinWidth=0.403711
-         TabOrder=8
+         TabOrder=4
          OnChange=UT2K4Tab_HudSettings.InternalOnChange
          OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
      End Object
@@ -769,7 +769,7 @@ defaultproperties
          WinTop=0.848594
          WinLeft=0.050000
          WinWidth=0.378125
-         TabOrder=1
+         TabOrder=5
          OnChange=UT2K4Tab_HudSettings.InternalOnChange
          OnLoadINI=UT2K4Tab_HudSettings.InternalOnLoadINI
      End Object

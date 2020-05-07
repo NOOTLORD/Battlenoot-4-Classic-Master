@@ -901,7 +901,6 @@ simulated event KImpact(actor other, vector pos, vector impactVel, vector impact
 		LastDragLocation = Location;
 	}
 }
-
 // Tick for handling gore effects
 simulated function TickGore(float DT)
 {
@@ -946,7 +945,7 @@ simulated function TickGore(float DT)
 		}
 		CorpseRestTime += DT;
 	}
-}		
+}			
 													 
 // Get the standard number for the bone name (used when compressing/decomressing hit info)
 simulated function byte GetHitBoneIndex (name BoneName)

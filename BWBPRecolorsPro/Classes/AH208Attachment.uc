@@ -37,6 +37,4 @@ defaultproperties
      DrawScale=0.175000
 	 Skins(0)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
 	 Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc'
-	 Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-FrontSilver'
-	 Skins(3)=Shader'BallisticRecolorsTex.Eagle.Eagle-SightDotGreen'
 }

@@ -22,7 +22,7 @@ defaultproperties
      WallHitPoint=1
      NumSwipePoints=3
      FatiguePerStrike=0.200000
-     TraceRange=(Min=100.000000,Max=100.000000)
+     TraceRange=(Min=110.000000,Max=110.000000)
      Damage=90.000000
      DamageType=Class'BallisticProV55.DT_X4Knife'
      DamageTypeHead=Class'BallisticProV55.DT_X4KnifeHead'

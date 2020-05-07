@@ -64,6 +64,7 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway',Volume=0.325000)
      WeaponModes(0)=(bUnavailable=True)
+     WeaponModes(1)=(ModeName="Long Throw",ModeID="WM_None",Value=1.000000)	 
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=1
      AimAdjustTime=100.000000
