@@ -12,7 +12,6 @@ defaultproperties
 {
      RandomDir=(Pitch=4096,Yaw=4096,Roll=8192)
      StartVelocity=(X=-5.000000,Y=5.000000,Z=-10.000000)
-     bAddOwnerVelocity=False
      HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyPistolRound'
      DrawScale=0.100000

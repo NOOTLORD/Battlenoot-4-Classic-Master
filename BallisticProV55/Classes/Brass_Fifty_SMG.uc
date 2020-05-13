@@ -11,7 +11,6 @@ class Brass_Fifty_SMG extends BWBrass_Default;
 defaultproperties
 {
      StartVelocity=(Y=-60.000000,Z=10.000000)
-     bAddOwnerVelocity=False
      HitSoundVolume=0.125000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyPistolRound'
      DrawScale=0.090000

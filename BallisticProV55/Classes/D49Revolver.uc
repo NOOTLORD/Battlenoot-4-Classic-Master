@@ -382,7 +382,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.D49Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_D49'
      IconCoords=(X2=127,Y2=31)
-     ItemName="D49 Revolver"
+     ItemName="D49"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

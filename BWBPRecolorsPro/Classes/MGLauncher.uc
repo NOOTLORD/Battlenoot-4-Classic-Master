@@ -212,7 +212,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.MGLAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MGL'
      IconCoords=(X2=127,Y2=35)
-     ItemName="MGL Grenade Launcher"
+     ItemName="MGL"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

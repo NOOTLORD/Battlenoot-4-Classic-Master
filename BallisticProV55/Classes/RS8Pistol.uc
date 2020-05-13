@@ -283,7 +283,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.RS8Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_RS8'
      IconCoords=(X2=127,Y2=31)
-     ItemName="RS8 Pistol"
+     ItemName="RS8"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

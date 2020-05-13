@@ -171,7 +171,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.GRS9Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_GRS-9
      IconCoords=(X2=127,Y2=31)
-     ItemName="GRS-9 Pistol"
+     ItemName="GRS-9"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

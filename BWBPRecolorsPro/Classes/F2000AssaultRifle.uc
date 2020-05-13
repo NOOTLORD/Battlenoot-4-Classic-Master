@@ -99,7 +99,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.F2000Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_F2000'
      IconCoords=(X2=127,Y2=31)
-     ItemName="F2000 Assault Rifle"
+     ItemName="MARS-3"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

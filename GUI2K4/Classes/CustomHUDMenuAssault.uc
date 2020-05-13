@@ -9,12 +9,12 @@ class CustomHUDMenuAssault extends UT2K4CustomHUDMenu;
 
 var class<HUD_Assault> HUDClass;
 
-var automated moCheckbox       		ch_Reticles, ch_InfoPods, ch_bShow3DArrow, ch_bDrawAllObjectives, ch_bObjectiveReminder, ch_bShowWillowWhisp;
+var automated moCheckbox       		ch_Reticles, ch_InfoPods, ch_bDrawAllObjectives;
 var automated moSlider         		sl_ReticleSize;
 var automated moNumericEdit   		nu_PulseTime;
 var automated GUISectionBackground  sb_Main, sb_Misc;
 
-var bool    bReticle, bInfoPods, bShow3DArrow, bDrawAllObjectives, bObjectiveReminder, bShowWillowWhisp;
+var bool    bReticle, bInfoPods, bDrawAllObjectives;
 var float   fReticle;
 var int     iPulseTime;
 
@@ -27,10 +27,7 @@ function bool InitializeGameClass( string GameClassName )
 
 	sb_Misc.ManageComponent(ch_InfoPods);
 	sb_Misc.ManageComponent(ch_bDrawAllObjectives);
-	sb_Misc.ManageComponent(ch_bShow3DArrow);
-	sb_Misc.Managecomponent(ch_bObjectiveReminder);
 	sb_Misc.ManageComponent(nu_PulseTime);
-	sb_Misc.ManageComponent(ch_bShowWillowWhisp);
 
 	if ( GameClassName != "" )
 		GameClass = class<GameInfo>(DynamicLoadObject( GameClassName, class'Class' ));
@@ -73,17 +70,8 @@ function LoadSettings()
 		iPulseTime = HUDClass.default.ObjectiveProgressPulseTime;
 		nu_PulseTime.SetComponentValue( iPulseTime, True );
 
-		bShow3DArrow = HUDClass.default.bShow3DArrow;
-		ch_bShow3DArrow.SetComponentValue( bShow3DArrow, True );
-
-		bObjectiveReminder = HUDClass.default.bObjectiveReminder;
-		ch_bObjectiveReminder.SetComponentValue( bObjectiveReminder, True );
-
 		bDrawAllObjectives = HUDClass.default.bDrawAllObjectives;
 		ch_bDrawAllObjectives.SetComponentValue( bDrawAllObjectives, True );
-
-		bShowWillowWhisp = HUDClass.default.bShowWillowWhisp;
-		ch_bShowWillowWhisp.SetComponentValue( bShowWillowWhisp, True );
 		
 	}
 	else
@@ -100,17 +88,8 @@ function LoadSettings()
 		iPulseTime = ASHUD.ObjectiveProgressPulseTime;
 		nu_PulseTime.SetComponentValue( iPulseTime, True );
 
-		bShow3DArrow = ASHUD.bShow3DArrow;
-		ch_bShow3DArrow.SetComponentValue( bShow3DArrow, True );
-
-		bObjectiveReminder = ASHUD.bObjectiveReminder;
-		ch_bObjectiveReminder.SetComponentValue( bObjectiveReminder, True );
-
 		bDrawAllObjectives = ASHUD.bDrawAllObjectives;
 		ch_bDrawAllObjectives.SetComponentValue( bDrawAllObjectives, True );
-
-		bShowWillowWhisp = ASHUD.bShowWillowWhisp;
-		ch_bShowWillowWhisp.SetComponentValue( bShowWillowWhisp, True );
 	}
 }
 
@@ -133,21 +112,9 @@ function InternalOnChange(GUIComponent Sender)
 	case nu_PulseTime:
 		iPulseTime = nu_PulseTime.GetValue();
 		break;
-
-	case ch_bShow3DArrow:
-		bShow3DArrow = ch_bShow3DArrow.IsChecked();
-		break;
-
-	case ch_bObjectiveReminder:
-		bObjectiveReminder = ch_bObjectiveReminder.IsChecked();
-		break;
-
+		
 	case ch_bDrawAllObjectives:
 		bDrawAllObjectives = ch_bDrawAllObjectives.IsChecked();
-		break;
-
-	case ch_bShowWillowWhisp:
-		bShowWillowWhisp = ch_bShowWillowWhisp.IsChecked();
 		break;
 	}
 
@@ -188,27 +155,9 @@ function SaveSettings()
 			bSave = True;
 		}
 
-		if ( HUDClass.default.bShow3DArrow != bShow3DArrow )
-		{
-			HUDClass.default.bShow3DArrow = bShow3DArrow;
-			bSave = True;
-		}
-
-		if ( HUDClass.default.bObjectiveReminder != bObjectiveReminder )
-		{
-			HUDClass.default.bObjectiveReminder = bObjectiveReminder;
-			bSave = True;
-		}
-
 		if ( HUDClass.default.bDrawAllObjectives != bDrawAllObjectives )
 		{
 			HUDClass.default.bDrawAllObjectives = bDrawAllObjectives;
-			bSave = True;
-		}
-
-		if ( HUDClass.default.bShowWillowWhisp != bShowWillowWhisp )
-		{
-			HUDClass.default.bShowWillowWhisp = bShowWillowWhisp;
 			bSave = True;
 		}
 
@@ -242,27 +191,9 @@ function SaveSettings()
 			bSave = True;
 		}
 
-		if ( ASHUD.bShow3DArrow != bShow3DArrow )
-		{
-			ASHUD.bShow3DArrow = bShow3DArrow;
-			bSave = True;
-		}
-
-		if ( ASHUD.bObjectiveReminder != bObjectiveReminder )
-		{
-			ASHUD.bObjectiveReminder = bObjectiveReminder;
-			bSave = True;
-		}
-
 		if ( ASHUD.bDrawAllObjectives != bDrawAllObjectives )
 		{
 			ASHUD.bDrawAllObjectives = bDrawAllObjectives;
-			bSave = True;
-		}
-
-		if ( ASHUD.bShowWillowWhisp != bShowWillowWhisp )
-		{
-			ASHUD.bShowWillowWhisp = bShowWillowWhisp;
 			bSave = True;
 		}
 
@@ -279,10 +210,8 @@ function RestoreDefaults()
 		HudClass.static.ResetConfig("bShowInfoPods");
 		HudClass.static.ResetConfig("ObjectiveScale");
 		HudClass.static.ResetConfig("ObjectiveProgressPulseTime");
-		HudClass.static.ResetConfig("bShow3DArrow");
 		HudClass.static.ResetConfig("bObjectiveReminder");
 		HudClass.static.ResetConfig("bDrawAllObjectives");
-		HudClass.static.ResetConfig("bShowWillowWhisp");
 		Super.RestoreDefaults();
 	}
 }
@@ -312,24 +241,10 @@ defaultproperties
          WinTop=0.150000
          WinLeft=0.517383
          WinWidth=0.450000
-         TabOrder=2
+         TabOrder=1
          OnChange=CustomHUDMenuAssault.InternalOnChange
      End Object
      ch_InfoPods=moCheckBox'GUI2K4.CustomHUDMenuAssault.InfoPods'
-
-     Begin Object Class=moCheckBox Name=Show3DArrow
-         ComponentJustification=TXTA_Center
-         CaptionWidth=0.100000
-         Caption="Show 3D Arrow"
-         OnCreateComponent=Show3DArrow.InternalOnCreateComponent
-         Hint="Draw 3D Objective tracking arrow."
-         WinTop=0.450000
-         WinLeft=0.024219
-         WinWidth=0.450000
-         TabOrder=4
-         OnChange=CustomHUDMenuAssault.InternalOnChange
-     End Object
-     ch_bShow3DArrow=moCheckBox'GUI2K4.CustomHUDMenuAssault.Show3DArrow'
 
      Begin Object Class=moCheckBox Name=DrawAllObjectives
          ComponentJustification=TXTA_Center
@@ -340,38 +255,10 @@ defaultproperties
          WinTop=0.600000
          WinLeft=0.024219
          WinWidth=0.450000
-         TabOrder=5
+         TabOrder=2
          OnChange=CustomHUDMenuAssault.InternalOnChange
      End Object
      ch_bDrawAllObjectives=moCheckBox'GUI2K4.CustomHUDMenuAssault.DrawAllObjectives'
-
-     Begin Object Class=moCheckBox Name=ObjectiveReminder
-         ComponentJustification=TXTA_Center
-         CaptionWidth=0.100000
-         Caption="Objective Reminder Announcer"
-         OnCreateComponent=ObjectiveReminder.InternalOnCreateComponent
-         Hint="Remind objective goals at respawn."
-         WinTop=0.750000
-         WinWidth=0.450000
-         WinHeight=0.072727
-         TabOrder=6
-         OnChange=CustomHUDMenuAssault.InternalOnChange
-     End Object
-     ch_bObjectiveReminder=moCheckBox'GUI2K4.CustomHUDMenuAssault.ObjectiveReminder'
-
-     Begin Object Class=moCheckBox Name=ShowWillowWhisp
-         ComponentJustification=TXTA_Center
-         CaptionWidth=0.100000
-         Caption="Enable Willow Whisp"
-         OnCreateComponent=ShowWillowWhisp.InternalOnCreateComponent
-         Hint="Enable particle trail, showing path to objective."
-         WinTop=0.600000
-         WinLeft=0.024219
-         WinWidth=0.450000
-         TabOrder=7
-         OnChange=CustomHUDMenuAssault.InternalOnChange
-     End Object
-     ch_bShowWillowWhisp=moCheckBox'GUI2K4.CustomHUDMenuAssault.ShowWillowWhisp'
 
      Begin Object Class=moSlider Name=ReticleSize
          MaxValue=4.000000
@@ -382,7 +269,7 @@ defaultproperties
          WinTop=0.400000
          WinLeft=0.024219
          WinWidth=0.450000
-         TabOrder=1
+         TabOrder=3
          OnChange=CustomHUDMenuAssault.InternalOnChange
      End Object
      sl_ReticleSize=moSlider'GUI2K4.CustomHUDMenuAssault.ReticleSize'
@@ -398,7 +285,7 @@ defaultproperties
          WinTop=0.300000
          WinLeft=0.517383
          WinWidth=0.450000
-         TabOrder=3
+         TabOrder=4
          OnChange=CustomHUDMenuAssault.InternalOnChange
      End Object
      nu_PulseTime=moNumericEdit'GUI2K4.CustomHUDMenuAssault.PulseTime'
@@ -430,7 +317,7 @@ defaultproperties
          WinLeft=0.496436
          WinWidth=0.139474
          WinHeight=0.052944
-         TabOrder=8
+         TabOrder=5
          OnClick=CustomHUDMenuAssault.InternalOnClick
          OnKeyEvent=CancelButton.InternalOnKeyEvent
      End Object
@@ -443,7 +330,7 @@ defaultproperties
          WinLeft=0.288892
          WinWidth=0.139474
          WinHeight=0.052944
-         TabOrder=7
+         TabOrder=6
          OnClick=CustomHUDMenuAssault.InternalOnClick
          OnKeyEvent=ResetButton.InternalOnKeyEvent
      End Object
@@ -456,7 +343,7 @@ defaultproperties
          WinLeft=0.640437
          WinWidth=0.139474
          WinHeight=0.052944
-         TabOrder=9
+         TabOrder=7
          OnClick=CustomHUDMenuAssault.InternalOnClick
          OnKeyEvent=OkButton.InternalOnKeyEvent
      End Object

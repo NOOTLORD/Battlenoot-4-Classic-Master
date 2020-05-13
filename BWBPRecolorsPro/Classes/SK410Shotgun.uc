@@ -122,7 +122,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
      IconMaterial=Texture'BallisticUI.Icons.BigIcon_SK410'
      IconCoords=(X2=127,Y2=35)
-     ItemName="SK-410 Shotgun"
+     ItemName="SK-410"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

@@ -819,7 +819,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.G5Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5'
      IconCoords=(X2=127,Y2=31)
-     ItemName="G5 Bazooka"
+     ItemName="Bazooka"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

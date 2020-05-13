@@ -9,38 +9,6 @@
 //=============================================================================
 class M46AssaultRifleQS extends BallisticWeapon;
 
-// This uhhh... thing is added to allow manual drawing of brass OVER the muzzle flash
-struct UziBrass
-{
-	var() actor Actor;
-	var() float KillTime;
-};
-var   array<UziBrass>	UziBrassList;
-
-simulated event RenderOverlays( Canvas Canvas )
-{
-	local int i;
-
-	super.RenderOverlays(Canvas);
-
-	if (UziBrassList.length < 1)
-		return;
-
-    bDrawingFirstPerson = true;
-    for (i=UziBrassList.length-1;i>=0;i--)
-    {
-    	if (UziBrassList[i].Actor == None)
-    		continue;
-	    Canvas.DrawActor(UziBrassList[i].Actor, false, false, Instigator.Controller.FovAngle);
-    	if (UziBrassList[i].KillTime <= level.TimeSeconds)
-    	{
-    		UziBrassList[i].Actor.bHidden=false;
-    		UziBrassList.Remove(i,1);
-    	}
-    }
-    bDrawingFirstPerson = false;
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -126,7 +94,7 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.700000
      CurrentRating=0.700000
-     Description="M46 Assault Rifle"
+     Description="M46"
      DisplayFOV=55.000000																																																																																																																																					  						 
      Priority=41
      HudColor=(B=255,G=200,R=200)	 

@@ -8,6 +8,7 @@
 //=============================================================================
 class XRS10Attachment extends HandgunAttachment;
 
+
 simulated event ThirdPersonEffects()
 {
     if ( Level.NetMode != NM_DedicatedServer && Instigator != None)

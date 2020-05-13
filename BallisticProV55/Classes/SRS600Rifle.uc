@@ -195,7 +195,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SRS600'
      IconCoords=(X2=127,Y2=31)
-     ItemName="SRS-600 Rifle"
+     ItemName="SRS-600"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

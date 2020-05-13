@@ -222,7 +222,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.XRS10Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XRS10'
      IconCoords=(X2=127,Y2=31)
-     ItemName="XRS-10 Submachine gun"
+     ItemName="XRS-10"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

@@ -11,7 +11,6 @@ class Brass_Pistol extends BWBrass_Default;
 defaultproperties
 {
      StartVelocity=(Y=30.000000,Z=60.000000)
-     bAddOwnerVelocity=False
      HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyPistolRound'
      DrawScale=0.090000

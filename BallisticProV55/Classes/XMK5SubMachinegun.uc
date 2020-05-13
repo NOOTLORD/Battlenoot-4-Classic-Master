@@ -104,7 +104,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.XMK5Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XMK5'
      IconCoords=(X2=127,Y2=31)
-     ItemName="XMk5 Submachine Gun"
+     ItemName="XMK-5"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

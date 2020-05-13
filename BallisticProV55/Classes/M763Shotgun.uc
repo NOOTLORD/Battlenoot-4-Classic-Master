@@ -247,7 +247,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.M763Attachment'
      IconMaterial=Texture'BallisticUI.Icons.BigIcon_M763'
      IconCoords=(X2=127,Y2=31)
-     ItemName="M763 Shotgun"						  
+     ItemName="M763"						  
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

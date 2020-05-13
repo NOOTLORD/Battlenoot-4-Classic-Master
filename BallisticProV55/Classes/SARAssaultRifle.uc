@@ -142,7 +142,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.SARAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SAR'
      IconCoords=(X2=127,Y2=31)
-     ItemName="Sub-Assault Rifle"
+     ItemName="SAR-12"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

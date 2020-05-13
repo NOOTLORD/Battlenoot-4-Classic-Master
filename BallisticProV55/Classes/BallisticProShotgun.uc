@@ -32,14 +32,12 @@ simulated function DrawCrosshairs(canvas C)
 
 	if (!bNoMag && MagAmmo == 0)
 	{
-		SavedDrawColor = MagEmptyColor;
-		SavedDrawColor.A = class'HUD'.default.CrosshairColor.A;
+		SavedDrawColor = class'HUD'.default.CrosshairColor;
 	}
 	
 	else if (bNeedCock)
 	{
-		SavedDrawColor = CockingColor;
-		SavedDrawColor.A = class'HUD'.default.CrosshairColor.A;
+		SavedDrawColor = class'HUD'.default.CrosshairColor;
 	}
 		
 	else SavedDrawColor = class'HUD'.default.CrosshairColor;

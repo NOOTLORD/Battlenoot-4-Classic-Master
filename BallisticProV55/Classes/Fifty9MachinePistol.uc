@@ -136,7 +136,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.Fifty9Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_Fifty9'
      IconCoords=(X2=127,Y2=31)
-     ItemName="Fifty-9 SMG"
+     ItemName="Fifty-9"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

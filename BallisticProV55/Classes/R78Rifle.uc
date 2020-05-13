@@ -133,7 +133,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.R78Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_R78'
      IconCoords=(X2=127,Y2=31)
-     ItemName="R78A1 Sniper Rifle"
+     ItemName="R78A1"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

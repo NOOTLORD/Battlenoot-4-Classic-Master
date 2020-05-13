@@ -78,7 +78,6 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.850000
      CurrentRating=0.850000
-     bShowChargingBar=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57_Grenade'
      AmmoClass(1)=Class'BallisticProV55.Ammo_NRP57_Grenade'	 
      Description="NRP57 Grenade"
@@ -92,7 +91,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.NRP57Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_NRP57'
      IconCoords=(X2=127,Y2=31)
-     ItemName="NRP57 Grenade"
+     ItemName="NRP57"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57_FP'
      DrawScale=0.400000
      AmbientGlow=5

@@ -283,7 +283,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.PD97Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon-PD97'
      IconCoords=(X2=127,Y2=31)
-     ItemName="PD-97 Pistol"
+     ItemName="PD-97"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

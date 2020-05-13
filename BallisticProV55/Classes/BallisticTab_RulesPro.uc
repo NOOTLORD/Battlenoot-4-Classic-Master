@@ -12,8 +12,7 @@
 class BallisticTab_RulesPro extends UT2K4TabPanel;
 
 var automated moCheckbox    ch_StableSprint, ch_NoLongGun, ch_NoDodging, ch_DoubleJump, ch_DmgModifier, ch_LimitCarry;
-var automated moSlider		sl_Accuracy, sl_Recoil, sl_Damage, sl_VDamage;
-var automated moFloatEdit	fl_Damage, fl_VDamage, fl_HeadPct, fl_LimbPct;
+var automated moFloatEdit	fl_Damage, fl_VDamage, fl_HeadPct, fl_LimbPct, fl_Accuracy, fl_Recoil;
 var automated moNumericEdit int_MaxWeps;
 
 var BallisticConfigMenuPro		p_Anchor;
@@ -36,8 +35,8 @@ function ShowPanel(bool bShow)
 
 function LoadSettings()
 {
-	sl_Accuracy.SetValue(class'BallisticReplicationInfo'.default.AccuracyScale);
-	sl_Recoil.SetValue(class'BallisticReplicationInfo'.default.RecoilScale);
+	fl_Accuracy.SetValue(class'BallisticReplicationInfo'.default.AccuracyScale);
+	fl_Recoil.SetValue(class'BallisticReplicationInfo'.default.RecoilScale);
 	ch_StableSprint.Checked(class'BallisticReplicationInfo'.default.bNoJumpOffset);
 	ch_NoLongGun.Checked(class'BallisticReplicationInfo'.default.bNoLongGun);
 	fl_Damage.SetValue(class'Rules_Ballistic'.default.DamageScale);
@@ -55,8 +54,8 @@ function SaveSettings()
 {
 	if (!bInitialized)
 		return;
-	class'BallisticReplicationInfo'.default.AccuracyScale	  = sl_Accuracy.GetValue();
-	class'BallisticReplicationInfo'.default.RecoilScale		  = sl_Recoil.GetValue();	
+	class'BallisticReplicationInfo'.default.AccuracyScale	  = fl_Accuracy.GetValue();
+	class'BallisticReplicationInfo'.default.RecoilScale		  = fl_Recoil.GetValue();	
 	class'BallisticReplicationInfo'.default.bNoJumpOffset	  = ch_StableSprint.IsChecked();
 	class'BallisticReplicationInfo'.default.bNoLongGun		  = ch_NoLongGun.IsChecked();
 	class'Rules_Ballistic'.default.DamageScale 				  = fl_Damage.GetValue();
@@ -81,8 +80,8 @@ function SaveSettings()
 
 function DefaultSettings()
 {
-	sl_Accuracy.SetValue(0.30);
-	sl_Recoil.SetValue(0.25);	
+	fl_Accuracy.SetValue(0.30);
+	fl_Recoil.SetValue(0.25);	
 	ch_StableSprint.Checked(false);
 	ch_NoLongGun.Checked(true);
 	fl_Damage.SetValue(1.0);
@@ -95,56 +94,31 @@ function DefaultSettings()
 	int_MaxWeps.SetValue(1);
 }
 
-/*     Begin Object Class=moSlider Name=sl_DamageSlider
-	     CaptionWidth=0.600000
-         MaxValue=8.000000
-         MinValue=0.050000
-         Caption="Damage Scale"
-         Hint="Scale the amount of damage done to non vehicles."
-         WinTop=0.6
-         WinLeft=0.250000
-         WinWidth=0.500000
-         WinHeight=0.04
-     End Object
-     sl_Damage=moSlider'BallisticTab_RulesPro.sl_DamageSlider'
-
-     Begin Object Class=moSlider Name=sl_VDamageSlider
-	     CaptionWidth=0.600000
-         MaxValue=8.000000
-         MinValue=0.050000
-         Caption="Vehicle Damage Scale"
-         Hint="Scale the amount of damage done to vehicles."
-         WinTop=0.65
-         WinLeft=0.250000
-         WinWidth=0.500000
-         WinHeight=0.04
-     End Object
-     sl_VDamage=moSlider'BallisticTab_RulesPro.sl_VDamageSlider'
-*/
-
 defaultproperties
 {
-     Begin Object Class=moSlider Name=sl_AccuracySlider
+     Begin Object Class=moFloatEdit Name=fl_AccuracyFloat
          MaxValue=2.000000
+         CaptionWidth=0.750000		 
          Caption="Inaccuracy Scale"
-         OnCreateComponent=sl_AccuracySlider.InternalOnCreateComponent
+         OnCreateComponent=fl_AccuracyFloat.InternalOnCreateComponent
          Hint="Scale the inaccuracy of ballistic weapons."
          WinTop=0.100000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
-     sl_Accuracy=moSlider'BallisticProV55.BallisticTab_RulesPro.sl_AccuracySlider'
+     fl_Accuracy=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_AccuracyFloat'
 
-     Begin Object Class=moSlider Name=sl_RecoilSlider
+     Begin Object Class=moFloatEdit Name=fl_RecoilFloat
          MaxValue=2.000000
+         CaptionWidth=0.750000		 
          Caption="Recoil Scale"
-         OnCreateComponent=sl_RecoilSlider.InternalOnCreateComponent
+         OnCreateComponent=fl_RecoilFloat.InternalOnCreateComponent
          Hint="Scale the amount of recoil applied to ballistic weapons."
          WinTop=0.150000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
-     sl_Recoil=moSlider'BallisticProV55.BallisticTab_RulesPro.sl_RecoilSlider'
+     fl_Recoil=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_RecoilFloat'
 
      Begin Object Class=moCheckBox Name=ch_SprintAimCheck
          ComponentJustification=TXTA_Left
@@ -176,7 +150,7 @@ defaultproperties
          MinValue=0.000000
          MaxValue=100.000000
          ComponentJustification=TXTA_Left
-         CaptionWidth=0.700000
+         CaptionWidth=0.750000
          Caption="Damage Scale"
          OnCreateComponent=fl_DamageFloat.InternalOnCreateComponent
          IniOption="@Internal"
@@ -191,7 +165,7 @@ defaultproperties
          MinValue=0.000000
          MaxValue=100.000000
          ComponentJustification=TXTA_Left
-         CaptionWidth=0.700000
+         CaptionWidth=0.750000
          Caption="Vehicle Damage Scale"
          OnCreateComponent=fl_VDamageFloat.InternalOnCreateComponent
          IniOption="@Internal"
@@ -245,7 +219,7 @@ defaultproperties
          MinValue=1.000000
          MaxValue=5.000000
          ComponentJustification=TXTA_Left
-         CaptionWidth=0.800000
+         CaptionWidth=0.750000
          Caption="Headshot Damage Modifier"
          OnCreateComponent=fl_HeadPctFloat.InternalOnCreateComponent
          IniOption="@Internal"
@@ -260,7 +234,7 @@ defaultproperties
          MinValue=0.100000
          MaxValue=1.000000
          ComponentJustification=TXTA_Left
-         CaptionWidth=0.800000
+         CaptionWidth=0.750000
          Caption="Limb Damage Modifier"
          OnCreateComponent=fl_LimbPctFloat.InternalOnCreateComponent
          IniOption="@Internal"

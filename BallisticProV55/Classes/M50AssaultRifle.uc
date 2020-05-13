@@ -108,7 +108,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.M50Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M50'
      IconCoords=(X2=127,Y2=31)
-     ItemName="M50 Assault Rifle"
+     ItemName="M50"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

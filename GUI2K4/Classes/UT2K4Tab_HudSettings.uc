@@ -643,8 +643,8 @@ defaultproperties
      nu_MsgCount=moNumericEdit'GUI2K4.UT2K4Tab_HudSettings.GameHudMessageCount'
 
      Begin Object Class=moNumericEdit Name=GameHudMessageScale
-         MinValue=0
-         MaxValue=4
+         MinValue=1
+         MaxValue=2
          ComponentJustification=TXTA_Left
          CaptionWidth=0.700000
          Caption="Chat Font Size"
@@ -662,7 +662,7 @@ defaultproperties
 
      Begin Object Class=moNumericEdit Name=GameHudMessageOffset
          MinValue=0
-         MaxValue=4
+         MaxValue=1
          ComponentJustification=TXTA_Left
          CaptionWidth=0.700000
          Caption="Message Font Offset"

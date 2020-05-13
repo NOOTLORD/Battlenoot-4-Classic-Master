@@ -11,7 +11,6 @@ class Brass_BigMG extends BWBrass_Default;
 defaultproperties
 {
      StartVelocity=(Y=35.000000,Z=80.000000)
-     bAddOwnerVelocity=False
      HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyRifleRound'
      DrawScale=0.160000

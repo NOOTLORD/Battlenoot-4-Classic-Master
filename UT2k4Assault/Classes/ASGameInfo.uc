@@ -216,11 +216,6 @@ function BroadCast_AssaultRole_Message( PlayerController C )
 {
 	if ( !GameReplicationInfo.bMatchHasBegun || !IsPlaying() || bGameEnded || bWaitingToStartMatch )
 		return;
-
-	if ( IsAttackingTeam( C.GetTeamNum() ) )
-		C.ReceiveLocalizedMessage( class'Message_AssaultTeamRole', 0, C.PlayerReplicationInfo );
-	else
-		C.ReceiveLocalizedMessage( class'Message_AssaultTeamRole', 1, C.PlayerReplicationInfo );
 }
 
 State MatchInProgress

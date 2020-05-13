@@ -33,7 +33,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XMk5FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_XMK5_SMG'
-     BrassOffset=(X=-19.000000,Z=-4.250000)
+     BrassOffset=(X=-20.500000,Y=0.500000,Z=-3.750000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=115.000000
      FireChaos=0.070000

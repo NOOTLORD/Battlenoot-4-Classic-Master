@@ -161,7 +161,7 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'	 
-     Description="AH-208 Pistol"
+     Description="AH-208"
      Priority=96
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000

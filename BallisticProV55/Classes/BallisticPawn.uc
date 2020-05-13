@@ -2493,7 +2493,7 @@ defaultproperties
      MeleeAnim="Melee_Smack" 
      UDamageSound=Sound'BallisticSounds2.Udamage.UDamageFire'
 	 GruntVolume=0.070000
-     FootstepVolume=0.115000
+     FootstepVolume=0.125000
      DeResTime=2.000000
      RagdollLifeSpan=10.000000
      RagDeathUpKick=0.000000

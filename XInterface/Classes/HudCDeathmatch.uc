@@ -1619,5 +1619,5 @@ defaultproperties
      HudColorTeam(0)=(R=200,A=255)
      HudColorTeam(1)=(B=200,G=64,R=50,A=255)
      ConsoleMessagePosX=0.005000
-     ConsoleMessagePosY=0.225000
+     ConsoleMessagePosY=0.750000
 }

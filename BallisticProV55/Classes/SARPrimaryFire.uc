@@ -64,14 +64,14 @@ defaultproperties
      FlashScaleFactor=0.500000
      BrassClass=Class'BallisticProV55.Brass_SAR_Rifle'
      BrassBone="tip"
-     BrassOffset=(X=-111.000000,Y=-3.500000,Z=-4.250000)
+     BrassOffset=(X=-113.500000,Y=-3.500000,Z=-4.250000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=200.000000
      FireChaos=0.015000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.SAR.SAR-Fire',Volume=1.650000,Slot=SLOT_Interact,bNoOverride=False)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.SAR.SAR-Fire',Volume=0.90000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
      bModeExclusive=False
      FireEndAnim=

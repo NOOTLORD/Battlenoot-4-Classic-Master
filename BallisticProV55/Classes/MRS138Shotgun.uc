@@ -126,7 +126,7 @@ defaultproperties
      CurrentRating=0.800000
      AmmoClass(0)=Class'BallisticProV55.Ammo_MRS138_Shotgun'
      AmmoClass(1)=Class'BallisticProV55.Ammo_MRS138_Shotgun'	 
-     Description="MRS-138 Shotgun"
+     Description="MRS-138"
      DisplayFOV=50.000000
      Priority=36
      HudColor=(B=255,G=200,R=200)

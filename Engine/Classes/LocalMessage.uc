@@ -136,6 +136,8 @@ static function bool IsConsoleMessage(int Switch)
 defaultproperties
 {
      bIsSpecial=True
+     bIsUnique=false
+     bIsPartiallyUnique=false	 
      bIsConsoleMessage=True
      Lifetime=3
      DrawColor=(B=255,G=255,R=255,A=255)

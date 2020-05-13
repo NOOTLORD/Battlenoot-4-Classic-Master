@@ -87,12 +87,11 @@ function SpawnProjectile (Vector Start, Rotator Dir)
 
 defaultproperties
 {
-     bWaitForRelease=True
      bAISilent=True
      bSplashDamage=True
      bRecommendSplashDamage=True
      bTossed=True
-     bFireOnRelease=False
+     bFireOnRelease=True
      FireRate=1.200000
      BotRefireRate=0.500000
 }

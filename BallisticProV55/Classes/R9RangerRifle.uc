@@ -104,7 +104,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.R9Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_R9'
      IconCoords=(X2=127,Y2=31)
-     ItemName="R9 Rifle"
+     ItemName="R9"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

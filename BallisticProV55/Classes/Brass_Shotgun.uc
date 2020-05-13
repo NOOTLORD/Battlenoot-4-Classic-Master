@@ -35,7 +35,6 @@ simulated function Destroyed()
 defaultproperties
 {
      StartVelocity=(Z=60.000000)
-     bAddOwnerVelocity=False
      HitSounds(0)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(1)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(2)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'

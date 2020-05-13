@@ -108,7 +108,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.AK47Attachment'
      IconMaterial=Texture'BallisticUI.Icons.AK-470.SmallIcon_AK-470'
      IconCoords=(X2=127,Y2=31)
-     ItemName="AK-470 Assault Rifle"
+     ItemName="AK-470"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

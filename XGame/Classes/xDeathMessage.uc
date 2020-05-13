@@ -116,8 +116,15 @@ defaultproperties
 {
 	bNoConsoleDeathMessages=False
 	ChildMessage=class'xKillerMessagePlus'
-	DrawColor=(R=255,G=0,B=0,A=255)
+	DrawColor=(R=255,G=255,B=255,A=255)
 	KilledString="was killed by"
 	SomeoneString="someone"
-    bIsSpecial=false
+    bIsSpecial=true	
+    Lifetime=5
+    bFadeMessage=True	
+    DrawPivot=DP_MiddleRight	
+	StackMode=SM_Down
+    PosX=0.975000
+    PosY=0.065000	
+	FontSize=-1
 }

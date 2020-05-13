@@ -227,7 +227,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.Xk2Attachment'
      IconMaterial=BallisticUI.Icons.SmallIcon_XK2'
      IconCoords=(X2=127,Y2=31)
-     ItemName="XK2 Submachine Gun"
+     ItemName="XK2"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

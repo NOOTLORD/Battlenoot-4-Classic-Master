@@ -251,7 +251,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_LK-05'
      IconCoords=(X2=127,Y2=31)
-     ItemName="LK-05 Carbine"
+     ItemName="LK-05"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30
