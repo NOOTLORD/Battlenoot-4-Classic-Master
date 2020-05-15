@@ -142,7 +142,7 @@ defaultproperties
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
      SightOffset=(X=-20.000000,Y=-7.400000,Z=41.000000)
-     SightDisplayFOV=60.000000
+     SightDisplayFOV=55.000000
      SightingTime=0.200000
 	 SightZoomFactor=0
      GunLength=4.000000

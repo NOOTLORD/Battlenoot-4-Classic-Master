@@ -22,6 +22,11 @@ simulated function Notify_Hideshell()
 	SetBoneScale(0,0.0,ShellBone);
 }
 
+simulated function Notify_Showshell()
+{
+	SetBoneScale(0,1.0,ShellBone);
+}
+
 // AI Interface =====
 // choose between regular or alt-fire
 

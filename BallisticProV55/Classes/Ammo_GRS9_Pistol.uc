@@ -12,5 +12,4 @@ defaultproperties
 {
      MaxAmmo=180
      InitialAmount=90
-     ItemName="9mm JHP Bullets"
 }

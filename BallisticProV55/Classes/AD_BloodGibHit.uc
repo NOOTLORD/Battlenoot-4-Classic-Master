@@ -15,14 +15,14 @@ defaultproperties
      DecalTextures(6)=Texture'BallisticBloodPro.Decals.Splat7'
      DecalTextures(7)=Texture'BallisticBloodPro.Decals.Splat8'
      bRandomRotate=True
-     StayTime=24.000000
+     StayTime=0.100000
      ZoomDist=-16.000000
      DrawScaleVariance=1.000000
      MaterialBlendingOp=PB_AlphaBlend
      FrameBufferBlendingOp=PB_None
-     FOV=1
-     MaxTraceDistance=48
+     FOV=0
+     MaxTraceDistance=0
      bProjectActor=False
      bStatic=False
-     DrawScale=0.150000
+     DrawScale=0.000000
 }

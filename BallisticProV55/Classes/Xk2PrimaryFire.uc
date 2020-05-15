@@ -143,7 +143,7 @@ defaultproperties
      FlashBone="Muzzle"
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassOffset=(X=-48.000000,Y=-1.000000,Z=1.000000)
+     BrassOffset=(X=-47.500000,Y=-1.000000,Z=1.750000)
      AimedFireAnim="SightFire"
      RecoilPerShot=98.000000
      FireChaos=0.050000

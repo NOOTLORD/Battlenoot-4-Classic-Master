@@ -83,7 +83,7 @@ defaultproperties
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
-     ZoomType=ZT_Logarithmic
+     ZoomType=ZT_Fixed
      ScopeXScale=1.333000
      ZoomInAnim="ZoomIn"
      ScopeViewTex=Texture'BallisticUI.R78.RifleScopeView'
