@@ -665,7 +665,7 @@ defaultproperties
          MaxValue=1
          ComponentJustification=TXTA_Left
          CaptionWidth=0.700000
-         Caption="Message Font Offset"
+         Caption="Game message size"
          OnCreateComponent=GameHudMessageOffset.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Adjust the size of game messages."

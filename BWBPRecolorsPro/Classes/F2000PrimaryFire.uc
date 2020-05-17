@@ -32,7 +32,7 @@ defaultproperties
      MuzzleFlashClass=Class'BWBPRecolorsPro.MARSFlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassOffset=(X=-40.000000,Y=1.500000,Z=-3.500000)
+     BrassOffset=(X=-40.000000,Y=1.500000,Z=-2.500000)
      AimedFireAnim="SightFire"
      RecoilPerShot=150.000000
      FireChaos=0.032000

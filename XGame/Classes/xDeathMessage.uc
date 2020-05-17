@@ -120,7 +120,7 @@ defaultproperties
 	KilledString="was killed by"
 	SomeoneString="someone"
     bIsSpecial=true	
-    Lifetime=5
+    Lifetime=8
     bFadeMessage=True	
     DrawPivot=DP_MiddleRight	
 	StackMode=SM_Down

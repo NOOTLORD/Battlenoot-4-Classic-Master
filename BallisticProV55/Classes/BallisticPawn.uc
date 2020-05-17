@@ -2502,8 +2502,8 @@ defaultproperties
      Visibility=64
      GroundSpeed=350.000000
      LadderSpeed=280.000000
-     WalkingPct=0.900000
-     CrouchedPct=0.350000
+     WalkingPct=1.000000
+     CrouchedPct=0.500000
 	 SuperHealthMax=100.000000		
 	 HeadHeight=0.000000
      HeadRadius=13.000000

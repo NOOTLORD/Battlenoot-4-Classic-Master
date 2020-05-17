@@ -167,7 +167,7 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-     PlayerViewOffset=(X=10.000000,Y=10.000000,Z=-9.000000)
+     PlayerViewOffset=(X=10.000000,Y=10.50000,Z=-8.500000)
      AttachmentClass=Class'BallisticProV55.GRS9Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_GRS-9
      IconCoords=(X2=127,Y2=31)
