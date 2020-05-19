@@ -28,12 +28,11 @@ defaultproperties
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashScaleFactor=0.550000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassBone="tip"
-     BrassOffset=(X=-85.000000,Y=0.000000,Z=-3.000000)
+     BrassOffset=(X=-81.000000,Y=0.000000,Z=-2.250000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=145.000000
      FireChaos=0.040000

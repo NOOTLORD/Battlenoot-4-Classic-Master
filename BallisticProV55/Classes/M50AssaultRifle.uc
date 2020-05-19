@@ -72,7 +72,7 @@ defaultproperties
      CurrentWeaponMode=0	 
      bNoCrosshairInScope=True
      SightPivot=(Pitch=200)
-     SightOffset=(Y=0.050000,Z=12.130000)
+     SightOffset=(Y=0.050000,Z=11.500000)
      SightDisplayFOV=40.000000
      CrouchAimFactor=0.750000
      SightAimFactor=0.200000
@@ -104,7 +104,7 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1
      GroupOffset=3
-     PlayerViewOffset=(X=5.000000,Y=7.000000,Z=-8.000000)
+     PlayerViewOffset=(X=5.500000,Y=6.600000,Z=-8.000000)
      AttachmentClass=Class'BallisticProV55.M50Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M50'
      IconCoords=(X2=127,Y2=31)
@@ -116,7 +116,7 @@ defaultproperties
      LightBrightness=130.000000
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims2.M50_FP'
-     DrawScale=0.300000
+     DrawScale=0.285000
      AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons2.M50.M50SkinA'
