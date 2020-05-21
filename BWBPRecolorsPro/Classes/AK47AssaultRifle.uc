@@ -52,8 +52,7 @@ defaultproperties
      bWT_Bullet=True
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.400000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.400000)
-     MagAmmo=25 
-     ReloadEmptyAnim="Reload"	 
+     MagAmmo=25  
      CockAnimPostReload="ReloadEndCock"
      CockingBringUpTime=1.300000
      CockSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-Cock',Volume=0.900000)

@@ -143,7 +143,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MRS138'
      IconCoords=(X2=127,Y2=31)
-     ItemName="MRS-138 Shotgun"
+     ItemName="MRS-138"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

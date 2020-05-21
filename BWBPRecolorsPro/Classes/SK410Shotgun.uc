@@ -71,8 +71,7 @@ defaultproperties
      SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")																									 
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
-     MagAmmo=8
-     ReloadEmptyAnim="Reload"	 
+     MagAmmo=8 
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000

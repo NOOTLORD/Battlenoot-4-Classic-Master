@@ -102,12 +102,12 @@ defaultproperties
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1														 					 
      GroupOffset=1
-     PlayerViewOffset=(X=8.500000,Y=5.000000,Z=-8.000000)
+     PlayerViewOffset=(X=8.400000,Y=5.000000,Z=-8.000000)
      PlayerViewPivot=(Pitch=384)														 								
      AttachmentClass=Class'BallisticProV55.M46AttachmentQS'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M46'
      IconCoords=(X2=127,Y2=31)																								  
-     ItemName="M46 Assault Rifle"
+     ItemName="M46"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
      LightHue=30

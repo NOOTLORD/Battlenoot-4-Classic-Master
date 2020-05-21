@@ -13,8 +13,8 @@ defaultproperties
      DeathStrings(0)="%o lost a few limbs to %k's MGL grenade."
      DeathStrings(1)="%k's MGL grenade turned %o into chunky red ash."
      DeathStrings(2)="%o found %k's MGL grenade."
-     SimpleKillString="Conqueror Grenade"
      DamageIdent="Ordnance"
+	 SimpleKillString="MGL"
      bDisplaceAim=False
      bUseMotionBlur=False	
      WeaponClass=Class'BWBPRecolorsPro.MGLauncher'

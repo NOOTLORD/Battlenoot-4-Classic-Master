@@ -126,7 +126,7 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AmmoClass(0)=Class'BallisticProV55.Ammo_Fifty_SMG'
      AmmoClass(1)=Class'BallisticProV55.Ammo_Fifty_SMG'	 
-     Description="Fifty-9 SMG"
+     Description="Fifty-9"
      Priority=31
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000

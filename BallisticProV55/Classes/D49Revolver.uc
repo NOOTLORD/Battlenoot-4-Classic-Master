@@ -370,7 +370,7 @@ defaultproperties
      CurrentRating=0.600000
      AmmoClass(0)=Class'BallisticProV55.Ammo_D49_Revolver'	 
      AmmoClass(1)=Class'BallisticProV55.Ammo_D49_Revolver'	 	 
-     Description="D49 Revolver"
+     Description="D49"
      DisplayFOV=50.000000
      Priority=22
      HudColor=(B=255,G=200,R=200)

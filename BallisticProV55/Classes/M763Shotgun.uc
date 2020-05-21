@@ -236,7 +236,7 @@ defaultproperties
      CurrentRating=0.750000
      AmmoClass(0)=BallisticProV55.Ammo_M763_Shotgun'
      AmmoClass(1)=BallisticProV55.Ammo_M763_Shotgun'	 
-     Description="M763 Shotgun"
+     Description="M763"
      Priority=37
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000

@@ -161,7 +161,7 @@ defaultproperties
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9_Pistol'
      AmmoClass(1)=Class'BallisticProV55.Ammo_GRS9_Pistol'	 
-     Description="GRS-9 Pistol"
+     Description="GRS-9"
      Priority=9
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000

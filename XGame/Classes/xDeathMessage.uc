@@ -124,7 +124,7 @@ defaultproperties
     bFadeMessage=True	
     DrawPivot=DP_MiddleRight	
 	StackMode=SM_Down
-    PosX=0.975000
-    PosY=0.065000	
+    PosX=0.985000
+    PosY=0.075000	
 	FontSize=-1
 }

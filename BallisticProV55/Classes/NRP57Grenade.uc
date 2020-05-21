@@ -80,7 +80,7 @@ defaultproperties
      CurrentRating=0.850000
      AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57_Grenade'
      AmmoClass(1)=Class'BallisticProV55.Ammo_NRP57_Grenade'	 
-     Description="NRP57 Grenade"
+     Description="NRP57"
      Priority=7
      HudColor=(B=255,G=200,R=200)	 
      CustomCrossHairScale=0.000000

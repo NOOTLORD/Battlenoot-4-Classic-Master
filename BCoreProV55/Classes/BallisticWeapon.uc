@@ -165,7 +165,6 @@ var() float					CockingBringUpTime;		//Time in code before weapon is ready
 var() BUtil.FullSound	CockSound;				//Sound to play for cocking
 var() Name					ReloadAnim;				//Anim to use for Reloading. Also anim to use for shovel loop
 var() float					ReloadAnimRate;			//Rate to play Reload Anim at
-var() Name					ReloadEmptyAnim;		//Anim played when reloading an empty weapon
 var() BUtil.FullSound	ClipHitSound;				//Sound to play when magazine gets hit
 var() BUtil.FullSound	ClipOutSound;				//Sound to play when magazine is pulled out
 var() BUtil.FullSound	ClipInSound;				//Sound to play when magazine is put in
@@ -957,9 +956,7 @@ simulated function PlayReload()
 		SafePlayAnim(StartShovelAnim, StartShovelAnimRate, , 0, "RELOAD");
 	else
 	{
-	    if (MagAmmo < 1 && HasAnim(ReloadEmptyAnim))
-			SafePlayAnim(ReloadEmptyAnim, ReloadAnimRate, , 0, "RELOAD");
-		else	SafePlayAnim(ReloadAnim, ReloadAnimRate, , 0, "RELOAD");
+		SafePlayAnim(ReloadAnim, ReloadAnimRate, , 0, "RELOAD");
 	}
 }
 simulated function PlayShovelEnd()
@@ -4597,7 +4594,6 @@ defaultproperties
      CockSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
      ReloadAnim="Reload"
      ReloadAnimRate=1.000000
-     ReloadEmptyAnim="ReloadEmpty"
      ClipHitSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
      ClipOutSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
