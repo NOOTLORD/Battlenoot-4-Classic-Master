@@ -8,129 +8,8 @@
 //=============================================================================
 class XRS10PrimaryFire extends BallisticRangeAttenFire;
 
-var() Actor						SMuzzleFlash;		// Silenced Muzzle flash stuff
-var() class<Actor>				SMuzzleFlashClass;
-var() Name						SFlashBone;
-var() float						SFlashScaleFactor;
-
-function InitEffects()
-{
-	if (AIController(Instigator.Controller) != None)
-		return;
-    if ((MuzzleFlashClass != None) && ((MuzzleFlash == None) || MuzzleFlash.bDeleteMe) )
-		class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, Weapon.DrawScale*FlashScaleFactor, weapon, FlashBone);
-    if ((SMuzzleFlashClass != None) && ((SMuzzleFlash == None) || SMuzzleFlash.bDeleteMe) )
-		class'BUtil'.static.InitMuzzleFlash (SMuzzleFlash, SMuzzleFlashClass, Weapon.DrawScale*SFlashScaleFactor, weapon, SFlashBone);
-}
-
-function SetSilenced(bool bSilenced)
-{
-	bAISilent = bSilenced;
-
-	if (!bSilenced)
-	{
-		XInaccuracy *= 2;
-		YInaccuracy *= 2;
-	}
-	else
-	{
-		XInaccuracy = default.XInaccuracy;
-		YInaccuracy = default.YInaccuracy;
-	}
-}
-
-//Trigger muzzleflash emitter
-function FlashMuzzleFlash()
-{
-    if ( (Level.NetMode == NM_DedicatedServer) || (AIController(Instigator.Controller) != None) )
-		return;
-	if (!Instigator.IsFirstPerson() || PlayerController(Instigator.Controller).ViewTarget != Instigator)
-		return;
-    if (!XRS10SubMachinegun(Weapon).bSilenced && MuzzleFlash != None)
-        MuzzleFlash.Trigger(Weapon, Instigator);
-    else if (XRS10SubMachinegun(Weapon).bSilenced && SMuzzleFlash != None)
-        SMuzzleFlash.Trigger(Weapon, Instigator);
-
-	if (!bBrassOnCock)
-		EjectBrass();
-}
-
-//// server propagation of firing ////
-function ServerPlayFiring()
-{
-	if (XRS10SubMachinegun(Weapon) != None && XRS10SubMachinegun(Weapon).bSilenced && SilencedFireSound.Sound != None)
-		Weapon.PlayOwnedSound(SilencedFireSound.Sound,SilencedFireSound.Slot,SilencedFireSound.Volume,SilencedFireSound.bNoOverride,SilencedFireSound.Radius,SilencedFireSound.Pitch,SilencedFireSound.bAtten);
-	else if (BallisticFireSound.Sound != None)
-		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,BallisticFireSound.bNoOverride,BallisticFireSound.Radius,BallisticFireSound.Pitch,BallisticFireSound.bAtten);
-
-	CheckClipFinished();
-
-	if (AimedFireAnim != '')
-	{
-		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-		if (BW.BlendFire())		
-			BW.SafePlayAnim(AimedFireAnim, FireAnimRate, TweenTime, 1, "AIMEDFIRE");
-	}
-
-	else
-	{
-		if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
-			BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
-		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-	}
-}
-
-
-//Do the spread on the client side
-function PlayFiring()
-{
-	if (ScopeDownOn == SDO_Fire)
-		BW.TemporaryScopeDown(0.5, 0.9);
-		
-	if (AimedFireAnim != '')
-	{
-		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-		if (BW.BlendFire())		
-			BW.SafePlayAnim(AimedFireAnim, FireAnimRate, TweenTime, 1, "AIMEDFIRE");
-	}
-
-	else
-	{
-		if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
-			BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
-		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-	}
-	
-    ClientPlayForceFeedback(FireForce);  // jdf
-    FireCount++;
-	// End code from normal PlayFiring()
-
-	if (XRS10SubMachinegun(Weapon) != None && XRS10SubMachinegun(Weapon).bSilenced && SilencedFireSound.Sound != None)
-		Weapon.PlayOwnedSound(SilencedFireSound.Sound,SilencedFireSound.Slot,SilencedFireSound.Volume,,SilencedFireSound.Radius,,true);
-	else if (BallisticFireSound.Sound != None)
-		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,,BallisticFireSound.Radius);
-		
-	CheckClipFinished();
-}
-// Remove effects
-simulated function DestroyEffects()
-{
-	Super.DestroyEffects();
-
-	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
-	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
-}
-
-simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
-{
-	BallisticAttachment(Weapon.ThirdPersonActor).BallisticUpdateHit(Other, HitLocation, HitNormal, Surf, XRS10SubMachinegun(Weapon).bSilenced, WaterHitLoc);
-}
-
 defaultproperties
 {
-     SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     SFlashBone="tip2"
-     SFlashScaleFactor=1.150000
      CutOffDistance=1280.000000
      CutOffStartRange=512.000000
      WaterRangeFactor=0.500000
@@ -159,7 +38,6 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.320000,OutVal=1),(InVal=0.500000,OutVal=1.500000),(InVal=1.000000,OutVal=2.250000)))
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     SilencedFireSound=(Sound=Sound'BallisticSounds1.TEC.TEC-SilenceFire',Volume=0.600000,bAtten=True)
      BallisticFireSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Fire',Volume=1.700000)
      bPawnRapidFireAnim=True
      FireRate=0.090000

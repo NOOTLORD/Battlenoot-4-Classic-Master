@@ -16,44 +16,7 @@ var() sound		SilencerOnSound;		// Silencer stuck on sound
 var() sound		SilencerOffSound;		//
 var() sound		SilencerOnTurnSound;	// Silencer screw on sound
 var() sound		SilencerOffTurnSound;	//
-
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerSwitchSilencer;
-}
-
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2)
-		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
-	else
-		PlayAnim(CockAnim, CockAnimRate, 0.2);
-}			   
 											   
-function ServerSwitchSilencer(bool bNewValue)
-{
-	bSilenced = bNewValue;
-	SwitchSilencer(bSilenced);
-	bServerReloading=True;
-	ReloadState = RS_GearSwitch;
-	
-	XK2PrimaryFire(BFireMode[0]).SetSilenced(bNewValue);
-}
-
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (ReloadState != RS_None)
-		return;
-	if (Clientstate != WS_ReadyToFire)
-		return;
-	TemporaryScopeDown(0.5);
-	bSilenced = !bSilenced;
-	ServerSwitchSilencer(bSilenced);
-	SwitchSilencer(bSilenced);
-	ReloadState = RS_GearSwitch;
-}
-
 simulated function SwitchSilencer(bool bNewValue)
 {
 	if (bNewValue)
@@ -158,6 +121,7 @@ function float SuggestDefenseStyle()	{	return -0.6;	}
 
 defaultproperties
 {
+     bSilenced=False
      SilencerBone="Silencer"
      SilencerOnAnim="SilencerOn"
      SilencerOffAnim="SilencerOff"

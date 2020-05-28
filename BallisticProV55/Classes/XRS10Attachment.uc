@@ -8,40 +8,25 @@
 //=============================================================================
 class XRS10Attachment extends HandgunAttachment;
 
-
-simulated event ThirdPersonEffects()
-{
-    if ( Level.NetMode != NM_DedicatedServer && Instigator != None)
-	{
-		if (FiringMode == 1)
-			SetBoneScale (0, 1.0, 'Silencer');
-		else
-			SetBoneScale (0, 0.0, 'Silencer');
-    }
-	super.ThirdPersonEffects();
-}
-
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     FlashMode=MU_Both 
+     FlashMode=MU_Primary
      FlashScale=0.750000	 
      FlashBone="tip"	 
-     AltFlashBone="tip2" 
      LightMode=MU_Primary	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassMode=MU_Both
-     InstantMode=MU_Both
+     BrassMode=MU_Primary
+     InstantMode=MU_Primary
      TrackAnimMode=MU_None	 
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
      TracerMode=MU_Primary	 
      TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Both
+     WaterTracerMode=MU_Primary
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-	 FlyByMode=MU_Both
+	 FlyByMode=MU_Primary
      ReloadAnim="Reload_AR"
      CockingAnim="Cock_RearPull"
      ReloadAnimRate=1.650000
@@ -50,5 +35,4 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims1.XRS10_TP'
      DrawScale=0.075000
 	 Skins(0)=Texture'BallisticWeapons1.XRS10.XRS10Skin'
-	 Skins(1)=Texture'BallisticWeapons1.XRS10.XRS10Silencer'
 }

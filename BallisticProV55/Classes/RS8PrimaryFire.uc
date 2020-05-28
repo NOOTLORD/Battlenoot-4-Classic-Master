@@ -8,139 +8,8 @@
 //=============================================================================
 class RS8PrimaryFire extends BallisticRangeAttenFire;
 
-var() Actor						SMuzzleFlash;		// Silenced Muzzle flash stuff
-var() class<Actor>				SMuzzleFlashClass;
-var() Name						SFlashBone;
-var() float						SFlashScaleFactor;
-
-function InitEffects()
-{
-	if (AIController(Instigator.Controller) != None)
-		return;
-    if ((MuzzleFlashClass != None) && ((MuzzleFlash == None) || MuzzleFlash.bDeleteMe) )
-		class'BUtil'.static.InitMuzzleFlash (MuzzleFlash, MuzzleFlashClass, Weapon.DrawScale*FlashScaleFactor, weapon, FlashBone);
-    if ((SMuzzleFlashClass != None) && ((SMuzzleFlash == None) || SMuzzleFlash.bDeleteMe) )
-		class'BUtil'.static.InitMuzzleFlash (SMuzzleFlash, SMuzzleFlashClass, Weapon.DrawScale*SFlashScaleFactor, weapon, SFlashBone);
-}
-
-//Trigger muzzleflash emitter
-function FlashMuzzleFlash()
-{
-    if ( (Level.NetMode == NM_DedicatedServer) || (AIController(Instigator.Controller) != None) )
-		return;
-	if (!Instigator.IsFirstPerson() || PlayerController(Instigator.Controller).ViewTarget != Instigator)
-		return;
-    if (!RS8Pistol(Weapon).bSilenced && MuzzleFlash != None)
-        MuzzleFlash.Trigger(Weapon, Instigator);
-    else if (RS8Pistol(Weapon).bSilenced && SMuzzleFlash != None)
-        SMuzzleFlash.Trigger(Weapon, Instigator);
-
-	if (!bBrassOnCock)
-		EjectBrass();
-}
-
-// Remove effects
-simulated function DestroyEffects()
-{
-	Super.DestroyEffects();
-
-	class'BUtil'.static.KillEmitterEffect (MuzzleFlash);
-	class'BUtil'.static.KillEmitterEffect (SMuzzleFlash);
-}
-
-// End effect functions ----------------------------------------------------
-function float GetDamage (Actor Other, vector HitLocation, vector Dir, out Actor Victim, optional out class<DamageType> DT)
-{
-	if (RS8Pistol(Weapon).bSilenced)
-		return Super.GetDamage (Other, HitLocation, Dir, Victim, DT) * 0.85;
-	else
-		return Super.GetDamage (Other, HitLocation, Dir, Victim, DT);
-}
-
-simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
-{
-	BallisticAttachment(Weapon.ThirdPersonActor).BallisticUpdateHit(Other, HitLocation, HitNormal, Surf, RS8Pistol(Weapon).bSilenced, WaterHitLoc);
-}
-
-function ServerPlayFiring()
-{
-	if (RS8Pistol(Weapon) != None && RS8Pistol(Weapon).bSilenced && SilencedFireSound.Sound != None)
-		Weapon.PlayOwnedSound(SilencedFireSound.Sound,SilencedFireSound.Slot,SilencedFireSound.Volume,SilencedFireSound.bNoOverride,SilencedFireSound.Radius,SilencedFireSound.Pitch,SilencedFireSound.bAtten);
-	else if (BallisticFireSound.Sound != None)
-		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,BallisticFireSound.bNoOverride,BallisticFireSound.Radius,BallisticFireSound.Pitch,BallisticFireSound.bAtten);
-
-   	CheckClipFinished();
-
-	if (AimedFireAnim != '')
-	{
-		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-		if (BW.BlendFire())		
-			BW.SafePlayAnim(AimedFireAnim, FireAnimRate, TweenTime, 1, "AIMEDFIRE");
-	}
-
-	else
-	{
-		if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
-			BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
-		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-	}
-}
-
-//Do the spread on the client side
-function PlayFiring()
-{
-	if (BW.MagAmmo - ConsumedLoad < 1)
-	{
-		BW.IdleAnim = 'OpenIdle';
-		BW.ReloadAnim = 'OpenReload';
-		FireAnim = 'OpenFire';
-	}
-	else
-	{
-		BW.IdleAnim = 'Idle';
-		BW.ReloadAnim = 'Reload';
-		FireAnim = 'Fire';
-	}
-
-	if (RS8Pistol(Weapon).bSilenced)
-		Weapon.SetBoneScale (0, 1.0, RS8Pistol(Weapon).SilencerBone);
-	else
-		Weapon.SetBoneScale (0, 0.0, RS8Pistol(Weapon).SilencerBone);
-
-	if (ScopeDownOn == SDO_Fire)
-		BW.TemporaryScopeDown(0.5, 0.9);
-
-	if (AimedFireAnim != '')
-	{
-		BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-		if (BW.BlendFire())		
-			BW.SafePlayAnim(AimedFireAnim, FireAnimRate, TweenTime, 1, "AIMEDFIRE");
-	}
-
-	else
-	{
-		if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
-			BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
-		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
-	}
-	
-    ClientPlayForceFeedback(FireForce);  // jdf
-    FireCount++;
-	// End code from normal PlayFiring()
-
-	if (RS8Pistol(Weapon) != None && RS8Pistol(Weapon).bSilenced && SilencedFireSound.Sound != None)
-		Weapon.PlayOwnedSound(SilencedFireSound.Sound,SilencedFireSound.Slot,SilencedFireSound.Volume,,SilencedFireSound.Radius,,true);
-	else if (BallisticFireSound.Sound != None)
-		Weapon.PlayOwnedSound(BallisticFireSound.Sound,BallisticFireSound.Slot,BallisticFireSound.Volume,,BallisticFireSound.Radius);
-	
-	CheckClipFinished();
-}
-
 defaultproperties
 {
-     SMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     SFlashBone="tip2"
-     SFlashScaleFactor=0.500000
 	 TraceRange=(Min=4000.000000,Max=4000.000000)
      CutOffDistance=2048.000000
      CutOffStartRange=512.000000
@@ -168,7 +37,6 @@ defaultproperties
      FireChaos=0.250000
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     SilencedFireSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-SilenceFire',Volume=0.750000,bAtten=True)
      BallisticFireSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-Fire',Volume=1.750000)
      bPawnRapidFireAnim=True
 	 FireEndAnim=

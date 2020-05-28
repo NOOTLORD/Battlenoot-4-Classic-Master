@@ -37,9 +37,9 @@ defaultproperties
      BrassOffset=(X=-48.000000,Y=2.500000,Z=-3.500000)
      AimedFireAnim="SightFire"
      RecoilPerShot=400.000000
-     FireChaos=0.150000
-     XInaccuracy=200.000000
-     YInaccuracy=200.000000
+     FireChaos=0.100000
+     XInaccuracy=150.000000
+     YInaccuracy=150.000000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Fire',Volume=1.600000)
      FireEndAnim=
      FireAnimRate=2.250000

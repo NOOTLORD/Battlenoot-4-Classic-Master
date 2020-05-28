@@ -8,21 +8,6 @@
 //=============================================================================
 class XRS10SubMachinegun extends BallisticWeapon;
 
-var   bool		bSilenced;				// Silencer on. Silenced
-var() name		SilencerBone;			// Bone to use for hiding silencer
-var() name		SilencerOnAnim;			// Think hard about this one...
-var() name		SilencerOffAnim;		//
-var() sound		SilencerOnSound;		// Silencer stuck on sound
-var() sound		SilencerOffSound;		//
-var() sound		SilencerOnTurnSound;	// Silencer screw on sound
-var() sound		SilencerOffTurnSound;	//
-
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerSwitchSilencer;
-}
-
 simulated function PlayIdle()
 {
 	super.PlayIdle();
@@ -38,90 +23,6 @@ simulated function SetScopeBehavior()
 	super.SetScopeBehavior();
 
 	bUseNetAim = default.bUseNetAim || bScopeView;
-}
-											 
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2)
-		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
-	else
-		PlayAnim(CockAnim, CockAnimRate, 0.2);
-}
-
-function ServerSwitchSilencer(bool bNewValue)
-{
-	bSilenced = bNewValue;
-	SwitchSilencer(bSilenced);
-	bServerReloading=True;
-	ReloadState = RS_GearSwitch;
-
-	XRS10PrimaryFire(BFireMode[0]).SetSilenced(bNewValue);
-}
-
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (ReloadState != RS_None)
-		return;
-	if (Clientstate != WS_ReadyToFire)
-		return;
-	TemporaryScopeDown(0.5);
-	bSilenced = !bSilenced;
-	ServerSwitchSilencer(bSilenced);
-	SwitchSilencer(bSilenced);
-	ReloadState = RS_GearSwitch;
-}
-
-simulated function SwitchSilencer(bool bNewValue)
-{
-	if (bNewValue)
-		PlayAnim(SilencerOnAnim);
-	else
-		PlayAnim(SilencerOffAnim);
-}
-simulated function Notify_SilencerOn()
-{
-	PlaySound(SilencerOnSound,,0.5);
-}
-simulated function Notify_SilencerOnTurn()
-{
-	PlaySound(SilencerOnTurnSound,,0.5);
-}
-simulated function Notify_SilencerOff()
-{
-	PlaySound(SilencerOffSound,,0.5);
-}
-simulated function Notify_SilencerOffTurn()
-{
-	PlaySound(SilencerOffTurnSound,,0.5);
-}
-simulated function Notify_SilencerShow()
-{
-	SetBoneScale (0, 1.0, SilencerBone);
-}
-simulated function Notify_SilencerHide()
-{
-	SetBoneScale (0, 0.0, SilencerBone);
-}
-simulated function BringUp(optional Weapon PrevWeapon)
-{
-	Super.BringUp(PrevWeapon);
-
-	if (AIController(Instigator.Controller) != None)
-		bSilenced = (FRand() > 0.5);
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
-}
-simulated function PlayReload()
-{
-	super.PlayReload();
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
 }
 
 // AI Interface =====
@@ -161,13 +62,6 @@ defaultproperties
 {
 	 AIRating=0.85
 	 CurrentRating=0.85
-     SilencerBone="Silencer"
-     SilencerOnAnim="SilencerOn"
-     SilencerOffAnim="SilencerOff"
-     SilencerOnSound=Sound'BallisticSounds2.XK2.XK2-SilenceOn'
-     SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
-     SilencerOnTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
-     SilencerOffTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      PlayerSpeedFactor=1.100000
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XRS10'
@@ -234,5 +128,4 @@ defaultproperties
      AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons1.XRS10.XRS10Skin'
-	 Skins(2)=Texture'BallisticWeapons1.XRS10.XRS10Silencer'
 }

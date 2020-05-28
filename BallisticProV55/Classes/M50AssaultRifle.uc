@@ -58,7 +58,6 @@ defaultproperties
      SpecialInfo(0)=(Info="240.0;25.0;0.9;80.0;0.7;0.7;0.4")
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.375000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.375000)
-     CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticSounds2.M50.M50Cock',Volume=0.850000)
      ClipHitSound=(Sound=Sound'BallisticSounds2.M50.M50ClipHit',Volume=0.850000)

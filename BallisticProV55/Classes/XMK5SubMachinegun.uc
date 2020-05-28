@@ -55,7 +55,6 @@ defaultproperties
      MagAmmo=32
 	 AIRating=0.8
 	 CurrentRating=0.8
-     CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_Cock',Volume=0.875000)
      ReloadAnimRate=1.250000

@@ -15,52 +15,6 @@ var() name		SilencerOffAnim;		//
 var() sound		SilencerOnSound;		// Silencer stuck on sound
 var() sound		SilencerOffSound;		//
 
-replication
-{
-	reliable if (Role < ROLE_Authority)
-		ServerSwitchSilencer;
-}
-
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2)
-		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
-	else
-		PlayAnim(CockAnim, CockAnimRate, 0.2);
-}
-
-function ServerSwitchSilencer(bool bNewValue)
-{
-	bSilenced = bNewValue;
-	SwitchSilencer(bSilenced);
-	bServerReloading=True;
-	ReloadState = RS_GearSwitch;
-	BFireMode[0].bAISilent = bSilenced;
-	SRS600PrimaryFire(BFireMode[0]).SetSilenced(bNewValue);
-}
-
-exec simulated function WeaponSpecial(optional byte i)
-{
-	if (ReloadState != RS_None)
-		return;
-	TemporaryScopeDown(0.5);
-	bSilenced = !bSilenced;
-	ServerSwitchSilencer(bSilenced);
-	SwitchSilencer(bSilenced);
-}
-
-simulated function SwitchSilencer(bool bNewValue)
-{
-	if (Role == ROLE_Authority)
-		bServerReloading = True;
-	ReloadState = RS_GearSwitch;
-	
-	if (bNewValue)
-		PlayAnim(SilencerOnAnim);
-	else
-		PlayAnim(SilencerOffAnim);
-}
-
 simulated function Notify_SilencerOn()	{	PlaySound(SilencerOnSound,,0.5);	}
 simulated function Notify_SilencerOff()	{	PlaySound(SilencerOffSound,,0.5);	}
 
@@ -132,6 +86,7 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
+     bSilenced=False
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      SilencerBone="Silencer"
      SilencerOnAnim="SilencerOn"

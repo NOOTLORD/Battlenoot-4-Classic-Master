@@ -117,7 +117,7 @@ function PlayFiring()
 	if (BW.MagAmmo - ConsumedLoad < 1)
 	{
 		BW.IdleAnim = 'OpenIdle';
-		BW.ReloadAnim = 'ReloadEmpty';
+		BW.ReloadAnim = 'Reload';
     		if (LK05Carbine(Weapon).bScopeView)
 			FireAnim = 'OpenSightFire';
 		else

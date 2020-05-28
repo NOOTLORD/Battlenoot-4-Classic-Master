@@ -62,7 +62,7 @@ defaultproperties
      XInaccuracy=128.000000
      YInaccuracy=128.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.D49.D49-FireSingle',Volume=1.850000)
-     FireAnim="FireSingle"
+	 FireAnimRate=1.600000
      FireEndAnim=
      FireRate=0.400000
      AmmoClass=Class'BallisticProV55.Ammo_D49_Revolver'

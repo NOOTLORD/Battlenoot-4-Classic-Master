@@ -56,7 +56,6 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.415000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.415000)
      MagAmmo=25
-     CockAnimPostReload="ReloadEndCock"
      CockAnimRate=1.250000	 																																									   																					   						  
      CockSound=(Sound=Sound'BallisticSounds1.OA-AR.OA-AR_Cock',Volume=0.800000)
      ReloadAnimRate=1.250000						

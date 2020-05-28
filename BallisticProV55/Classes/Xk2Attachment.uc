@@ -20,6 +20,12 @@ simulated event ThirdPersonEffects()
 	super.ThirdPersonEffects();
 }
 
+simulated event PostBeginPlay()
+{
+	super.PostBeginPlay();
+	SetBoneScale (0, 0.0, 'Silencer');
+}
+
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'

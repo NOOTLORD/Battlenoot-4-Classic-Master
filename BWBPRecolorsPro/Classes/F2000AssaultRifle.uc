@@ -51,7 +51,6 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.425000)
      ReloadAnimRate=1.350000	 
-     CockAnimPostReload="ReloadEndCock" 
      CockAnimRate=1.250000
      bCockOnEmpty=True	 
      CockSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-BoltPull',Volume=0.950000)

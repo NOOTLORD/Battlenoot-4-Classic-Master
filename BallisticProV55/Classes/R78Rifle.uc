@@ -8,17 +8,6 @@
 //=============================================================================
 class R78Rifle extends BallisticWeapon;
 
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2 && HasAnim(CockAnimPostReload))
-		SafePlayAnim(CockAnimPostReload, CockAnimRate, 0.2, , "RELOAD");
-	else
-		SafePlayAnim(CockAnim, CockAnimRate, 0.2, , "RELOAD");
-
-	if (SightingState != SS_None && Type != 1)
-		TemporaryScopeDown(0.5);
-}
-
 // Animation notify for when cocking action starts. Used to time sounds
 simulated function Notify_CockAimed()
 {
@@ -89,7 +78,7 @@ defaultproperties
      ScopeViewTex=Texture'BallisticUI.R78.RifleScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
-     FullZoomFOV=20.000000
+     FullZoomFOV=50.000000
      bNoMeshInScope=True
      bNoCrosshairInScope=True
      SightPivot=(Roll=-1024)

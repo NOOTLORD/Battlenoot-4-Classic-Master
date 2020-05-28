@@ -74,15 +74,7 @@ simulated event AnimEnd (int Channel)
 		}
 	}
 	Super.AnimEnd(Channel);
-}
-
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2)
-		PlayAnim('ReloadEndCock', CockAnimRate, 0.2);
-	else
-		PlayAnim(CockAnim, CockAnimRate, 0.2);
-}										   							
+}		   							
 
 // AI Interface =====
 // choose between regular or alt-fire

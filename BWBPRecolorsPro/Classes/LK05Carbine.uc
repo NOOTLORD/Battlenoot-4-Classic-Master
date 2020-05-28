@@ -100,7 +100,7 @@ simulated function BringUp(optional Weapon PrevWeapon)
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
 	{
 		IdleAnim = 'OpenIdle';
-		ReloadAnim = 'ReloadEmpty';
+		ReloadAnim = 'Reload';
 	}
 	
 	else
@@ -134,12 +134,12 @@ simulated event AnimEnd (int Channel)
 
     GetAnimParams(0, Anim, Frame, Rate);
 
-	if (Anim == 'OpenFire' || Anim == 'Pullout' || Anim == 'PulloutFancy' || Anim == 'Fire' || Anim == 'SightFire' || Anim == 'OpenSightFire' ||Anim == CockAnim || Anim == ReloadAnim)
+	if (Anim == 'OpenFire' || Anim == 'Pullout' || Anim == 'Fire' || Anim == 'SightFire' || Anim == 'OpenSightFire' ||Anim == CockAnim || Anim == ReloadAnim)
 	{
 		if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
 		{
 			IdleAnim = 'OpenIdle';
-			ReloadAnim = 'ReloadEmpty';
+			ReloadAnim = 'Reload';
 		}
 		else
 		{
@@ -187,6 +187,7 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 
 defaultproperties
 {
+     bSilenced=False
      SilencerBone="Silencer"
      SilencerBone2="Silencer2"
      SilencerOnSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOn'
@@ -230,7 +231,7 @@ defaultproperties
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
-     FireModeClass(1)=Class'BWBPRecolorsPro.LK05SecondaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000

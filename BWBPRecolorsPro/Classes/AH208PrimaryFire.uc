@@ -22,7 +22,7 @@ function PlayFiring()
 		BW.IdleAnim = 'Idle';
 		BW.ReloadAnim = 'Reload';
 		FireAnim = 'Fire';
-	}
+	}	
 	super.PlayFiring();
 }
 
