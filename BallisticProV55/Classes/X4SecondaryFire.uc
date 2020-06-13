@@ -9,11 +9,6 @@
 //=============================================================================
 class X4SecondaryFire extends BallisticMeleeFire;
 
-simulated function bool HasAmmo()
-{
-	return true;
-}
-
 defaultproperties
 {
      SwipePoints(0)=(offset=(Yaw=-1536))

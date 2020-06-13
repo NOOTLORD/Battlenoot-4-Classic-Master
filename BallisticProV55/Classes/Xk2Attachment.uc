@@ -8,18 +8,6 @@
 //=============================================================================
 class XK2Attachment extends BallisticAttachment;
 
-simulated event ThirdPersonEffects()
-{
-    if ( Level.NetMode != NM_DedicatedServer && Instigator != None)
-	{
-		if (FiringMode == 1)
-			SetBoneScale (0, 1.0, 'Silencer');
-		else
-			SetBoneScale (0, 0.0, 'Silencer');
-    }
-	super.ThirdPersonEffects();
-}
-
 simulated event PostBeginPlay()
 {
 	super.PostBeginPlay();
@@ -29,22 +17,20 @@ simulated event PostBeginPlay()
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     AltMuzzleFlashClass=Class'BallisticProV55.XK2SilencedFlash'
-     FlashMode=MU_Both
+     FlashMode=MU_Primary
      FlashScale=0.600000	 
      LightMode=MU_Primary	 
      FlashBone="Muzzle"
-     AltFlashBone="Muzzle2" 
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
      BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassMode=MU_Both
-     InstantMode=MU_Both
+     BrassMode=MU_Primary
+     InstantMode=MU_Primary
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
      TracerMode=MU_Primary	 
      TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Both
+     WaterTracerMode=MU_Primary
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
      FlyByMode=MU_Primary
      ReloadAnim="Reload_AR"

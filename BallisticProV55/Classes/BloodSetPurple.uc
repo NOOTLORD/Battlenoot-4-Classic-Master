@@ -1,15 +1,13 @@
 //=============================================================================
-// Ammo class for M763 Shotgun
+// PurpleBloodSet.
+//
+// Info for purple blood critters like bots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
-class Ammo_M763_Shotgun extends BallisticAmmo;
+class BloodSetPurple extends BloodSetDefault;
 
 defaultproperties
 {
-     MaxAmmo=40
-     InitialAmount=20
 }

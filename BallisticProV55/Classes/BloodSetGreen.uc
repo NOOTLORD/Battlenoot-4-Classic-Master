@@ -1,15 +1,13 @@
 //=============================================================================
-// Ammo class for M763 Shotgun
+// GreenBloodSet.
+//
+// Info for green blooded beasts like aliens and skaarjez
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
-//
-// Modified by (NL)NOOTLORD
 //=============================================================================
-class Ammo_M763_Shotgun extends BallisticAmmo;
+class BloodSetGreen extends BloodSetDefault;
 
 defaultproperties
 {
-     MaxAmmo=40
-     InitialAmount=20
 }

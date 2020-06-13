@@ -8,82 +8,10 @@
 //=============================================================================
 class XK2SubMachinegun extends BallisticWeapon;
 
-var   bool		bSilenced;				// Silencer on. Silenced
-var() name		SilencerBone;			// Bone to use for hiding silencer
-var() name		SilencerOnAnim;			// Think hard about this one...
-var() name		SilencerOffAnim;		//
-var() sound		SilencerOnSound;		// Silencer stuck on sound
-var() sound		SilencerOffSound;		//
-var() sound		SilencerOnTurnSound;	// Silencer screw on sound
-var() sound		SilencerOffTurnSound;	//
-											   
-simulated function SwitchSilencer(bool bNewValue)
+simulated event PostBeginPlay()
 {
-	if (bNewValue)
-		PlayAnim(SilencerOnAnim);
-	else
-		PlayAnim(SilencerOffAnim);
-}
-
-simulated function Notify_XK2SilencerOn()
-{
-	PlaySound(SilencerOnSound,,0.5);
-}
-
-simulated function Notify_XK2SilencerOnTurn()
-{
-	PlaySound(SilencerOnTurnSound,,0.5);
-}
-
-simulated function Notify_XK2SilencerOff()
-{
-	PlaySound(SilencerOffSound,,0.5);
-}
-
-simulated function Notify_XK2SilencerOffTurn()
-{
-	PlaySound(SilencerOffTurnSound,,0.5);
-}
-
-simulated function Notify_XK2SilencerShow()
-{
-	SetBoneScale (0, 1.0, SilencerBone);
-}
-
-simulated function Notify_XK2SilencerHide()
-{
-	SetBoneScale (0, 0.0, SilencerBone);
-}
-
-simulated function BringUp(optional Weapon PrevWeapon)
-{
-	Super.BringUp(PrevWeapon);
-
-	if (AIController(Instigator.Controller) != None)
-		bSilenced = (FRand() > 0.5);
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
-}
-
-simulated function PlayReload()
-{
-	if (MagAmmo < 1)
-		SetBoneScale (1, 0.0, 'Bullet');
-
-	super.PlayReload();
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
-}
-
-simulated function Notify_ClipOutOfSight()
-{
-	SetBoneScale (1, 1.0, 'Bullet');
+	super.PostBeginPlay();
+	SetBoneScale (0, 0.0, 'Silencer');
 }
 
 // AI Interface =====
@@ -121,14 +49,6 @@ function float SuggestDefenseStyle()	{	return -0.6;	}
 
 defaultproperties
 {
-     bSilenced=False
-     SilencerBone="Silencer"
-     SilencerOnAnim="SilencerOn"
-     SilencerOffAnim="SilencerOff"
-     SilencerOnSound=Sound'BallisticSounds2.XK2.XK2-SilenceOn'
-     SilencerOffSound=Sound'BallisticSounds2.XK2.XK2-SilenceOff'
-     SilencerOnTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
-     SilencerOffTurnSound=SoundGroup'BallisticSounds2.XK2.XK2-SilencerTurn'
      PlayerSpeedFactor=1.100000
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XK2'

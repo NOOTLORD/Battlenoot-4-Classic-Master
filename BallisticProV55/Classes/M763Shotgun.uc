@@ -8,12 +8,6 @@
 //=============================================================================
 class M763Shotgun extends BallisticProShotgun;
 
-simulated function BringUp(optional Weapon PrevWeapon)
-{
-	Super.BringUp(PrevWeapon);
-	GunLength = default.GunLength;
-}
-
 simulated function Notify_CockStart()
 {
 	if (ReloadState == RS_None)	return;
@@ -100,44 +94,11 @@ simulated event AnimEnded (int Channel, name anim, float frame, float rate)
 	}
 }
 
-simulated function PlayCocking(optional byte Type)
-{
-	if (Type == 2 && HasAnim(CockAnimPostReload))
-		SafePlayAnim(CockAnimPostReload, CockAnimRate, 0.2, , "RELOAD");
-	else
-		SafePlayAnim(CockAnim, CockAnimRate, 0.2, , "RELOAD");
-}
-
 // Animation notify for when cocking action starts. Used to time sounds
 simulated function Notify_CockAimed()
 {
 	bNeedCock = False;
 	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
-}
-
-// Fire pressed. Change weapon if out of ammo, reload if empty mag or skip reloading if possible
-simulated function FirePressed(float F)
-{
-	if (!HasAmmo())
-		OutOfAmmo();
-	else if (F == 0 && bNeedReload && ClientState == WS_ReadyToFire)
-		return;
-	else if (bCanSkipReload && ((ReloadState == RS_Shovel) || (ReloadState == RS_PostShellIn)))
-	{
-		ServerSkipReload();
-		if (Level.NetMode == NM_Client)
-			SkipReload();
-	}
-	
-	if (F == 0)
-	{
-		if (reloadState == RS_None && (bNeedCock) && MagAmmo > 0 && !IsFiring() && level.TimeSeconds > FireMode[0].NextfireTime)
-		{
-			CommonCockGun();
-			if (Level.NetMode == NM_Client)
-				ServerCockGun();
-		}
-	}
 }
 
 // AI Interface =====

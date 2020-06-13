@@ -22,11 +22,6 @@ simulated event ModeDoFire()
 	Super.ModeDoFire();
 }
 
-simulated function bool HasAmmo()
-{
-	return true;
-}
-
 defaultproperties
 {
      SliceAnims(0)="Slash1"

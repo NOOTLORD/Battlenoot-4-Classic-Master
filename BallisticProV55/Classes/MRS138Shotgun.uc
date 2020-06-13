@@ -54,24 +54,13 @@ function float GetAIRating()
 // tells bot whether to charge or back off while using this weapon
 function float SuggestAttackStyle()
 {
-	if (AIController(Instigator.Controller) == None)
-		return 0.5;
-	return AIController(Instigator.Controller).Skill / 7;
+	return 0.5;
 }
 
 // tells bot whether to charge or back off while defending against this weapon
 function float SuggestDefenseStyle()
 {
-	local Bot B;
-	local float Dist;
-
-	B = Bot(Instigator.Controller);
-	if ( (B == None) || (B.Enemy == None) )
-		return -0.5;
-
-	Dist = VSize(B.Enemy.Location - Instigator.Location);
-
-    return 0.3 - (B.Skill / 6) * (1-(Dist/3000));
+	return -0.5;
 }
 
 // End AI Stuff =====

@@ -10,9 +10,9 @@ class SK410PrimaryFire extends BallisticProShotgunFire;
 
 defaultproperties
 {
-     HipSpreadFactor=2.000000
      CutOffDistance=1536.000000
      CutOffStartRange=378.000000
+	 HipSpreadFactor=2.000000
      MaxSpreadFactor=6
      TraceCount=6
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'

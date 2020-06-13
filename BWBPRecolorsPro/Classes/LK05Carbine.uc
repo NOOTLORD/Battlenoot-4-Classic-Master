@@ -8,93 +8,12 @@
 //=============================================================================
 class LK05Carbine extends BallisticWeapon;
 
-var   bool		bSilenced;				// Silencer on. Silenced
-var() name		SilencerBone;			// Bone to use for hiding silencer
-var() name		SilencerBone2;			// Bone to use for hiding silencer
-var() sound		SilencerOnSound;		// Silencer stuck on sound
-var() sound		SilencerOffSound;		//
-var() name		SilencerOnAnim;			// Think hard about this one...
-var() name		SilencerOffAnim;		//
-var() name		ScopeBone;			    // Bone to use for hiding scope
-
-replication
+simulated event PostBeginPlay()
 {
-	reliable if (Role < ROLE_Authority)
-		ServerSwitchSilencer;
+	super.PostBeginPlay();
+	SetBoneScale (0, 0.0, 'Silencer');
 }
 
-//=================================
-//Silencer Code
-//=================================
-
-function ServerSwitchSilencer(bool bNewValue)
-{
-	if (!Instigator.IsLocallyControlled())
-		LK05PrimaryFire(FireMode[0]).SwitchSilencerMode(bNewValue);
-
-	LK05Attachment(ThirdPersonActor).bSilenced=bNewValue;	
-	PlaySuppressorAttachment(bNewValue);
-	bSilenced = bNewValue;
-	BFireMode[0].bAISilent = bSilenced;
-}
-
-exec simulated function SwitchSilencer() 
-{
-	if (ReloadState != RS_None)
-		return;
-	if (Clientstate != WS_ReadyToFire)
-		return;
-
-	bSilenced = !bSilenced;
-	ServerSwitchSilencer(bSilenced);
-	PlaySuppressorAttachment(bSilenced);
-	LK05PrimaryFire(FireMode[0]).SwitchSilencerMode(bSilenced);
-	LK05Attachment(ThirdPersonActor).IAOverride(bSilenced);
-}
-
-simulated function PlaySuppressorAttachment(bool bSuppressed)
-{
-	if (Role == ROLE_Authority)
-		bServerReloading=True;
-	ReloadState = RS_GearSwitch;
-	
-	if (bSuppressed)
-		PlayAnim(SilencerOnAnim);
-	else
-		PlayAnim(SilencerOffAnim);
-}
-
-simulated function Notify_SilencerOn()
-{
-	PlaySound(SilencerOnSound,,0.5);
-}
-
-simulated function Notify_SilencerOff()
-{
-	PlaySound(SilencerOffSound,,0.5);
-	SetBoneScale (0, 0.0, SilencerBone);
-	SetBoneScale (1, 1.0, SilencerBone2);
-}
-
-simulated function Notify_SilencerShow()
-{
-	SetBoneScale (0, 1.0, SilencerBone);
-	SetBoneScale (1, 0.0, SilencerBone2);
-}
-
-simulated function PlayReload()
-{
-	super.PlayReload();
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
-}
-
-//=================================
-// Sights and custom anim support
-//=================================
 simulated function BringUp(optional Weapon PrevWeapon)
 {
 	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
@@ -110,21 +29,6 @@ simulated function BringUp(optional Weapon PrevWeapon)
 	}
 
 	Super.BringUp(PrevWeapon);
-	
-	if (AIController(Instigator.Controller) != None)
-		bSilenced = (FRand() > 0.5);
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
-
-	Instigator.AmbientSound = UsedAmbientSound;
-	Instigator.SoundVolume = default.SoundVolume;
-	Instigator.SoundPitch = default.SoundPitch;
-	Instigator.SoundRadius = default.SoundRadius;
-	Instigator.bFullVolume = true;
-
 }
 
 simulated event AnimEnd (int Channel)
@@ -187,14 +91,6 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 
 defaultproperties
 {
-     bSilenced=False
-     SilencerBone="Silencer"
-     SilencerBone2="Silencer2"
-     SilencerOnSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOn'
-     SilencerOffSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOff'
-     SilencerOnAnim="SilencerOn"
-     SilencerOffAnim="SilencerOff"
-     ScopeBone="EOTech"
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_LK-05'
      BigIconCoords=(Y1=36,Y2=225)
@@ -268,7 +164,6 @@ defaultproperties
 	 Skins(3)=Texture'BallisticRecolorsTex.LK05.LK05-Receiver'
 	 Skins(4)=Texture'BallisticRecolorsTex.LK05.LK05-Bullets'
 	 Skins(5)=Texture'BallisticRecolorsTex.LK05.LK05-Mag'
-	 Skins(6)=Texture'BallisticRecolorsTex.LK05.LK05-Silencer'
-	 Skins(7)=Texture'BallisticRecolorsTex.LK05.LK05-EOTech'
-	 Skins(8)=Shader'BallisticRecolorsTex.LK05.LK05-EOTechShader' 
+	 Skins(6)=Texture'BallisticRecolorsTex.LK05.LK05-EOTech'
+	 Skins(7)=Shader'BallisticRecolorsTex.LK05.LK05-EOTechShader' 
 }

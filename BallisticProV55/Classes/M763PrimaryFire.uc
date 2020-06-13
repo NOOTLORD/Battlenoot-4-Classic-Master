@@ -8,44 +8,12 @@
 //=============================================================================
 class M763PrimaryFire extends BallisticProShotgunFire;
 
-// Check if there is ammo in clip if we use weapon's mag or is there some in inventory if we don't
-simulated function bool AllowFire()
-{
-	//Force noobs to scope.
-	if ((BW.BCRepClass.default.bSightFireOnly || class'BallisticWeapon'.default.SightsRestrictionLevel > 0) && BW.bUseSights && BW.SightingState != SS_Active && !BW.bScopeHeld && Instigator.IsLocallyControlled() && PlayerController(Instigator.Controller) != None)
-		BW.ScopeView();
-	if (!BW.bScopeView && class'BallisticWeapon'.default.SightsRestrictionLevel > 0)
-		return false;
-	if (!CheckReloading())
-		return false;		// Is weapon busy reloading
-	if (!CheckWeaponMode())
-		return false;		// Will weapon mode allow further firing
-	
-	if (BW.MagAmmo < AmmoPerFire)
-	{
-		if (!bPlayedDryFire && DryFireSound.Sound != None)
-		{
-			Weapon.PlayOwnedSound(DryFireSound.Sound,DryFireSound.Slot,DryFireSound.Volume,DryFireSound.bNoOverride,DryFireSound.Radius,DryFireSound.Pitch,DryFireSound.bAtten);
-			bPlayedDryFire=true;
-		}
-		if (bDryUncock)
-			BW.bNeedCock=true;
-		BW.bNeedReload = BW.MayNeedReload(ThisModeNum, 0);
-
-		BW.EmptyFire(ThisModeNum);
-		return false;		// Is there ammo in weapon's mag
-	}
-	else if (BW.bNeedReload)
-		return false;
-
-    return true;
-}
 
 function PlayFiring()
 {
 	if (BW.MagAmmo - ConsumedLoad < 1)
 	{
-		AimedFireAnim = 'FireSight';
+		AimedFireAnim = 'SightFire';
 		FireAnim = 'Fire';
 	}
 	else
@@ -60,7 +28,7 @@ function ServerPlayFiring()
 {
 	if (BW.MagAmmo - ConsumedLoad < 1)
 	{
-		AimedFireAnim = 'FireSight';
+		AimedFireAnim = 'SightFire';
 		FireAnim = 'Fire';
 	}
 	else
@@ -69,13 +37,6 @@ function ServerPlayFiring()
 		FireAnim = 'FireCombined';
 	}
 	super.ServerPlayFiring();
-}
-
-simulated function DestroyEffects()
-{
-    if (MuzzleFlash != None)
-		MuzzleFlash.Destroy();
-	Super.DestroyEffects();
 }
 
 defaultproperties

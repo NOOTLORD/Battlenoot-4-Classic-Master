@@ -10,18 +10,11 @@
 //=============================================================================
 class MRS138PrimaryFire extends BallisticProShotgunFire;
 
-simulated function DestroyEffects()
-{
-    if (MuzzleFlash != None)
-		MuzzleFlash.Destroy();
-	Super.DestroyEffects();
-}
-
 function PlayFiring()
 {
 	if (BW.MagAmmo - ConsumedLoad < 1)
 	{
-		AimedFireAnim = 'AimedFire';
+		AimedFireAnim = 'SightFire';
 		FireAnim = 'Fire';
 	}
 	else
@@ -36,7 +29,7 @@ function ServerPlayFiring()
 {
 	if (BW.MagAmmo - ConsumedLoad < 1)
 	{
-		AimedFireAnim = 'AimedFire';
+		AimedFireAnim = 'SightFire';
 		FireAnim = 'Fire';
 	}
 	else

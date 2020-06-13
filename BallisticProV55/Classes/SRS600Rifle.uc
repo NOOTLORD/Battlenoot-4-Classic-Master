@@ -8,45 +8,15 @@
 //=============================================================================
 class SRS600Rifle extends BallisticWeapon;
 
-var   bool		bSilenced;				// Silencer on. Silenced
-var() name		SilencerBone;			// Bone to use for hiding silencer
-var() name		SilencerOnAnim;			// Think hard about this one...
-var() name		SilencerOffAnim;		//
-var() sound		SilencerOnSound;		// Silencer stuck on sound
-var() sound		SilencerOffSound;		//
-
-simulated function Notify_SilencerOn()	{	PlaySound(SilencerOnSound,,0.5);	}
-simulated function Notify_SilencerOff()	{	PlaySound(SilencerOffSound,,0.5);	}
-
-simulated function Notify_SilencerShow(){	SetBoneScale (0, 1.0, SilencerBone);	}
-simulated function Notify_SilencerHide(){	SetBoneScale (0, 0.0, SilencerBone);	}
-
-simulated function BringUp(optional Weapon PrevWeapon)
+simulated event PostBeginPlay()
 {
-	Super.BringUp(PrevWeapon);
-
-	if (AIController(Instigator.Controller) != None)
-		bSilenced = (FRand() > 0.5);
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
+	super.PostBeginPlay();
+	SetBoneScale (0, 0.0, 'Silencer');
 }
 
-simulated function Notify_ClipOutOfSight()	{	SetBoneScale (1, 1.0, 'Bullet');	}
-
-simulated function PlayReload()
-{
-	super.PlayReload();
-
-	if (MagAmmo < 1)
-		SetBoneScale (1, 0.0, 'Bullet');
-
-	if (bSilenced)
-		SetBoneScale (0, 1.0, SilencerBone);
-	else
-		SetBoneScale (0, 0.0, SilencerBone);
+simulated function Notify_ClipOutOfSight()	
+{	
+    SetBoneScale (1, 1.0, 'Bullet');	
 }
 
 // AI Interface =====
@@ -86,13 +56,7 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
-     bSilenced=False
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
-     SilencerBone="Silencer"
-     SilencerOnAnim="SilencerOn"
-     SilencerOffAnim="SilencerOff"
-     SilencerOnSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOn'
-     SilencerOffSound=Sound'BallisticSounds1.SRS600.SRS-SilencerOff'
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SRS600'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'

@@ -152,7 +152,7 @@ simulated function PostBeginPlay()
 	super.PostBeginPlay();
 
 	if (class'BallisticReplicationInfo'.default.bNoDodging)
-		bCanWallDodge = true;
+		bCanWallDodge = false;
 }
 
 simulated event PostNetBeginPlay()

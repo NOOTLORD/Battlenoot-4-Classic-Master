@@ -8,14 +8,6 @@
 //=============================================================================
 class R78Rifle extends BallisticWeapon;
 
-// Animation notify for when cocking action starts. Used to time sounds
-simulated function Notify_CockAimed()
-{
-	bNeedCock = False;
-	ReloadState = RS_Cocking;
-	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
-}
-
 // AI Interface =====
 // choose between regular or alt-fire
 
