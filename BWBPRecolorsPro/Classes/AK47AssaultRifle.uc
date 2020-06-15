@@ -8,6 +8,24 @@
 //=============================================================================
 class AK47AssaultRifle extends BallisticWeapon;
 
+var name			BulletBone;
+
+// Animation notify for when the clip is stuck in
+simulated function Notify_ClipIn()
+{
+	Super.Notify_ClipIn();
+
+	SetBoneScale(0,1.0,BulletBone);
+}
+
+simulated function Notify_ClipOut()
+{
+	Super.Notify_ClipOut();
+
+	if(MagAmmo < 1)
+		SetBoneScale(0,0.0,BulletBone);
+}
+
 // AI Interface =====
 // choose between regular or alt-fire
 
@@ -45,6 +63,7 @@ function float SuggestDefenseStyle()	{	return 0.0;	}
 
 defaultproperties
 {
+     BulletBone="Bullet1"
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AK-470'
      BigIconCoords=(Y1=32,Y2=220)

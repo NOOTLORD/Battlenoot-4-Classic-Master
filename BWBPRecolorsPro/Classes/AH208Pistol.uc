@@ -33,7 +33,7 @@ simulated function BringUp(optional Weapon PrevWeapon)
 
 simulated function Notify_HideBullet()
 {
-	if (MagAmmo < 2)
+	if (MagAmmo < 1)
 		SetBoneScale(4,0.0,BulletBone);
 }
 

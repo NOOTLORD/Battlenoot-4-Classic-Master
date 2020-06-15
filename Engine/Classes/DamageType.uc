@@ -182,8 +182,8 @@ static function string GetWeaponClass()
 defaultproperties
 {
      DeathString="%o was killed by %k."
-     FemaleSuicide="%o killed herself."
-     MaleSuicide="%o killed himself."
+     FemaleSuicide="%o Suicided"
+     MaleSuicide="%o Suicided"
      bArmorStops=True
      bLocationalHit=True
      bCausesBlood=True

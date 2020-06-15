@@ -26,6 +26,7 @@ simulated function ShellFired()
 {
 	SetBoneScale(DrumPos, 0.0, ShellBones[DrumPos]);
 }
+
 simulated function CycleDrum()
 {
 	if (DrumPos == 4)

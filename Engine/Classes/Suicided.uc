@@ -3,9 +3,9 @@ class Suicided extends DamageType
 
 defaultproperties
 {
-     DeathString="%o had an aneurysm."
-     FemaleSuicide="%o had an aneurysm."
-     MaleSuicide="%o had an aneurysm."
+     DeathString="%o Suicided"
+     FemaleSuicide="%o Suicided"
+     MaleSuicide="%o Suicided"
      bArmorStops=False
      bLocationalHit=False
 }
