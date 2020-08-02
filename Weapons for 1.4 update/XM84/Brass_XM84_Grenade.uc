@@ -1,5 +1,5 @@
 //=============================================================================
-// Brass class for XM84 Flashbang
+// Brass class for the XM84 Flashbang
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

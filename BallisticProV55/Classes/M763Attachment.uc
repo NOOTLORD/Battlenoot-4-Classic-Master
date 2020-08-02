@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for M763 Shotgun
+// 3rd person weapon class for the M763 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for the held XM84 Grenade
+// Damage type for a held XM84 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

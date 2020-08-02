@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for R9 Rifle
+// 3rd person weapon class for the R9 Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

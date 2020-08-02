@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for NRP57 Grenade
+// Weapon class for the NRP57 Grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

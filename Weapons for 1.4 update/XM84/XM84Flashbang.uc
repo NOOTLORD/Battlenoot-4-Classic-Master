@@ -1,14 +1,13 @@
 //=============================================================================
-// XM84Flashbang.
-//
-// Elite disruption grenade.
-// Can be rolled or thrown, but on detonation generates a disruptive wave that
-// will disorient and confuse all types of enemies.
+// Weapon class for the XM84 Flashbang
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class XM84Flashbang extends BallisticHandGrenade;
+
 var() Material          MatGlow1;     	// adren
 var() Material          MatGlow2;    	// blue tech
 var() Material          MatGlow3;     	// static
@@ -134,16 +133,12 @@ defaultproperties
      GrenadeSmokeClass=Class'BWBPRecolorsPro.XM84Trail'
      ClipReleaseSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-ClipOut',Volume=0.500000,Radius=48.000000,Pitch=1.000000,bAtten=True)
      PinPullSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-PinOut',Volume=0.500000,Radius=48.000000,Pitch=1.000000,bAtten=True)
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XM84'
      BigIconCoords=(Y1=12,Y2=255)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Hazardous=True
      bWT_Splash=True
      bWT_Grenade=True
-     ManualLines(0)="Throws an XM84 overarm. After the 1 second fuse has expired, it explodes with a wide radius, inflicting a long-lasting continuous blind with a damage over time component upon the enemy. Can affect allies."
-     ManualLines(1)="As primary, but the XM84 is rolled underarm."
-     ManualLines(2)="While the XM84 can be cooked in hand, its short fuse makes this a bad idea.||Effective in group engagements."
      SpecialInfo(0)=(Info="60.0;5.0;0.25;30.0;0.0;0.0;0.4")
      BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout')
      PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway')
@@ -157,12 +152,10 @@ defaultproperties
      BringUpTime=0.900000
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.400000
-     CurrentRating=0.400000
-     bShowChargingBar=False
-     bCanThrow=False	 
+     CurrentRating=0.400000	 
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_XM84_Grenade'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_XM84_Grenade'	 
-     Description="The XM84 Heavy Disruptor grenade is an advanced electromagnetic pulsar weapon designed for incapacitation and disorientation. State of the art field psionic generators ensure the XM84 can tackle all types of targets. A fission criticality-inducing core combined with the Tandem MS flux generator gives the XM84 the destructive ability to strip away energy shields and fry any electrical system without a Warship-Grade Faraday cage. Warning: Long term exposure to armed XM84s is known to cause acute radiation poisoning and cerebral hemorrhaging. Proximity to a disruptive burst will cause permanent memory loss and irreversible neurological damage."
+     Description="XM84 Flashbang"
      Priority=142
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -173,8 +166,10 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.XM84Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XM84'
      IconCoords=(X2=127,Y2=31)
-     ItemName="XM84 Flashbang Grenade"
+     ItemName="XM84 Flashbang"
      Mesh=SkeletalMesh'BallisticRecolorsAnims.XM84_FP'
      DrawScale=0.400000
-     AmbientGlow=5	 
+     AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Shader'BallisticRecolorsTex.XM84.XM84-Glow2'
 }

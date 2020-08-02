@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for Sub Assault Rifle
+// Weapon class for the Sub Assault Rifle
 //
 // Highly compact, but innacurate assault rifle with switchable stock,
 // flash, large mag, quick reloading and red-dot sights.

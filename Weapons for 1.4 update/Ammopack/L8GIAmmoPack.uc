@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for L8 Ammo Pack
+// Weapon class for the L8 Ammo Pack
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -53,7 +53,6 @@ defaultproperties
      HealSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
      GrenadeSmokeClass=Class'BallisticProV55.NRP57Trail'
      ClipReleaseSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-ClipOut',Volume=0.000000,Radius=0.000000,Pitch=1.000000,bAtten=True)	 
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=15)
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AmmoPack'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      bWT_Grenade=True	 
@@ -64,13 +63,14 @@ defaultproperties
      FireModeClass(1)=Class'BWBPRecolorsPro.L8GIPrimaryFire'
      WeaponModes(0)=(bUnavailable=True)
      WeaponModes(1)=(bUnavailable=True)
+	 WeaponModes(2)=(ModeName="Short Throw",ModeID="WM_None",Value=2.000000)
      CurrentWeaponMode=2	 
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.400000
      CurrentRating=0.400000	 
-     bCanThrow=False
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_L8GI'	 
-     Description="L8 GI Ammunition Pack||Manufacturer: Various|Primary: Throw|Secondary: Supply Self||UTC soldiers are trained to use a wide variety of weaponry, and, as such, are often in need of supplies. The L8 GI ammo pack is filled with ammunition and will supply every gun in the user's inventory."
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_L8GI'
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_L8GI'
+     Description="Ammunition Pack"
      HudColor=(B=255,G=200,R=200)   
 	 Priority=20
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
@@ -81,7 +81,7 @@ defaultproperties
      AttachmentClass=Class'BWBPRecolorsPro.L8GIAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_AmmoPack'
      IconCoords=(X2=127,Y2=31)
-     ItemName="L8 GI Ammunition Pack"
+     ItemName="Ammunition Pack"
      Mesh=SkeletalMesh'BallisticRecolorsAnims.AmmoPack_FP'
      DrawScale=0.400000
 	 AmbientGlow=5

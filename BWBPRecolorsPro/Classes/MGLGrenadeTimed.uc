@@ -1,5 +1,5 @@
 //=============================================================================
-// Grenade class for MGL Grenade Launcher.
+// Grenade class for the MGL Grenade Launcher.
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

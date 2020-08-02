@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for Puma Repeater
+// Weapon class for the Puma Repeater
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -43,7 +43,6 @@ function float SuggestDefenseStyle()	{	return -0.6;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_PUMA'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      bWT_Bullet=True
@@ -86,16 +85,14 @@ defaultproperties
      BringUpTime=0.450000
      AIRating=0.600000
      CurrentRating=0.600000
-     bShowChargingBar=False
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_Puma_SMG'	 	 
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_Puma_SMG'		 
-     Description="PUMA-77 Repeating Pulse Rifle||Manufacturer: Majestic Firearms 12|Primary: Programmable Smart Round|Secondary: Shield Projector||The Type-77 RPR, a well known pulse weapon used during the Skrith wars, is one of the more recognizable light grenade launchers on the market. It was used extensively by the UTC as the PUMA-77 before their widespread adoption of the SRAC-21/G as the automatic grenade launcher of choice. This powerful weapon differs from other conventional grenade launchers in that it utilizes specialized fission batteries as ammunition, which both power and act as the carrier of the projectile. The projectiles themselves can be programmed by the side-mounted rangefinding module and allow soldiers to selectively airburst the rounds to hit targets behind cover. The PUMA-77s seen here are equipped with Frontier Tech's lightweight X57 shield projector, which is a scaled down version of the heavy portable shields used during the first Skrith war."
+     Description="Puma-Repeater"
      Priority=45
      HudColor=(B=255,G=200,R=200)	 
      CustomCrossHairScale=0.000000	 
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3
+     InventoryGroup=1
      PlayerViewOffset=(X=0.000000,Y=6.000000,Z=-11.000000)
      AttachmentClass=Class'BWBPRecolorsPro.PumaAttachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_PUMA'
@@ -109,5 +106,9 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.PUMA_FP'
      DrawScale=0.350000
-     AmbientGlow=5	 
+     AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.PUMA.PUMA-Main'
+	 Skins(2)=Texture'BallisticRecolorsTex.PUMA.PUMA-Mag'
+	 Skins(3)=Texture'BallisticRecolorsTex.PUMA.Cart_Puma'
 }

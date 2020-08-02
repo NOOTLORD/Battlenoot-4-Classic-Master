@@ -1,5 +1,5 @@
 //=============================================================================
-// Brass class for XMk5 Submachinegun 
+// Brass class for the XMk5 Submachinegun 
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

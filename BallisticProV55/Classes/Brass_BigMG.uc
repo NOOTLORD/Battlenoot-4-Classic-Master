@@ -1,5 +1,5 @@
 //=============================================================================
-// Brass class for Heavy Machinegun type weapons
+// Brass class for the Heavy Machinegun type weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for SKAS-21 Shotgun
+// Primaryfire class for the SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

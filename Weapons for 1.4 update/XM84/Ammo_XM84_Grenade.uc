@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for XM84 Flashbang
+// Ammo class for the XM84 Flashbang
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

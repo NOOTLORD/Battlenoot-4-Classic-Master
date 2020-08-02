@@ -1,5 +1,5 @@
 //=============================================================================
-// X4SecondaryFire.
+// Secondaryfire class for the X4 Knife
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

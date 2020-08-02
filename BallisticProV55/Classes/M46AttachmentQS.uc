@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for M46 Assault Rifle
+// 3rd person weapon class for the M46 Assault Rifle
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

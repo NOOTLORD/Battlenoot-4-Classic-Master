@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for M353 Machinegun
+// 3rd person weapon class for the M353 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -21,7 +21,7 @@ defaultproperties
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
 	 TracerMode=MU_Primary
-     TracerChance=0.500000
+     TracerChance=0.750000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Primary
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
@@ -32,4 +32,7 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.M353_TP'
      DrawScale=0.325000
+	 Skins(0)=Texture'BallisticWeapons2.M353.M353_Skin1'
+	 Skins(1)=Texture'BallisticWeapons2.M353.M353_Skin2'
+	 Skins(2)=Texture'BallisticWeapons2.M353.M353_Ammo'
 }

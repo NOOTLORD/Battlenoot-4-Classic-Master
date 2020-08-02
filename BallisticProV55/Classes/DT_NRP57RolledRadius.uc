@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for Rolled NRP57 Grenade radius
+// Damage type class for the rolled NRP57 Grenade radius
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

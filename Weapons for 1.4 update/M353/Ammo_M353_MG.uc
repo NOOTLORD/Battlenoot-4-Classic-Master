@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for M353 Machinegun
+// Ammo class for the M353 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

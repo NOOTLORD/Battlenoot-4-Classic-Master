@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for LK-05 Carbine
+// Weapon class for the LK-05 Carbine
 //
 // by Sarge.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

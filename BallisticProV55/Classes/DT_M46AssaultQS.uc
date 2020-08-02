@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for M46 Assault Rifle
+// Damage type class for the M46 Assault Rifle
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

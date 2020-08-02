@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for SKAS-21 Shotgun
+// 3rd person weapon class for the SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -23,11 +23,12 @@ defaultproperties
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      TracerMode=MU_Primary	 
-     TracerChance=0.500000
+     TracerChance=1.000000
      ReloadAnim="Reload_AR"
      ReloadAnimRate=0.950000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SKAS_TP'
      RelativeLocation=(X=-2.000000,Z=7.000000)
      RelativeRotation=(Pitch=32768)
      DrawScale=0.115000
+	 Skins(0)=Texture'BallisticRecolorsTex.SKAS.SKAS-Camo'
 }

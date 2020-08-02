@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for XRS10 SubMachinegun
+// Weapon class for the XRS10 SubMachinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

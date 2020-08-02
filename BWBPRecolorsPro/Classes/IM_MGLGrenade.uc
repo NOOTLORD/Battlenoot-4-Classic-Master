@@ -1,5 +1,5 @@
 //=============================================================================
-// Impact Manager class for MGL Grenade Launcher grenade
+// Impact Manager class for the MGL Grenade Launcher grenade
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

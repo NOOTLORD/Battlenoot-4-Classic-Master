@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for M46 Assault Rifle
+// Primaryfire class for the M46 Assault Rifle
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

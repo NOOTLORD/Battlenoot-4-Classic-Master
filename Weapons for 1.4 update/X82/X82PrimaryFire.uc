@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for X82 Sniper Rifle
+// Primaryfire class for the X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

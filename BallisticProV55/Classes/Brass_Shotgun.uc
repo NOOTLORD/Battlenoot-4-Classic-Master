@@ -1,5 +1,5 @@
 //=============================================================================
-// Brass class for Shotgun type weapons
+// Brass class for the Shotgun type weapons
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

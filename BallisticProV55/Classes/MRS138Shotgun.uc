@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for MRS138 Shotgun
+// Weapon class for the MRS138 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

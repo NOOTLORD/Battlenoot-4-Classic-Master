@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for SKAS Shotgun
+// Damage type class for the SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

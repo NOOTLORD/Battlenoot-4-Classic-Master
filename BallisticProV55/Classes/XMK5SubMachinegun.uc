@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for XMK5 SubMachinegun
+// Weapon class for the XMK5 SubMachinegun
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for R9 Rifle
+// Damage type class for the R9 Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

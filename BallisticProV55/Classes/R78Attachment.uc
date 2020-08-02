@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for R78 Sniper Rifle
+// 3rd person weapon class for the R78 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

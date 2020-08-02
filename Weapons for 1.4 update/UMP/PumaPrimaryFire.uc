@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for Puma Repeater
+// Primaryfire class for the Puma Repeater
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

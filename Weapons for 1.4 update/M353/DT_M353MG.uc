@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for M353 Machinegun
+// Damage type class for the M353 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

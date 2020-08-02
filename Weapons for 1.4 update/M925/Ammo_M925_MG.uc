@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for M925 Machinegun
+// Ammo class for the M925 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

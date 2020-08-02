@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for SKAS-21 Shotgun
+// Ammo class for the SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

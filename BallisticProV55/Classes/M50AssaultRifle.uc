@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for M50 Assault Rifle
+// Weapon class for the M50 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

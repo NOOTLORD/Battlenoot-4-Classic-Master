@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for M925 Machinegun
+// 3rd person weapon class for the M925 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -34,4 +34,11 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.M925_TP'
      DrawScale=0.110000
+	 Skins(0)=Texture'BallisticWeapons2.M925.M925Main'
+	 Skins(1)=Texture'BallisticWeapons2.M925.M925Small'
+	 Skins(2)=Texture'BallisticWeapons2.M925.M925HeatShield'
+	 Skins(3)=Texture'BallisticWeapons2.M925.M925AmmoBox'
+	 Skins(4)=Texture'BallisticWeapons2.M925.M925Main'
+	 Skins(5)=Texture'BallisticWeapons2.M925.M925Main'
+	 Skins(6)=Texture'BallisticWeapons2.M925.M925Small'
 }

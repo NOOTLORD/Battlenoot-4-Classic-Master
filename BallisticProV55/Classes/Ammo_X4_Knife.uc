@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for X4 Knife
+// Ammo class for the X4 Knife
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

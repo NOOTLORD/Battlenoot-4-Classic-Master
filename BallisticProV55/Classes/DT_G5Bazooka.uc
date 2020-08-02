@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for G5 Bazooka
+// Damage type class for the G5 Bazooka
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

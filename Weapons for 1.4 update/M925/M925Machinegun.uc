@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for M925 Machinegun
+// Weapon class for the M925 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -112,7 +112,6 @@ defaultproperties
      HandleOffSound=Sound'BallisticSounds2.M925.M925-StandOff'
      PlayerSpeedFactor=0.850000
      PlayerJumpFactor=0.850000
-	 TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)     TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=5)
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M925'
      BigIconCoords=(Y1=36,Y2=235)
@@ -120,9 +119,6 @@ defaultproperties
      SightFXClass=Class'BallisticProV55.M925SightLEDs'
      bWT_Bullet=True
      bWT_Machinegun=True
-     ManualLines(0)="Automatic .50 cal fire. High damage per shot, but high recoil and slow fire rate. Sustained damage output is excellent. As a machinegun, it has a very long effective range. Large magazine capacity allows the weapon to fire for a long time, but the reload time is long."
-     ManualLines(1)="Deploys the machinegun upon the ground or a nearby wall. May also be deployed upon sandbags. Whilst deployed, becomes perfectly accurate, loses its iron sights and gains a reduction in recoil. Locational damage (damage which can target an area on the body) taken from the front is significantly reduced."
-     ManualLines(2)="The M925, as a heavy machine gun, burdens the player, reducing movement speed and jump height. It also has terrible hipfire and takes almost a second to aim.||It is effective at medium to long range and when employed defensively."
      SpecialInfo(0)=(Info="360.0;30.0;0.8;40.0;0.0;0.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M925.M925-Pullout',Volume=0.345000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M925.M925-Putaway',Volume=0.345000)
@@ -168,10 +164,9 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.700000
      CurrentRating=0.700000
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_M925_MG'
 	 AmmoClass(1)=Class'BallisticProV55.Ammo_M925_MG' 
-     Description="The M925 was used during the late stages of the first Human-Skrith war when ballistic weapons first came back into large scale usage. The heavy calibre M925 was extremely effective against the Skrith and their allies and became known as the 'Monster' because it was the first weapon that the Skrith truly feared. Although it has a slower rate of fire than the M353, the 'Monster' has a much heavier bullet and can cause much more damage to an enemy soldier or vehicle in a single shot. It was also used extensively during the 'Wasteland Siege', to hose down thousands of Krao, and proved to be very effective at destroying the alien transport ships, as they were landing."
+     Description="M925 Heavy Machine Gun"
      Priority=42
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -192,4 +187,10 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.M925_FP'
      DrawScale=0.140000
      AmbientGlow=5
+	 Skins(0)=Texture'BallisticWeapons2.M925.M925Main'
+	 Skins(1)=Texture'BallisticWeapons2.M925.M925Small'
+	 Skins(2)=Texture'BallisticWeapons2.M925.M925HeatShield'
+	 Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(4)=Texture'BallisticWeapons2.M925.M925AmmoBox'
+	 Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 }

@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for SRS-600-Rifle
+// Weapon class for the SRS-600-Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

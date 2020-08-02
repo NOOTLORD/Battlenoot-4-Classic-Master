@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for XMK5 Submachine Gun
+// Damage type class for the XMK5 Submachine Gun
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

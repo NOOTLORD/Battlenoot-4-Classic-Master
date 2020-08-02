@@ -1,5 +1,5 @@
 //=============================================================================
-// Secondaryfire class for G5 Bazooka
+// Secondaryfire class for the G5 Bazooka
 //
 // Activates laser sight for G5
 //

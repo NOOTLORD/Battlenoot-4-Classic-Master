@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for Sub Assault Rifle
+// 3rd person weapon class for the Sub Assault Rifle
 //
 // 3rd person weapon attachment for SAR Assault
 //

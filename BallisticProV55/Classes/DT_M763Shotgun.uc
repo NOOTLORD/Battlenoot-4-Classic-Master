@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for M763 Shotgun headshot
+// Damage type class for the M763 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

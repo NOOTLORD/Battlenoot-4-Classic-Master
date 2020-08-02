@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for for RS04 Pistol
+// 3rd person weapon class for the RS04 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -32,6 +32,7 @@ defaultproperties
      bRapidFire=True
      Mesh=SkeletalMesh'BallisticAnims2.RS04_TP'
      RelativeRotation=(Pitch=32768)
+	 PrePivot=(Z=-2.000000)
      DrawScale=0.210000
-     PrePivot=(Z=-2.000000)
+	 Skins(0)=Texture'BallisticWeapons2.RS04.RS04-Main'
 }

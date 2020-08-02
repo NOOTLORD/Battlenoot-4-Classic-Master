@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for RS04 Pistol
+// Weapon class for the RS04 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -122,7 +122,6 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_RS04'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -166,10 +165,9 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
      CurrentRating=0.600000
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_RS04_Pistol'
      AmmoClass(1)=Class'BallisticProV55.Ammo_RS04_Pistol'	 
-     Description="RS04 .45 Compact||Manufacturer: Drake & Co Firearms|Primary: .45 Fire|Secondary: Flashlight||A brand new precision handgun designed by Drake & Co firearms, the Redstrom .45 is to be the military version of the current 10mm RS8. Dubbed the RS04, this unique and accurate pistol is still in its prototype stages. The .45 HV rounds used in the RS04 prototype allow for much improved stopping power at the expense of clip capacity and recoil. Current features include a tactical flashlight and a quick loading double shot firemode. Currently undergoing combat testing by private military contractors, the 8-round Redstrom is seen frequently in the battlefields of corporate warfare. The RS04 .45 Compact model is the latest variant."
+     Description="RS04 Pistol"
      Priority=17
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -190,4 +188,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.RS04_FP'
      DrawScale=0.350000
      AmbientGlow=5	 
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.RS04.RS04-Main'
 }

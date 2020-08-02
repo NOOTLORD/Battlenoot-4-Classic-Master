@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for R9 Rifle
+// Weapon class for the R9 Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

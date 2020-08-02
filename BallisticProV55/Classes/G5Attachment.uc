@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for G5 bazooka
+// 3rd person weapon class for the G5 bazooka
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

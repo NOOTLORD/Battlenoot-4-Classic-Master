@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for PD-97 Bloodhound
+// 3rd person weapon class for the PD-97 Bloodhound
 //
 // by Azarael
 // adapting code by Nolan "Dark Carnivour" Richert

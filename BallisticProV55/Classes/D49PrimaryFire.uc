@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for D49 Revolver
+// Primaryfire class for the D49 Revolver
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

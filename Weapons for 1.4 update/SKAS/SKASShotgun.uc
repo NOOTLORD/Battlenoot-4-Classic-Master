@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for SKAS-21 Shotgun
+// Weapon class for the SKAS-21 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -64,11 +64,6 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
-     ManualLines(0)="Automatic fire has moderate spread, moderate damage, short range and fast fire rate.||Manual fire has tight spread, long range, good damage and low fire rate."
-     ManualLines(1)="Multi-shot attack. Loads a shell into each of the barrels, then fires them all at once. Very high damage, short range and wide spread."
-     ManualLines(2)="Extremely effective at close range."
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=2)
-     TeamSkins(1)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SKAS'
      BigIconCoords=(Y1=24)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
@@ -114,11 +109,9 @@ defaultproperties
      PutDownTime=0.700000
      AIRating=0.850000
      CurrentRating=0.850000
-     bShowChargingBar=False
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_SKAS_Shotgun'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_SKAS_Shotgun'	 
-     Description="SKAS-21 Super Shotgun||Manufacturer: UTC Defense Tech|Primary: Variable Fire Buckshot|Secondary: Tri-Barrel Blast"
+     Description="SKAS Shotgun"
      Priority=245
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -139,4 +132,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SKAS_FP'
      DrawScale=0.260000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.SKAS.SKAS-Camo'
 }

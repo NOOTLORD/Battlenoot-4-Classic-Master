@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for MRS138 Shotgun
+// Primaryfire class for the MRS138 Shotgun
 //
 // Stronger than the M763, but has a shorter range, wider spread and slower fire rate.
 //

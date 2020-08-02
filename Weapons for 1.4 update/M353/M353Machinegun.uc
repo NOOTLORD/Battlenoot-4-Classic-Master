@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for M353 Machinegun
+// Weapon class for the M353 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -105,7 +105,6 @@ defaultproperties
      FlapDownSound=(Sound=Sound'BallisticSounds2.M353.M353-FlapDown',Volume=0.750000)
      PlayerSpeedFactor=0.900000
      PlayerJumpFactor=0.900000
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M353'
      BigIconCoords=(Y1=50,Y2=240)
@@ -113,9 +112,6 @@ defaultproperties
      SightFXClass=Class'BallisticProV55.M353SightLEDs'	 
      bWT_Bullet=True
      bWT_Machinegun=True
-     ManualLines(0)="Automatic 5.56mm fire. Has a high rate of fire, moderate damage and good sustained damage output. As a machinegun, it has a very long effective range. Large magazine capacity allows the weapon to fire for a long time, but the reload time is long."
-     ManualLines(1)="Deploys the machinegun upon the ground or a nearby wall. May also be deployed upon sandbags. Whilst deployed, becomes perfectly accurate, loses its iron sights and gains a reduction in recoil. Locational damage (damage which can target an area on the body) taken from the front is significantly reduced."
-     ManualLines(2)="The M353 is a more cumbersome and heavy weapon, and accordingly has poor hipfire and takes some time to aim.||It is effective at medium to long range."
      SpecialInfo(0)=(Info="300.0;25.0;0.7;-1.0;0.4;0.4;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M353.M353-Pullout',Volume=0.395000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M353.M353-Putaway',Volume=0.395000)
@@ -159,11 +155,10 @@ defaultproperties
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.7500000
      CurrentRating=0.7500000
-     bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_M353_MG'
      AmmoClass(1)=Class'BallisticProV55.Ammo_M353_MG'	 
-     Description="The M353 'Guardian' Machinegun has seen some of the most brutal battles ever recorded in recent history, and has helped win many of them, the most famous being the bloody 'Wasteland Seige' where 12 million Krao were slaughtered along a 500 mile line of defences. Used primarily as a defensive weapon, the M353's incredible rate of fire can quickly and effectively destroy masses of oncoming foes, especially melee attackers. When the secondary mode is activated, the Guardian becomes much more accurate when the user mounts it on the ground, allowing it to be a very effective defensive weapon. With its high rate of fire and high damage, the M353 becomes very inaccurate after just a few rounds and with its high ammo capacity, comes the difficulty of longer reload times than smaller weapons."
      DisplayFOV=50.000000
+     Description="M353 Light Machine Gun"	 
      Priority=43
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -183,4 +178,8 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.M353_FP'
      DrawScale=0.350000
      AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticWeapons2.M353.M353_Skin1'
+	 Skins(2)=Texture'BallisticWeapons2.M353.M353_Skin2'
+	 Skins(3)=Texture'BallisticWeapons2.M353.M353_Ammo'
 }

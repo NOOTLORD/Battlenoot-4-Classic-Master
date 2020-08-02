@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for for M4A1 Carbine
+// 3rd person weapon class for the M4A1 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -21,7 +21,7 @@ defaultproperties
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Default'
      TracerMode=MU_Primary	 
-     TracerChance=0.500000
+     TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Both
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
@@ -31,5 +31,8 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.M4A1Carbine_TP'
      RelativeRotation=(Pitch=32768,Roll=-1000)
      PrePivot=(Y=-1.000000,Z=-12.500000)
-     DrawScale=1.000000	
+     DrawScale=1.000000
+	 Skins(0)=Texture'BallisticRecolorsTex.LK05.LK05-EOTech-RDS'
+	 Skins(1)=Texture'BallisticRecolorsTex.M4A1.M4_Black'
+	 Skins(2)=Texture'BallisticRecolorsTex.LK05.LK05-Bullets'
 }

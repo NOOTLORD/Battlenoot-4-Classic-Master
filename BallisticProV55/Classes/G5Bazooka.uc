@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for G5 Bazooka
+// Weapon class for the G5 Bazooka
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for XK2 Submachine Gun
+// Damage type class for the XK2 Submachine Gun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

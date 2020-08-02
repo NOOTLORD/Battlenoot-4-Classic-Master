@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for LK-05 Carbine
+// Ammo class for the LK-05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

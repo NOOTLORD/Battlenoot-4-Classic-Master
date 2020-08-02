@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for RS04 Pistol
+// Primaryfire class for the RS04 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

@@ -15,7 +15,7 @@ var IP_L8GIAmmoPack AmmoPack1;
 
 replication
 {
-	reliable if (Role == ROLE_Authority)
+	reliable if (Role < ROLE_Authority)
 		SpawnPack, AmmoPack1;
 }
 

@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for XK2 SubMachinegun
+// 3rd person weapon class for the XK2 SubMachinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,5 +1,5 @@
 //===========================================================================
-// Weapon class for PD-97 Bloodhound
+// Weapon class for the PD-97 Bloodhound
 //
 // adapting code by Nolan "Dark Carnivour" Richert
 // Aspects of which are copyright (c) 2006 RuneStorm. All rights reserved.

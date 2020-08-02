@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for Sub Assault Rifle
+// Ammo class for the Sub Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

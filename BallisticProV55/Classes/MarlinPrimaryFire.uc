@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for Marlin Rifle
+// Primaryfire class for the Marlin Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

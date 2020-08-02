@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for XMK5 Submachine Gun 
+// Ammo class for the XMK5 Submachine Gun 
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

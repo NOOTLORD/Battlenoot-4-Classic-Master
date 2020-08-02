@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for RS8 Pistol
+// Ammo class for the RS8 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for M4 Carbine
+// Primaryfire class for the M4 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -39,7 +39,6 @@ defaultproperties
      YInaccuracy=40.000000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-Fire',Volume=0.975000)
      bPawnRapidFireAnim=True
-     FireEndAnim=
      AmmoClass=Class'BWBPRecolorsPro.Ammo_M4_Rifle'	 
      FireRate=0.130000
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)

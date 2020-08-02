@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for MRS138 Shotgun
+// 3rd person weapon class for the MRS138 Shotgun
 //
 // Third person attachment for MRS138 Shotgun
 //

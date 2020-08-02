@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for Puma Repeater
+// Damage type class for the Puma Repeater
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

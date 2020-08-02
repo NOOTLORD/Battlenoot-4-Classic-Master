@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for M4 Carbine
+// Ammo class for the M4 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

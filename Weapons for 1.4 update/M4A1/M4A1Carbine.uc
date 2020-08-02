@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for M4A1 Carbine
+// Weapon class for the M4A1 Carbine
 //
 // by Sarge.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -62,7 +62,6 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M4'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
@@ -107,12 +106,11 @@ defaultproperties
      PutDownTime=0.400000
      BringUpTime=0.450000
      SelectForce="SwitchToAssaultRifle"
-     AIRating=0.600000
-     bCanThrow=False	 
+     AIRating=0.600000 
      CurrentRating=0.600000
-     Description="MJ51 Carbine||Manufacturer: Majestic Firearms 12|Primary: 5.56mm CAP Rifle Fire|Secondary: Attach Smoke Grenade||The MJ51 is a 3-round burst carbine based off the popular M50 assault rifle. Unlike the M50 and SAR though, it fires a shorter 5.56mm CAP round and is more controllable than its larger cousin, though this comes at the expense of long range accuracy and power. While the S-AR 12 is the UTC's weapon of choice for close range engagements, the MJ51 is often seen in the hands of MP and urban security details. When paired with its native MOA-C Rifle Grenade attachment, the MJ51 makes an efficient riot control weapon. |Majestic Firearms 12 designed their MJ51 carbine alongside their MOA-C Chaff Grenade to produce a rifle with grenade launching capabilities without the need of a bulky launcher that has to be sperately maintained. Utilizing a hardened tungsten barrel and an advanced rifle grenade design, a soldier is able to seamlessly ready a grenade projectile without having to rechamber specilized rounds"
-     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_M4A1_Rifle' 
-     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_M4A1_Rifle' 	 
+     AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_M4A1_Rifle'
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_M4A1_Rifle'	 
+	 Description="M4A1 Carbine"
 	 Priority=42
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
@@ -131,5 +129,9 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.M4A1Carbine_FP'
      DrawScale=0.300000
-     AmbientGlow=5	
+     AmbientGlow=5
+	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticRecolorsTex.M4A1.M4_Black'
+	 Skins(2)=Texture'BallisticRecolorsTex.LK05.LK05-Bullets'
+	 Skins(3)=Texture'BallisticRecolorsTex.LK05.LK05-EOTech-RDS'
 }

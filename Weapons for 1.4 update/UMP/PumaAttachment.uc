@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for Puma Repeater
+// 3rd person weapon class for the Puma Repeater
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -21,7 +21,7 @@ defaultproperties
      TrackAnimMode=MU_None
      TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
      TracerMode=MU_Primary	 
-     TracerChance=0.500000
+     TracerChance=1.000000
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
      WaterTracerMode=MU_Primary	
      FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
@@ -34,6 +34,8 @@ defaultproperties
      bAltRapidFire=True
      Mesh=SkeletalMesh'BallisticRecolorsAnims.PUMA_TP'
      RelativeRotation=(Pitch=32768)	 
+	 PrePivot=(Z=-5.000000)
      DrawScale=0.65000
-     PrePivot=(Z=-5.000000)	 
+     Skins(0)=Texture'BallisticRecolorsTex.PUMA.PUMA-Main'
+     Skins(1)=Texture'BallisticRecolorsTex.PUMA.PUMA-Mag'	 
 }

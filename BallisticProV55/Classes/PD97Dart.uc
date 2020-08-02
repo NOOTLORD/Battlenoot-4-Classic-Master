@@ -1,5 +1,5 @@
 //=============================================================================
-// Dart class for PD-97 Bloodhound
+// Dart class for the PD-97 Bloodhound
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

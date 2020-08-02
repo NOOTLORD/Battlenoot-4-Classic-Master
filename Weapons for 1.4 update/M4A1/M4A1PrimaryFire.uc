@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for M4A1 Carbine
+// Primaryfire class for the M4A1 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

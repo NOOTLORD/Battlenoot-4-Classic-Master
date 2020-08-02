@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for PD-97 Bloodhound
+// Primaryfire class for the PD-97 Bloodhound
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

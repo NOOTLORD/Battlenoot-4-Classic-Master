@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for X4 Knife
+// Damage type class for the X4 Knife
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

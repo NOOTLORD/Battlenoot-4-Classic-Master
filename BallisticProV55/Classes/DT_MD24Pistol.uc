@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for MD24 Pistol
+// Damage type class for the MD24 Pistol
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

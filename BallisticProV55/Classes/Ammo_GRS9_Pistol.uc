@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for GRS-9 Pistol
+// Ammo class for the GRS-9 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

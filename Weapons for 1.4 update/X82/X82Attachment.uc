@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for X82 Sniper Rifle
+// 3rd person weapon class for the X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -32,4 +32,5 @@ defaultproperties
      RelativeLocation=(X=-17.000000,Z=-1.000000)
      RelativeRotation=(Pitch=32768)
      DrawScale=0.250000
+	 Skins(0)=Texture'BallisticRecolorsTex.X82.X82Skin'
 }

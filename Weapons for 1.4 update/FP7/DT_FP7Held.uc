@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type for fire from held FP7
+// Damage type for fire from a held FP7
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

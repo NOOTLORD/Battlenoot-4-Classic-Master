@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for X82 Sniper Rifle
+// Weapon class for the X82 Sniper Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
@@ -45,12 +45,8 @@ function float SuggestDefenseStyle()	{	return 0.8;	}
 
 defaultproperties
 {																																																																																			
-     ManualLines(0)="High-powered .50 rifle fire. High damage and fire rate, but strong recoil."
-     ManualLines(1)="Deploys the rifle upon the ground or a nearby wall. May also be deployed upon sandbags. Whilst deployed, becomes perfectly accurate, loses its iron sights and gains a reduction in recoil. Locational damage (damage which can target an area on the body) taken from the front is significantly reduced."
-     ManualLines(2)="Weapon Function activates infrared vision. Viable infantry targets will be bordered by a box in the weapon's scope.||Effective at long range. Very effective at long range when deployed."																																																			   
      PlayerSpeedFactor=0.850000
      PlayerJumpFactor=0.850000
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny',SkinNum=3)
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_X82'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
@@ -58,7 +54,6 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.425000)
      MagAmmo=5
-     CockAnimPostReload="Cock"
      CockSound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-Charge',Volume=0.850000)
      ReloadAnimRate=0.400000
      ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.X82.X82-In',Volume=0.850000)
@@ -69,7 +64,7 @@ defaultproperties
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
-     ZoomType=ZT_Logarithmic
+     ZoomType=ZT_Fixed
      ScopeXScale=1.333300
      ScopeViewTex=Texture'BallisticRecolorsTex.X82.X82ScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
@@ -98,8 +93,6 @@ defaultproperties
      RecoilDeclineTime=1.500000
      FireModeClass(0)=Class'BWBPRecolorsPro.X82PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     SelectAnim="Takeout"
-     PutDownAnim="PutDown"
      IdleAnimRate=0.040000
      SelectAnimRate=0.500000
      PutDownAnimRate=0.400000
@@ -109,16 +102,15 @@ defaultproperties
      AIRating=0.80000
      CurrentRating=0.800000
      bSniping=True
-     bCanThrow=False
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_X82_Sniper'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_X82_Sniper'	 
-     Description="X82 Rifle||Manufacturer: Evravion Combat Solutions |Primary: Single Powerful Shot|Secondary: Activate Zooming Scope|Special: (Scoped) Activate Night Vision/Detector|Special: (Unscoped) Mount X-83 A1||Enravion's high powered X-83 A1 Anti-Material Rifle is a fearsome sight on the modern day battlefield. With an effective range of about 1.1 miles, the X-83 can target and eliminate infantry and light vehicles with ease and at range using its specialized .50 cal N6-BMG HEAP rounds. This special operations weapon, designed to disable key targets like parked aircraft and APCs, was used extensively prior to the Skrith wars."
      DisplayFOV=55.000000
+     Description="X82 Sniper Rifle"	 
      Priority=207
      HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=9
+     InventoryGroup=1
      GroupOffset=2
      PlayerViewOffset=(X=6.000000,Y=8.000000,Z=-7.500000)
      AttachmentClass=Class'BWBPRecolorsPro.X82Attachment'
@@ -134,4 +126,7 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticRecolorsAnims.X82_FP'
      DrawScale=0.450000
      AmbientGlow=5
+	 Skins(0)=Texture'BallisticRecolorsTex.X82.X82Skin'
+	 Skins(1)=Texture'UT2004Weapons.Pickups.ClassicSniperAmmoT'
+	 Skins(2)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 }

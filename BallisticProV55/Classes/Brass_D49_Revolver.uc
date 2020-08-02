@@ -1,5 +1,5 @@
 //=============================================================================
-// Brass class for D49 Revolver
+// Brass class for the D49 Revolver
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

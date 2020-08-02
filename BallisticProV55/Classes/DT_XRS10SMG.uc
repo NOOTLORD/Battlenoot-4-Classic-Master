@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for XRS10 SMG
+// Damage type class for the XRS10 SMG
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

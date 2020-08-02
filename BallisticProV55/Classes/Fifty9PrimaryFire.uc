@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for Fifty-9 Machine Pistol
+// Primaryfire class for the Fifty-9 Machine Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.

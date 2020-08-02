@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for LK-05 Carbine
+// 3rd person weapon class for the LK-05 Carbine
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

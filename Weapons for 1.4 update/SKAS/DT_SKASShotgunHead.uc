@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for SKAS Shotgun headshots
+// Damage type class for SKAS-21 Shotgun headshots
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

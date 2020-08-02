@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for L8 Ammo Pack
+// 3rd person weapon class for the L8 Ammo Pack
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

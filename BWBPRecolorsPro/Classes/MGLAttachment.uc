@@ -1,5 +1,5 @@
 //=============================================================================
-// 3rd person weapon class for MGL Grenade Launcher
+// 3rd person weapon class for the MGL Grenade Launcher
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

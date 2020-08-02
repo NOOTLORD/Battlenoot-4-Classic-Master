@@ -1,6 +1,4 @@
 //=============================================================================
-// X4Attachment.
-//
 // 3rd person weapon attachment for the X4 Knife
 //
 // by Logan "BlackEagle" Richert.

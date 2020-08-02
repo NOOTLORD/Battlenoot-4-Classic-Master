@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for Puma Repeater
+// Ammo class for the Puma Repeater
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

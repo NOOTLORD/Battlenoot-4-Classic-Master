@@ -1,5 +1,5 @@
 //=============================================================================
-// Brass class for SK-410 Shotgun
+// Brass class for the SK-410 Shotgun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

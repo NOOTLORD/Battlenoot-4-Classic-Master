@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for M763 clouds
+// Damage type class for the M763 clouds
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

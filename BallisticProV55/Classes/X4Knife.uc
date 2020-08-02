@@ -1,5 +1,5 @@
 //=============================================================================
-// Weapon class for X4 Knife
+// Weapon class for the X4 Knife
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.

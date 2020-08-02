@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for RS8 Pistol
+// Primaryfire class for the RS8 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.

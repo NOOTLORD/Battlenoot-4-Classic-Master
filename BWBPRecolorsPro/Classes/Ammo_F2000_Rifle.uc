@@ -1,5 +1,5 @@
 //=============================================================================
-// Ammo class for F2000 Assault Rifle
+// Ammo class for the F2000 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

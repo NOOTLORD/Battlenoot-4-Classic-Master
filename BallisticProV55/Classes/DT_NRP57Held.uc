@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for held NRP57
+// Damage type class for the held NRP57
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.

@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage type class for M50 Assault Rifle
+// Damage type class for the M50 Assault Rifle
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
