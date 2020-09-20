@@ -68,7 +68,7 @@ defaultproperties
      bNoCrosshairInScope=True
      SightZoomFactor=20
      SightPivot=(Pitch=50)
-     SightOffset=(X=25.000000,Y=0.030000,Z=8.000000)
+     SightOffset=(X=25.000000,Y=0.030000,Z=6.250000)
      SightDisplayFOV=40.000000
      SightingTime=0.400000
      GunLength=80.000000
@@ -114,10 +114,6 @@ defaultproperties
      Mesh=SkeletalMesh'BallisticAnims2.R9_FP'
      DrawScale=0.500000	 
      AmbientGlow=5
-	 Skins(0)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
-	 Skins(1)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
-	 Skins(2)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
-	 Skins(3)=Shader'BallisticWeapons1.SRS600.SRS-SelfIllum'
-     Skins(4)=Texture'BallisticWeapons2.Weapons.USSRSkin'	 
-	 Skins(5)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+     Skins(0)=Texture'BallisticWeapons2.Weapons.USSRSkin'	 
+	 Skins(1)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 }

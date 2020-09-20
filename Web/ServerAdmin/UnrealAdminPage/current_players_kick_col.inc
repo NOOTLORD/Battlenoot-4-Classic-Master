@@ -1,1 +1,0 @@
-<td class="acenter"><input class=check type="checkbox" name="KickPlayer<%PlayerId%>" value="kick"></td>

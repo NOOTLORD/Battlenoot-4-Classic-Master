@@ -954,7 +954,7 @@ defaultproperties
      AtMenus="Press [ESC] to close menu"
      YouveWonTheMatch="You've won the match!"
      YouveLostTheMatch="You've lost the match."
-     NowViewing="HudBase"
+     NowViewing="Spectating"
      ScoreText="Score"
      InitialViewingString="Press Fire to View a different Player"
      LocationDot=Texture'HUDContent.Generic.HUD'

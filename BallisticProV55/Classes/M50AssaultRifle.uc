@@ -51,7 +51,6 @@ defaultproperties
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M50'
      BigIconCoords=(Y1=40,Y2=235)
-     SightFXClass=Class'BallisticProV55.M50SightLEDs'	 
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True

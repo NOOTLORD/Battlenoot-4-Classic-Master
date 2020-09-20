@@ -129,7 +129,7 @@ defaultproperties
      FireChaos=0.500000
      XInaccuracy=4.000000
      YInaccuracy=4.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.G5.G5-Fire1',Volume=1.100000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.G5.G5-Fire',Volume=1.100000)
      bSplashDamage=True
      bRecommendSplashDamage=True
      FireEndAnim=

@@ -11,16 +11,18 @@ class GRS9PrimaryFire extends BallisticRangeAttenFire;
 //Do the spread on the client side
 function PlayFiring()
 {
-	if (BW.MagAmmo - ConsumedLoad < 2)
+	if (BW.MagAmmo - ConsumedLoad < 1)
 	{
 		BW.IdleAnim = 'OpenIdle';
 		BW.ReloadAnim = 'OpenReload';
+		AimedFireAnim = 'SightOpenFire';
 		FireAnim = 'OpenFire';
 	}
 	else
 	{
 		BW.IdleAnim = 'Idle';
 		BW.ReloadAnim = 'Reload';
+		AimedFireAnim = 'SightFire';
 		FireAnim = 'Fire';
 	}
 	super.PlayFiring();
@@ -50,7 +52,8 @@ defaultproperties
      FlashScaleFactor=0.525000
      BrassClass=Class'BallisticProV55.Brass_GRS9_Pistol'
      BrassBone="tip"
-     BrassOffset=(X=-49.000000,Y=4.250000,Z=6.500000)
+     BrassOffset=(X=-49.000000,Y=4.250000,Z=2.500000)
+     AimedFireAnim="SightFire"	 
      RecoilPerShot=256.000000
      FireChaos=0.140000
      XInaccuracy=96.000000

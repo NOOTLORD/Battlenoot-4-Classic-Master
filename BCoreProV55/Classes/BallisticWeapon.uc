@@ -105,7 +105,7 @@ var() bool		bWT_Trap;								// Some kind of weird or deployable weapon. eg. min
 var() bool		bWT_Heal;								// Has the ability to heal in some fashion.
 var() bool		bWT_Spam;							// Is unusually powerful relative to other weapons in the hands of bad players who refuse to use the Aimed key.
 																// Loadout will refuse to give spammers this weapon.
-var() array<String>	ManualLines;					// String array containing usage information.
+var() localized array<String>	ManualLines;					// String array containing usage information.
 var	Object.Color	HeaderColor, TextColor;
 
 // Special weapon info that could be set from anywhere if needed
@@ -3880,6 +3880,10 @@ simulated function Rotator GetRecoilPivot(optional bool bIgnoreViewAim)
 	// Pitching/Yawing
 	R.Yaw += RecoilMax * InterpCurveEval(RecoilXCurve, Recoil/RecoilMax) * RecoilYawFactor;
 	R.Pitch += RecoilMax * InterpCurveEval(RecoilYCurve, Recoil/RecoilMax) * RecoilPitchFactor;
+
+	if (InstigatorController != None && InstigatorController.Handedness == -1)
+		R.Yaw = -R.Yaw;
+
 	if (bIgnoreViewAim || Instigator.Controller == None || PlayerController(Instigator.Controller) == None || PlayerController(Instigator.Controller).bBehindView)
 		return R;
 	return R*(1-ViewRecoilFactor);

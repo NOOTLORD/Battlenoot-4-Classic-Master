@@ -21,7 +21,7 @@ static function string GetString(
 
 defaultproperties
 {
-     YouKilled="You killed"
+     YouKilled="Killed"
      bIsUnique=True
      bFadeMessage=True
      DrawColor=(G=160,R=0)

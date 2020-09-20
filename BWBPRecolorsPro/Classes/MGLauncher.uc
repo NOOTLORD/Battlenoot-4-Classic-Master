@@ -21,7 +21,7 @@ simulated function Notify_ReloadStart()
 
 simulated function Notify_ReloadFinished()
 {	
-	SetBoneScale (0, 1.0, NadeBone0);			
+	SetBoneScale (0, 1.0, NadeBone0);		
 }
 
 simulated function AnimEnded (int Channel, name anim, float frame, float rate)

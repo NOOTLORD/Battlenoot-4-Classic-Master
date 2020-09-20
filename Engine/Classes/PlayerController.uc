@@ -7348,7 +7348,7 @@ defaultproperties
      ChatRoomMessageClass=Class'Engine.ChatRoomMessage'
      EnemyTurnSpeed=45000
      CheatClass=Class'Engine.CheatManager'
-     InputClass=Class'Engine.PlayerInput'
+     InputClass=Class'Engine.foxPlayerInput'
      PlayerChatType="Engine.PlayerChatManager"
      TeamBeaconMaxDist=6000.000000
      TeamBeaconPlayerInfoMaxDist=1800.000000

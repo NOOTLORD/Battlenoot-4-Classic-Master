@@ -18,11 +18,11 @@ static function string GetString(
 
 defaultproperties
 {
-     YouWereKilledBy="You were killed by"
+     YouWereKilledBy="Killed by"
      KilledByTrailer="!"
      bIsUnique=True
      bFadeMessage=True
-     Lifetime=4
+     Lifetime=3
      DrawColor=(B=0,G=0)
      StackMode=SM_Down
      PosY=0.100000

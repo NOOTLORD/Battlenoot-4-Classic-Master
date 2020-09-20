@@ -30,7 +30,5 @@ defaultproperties
      CockingAnim="Cock_RearPull"
      Mesh=SkeletalMesh'BallisticAnims2.R9_TP'
      DrawScale=0.140000 
-	 Skins(0)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
-	 Skins(1)=Shader'BallisticWeapons1.SRS600.SRS-SelfIllum'
-	 Skins(2)=Texture'BallisticWeapons2.R9.USSRSkin'
+	 Skins(0)=Texture'BallisticWeapons2.R9.USSRSkin'
 }

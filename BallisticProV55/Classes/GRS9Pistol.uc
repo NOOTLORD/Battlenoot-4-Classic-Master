@@ -69,6 +69,26 @@ simulated function PlayReload()
 		SetBoneScale (1, 0.0, 'Bullet');
 }
 
+// Change some properties when using sights...
+simulated function SetScopeBehavior()
+{
+	super.SetScopeBehavior();
+
+	bUseNetAim = default.bUseNetAim || bScopeView;
+	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
+	{
+		if (bScopeView)
+			BFireMode[0].FireAnim = 'SightOpenFire';
+		else	BFireMode[0].FireAnim = 'OpenFire';
+	}
+	else
+	{
+		if (bScopeView)
+			BFireMode[0].FireAnim = 'SightFire';
+		else BFireMode[0].FireAnim = 'Fire';
+	}
+}
+
 // AI Interface =====
 // choose between regular or alt-fire
 

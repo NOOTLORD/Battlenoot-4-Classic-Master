@@ -28,7 +28,7 @@ static simulated function ClientReceive(
 
 defaultproperties
 {
-     DecapitationString="Headshot!!"
+     DecapitationString="Headshot"
      bIsUnique=True
      bFadeMessage=True
      DrawColor=(B=0,G=0)

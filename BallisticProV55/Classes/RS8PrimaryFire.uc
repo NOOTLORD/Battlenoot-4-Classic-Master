@@ -8,6 +8,26 @@
 //=============================================================================
 class RS8PrimaryFire extends BallisticRangeAttenFire;
 
+//Do the spread on the client side
+function PlayFiring()
+{
+	if (BW.MagAmmo - ConsumedLoad < 1)
+	{
+		BW.IdleAnim = 'OpenIdle';
+		BW.ReloadAnim = 'OpenReload';
+		AimedFireAnim = 'SightOpenFire';
+		FireAnim = 'OpenFire';
+	}
+	else
+	{
+		BW.IdleAnim = 'Idle';
+		BW.ReloadAnim = 'Reload';
+		AimedFireAnim = 'SightFire';
+		FireAnim = 'Fire';
+	}
+	super.PlayFiring();
+}
+
 defaultproperties
 {
 	 TraceRange=(Min=4000.000000,Max=4000.000000)
@@ -33,6 +53,7 @@ defaultproperties
      FlashScaleFactor=0.350000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassOffset=(X=-34.000000,Y=4.500000,Z=2.500000)
+     AimedFireAnim="SightFire"	 
      RecoilPerShot=768.000000
      FireChaos=0.250000
      XInaccuracy=96.000000

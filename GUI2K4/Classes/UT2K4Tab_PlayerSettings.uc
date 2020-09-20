@@ -6,7 +6,7 @@
 //==============================================================================
 class UT2K4Tab_PlayerSettings extends Settings_Tabs;
 
-var localized string HandNames[4];
+var localized string HandNames[3];
 var localized string TeamNames[3];
 var localized string ClickInst;
 var localized string All;
@@ -49,9 +49,8 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 	Super.Initcomponent(MyController, MyOwner);
 
 	co_Hand.AddItem(HandNames[0]);
-	co_Hand.AddItem(HandNames[1]);
+	co_Hand.AddItem(HandNames[1]);	
 	co_Hand.AddItem(HandNames[2]);
-	co_Hand.AddItem(HandNames[3]);
 	co_Hand.ReadOnly(true);
 
 	co_Team.AddItem(TeamNames[0]);
@@ -694,9 +693,8 @@ function logspinnydude()
 defaultproperties
 {
      HandNames(0)="Left"
-     HandNames(1)="Center"
+     HandNames(1)="Center"	 
      HandNames(2)="Right"
-     HandNames(3)="Hidden"
      TeamNames(0)="Red"
      TeamNames(1)="Blue"
      TeamNames(2)="None"
@@ -877,13 +875,13 @@ defaultproperties
 
      Begin Object Class=moNumericEdit Name=PlayerFOV
          MinValue=80
-         MaxValue=100
+         MaxValue=140
          ComponentJustification=TXTA_Left
          CaptionWidth=0.700000
          Caption="Default FOV"
          OnCreateComponent=PlayerFOV.InternalOnCreateComponent
          IniOption="@INTERNAL"
-         IniDefault="85"
+         IniDefault="110"
          Hint="This value will change your field of view while playing."
          WinTop=0.076042
          WinLeft=0.705430

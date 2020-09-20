@@ -189,9 +189,9 @@ defaultproperties
      i_BG3=GUISectionBackground'GUI2K4.UT2K4Tab_IForceSettings.InputBK3'
 
      Begin Object Class=moFloatEdit Name=InputMouseSensitivity
-         MinValue=0.250000
+         MinValue=0.000000
          MaxValue=25.000000
-         Step=0.250000
+         Step=0.10000
          ComponentJustification=TXTA_Left
          CaptionWidth=0.725000
          Caption="Mouse Sensitivity (Game)"
@@ -209,9 +209,9 @@ defaultproperties
      fl_Sensitivity=moFloatEdit'GUI2K4.UT2K4Tab_IForceSettings.InputMouseSensitivity'
 
      Begin Object Class=moFloatEdit Name=InputMenuSensitivity
-         MinValue=1.000000
+         MinValue=0.000000
          MaxValue=6.000000
-         Step=0.250000
+         Step=0.10000
          ComponentJustification=TXTA_Left
          CaptionWidth=0.725000
          Caption="Mouse Sensitivity (Menus)"
