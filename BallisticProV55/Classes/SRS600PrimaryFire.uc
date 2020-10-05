@@ -13,9 +13,6 @@ defaultproperties
      CutOffDistance=6144.000000
      CutOffStartRange=3072.000000
      TraceRange=(Min=30000.000000,Max=30000.000000)
-     WaterRangeFactor=0.800000
-     MaxWallSize=24.000000
-     MaxWalls=1
      Damage=40.000000
      DamageHead=80.000000
      DamageLimb=40.000000
@@ -31,7 +28,7 @@ defaultproperties
      ClipFinishSound=(Sound=Sound'BallisticSounds2.Misc.ClipEnd-1',Volume=1.000000)
      bCockAfterEmpty=True
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
-     FlashScaleFactor=0.400000
+     FlashScaleFactor=0.350000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassOffset=(X=-15.000000,Y=1.000000,Z=0.000000)
      AimedFireAnim="AimedFire"

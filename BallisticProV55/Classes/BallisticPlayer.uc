@@ -21,9 +21,6 @@
 //=============================================================================
 class BallisticPlayer extends xPlayer config(User);
 
-#EXEC OBJ LOAD FILE=BallisticUI.utx
-#EXEC OBJ LOAD FILE=BallisticWeapons2.utx
-
 var() globalconfig bool			bUseWeaponUI;	// Option to use the weap selection UI
 struct UIWeaps { var array<Inventory> Items; };//List of items in a group
 var 	bool								bIsInWeaponUI;		// Weapon selector UI is active
@@ -170,7 +167,7 @@ simulated function DrawWeaponUI(Canvas C)
 				C.DrawColor.G = Min(255, C.DrawColor.G+96);
 				C.DrawColor.B = Min(255, C.DrawColor.B+96);
 			}
-			C.DrawTileStretched(Texture'BallisticWeapons2.UI.WeaponUIFrame', XS, YS);
+			C.DrawTileStretched(Texture'BallisticUI.UI.WeaponUIFrame', XS, YS);
 			// Draw the icons. Don't draw highlighted icon now though.
 			if (i == WGroup && j == WItem)
 				continue;

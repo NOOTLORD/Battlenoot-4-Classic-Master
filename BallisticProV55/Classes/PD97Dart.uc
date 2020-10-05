@@ -82,7 +82,7 @@ simulated function Explode(vector HitLocation, vector HitNormal)
 defaultproperties
 {
      ImpactManager=Class'BallisticProV55.IM_XMK5Dart'
-     TrailClass=Class'BallisticProV55.PineappleTrail'
+     TrailClass=Class'BallisticProV55.TraceEmitter_Dart'
      MyRadiusDamageType=Class'BallisticProV55.DT_PD97Dart'
      SplashManager=Class'BallisticProV55.IM_ProjWater'
      ShakeRadius=0.000000

@@ -18,11 +18,11 @@ var config	float	ObjectiveScale;					// Size scale of visible objective reticles
 var	config	bool	bOnHUDObjectiveNotification;	// Show objectives on screen
 var config	bool	bShowInfoPods;					// show InfoPods
 var config	bool	bDrawAllObjectives;				// Draw ALL objectives on screen (2D arrows)
-var config	bool	bShow3DArrow;					// 3d arrow pointing at current objective.
+var bool	bShow3DArrow;					// 3d arrow pointing at current objective.
 var config	bool	bObjectiveReminder;				// objective reminder at spawn
-var	config	bool	bDrawRadar;						// Show Radar
-var config	bool	bDrawRadarCardinalPoints;
-var config	bool	bShowWillowWhisp;
+var	bool	bDrawRadar;						// Show Radar
+var	bool	bDrawRadarCardinalPoints;
+var	bool	bShowWillowWhisp;
 
 var bool			bForceSpawnNotification;
 var	bool			bShowObjectiveBoard, bForceObjectiveBoard;
@@ -43,7 +43,7 @@ var float	fBlink, fPulse;
 
 // Vehicle Radar
 var			float	ASRadarScale;
-var config	float	ASRadarPosX, ASRadarPosY;			// Radar position
+var        	float	ASRadarPosX, ASRadarPosY;			// Radar position
 var			float	LastRadarUpdate;
 var			Array<Vehicle>	RadarVehicleCache;
 
@@ -2006,8 +2006,8 @@ defaultproperties
      bShowInfoPods=True
      bShow3DArrow=False
      bObjectiveReminder=True
-     bDrawRadar=True
-     bDrawRadarCardinalPoints=True
+     bDrawRadar=False
+     bDrawRadarCardinalPoints=False
      bShowWillowWhisp=False
      OBJ_ReAppearTime=7.000000
      OBJ_FadedOutTime=6.000000

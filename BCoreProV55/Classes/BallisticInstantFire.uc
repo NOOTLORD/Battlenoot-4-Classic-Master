@@ -46,11 +46,11 @@
 class BallisticInstantFire extends BallisticFire
 	config(BallisticProV55);
 
+const MAX_WALLS = 5;
 //General Vars ----------------------------------------------------------------
 var() Range				TraceRange;			// Min and Max range of trace
-var() float				WaterRangeFactor;	// Remaining range is multiplied by this when going under water
-var() float				MaxWallSize;		// Maximum thickness of the walls that this bullet gan go through
-var() byte				MaxWalls;			// Max number of walls this fire can penetrate
+var() float				MaxWaterTraceRange;	// Maximum distance this fire should trace after entering water
+var() float				WallPenetrationForce;		// Maximum thickness of the walls that this bullet gan go through
 struct TraceInfo					// This holds info about a trace
 {
 	var() Vector 	Start, End, HitNormal, HitLocation, Extent;
@@ -109,22 +109,22 @@ var array<InstantFireModeInfo> FireModes;
 // Maximum range. Used by AI and such...
 function float MaxRange()	{	return TraceRange.Max;	}
 
-// Returns the amount by which MaxWallSize should be scaled for each surface type. Override in subclasses to change...
+// Returns the amount by which WallPenetrationForce should be scaled for each surface type. Override in subclasses to change...
 function float SurfaceScale (int Surf)
 {
 	switch (Surf)
 	{
-		Case 0:/*EST_Default*/	return 1.0;
+		Case 0:/*EST_Default*/	return 1.5; // bricks and such
 		Case 1:/*EST_Rock*/		return 1.0;
-		Case 2:/*EST_Dirt*/		return 4.0;
-		Case 3:/*EST_Metal*/	return 0.5;
-		Case 4:/*EST_Wood*/		return 2.0;
-		Case 5:/*EST_Plant*/	return 4.0;
-		Case 6:/*EST_Flesh*/	return 2.0;
-		Case 7:/*EST_Ice*/		return 1.5;
-		Case 8:/*EST_Snow*/		return 2.0;
-		Case 9:/*EST_Water*/	return 8.0;
-		Case 10:/*EST_Glass*/	return 1.0;
+		Case 2:/*EST_Dirt*/		return 1.5;
+		Case 3:/*EST_Metal*/	return 0.25;
+		Case 4:/*EST_Wood*/		return 3.0;
+		Case 5:/*EST_Plant*/	return 3.0;
+		Case 6:/*EST_Flesh*/	return 1.0;
+		Case 7:/*EST_Ice*/		return 1.0;
+		Case 8:/*EST_Snow*/		return 5.0;
+		Case 9:/*EST_Water*/	return 0.25;
+		Case 10:/*EST_Glass*/	return 4.0;
 		default:				return 1.0;
 	}
 }
@@ -160,7 +160,7 @@ function bool CanPenetrate (Actor Other, vector HitLocation, vector Dir, int Pen
 {
 	local float Resistance;
 
-	if (!bPenetrate || Other == None || Other.bWorldGeometry || Mover(Other) != None || BallisticShield(Other) != None)
+	if (!bPenetrate || Other == None || Other.bWorldGeometry || Mover(Other) != None)
 		return false;
 
 	// Resistance is random between 0 and enemy max health
@@ -264,7 +264,7 @@ function Vector GetDamageHitLocation(xPawn Other, Vector HitLocation, vector Tra
 	return BoneTestLocation;
 }
 
-function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLocation, int PenetrateCount, int WallCount, Vector WaterHitLocation)
+function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLocation, int PenetrateCount, int WallCount, int WallPenForce, Vector WaterHitLocation)
 {
 	local float  DamageFactor;
 	local Vector RelativeVelocity;
@@ -279,14 +279,17 @@ function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLo
 		DamageFactor *= Lerp(VSize(HitLocation-TraceStart)/TraceRange.Max, 1, RangeAtten);
 
 	if (WaterRangeAtten != 1.0 && WaterHitLocation != vect(0,0,0))
-		DamageFactor *= Lerp(VSize(HitLocation-WaterHitLocation) / (TraceRange.Max*WaterRangeFactor), 1, WaterRangeAtten);
+		DamageFactor *= Lerp(VSize(HitLocation-WaterHitLocation) / MaxWaterTraceRange, 1, WaterRangeAtten);
 
 	if (PenetrateCount > 0)
-		DamageFactor *= PDamageFactor ** PenetrateCount;
+		DamageFactor *= PDamageFactor * PenetrateCount;
 
-	if (WallCount > 0)
-		DamageFactor *= WallPDamageFactor ** WallCount;
-
+	if (WallPenetrationForce > 0 && WallCount > 0)
+	{	
+		DamageFactor *= WallPDamageFactor * WallCount;
+		DamageFactor *= WallPenForce / WallPenetrationForce;
+	}
+	
 	if (bUseRunningDamage)
 	{
 		RelativeVelocity = Instigator.Velocity - Other.Velocity;
@@ -297,7 +300,7 @@ function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLo
 }
 
 // This is called for any actor found by this fire.
-function OnTraceHit (Actor Other, vector HitLocation, vector TraceStart, vector Dir, optional int PenetrateCount, optional int WallCount, optional vector WaterHitLocation)
+function OnTraceHit (Actor Other, vector HitLocation, vector TraceStart, vector Dir, int PenetrateCount, int WallCount, int WallPenForce, optional vector WaterHitLocation)
 {
 	local float				Dmg;
 	local float				ScaleFactor;
@@ -312,7 +315,7 @@ function OnTraceHit (Actor Other, vector HitLocation, vector TraceStart, vector 
 	
 	Dmg = GetDamage(Other, DamageHitLocation, Dir, Victim, HitDT);
 
-	ScaleFactor = ResolveDamageFactors(Other, TraceStart, HitLocation, PenetrateCount, WallCount, WaterHitLocation);
+	ScaleFactor = ResolveDamageFactors(Other, TraceStart, HitLocation, PenetrateCount, WallCount, WallPenForce, WaterHitLocation);
 	
 	Dmg *= ScaleFactor;
 
@@ -342,13 +345,14 @@ function ApplyForce(Pawn Victim, Vector Start, float ScaleFactor)
 // Do the trace to find out where bullet really goes
 function DoTrace (Vector InitialStart, Rotator Dir)
 {
-	local int						PenCount, WallCount;
+	local int						PenCount, WallCount, WallPenForce;
 	local Vector					End, X, HitLocation, HitNormal, Start, WaterHitLoc, LastHitLoc, ExitNormal;
 	local Material					HitMaterial, ExitMaterial;
 	local float						Dist;
 	local Actor						Other, LastOther;
 	local bool						bHitWall;
 
+	WallPenForce = WallPenetrationForce;
 	// Work out the range
 	Dist = TraceRange.Min + FRand() * (TraceRange.Max - TraceRange.Min);
 
@@ -379,7 +383,7 @@ function DoTrace (Vector InitialStart, Rotator Dir)
 			if (VSize(HitLocation - Start) > 1)
 				WaterHitLoc=HitLocation;
 			Start = HitLocation;
-			Dist *= WaterRangeFactor;
+			Dist = Min(Dist, MaxWaterTraceRange);
 			End = Start + X * Dist;
 			Weapon.bTraceWater=false;
 			continue;
@@ -390,7 +394,7 @@ function DoTrace (Vector InitialStart, Rotator Dir)
 		// Got something interesting
 		if (!Other.bWorldGeometry && Other != LastOther)
 		{
-			OnTraceHit(Other, HitLocation, InitialStart, X, PenCount, WallCount, WaterHitLoc);
+			OnTraceHit(Other, HitLocation, InitialStart, X, PenCount, WallCount, WallPenForce, WaterHitLoc);
 		
 			LastOther = Other;
 
@@ -417,11 +421,12 @@ function DoTrace (Vector InitialStart, Rotator Dir)
 			if (Other.bCanBeDamaged)
 			{
 				bHitWall = ImpactEffect (HitLocation, HitNormal, HitMaterial, Other, WaterHitLoc);
-				OnTraceHit(Other, HitLocation, InitialStart, X, PenCount, WallCount, WaterHitLoc);
+				OnTraceHit(Other, HitLocation, InitialStart, X, PenCount, WallCount, WallPenForce, WaterHitLoc);
 				break;
 			}
-			if (WallCount <= MaxWalls && MaxWallSize > 0 && GoThroughWall(Other, HitLocation, HitNormal, MaxWallSize * ScaleBySurface(Other, HitMaterial), X, Start, ExitNormal, ExitMaterial))
+			if (WallCount < MAX_WALLS && WallPenForce > 0 && GoThroughWall(Other, HitLocation, HitNormal, WallPenForce * ScaleBySurface(Other, HitMaterial), X, Start, ExitNormal, ExitMaterial))
 			{
+				WallPenForce -= VSize(Start - HitLocation) / ScaleBySurface(Other, HitMaterial);
 				WallPenetrateEffect(Other, HitLocation, HitNormal, HitMaterial);
 				WallPenetrateEffect(Other, Start, ExitNormal, ExitMaterial, true);
 				Weapon.bTraceWater=true;
@@ -750,11 +755,11 @@ static function FireModeStats GetStats()
 defaultproperties
 {
      TraceRange=(Min=5000.000000,Max=5000.000000)
-     WaterRangeFactor=1.000000
+     MaxWaterTraceRange=128
      RangeAtten=1.000000
-     WaterRangeAtten=1.000000
+     WaterRangeAtten=0.000000
      PDamageFactor=0.700000
-     WallPDamageFactor=0.700000
+     WallPDamageFactor=0.95
      DamageModHead=1.500000
-     DamageModLimb=0.750000
+     DamageModLimb=0.700000
 }

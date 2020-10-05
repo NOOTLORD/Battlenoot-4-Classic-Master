@@ -9,6 +9,12 @@
 //=============================================================================
 class BallisticWeaponStatsMenu extends UT2K4GUIPage;
 
+const TIME_DILATION_FIXED = 1.1f;
+
+const BASELINE_DPS_DIVISOR = 2.42f;
+const BASELINE_TTK_DIVISOR = 0.0065f;
+const BASELINE_RECOIL_DIVISOR = 14.42f;
+
 var Automated GUIImage			MyBack, Box_WeaponList, Box_Desc, Box_WeaponIcon, WeaponIcon;
 var Automated GUISectionBackground GenBack, PriBack, AltBack;
 var Automated GUIButton			BDone;
@@ -123,12 +129,13 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 	Box_Desc.bVisible = False;
 	
 	cb_Display.AddItem("Statistics");
+	cb_Display.AddItem("Manual");
 
 	cb_Display.bReadOnly = True;
 
 	LoadList();
 	bInitialized = true;
-	cb_Display.SetIndex(0);
+	cb_Display.SetIndex(1);
 	SwitchDisplay(cb_Display.GetIndex());
 	UpdateInfo();
 }
@@ -265,16 +272,28 @@ function UpdateInfo()
 		WeaponIcon.Image = BW.default.BigIconMaterial;
 		l_WeaponCaption.Caption = BW.default.ItemName;
 		l_WeaponCaption.TextColor = BW.default.HUDColor;
+		sb_Desc.SetContent(BW.static.GetManual());
+		
+		
+		// account for 1.1 speed that is native to UT
+		FS.DPS *= TIME_DILATION_FIXED; 
+		FS.TTK /= TIME_DILATION_FIXED;
+		FS.RPS *= TIME_DILATION_FIXED;
+		
+		AFS.DPS *= TIME_DILATION_FIXED;
+		AFS.TTK /= TIME_DILATION_FIXED;
+		AFS.RPS *= TIME_DILATION_FIXED;
+
 		
 		//pri
 		db_DShot.Caption = FS.Damage;
 		
 		pb_DPS.Value = FMin(FS.DPS, pb_DPS.High);
-		pb_DPS.Caption = FS.DPS@"("$int(FS.DPS / 2.2)$"%)";
+		pb_DPS.Caption = FS.DPS@"("$int(FS.DPS / BASELINE_DPS_DIVISOR)$"%)";
 		pb_DPS.BarColor = ColorBar(pb_DPS.Value / pb_DPS.High);
 		
 		pb_TTK.Value = FMin(FS.TTK, pb_TTK.High);
-		pb_TTK.Caption = FS.TTK@"("$int(FS.TTK / 0.007)$"%)";
+		pb_TTK.Caption = FS.TTK@"("$int(FS.TTK / BASELINE_TTK_DIVISOR)$"%)";
 		pb_TTK.BarColor = ColorBar(pb_TTK.Value / pb_TTK.High);
 		
 		db_RPM.Caption = FS.RPM;
@@ -282,7 +301,7 @@ function UpdateInfo()
 		db_Recoil.Caption = String(FS.RPShot);
 		
 		pb_RPS.Value = FMin(FS.RPS, pb_RPS.High);
-		pb_RPS.Caption = String(FS.RPS)@"("$int(FS.RPS / 13.33)$"%)";
+		pb_RPS.Caption = String(FS.RPS)@"("$int(FS.RPS / BASELINE_RECOIL_DIVISOR)$"%)";
 		pb_RPS.BarColor = ColorBar(pb_RPS.Value / pb_RPS.High);
 		
 		db_Exp.Caption = String(int(FS.FCPShot * pb_HipSpr.Value));

@@ -86,6 +86,7 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
+
      PlayerSpeedFactor=1.200000
      InventorySize=2
 	 bNoMag=True

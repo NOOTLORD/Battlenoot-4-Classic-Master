@@ -4,7 +4,6 @@
 // Created by Laurent Delayen
 // © 2003, Epic Games, Inc.  All Rights Reserved
 //==============================================================================
-
 class Message_Awards extends LocalMessage;
 
 var localized string MSG[2];
@@ -56,10 +55,11 @@ static function RenderComplexMessage(
 defaultproperties
 {
      Msg(0)="You have completed the Objective!"
-     Msg(1)="completed the Objective!"
+     Msg(1)="completed the Objective!" 
      bComplexString=True
      bIsUnique=True
      bFadeMessage=True
+	 Lifetime=3
      DrawColor=(B=0,G=0)
      StackMode=SM_Down
      PosY=0.242000

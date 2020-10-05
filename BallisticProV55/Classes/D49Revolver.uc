@@ -325,20 +325,19 @@ defaultproperties
      Shells(5)=(BulletName="Bullet6",ShellName="Shell6")
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_D49'
-     SightFXClass=Class'BallisticProV55.D49SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      SpecialInfo(0)=(Info="120.0;10.0;0.6;50.0;1.0;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
      MagAmmo=6
-     CockAnimRate=1.250000
+     CockAnimRate=1.500000
      CockSound=(Sound=Sound'BallisticSounds2.D49.D49-Cock',Volume=1.000000)
-     ReloadAnimRate=1.250000
+     ReloadAnimRate=1.500000
      ClipHitSound=(Volume=0.750000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellOut',Volume=1.000000)
      ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn',Volume=1.000000)
-     ClipInFrame=0.650000
+     ClipInFrame=132.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -347,20 +346,18 @@ defaultproperties
      bNoCrosshairInScope=True
      SightOffset=(X=-30.000000,Y=-0.400000,Z=14.500000)
      SightingTime=0.200000
-     SightAimFactor=0.150000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)	
      SightDisplayFOV=40.000000	 
-     AimAdjustTime=100.000000
 	 SightZoomFactor=0
      AimSpread=16
-     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.450000
      ChaosAimSpread=768
-     RecoilYawFactor=0.000000
-     RecoilXFactor=0.250000
-     RecoilYFactor=0.250000
-     RecoilDeclineTime=0.800000
+	 RecoilXCurve=(Points=((InVal=0.0,OutVal=0.0),(InVal=0.5,OutVal=0.03),(InVal=1,OutVal=0.07)))	 
+     RecoilXFactor=0.10000
+     RecoilYFactor=0.10000
+     RecoilDeclineTime=1.200000
      RecoilDeclineDelay=0.350000
+	 RecoilMax=6144
      FireModeClass(0)=Class'BallisticProV55.D49PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownAnimRate=1.250000
@@ -392,7 +389,6 @@ defaultproperties
      LightRadius=2.250000
      Mesh=SkeletalMesh'BallisticAnims2.D49_FP'
      DrawScale=0.220000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons2.D49.D49RevolverSkin'
 	 Skins(2)=Shader'BallisticWeapons2.D49.D49Shells-Shiney'

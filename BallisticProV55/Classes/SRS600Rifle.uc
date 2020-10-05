@@ -78,7 +78,7 @@ defaultproperties
      CurrentWeaponMode=0
      FullZoomFOV=70.000000
      bNoCrosshairInScope=True
-     SightOffset=(X=16.000000,Z=10.460000)
+     SightOffset=(X=16.000000,Z=8.660000)
      SightDisplayFOV=40.000000
      GunLength=72.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
@@ -126,8 +126,5 @@ defaultproperties
      AmbientGlow=5
      Skins(0)=Texture'BallisticWeapons1.SRS600.SRS-600main'
      Skins(1)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
-     Skins(2)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
-     Skins(3)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-	 Skins(4)=FinalBlend'BallisticWeapons1.SRS600.SRS-HSight-FB'
-	 Skins(5)=Shader'BallisticWeapons1.SRS600.SRS-SelfIllum'	 
+     Skins(2)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 }

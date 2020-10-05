@@ -1740,7 +1740,7 @@ defaultproperties
 	DisplayModes(13)=(Width=1600,Height=1024)
 	DisplayModes(14)=(Width=1600,Height=1200)
 	DisplayModes(15)=(Width=1680,Height=1050)
-	DisplayModes(16)=(Width=1920,Height=1200)
+	DisplayModes(16)=(Width=1920,Height=1080)
 	RenderModeText(0)="Direct 3D"
 	RenderModeText(1)="Software"
 	RenderMode(0)="D3DDrv.D3DRenderDevice"

@@ -515,7 +515,7 @@ simulated function AssignInitialPose()
 			 LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdAlien');
 		else if (  recx.Species.default.SpeciesName == "Juggernaut" )
 			 LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rd');														 
-		if ( recx.Sex ~= "Female" && PlayerReplicationInfo.CharacterName != "July")
+		else if ( recx.Sex ~= "Female" && PlayerReplicationInfo.CharacterName != "July")
 			LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdFemale');	 
 		else LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rd');
 	}

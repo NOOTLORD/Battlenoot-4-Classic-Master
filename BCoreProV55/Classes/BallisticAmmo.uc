@@ -15,10 +15,6 @@ static function int GetKillResupplyAmmo()
 
 function bool AddAmmo(int AmmoToAdd)
 {
-	if (Pawn(Owner) != None && Pawn(Owner).DrivenVehicle != None && BallisticTurret(Pawn(Owner).DrivenVehicle) != None &&
-		!BallisticTurret(Pawn(Owner).DrivenVehicle).DriverGetAmmo(self, AmmoToAdd))
-		return true;
-
 	return super.AddAmmo(AmmoToAdd);
 }
 

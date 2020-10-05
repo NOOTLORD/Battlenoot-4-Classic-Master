@@ -307,6 +307,32 @@ simulated function Timer()
 		Super.Timer();
 }
 
+// Aim goes bad when player takes damage
+function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType)
+{
+	local float DF;
+	
+	if (bBerserk)
+		Damage *= 0.75;
+		
+	if (Level.TimeSeconds < ClipReleaseTime + FuseDelay)
+	{
+		DamageThisCook += Damage;
+		if (Damage >= DropThreshold)
+		{
+			HolderDied();
+			DamageThisCook = 0;
+		}
+	}
+		
+	if (AimKnockScale == 0)
+		return;
+
+	DF = FMin(1, (float(Damage)/AimDamageThreshold) * AimKnockScale);
+	ApplyDamageFactor(DF);
+	ClientPlayerDamaged(255*DF);
+	bForceReaim=true;
+}
 simulated function ClientStartReload(optional byte i)
 {
 	ClipReleaseTime = Level.TimeSeconds+0.2;

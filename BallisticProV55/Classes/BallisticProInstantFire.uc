@@ -85,8 +85,6 @@ simulated event ModeDoFire()
         if ( AIController(Instigator.Controller) != None )
             AIController(Instigator.Controller).WeaponFireAgain(BotRefireRate, true);
         Instigator.DeactivateSpawnProtection();
-        if(BallisticTurret(Weapon.Owner) == None  && class'Mut_Ballistic'.static.GetBPRI(xPawn(Weapon.Owner).PlayerReplicationInfo) != None)
-			class'Mut_Ballistic'.static.GetBPRI(xPawn(Weapon.Owner).PlayerReplicationInfo).AddFireStat(load, BW.InventoryGroup);
     }
 	
 	if (!BW.bScopeView)
@@ -123,13 +121,13 @@ simulated event ModeDoFire()
 		BurstCount++;
     	if (BurstCount >= MaxBurst)
     	{
-    		NextFireTime += FireRate * (1 + (MaxBurst * 0.25));
+    		NextFireTime += FireRate * (1 + (MaxBurst * (1.0f - BurstFireRateFactor)));
     		NextFireTime = FMax(NextFireTime, Level.TimeSeconds);
     		BurstCount = 0;
     	}
     	else
     	{
-    		NextFireTime += FireRate * 0.75;
+    		NextFireTime += FireRate * BurstFireRateFactor;
   			NextFireTime = FMax(NextFireTime, Level.TimeSeconds);
   		}
     }

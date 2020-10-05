@@ -29,7 +29,7 @@ var() Color LevelActionFontColor;
 var() float LevelActionPositionX, LevelActionPositionY;
 
 // Hud Digits
-var() NumericWidget DigitsHealth, DigitsVehicleHealth;
+var config NumericWidget DigitsHealth, DigitsVehicleHealth;
 var() NumericWidget DigitsAmmo;
 var() NumericWidget DigitsShield;
 

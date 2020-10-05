@@ -12,9 +12,9 @@ var() float CutOffDistance;
 var() float CutOffStartRange;
 var int	 MaxSpreadFactor;
 
-function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLocation, int PenetrateCount, int WallCount, Vector WaterHitLocation)
+function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLocation, int PenetrateCount, int WallCount, int WallPenForce, Vector WaterHitLocation)
 {
-	local float  DamageFactor;						   
+	local float  DamageFactor;
 
 	DamageFactor = 1;
 
@@ -24,10 +24,13 @@ function float ResolveDamageFactors(Actor Other, vector TraceStart, vector HitLo
 		DamageFactor *= class'BallisticRangeAttenFire'.static.GetRangeAttenFactor(TraceStart, HitLocation, CutOffStartRange, CutOffDistance, RangeAtten);
 	
 	if (PenetrateCount > 0)
-		DamageFactor *= PDamageFactor ** PenetrateCount;
+		DamageFactor *= PDamageFactor * PenetrateCount;
 
-	if (WallCount > 0)
-		DamageFactor *= WallPDamageFactor ** WallCount;
+	if (WallCount > 0 && WallPenetrationForce > 0)
+	{
+		DamageFactor *= WallPDamageFactor * WallCount;
+		DamageFactor *= WallPenForce / WallPenetrationForce;
+	}
 
 	return DamageFactor;
 }
@@ -48,6 +51,7 @@ simulated function vector GetFireSpread()
 		AdjustedHipSpreadFactor = default.HipSpreadFactor * 0.5;
 	else
 		AdjustedHipSpreadFactor = default.HipSpreadFactor;
+
 	if (BW.bScopeView || BW.bAimDisabled)
 		return super.GetFireSpread();
 	else
@@ -119,8 +123,6 @@ simulated event ModeDoFire()
         if ( AIController(Instigator.Controller) != None )
             AIController(Instigator.Controller).WeaponFireAgain(BotRefireRate, true);
         Instigator.DeactivateSpawnProtection();
-        if(BallisticTurret(Weapon.Owner) == None  && class'Mut_Ballistic'.static.GetBPRI(xPawn(Weapon.Owner).PlayerReplicationInfo) != None)
-			class'Mut_Ballistic'.static.GetBPRI(xPawn(Weapon.Owner).PlayerReplicationInfo).AddFireStat(TraceCount, BW.InventoryGroup);
     }
     
 	if (!BW.bScopeView)
@@ -179,7 +181,7 @@ static function float GetAttachmentDispersionFactor()
 
 defaultproperties
 {
-     HipSpreadFactor=3.00000
-     MaxSpreadFactor=3
+     HipSpreadFactor=2.00000
+     MaxSpreadFactor=1
      FireSpreadMode=FSM_Circle
 }

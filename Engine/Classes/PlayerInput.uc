@@ -134,7 +134,7 @@ exec function SetSmoothingStrength(float F)
 {
 	MouseSmoothingStrength = FClamp(F,0,1);
 	default.MouseSmoothingStrength = MouseSmoothingStrength;
-	class'foxPlayerInput'.static.StaticSaveConfig();
+	class'PlayerInput'.static.StaticSaveConfig();
 }
 
 function float AccelerateMouse(float aMouse)
@@ -238,21 +238,21 @@ function UpdateSensitivity(float F)
 {
 	MouseSensitivity = FMax(0,F);
     default.MouseSensitivity = MouseSensitivity;
-	class'foxPlayerInput'.static.StaticSaveConfig();
+	class'PlayerInput'.static.StaticSaveConfig();
 }
 
 function UpdateAccel(float F)
 {
 	MouseAccelThreshold = FMax(0,f);
 	default.MouseAccelThreshold = MouseAccelThreshold;
-	class'foxPlayerInput'.static.StaticSaveConfig();
+	class'PlayerInput'.static.StaticSaveConfig();
 }
 
 function UpdateSmoothing( int Mode )
 {
     MouseSmoothingMode = Mode;
     default.MouseSmoothingMode = MouseSmoothingMode;
-	class'foxPlayerInput'.static.StaticSaveConfig();
+	class'PlayerInput'.static.StaticSaveConfig();
 }
 
 function InvertMouse(optional string Invert)

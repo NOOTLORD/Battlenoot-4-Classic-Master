@@ -13,5 +13,5 @@ simulated function SetScopeBehavior()
 
 defaultproperties
 {
-     HipRecoilFactor=4.000000
+     HipRecoilFactor=1.250000
 }

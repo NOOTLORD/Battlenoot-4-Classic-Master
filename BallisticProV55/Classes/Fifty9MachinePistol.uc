@@ -75,13 +75,11 @@ function float SuggestDefenseStyle()	{	return -0.9;	}
 
 defaultproperties
 {
-	 AIRating=0.85
-	 CurrentRating=0.85
-     PlayerSpeedFactor=1.100000
+	 AIRating=0.850000
+	 CurrentRating=0.850000
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_Fifty9'
      BigIconCoords=(Y1=24)
-     SightFXClass=Class'BallisticProV55.Fifty9SightLEDs'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Bullet=True
      bWT_Machinegun=True
@@ -90,10 +88,9 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Putaway',Volume=0.325000)
      MagAmmo=25
      CockSound=(Sound=Sound'BallisticSounds2.UZI.UZI-Cock',Volume=0.900000)
-     ClipHitSound=(Volume=0.600000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.UZI.UZI-ClipOut',Volume=0.900000)
      ClipInSound=(Sound=Sound'BallisticSounds2.UZI.UZI-ClipIn',Volume=0.900000)
-     ClipInFrame=0.650000
+     ClipInFrame=47.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -104,21 +101,19 @@ defaultproperties
      SightOffset=(X=-10.000000,Z=12.00000)
      SightDisplayFOV=60.000000
      SightingTime=0.200000
-	 SightZoomFactor=0
-     CrouchAimFactor=0.750000
-     SightAimFactor=0.500000
-     HipRecoilFactor=2.250000
+     CrouchAimFactor=1.000000
+	 SightAimFactor=2.000000
+	 HipRecoilFactor=1.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
      ChaosSpeedThreshold=7500.000000
      RecoilXCurve=(Points=(,(InVal=0.200000),(InVal=0.400000,OutVal=0.100000),(InVal=0.600000,OutVal=-0.100000),(InVal=0.800000,OutVal=0.200000),(InVal=1.000000,OutVal=-0.200000)))
      RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.150000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.800000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.250000
      RecoilYFactor=0.300000
-     RecoilMax=6144.000000
-     RecoilDeclineDelay=0.120000
+	 RecoilDeclineTime=0.5
+	 RecoilDeclineDelay=0.220000
+	 RecoilMax=6144
      FireModeClass(0)=Class'BallisticProV55.Fifty9PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownTime=0.400000

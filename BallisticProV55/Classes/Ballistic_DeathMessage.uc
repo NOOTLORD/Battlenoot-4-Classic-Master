@@ -65,6 +65,6 @@ static function string GetString(
 
 defaultproperties
 {
-     TextColor=(R=255,G=255,B=255,A=255)
-	 DrawColor=(R=255,G=255,B=255,A=255)
+     TextColor=(B=210,G=210,R=210,A=255)
+     DMColor=(G=255,R=255,A=255)
 }

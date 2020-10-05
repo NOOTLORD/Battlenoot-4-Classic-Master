@@ -18,6 +18,39 @@ replication
 		BlockNotify;
 }
 
+/*function SetAimed(bool bNewAimed)
+{
+	bIsAimed = bNewAimed;
+	if (bIsAimed)
+	{
+		IdleRifleAnim=MeleeBlockAnim;
+		Instigator.SetAnimAction('Raise');
+	}
+	else 
+	{
+		IdleRifleAnim=IdleHeavyAnim;
+		Instigator.SetAnimAction('Lower');
+	}
+}*/
+
+simulated function PostNetBeginPlay()
+{
+	Super.PostNetBeginPlay();
+	bHeavy=True;
+}
+
+function SetBlocked(bool bNewAimed)
+{
+	bIsAimed = bNewAimed;
+	if (bIsAimed)
+	{	
+		Instigator.SetAnimAction('Raise');
+	}
+	else 
+	{
+		Instigator.SetAnimAction('Lower');
+	}
+}
 // Check if being notified of hand explosion
 simulated event PostNetReceive()
 {
@@ -74,5 +107,5 @@ defaultproperties
      MeleeAltStrikeAnim="Blade_Smash"
      IdleHeavyAnim="Blade_Idle"
      IdleRifleAnim="Blade_Idle"
-     MeleeStrikeAnim="Blade_Swing"
+     MeleeStrikeAnim="Blade_Swing"						  
 }

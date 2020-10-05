@@ -102,6 +102,7 @@ exec simulated function ScopeView()
 		Super.ScopeView();
 		return;
 	}
+	/*   
 	if (IsMaster())
 	{
 		Othergun.ScopeView();
@@ -109,6 +110,7 @@ exec simulated function ScopeView()
 	}
 	bAutoTrack = true;
 	ServerStartTracking();
+ 	*/  
 }
 // Scope key released. Stop tracking
 exec simulated function ScopeViewRelease()
@@ -118,6 +120,7 @@ exec simulated function ScopeViewRelease()
 		Super.ScopeViewRelease();
 		return;
 	}
+ 	/*  
 	if (IsMaster())
 	{
 		Othergun.ScopeViewRelease();
@@ -125,6 +128,7 @@ exec simulated function ScopeViewRelease()
 	}
 	bAutoTrack = false;
 	ServerStopTracking();
+	*/   
 }
 
 simulated function bool CheckScope()
@@ -422,7 +426,8 @@ simulated event WeaponTick(float DT)
 		OtherGun.WeaponTick(DT);
 
 	else if (IsSlave())
-	{	// Timers and ModeDoFire need to be called manually for slave...
+	{	
+		// Timers and ModeDoFire need to be called manually for slave...
 		for (m=0;m<NUM_FIRE_MODES;m++)
 		{
 			if (FireMode[m].bIsFiring)
@@ -442,7 +447,7 @@ simulated event WeaponTick(float DT)
 					FireMode[m].NextTimerPop = 9999999;
 			}
 		}
-		TrackerTick(DT);
+		//TrackerTick(DT);
 	}
 }
 simulated event StopFire(int Mode)
@@ -589,7 +594,7 @@ simulated function bool CanAlternate(int Mode)
 //Can these two weapons fire simultaneously?
 simulated function bool CanSynch(byte Mode)
 {
-	return (OtherGun != None && OtherGun.Class == Class);
+	return false; // (OtherGun != None && OtherGun.Class == Class);
 }
 
 simulated function ForceFire(int Mode)
@@ -928,7 +933,8 @@ simulated function SetDualMode (bool bDualMode)
 		SetBoneScale(8, 0.0, SupportHandBone);
 		if (AIController(Instigator.Controller) == None)
 			bUseSpecialAim = true;
-		ChaosAimSpread *= 1.75;
+			
+		BFireMode[0].FireRate = BFireMode[0].default.FireRate * 1.75;
 		if (bAimDisabled)
 			return;
 	}
@@ -936,7 +942,8 @@ simulated function SetDualMode (bool bDualMode)
 	{
 		SetBoneScale(8, 1.0, SupportHandBone);
 		bUseSpecialAim = false;
-		ChaosAimSpread = default.ChaosAimSpread;
+		BFireMode[0].FireRate = BFireMode[0].default.FireRate;
+
 		if (bAimDisabled)
 			return;
 	}

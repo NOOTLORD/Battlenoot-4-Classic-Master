@@ -129,7 +129,6 @@ defaultproperties
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_GRS-9
      BigIconCoords=(Y1=30,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     SightFXBone="SightBone"	 
      SpecialInfo(0)=(Info="120.0;8.0;-999.0;25.0;0.0;0.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)

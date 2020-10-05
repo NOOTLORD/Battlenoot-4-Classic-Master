@@ -41,11 +41,9 @@ function EjectBrass()
 
 defaultproperties
 {
-     CutOffDistance=1280.000000
-     CutOffStartRange=512.000000
-     WaterRangeFactor=0.400000
-     MaxWallSize=24.000000
-     MaxWalls=1
+     CutOffDistance=1536.000000
+     CutOffStartRange=768.000000
+     WallPenetrationForce=8.000000
      Damage=22.000000
      DamageHead=44.000000
      DamageLimb=22.000000
@@ -65,7 +63,7 @@ defaultproperties
      BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
      BrassOffset=(X=-38.750000,Y=-2.500000,Z=2.00000)
      AimedFireAnim="SightFire"
-     RecoilPerShot=140.000000
+     RecoilPerShot=160.000000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
      XInaccuracy=64.000000
      YInaccuracy=64.000000
@@ -80,5 +78,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
 	 BotRefireRate=0.990000
+     WarnTargetPct=0.200000 
      aimerror=750.000000
 }

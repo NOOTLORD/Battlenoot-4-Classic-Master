@@ -127,7 +127,7 @@ defaultProperties
 		Height=0.05
 		Width=0.49
 		Justification=2
-		Text=". . . LOADING"
+		Text="LOADING...."
 		FontName="XInterface.UT2LargeFont"
 		bWrapText=False
 	End Object

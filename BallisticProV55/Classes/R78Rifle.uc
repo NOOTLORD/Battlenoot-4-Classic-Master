@@ -49,9 +49,8 @@ defaultproperties
      SpecialInfo(0)=(Info="240.0;25.0;0.5;60.0;10.0;0.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.395000)
      PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.395000)
-	 PutDownTime=0.5
+	 PutDownTime=0.500000
      MagAmmo=7
-     CockAnim="Cock"
 	 CockAnimRate=1.250000	
      CockSound=(Sound=Sound'BallisticSounds2.R78.R78-Cock',Volume=1.000000)
      ReloadAnimRate=1.250000
@@ -67,6 +66,7 @@ defaultproperties
      ZoomType=ZT_Fixed
      ScopeXScale=1.333000
      ZoomInAnim="ZoomIn"
+	 ZoomOutAnim="ZoomOut"
      ScopeViewTex=Texture'BallisticUI.R78.RifleScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
@@ -105,8 +105,6 @@ defaultproperties
      Description="R78A1 Sniper Rifle"
      DisplayFOV=55.000000
      Priority=33
-     HudColor=(B=255,G=200,R=200)
-     CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1
      GroupOffset=2

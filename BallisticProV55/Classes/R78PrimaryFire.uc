@@ -11,9 +11,6 @@ class R78PrimaryFire extends BallisticProInstantFire;
 defaultproperties
 {
      TraceRange=(Min=30000.000000,Max=30000.000000)
-     WaterRangeFactor=0.800000
-     MaxWallSize=24.000000
-     MaxWalls=1
      Damage=80.000000
      DamageHead=160.000000
      DamageLimb=80.000000
@@ -34,8 +31,7 @@ defaultproperties
      BrassOffset=(X=-48.000000,Y=-6.000000,Z=6.500000)
      RecoilPerShot=1536.000000
      FireChaos=0.500000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.R78.R78-Fire',Volume=1.650000)
-	 FireEndAnim=			 
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.R78.R78-Fire',Volume=1.650000)			 
      FireRate=1.000000
      AmmoClass=Class'BallisticProV55.Ammo_R78_Sniper'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)

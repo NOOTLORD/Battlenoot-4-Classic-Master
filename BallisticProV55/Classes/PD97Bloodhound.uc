@@ -16,6 +16,7 @@ var byte DrumPos;
 var array<Name> ShellBones[5];
 var array<Name> SpareShellBones[5];
 var() name		Drumbone;
+var() name      Ejectingshellbone;
 
 simulated function Notify_Hidedrum()
 {		
@@ -208,6 +209,7 @@ function float GetAIRating()
 defaultproperties
 {
      Drumbone="SpareDrum"
+	 Ejectingshellbone="Ejectingshell"
 	 AIRating=0.5
 	 CurrentRating=0.5
      ShellBones(0)="Shell1"

@@ -14,5 +14,5 @@ defaultproperties
      HitSoundVolume=0.140000
      StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyRifleRound'
      DrawScale=0.160000
-	 DrawScale3D=(X=0.500000,Y=0.700000,Z=0.700000)
+	 DrawScale3D=(X=0.350000,Y=0.700000,Z=0.700000)
 }

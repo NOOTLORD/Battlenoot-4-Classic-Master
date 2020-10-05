@@ -113,7 +113,6 @@ defaultproperties
      SightDisplayFOV=40.000000
      SightingTime=0.300000
      SprintOffSet=(Pitch=-3072,Yaw=-4096)
-     AimAdjustTime=100.000000
      AimSpread=16
      AimDamageThreshold=0.000000
 	 ViewRecoilFactor=1.000000	 

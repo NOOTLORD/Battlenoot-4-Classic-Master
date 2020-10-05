@@ -165,6 +165,7 @@ var() float					CockingBringUpTime;		//Time in code before weapon is ready
 var() BUtil.FullSound	CockSound;				//Sound to play for cocking
 var() Name					ReloadAnim;				//Anim to use for Reloading. Also anim to use for shovel loop
 var() float					ReloadAnimRate;			//Rate to play Reload Anim at
+																			 
 var() BUtil.FullSound	ClipHitSound;				//Sound to play when magazine gets hit
 var() BUtil.FullSound	ClipOutSound;				//Sound to play when magazine is pulled out
 var() BUtil.FullSound	ClipInSound;				//Sound to play when magazine is put in
@@ -231,13 +232,13 @@ var EZoomType ZoomType;
 
 var() bool						bUseSights;			// This weapon has sights or a scope that can be used
 var() bool						bNoTweenToScope;			//Don't tween to the first idle frame to fix the animation jump (M75 fix) FIXME the M75 uses animations to scope
-var() config float 			ScopeXScale;			//Manual scaling for scopes
-var() globalconfig bool	bInvertScope;		// Inverts Prev/Next weap relation to Zoom In/Out
+var() config float              ScopeXScale;			//Manual scaling for scopes
+var() globalconfig bool         bInvertScope;		// Inverts Prev/Next weap relation to Zoom In/Out
 var() name						ZoomInAnim;			// Anim to play for raising weapon to view through Scope or sights
 var() name						ZoomOutAnim;		// Anim to play when lowering weapon after viewing through scope or sights
 var() Material					ScopeViewTex;		// Texture displayed in Scope View. Fills the screen
-var() BUtil.FullSound		ZoomInSound;		// Sound when zooming in
-var() BUtil.FullSound		ZoomOutSound;		// Sound when zooming out
+var() BUtil.FullSound		    ZoomInSound;		// Sound when zooming in
+var() BUtil.FullSound           ZoomOutSound;		// Sound when zooming out
 var() float						FullZoomFOV;		// The FOV that can be reached when fully zoomed in
 var() bool						bNoMeshInScope;		// Weapon mesh is hidden when in scope/sight view
 var() bool						bNoCrosshairInScope;// Crosshair will be hiden when in scope or sights
@@ -247,7 +248,7 @@ var() Rotator					SightPivot;			// Rotate the weapon by this when in sight view
 var() Vector					SightOffset;		// Offset of actual sight view position from SightBone or mesh origin.
 var() float						SightDisplayFOV;	// DisplayFOV for drawing gun in scope/sight view
 var() float						SightingTime;		// Time it takes to move weapon to and from sight view
-var() globalconfig float	SightingTimeScale;	// Scales the SightingTime for each weapon by this amount.
+var() globalconfig float	    SightingTimeScale;	// Scales the SightingTime for each weapon by this amount.
 var   float						OldZoomFOV;			// FOV saved for temporary scope down
 var   float						SightingPhase;		// Current level of progress moving weapon into place for sight view
 var   bool						bPendingSightUp;		// Currently out of sight view for something. Will go back when done
@@ -398,7 +399,7 @@ replication
 	// functions on client, called by server
    	reliable if( Role==ROLE_Authority )
 		ClientReloadRelease, ClientStartReload, ReceiveNewAim, ClientWeaponSpecial, ClientWeaponSpecialRelease,
-		ReceiveNetRecoil, ClientJumped, ClientPlayerDamaged, ClientScopeDown, ClientJamMode, ClientCockGun, ClientInitWeaponFromTurret,
+		ReceiveNetRecoil, ClientJumped, ClientPlayerDamaged, ClientScopeDown, ClientJamMode, ClientCockGun,ClientInitWeaponFromTurret,
 		ClientSwitchWeaponModes, ClientSwitchBurstMode, ClientDodged, ClientWeaponReloaded, ClientApplyBlockFatigue, ClientDisplaceAim;
 }
 
@@ -487,8 +488,8 @@ exec function OffsetY2(int y2)
 
 exec function LogIconCoords()
 {
-	log(self@"BigIconCoords=(X1="$IconCoords.X1$",X2="$IconCoords.X2$",Y1="$IconCoords.Y1$",Y2="$IconCoords.Y2$")");
-	PlayerController(InstigatorController).ClientMessage("Logged IconCoords for"@self);
+	log(self @ "BigIconCoords=(X1="$IconCoords.X1$",X2="$IconCoords.X2$",Y1="$IconCoords.Y1$",Y2="$IconCoords.Y2$")");
+	PlayerController(InstigatorController).ClientMessage("Logged IconCoords for" @ self);
 }
 
 static final operator(34) Range *= (out Range A, float B)
@@ -535,10 +536,15 @@ simulated function PostNetBeginPlay()
 		AimSpread *= BCRepClass.default.AccuracyScale;
 	}
 
+	// Azarael - This assumes that all firemodes implementing burst modify the primary fire alone.
+	// To my knowledge, this is the case.
+	
 	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_Burst")
 	{
 		BFireMode[0].bBurstMode = True;
 		BFireMode[0].MaxBurst = WeaponModes[CurrentWeaponMode].Value;
+
+		RecoilDeclineDelay = CalculateBurstRecoilDelay(BFireMode[0].bBurstMode);
 	}
 }
 
@@ -765,6 +771,11 @@ simulated event Tick(float DT)
 	}
 }
 
+simulated function bool IsDisplaced()
+{
+	return (AimDisplacementEndTime > Level.TimeSeconds || AimDisplacementFactor > 0);
+}
+
 // Check a few things and run the aiming tick
 simulated event WeaponTick(float DT)
 {
@@ -778,7 +789,7 @@ simulated event WeaponTick(float DT)
 
 	if (!BCRepClass.default.bNoLongGun && GunLength > 0)
 		TickLongGun(DT);
-	if (AimDisplacementEndTime > Level.TimeSeconds || AimDisplacementFactor > 0)
+	if (IsDisplaced())
 		TickDisplacement(DT);
 	TickFireCounter(DT);
 	
@@ -1114,7 +1125,7 @@ simulated function StartScopeView()
 	if ( PlayerController(InstigatorController).bBehindView )
 		bNoCrosshairInScope = False;
 	else
-		bNoCrosshairInScope = default.bNoCrosshairInScope;	
+		bNoCrosshairInScope = default.bNoCrosshairInScope;
 		
 	//Take down normal crosshairs if the weapon has none in scope view
 	if (bNoCrosshairInScope)
@@ -1223,19 +1234,19 @@ simulated function StopScopeView(optional bool bNoAnim)
 			PlayerController(InstigatorController).bZooming = False;
 		}
 	}
-
-	// UT2004 crosshair users: Restore normal crosshairs if the weapon has none in scope view
-	if (bNoCrosshairInScope)
+																						  
+	if (bStandardCrosshairOff) // bNoCrosshairInScope
 	{
-		if (bOldCrosshairs && bStandardCrosshairOff) 
+		if (bOldCrosshairs)
 		{
 			bStandardCrosshairOff = False;
-			PlayerController(InstigatorController).myHud.bCrosshairShow = True;
+			PlayerController(InstigatorController).myHud.bCrosshairShow = True;	
 		}
+		
 	}
 	
 	// Ballistic crosshair users: Hide crosshair if weapon has crosshair in scope
-	else 
+	else if (!bOldCrosshairs)
 	{
 		PlayerController(InstigatorController).myHud.bCrosshairShow = False;
 	}
@@ -1343,9 +1354,7 @@ simulated function SetScopeBehavior()
 	{
 		ViewAimFactor = 1.0;
 		ViewRecoilFactor = 1.0;
-		AimAdjustTime *= 2;
 		AimSpread = 0;
-		//AimSpread *= SightAimFactor;
 		ChaosAimSpread *= SightAimFactor;
 		ChaosDeclineTime *= 2.0;
 		ChaosSpeedThreshold *= 0.7;
@@ -1359,7 +1368,6 @@ simulated function SetScopeBehavior()
 			ViewRecoilFactor = default.ViewRecoilFactor;
 		}
 
-		AimAdjustTime = default.AimAdjustTime;
 		AimSpread = default.AimSpread;
 		AimSpread *= BCRepClass.default.AccuracyScale;
 		ChaosAimSpread = default.ChaosAimSpread;
@@ -1896,7 +1904,7 @@ final function ServerMeleeRelease()
 	//Fire delay
 }
 
-final function ApplyBlockFatigue()
+final function ApplyAttackFatigue()
 {
 	local float Penalty;
 	
@@ -1904,14 +1912,19 @@ final function ApplyBlockFatigue()
 		Penalty = BallisticMeleeFire(BFireMode[1]).FatiguePerStrike * 2.5;
 	else Penalty = BallisticMeleeFire(BFireMode[0]).FatiguePerStrike * 2.5;
 	
-	MeleeFatigue = FMin(1, MeleeFatigue + Penalty);
-	
-	ClientApplyBlockFatigue(Penalty);
+	ApplyBlockFatigue(Penalty);
 }
 
-simulated final function ClientApplyBlockFatigue(float Penalty)
+final function ApplyBlockFatigue(float value)
 {
-	MeleeFatigue = FMin(1, MeleeFatigue + Penalty);
+	MeleeFatigue = FMin(1, MeleeFatigue + value);
+	
+	ClientApplyBlockFatigue(value);
+}
+
+simulated final function ClientApplyBlockFatigue(float value)
+{
+	MeleeFatigue = FMin(1, MeleeFatigue + value);
 }
 
 //===========================================================================
@@ -2032,26 +2045,55 @@ function ServerSwitchWeaponMode (byte NewMode)
 		}
 		ClientSwitchWeaponModes(CurrentWeaponMode);
 	}
-		
+	
+	CheckBurstMode();
+
+	if (Instigator.IsLocallyControlled())
+		default.LastWeaponMode = CurrentWeaponMode;
+}
+
+simulated function float CalculateBurstRecoilDelay(bool burst)
+{
+	if (burst)
+	{
+		return
+			(BFireMode[0].FireRate * WeaponModes[CurrentWeaponMode].Value * (1f - BFireMode[0].BurstFireRateFactor)) // cooldown of burst
+			+ (default.RecoilDeclineDelay - BFireMode[0].FireRate); // inherent delay, usually fire rate * 0.5
+	}
+	
+	else
+	{
+		return default.RecoilDeclineDelay;
+	}
+}
+
+function CheckBurstMode()
+{ 
 	// Azarael - This assumes that all firemodes implementing burst modify the primary fire alone.
 	// To my knowledge, this is the case.
 	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_Burst")
 	{
 		BFireMode[0].bBurstMode = True;
 		BFireMode[0].MaxBurst = WeaponModes[CurrentWeaponMode].Value;
+  
+				  
+   
 		if (!Instigator.IsLocallyControlled())
 			ClientSwitchBurstMode(True, WeaponModes[CurrentWeaponMode].Value);
+
 	}
 	
 	else if(BFireMode[0].bBurstMode)
 	{	
+				   
+   
 		BFireMode[0].bBurstMode = False;
 		if (!Instigator.IsLocallyControlled())
 			ClientSwitchBurstMode(False);
 	}
+	
+	RecoilDeclineDelay = CalculateBurstRecoilDelay(BFireMode[0].bBurstMode);
 
-	if (Instigator.IsLocallyControlled())
-		default.LastWeaponMode = CurrentWeaponMode;
 }
 
 simulated function ClientSwitchWeaponModes (byte NewMode)
@@ -2060,17 +2102,20 @@ simulated function ClientSwitchWeaponModes (byte NewMode)
 	BFireMode[1].SwitchWeaponMode(NewMode);
 }
 
-simulated final function ClientSwitchBurstMode(bool bBurst, optional int Max)
+simulated final function ClientSwitchBurstMode(bool burst, optional int Max)
 {
-	BFireMode[0].bBurstMode = bBurst;
-	if (bBurst)
+	BFireMode[0].bBurstMode = burst;
+	
+	if (burst)
 		BFireMode[0].MaxBurst = Max;
+		
+	RecoilDeclineDelay = CalculateBurstRecoilDelay(burst);
 }
 
 // See if firing modes will let us fire another round or not
 simulated function bool CheckWeaponMode (int Mode)
 {
-	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None")
+	if (WeaponModes[CurrentWeaponMode].ModeID ~= "WM_FullAuto" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_None" || WeaponModes[CurrentWeaponMode].ModeID ~= "WM_Burst")
 		return true;
 	if (FireCount >= WeaponModes[CurrentWeaponMode].Value)
 		return false;
@@ -2602,7 +2647,7 @@ function bool CanAttack(Actor Other)
     // check that target is within range
     Dist = VSize(Instigator.Location - Other.Location);
 
-    if (Dist > FireMode[0].MaxRange())
+    if (Dist > FireMode[0].MaxRange() && Dist > FireMode[1].MaxRange())
 	{
 		if (!bNoMag && BotShouldReload())
 			BotReload();
@@ -3948,23 +3993,24 @@ function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocati
 	{
 		if (BDT.default.bDisplaceAim && Damage >= BDT.default.AimDisplacementDamageThreshold && Level.TimeSeconds + BDT.default.AimDisplacementDuration > AimDisplacementEndTime)
 		{
-			AimDisplacementDuration = BDT.default.AimDisplacementDuration * AimDisplacementDurationMult;
+			AimDisplacementDuration = FMin(2.0f, BDT.default.AimDisplacementDuration * AimDisplacementDurationMult);
+
+			if (BDT.default.AimDisplacementDamageThreshold > 0)
+				AimDisplacementDuration *= float(Damage)/float(BDT.default.AimDisplacementDamageThreshold);
 		
-			if (BDT.default.AimDisplacementDamageThreshold == 0)
+			if (Level.TimeSeconds + AimDisplacementDuration > AimDisplacementEndTime)
 			{
-				AimDisplacementEndTime = Level.TimeSeconds + FMin(2, AimDisplacementDuration);
-				ClientDisplaceAim(FMin(2, AimDisplacementDuration));
+				AimDisplacementEndTime = Level.TimeSeconds + AimDisplacementDuration;
+				ClientDisplaceAim(AimDisplacementDuration);
 			}
-			else
-			{
-				AimDisplacementEndTime = Level.TimeSeconds + FMin(2, AimDisplacementDuration * (float(Damage)/BDT.default.AimDisplacementDamageThreshold));
-				ClientDisplaceAim(FMin(2, AimDisplacementDuration * (float(Damage)/BDT.default.AimDisplacementDamageThreshold)));
-			}
-			if (bScopeView)
-				StopScopeView();
+			
+			//if (Level.NetMode == NM_Standalone)
+			//	Log("Aim displacement applied: "$ (AimDisplacementEndTime - Level.TimeSeconds) $" seconds.");
+				
+			OnWeaponDisplaced();
 		}
-	}
-		
+    }  
+  
 	if (AimKnockScale == 0)
 		return;
 
@@ -3977,8 +4023,22 @@ function AdjustPlayerDamage( out int Damage, Pawn InstigatedBy, Vector HitLocati
 simulated final function ClientDisplaceAim(float Duration)
 {
 	AimDisplacementEndTime = Level.TimeSeconds+Duration;
+   
+	OnWeaponDisplaced();
+}
+
+simulated function OnWeaponDisplaced()
+{
+	local int m;
+	
 	if (bScopeView)
 		StopScopeView();
+		
+	for (m = 0; m < NUM_FIRE_MODES; m++)
+	{
+		if (FireMode[m].bIsFiring)
+			StopFire(m);
+    } 
 }
 
 simulated function ClientPlayerDamaged(byte DamageFactor)
@@ -4096,6 +4156,9 @@ simulated function AddRecoil (float Amount, optional byte Mode)
 		
 	if (!bScopeView)
 	{
+										 
+															   
+	  
 			AdjustedHipRecoilFactor = default.HipRecoilFactor;
 		
 		Amount *= AdjustedHipRecoilFactor;
@@ -4207,7 +4270,18 @@ simulated function NewDrawWeaponInfo(Canvas C, float YPos)
 		C.DrawText(Temp, false);
 		C.DrawColor = class'hud'.default.WhiteColor;
 	}
-	
+										   
+  
+						   
+				  
+											 
+						   
+																		  
+																		  
+						  
+											  
+  
+
 	if (CurrentWeaponMode < WeaponModes.length && !WeaponModes[CurrentWeaponMode].bUnavailable && WeaponModes[CurrentWeaponMode].ModeName != "")
 	{
 		C.Font = GetFontSizeIndex(C, -3 + int(2 * class'HUD'.default.HudScale));
@@ -4254,7 +4328,7 @@ simulated function DrawCrosshairs(canvas C)
 	}
 	
 	else if (bNeedCock)
-	{
+	{							
 		SavedDrawColor = class'HUD'.default.CrosshairColor;
 	}
 
@@ -4420,6 +4494,7 @@ exec function BWDisplayFOV (float f) {	DisplayFov = f;			default.DisplayFov = f;
 exec function BWDrawScale (float f) {	SetDrawScale (F);										RVMessage();	}
 
 function RVMessage (){	Instigator.ClientMessage("PlayerViewOffset: X: "$PlayerViewOffset.X$", Y: "$PlayerViewOffset.Y$", Z: "$PlayerViewOffset.Z$", Scale: "$DrawScale$", FOV: "$DisplayFov);	}
+
 exec function BWSightOffsetX (float f) {	SightOffset.X = f;	default.SightOffset.X = f;	SVMessage();	}
 exec function BWSightOffsetY (float f) {	SightOffset.Y = f;	default.SightOffset.Y = f;	SVMessage();	}
 exec function BWSightOffsetZ (float f) {	SightOffset.Z = f;	default.SightOffset.Z = f;	SVMessage();	}
@@ -4571,13 +4646,31 @@ static function String GetManual()
 	return S;
 }  
 
+static function String GetShortManual()
+{
+	local String S;
+	
+	if (default.ManualLines.Length < 3)
+		return "No information available.";
+	
+	S = class'GUIComponent'.static.MakeColorCode(default.HeaderColor)$"Primary Fire"$class'GUIComponent'.static.MakeColorCode(default.TextColor)$"|";
+	S $= default.ManualLines[0]$"||";
+	
+	S $= class'GUIComponent'.static.MakeColorCode(default.HeaderColor)$"Alt Fire"$class'GUIComponent'.static.MakeColorCode(default.TextColor)$"|";
+	S $= default.ManualLines[1]$"||";
+	
+	S $= class'GUIComponent'.static.MakeColorCode(default.HeaderColor)$"Additional Information"$class'GUIComponent'.static.MakeColorCode(default.TextColor)$"|";
+	S $= default.ManualLines[2];
+	return S;
+}
+
 defaultproperties
 {
      TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
 	 AimDisplacementDurationMult=0.000000
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
-     AIReloadTime=2.000000
+     AIReloadTime=1.000000
      BigIconCoords=(Y1=48,X2=511,Y2=212)
      bAllowWeaponInfoOverride=True
      IdleTweenTime=0.200000
@@ -4586,18 +4679,18 @@ defaultproperties
      InventorySize=12
      HeaderColor=(B=50,G=50,R=255)
      TextColor=(G=175,R=255)
-     SpecialInfo(0)=(Id="EvoDefs",Info="0.0;10.0;0.5;50.0;0.2;0.2;0.1")
+     SpecialInfo(0)=(Id="EvoDefs",Info="0.0;10.0;0.5;50.0;0.2;0.2;0.1")  
      BringUpSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     MagAmmo=30
+     PutDownSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)  
+     MagAmmo=30  
      CockAnim="Cock"
      CockAnimRate=1.000000
      CockSelectAnim="PulloutFancy"
      CockSelectAnimRate=1.250000
      CockingBringUpTime=0.700000
-     CockSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
+     CockSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)  
      ReloadAnim="Reload"
-     ReloadAnimRate=1.000000
+     ReloadAnimRate=1.000000								    
      ClipHitSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
      ClipOutSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
@@ -4605,7 +4698,7 @@ defaultproperties
      StartShovelAnimRate=1.000000
      EndShovelAnimRate=1.000000
      ShovelIncrement=1
-     bPlayThirdPersonReload=True
+     bPlayThirdPersonReload=True  
      FireAnimCutThreshold=0.600000
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",Value=1.000000)
      WeaponModes(1)=(ModeName="Burst Fire",ModeID="WM_Burst",Value=3.000000)
@@ -4624,10 +4717,10 @@ defaultproperties
      MinFixedZoomLevel=0.050000
      MinZoom=1.000000
      MaxZoom=2.000000
-     ZoomStages=2
+     ZoomStages=2 
      SMuzzleFlashOffset=(X=25.000000,Z=-15.000000)
-     MagEmptyColor=(B=50,G=50,R=255,A=255)
-     CockingColor=(B=50,G=175,R=255,A=255)
+     MagEmptyColor=(B=255,G=255,R=255,A=255)
+     CockingColor=(B=255,G=255,R=255,A=255)
      GunLength=64.000000
      LongGunPivot=(Pitch=-4000,Yaw=-12000)
      LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)
@@ -4636,7 +4729,7 @@ defaultproperties
      SightAimFactor=0.250000
      HipRecoilFactor=1.600000
      SprintChaos=0.100000
-     AimAdjustTime=0.500000
+     AimAdjustTime=100.000000
      OffsetAdjustTime=0.300000
      AimSpread=96
      ViewRecoilFactor=1.000000
@@ -4664,8 +4757,10 @@ defaultproperties
 	 bCanThrow=False
      DisplayFOV=60.000000
      Priority=2
+     HudColor=(B=255,G=200,R=200)	 
      CenteredOffsetY=0.000000
      CenteredRoll=500
+     CustomCrossHairScale=0.000000	 
      CustomCrosshair=7
      BobDamping=1.750000
      ItemName="BallisticWeapon"
