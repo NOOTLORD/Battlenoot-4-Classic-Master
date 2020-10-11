@@ -32,11 +32,11 @@ defaultproperties
 {
 	 TraceRange=(Min=4000.000000,Max=4000.000000)
      CutOffDistance=2048.000000
-     CutOffStartRange=512.000000
-     Damage=27.000000
-     DamageHead=40.000000
-     DamageLimb=27.000000
-     RangeAtten=0.250000
+     CutOffStartRange=768.000000
+     Damage=25.000000
+     DamageHead=37.000000
+     DamageLimb=25.000000
+	 RangeAtten=0.300000	 
      WaterRangeAtten=0.400000
      DamageType=Class'BallisticProV55.DT_RS8Pistol'
      DamageTypeHead=Class'BallisticProV55.DT_RS8PistolHead'
@@ -57,7 +57,6 @@ defaultproperties
      YInaccuracy=96.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-Fire',Volume=1.750000)
      bPawnRapidFireAnim=True
-	 FireEndAnim=
      FireAnimRate=1.500000
      FireRate=0.225000
      AmmoClass=Class'BallisticProV55.Ammo_RS8_Pistol'

@@ -13,12 +13,13 @@ defaultproperties
 {
      CutOffDistance=2560.000000
      CutOffStartRange=1024.000000
-     TraceRange=(Min=7000.000000,Max=7000.000000)
-     Damage=26.000000
-     DamageHead=52.000000
-     DamageLimb=26.000000
-     RangeAtten=0.2500000
-     WaterRangeAtten=0.300000
+     TraceRange=(Min=4000.000000,Max=4000.000000)
+     WallPenetrationForce=8.000000
+     Damage=22.000000
+     DamageHead=36.000000
+     DamageLimb=22.000000
+     RangeAtten=0.200000
+     WaterRangeAtten=0.200000
      DamageType=Class'BallisticProV55.DT_XMK5SMG'
      DamageTypeHead=Class'BallisticProV55.DT_XMK5SMGHead'
      DamageTypeArm=Class'BallisticProV55.DT_XMK5SMG'
@@ -39,7 +40,6 @@ defaultproperties
      YInaccuracy=48.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_Fire',Volume=1.250000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
-     FireEndAnim=
      FireRate=0.100000
      AmmoClass=Class'BallisticProV55.Ammo_XMK5_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -48,5 +48,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
+     WarnTargetPct=0.200000	 
      aimerror=750.000000
 }

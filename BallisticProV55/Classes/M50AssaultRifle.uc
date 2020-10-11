@@ -62,7 +62,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticSounds2.M50.M50ClipHit',Volume=0.850000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.M50.M50ClipOut',Volume=0.850000)
      ClipInSound=(Sound=Sound'BallisticSounds2.M50.M50ClipIn',Volume=0.850000)
-     ClipInFrame=0.650000
+     ClipInFrame=67.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -71,22 +71,20 @@ defaultproperties
      bNoCrosshairInScope=True
      SightPivot=(Pitch=200)
      SightOffset=(Y=0.050000,Z=11.500000)
-     SightDisplayFOV=40.000000
-     CrouchAimFactor=0.750000
+     SightDisplayFOV=40.000000	 
      SightAimFactor=0.200000
+     CrouchAimFactor=0.750000	 
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
-     ChaosDeclineTime=1.250000
+     ChaosDeclineTime=0.500000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=3072
-     RecoilXCurve=(Points=(,(InVal=0.150000),(InVal=0.250000,OutVal=-0.080000),(InVal=0.400000,OutVal=0.080000),(InVal=0.600000,OutVal=-0.120000),(InVal=0.800000,OutVal=0.100000),(InVal=1.000000)))
-     RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.170000),(InVal=0.400000,OutVal=0.350000),(InVal=0.600000,OutVal=0.600000),(InVal=0.800000,OutVal=0.700000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilXCurve=(Points=((InVal=0,OutVal=0),(InVal=0.150000,OutVal=0.06),(InVal=0.40000,OutVal=0.21000),(InVal=0.6500000,OutVal=0.25000),(InVal=0.800000,OutVal=0.050000),(InVal=1.00000,OutVal=0.150000)))
+     RecoilYCurve=(Points=((InVal=0,OutVal=0),(InVal=0.200000,OutVal=0.210000),(InVal=0.400000,OutVal=0.350000),(InVal=0.600000,OutVal=0.600000),(InVal=0.800000,OutVal=0.7500000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.150000
      RecoilYFactor=0.300000
-     RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.140000
+	 RecoilDeclineDelay=0.140000 
+     RecoilDeclineTime=0.500000	 
      FireModeClass(0)=Class'BallisticProV55.M50PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownAnimRate=1.500000

@@ -12,11 +12,12 @@ defaultproperties
 {
      CutOffDistance=2560.000000
      CutOffStartRange=1024.000000
-     Damage=20.000000
-     DamageHead=40.000000
-     DamageLimb=20.000000
-     RangeAtten=0.250000
-     WaterRangeAtten=0.600000
+     Damage=18.000000
+     DamageHead=18.000000
+     DamageLimb=18.000000
+     RangeAtten=0.200000
+     WaterRangeAtten=0.200000
+     WallPenetrationForce=8.000000	 
      DamageType=Class'BallisticProV55.DT_XK2SMG'
      DamageTypeHead=Class'BallisticProV55.DT_XK2SMGHead'
      DamageTypeArm=Class'BallisticProV55.DT_XK2SMG'
@@ -26,7 +27,6 @@ defaultproperties
      bPenetrate=False
      bDryUncock=True
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashBone="Muzzle"
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassOffset=(X=-47.500000,Y=-1.000000,Z=1.750000)

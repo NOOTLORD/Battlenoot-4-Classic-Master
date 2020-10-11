@@ -47,7 +47,7 @@ function float SuggestDefenseStyle()	{	return -0.5;	}
 defaultproperties
 {
 	 bCookable=True
-     HeldDamage=100
+     HeldDamage=150
      HeldRadius=350
      HeldMomentum=75000
      HeldDamageType=Class'BallisticProV55.DT_NRP57Held'
@@ -60,6 +60,7 @@ defaultproperties
      bWT_Hazardous=True
      bWT_Splash=True
      bWT_Grenade=True
+     bWT_Bullet=False 
      SpecialInfo(0)=(Info="60.0;5.0;0.25;30.0;0.0;0.0;0.4")
      BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout',Volume=0.325000)
      PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway',Volume=0.325000)
@@ -67,8 +68,6 @@ defaultproperties
      WeaponModes(1)=(ModeName="Long Throw",ModeID="WM_None",Value=1.000000)	 
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=1
-     AimAdjustTime=100.000000
-     AimDamageThreshold=0.000000
      FireModeClass(0)=Class'BallisticProV55.NRP57PrimaryFire'
      FireModeClass(1)=Class'BallisticProV55.NRP57SecondaryFire'
      SelectAnimRate=2.250000

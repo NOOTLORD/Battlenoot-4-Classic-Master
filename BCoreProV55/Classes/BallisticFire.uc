@@ -605,9 +605,8 @@ simulated function bool AllowFire()
 		return false;		// Is weapon busy reloading
 	if (!CheckWeaponMode())
 		return false;		// Will weapon mode allow further firing
-
     if (BW.SprintControl != None && BW.SprintControl.bSprintActive )
-		return false;
+		return false;       // Will not allow fire when sprinting
 
 	if (!bUseWeaponMag || BW.bNoMag)
 	{

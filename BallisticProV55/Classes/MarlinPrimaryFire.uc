@@ -66,10 +66,11 @@ function PlayFiring()
 
 defaultproperties
 {
-	 CutOffStartRange=3072
-	 CutOffDistance=6144
-	 RangeAtten=0.5
+	 CutOffStartRange=3072.000000
+	 CutOffDistance=6144.000000
+	 RangeAtten=0.500000
      TraceRange=(Min=30000.000000,Max=30000.000000)
+     WallPenetrationForce=24.000000
      Damage=60.000000
      DamageHead=120.000000
      DamageLimb=60.000000
@@ -91,7 +92,6 @@ defaultproperties
      RecoilPerShot=1536.000000
      FireChaos=0.800000
      BallisticFireSound=(Sound=Sound'BallisticSounds1.Marlin.Mar-Fire',Volume=1.000000)
-     FireEndAnim=
      FireAnimRate=1.250000
      FireRate=0.900000
      AmmoClass=Class'BallisticProV55.Ammo_Marlin_Rifle'
@@ -102,5 +102,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
 	 BotRefireRate=0.700000
+     WarnTargetPct=0.500000 
      aimerror=750.000000
 }

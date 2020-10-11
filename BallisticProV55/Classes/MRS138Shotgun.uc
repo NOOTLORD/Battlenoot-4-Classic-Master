@@ -75,15 +75,15 @@ defaultproperties
      SpecialInfo(0)=(Info="240.0;25.0;0.5;40.0;0.0;1.0;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000)
-	 PutDownAnimRate=1.5
-	 PutDownTime=0.35
+	 PutDownAnimRate=1.500000
+	 PutDownTime=0.350000
      MagAmmo=5
      CockAnimRate=1.200000
      CockSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-Cock',Volume=0.850000)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.500000
      ClipInSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-ShellIn',Volume=1.000000)
-     ClipInFrame=0.375000
+     ClipInFrame=28.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Pump-Action",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -98,22 +98,21 @@ defaultproperties
      bNoCrosshairInScope=True
      SightOffset=(Z=18.00000)
      SightingTime=0.300000
-	 SightZoomFactor=0
      GunLength=32.000000
      LongGunPivot=(Pitch=4500,Yaw=-8000)
-     SightAimFactor=0.100000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
      AimSpread=0
-     AimDamageThreshold=0.000000
-     ChaosDeclineTime=0.750000
-     ChaosSpeedThreshold=1200.000000
+	 ChaosSpeedThreshold=1200.000000
+	 ChaosDeclineTime=0.750000
      ChaosAimSpread=0
-     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.000000),(InVal=0.300000,OutVal=0.100000),(InVal=1.000000,OutVal=0.000000)))
-     RecoilYCurve=(Points=(,(InVal=0.300000,OutVal=0.200000),(InVal=1.000000)))
-     RecoilXFactor=0.15
-	 RecoilYFactor=0.2
-     RecoilDeclineDelay=0.650000
+	 RecoilXCurve=(Points=(,(InVal=0.3,OutVal=0.2),(InVal=0.55,OutVal=0.1),(InVal=0.8,OutVal=0.25),(InVal=1.000000,OutVal=0.4)))
+	 RecoilYCurve=(Points=(,(InVal=0.2,OutVal=0.2),(InVal=0.4,OutVal=0.45),(InVal=0.75,OutVal=0.7),(InVal=1.000000,OutVal=1)))
+	 RecoilXFactor=0.100000
+	 RecoilYFactor=0.100000
+	 RecoilDeclineDelay=0.650000
+	 RecoilDeclineTime=0.500000
+     SightAimFactor=1.000000
+	 HipRecoilFactor=1.000000 
      FireModeClass(0)=Class'BallisticProV55.MRS138PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.800000

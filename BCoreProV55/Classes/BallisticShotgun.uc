@@ -13,5 +13,5 @@ simulated function SetScopeBehavior()
 
 defaultproperties
 {
-     HipRecoilFactor=1.250000
+     bWT_Shotgun=True
 }

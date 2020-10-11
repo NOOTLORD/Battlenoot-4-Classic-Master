@@ -17,7 +17,6 @@ defaultproperties
      RecoilPerShot=768.000000
      FireChaos=0.650000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.MGL.MGL-Fire',Volume=0.950000)
-     bTossed=True
      bModeExclusive=False
      FireForce="AssaultRifleAltFire"
      FireRate=0.850000
@@ -29,6 +28,11 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BWBPRecolorsPro.MGLGrenadeTimed'  												 
+	 bLeadTarget=True
+	 bTossed=True
+	 bSplashDamage=True
+	 bRecommendSplashDamage=True
 	 BotRefireRate=0.500000
+     WarnTargetPct=0.750000
 	 aimerror=750.000000
 }

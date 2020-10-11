@@ -139,7 +139,7 @@ defaultproperties
      ClipHitSound=(Volume=0.600000)
      ClipOutSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipOut',Volume=0.800000)
      ClipInSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipIn',Volume=0.800000)
-     ClipInFrame=0.650000
+     ClipInFrame=36.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -150,23 +150,20 @@ defaultproperties
      SightDisplayFOV=45.000000
      SightingTime=0.200000
      SightAimFactor=0.150000
-     SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
-     AimAdjustTime=100.000000
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimSpread=16
-     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.450000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=384
-     RecoilYawFactor=0.000000
-     RecoilXFactor=0.250000
-     RecoilYFactor=0.250000
-     RecoilDeclineTime=1.500000
+     RecoilXFactor=0.0500000
+     RecoilYFactor=0.0500000
+     RecoilDeclineTime=0.500000
      RecoilDeclineDelay=0.250000
      FireModeClass(0)=Class'BallisticProV55.RS8PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
-	 CurrentRating=0.6
+	 CurrentRating=0.600000
      AmmoClass(0)=Class'BallisticProV55.Ammo_RS8_Pistol'	
      AmmoClass(1)=Class'BallisticProV55.Ammo_RS8_Pistol'		 
      Description="RS8 Pistol"

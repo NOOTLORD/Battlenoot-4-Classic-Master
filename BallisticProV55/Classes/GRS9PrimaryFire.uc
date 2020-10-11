@@ -31,8 +31,9 @@ function PlayFiring()
 defaultproperties
 {
      CutOffDistance=1536.000000
-     CutOffStartRange=256.000000
+     CutOffStartRange=768.000000
      TraceRange=(Min=4000.000000,Max=4000.000000)
+     WallPenetrationForce=8.000000
      Damage=20.000000
      DamageHead=25.000000
      DamageLimb=20.000000
@@ -48,8 +49,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.525000
      BrassClass=Class'BallisticProV55.Brass_GRS9_Pistol'
-     BrassBone="tip"
-     BrassOffset=(X=-49.000000,Y=4.250000,Z=2.500000)
+     BrassOffset=(X=-36.000000,Y=1.500000,Z=2.500000)
      AimedFireAnim="SightFire"	 
      RecoilPerShot=256.000000
      FireChaos=0.140000
@@ -67,5 +67,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000						 
 	 BotRefireRate=0.990000
+     WarnTargetPct=0.200000	 
      aimerror=750.000000
 }

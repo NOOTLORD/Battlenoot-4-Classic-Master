@@ -70,7 +70,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipHit',Volume=0.875000)
      ClipOutSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipOut',Volume=0.875000)
      ClipInSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipIn',Volume=0.875000)
-     ClipInFrame=0.650000
+     ClipInFrame=50.000000
      bCockOnEmpty=True	 
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -82,18 +82,16 @@ defaultproperties
      SightDisplayFOV=40.000000
      GunLength=72.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
-     AimDamageThreshold=0.000000	 
      AimSpread=32
-     ChaosDeclineTime=1.250000
+     ChaosDeclineTime=0.750000
      ChaosSpeedThreshold=9000.000000
      ChaosAimSpread=3072
-     RecoilXCurve=(Points=(,(InVal=0.100000),(InVal=0.250000,OutVal=-0.120000),(InVal=0.400000,OutVal=0.180000),(InVal=0.800000,OutVal=-0.220000),(InVal=1.000000,OutVal=0.250000)))
-     RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.120000),(InVal=0.300000,OutVal=0.350000),(InVal=0.500000,OutVal=0.445000),(InVal=0.750000,OutVal=0.750000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.100000,OutVal=0.100000),(InVal=0.250000,OutVal=0.180000),(InVal=0.400000,OutVal=0.30000),(InVal=0.800000,OutVal=0.40000),(InVal=1.000000,OutVal=0.60000)))
+     RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.180000),(InVal=0.300000,OutVal=0.320000),(InVal=0.500000,OutVal=0.5000),(InVal=0.750000,OutVal=0.750000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.250000
      RecoilYFactor=0.250000
-     RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.250000
+     RecoilDeclineTime=1.00000
+     RecoilDeclineDelay=0.400000
      FireModeClass(0)=Class'BallisticProV55.SRS600PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnimRate=1.350000
@@ -123,7 +121,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims1.SRS600_FP'
      DrawScale=0.500000
-     AmbientGlow=5
      Skins(0)=Texture'BallisticWeapons1.SRS600.SRS-600main'
      Skins(1)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
      Skins(2)=Shader'BallisticWeapons2.Hands.Hands-Shiny'

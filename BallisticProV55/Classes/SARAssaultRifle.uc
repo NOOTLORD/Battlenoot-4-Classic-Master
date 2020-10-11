@@ -78,8 +78,8 @@ function float SuggestDefenseStyle()	{	return -0.4;	}
 
 defaultproperties
 {
-	 AIRating=0.72
-	 CurrentRating=0.72
+	 AIRating=0.720000
+	 CurrentRating=0.720000
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SAR'
      BigIconCoords=(Y1=24,Y2=250)
@@ -97,7 +97,7 @@ defaultproperties
      ClipHitSound=(Volume=0.625000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.SAR.SAR-ClipOut',Volume=0.900000)
      ClipInSound=(Sound=Sound'BallisticSounds2.SAR.SAR-ClipIn',Volume=0.900000)
-     ClipInFrame=0.650000
+     ClipInFrame=53.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -112,18 +112,16 @@ defaultproperties
      CrouchAimFactor=1.000000
      SightAimFactor=0.200000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
      AimSpread=12
-     AimDamageThreshold=0.000000
-     ChaosDeclineTime=1.250000
+     ChaosDeclineTime=0.500000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=2000
-     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.060000),(InVal=0.400000,OutVal=0.110000),(InVal=0.500000,OutVal=-0.120000),(InVal=0.600000,OutVal=0.130000),(InVal=0.800000,OutVal=0.160000),(InVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.070000),(InVal=0.30000,OutVal=0.090000),(InVal=0.4500000,OutVal=0.230000),(InVal=0.600000,OutVal=0.250000),(InVal=0.800000,OutVal=0.350000),(InVal=1.000000,OutVal=0.4)))
      RecoilYCurve=(Points=(,(InVal=0.100000,OutVal=0.100000),(InVal=0.200000,OutVal=0.230000),(InVal=0.400000,OutVal=0.360000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.900000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.250000
      RecoilYFactor=0.250000
-     RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.150000
+     RecoilDeclineTime=0.500000
+     RecoilDeclineDelay=0.140000
      FireModeClass(0)=Class'BallisticProV55.SARPrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"

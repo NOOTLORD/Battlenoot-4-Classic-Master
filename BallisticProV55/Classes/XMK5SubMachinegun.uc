@@ -53,14 +53,14 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.385000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.385000)
      MagAmmo=32
-	 AIRating=0.8
-	 CurrentRating=0.8
+	 AIRating=0.800000
+	 CurrentRating=0.800000
      CockAnimRate=1.250000
      CockSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_Cock',Volume=0.875000)
      ReloadAnimRate=1.250000
      ClipOutSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_ClipOut',Volume=0.875000)
      ClipInSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_ClipIn',Volume=0.875000)
-     ClipInFrame=0.760000
+     ClipInFrame=56.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -74,17 +74,15 @@ defaultproperties
      SightingTime=0.250000
      GunLength=40.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.800000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=2048
-     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.050000),(InVal=0.400000,OutVal=-0.250000),(InVal=0.600000,OutVal=0.350000),(InVal=0.800000,OutVal=-0.400000),(InVal=1.000000)))
-     RecoilYCurve=(Points=(,(InVal=0.100000,OutVal=0.100000),(InVal=0.225000,OutVal=0.450000),(InVal=0.350000,OutVal=0.600000),(InVal=0.600000,OutVal=0.700000),(InVal=1.000000,OutVal=1.000000)))
+	 RecoilXCurve=(Points=(,(InVal=0.15,OutVal=0.08),(InVal=0.3,OutVal=0.18),(InVal=0.4,OutVal=0.22),(InVal=0.6,OutVal=0.27),(InVal=0.8,OutVal=0.28),(InVal=1.0,OutVal=0.35)))
+	 RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.250000),(InVal=0.30000,OutVal=0.350000),(InVal=0.450000,OutVal=0.500000),(InVal=0.600000,OutVal=0.600000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.200000
      RecoilYFactor=0.350000
-     RecoilDeclineTime=1.250000
+     RecoilDeclineTime=0.500000
      RecoilDeclineDelay=0.125000
      FireModeClass(0)=Class'BallisticProV55.XMK5PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
@@ -112,7 +110,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims1.XMK5_FP'
      DrawScale=0.450000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Main'
 	 Skins(2)=Texture'BallisticWeapons1.OA-SMG.OA-SMG_Shield'

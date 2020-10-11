@@ -946,7 +946,7 @@ defaultproperties
      InstructTextBorderY=10.000000
      InstructionFontName="UT2003Fonts.jFontMono800x600"
      CroppingAmount=0.250000
-     LevelActionLoading="LOADING..."
+     LevelActionLoading="LOADING"
      LevelActionPaused="PAUSED"
      LevelActionFontName="UT2003Fonts.FontMedium"
      WonMatchPostFix=" won the match!"

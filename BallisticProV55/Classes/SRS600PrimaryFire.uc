@@ -13,6 +13,7 @@ defaultproperties
      CutOffDistance=6144.000000
      CutOffStartRange=3072.000000
      TraceRange=(Min=30000.000000,Max=30000.000000)
+     WallPenetrationForce=24.000000
      Damage=40.000000
      DamageHead=80.000000
      DamageLimb=40.000000
@@ -40,7 +41,6 @@ defaultproperties
      SilencedFireSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-SilenceFire',Volume=0.700000,Radius=128.000000,bAtten=True)
      BallisticFireSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-Fire',Volume=1.600000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
-     FireEndAnim=
      FireRate=0.170000
      AmmoClass=Class'BallisticProV55.Ammo_SRS600_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -49,5 +49,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
+     WarnTargetPct=0.200000	 
      aimerror=750.000000
 }

@@ -15,6 +15,7 @@ defaultproperties
      DamageHead=160.000000
      DamageLimb=80.000000
      WaterRangeAtten=0.800000
+	 WallPenetrationForce=0 
      DamageType=Class'BallisticProV55.DT_R78Rifle'
      DamageTypeHead=Class'BallisticProV55.DT_R78RifleHead'
      DamageTypeArm=Class'BallisticProV55.DT_R78Rifle'
@@ -41,5 +42,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
 	 BotRefireRate=0.400000
+	 WarnTargetPct=0.500000 
      aimerror=750.000000
 }

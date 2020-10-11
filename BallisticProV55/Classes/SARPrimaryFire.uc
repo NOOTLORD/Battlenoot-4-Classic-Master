@@ -44,9 +44,10 @@ defaultproperties
      CutOffDistance=2560.000000
      CutOffStartRange=1280.000000
      TraceRange=(Min=9000.000000,Max=9000.000000)
-     Damage=25.000000
-     DamageHead=50.000000
-     DamageLimb=25.000000
+     WallPenetrationForce=16.000000
+     Damage=20.000000
+     DamageHead=40.000000
+     DamageLimb=20.000000
      RangeAtten=0.350000
      WaterRangeAtten=0.800000
      DamageType=Class'BallisticProV55.DT_SARRifle'
@@ -60,18 +61,15 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.500000
      BrassClass=Class'BallisticProV55.Brass_SAR_Rifle'
-     BrassBone="tip"
-     BrassOffset=(X=-111.000000,Y=-2.000000,Z=-2.750000)
+     BrassOffset=(X=-53.500000,Y=1.000000,Z=-3.500000)
      AimedFireAnim="AimedFire"
-     RecoilPerShot=200.000000
-     FireChaos=0.015000
+     RecoilPerShot=180.000000
+     FireChaos=0.022000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.SAR.SAR-Fire',Volume=0.90000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
-     bModeExclusive=False
-     FireEndAnim=
      FireRate=0.100000
      AmmoClass=Class'BallisticProV55.Ammo_SAR_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -80,5 +78,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
+     WarnTargetPct=0.200000	 
      aimerror=750.000000
 }

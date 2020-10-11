@@ -1699,16 +1699,10 @@ simulated function MeleeReleaseImpl()
 
 defaultproperties
 {
-	 AimDisplacementDurationMult=0.0
+     bWT_Sidearm=True
+	 AimDisplacementDurationMult=0.000000
      SupportHandBone="Root01"
      bShouldDualInLoadout=False
      TrackSpeed=18000.000000
      SingleHeldRate=0.300000
-     PlayerSpeedFactor=1.100000
-     InventorySize=3
-     bWT_Sidearm=True
-     SightZoomFactor=0
-     GunLength=16.000000
-     LongGunPivot=(Pitch=5000,Yaw=6000)
-     HipRecoilFactor=1.500000
 }

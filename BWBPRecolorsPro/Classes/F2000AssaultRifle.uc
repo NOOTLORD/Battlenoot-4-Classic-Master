@@ -57,7 +57,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagFiddle',Volume=0.950000)
      ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagOut',Volume=0.950000)
      ClipInSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagIn',Volume=0.950000)
-     ClipInFrame=0.650000
+     ClipInFrame=77.000000
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
@@ -66,18 +66,15 @@ defaultproperties
      SightOffset=(X=6.000000,Y=-6.350000,Z=23.150000)
      SightDisplayFOV=40.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4096)
-     AimAdjustTime=100.000000
-     AimSpread=16
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000	 
-     ChaosDeclineTime=1.250000
+     AimSpread=16 
+     ChaosDeclineTime=0.500000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=3072
-     RecoilXCurve=(Points=(,(InVal=0.100000,OutVal=0.070000),(InVal=0.250000,OutVal=0.250000),(InVal=0.500000,OutVal=0.050000),(InVal=0.650000,OutVal=-0.200000),(InVal=0.900000,OutVal=-0.100000),(InVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.100000,OutVal=0.080000),(InVal=0.25000,OutVal=0.2000),(InVal=0.3500000,OutVal=0.150000),(InVal=0.4800000,OutVal=0.20000),(InVal=0.600000,OutVal=-0.050000),(InVal=0.750000,OutVal=0.0500000),(InVal=0.900000,OutVal=0.15),(InVal=1.000000,OutVal=0.3)))
      RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.250000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.800000),(InVal=0.800000,OutVal=0.900000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.200000
      RecoilYFactor=0.200000
-     RecoilDeclineTime=1.500000
+     RecoilDeclineTime=0.500000
      RecoilDeclineDelay=0.140000
      FireModeClass(0)=Class'BWBPRecolorsPro.F2000PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
@@ -106,7 +103,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.F2000_FP'
      DrawScale=0.300000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.MARS.F2000-IronArctic'
 	 Skins(2)=Texture'BallisticRecolorsTex.MARS.F2000-MiscIce'

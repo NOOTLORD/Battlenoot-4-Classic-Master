@@ -77,6 +77,7 @@ defaultproperties
      ReloadAnimRate=1.250000
      ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-MagOut',Volume=1.000000)
      ClipInSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-MagIn',Volume=1.000000)
+     ClipInFrame=82.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -86,20 +87,14 @@ defaultproperties
      SightPivot=(Pitch=150)
      SightOffset=(X=-8.000000,Y=-10.000000,Z=22.500000)
      SightingTime=0.250000
-	 SightZoomFactor=0
      GunLength=48.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
-     AimSpread=0
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000	 
-     ChaosAimSpread=0
-     RecoilXCurve=(Points=(,(InVal=0.500000,OutVal=0.000000),(InVal=0.700000,OutVal=-0.200000),(InVal=0.8500000,OutVal=0.15000),(InVal=0.750000,OutVal=0.050000),(InVal=1.000000,OutVal=0)))
+     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.050000),(InVal=0.400000,OutVal=0.120000),(InVal=0.600000,OutVal=0.15000),(InVal=0.750000,OutVal=0.250000),(InVal=1.000000,OutVal=0.32)))
      RecoilYCurve=(Points=(,(InVal=0.500000,OutVal=0.400000),(InVal=1.000000,OutVal=1.000000)))
-     RecoilYFactor=0.1
-	 RecoilXFactor=0.1
-     RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.330000
+     RecoilYFactor=0.100000
+	 RecoilXFactor=0.100000
+     RecoilDeclineTime=0.500000
+     RecoilDeclineDelay=0.450000
      FireModeClass(0)=Class'BWBPRecolorsPro.SK410PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnimRate=1.600000
@@ -130,7 +125,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.SK410_FP'
      DrawScale=0.350000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.SK410.SK410-C-CamoSnow'
 	 Skins(2)=Texture'BallisticRecolorsTex.SK410.SK410-Misc'

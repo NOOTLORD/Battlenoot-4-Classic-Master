@@ -63,7 +63,7 @@ defaultproperties
      ClipOutSound=(Sound=Sound'BallisticSounds1.OA-AR.OA-AR_ClipOut',Volume=0.800000)
      ClipInSound=(Sound=Sound'BallisticSounds1.OA-AR.OA-AR_ClipIn',Volume=0.800000)
      bCockOnEmpty=True
-     ClipInFrame=0.700000		
+     ClipInFrame=53.000000		
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
@@ -73,19 +73,18 @@ defaultproperties
      SightOffset=(X=-10.000000,Y=0.000000,Z=11.550000)
      SightDisplayFOV=35.000000
      SightingTime=0.350000
-     SightAimFactor=0.200000
-     SprintOffSet=(Pitch=-3000,Yaw=-4000)										 
-     AimAdjustTime=100.000000
-     AimDamageThreshold=0.000000
-     ChaosSpeedThreshold=15000.000000
-     AimSpread=16
+     SightAimFactor=1.000000
+     SprintOffSet=(Pitch=-3000,Yaw=-4000)
+     AimSpread=24
      ChaosDeclineTime=1.250000
+     ChaosSpeedThreshold=15000.000000	 
      ChaosAimSpread=3072
-     RecoilXCurve=(Points=(,(InVal=0.080000),(InVal=0.150000,OutVal=0.050000),(InVal=0.300000,OutVal=-0.100000),(InVal=0.600000,OutVal=0.150000),(InVal=0.800000,OutVal=-0.150000),(InVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.080000,OutVal=0.050000),(InVal=0.110000,OutVal=0.080000),(InVal=0.150000,OutVal=0.14000),(InVal=0.300000,OutVal=0.2300000),(InVal=0.450000,OutVal=0.2500000),(InVal=0.600000,OutVal=0.350000),(InVal=0.800000,OutVal=0.380000),(InVal=1.000000,OutVal=0.25)))
      RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.120000),(InVal=0.300000,OutVal=0.350000),(InVal=0.500000,OutVal=0.600000),(InVal=0.750000,OutVal=0.750000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.250000
      RecoilYFactor=0.250000
-     RecoilDeclineDelay=0.200000																																																															 																																																  						   						   								
+     RecoilDeclineDelay=0.1700000
+	 RecoilDeclineTime=0.6500000																																																													 																																																  						   						   								
      FireModeClass(0)=Class'BallisticProV55.M46PrimaryFireQS'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AmmoClass(0)=Class'BallisticProV55.Ammo_M46_Rifle'

@@ -4676,6 +4676,7 @@ defaultproperties
      IdleTweenTime=0.200000
      SightFXBone="tip"
      BCRepClass=Class'BCoreProV55.BCReplicationInfo'
+     bWT_Bullet=True	 
      InventorySize=12
      HeaderColor=(B=50,G=50,R=255)
      TextColor=(G=175,R=255)
@@ -4689,6 +4690,7 @@ defaultproperties
      CockSelectAnimRate=1.250000
      CockingBringUpTime=0.700000
      CockSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)  
+     bCockOnEmpty=True	 
      ReloadAnim="Reload"
      ReloadAnimRate=1.000000								    
      ClipHitSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
@@ -4709,7 +4711,7 @@ defaultproperties
      bUseSights=True
      ScopeXScale=1.000000
      FullZoomFOV=80.000000
-     SightZoomFactor=10
+     SightZoomFactor=0
      SightOffset=(Z=2.500000)
      SightDisplayFOV=30.000000
      SightingTime=0.350000
@@ -4752,19 +4754,20 @@ defaultproperties
      PutDownAnimRate=1.000000
      PutDownTime=0.300000
      BringUpTime=0.300000
+     SelectForce="SwitchToAssaultRifle"	 
      bNoAmmoInstances=False
 	 bShowChargingBar=False
 	 bCanThrow=False
      DisplayFOV=60.000000
      Priority=2
-     HudColor=(B=255,G=200,R=200)	 
+     HudColor=(B=255,G=200,R=200) 
      CenteredOffsetY=0.000000
      CenteredRoll=500
      CustomCrossHairScale=0.000000	 
      CustomCrosshair=7
      BobDamping=1.750000
+     TransientSoundVolume=0.500000	 
      ItemName="BallisticWeapon"
      LightPeriod=3
      AmbientGlow=5
-     TransientSoundVolume=0.500000
 }

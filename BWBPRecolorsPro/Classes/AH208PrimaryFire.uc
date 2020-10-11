@@ -28,13 +28,14 @@ function PlayFiring()
 
 defaultproperties
 {
-     CutOffDistance=2560.000000
-     CutOffStartRange=1024.000000
-     TraceRange=(Min=6000.000000,Max=6000.000000)
+     CutOffDistance=3072.000000
+     CutOffStartRange=1536.000000
+     TraceRange=(Min=7500.000000,Max=7500.000000)
+     WallPenetrationForce=64.000000
      Damage=50.000000
      DamageHead=70.000000
      DamageLimb=50.000000
-     RangeAtten=0.600000
+     RangeAtten=0.350000
      WaterRangeAtten=0.800000
      DamageType=Class'BWBPRecolorsPro.DT_AH208Pistol'
      DamageTypeHead=Class'BWBPRecolorsPro.DT_AH208PistolHead'
@@ -45,15 +46,13 @@ defaultproperties
      bPenetrate=False
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      FlashScaleFactor=0.200000
-     BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassBone="tip"
-     BrassOffset=(X=-140.000000,Y=-5.500000,Z=6.000000) 
+     BrassClass=Class'BWBPRecolorsPro.Brass_AH208pistol'
+     BrassOffset=(X=-85.000000,Y=-6.500000,Z=7.000000) 
      RecoilPerShot=1024.000000
      FireChaos=0.350000
      XInaccuracy=32.000000
      YInaccuracy=32.000000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-Fire',Volume=1.800000)
-     FireEndAnim=
      FireRate=0.600000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -63,5 +62,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      BotRefireRate=0.900000
+     WarnTargetPct=0.100000	 
      aimerror=750.000000
 }

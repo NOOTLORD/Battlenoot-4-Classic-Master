@@ -209,6 +209,7 @@ function float SuggestDefenseStyle()	{	return 0.8;	}
 
 defaultproperties
 {
+     bWT_Machinegun=True
      BeltBones(0)="Bullet1"
      BeltBones(1)="Bullet2"
      BeltBones(2)="Bullet3"

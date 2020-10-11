@@ -120,7 +120,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipHit',Volume=1.500000)
      ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipOut',Volume=1.500000)
      ClipInSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipIn',Volume=1.500000)
-     ClipInFrame=0.650000
+     ClipInFrame=56.000000
      bCockOnEmpty=True	 
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -130,15 +130,18 @@ defaultproperties
      SightOffset=(X=-20.000000,Y=-7.400000,Z=41.000000)
      SightDisplayFOV=55.000000
      SightingTime=0.200000
-	 SightZoomFactor=0
+	 SightAimFactor=2.000000
      GunLength=4.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
-     AimAdjustTime=100.000000
      AimSpread=16	 
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000
-     ChaosDeclineTime=0.450000
-     RecoilDeclineDelay=0.750000
+     ChaosDeclineTime=0.60000
+	 ChaosAimSpread=128	 
+	 RecoilXCurve=(Points=((InVal=0.0,OutVal=0.0),(InVal=0.15,OutVal=0.03),(InVal=0.35,OutVal=-0.05),(InVal=0.5,OutVal=0.00),(InVal=0.7,OutVal=0.03),(InVal=1.0,OutVal=0.00))) 
+     RecoilXFactor=0.100000
+     RecoilYFactor=0.100000
+     RecoilMax=6144.000000	 
+     RecoilDeclineDelay=0.650000
+	 RecoilDeclineTime=1.000000 
      FireModeClass(0)=Class'BWBPRecolorsPro.AH208PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      PutDownAnimRate=1.600000
@@ -168,7 +171,6 @@ defaultproperties
      LightRadius=2.250000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Eagle_FP'
      DrawScale=0.800000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'
 	 Skins(2)=Texture'BallisticRecolorsTex.Eagle.Eagle-Misc' 

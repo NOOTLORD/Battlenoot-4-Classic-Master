@@ -34,8 +34,9 @@ defaultproperties
      CutOffDistance=1536.000000
      CutOffStartRange=512.000000
      TraceRange=(Min=4000.000000,Max=4000.000000)
+     WallPenetrationForce=8.000000
      Damage=22.000000
-     DamageHead=44.000000
+     DamageHead=33.000000
      DamageLimb=22.000000
      RangeAtten=0.200000
      WaterRangeAtten=0.500000
@@ -56,8 +57,7 @@ defaultproperties
      XInaccuracy=96.000000
      YInaccuracy=96.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds1.MD24_Fire',Volume=1.750000)
-     FireEndAnim=
-     FireAnimRate=1.600000
+     FireAnimRate=1.450000
      FireRate=0.220000
      AmmoClass=Class'BallisticProV55.Ammo_MD24_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -67,5 +67,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      BotRefireRate=0.900000
+     WarnTargetPct=0.300000	 
      aimerror=750.000000
 }

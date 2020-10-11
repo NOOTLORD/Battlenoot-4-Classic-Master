@@ -14,9 +14,10 @@ defaultproperties
 	 CutOffDistance=8192
 	 RangeAtten=0.5
      TraceRange=(Min=30000.000000,Max=30000.000000)
-     Damage=65.000000
-     DamageHead=130.000000
-     DamageLimb=65.000000
+     WallPenetrationForce=64.000000
+     Damage=45.000000
+     DamageHead=90.000000
+     DamageLimb=45.000000
      WaterRangeAtten=0.800000
      DamageType=Class'BallisticProV55.DT_R9Rifle'
      DamageTypeHead=Class'BallisticProV55.DT_R9RifleHead'
@@ -35,7 +36,6 @@ defaultproperties
      RecoilPerShot=384.000000
      FireChaos=0.450000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.R9.R9-Fire',Volume=0.800000)
-     FireEndAnim=
      FireRate=0.300000
      AmmoClass=Class'BallisticProV55.Ammo_R9_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -45,5 +45,6 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
 	 BotRefireRate=0.700000
-     aimerror=750.000000
+	 WarnTargetPct=0.400000
+     aimerror=800.000000
 }

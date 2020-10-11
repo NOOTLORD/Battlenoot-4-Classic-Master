@@ -151,15 +151,15 @@ defaultproperties
      SpecialInfo(0)=(Info="120.0;20.0;0.7;50.0;0.0;0.5;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.375000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.375000)
-	 PutDownAnimRate=1.5
-	 PutDownTime=0.35
+	 PutDownAnimRate=1.500000
+	 PutDownTime=0.350000
      MagAmmo=7
      CockAnimRate=1.700000
      CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock1',Volume=0.400000)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.100000
      ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1',Volume=1.000000)
-     ClipInFrame=0.375000
+     ClipInFrame=9.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Pump-Action",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -176,21 +176,18 @@ defaultproperties
      SightOffset=(X=5.000000,Z=11.500000)
      SightDisplayFOV=40.000000
      SightingTime=0.350000
+	 SightAimFactor=0.50000
      GunLength=48.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
-     AimSpread=0
-     AimDamageThreshold=0.000000
+     AimSpread=16
      ChaosDeclineTime=0.750000
-     ChaosSpeedThreshold=850.000000
-     ChaosAimSpread=0
-     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.150000),(InVal=0.300000,OutVal=0.050000),(InVal=0.650000,OutVal=-0.350000),(InVal=0.800000,OutVal=0.100000),(InVal=1.000000)))
-     RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.100000),(InVal=0.250000,OutVal=0.400000),(InVal=0.600000,OutVal=0.700000),(InVal=1.000000,OutVal=1.000000)))
-     RecoilXFactor=0.300000
-     RecoilYFactor=0.200000
-     RecoilMinRandFactor=0.350000
-     RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.800000
+     ChaosAimSpread=256
+     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.10000),(InVal=0.350000,OutVal=0.13000),(InVal=0.550000,OutVal=0.230000),(InVal=0.800000,OutVal=0.35000),(InVal=1.000000,OutVal=0.45)))
+     RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.150000),(InVal=0.40000,OutVal=0.50000),(InVal=0.600000,OutVal=0.700000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilXFactor=0.100000
+     RecoilYFactor=0.100000
+     RecoilDeclineTime=0.500000
+     RecoilDeclineDelay=0.750000
      FireModeClass(0)=Class'BallisticProV55.M763PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.750000

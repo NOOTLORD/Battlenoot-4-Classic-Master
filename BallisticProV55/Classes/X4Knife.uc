@@ -59,9 +59,7 @@ defaultproperties
      MagAmmo=1
      bNoMag=True
      GunLength=0.000000
-     bAimDisabled=True
-     AimAdjustTime=0.000000
-     AimDamageThreshold=0.000000						   								
+     bAimDisabled=True						   								
      FireModeClass(0)=Class'BallisticProV55.X4PrimaryFire'
      FireModeClass(1)=Class'BallisticProV55.X4SecondaryFire'
      SelectAnimRate=1.250000
@@ -87,8 +85,7 @@ defaultproperties
      IconCoords=(X2=128,Y2=32)
      ItemName="X4"
      Mesh=SkeletalMesh'BallisticAnims1.X4_FP'
-     DrawScale=0.300000
-     AmbientGlow=5	 
+     DrawScale=0.300000	 
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
      Skins(1)=Texture'BallisticWeapons1.X4.X4_Main'	 
 }

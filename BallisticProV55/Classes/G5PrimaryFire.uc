@@ -130,9 +130,6 @@ defaultproperties
      XInaccuracy=4.000000
      YInaccuracy=4.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.G5.G5-Fire',Volume=1.100000)
-     bSplashDamage=True
-     bRecommendSplashDamage=True
-     FireEndAnim=
      FireRate=0.800000
      AmmoClass=Class'BallisticProV55.Ammo_G5_Bazooka'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -142,6 +139,10 @@ defaultproperties
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BallisticProV55.G5Rocket'
+	 bLeadTarget=True
+	 bSplashDamage=True
+	 bRecommendSplashDamage=True	 
 	 BotRefireRate=0.500000
+     WarnTargetPct=0.800000	 
      aimerror=750.000000
 }

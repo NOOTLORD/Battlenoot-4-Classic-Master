@@ -46,8 +46,8 @@ function InitProPineapple(float PSpeed, float PDelay)
 
 defaultproperties
 {
-     DampenFactor=0.400000
-     DampenFactorParallel=0.600000
+     DampenFactor=0.050000
+     DampenFactorParallel=0.350000
      DetonateDelay=3.000000
      ImpactDamage=15
      ImpactDamageType=Class'BallisticProV55.DT_NRP57Grenade'
@@ -65,7 +65,7 @@ defaultproperties
      ShakeOffsetTime=0.000000
      Speed=1400.000000
      MaxSpeed=1500.000000
-     Damage=225.000000
+     Damage=125.000000
      DamageRadius=512.000000
      MyDamageType=Class'BallisticProV55.DT_NRP57Grenade'
      ImpactSound=SoundGroup'BallisticSounds2.NRP57.NRP57-Concrete'

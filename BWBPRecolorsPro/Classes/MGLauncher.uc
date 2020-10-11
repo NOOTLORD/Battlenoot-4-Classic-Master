@@ -152,19 +152,20 @@ defaultproperties
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MGL'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      IdleTweenTime=0.000000
+     bWT_Bullet=False	 
      bWT_Hazardous=True
      bWT_Splash=True
      bWT_Projectile=True
-     bWT_Super=True
      SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.475000)
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000)
      MagAmmo=6
+     bCockOnEmpty=False	 
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.250000	 
      ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=0.650000)
      ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=0.650000)
-     ClipInFrame=0.325000
+     ClipInFrame=29.000000
      WeaponModes(0)=(ModeName="Timed",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)
@@ -180,10 +181,7 @@ defaultproperties
      SightOffset=(X=-30.000000,Y=12.485000,Z=11.750000)
      GunLength=48.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4096)
-     AimAdjustTime=100.000000
      AimSpread=192
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000	 
      ChaosDeclineTime=1.000000
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.100000),(InVal=0.300000,OutVal=-0.200000),(InVal=1.000000,OutVal=-0.300000)))
      RecoilYCurve=(Points=(,(InVal=0.300000,OutVal=0.500000),(InVal=1.000000,OutVal=1.000000)))
@@ -221,7 +219,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.Conqueror_FP'
      DrawScale=0.130000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.MGL.MGL-Main'
 	 Skins(2)=Texture'BallisticRecolorsTex.MGL.MGL-ScreenBase'

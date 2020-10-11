@@ -102,7 +102,7 @@ defaultproperties
      CockSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Cock',Volume=0.800000)
      ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagOut',Volume=0.800000)
      ClipInSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagIn',Volume=0.800000)
-     ClipInFrame=0.650000
+     ClipInFrame=37.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -113,21 +113,18 @@ defaultproperties
      SightDisplayFOV=40.000000
      SightingTime=0.300000
      SprintOffSet=(Pitch=-3072,Yaw=-4096)
-     AimSpread=16
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000	 
-     ChaosDeclineTime=1.250000
+     AimSpread=16 
+     ChaosDeclineTime=0.500000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=3072
-     RecoilXCurve=(Points=(,(InVal=0.100000,OutVal=0.100000),(InVal=0.250000,OutVal=-0.100000),(InVal=0.600000,OutVal=0.130000),(InVal=0.700000,OutVal=0.060000),(InVal=0.850000,OutVal=-0.040000),(InVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.1,OutVal=0.12),(InVal=0.2,OutVal=0.18),(InVal=0.35,OutVal=0.22),(InVal=0.5,OutVal=0.3),(InVal=0.7,OutVal=0.45),(InVal=0.85,OutVal=0.6),(InVal=1.000000,OutVal=0.66)))
      RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.200000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.750000),(InVal=0.800000,OutVal=0.900000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.200000
      RecoilYFactor=0.350000
-     RecoilDeclineTime=1.500000
+     RecoilDeclineTime=0.4
      RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     IdleAnimRate=0.500000
      SelectAnimRate=1.660000
      PutDownAnimRate=1.330000
      PutDownTime=0.400000
@@ -156,7 +153,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.LK05_FP'
      DrawScale=0.300000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.LK05.LK05-Grip'
 	 Skins(2)=Texture'BallisticRecolorsTex.LK05.LK05-Stock'

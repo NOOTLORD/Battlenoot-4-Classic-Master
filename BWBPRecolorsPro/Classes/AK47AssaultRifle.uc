@@ -78,7 +78,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-ClipHit',Volume=0.900000)
      ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-ClipOut',Volume=0.900000)
      ClipInSound=(Sound=Sound'BallisticRecolorsSounds.AK47.AK47-ClipIn',Volume=0.900000)
-     ClipInFrame=0.650000
+     ClipInFrame=64.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -88,21 +88,17 @@ defaultproperties
      SightPivot=(Pitch=64)
      SightOffset=(X=10.000000,Y=-10.020000,Z=20.600000)
      SightDisplayFOV=40.000000
-     HipRecoilFactor=1.000000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
-     AimSpread=16
-     AimDamageThreshold=0.000000
-	 ViewRecoilFactor=1.000000
+     AimSpread=24
      ChaosDeclineTime=1.250000
      ChaosSpeedThreshold=15000.000000
      ChaosAimSpread=3072
-     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.10000),(InVal=0.400000,OutVal=0.130000),(InVal=0.600000,OutVal=-0.160000),(InVal=1.000000,OutVal=-0.080000)))
-     RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.200000),(InVal=0.300000,OutVal=0.450000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.800000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.100000,OutVal=0.05000),(InVal=0.200000,OutVal=0.060000),(InVal=0.300000,OutVal=0.10000),(InVal=0.400000,OutVal=0.150000),(InVal=0.500000,OutVal=0.170000),(InVal=0.65000000,OutVal=0.100000),(InVal=0.75.000000,OutVal=0.05000),(InVal=1.000000,OutVal=0.080000)))
+     RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.150000),(InVal=0.300000,OutVal=0.40000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.750000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.220000
      RecoilYFactor=0.300000
-     RecoilMinRandFactor=0.15000
-     RecoilDeclineTime=1.500000
+	 RecoilDeclineDelay=0.150000
+     RecoilDeclineTime=0.650000
      FireModeClass(0)=Class'BWBPRecolorsPro.AK47PrimaryFire'
 	 FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      IdleAnimRate=0.400000
@@ -134,7 +130,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticRecolorsAnims.AK490_FP'
      DrawScale=0.350000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.AK490.AK490-Main'
 	 Skins(2)=Texture'BallisticRecolorsTex.AK490.AK490-Misc'

@@ -27,4 +27,5 @@ defaultproperties
 	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BallisticProV55.NRP57Thrown'
  	 BotRefireRate=0.400000
+     WarnTargetPct=0.750000
 }

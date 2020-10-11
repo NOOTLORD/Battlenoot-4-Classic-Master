@@ -225,9 +225,9 @@ defaultproperties
 	 InventorySize=6				 
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_PD97'
-     BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     IdleTweenTime=0.000000	 
-     bWT_Bullet=True
+     BCRepClass=Class'BallisticProV55.BallisticReplicationInfo' 
+     bWT_Bullet=False
+	 bWT_Projectile=True
      bWT_Heal=True
      SpecialInfo(0)=(Info="120.0;15.0;0.8;50.0;0.0;0.5;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
@@ -239,7 +239,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit',Volume=1.200000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut',Volume=1.200000)
      ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000)
-     ClipInFrame=0.650000
+     ClipInFrame=25.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Healing Darts",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -249,20 +249,14 @@ defaultproperties
      SightOffset=(X=-10.000000,Y=-4.400000,Z=12.130000)
      SightDisplayFOV=45.000000
      SightingTime=0.200000
-	 SightZoomFactor=0
      SightAimFactor=0.150000
      JumpChaos=0.200000
-     SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
-     AimAdjustTime=100.000000
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimSpread=16
-     AimDamageThreshold=0.000000 
-	 ViewRecoilFactor=1.000000
      ChaosDeclineTime=0.450000
-     ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=512
-     RecoilYawFactor=0.000000
-     RecoilXFactor=0.250000
-     RecoilYFactor=0.250000
+     RecoilXFactor=0.10000
+     RecoilYFactor=0.10000
      RecoilMax=8192.000000
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.500000

@@ -75,7 +75,7 @@ defaultproperties
      CockSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Cock',Volume=0.850000)
      ClipOutSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Clipout',Volume=0.850000)
      ClipInSound=(Sound=Sound'BallisticSounds1.TEC.TEC-Clipin',Volume=0.850000)
-     ClipInFrame=0.650000
+     ClipInFrame=35.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -86,21 +86,18 @@ defaultproperties
 	 SightPivot=(Pitch=512)
      SightDisplayFOV=50.000000
      SightingTime=0.250000
-     SightAimFactor=0.200000
-	 SightZoomFactor=0
-     HipRecoilFactor=2.250000
+     SightAimFactor=2.000000
+     HipRecoilFactor=1.000000
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
      ChaosSpeedThreshold=7500.000000
-     RecoilXCurve=(Points=(,(InVal=0.200000),(InVal=0.400000,OutVal=0.100000),(InVal=0.600000,OutVal=-0.100000),(InVal=0.800000,OutVal=0.200000),(InVal=1.000000,OutVal=-0.200000)))
-     RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.150000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.800000),(InVal=1.000000,OutVal=1.000000)))
+	 RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.05),(InVal=0.400000,OutVal=0.10000),(InVal=0.5500000,OutVal=0.120000),(InVal=0.800000,OutVal=0.15000),(InVal=1.000000,OutVal=0.100000)))
+	 RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.220000),(InVal=0.400000,OutVal=0.400000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.800000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.250000
      RecoilYFactor=0.300000
      RecoilMax=6144.000000
-     RecoilDeclineTime=1.200000
-     RecoilDeclineDelay=0.125000
+     RecoilDeclineTime=0.500000
+     RecoilDeclineDelay=0.200000
      FireModeClass(0)=Class'BallisticProV55.XRS10PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"

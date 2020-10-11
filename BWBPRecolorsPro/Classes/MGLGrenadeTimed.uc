@@ -64,7 +64,7 @@ defaultproperties
      bNoInitialSpin=True
      bAlignToVelocity=True
      DetonateDelay=2.500000
-     ImpactDamage=85.000000
+     ImpactDamage=80.000000
      ImpactDamageType=Class'BWBPRecolorsPro.DT_MGLGrenade'
      ImpactManager=Class'BWBPRecolorsPro.IM_MGLGrenade'
      TrailClass=Class'BWBPRecolorsPro.MGLNadeTrail'

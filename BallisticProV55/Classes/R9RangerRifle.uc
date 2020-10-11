@@ -57,7 +57,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticSounds2.R9.R9-ClipHit',Volume=0.800000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.R9.R9-ClipOut',Volume=0.800000)
      ClipInSound=(Sound=Sound'BallisticSounds2.R9.R9-ClipIn',Volume=0.800000)
-     ClipInFrame=0.650000
+     ClipInFrame=68.000000
      bCockOnEmpty=True	 
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -74,8 +74,6 @@ defaultproperties
      GunLength=80.000000
      CrouchAimFactor=0.750000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
-     AimAdjustTime=100.000000
-     AimDamageThreshold=0.000000
      ChaosSpeedThreshold=3000.000000
      ChaosAimSpread=3072
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.070000),(InVal=0.500000,OutVal=0.040000),(InVal=1.000000)))

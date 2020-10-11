@@ -875,7 +875,7 @@ defaultproperties
 
      Begin Object Class=moNumericEdit Name=PlayerFOV
          MinValue=80
-         MaxValue=140
+         MaxValue=120
          ComponentJustification=TXTA_Left
          CaptionWidth=0.700000
          Caption="Default FOV"

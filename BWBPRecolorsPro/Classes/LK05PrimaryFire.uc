@@ -84,6 +84,7 @@ defaultproperties
      CutOffDistance=3072.000000
      CutOffStartRange=1792.000000
      TraceRange=(Min=9000.000000,Max=11000.000000)
+     WallPenetrationForce=16.000000  
      Damage=25.000000
      DamageHead=50.000000
      DamageLimb=25.000000
@@ -107,7 +108,6 @@ defaultproperties
      YInaccuracy=48.000000
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Fire',Volume=0.975000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
-     FireEndAnim=
      AmmoClass=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'
      FireRate=0.095000
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -116,5 +116,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
+     WarnTargetPct=0.200000	 
      aimerror=750.000000
 }

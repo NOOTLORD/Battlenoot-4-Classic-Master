@@ -211,7 +211,7 @@ static function float GetAttachmentDispersionFactor()
 
 defaultproperties
 {
-     TracerChance=0.500000
+     TracerChance=1.000000
      TraceRange=(Min=500.000000,Max=2000.000000)
 	 WallPenetrationForce=0.000000
 	 bPenetrate=True

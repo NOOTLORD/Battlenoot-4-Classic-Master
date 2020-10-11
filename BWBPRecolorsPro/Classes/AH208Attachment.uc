@@ -16,7 +16,7 @@ defaultproperties
      FlashScale=0.200000
      LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
-     BrassClass=Class'BallisticProV55.Brass_Pistol'
+     BrassClass=Class'BWBPRecolorsPro.Brass_AH208pistol'
 	 BrassMode=MU_Primary
      BrassBone="Scope"
 	 InstantMode=MU_Primary

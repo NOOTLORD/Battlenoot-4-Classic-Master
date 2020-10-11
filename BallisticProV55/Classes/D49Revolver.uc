@@ -323,54 +323,65 @@ defaultproperties
      Shells(3)=(BulletName="Bullet5",ShellName="Shell5",NextShell=5)
      Shells(4)=(BulletName="Bullet3",ShellName="Shell3",NextShell=1)
      Shells(5)=(BulletName="Bullet6",ShellName="Shell6")
+     PlayerSpeedFactor=1.100000
+     PlayerJumpFactor=1.100000	 
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_D49'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     bWT_Bullet=True
+	 InventorySize=6	 
      SpecialInfo(0)=(Info="120.0;10.0;0.6;50.0;1.0;0.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=6
      CockAnimRate=1.500000
-     CockSound=(Sound=Sound'BallisticSounds2.D49.D49-Cock',Volume=1.000000)
+     CockSound=(Sound=Sound'BallisticSounds2.D49.D49-Cock',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnimRate=1.500000
-     ClipHitSound=(Volume=0.750000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellOut',Volume=1.000000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn',Volume=1.000000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellOut',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticSounds2.D49.D49-ShellIn',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=132.000000
-     bCockOnEmpty=True
-     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
+     WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",Value=1.000000)
      WeaponModes(1)=(bUnavailable=True)
-     WeaponModes(2)=(bUnavailable=True)	 
+     WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
-     SightOffset=(X=-30.000000,Y=-0.400000,Z=14.500000)
-     SightingTime=0.200000
-     SprintOffSet=(Pitch=-1000,Yaw=-2048)	
-     SightDisplayFOV=40.000000	 
 	 SightZoomFactor=0
+     SightOffset=(X=-30.000000,Y=-0.400000,Z=14.500000)	 
+     SightDisplayFOV=35.000000	 
+     SightingTime=0.200000 
+     GunLength=16.000000
+     LongGunPivot=(Pitch=5000,Yaw=6000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)	 
+     CrouchAimFactor=0.800000
+     SightAimFactor=0.250000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.100000	 
+     SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimSpread=16
      ChaosDeclineTime=0.450000
+     ChaosSpeedThreshold=6000.000000	 
      ChaosAimSpread=768
-	 RecoilXCurve=(Points=((InVal=0.0,OutVal=0.0),(InVal=0.5,OutVal=0.03),(InVal=1,OutVal=0.07)))	 
+	 RecoilXCurve=(Points=((InVal=0.0,OutVal=0.0),(InVal=0.5,OutVal=0.03),(InVal=1,OutVal=0.07)))	
+     RecoilYCurve=(Points=(,(InVal=1.000000,OutVal=1.000000)))
+     RecoilPitchFactor=1.000000
+     RecoilYawFactor=1.000000	 
      RecoilXFactor=0.10000
      RecoilYFactor=0.10000
+	 RecoilMax=6144	 
      RecoilDeclineTime=1.200000
      RecoilDeclineDelay=0.350000
-	 RecoilMax=6144
+     SelectAnimRate=1.000000
+     PutDownAnimRate=1.000000
+     PutDownTime=0.300000
+     BringUpTime=0.300000	
+     DisplayFOV=50.000000	 
+     Priority=22	 
      FireModeClass(0)=Class'BallisticProV55.D49PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     PutDownAnimRate=1.250000
-     PutDownTime=0.500000
-     SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
      CurrentRating=0.600000
      AmmoClass(0)=Class'BallisticProV55.Ammo_D49_Revolver'	 
      AmmoClass(1)=Class'BallisticProV55.Ammo_D49_Revolver'	 	 
      Description="D49"
-     DisplayFOV=50.000000
-     Priority=22
-     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2

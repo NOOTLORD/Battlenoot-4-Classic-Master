@@ -1,18 +1,15 @@
 //=============================================================================
-// Brass class for Rifle type weapons
+// Ammo class for the M925 Machinegun
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2005 RuneStorm. All Rights Reserved.
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
-class Brass_Rifle extends BWBrass_Default;
+class Ammo_M925_MG extends BallisticAmmo;
 
 defaultproperties
 {
-     StartVelocity=(Y=75.000000,Z=25.000000)
-     HitSoundVolume=0.140000
-     StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyRifleRound'
-     DrawScale=0.090000
-     DrawScale3D=(X=0.450000,Y=0.800000,Z=0.800000)
+     MaxAmmo=80
+     InitialAmount=40
 }

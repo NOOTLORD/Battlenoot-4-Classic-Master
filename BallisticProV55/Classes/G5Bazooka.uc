@@ -735,24 +735,29 @@ defaultproperties
      LockOnSound=(Sound=Sound'BallisticSounds2.G5.G5-TargetOn',Volume=0.500000,Pitch=1.000000)
      LockOffSound=(Sound=Sound'BallisticSounds2.G5.G5-TargetOff',Volume=0.500000,Pitch=1.000000)
      LaserChaosAimSpread=256
+     PlayerSpeedFactor=0.900000
+     PlayerJumpFactor=0.900000
      AIReloadTime=4.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_G5'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+	 InventorySize=24	 
      bWT_Hazardous=True
      bWT_Splash=True
      bWT_Projectile=True
      bWT_Super=True
      SpecialInfo(0)=(Info="300.0;35.0;1.0;80.0;0.8;0.0;1.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.G5.G5-Pullout',Volume=0.370000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.G5.G5-Putaway',Volume=0.370000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.G5.G5-Pullout',Volume=0.370000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.G5.G5-Putaway',Volume=0.370000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=2
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=1.000000)
+     CockSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     bCockOnEmpty=False
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'BallisticSounds2.G5.G5-Load',Volume=1.000000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.G5.G5-LoadHatch',Volume=1.000000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.G5.G5-Load',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticSounds2.G5.G5-LoadHatch',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInFrame=60.000000	 
      WeaponModes(0)=(ModeName="Rocket")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
@@ -770,39 +775,52 @@ defaultproperties
      ScopeViewTex=Texture'BallisticUI.G5.G5ScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
-     FullZoomFOV=10.000000
+     bNoCrosshairInScope=True	 
      bNoMeshInScope=True
-     bNoCrosshairInScope=True
+	 SightZoomFactor=0	 
+     FullZoomFOV=10.000000
      SightOffset=(X=-3.000000,Y=-6.000000,Z=4.500000)
      SightingTime=0.500000
-     SprintOffSet=(Pitch=-6000,Yaw=-8000)
-     JumpOffSet=(Pitch=-6000,Yaw=-1500)
-     AimAdjustTime=100.000000
+     GunLength=16.000000
+     LongGunPivot=(Pitch=5000,Yaw=6000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)	
+     CrouchAimFactor=0.800000	 
+	 SightAimFactor=0.400000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.100000	 
+     SprintOffSet=(Pitch=-6000,Yaw=-8000) 
      AimSpread=512
-     AimDamageThreshold=0.000000
+     ChaosDeclineTime=0.450000	 
      ChaosSpeedThreshold=1000.000000
      ChaosAimSpread=2560
+     RecoilXCurve=(Points=(,(InVal=1.000000)))
+     RecoilYCurve=(Points=(,(InVal=1.000000,OutVal=1.000000)))	 
+     RecoilPitchFactor=1.000000	 
      RecoilYawFactor=0.000000
+     RecoilXFactor=0.000000
+     RecoilYFactor=0.000000	 
+     RecoilMax=4096.000000	 
      RecoilDeclineTime=1.000000
-     FireModeClass(0)=Class'BallisticProV55.G5PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.G5SecondaryFire'
+     RecoilDeclineDelay=0.300000
      SelectAnimRate=0.600000
      PutDownAnimRate=0.800000
      PutDownTime=0.800000
-     BringUpTime=1.000000
-     SelectForce="SwitchToAssaultRifle"
+     BringUpTime=1.000000	
+     DisplayFOV=50.000000	 
+     Priority=44	 
+     FireModeClass(0)=Class'BallisticProV55.G5PrimaryFire'
+     FireModeClass(1)=Class'BallisticProV55.G5SecondaryFire'
      AIRating=0.800000
      CurrentRating=0.800000
      AmmoClass(0)=Class'BallisticProV55.Ammo_G5_Bazooka'
      AmmoClass(1)=Class'BallisticProV55.Ammo_G5_Bazooka'	 
      Description="G5 Bazooka"
-     Priority=44
      CenteredOffsetY=10.000000
      CenteredRoll=0
-     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
+     GroupOffset=4	 
      PlayerViewOffset=(X=12.000000,Y=10.000000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5'

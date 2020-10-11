@@ -10,11 +10,12 @@ class XRS10PrimaryFire extends BallisticRangeAttenFire;
 
 defaultproperties
 {
-     CutOffDistance=1280.000000
-     CutOffStartRange=512.000000
-     Damage=28.000000
-     DamageHead=28.000000
-     DamageLimb=28.000000
+     CutOffDistance=1536.000000
+     CutOffStartRange=768.000000
+     WallPenetrationForce=8.000000
+     Damage=25.000000
+     DamageHead=25.000000
+     DamageLimb=25.000000
      RangeAtten=0.250000
      WaterRangeAtten=0.400000
      DamageType=Class'BallisticProV55.DT_XRS10SMG'
@@ -24,9 +25,7 @@ defaultproperties
      KickForce=0
      PenetrateForce=0
      bPenetrate=False
-     bDryUncock=True
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashBone="tip"
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassOffset=(X=-39.000000,Y=1.500000,Z=0.500000)

@@ -64,13 +64,13 @@ defaultproperties
      ClipHitSound=(Volume=0.600000)
      ClipOutSound=(Sound=Sound'BallisticSounds2.XK2.XK2-ClipOut',Volume=0.850000)
      ClipInSound=(Sound=Sound'BallisticSounds2.XK2.XK2-ClipIn',Volume=0.850000)
-     ClipInFrame=0.650000
+     ClipInFrame=45.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
-	 CockAnimRate=1.25				   
+	 CockAnimRate=1.250000			   
      bNoCrosshairInScope=True
      SightPivot=(Pitch=256)
      SightOffset=(X=5.000000,Z=12.700000)
@@ -79,20 +79,18 @@ defaultproperties
      SightAimFactor=0.400000
 	 SightZoomFactor=0
      SprintOffSet=(Pitch=-3000,Yaw=-4000)
-     AimAdjustTime=100.000000
      AimSpread=16
-	 AIRating=0.8
-	 CurrentRating=0.8
-     AimDamageThreshold=0.000000
+	 AIRating=0.800000
+	 CurrentRating=0.800000
      ChaosDeclineTime=0.800000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=2048
-     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.050000),(InVal=0.400000,OutVal=-0.100000),(InVal=0.600000,OutVal=0.150000),(InVal=0.800000,OutVal=-0.050000),(InVal=1.000000)))
-     RecoilYCurve=(Points=(,(InVal=0.100000,OutVal=0.100000),(InVal=0.200000,OutVal=0.400000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.600000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.030000),(InVal=0.400000,OutVal=0.050000),(InVal=0.600000,OutVal=0.10000),(InVal=0.800000,OutVal=0.120000),(InVal=1.000000,OutVal=0.16)))
+     RecoilYCurve=(Points=(,(InVal=0.100000,OutVal=0.100000),(InVal=0.200000,OutVal=0.25),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.600000),(InVal=1.000000,OutVal=1.000000)))
      RecoilXFactor=0.250000
      RecoilYFactor=0.250000
-     RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.110000
+     RecoilDeclineTime=0.500000
+     RecoilDeclineDelay=0.150000
      FireModeClass(0)=Class'BallisticProV55.Xk2PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectForce="SwitchToAssaultRifle"

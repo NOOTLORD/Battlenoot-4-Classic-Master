@@ -13,9 +13,10 @@ defaultproperties
      CutOffDistance=3072.000000
      CutOffStartRange=1536.000000
      TraceRange=(Min=12000.000000,Max=15000.000000)
-     Damage=25.000000
-     DamageHead=50.000000
-     DamageLimb=25.000000
+     WallPenetrationForce=16.000000 
+     Damage=20.000000
+     DamageHead=40.000000
+     DamageLimb=20.000000
      RangeAtten=0.350000
      WaterRangeAtten=0.800000
      DamageType=Class'BallisticProV55.DT_M50Assault'
@@ -28,8 +29,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.M50FlashEmitter'
      FlashScaleFactor=0.550000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
-     BrassBone="tip"
-     BrassOffset=(X=-81.000000,Y=0.000000,Z=-2.250000)
+     BrassOffset=(X=-10.000000,Y=0.000000,Z=-4.000000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=145.000000
      FireChaos=0.040000
@@ -38,7 +38,6 @@ defaultproperties
      YInaccuracy=48.000000
      BallisticFireSound=(Sound=Sound'BallisticSounds2.M50.M50Fire',Volume=0.900000,Slot=SLOT_Interact,bNoOverride=False)
      bPawnRapidFireAnim=True
-     FireEndAnim=
      FireRate=0.110000
      AmmoClass=Class'BallisticProV55.Ammo_M50_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
@@ -47,5 +46,6 @@ defaultproperties
      ShakeOffsetMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeOffsetRate=(X=0.000000,Y=0.000000,Z=0.000000)
 	 ShakeOffsetTime=0.000000
+     WarnTargetPct=0.200000	 
      aimerror=750.000000
 }

@@ -123,8 +123,8 @@ function float SuggestDefenseStyle()	{	return -0.8;	}
 
 defaultproperties
 {
-	 AIRating=0.6
-	 CurrentRating=0.6
+	 AIRating=0.600000
+	 CurrentRating=0.600000
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_GRS-9
      BigIconCoords=(Y1=30,Y2=230)
@@ -139,7 +139,7 @@ defaultproperties
      ClipHitSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipHit',Volume=0.800000)
      ClipOutSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipOut',Volume=0.800000)
      ClipInSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipIn',Volume=0.800000)
-     ClipInFrame=0.650000
+     ClipInFrame=37.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -150,24 +150,26 @@ defaultproperties
      SightDisplayFOV=45.000000
      SightingTime=0.200000
 	 SightZoomFactor=0
-     SightAimFactor=0.050000
+     SightAimFactor=2.000000
      SprintChaos=0.050000
      SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
-     AimAdjustTime=100.000000
      AimSpread=16
-     AimDamageThreshold=0.000000
      ChaosDeclineTime=0.450000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=384
+	 RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.12),(InVal=0.300000,OutVal=0.150000),(InVal=0.4,OutVal=0.02),(InVal=0.550000,OutVal=-0.120000),(InVal=0.700000,OutVal=0.050000),(InVal=1.000000,OutVal=0.200000)))
+	 RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.25000),(InVal=0.450000,OutVal=0.450000),(InVal=0.650000,OutVal=0.75000),(InVal=0.800000,OutVal=0.820000),(InVal=1.000000,OutVal=1.000000)))	 
      RecoilYawFactor=0.000000
      RecoilXFactor=0.250000
      RecoilYFactor=0.250000
-     RecoilDeclineTime=1.500000
-     RecoilDeclineDelay=0.150000
+	 RecoilDeclineTime=0.750000
+	 RecoilDeclineDelay=0.350000
+	 RecoilMax=6144
+	 HipRecoilFactor=1.50000
      FireModeClass(0)=Class'BallisticProV55.GRS9PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     SelectAnimRate=1.500000
-     PutDownAnimRate=1.500000
+	 SelectAnimRate=1.250000
+	 PutDownAnimRate=1.250000
      SelectForce="SwitchToAssaultRifle"
      bCanThrow=False
      AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9_Pistol'

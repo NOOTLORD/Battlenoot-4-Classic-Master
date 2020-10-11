@@ -122,7 +122,7 @@ defaultproperties
      ImpactSounds(3)=Sound'XEffects.Impact3'
      ImpactSounds(4)=Sound'XEffects.Impact1'
      ImpactSounds(5)=Sound'XEffects.Impact2'
-     ImpactDamage=90.000000
+     ImpactDamage=120.000000
      ImpactMomentumTransfer=2000.000000
      ImpactDamageType=Class'BallisticProV55.DT_G5Unarmed'
      ArmingDelay=0.000001

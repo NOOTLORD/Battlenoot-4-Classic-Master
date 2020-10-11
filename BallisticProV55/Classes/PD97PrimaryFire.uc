@@ -50,8 +50,7 @@ defaultproperties
      AimedFireAnim="SightFire"
      RecoilPerShot=256.000000
      FireChaos=0.150000
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_FireDart',Volume=1.750000)
-     PreFireAnim=				 
+     BallisticFireSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_FireDart',Volume=1.750000)			 
      FireAnimRate=1.100000
      FireForce="AssaultRifleAltFire"
      FireRate=0.400000
@@ -64,4 +63,5 @@ defaultproperties
 	 ShakeOffsetTime=0.000000
      ProjectileClass=Class'BallisticProV55.PD97Dart'
      BotRefireRate=0.700000
+     WarnTargetPct=0.300000	 
 }
