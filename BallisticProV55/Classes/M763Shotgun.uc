@@ -144,23 +144,23 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
+     PlayerSpeedFactor=1.000000
+     PlayerJumpFactor=1.000000
+     AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.SmallIcon_M763'
      BigIconCoords=(Y1=35,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     bWT_Shotgun=True
+     InventorySize=12
      SpecialInfo(0)=(Info="120.0;20.0;0.7;50.0;0.0;0.5;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.375000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.375000)
-	 PutDownAnimRate=1.500000
-	 PutDownTime=0.350000
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=7
      CockAnimRate=1.700000
-     CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock1',Volume=0.400000)
+     CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock',Volume=0.400000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.100000
-     ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1',Volume=1.000000)
+     ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=9.000000
-     bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Pump-Action",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
@@ -172,22 +172,38 @@ defaultproperties
      EndShovelAnim="ReloadEnd"
      EndShovelAnimRate=1.100000
      bNoCrosshairInScope=True
+	 SightZoomFactor=0 
      SightPivot=(Pitch=32)
      SightOffset=(X=5.000000,Z=11.500000)
      SightDisplayFOV=40.000000
      SightingTime=0.350000
-	 SightAimFactor=0.50000
      GunLength=48.000000
+     LongGunPivot=(Pitch=-4000,Yaw=-12000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)
+     CrouchAimFactor=0.800000	 
+	 SightAimFactor=0.50000	
+     HipRecoilFactor=1.600000	
+     SprintChaos=0.100000	 
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimSpread=16
      ChaosDeclineTime=0.750000
+     ChaosSpeedThreshold=6000.000000	 
      ChaosAimSpread=256
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=0.10000),(InVal=0.350000,OutVal=0.13000),(InVal=0.550000,OutVal=0.230000),(InVal=0.800000,OutVal=0.35000),(InVal=1.000000,OutVal=0.45)))
      RecoilYCurve=(Points=(,(InVal=0.150000,OutVal=0.150000),(InVal=0.40000,OutVal=0.50000),(InVal=0.600000,OutVal=0.700000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilPitchFactor=1.000000
+     RecoilYawFactor=1.000000
      RecoilXFactor=0.100000
      RecoilYFactor=0.100000
+     RecoilMax=4096.000000	 
      RecoilDeclineTime=0.500000
      RecoilDeclineDelay=0.750000
+     SelectAnimRate=1.000000
+	 PutDownAnimRate=1.500000
+	 PutDownTime=0.350000
+     BringUpTime=0.300000	 
+     DisplayFOV=60.000000
+     Priority=37	 
      FireModeClass(0)=Class'BallisticProV55.M763PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.750000
@@ -195,12 +211,9 @@ defaultproperties
      AmmoClass(0)=BallisticProV55.Ammo_M763_Shotgun'
      AmmoClass(1)=BallisticProV55.Ammo_M763_Shotgun'	 
      Description="M763"
-     Priority=37
-     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1
-     GroupOffset=2
      PlayerViewOffset=(X=4.000000,Y=12.000000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.M763Attachment'
      IconMaterial=Texture'BallisticUI.Icons.BigIcon_M763'
@@ -214,7 +227,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims2.M763_FP'
      DrawScale=0.500000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons2.M763.M763Shotgun'
 	 Skins(2)=Texture'BallisticWeapons2.M763.M763Small'	

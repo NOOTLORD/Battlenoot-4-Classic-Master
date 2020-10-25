@@ -11,8 +11,8 @@
 //=============================================================================
 class BallisticTab_RulesPro extends UT2K4TabPanel;
 
-var automated moCheckbox    ch_StableSprint, ch_NoLongGun, ch_NoDodging, ch_DoubleJump, ch_DmgModifier, ch_LimitCarry;
-var automated moFloatEdit	fl_Damage, fl_VDamage, fl_HeadPct, fl_LimbPct, fl_Accuracy, fl_Recoil;
+var automated moCheckbox    ch_StableSprint, ch_NoLongGun, ch_NoDodging, ch_DoubleJump, ch_LimitCarry, ch_ToggleADS;
+var automated moFloatEdit	fl_Damage, fl_VDamage, fl_Accuracy, fl_Recoil, fl_SightingTime;
 var automated moNumericEdit int_MaxWeps;
 
 var BallisticConfigMenuPro		p_Anchor;
@@ -43,9 +43,8 @@ function LoadSettings()
 	fl_VDamage.SetValue(class'Rules_Ballistic'.default.VehicleDamageScale);	
 	ch_NoDodging.Checked(class'BallisticReplicationInfo'.default.bNoDodging);
 	ch_DoubleJump.Checked(class'BallisticReplicationInfo'.default.bLimitDoubleJumps);
-	ch_DmgModifier.Checked(class'BallisticWeapon'.default.bUseModifiers);
-	fl_HeadPct.SetValue(class'BallisticInstantFire'.default.DamageModHead);
-	fl_LimbPct.SetValue(class'BallisticInstantFire'.default.DamageModLimb);
+	fl_SightingTime.SetValue(class'BallisticWeapon'.default.SightingTimeScale);
+	ch_ToggleADS.Checked(class'BallisticWeapon'.default.bSightLock);
 	ch_LimitCarry.Checked(class'BallisticWeapon'.default.bLimitCarry);
 	int_MaxWeps.SetValue(class'BallisticWeapon'.default.MaxWeaponsPerSlot);	
 }
@@ -62,13 +61,10 @@ function SaveSettings()
 	class'Rules_Ballistic'.default.VehicleDamageScale		  = fl_VDamage.GetValue();	
 	class'BallisticReplicationInfo'.default.bNoDodging		  = ch_NoDodging.IsChecked();
 	class'BallisticReplicationInfo'.default.bLimitDoubleJumps = ch_DoubleJump.IsChecked();
-	class'BallisticWeapon'.default.bUseModifiers = ch_DmgModifier.IsChecked();
-	class'BallisticInstantFire'.default.DamageModHead = fl_HeadPct.GetValue();
-	class'BallisticInstantFire'.default.DamageModLimb = fl_LimbPct.GetValue();
-	class'BallisticProjectile'.default.DamageModHead = fl_HeadPct.GetValue();
-	class'BallisticProjectile'.default.DamageModLimb = fl_LimbPct.GetValue();
-	class'BallisticWeapon'.default.bLimitCarry = ch_LimitCarry.IsChecked();
-	class'BallisticWeapon'.default.MaxWeaponsPerSlot = int_MaxWeps.GetValue();
+	class'BallisticWeapon'.default.SightingTimeScale          = fl_SightingTime.GetValue();
+    class'BallisticWeapon'.default.bSightLock 	              = ch_ToggleADS.IsChecked();
+	class'BallisticWeapon'.default.bLimitCarry                = ch_LimitCarry.IsChecked();
+	class'BallisticWeapon'.default.MaxWeaponsPerSlot          = int_MaxWeps.GetValue();
 
 	class'BallisticReplicationInfo'.static.StaticSaveConfig();
 	class'BallisticWeapon'.static.StaticSaveConfig();
@@ -88,8 +84,8 @@ function DefaultSettings()
 	fl_VDamage.SetValue(1.0);	
 	ch_NoDodging.Checked(true);
 	ch_DoubleJump.Checked(false);
-	fl_HeadPct.SetValue(1.5);
-	fl_LimbPct.SetValue(0.75);
+	fl_SightingTime.SetValue(1.00);
+	ch_ToggleADS.Checked(false);
 	ch_LimitCarry.Checked(True);
 	int_MaxWeps.SetValue(1);
 }
@@ -97,6 +93,7 @@ function DefaultSettings()
 defaultproperties
 {
      Begin Object Class=moFloatEdit Name=fl_AccuracyFloat
+         MinValue=0.500000	 
          MaxValue=2.000000
          CaptionWidth=0.750000		 
          Caption="Inaccuracy Scale"
@@ -109,6 +106,7 @@ defaultproperties
      fl_Accuracy=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_AccuracyFloat'
 
      Begin Object Class=moFloatEdit Name=fl_RecoilFloat
+	     MinValue=0.500000	 
          MaxValue=2.000000
          CaptionWidth=0.750000		 
          Caption="Recoil Scale"
@@ -202,48 +200,33 @@ defaultproperties
      End Object
      ch_DoubleJump=moCheckBox'BallisticProV55.BallisticTab_RulesPro.ch_DoubleJumpCheck'
 	 
-     Begin Object Class=moCheckBox Name=ch_DmgModifierCheck
+     Begin Object Class=moFloatEdit Name=fl_SightingTimeFloat
+         MinValue=0.500000
+         MaxValue=2.000000
          ComponentJustification=TXTA_Left
-         CaptionWidth=0.900000
-         Caption="Use Damage Modifiers"
-         OnCreateComponent=ch_DmgModifierCheck.InternalOnCreateComponent
+         CaptionWidth=0.750000
+         Caption="Sighting time scale"
+         OnCreateComponent=fl_SightingTimeFloat.InternalOnCreateComponent
          IniOption="@Internal"
-         Hint="Enable to use config modifiers for head and limb damage."
+         Hint="Multiplier of the time it takes to move weapon to and from sight view."
          WinTop=0.500000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
-     ch_DmgModifier=moCheckBox'BallisticProV55.BallisticTab_RulesPro.ch_DmgModifierCheck'
+     fl_SightingTime=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_SightingTimeFloat'
 
-     Begin Object Class=moFloatEdit Name=fl_HeadPctFloat
-         MinValue=1.000000
-         MaxValue=5.000000
+     Begin Object Class=moCheckBox Name=ch_ToggleADSCheck
          ComponentJustification=TXTA_Left
-         CaptionWidth=0.750000
-         Caption="Headshot Damage Modifier"
-         OnCreateComponent=fl_HeadPctFloat.InternalOnCreateComponent
+         CaptionWidth=0.900000
+         Caption="Toggle ADS mode"
+         OnCreateComponent=ch_ToggleADSCheck.InternalOnCreateComponent
          IniOption="@Internal"
-         Hint="Headshot damage is base damage multiplied by this if modifiers are enabled."
+         Hint="If enabled, ADS will be toggle and will not unscope if u let go of your ADS key, if Disabled it will be Hold to ADS."
          WinTop=0.550000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
-     fl_HeadPct=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_HeadPctFloat'
-
-     Begin Object Class=moFloatEdit Name=fl_LimbPctFloat
-         MinValue=0.100000
-         MaxValue=1.000000
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.750000
-         Caption="Limb Damage Modifier"
-         OnCreateComponent=fl_LimbPctFloat.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Limb damage is base damage multiplied by this if modifiers are enabled."
-         WinTop=0.600000
-         WinLeft=0.250000
-         WinHeight=0.040000
-     End Object
-     fl_LimbPct=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_LimbPctFloat'
+     ch_ToggleADS=moCheckBox'BallisticProV55.BallisticTab_RulesPro.ch_ToggleADSCheck'
 
      Begin Object Class=moCheckBox Name=ch_LimitCarryCheck
          ComponentJustification=TXTA_Left
@@ -252,7 +235,7 @@ defaultproperties
          OnCreateComponent=ch_LimitCarryCheck.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="If enabled, you can only carry a limited number of weapons of each type."
-         WinTop=0.650000
+         WinTop=0.600000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
@@ -267,7 +250,7 @@ defaultproperties
          OnCreateComponent=int_MaxWepsInt.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Sets the maximum number of weapons a player can carry in each InventoryGroup if Limit Carry is on."
-         WinTop=0.700000
+         WinTop=0.650000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object

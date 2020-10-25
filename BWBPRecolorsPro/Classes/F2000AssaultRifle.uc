@@ -43,28 +43,39 @@ function float SuggestDefenseStyle()	{	return -0.4;	}
 defaultproperties
 {
      AIReloadTime=1.000000
+     PlayerSpeedFactor=1.000000
+     PlayerJumpFactor=1.000000	 
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_F2000'
      BigIconCoords=(X1=32,Y1=40,X2=475)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     bWT_Bullet=True
-     bWT_Machinegun=True	 
-     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.425000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.425000)
-     ReloadAnimRate=1.350000	 
-     CockAnimRate=1.250000
-     bCockOnEmpty=True	 
-     CockSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-BoltPull',Volume=0.950000)
-     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagFiddle',Volume=0.950000)
-     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagOut',Volume=0.950000)
-     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagIn',Volume=0.950000)
+     bWT_Machinegun=True	
+     InventorySize=12	 
+     BringUpSound=(Sound=Sound'BallisticSounds2.M50.M50Pullout',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     MagAmmo=30
+     CockAnimRate=1.250000 	 
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-BoltPull',Volume=0.950000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ReloadAnimRate=1.350000 
+     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagFiddle',Volume=0.950000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagOut',Volume=0.950000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.MARS.MARS-MagIn',Volume=0.950000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=77.000000
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
+	 SightZoomFactor=0	 
      SightOffset=(X=6.000000,Y=-6.350000,Z=23.150000)
      SightDisplayFOV=40.000000
+     SightingTime=0.350000
+     GunLength=64.000000
+     LongGunPivot=(Pitch=-4000,Yaw=-12000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)	
+     CrouchAimFactor=0.800000
+     SightAimFactor=0.250000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.100000	 
      SprintOffSet=(Pitch=-3000,Yaw=-4096)
      AimSpread=16 
      ChaosDeclineTime=0.500000
@@ -72,21 +83,26 @@ defaultproperties
      ChaosAimSpread=3072
      RecoilXCurve=(Points=(,(InVal=0.100000,OutVal=0.080000),(InVal=0.25000,OutVal=0.2000),(InVal=0.3500000,OutVal=0.150000),(InVal=0.4800000,OutVal=0.20000),(InVal=0.600000,OutVal=-0.050000),(InVal=0.750000,OutVal=0.0500000),(InVal=0.900000,OutVal=0.15),(InVal=1.000000,OutVal=0.3)))
      RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.250000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.800000),(InVal=0.800000,OutVal=0.900000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilPitchFactor=1.000000
+     RecoilYawFactor=1.000000
      RecoilXFactor=0.200000
      RecoilYFactor=0.200000
+     RecoilMax=4096.000000	 
      RecoilDeclineTime=0.500000
      RecoilDeclineDelay=0.140000
+     SelectAnimRate=1.000000
+     PutDownAnimRate=1.000000	 
+     PutDownTime=0.500000
+     BringUpTime=0.500000	
+     DisplayFOV=60.000000	 
+     Priority=65	 
      FireModeClass(0)=Class'BWBPRecolorsPro.F2000PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     PutDownTime=0.700000
-     SelectForce="SwitchToAssaultRifle"
      AIRating=0.750000
-     CurrentRating=0.750000
+     CurrentRating=0.750000	 
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_F2000_Rifle'
-     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_F2000_Rifle'	 
-     Description="F2000 Assault Rifle"
-     Priority=65
-     HudColor=(B=255,G=200,R=200)
+     AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_F2000_Rifle'	
+     Description="MARS-3"
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1

@@ -11,7 +11,7 @@
 //=============================================================================
 class BallisticTab_PreferencesPro extends UT2K4TabPanel;
 
-var automated moCheckbox	ch_UseBrass, ch_MSmoke, ch_SimpleDeathMessages, ch_OldCrosshairs, ch_BloodFX;
+var automated moCheckbox	ch_UseBrass, ch_MSmoke, ch_SimpleDeathMessages, ch_OldCrosshairs, ch_bDrawCrosshairDot, ch_BloodFX;
 var automated moComboBox	co_WeaponDet, co_EffectDet;
 var automated moFloatEdit	fl_BrassTime, fl_BloodTimeScale;
 var automated moSlider		sl_GibMulti;
@@ -43,6 +43,7 @@ function LoadSettings()
 	fl_BrassTime.SetValue(class'BallisticBrass'.default.LifeTimeScale);
 	ch_SimpleDeathMessages.Checked(class'BallisticDamageType'.default.bSimpleDeathMessages);
 	ch_OldCrosshairs.Checked(class'BallisticWeapon'.default.bOldCrosshairs);
+	ch_bDrawCrosshairDot.Checked(class'BallisticWeapon'.default.bDrawCrosshairDot);
 	ch_BloodFX.Checked(class'BloodManager'.default.bUseBloodEffects);
 	fl_BloodTimeScale.SetValue(class'AD_BloodDecal'.default.StayScale);
 	sl_GibMulti.SetValue(class'BloodManager'.default.GibMultiplier);
@@ -65,6 +66,7 @@ function SaveSettings()
 	if (!bInitialized)
 		return;
 	class'BallisticWeapon'.default.bOldCrosshairs			=	ch_OldCrosshairs.IsChecked();
+	class'BallisticWeapon'.default.bDrawCrosshairDot			=	ch_bDrawCrosshairDot.IsChecked();
 	class'BallisticMod'.default.EffectsDetailMode 		= ELLHDetailMode(co_EffectDet.GetIndex());
 	class'BallisticMod'.default.bEjectBrass 			= ch_useBrass.IsChecked();
 	class'BallisticMod'.default.bMuzzleSmoke 			= ch_MSmoke.IsChecked();
@@ -99,6 +101,7 @@ function DefaultSettings()
 	ch_UseBrass.Checked(true);
 	fl_BrassTime.SetValue(0.10);
 	ch_OldCrosshairs.Checked(false);
+	ch_bDrawCrosshairDot.Checked(true);
 	ch_MSmoke.Checked(false);
 	ch_SimpleDeathMessages.Checked(true);
 	ch_BloodFX.Checked(true);
@@ -201,6 +204,19 @@ defaultproperties
          WinHeight=0.040000
      End Object
      ch_OldCrosshairs=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_OldCrosshairsCheck'
+
+     Begin Object Class=moCheckBox Name=ch_bDrawCrosshairDotCheck
+         ComponentJustification=TXTA_Left
+         CaptionWidth=0.900000
+         Caption="Draw Crosshair Dot"
+         OnCreateComponent=ch_bDrawCrosshairDotCheck.InternalOnCreateComponent
+         IniOption="@Internal"
+         Hint="Display's a dot in the center of the crosshair"
+         WinTop=0.450000
+         WinLeft=0.250000
+         WinHeight=0.040000
+     End Object
+     ch_bDrawCrosshairDot=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_bDrawCrosshairDotCheck'
 	 
      Begin Object Class=moCheckBox Name=ch_BloodFXCheck
          ComponentJustification=TXTA_Left
@@ -209,7 +225,7 @@ defaultproperties
          OnCreateComponent=ch_BloodFXCheck.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Toggles blood effects when damaging players."
-         WinTop=0.450000
+         WinTop=0.500000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
@@ -224,7 +240,7 @@ defaultproperties
          OnCreateComponent=fl_BloodTimeScaleFloat.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Scales the life time of blood effects. 0 = Forever."
-         WinTop=0.500000
+         WinTop=0.550000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
@@ -236,7 +252,7 @@ defaultproperties
          Caption="Gib Multiplier"
          OnCreateComponent=sl_GibMultiSlider.InternalOnCreateComponent
          Hint="Multiplies number of gibs spawned. 1 = Normal, 0 = None. WARNING: Higher than 1 may kill performance!"
-         WinTop=0.550000
+         WinTop=0.600000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object

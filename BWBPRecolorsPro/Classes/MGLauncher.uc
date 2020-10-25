@@ -149,6 +149,9 @@ function float SuggestDefenseStyle()
 defaultproperties
 {
      NadeBone0="S6"
+     PlayerSpeedFactor=1.000000
+     PlayerJumpFactor=1.000000
+     AIReloadTime=1.000000	 
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MGL'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      IdleTweenTime=0.000000
@@ -156,15 +159,16 @@ defaultproperties
      bWT_Hazardous=True
      bWT_Splash=True
      bWT_Projectile=True
+     InventorySize=12	 
      SpecialInfo(0)=(Info="300.0;30.0;0.5;60.0;0.0;1.0;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.475000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.475000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.475000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=6
      bCockOnEmpty=False	 
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.250000	 
-     ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=0.650000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=0.650000)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOff',Volume=0.650000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticSounds2.BX5.BX5-SecOn',Volume=0.650000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=29.000000
      WeaponModes(0)=(ModeName="Timed",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -177,32 +181,45 @@ defaultproperties
      EndShovelAnim="ReloadEnd"
      EndShovelAnimRate=1.250000	 
      bNoCrosshairInScope=False
+	 SightZoomFactor=0	 
      SightPivot=(Pitch=512)
      SightOffset=(X=-30.000000,Y=12.485000,Z=11.750000)
+     SightDisplayFOV=30.000000	 
+     SightingTime=0.350000	 
      GunLength=48.000000
+     LongGunPivot=(Pitch=-4000,Yaw=-12000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)
+     CrouchAimFactor=0.800000
+     SightAimFactor=0.250000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.100000	 
      SprintOffSet=(Pitch=-3000,Yaw=-4096)
      AimSpread=192
      ChaosDeclineTime=1.000000
+     ChaosSpeedThreshold=6000.000000
+     ChaosAimSpread=1536	 
      RecoilXCurve=(Points=(,(InVal=0.200000,OutVal=-0.100000),(InVal=0.300000,OutVal=-0.200000),(InVal=1.000000,OutVal=-0.300000)))
      RecoilYCurve=(Points=(,(InVal=0.300000,OutVal=0.500000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilPitchFactor=1.000000
      RecoilYawFactor=0.000000
      RecoilXFactor=0.400000
      RecoilYFactor=0.400000
      RecoilMax=6144.000000
+     RecoilDeclineTime=2.000000	 
      RecoilDeclineDelay=0.500000
-     FireModeClass(0)=Class'BWBPRecolorsPro.MGLPrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      SelectAnimRate=1.500000
      PutDownAnimRate=2.000000
      PutDownTime=0.660000
-     BringUpTime=0.660000
+     BringUpTime=0.660000	
+     DisplayFOV=60.000000	 
+     Priority=245	 
+     FireModeClass(0)=Class'BWBPRecolorsPro.MGLPrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.900000
      CurrentRating=0.900000
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_MGL_Launcher'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_MGL_Launcher'
-     Description="MGL Grenade Launcher"
-     Priority=245
-     HudColor=(B=255,G=200,R=200)	 
+     Description="MGL" 
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4

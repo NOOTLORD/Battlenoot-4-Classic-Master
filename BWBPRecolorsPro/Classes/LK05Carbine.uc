@@ -92,26 +92,37 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 defaultproperties
 {
      AIReloadTime=1.000000
+     PlayerSpeedFactor=1.000000
+     PlayerJumpFactor=1.000000	 
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_LK-05'
      BigIconCoords=(Y1=36,Y2=225)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     bWT_Bullet=True
-     BringUpSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-PullOut',Volume=0.425000)
-     PutDownSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-Putaway',Volume=0.425000)
+     InventorySize=12	 
+     BringUpSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-PullOut',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=32
-     CockSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Cock',Volume=0.800000)
-     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagOut',Volume=0.800000)
-     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagIn',Volume=0.800000)
+     CockAnimRate=1.000000	 
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Cock',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ReloadAnimRate=1.000000
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagOut',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagIn',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=37.000000
-     bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
+	 SightZoomFactor=0	 
      SightOffset=(X=10.000000,Y=-8.550000,Z=24.660000)
      SightDisplayFOV=40.000000
      SightingTime=0.300000
+     GunLength=64.000000
+     LongGunPivot=(Pitch=-4000,Yaw=-12000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)	 
+     CrouchAimFactor=0.800000
+     SightAimFactor=0.250000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.100000		 
      SprintOffSet=(Pitch=-3072,Yaw=-4096)
      AimSpread=16 
      ChaosDeclineTime=0.500000
@@ -119,24 +130,26 @@ defaultproperties
      ChaosAimSpread=3072
      RecoilXCurve=(Points=(,(InVal=0.1,OutVal=0.12),(InVal=0.2,OutVal=0.18),(InVal=0.35,OutVal=0.22),(InVal=0.5,OutVal=0.3),(InVal=0.7,OutVal=0.45),(InVal=0.85,OutVal=0.6),(InVal=1.000000,OutVal=0.66)))
      RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.200000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.750000),(InVal=0.800000,OutVal=0.900000),(InVal=1.000000,OutVal=1.000000)))
+     RecoilPitchFactor=1.000000
+     RecoilYawFactor=1.000000
      RecoilXFactor=0.200000
      RecoilYFactor=0.350000
-     RecoilDeclineTime=0.4
+     RecoilMax=4096.000000	 
+     RecoilDeclineTime=0.400000
      RecoilDeclineDelay=0.200000
+     SelectAnimRate=1.600000
+     PutDownAnimRate=1.300000
+     PutDownTime=0.400000
+     BringUpTime=0.450000	 
+     DisplayFOV=60.000000	 
+	 Priority=41
      FireModeClass(0)=Class'BWBPRecolorsPro.LK05PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     SelectAnimRate=1.660000
-     PutDownAnimRate=1.330000
-     PutDownTime=0.400000
-     BringUpTime=0.450000
-     SelectForce="SwitchToAssaultRifle"
-     AIRating=0.70000
+     AIRating=0.700000
      CurrentRating=0.700000
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_LK05_Rifle'  
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_LK05_Rifle' 
-     Description="LK-05 Carbine" 	 
-     Priority=41
-     HudColor=(B=255,G=200,R=200)
+     Description="LK-05" 	 
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1

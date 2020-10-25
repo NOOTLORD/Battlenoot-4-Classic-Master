@@ -7,7 +7,7 @@
 class UT2K4Tab_GameSettings extends Settings_Tabs;
 
 var automated GUISectionBackground i_BG1, i_BG3, i_BG4;
-var automated moCheckBox    ch_WeaponBob, ch_Dodging, ch_LandShake;                        
+var automated moCheckBox    ch_Dodging, ch_LandShake;                        
 var automated moComboBox    co_GoreLevel;
 
 var GUIComponent LastGameOption;  // Hack
@@ -62,7 +62,6 @@ function ShowPanel(bool bShow)
 	{
 		if ( bInit )
 	    {
-            i_BG1.ManageComponent(ch_WeaponBob);
             i_BG1.ManageComponent(ch_Dodging);
             i_BG1.ManageComponent(ch_LandShake);
 	        i_BG1.Managecomponent(co_GoreLevel);
@@ -81,13 +80,6 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 
         switch (GUIMenuOption(Sender))
         {
-            case ch_WeaponBob:
-            	if ( PC.Pawn != None )
-            		bBob = PC.Pawn.bWeaponBob;
-            	else bBob = class'Pawn'.default.bWeaponBob;
-                ch_WeaponBob.Checked(bBob);
-                break;
-
             case co_GoreLevel:
             	if ( PC.Level.Game != None )
             		iGore = PC.Level.Game.GoreLevel;
@@ -254,10 +246,6 @@ function InternalOnChange(GUIComponent Sender)
 
         switch (GUIMenuOption(Sender))
         {
-            case ch_WeaponBob:
-                bBob = ch_WeaponBob.IsChecked();
-                break;
-
             case co_GoreLevel:
                 iGore = co_GoreLevel.GetIndex();
                 break;
@@ -366,21 +354,6 @@ defaultproperties
      End Object
      i_BG4=GUISectionBackground'GUI2K4.UT2K4Tab_GameSettings.GameBK4'
 
-     Begin Object Class=moCheckBox Name=GameWeaponBob
-         Caption="Weapon Bob"
-         OnCreateComponent=GameWeaponBob.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Prevent your weapon from bobbing up and down while moving"
-         WinTop=0.290780
-         WinLeft=0.050000
-         WinWidth=0.400000
-         RenderWeight=1.040000
-         TabOrder=1
-         OnChange=UT2K4Tab_GameSettings.InternalOnChange
-         OnLoadINI=UT2K4Tab_GameSettings.InternalOnLoadINI
-     End Object
-     ch_WeaponBob=moCheckBox'GUI2K4.UT2K4Tab_GameSettings.GameWeaponBob'
-
      Begin Object Class=moCheckBox Name=GameDodging
          Caption="Dodging"
          OnCreateComponent=GameDodging.InternalOnCreateComponent
@@ -390,7 +363,7 @@ defaultproperties
          WinLeft=0.050000
          WinWidth=0.400000
          RenderWeight=1.040000
-         TabOrder=3
+         TabOrder=1
          OnChange=UT2K4Tab_GameSettings.InternalOnChange
          OnLoadINI=UT2K4Tab_GameSettings.InternalOnLoadINI
      End Object

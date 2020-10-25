@@ -676,7 +676,7 @@ defaultproperties
      TransientSoundVolume=1.000000
      TweenTime=0.000000
      AmmoPerFire=1
-	 BurstFireRateFactor=0.66
+	 BurstFireRateFactor=0.660000
 	 bInstantHit=True
 	 bLeadTarget=False
 	 bTossed=False

@@ -48,27 +48,34 @@ defaultproperties
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
      ImpactManager=Class'BallisticProV55.IM_Shell'
      TraceRange=(Min=7500.000000,Max=7500.000000)
+     MaxWaterTraceRange=128	 
+     RangeAtten=0.25000	
+     WaterRangeAtten=0.800000
+     PDamageFactor=0.700000
+     WallPDamageFactor=0.950000 
+     WallPenetrationForce=64.000000
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False	 
      Damage=15.000000
      DamageHead=15.000000
      DamageLimb=15.000000
-     RangeAtten=0.25000
      DamageType=Class'BallisticProV55.DT_M763Shotgun'
      DamageTypeHead=Class'BallisticProV55.DT_M763ShotgunHead'
      DamageTypeArm=Class'BallisticProV55.DT_M763Shotgun'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.7500000)	 
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False			   					 					
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.7500000,Radius=32.000000,Pitch=1.000000)	 			   					 					
      MuzzleFlashClass=Class'BallisticProV55.M763FlashEmitter'
      FlashScaleFactor=0.390000
      BrassClass=Class'BallisticProV55.Brass_Shotgun'
      BrassOffset=(X=-40.000000,Y=1.000000,Z=3.000000)
      AimedFireAnim="FireCombinedSight"
      RecoilPerShot=768.000000
-     FireChaos=0.40000
+     VelocityRecoil=0.000000 	 
+     FireChaos=0.400000
+     FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=128.000000
      YInaccuracy=128.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.M763.M763Fire1',Volume=1.900000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.M763.M763Fire',Volume=1.900000,Radius=32.000000,Pitch=1.000000)
      FireAnim="FireCombined"
      FireAnimRate=1.000000
      FireRate=0.750000

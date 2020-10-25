@@ -81,6 +81,7 @@ defaultproperties
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_Fifty9'
      BigIconCoords=(Y1=24)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+	 InventorySize=8	 
      bWT_Machinegun=True
      SpecialInfo(0)=(Info="120.0;10.0;0.8;40.0;0.0;0.4;-999.0")
      BringUpSound=(Sound=Sound'BallisticSounds2.XK2.XK2-Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
@@ -117,7 +118,7 @@ defaultproperties
      RecoilXCurve=(Points=(,(InVal=0.200000),(InVal=0.400000,OutVal=0.100000),(InVal=0.600000,OutVal=-0.100000),(InVal=0.800000,OutVal=0.200000),(InVal=1.000000,OutVal=-0.200000)))
      RecoilYCurve=(Points=(,(InVal=0.200000,OutVal=0.150000),(InVal=0.400000,OutVal=0.500000),(InVal=0.600000,OutVal=0.650000),(InVal=0.800000,OutVal=0.800000),(InVal=1.000000,OutVal=1.000000)))
      RecoilPitchFactor=1.000000
-     RecoilYawFactor=1.000000	
+     RecoilYawFactor=1.000000
      RecoilXFactor=0.250000
      RecoilYFactor=0.300000
 	 RecoilMax=6144	 
@@ -127,7 +128,7 @@ defaultproperties
      PutDownAnimRate=1.000000	
      PutDownTime=0.400000
      BringUpTime=0.500000
-     DisplayFOV=50.000000	
+     DisplayFOV=60.000000
      Priority=31	 
      FireModeClass(0)=Class'BallisticProV55.Fifty9PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
@@ -138,8 +139,7 @@ defaultproperties
      Description="Fifty-9"
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=2
-     GroupOffset=2	 
+     InventoryGroup=2 
      PlayerViewOffset=(X=21.000000,Y=10.500000,Z=-9.500000)
      AttachmentClass=Class'BallisticProV55.Fifty9Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_Fifty9'

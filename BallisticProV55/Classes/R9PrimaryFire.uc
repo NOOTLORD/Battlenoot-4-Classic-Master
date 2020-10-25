@@ -10,32 +10,38 @@ class R9PrimaryFire extends BallisticRangeAttenFire;
 
 defaultproperties
 {
-     CutOffStartRange=4096
-	 CutOffDistance=8192
-	 RangeAtten=0.5
+     CutOffStartRange=4096.000000
+	 CutOffDistance=8192.000000
      TraceRange=(Min=30000.000000,Max=30000.000000)
+     MaxWaterTraceRange=128	 
+	 RangeAtten=0.500000
+     WaterRangeAtten=0.800000
+     PDamageFactor=0.700000
+     WallPDamageFactor=0.950000 	 
      WallPenetrationForce=64.000000
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False	 
      Damage=45.000000
      DamageHead=90.000000
      DamageLimb=45.000000
-     WaterRangeAtten=0.800000
      DamageType=Class'BallisticProV55.DT_R9Rifle'
      DamageTypeHead=Class'BallisticProV55.DT_R9RifleHead'
      DamageTypeArm=Class'BallisticProV55.DT_R9Rifle'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False
-     ClipFinishSound=(Sound=Sound'BallisticSounds2.Misc.ClipEnd-1',Volume=1.000000)
-     bCockAfterEmpty=True
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000,Radius=32.000000,Pitch=1.000000)	
+     ClipFinishSound=(Sound=Sound'BallisticSounds2.Misc.ClipEnd-1',Volume=1.000000,Radius=32.000000,Pitch=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.R9FlashEmitter'
      FlashScaleFactor=0.750000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassOffset=(X=-50.500000,Y=-2.000000,Z=4.000000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=384.000000
+     VelocityRecoil=0.000000 	 
      FireChaos=0.450000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.R9.R9-Fire',Volume=0.800000)
+     FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 
+     XInaccuracy=32.000000
+     YInaccuracy=32.000000	 
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.R9.R9-Fire',Volume=0.800000,Radius=32.000000,Pitch=1.000000)
      FireRate=0.300000
      AmmoClass=Class'BallisticProV55.Ammo_R9_Rifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)

@@ -30,33 +30,37 @@ function PlayFiring()
 
 defaultproperties
 {
-	 TraceRange=(Min=4000.000000,Max=4000.000000)
      CutOffDistance=2048.000000
      CutOffStartRange=768.000000
+	 TraceRange=(Min=4000.000000,Max=4000.000000)
+     MaxWaterTraceRange=128	
+	 RangeAtten=0.300000	 
+     WaterRangeAtten=0.400000
+     PDamageFactor=0.700000
+     WallPDamageFactor=0.950000
+     WallPenetrationForce=32.000000
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False	 
      Damage=25.000000
      DamageHead=37.000000
      DamageLimb=25.000000
-	 RangeAtten=0.300000	 
-     WaterRangeAtten=0.400000
      DamageType=Class'BallisticProV55.DT_RS8Pistol'
      DamageTypeHead=Class'BallisticProV55.DT_RS8PistolHead'
      DamageTypeArm=Class'BallisticProV55.DT_RS8Pistol'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=1.000000)	 
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=1.000000,Radius=32.000000,Pitch=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashBone="Muzzle"
      FlashScaleFactor=0.350000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassOffset=(X=-34.000000,Y=4.500000,Z=2.500000)
      AimedFireAnim="SightFire"	 
      RecoilPerShot=768.000000
+     VelocityRecoil=0.000000 	 
      FireChaos=0.250000
+     FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-Fire',Volume=1.750000)
-     bPawnRapidFireAnim=True
+     BallisticFireSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-Fire',Volume=1.750000,Radius=32.000000,Pitch=1.000000)
      FireAnimRate=1.500000
      FireRate=0.225000
      AmmoClass=Class'BallisticProV55.Ammo_RS8_Pistol'

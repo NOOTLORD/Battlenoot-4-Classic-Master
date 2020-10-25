@@ -71,14 +71,14 @@ var() class<BCReplicationInfo>	BCRepClass;							// BCReplication info class to 
 
 //Global configurable settings -----------------------------------------------------------------------------------------
 var() globalconfig 	bool		bOldCrosshairs;			// Use UT2004 crosshairs instead of BW's
-var() globalconfig 	bool		bEvenBodyDamage;		// Will weapon limb hits cause as much damage as any non-head body region?...
-var() globalconfig	bool		bUseModifiers;				// Uses configurable modifiers in BallisticInstantFire / BallisticProjectile to handle locational damage
-var()	globalconfig 	float		AimKnockScale;			// Scale the weapon displacement caused by taking damage
+var() bool		bEvenBodyDamage;		// Will weapon limb hits cause as much damage as any non-head body region?...
+var() bool		bUseModifiers;				// Uses configurable modifiers in BallisticInstantFire / BallisticProjectile to handle locational damage
+var() globalconfig 	float		AimKnockScale;			// Scale the weapon displacement caused by taking damage
 var() globalconfig 	bool		bDrawCrosshairDot; 		//Draw dot in the centre of crosshairs
-var() globalconfig	bool		bUseBigIcon;				// For HUDFix huds - makes the Icon the BigIcon
+var() bool		bUseBigIcon;				// For HUDFix huds - makes the Icon the BigIcon
 var() globalconfig	bool		bLimitCarry;
-var()	globalconfig	byte		MaxWeaponsPerSlot;
-var() globalconfig  byte		SightsRestrictionLevel;	// Forces any weapon which can aim to aim when the player fires.
+var() globalconfig	byte		MaxWeaponsPerSlot;
+var() byte		SightsRestrictionLevel;	// Forces any weapon which can aim to aim when the player fires.
 //----------------------------------------------------------------------------------------------------------------------
 
 //Special weapon info vars ---------------------------------------------------------------------------------------------
@@ -249,6 +249,7 @@ var() Vector					SightOffset;		// Offset of actual sight view position from Sigh
 var() float						SightDisplayFOV;	// DisplayFOV for drawing gun in scope/sight view
 var() float						SightingTime;		// Time it takes to move weapon to and from sight view
 var() globalconfig float	    SightingTimeScale;	// Scales the SightingTime for each weapon by this amount.
+var() globalconfig     bool     bSightLock;                // Should iron sights continue when the key is released, once activated?
 var   float						OldZoomFOV;			// FOV saved for temporary scope down
 var   float						SightingPhase;		// Current level of progress moving weapon into place for sight view
 var   bool						bPendingSightUp;		// Currently out of sight view for something. Will go back when done
@@ -325,21 +326,21 @@ var(BAim) bool		bUseSpecialAim;		// Firemodes will use GetPlayerAim instead of n
 var(BAim) float		CrouchAimFactor;	// Aim recoil and wildness will be mutiplied by this when crouched
 var(BAim) float		SightAimFactor;		// Aim is multiplied by this when in sights or scope
 
-var(BAim) float 		HipRecoilFactor; 		//scale hip recoil
+var(BAim) float     HipRecoilFactor; 		//scale hip recoil
 var(BAim) Rotator	SprintOffSet;		// Rotation applied to AimOffset when sprinting
 var(BAim) Rotator	JumpOffSet;			// Temporarily offset aim by this when jumping
 var(BAim) float		JumpChaos;			// Chaos applied for jump event
-var			bool		bJumpLock;				// Prevents ZeroAim from acting when player jumps
+var		  bool		bJumpLock;				// Prevents ZeroAim from acting when player jumps
 var(BAim) float		FallingChaos;		// Chaos applied when falling
 var(BAim) float		SprintChaos;		// Chaos applied for sprint event
-var       bool			bForceReaim;		// Another Reaim event will be forced after current one completes
-var	   bool			bForceRecoilUpdate; // Forces ApplyAimToView to calculate recoil (set after ReceiveNetRecoil)
+var       bool	    bForceReaim;		// Another Reaim event will be forced after current one completes
+var	      bool	   bForceRecoilUpdate; // Forces ApplyAimToView to calculate recoil (set after ReceiveNetRecoil)
 //Base aiming.
 var(BAim) float		AimAdjustTime;		// Time it should take to move aim pointer to new random aim when view moves
 var(BAim) float    	OffsetAdjustTime; 	// Offsetting time for long gun and sprinting
 var(BAim) int			AimSpread;			// How far aim can be from crosshair(rotator units)
 var(BAim) float		ViewAimFactor;		// How much of the Aim is applied to the player's view rotation. 0.0 - 1.0
-var(BAim) float		ViewRecoilFactor;	// How much of the recoil is applied to the player's view rotation. 0.0 - 1.0
+var(BAim) float	ViewRecoilFactor;	// How much of the recoil is applied to the player's view rotation. 0.0 - 1.0
 var		  float		ReaimTime;			// Time it should take to move aim pointer to new position
 var	   Rotator		ViewAim;			// Aim saved between ApplyAimToView calls, used to find delta aim
 var	   Rotator   	ViewRecoil;			// Recoil saved between ApplyAimToView calls, used to find delta recoil
@@ -2161,16 +2162,26 @@ exec simulated function ScopeView()
 		PlayScopeUp();
 }
 
-// Sight key released. Stop zooming in
+ //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ScopeViewRelease
+//
+// Notifies the weapon that the player no longer wishes to scope.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 exec simulated function ScopeViewRelease()
 {
-	bScopeHeld=false;
-	if (!bUseSights)
-		return;
-	if (!bScopeView)
-		ServerReaim(0.1);	
-	if( InstigatorController.IsA( 'PlayerController' ) && ZoomType == ZT_Smooth)
-		PlayerController(InstigatorController).StopZoom();
+    bScopeHeld=false;
+
+    if (!bUseSights)
+        return;
+
+    if (bScopeView && !bSightLock)
+        StopScopeView();
+
+    if (!bScopeView)
+        ServerReaim(0.1);
+
+    if( InstigatorController.IsA( 'PlayerController' ) && ZoomType == ZT_Smooth)
+        PlayerController(InstigatorController).StopZoom();
 }
 
 // End Sight View <<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -4706,6 +4717,16 @@ defaultproperties
      WeaponModes(1)=(ModeName="Burst Fire",ModeID="WM_Burst",Value=3.000000)
      WeaponModes(2)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      CurrentWeaponMode=2
+     bOldCrosshairs=False
+     bEvenBodyDamage=True
+     bUseModifiers=False
+     AimKnockScale=0.000000
+     bDrawCrosshairDot=True
+     bUseBigIcon=False
+     bLimitCarry=True
+     MaxWeaponsPerSlot=1
+     SightsRestrictionLevel=0
+     ModeHandling=MR_None 	 
      LastWeaponMode=255
      SavedWeaponMode=255
      bUseSights=True
@@ -4716,6 +4737,7 @@ defaultproperties
      SightDisplayFOV=30.000000
      SightingTime=0.350000
      SightingTimeScale=1.000000
+     bSightLock=False
      MinFixedZoomLevel=0.050000
      MinZoom=1.000000
      MaxZoom=2.000000
@@ -4731,6 +4753,8 @@ defaultproperties
      SightAimFactor=0.250000
      HipRecoilFactor=1.600000
      SprintChaos=0.100000
+     JumpChaos=0.200000	  #Check if this does even do anything 
+     FallingChaos=0.200000 #Check if this does even do anything 
      AimAdjustTime=100.000000
      OffsetAdjustTime=0.300000
      AimSpread=96

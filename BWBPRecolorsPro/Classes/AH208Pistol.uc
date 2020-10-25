@@ -107,56 +107,69 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 defaultproperties
 {
      BulletBone="Bullet"
+     PlayerSpeedFactor=1.100000
+     PlayerJumpFactor=1.100000		 
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AH208-Pistol'
      BigIconCoords=(X1=47,Y1=16,X2=455,Y2=245)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=8
-     bWT_Bullet=True
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.400000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.400000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.400000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.400000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=7
-     CockSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-Cock',Volume=1.500000)
-     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipHit',Volume=1.500000)
-     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipOut',Volume=1.500000)
-     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.Eagle.Eagle-ClipIn',Volume=1.500000)
-     ClipInFrame=56.000000
-     bCockOnEmpty=True	 
+     CockAnimRate=1.000000	 
+     CockSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-Cock',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ReloadAnimRate=1.000000
+     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-ClipHit',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-ClipOut',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-ClipIn',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInFrame=56.000000 
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
+     SightZoomFactor=0	 
      SightOffset=(X=-20.000000,Y=-7.400000,Z=41.000000)
      SightDisplayFOV=55.000000
      SightingTime=0.200000
+     GunLength=16.000000
+     LongGunPivot=(Pitch=5000,Yaw=6000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)
+     CrouchAimFactor=0.800000	 
 	 SightAimFactor=2.000000
-     GunLength=4.000000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.100000	 
      SprintOffSet=(Pitch=-1000,Yaw=-2048)	 
-     AimSpread=16	 
+     AimSpread=16	  
      ChaosDeclineTime=0.60000
+     ChaosSpeedThreshold=6000.000000	 
 	 ChaosAimSpread=128	 
 	 RecoilXCurve=(Points=((InVal=0.0,OutVal=0.0),(InVal=0.15,OutVal=0.03),(InVal=0.35,OutVal=-0.05),(InVal=0.5,OutVal=0.00),(InVal=0.7,OutVal=0.03),(InVal=1.0,OutVal=0.00))) 
+     RecoilYCurve=(Points=(,(InVal=1.000000,OutVal=1.000000)))
+     RecoilPitchFactor=1.000000
+     RecoilYawFactor=1.000000 
      RecoilXFactor=0.100000
      RecoilYFactor=0.100000
      RecoilMax=6144.000000	 
-     RecoilDeclineDelay=0.650000
-	 RecoilDeclineTime=1.000000 
-     FireModeClass(0)=Class'BWBPRecolorsPro.AH208PrimaryFire'
-     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+	 RecoilDeclineTime=1.000000
+     RecoilDeclineDelay=0.650000	 
+     SelectAnimRate=1.000000	 
      PutDownAnimRate=1.600000
      PutDownTime=0.500000
-     BringUpTime=1.200000
-     SelectForce="SwitchToAssaultRifle"
+     BringUpTime=1.200000	
+     DisplayFOV=60.000000	 
+     Priority=96	 
+     FireModeClass(0)=Class'BWBPRecolorsPro.AH208PrimaryFire'
+     FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
+     AIRating=0.600000
+     CurrentRating=0.600000	 
      AmmoClass(0)=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'
      AmmoClass(1)=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'	 
      Description="AH-208"
-     Priority=96
-     HudColor=(B=255,G=200,R=200)
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-     GroupOffset=14
      PlayerViewOffset=(X=15.000000,Y=25.500000,Z=-31.500000)
      AttachmentClass=Class'BWBPRecolorsPro.AH208Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_AH208-Pistol'

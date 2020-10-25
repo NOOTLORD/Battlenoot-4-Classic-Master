@@ -57,31 +57,31 @@ defaultproperties
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_NRP57'
      BigIconCoords=(Y1=16,Y2=245)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
+	 InventorySize=4	 
      bWT_Hazardous=True
      bWT_Splash=True
      bWT_Grenade=True
      bWT_Bullet=False 
      SpecialInfo(0)=(Info="60.0;5.0;0.25;30.0;0.0;0.0;0.4")
-     BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      WeaponModes(0)=(bUnavailable=True)
      WeaponModes(1)=(ModeName="Long Throw",ModeID="WM_None",Value=1.000000)	 
      WeaponModes(2)=(bUnavailable=True)
      CurrentWeaponMode=1
-     FireModeClass(0)=Class'BallisticProV55.NRP57PrimaryFire'
-     FireModeClass(1)=Class'BallisticProV55.NRP57SecondaryFire'
      SelectAnimRate=2.250000
      PutDownAnimRate=2.000000
      PutDownTime=0.700000
      BringUpTime=0.750000
-     SelectForce="SwitchToAssaultRifle"
+     DisplayFOV=60.000000 
+     Priority=7
+     FireModeClass(0)=Class'BallisticProV55.NRP57PrimaryFire'
+     FireModeClass(1)=Class'BallisticProV55.NRP57SecondaryFire'	 
      AIRating=0.850000
      CurrentRating=0.850000
      AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57_Grenade'
      AmmoClass(1)=Class'BallisticProV55.Ammo_NRP57_Grenade'	 
-     Description="NRP57"
-     Priority=7
-     HudColor=(B=255,G=200,R=200)	 
+     Description="NRP57" 
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
@@ -93,7 +93,6 @@ defaultproperties
      ItemName="NRP57"
      Mesh=SkeletalMesh'BallisticAnims2.NRP57_FP'
      DrawScale=0.400000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons2.NRP57.Grenade'
 	 Skins(2)=Texture'BallisticWeapons2.NRP57.Grenade'

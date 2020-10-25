@@ -210,8 +210,6 @@ defaultproperties
 {
      Drumbone="SpareDrum"
 	 Ejectingshellbone="Ejectingshell"
-	 AIRating=0.5
-	 CurrentRating=0.5
      ShellBones(0)="Shell1"
      ShellBones(1)="Shell2"
      ShellBones(2)="Shell3"
@@ -222,60 +220,72 @@ defaultproperties
      SpareShellBones(2)="SpareShell3"
      SpareShellBones(3)="SpareShell4"
      SpareShellBones(4)="SpareShell5"
-	 InventorySize=6				 
+     PlayerSpeedFactor=1.100000
+     PlayerJumpFactor=1.100000				 
      AIReloadTime=1.500000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_PD97'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo' 
+	 InventorySize=6	 
      bWT_Bullet=False
 	 bWT_Projectile=True
      bWT_Heal=True
      SpecialInfo(0)=(Info="120.0;15.0;0.8;50.0;0.0;0.5;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=5
      CockAnimRate=1.250000
+     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock',Volume=1.200000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
 	 ReloadAnimRate=0.800000
-     CockSound=(Sound=Sound'BallisticSounds2.AM67.AM67-Cock',Volume=1.200000)
-     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit',Volume=1.200000)
-     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut',Volume=1.200000)
-     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000)
+     ClipHitSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipHit',Volume=1.200000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipOut',Volume=1.200000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticSounds2.AM67.AM67-ClipIn',Volume=1.200000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=25.000000
-     bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Healing Darts",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
+	 SightZoomFactor=0	 
      SightOffset=(X=-10.000000,Y=-4.400000,Z=12.130000)
      SightDisplayFOV=45.000000
      SightingTime=0.200000
+     GunLength=16.000000
+     LongGunPivot=(Pitch=5000,Yaw=6000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)
+     CrouchAimFactor=0.800000	 
      SightAimFactor=0.150000
-     JumpChaos=0.200000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.100000	 
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimSpread=16
      ChaosDeclineTime=0.450000
+     ChaosSpeedThreshold=6000.000000	 
      ChaosAimSpread=512
+     RecoilXCurve=(Points=(,(InVal=1.000000)))
+     RecoilYCurve=(Points=(,(InVal=1.000000,OutVal=1.000000)))	 
+     RecoilPitchFactor=1.000000
+     RecoilYawFactor=1.000000	 
      RecoilXFactor=0.10000
      RecoilYFactor=0.10000
      RecoilMax=8192.000000
      RecoilDeclineTime=1.500000
      RecoilDeclineDelay=0.500000
+     SelectAnimRate=1.000000
+     PutDownAnimRate=1.000000	 
+     PutDownTime=0.600000
+     BringUpTime=0.900000	 
+     DisplayFOV=57.500000
+     Priority=24	 
      FireModeClass(0)=Class'BallisticProV55.PD97PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     PutDownTime=0.600000
-     BringUpTime=0.900000
-     SelectForce="SwitchToAssaultRifle"
-     bCanThrow=False
+	 AIRating=0.500000
+	 CurrentRating=0.500000
      AmmoClass(0)=Class'BallisticProV55.Ammo_PD97_Pistol'
      AmmoClass(1)=Class'BallisticProV55.Ammo_PD97_Pistol'	 
-     Description="PD-97 Pistol"
-     DisplayFOV=57.500000
-     Priority=24
-     HudColor=(B=255,G=200,R=200)
+     Description="PD-97"
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-     GroupOffset=6
      PlayerViewOffset=(X=10.000000,Y=9.750000,Z=-9.500000)
      AttachmentClass=Class'BallisticProV55.PD97Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon-PD97'
@@ -289,7 +299,6 @@ defaultproperties
      LightRadius=2.250000
      Mesh=SkeletalMesh'BallisticAnims1.Bloodhound_FP'
      DrawScale=0.200000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons1.Bloodhound.BloodhoundMain'
 	 Skins(2)=Texture'BallisticWeapons1.Bloodhound.BloodhoundAmmo'

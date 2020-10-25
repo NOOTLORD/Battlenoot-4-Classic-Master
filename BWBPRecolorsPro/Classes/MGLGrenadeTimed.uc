@@ -77,7 +77,7 @@ defaultproperties
      ShakeRotTime=0.000000
      ShakeOffsetTime=0.000000
      bCoverPenetrator=False	 
-     Speed=1750.000000
+     Speed=1350.000000
      Damage=75.000000
      DamageRadius=300.000000
      MyDamageType=Class'BWBPRecolorsPro.DT_MGLGrenadeRadius'

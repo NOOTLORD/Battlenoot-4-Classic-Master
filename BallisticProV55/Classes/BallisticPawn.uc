@@ -160,11 +160,6 @@ simulated event PostNetBeginPlay()
 	super.PostNetBeginPlay();
 	if (class'BallisticReplicationInfo'.default.bNoDodging)
 		bCanWallDodge = true;
-	if (!class'BallisticReplicationInfo'.default.bBrightPlayers)
-	{
-		bDramaticLighting=False;
-		AmbientGlow=0;
-	}
 
 	if (class'BallisticReplicationInfo'.default.WalkingPercentage != WalkingPct)
 	{
@@ -176,17 +171,6 @@ simulated event PostNetBeginPlay()
 	{
 		CrouchedPct = class'BallisticReplicationInfo'.default.CrouchingPercentage;
 		default.CrouchedPct = class'BallisticReplicationInfo'.default.CrouchingPercentage;
-	}
-	if (class'BallisticReplicationInfo'.default.bUseRunningAnims && WalkingPct >= 0.75)
-	{
-		default.WalkAnims[0]='RunF';
-		default.WalkAnims[1]='RunB';
-		default.WalkAnims[2]='RunL';
-		default.WalkAnims[3]='RunR';
-		WalkAnims[0]='RunF';
-		WalkAnims[1]='RunB';
-		WalkAnims[2]='RunL';
-		WalkAnims[3]='RunR';
 	}
 }
 
@@ -2521,5 +2505,6 @@ defaultproperties
          KImpactThreshold=500.000000
      End Object
      KParams=KarmaParamsSkel'BallisticProV55.BallisticPawn.PawnKParams'
-
+     bDramaticLighting=False
+     AmbientGlow=0
 }

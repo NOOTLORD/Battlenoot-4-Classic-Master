@@ -11,11 +11,15 @@ class MGLPrimaryFire extends BallisticProProjectileFire;
 defaultproperties
 {
      SpawnOffset=(X=15.000000,Y=10.000000,Z=-9.000000)
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000,Radius=32.000000,Pitch=1.000000)	 
      MuzzleFlashClass=Class'BallisticProV55.M50M900FlashEmitter'
      AimedFireAnim="SightFire"
      RecoilPerShot=768.000000
+     VelocityRecoil=0.000000 	 
      FireChaos=0.650000
+     FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 
+     XInaccuracy=32.000000
+     YInaccuracy=32.000000	 
      BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.MGL.MGL-Fire',Volume=0.950000)
      bModeExclusive=False
      FireForce="AssaultRifleAltFire"

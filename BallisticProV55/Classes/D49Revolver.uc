@@ -313,10 +313,10 @@ function float SuggestDefenseStyle()	{	return -0.5;	}
 
 defaultproperties
 {
-     RevReloadSound=(Sound=Sound'BallisticSounds2.D49.D49-Click',Volume=1.000000)
-     RevOpenSound=(Sound=Sound'BallisticSounds2.D49.D49-Open',Volume=1.000000)
-     RevCloseSound=(Sound=Sound'BallisticSounds2.D49.D49-Close',Volume=1.000000)
-     RevSpinSound=(Sound=Sound'BallisticSounds2.D49.D49-Spin',Volume=1.000000)
+     RevReloadSound=(Sound=Sound'BallisticSounds2.D49.D49-Click',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     RevOpenSound=(Sound=Sound'BallisticSounds2.D49.D49-Open',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     RevCloseSound=(Sound=Sound'BallisticSounds2.D49.D49-Close',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     RevSpinSound=(Sound=Sound'BallisticSounds2.D49.D49-Spin',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      Shells(0)=(BulletName="Bullet1",ShellName="Shell1",NextShell=2)
      Shells(1)=(BulletName="Bullet4",ShellName="Shell4",NextShell=3)
      Shells(2)=(BulletName="Bullet2",ShellName="Shell2",NextShell=4)
@@ -385,7 +385,6 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-     GroupOffset=2
      PlayerViewOffset=(X=8.000000,Y=16.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=512)
      AttachmentClass=Class'BallisticProV55.D49Attachment'

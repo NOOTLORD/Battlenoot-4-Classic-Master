@@ -50,16 +50,18 @@ function float SuggestDefenseStyle()
 
 defaultproperties
 {
+     PlayerSpeedFactor=1.100000
+     PlayerJumpFactor=1.100000	
      BigIconMaterial=Texture'BallisticUI.Icons.X4.BigIcon_X4'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      SpecialInfo(0)=(Info="180.0;6.0;-999.0;-1.0;-999.0;-999.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.Knife.KnifePullOut',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.Knife.KnifePutaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.Knife.KnifePullOut',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.Knife.KnifePutaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=1
      bNoMag=True
      GunLength=0.000000
-     bAimDisabled=True						   								
+     bAimDisabled=True					   								
      FireModeClass(0)=Class'BallisticProV55.X4PrimaryFire'
      FireModeClass(1)=Class'BallisticProV55.X4SecondaryFire'
      SelectAnimRate=1.250000
@@ -77,8 +79,7 @@ defaultproperties
      CenteredOffsetY=7.000000
      CenteredRoll=0
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
-     InventoryGroup=3	 
-     GroupOffset=3
+     InventoryGroup=3
      PlayerViewOffset=(X=16.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.X4Attachment'
      IconMaterial=Texture'BallisticUI.Icons.X4.SmallIcon_X4

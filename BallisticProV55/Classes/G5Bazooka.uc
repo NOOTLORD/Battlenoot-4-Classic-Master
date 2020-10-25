@@ -806,7 +806,7 @@ defaultproperties
      PutDownAnimRate=0.800000
      PutDownTime=0.800000
      BringUpTime=1.000000	
-     DisplayFOV=50.000000	 
+     DisplayFOV=60.000000	 
      Priority=44	 
      FireModeClass(0)=Class'BallisticProV55.G5PrimaryFire'
      FireModeClass(1)=Class'BallisticProV55.G5SecondaryFire'
@@ -820,7 +820,6 @@ defaultproperties
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=4
-     GroupOffset=4	 
      PlayerViewOffset=(X=12.000000,Y=10.000000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5'
@@ -834,7 +833,6 @@ defaultproperties
      LightRadius=3.000000
      Mesh=SkeletalMesh'BallisticAnims2.G5_FP'
      DrawScale=0.300000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons2.G5.G5Bazooka'
 	 Skins(2)=Texture'BallisticWeapons2.G5.G5Scope'

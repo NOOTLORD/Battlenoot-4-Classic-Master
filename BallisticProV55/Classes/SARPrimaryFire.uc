@@ -44,26 +44,29 @@ defaultproperties
      CutOffDistance=2560.000000
      CutOffStartRange=1280.000000
      TraceRange=(Min=9000.000000,Max=9000.000000)
+     MaxWaterTraceRange=128	 	 
+     RangeAtten=0.350000
+     WaterRangeAtten=0.800000	 
+     PDamageFactor=0.700000
+     WallPDamageFactor=0.950000 	 
      WallPenetrationForce=16.000000
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False	 
      Damage=20.000000
      DamageHead=40.000000
      DamageLimb=20.000000
-     RangeAtten=0.350000
-     WaterRangeAtten=0.800000
      DamageType=Class'BallisticProV55.DT_SARRifle'
      DamageTypeHead=Class'BallisticProV55.DT_SARRifleHead'
      DamageTypeArm=Class'BallisticProV55.DT_SARRifle'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.100000)	  
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False
-     bCockAfterEmpty=True
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.100000,Radius=32.000000,Pitch=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.500000
      BrassClass=Class'BallisticProV55.Brass_SAR_Rifle'
      BrassOffset=(X=-53.500000,Y=1.000000,Z=-3.500000)
      AimedFireAnim="AimedFire"
      RecoilPerShot=180.000000
+     VelocityRecoil=0.000000 	 
      FireChaos=0.022000
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000

@@ -124,56 +124,69 @@ function float SuggestDefenseStyle()	{	return 0.5;	}
 
 defaultproperties
 {
+     PlayerSpeedFactor=1.100000
+     PlayerJumpFactor=1.100000
      AIReloadTime=1.000000
      BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_RS8'
      BigIconCoords=(X1=64,Y1=70,X2=418)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
-     bWT_Bullet=True
+	 InventorySize=6	 
      SpecialInfo(0)=(Info="0.0;-5.0;-999.0;-1.0;0.0;-999.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000)
+     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=10
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-Cock',Volume=0.800000)
+     CockSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-Cock',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Volume=0.600000)
-     ClipOutSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipOut',Volume=0.800000)
-     ClipInSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipIn',Volume=0.800000)
+     ClipOutSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipOut',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticSounds1.Pistol.RSP-ClipIn',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=36.000000
-     bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
      WeaponModes(2)=(bUnavailable=True)	 
      CurrentWeaponMode=0
      bNoCrosshairInScope=True
+     SightZoomFactor=0	 
      SightOffset=(X=-15.000000,Z=8.700000)
      SightDisplayFOV=45.000000
      SightingTime=0.200000
+     GunLength=16.000000
+     LongGunPivot=(Pitch=5000,Yaw=6000)
+     LongGunOffset=(X=5.000000,Y=10.000000,Z=-11.000000)
+     CrouchAimFactor=0.800000	 
      SightAimFactor=0.150000
+     HipRecoilFactor=1.600000
+     SprintChaos=0.10000	 
      SprintOffSet=(Pitch=-1000,Yaw=-2048)
      AimSpread=16
      ChaosDeclineTime=0.450000
      ChaosSpeedThreshold=7500.000000
      ChaosAimSpread=384
+     RecoilXCurve=(Points=(,(InVal=1.000000)))
+     RecoilYCurve=(Points=(,(InVal=1.000000,OutVal=1.000000)))
+     RecoilPitchFactor=1.000000
+     RecoilYawFactor=1.000000	 
      RecoilXFactor=0.0500000
      RecoilYFactor=0.0500000
+     RecoilMax=4096.000000	 
      RecoilDeclineTime=0.500000
      RecoilDeclineDelay=0.250000
+     SelectAnimRate=1.000000
+     PutDownAnimRate=1.000000
+     PutDownTime=0.300000
+     BringUpTime=0.300000
+     DisplayFOV=65.000000	
+     Priority=17	 
      FireModeClass(0)=Class'BallisticProV55.RS8PrimaryFire'
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
-     SelectForce="SwitchToAssaultRifle"
      AIRating=0.600000
 	 CurrentRating=0.600000
      AmmoClass(0)=Class'BallisticProV55.Ammo_RS8_Pistol'	
      AmmoClass(1)=Class'BallisticProV55.Ammo_RS8_Pistol'		 
-     Description="RS8 Pistol"
-     DisplayFOV=65.000000
-     Priority=17
-     HudColor=(B=255,G=200,R=200)
+     Description="RS8"
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=2
-     GroupOffset=7
      PlayerViewOffset=(X=12.000000,Y=14.000000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.RS8Attachment'
      IconMaterial=Texture'BallisticUI.Icons.SmallIcon_RS8'
@@ -187,7 +200,6 @@ defaultproperties
      LightRadius=2.250000
      Mesh=SkeletalMesh'BallisticAnims1.RS8_FP'
      DrawScale=0.300000
-     AmbientGlow=5
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons1.RS8.M1911-Skin'
 }

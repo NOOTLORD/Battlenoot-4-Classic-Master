@@ -43,33 +43,37 @@ defaultproperties
 {
      CutOffDistance=1536.000000
      CutOffStartRange=768.000000
+     TraceRange=(Min=7500.000000,Max=7500.000000)
+     MaxWaterTraceRange=128	
+     RangeAtten=0.250000
+     WaterRangeAtten=0.300000
+     PDamageFactor=0.700000
+     WallPDamageFactor=0.950000  	 
      WallPenetrationForce=8.000000
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False	 
      Damage=22.000000
      DamageHead=44.000000
      DamageLimb=22.000000
-     RangeAtten=0.250000
-     WaterRangeAtten=0.300000
      DamageType=Class'BallisticProV55.DT_Fifty9SMG'
      DamageTypeHead=Class'BallisticProV55.DT_Fifty9SMGHead'
      DamageTypeArm=Class'BallisticProV55.DT_Fifty9SMG'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.900000)	 
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False
-     bCockAfterEmpty=True
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.900000,Radius=32.000000,Pitch=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashBone="Muzzle"
      FlashScaleFactor=0.230000
      BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
      BrassOffset=(X=-38.750000,Y=-2.500000,Z=2.00000)
      AimedFireAnim="SightFire"
      RecoilPerShot=160.000000
+     VelocityRecoil=0.000000 
+     FireChaos=0.350000	 
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.UZI.UZI-Fire',Volume=0.450000)
-     bPawnRapidFireAnim=True
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.UZI.UZI-Fire',Volume=0.450000,Radius=32.000000,Pitch=1.000000)
      FireRate=0.073000
+	 bPawnRapidFireAnim=True 
      AmmoClass=Class'BallisticProV55.Ammo_Fifty_SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)

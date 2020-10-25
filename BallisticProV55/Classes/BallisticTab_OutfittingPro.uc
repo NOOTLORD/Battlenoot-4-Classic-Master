@@ -79,7 +79,7 @@ function ShowPanel(bool bShow)
 	LoadList();
 
 	LoadBoxesFromMutator();
-	LoadBox(0);
+	LoadBox(1);
 	bInitialized = true;
 }
 

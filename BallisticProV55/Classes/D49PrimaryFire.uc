@@ -40,26 +40,31 @@ defaultproperties
      CutOffDistance=2048.000000
      CutOffStartRange=768.000000
      TraceRange=(Min=8000.000000,Max=9000.000000)
+     MaxWaterTraceRange=128
+     RangeAtten=0.3500000
+     WaterRangeAtten=0.200000	 
+     PDamageFactor=0.700000
+     WallPDamageFactor=0.950000 	 
      WallPenetrationForce=8.000000
+     KickForce=0
+     PenetrateForce=0
+     bPenetrate=False	 
      Damage=45.000000
      DamageHead=63.000000
      DamageLimb=45.000000
-     RangeAtten=0.3500000
-     WaterRangeAtten=0.200000
      DamageType=Class'BallisticProV55.DT_D49Revolver'
      DamageTypeHead=Class'BallisticProV55.DT_D49RevolverHead'
      DamageTypeArm=Class'BallisticProV55.DT_D49Revolver'
-     DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.750000)	 
-     KickForce=0
-     PenetrateForce=0
-     bPenetrate=False
+     DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.750000,Radius=32.000000,Pitch=1.000000)	 
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      FlashScaleFactor=0.600000
      RecoilPerShot=768.000000
+     VelocityRecoil=0.000000 	 
      FireChaos=0.400000
+     FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.D49.D49-FireSingle',Volume=1.850000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.D49.D49-Fire',Volume=1.850000,Radius=32.000000,Pitch=1.000000)
 	 FireAnimRate=1.600000
      FireRate=0.400000
      AmmoClass=Class'BallisticProV55.Ammo_D49_Revolver'

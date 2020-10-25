@@ -122,14 +122,16 @@ defaultproperties
      MinMortarRange=1024
      SpawnOffset=(X=10.000000,Y=10.000000,Z=-3.000000)
      bCockAfterFire=True
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000)	 
+     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000,Radius=32.000000,Pitch=1.000000)	 
      MuzzleFlashClass=Class'BallisticProV55.G5FlashEmitter'
      FlashScaleFactor=0.600000
      RecoilPerShot=64.000000
+     VelocityRecoil=0.000000	 
      FireChaos=0.500000
+     FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=4.000000
      YInaccuracy=4.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.G5.G5-Fire',Volume=1.100000)
+     BallisticFireSound=(Sound=Sound'BallisticSounds2.G5.G5-Fire',Volume=1.100000,Radius=32.000000,Pitch=1.000000)
      FireRate=0.800000
      AmmoClass=Class'BallisticProV55.Ammo_G5_Bazooka'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
