@@ -182,7 +182,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=2.250000
-     Mesh=SkeletalMesh'BallisticRecolorsAnims.Eagle_FP'
+     Mesh=SkeletalMesh'BallisticRecolorsAnims.AH208_FP'
      DrawScale=0.800000
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticRecolorsTex.Eagle.Eagle-MainSilverEngraved'

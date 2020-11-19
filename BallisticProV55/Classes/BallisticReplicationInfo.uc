@@ -13,6 +13,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticReplicationInfo extends BCReplicationInfo config(BallisticProV55);
 
@@ -20,15 +22,15 @@ class BallisticReplicationInfo extends BCReplicationInfo config(BallisticProV55)
 // Pawn
 var() Config bool		bNoDodging;			// Disables dodging.
 var() Config bool		bLimitDoubleJumps;	// Limits double jumps so you can only do a few before having to wait for them to recharge.
-var() Config float		WalkingPercentage;   // Let players configure the walking movespeed percentage.
-var() Config float		CrouchingPercentage; // Let players configure the crouching movespeed percentage.
+var() Config float		ScopedWalkingPercentage;   // Let players configure the walking movespeed when scoped.
+var() Config float		CrouchingPercentage; // Let players configure the crouching movespeed when scoped.
 // ----------------------------------------------------------------------------
 var struct RepInfo_BW
 {
 	var bool		bNoDodging;
 	var bool		bLimitDoubleJumps;
-	var float	WalkingPercentage;
-	var float	CrouchingPercentage;
+	var float	    ScopedWalkingPercentage;
+	var float	    CrouchingPercentage;
 }BWRep;
 
 replication
@@ -40,20 +42,20 @@ replication
 //Set all defaults to match server vars here
 simulated function InitClientVars()
 {
-	bNoDodging			= BWRep.bNoDodging;
-	bLimitDoubleJumps	= BWRep.bLimitDoubleJumps;
-	WalkingPercentage	= BWRep.WalkingPercentage;
-	CrouchingPercentage = BWRep.CrouchingPercentage;
-
-	class.default.bNoDodging		= bNoDodging;
-	class.default.bLimitDoubleJumps	= bLimitDoubleJumps;
-	class.default.WalkingPercentage	= WalkingPercentage;
-	class.default.CrouchingPercentage = CrouchingPercentage;
+	bNoDodging			    = BWRep.bNoDodging;
+	bLimitDoubleJumps	    = BWRep.bLimitDoubleJumps;
+	ScopedWalkingPercentage	= BWRep.ScopedWalkingPercentage;
+	CrouchingPercentage     = BWRep.CrouchingPercentage;
+ 
+	class.default.bNoDodging		      = bNoDodging;
+	class.default.bLimitDoubleJumps       = bLimitDoubleJumps;
+	class.default.ScopedWalkingPercentage = ScopedWalkingPercentage;
+	class.default.CrouchingPercentage     = CrouchingPercentage;
 	super.InitClientVars();
 	
 	Log("bNoDodging: "$bNoDodging);
 	Log("bLimitDoubleJumps: "$bLimitDoubleJumps);
-	log("Walking percentage: "$WalkingPercentage * 100$"%");
+	log("Scoped Walking percentage: "$ScopedWalkingPercentage * 100$"%");
 	log("Crouching percentage:"$CrouchingPercentage*100$"%");
 }
 
@@ -61,7 +63,7 @@ function ServerInitialize()
 {
 	BWRep.bNoDodging		= bNoDodging;
 	BWRep.bLimitDoubleJumps	= bLimitDoubleJumps;
-    BWRep.WalkingPercentage = WalkingPercentage;
+    BWRep.ScopedWalkingPercentage = ScopedWalkingPercentage;
     BWRep.CrouchingPercentage = CrouchingPercentage;
 
 	super.ServerInitialize();
@@ -83,7 +85,7 @@ defaultproperties
 {
      bNoDodging=True
      bLimitDoubleJumps=False
-     WalkingPercentage=1.000000
+     ScopedWalkingPercentage=0.800000
      CrouchingPercentage=0.500000
      ModString="Ballistic Weapons Pro v2.5"
 }

@@ -755,11 +755,11 @@ static function FireModeStats GetStats()
 defaultproperties
 {
      TraceRange=(Min=5000.000000,Max=5000.000000)
-     MaxWaterTraceRange=128
+     MaxWaterTraceRange=128.000000
      RangeAtten=1.000000
      WaterRangeAtten=0.000000
      PDamageFactor=0.700000
-     WallPDamageFactor=0.95
+     WallPDamageFactor=0.950000
      DamageModHead=1.500000
      DamageModLimb=0.700000
 }

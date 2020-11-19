@@ -29,7 +29,7 @@ defaultproperties
      ReloadAnim="Reload_Pistol"
      CockingAnim="Cock_RearPull"
      CockAnimRate=0.800000
-     Mesh=SkeletalMesh'BallisticAnims1.Glock_TP'
+     Mesh=SkeletalMesh'BallisticAnims1.GRS9_TP'
      DrawScale=0.070000
 	 Skins(0)=Texture'BallisticWeapons1.Glock.Glock_Main'
 }

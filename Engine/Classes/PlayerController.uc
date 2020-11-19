@@ -5,6 +5,8 @@
 //
 // This is a built-in Unreal class and it shouldn't be modified.
 // for the change in Possess().
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class PlayerController extends Controller
     config(user)

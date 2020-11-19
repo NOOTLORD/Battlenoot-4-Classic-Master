@@ -7,16 +7,7 @@
 // Modified by (NL)NOOTLORD
 //=============================================================================
 class GRS9Pistol extends BallisticHandgun;
-
-simulated function PlayIdle()
-{
-	super.PlayIdle();
-
-	if (!bPendingSightUp || SightingState != SS_None || bScopeView || !CanPlayAnim(IdleAnim, ,"IDLE"))
-		return;
-	FreezeAnimAt(0.0);
-}				  
-
+ 
 simulated function BringUp(optional Weapon PrevWeapon)
 {
 	Super.BringUp(PrevWeapon);
@@ -67,26 +58,6 @@ simulated function PlayReload()
 
 	if (MagAmmo < 1)
 		SetBoneScale (1, 0.0, 'Bullet');
-}
-
-// Change some properties when using sights...
-simulated function SetScopeBehavior()
-{
-	super.SetScopeBehavior();
-
-	bUseNetAim = default.bUseNetAim || bScopeView;
-	if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
-	{
-		if (bScopeView)
-			BFireMode[0].FireAnim = 'SightOpenFire';
-		else	BFireMode[0].FireAnim = 'OpenFire';
-	}
-	else
-	{
-		if (bScopeView)
-			BFireMode[0].FireAnim = 'SightFire';
-		else BFireMode[0].FireAnim = 'Fire';
-	}
 }
 
 // AI Interface =====
@@ -198,7 +169,7 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=2.250000
-     Mesh=SkeletalMesh'BallisticAnims1.Glock_FP'
+     Mesh=SkeletalMesh'BallisticAnims1.GRS9_FP'
      DrawScale=0.150000
 	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
 	 Skins(1)=Texture'BallisticWeapons1.Glock.Glock_Main'

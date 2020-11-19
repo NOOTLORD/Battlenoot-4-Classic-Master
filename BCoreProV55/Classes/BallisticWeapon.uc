@@ -164,6 +164,7 @@ var() float					CockSelectAnimRate; 	//Rate for this anim
 var() float					CockingBringUpTime;		//Time in code before weapon is ready
 var() BUtil.FullSound	CockSound;				//Sound to play for cocking
 var() Name					ReloadAnim;				//Anim to use for Reloading. Also anim to use for shovel loop
+var() Name					ReloadEmptyAnim;		//Anim played when reloading an empty weapon
 var() float					ReloadAnimRate;			//Rate to play Reload Anim at
 																			 
 var() BUtil.FullSound	ClipHitSound;				//Sound to play when magazine gets hit
@@ -968,7 +969,9 @@ simulated function PlayReload()
 		SafePlayAnim(StartShovelAnim, StartShovelAnimRate, , 0, "RELOAD");
 	else
 	{
-		SafePlayAnim(ReloadAnim, ReloadAnimRate, , 0, "RELOAD");
+	    if (MagAmmo < 1 && HasAnim(ReloadEmptyAnim))
+			SafePlayAnim(ReloadEmptyAnim, ReloadAnimRate, , 0, "RELOAD");
+		else	SafePlayAnim(ReloadAnim, ReloadAnimRate, , 0, "RELOAD");
 	}
 }
 simulated function PlayShovelEnd()
@@ -4482,6 +4485,43 @@ exec simulated final function GetDefaultMode()
 	else 	Instigator.ClientMessage("Default mode for"@ItemName$":"@WeaponModes[SavedWeaponMode].ModeName$".");
 }
 
+simulated function vector ConvertFOVs (vector InVec, float InFOV, float OutFOV, float Distance)
+{
+	local vector ViewLoc, Outvec, Dir, X, Y, Z;
+	local rotator ViewRot;
+
+	ViewLoc = Instigator.Location + Instigator.EyePosition();
+	ViewRot = Instigator.GetViewRotation();
+	Dir = InVec - ViewLoc;
+	GetAxes(ViewRot, X, Y, Z);
+
+    OutVec.X = Distance / tan(OutFOV * PI / 360);
+    OutVec.Y = (Dir dot Y) * (Distance / tan(InFOV * PI / 360)) / (Dir dot X);
+    OutVec.Z = (Dir dot Z) * (Distance / tan(InFOV * PI / 360)) / (Dir dot X);
+    OutVec = OutVec >> ViewRot;
+
+	return OutVec + ViewLoc;
+}
+
+simulated function vector GetEffectStart()
+{
+    // 1st person
+    if (Instigator.IsFirstPerson())
+    {
+        if ( WeaponCentered() )
+			return CenteredEffectStart();
+			
+		return ConvertFOVs(GetBoneCoords('tip').Origin, DisplayFOV, Instigator.Controller.FovAngle, 32);
+    }
+    // 3rd person
+    else
+    {
+        return (Instigator.Location +
+            Instigator.EyeHeight*Vect(0,0,0.5) +
+            Vector(Instigator.Rotation) * 40.0);
+    }
+}
+
 //===========================================================================
 //
 // Debug stuff --------------------------------------------------------------------------------------------------
@@ -4703,7 +4743,8 @@ defaultproperties
      CockSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)  
      bCockOnEmpty=True	 
      ReloadAnim="Reload"
-     ReloadAnimRate=1.000000								    
+     ReloadEmptyAnim="ReloadEmpty"		 
+     ReloadAnimRate=1.000000								    							  
      ClipHitSound=(Volume=0.500000,Radius=32.000000,Pitch=1.000000,bAtten=True)
      ClipOutSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)

@@ -161,10 +161,10 @@ simulated event PostNetBeginPlay()
 	if (class'BallisticReplicationInfo'.default.bNoDodging)
 		bCanWallDodge = true;
 
-	if (class'BallisticReplicationInfo'.default.WalkingPercentage != WalkingPct)
+	if (class'BallisticReplicationInfo'.default.ScopedWalkingPercentage != WalkingPct)
 	{
-		WalkingPct = class'BallisticReplicationInfo'.default.WalkingPercentage;
-		default.WalkingPct = class'BallisticReplicationInfo'.default.WalkingPercentage;
+		WalkingPct = class'BallisticReplicationInfo'.default.ScopedWalkingPercentage;
+		default.WalkingPct = class'BallisticReplicationInfo'.default.ScopedWalkingPercentage;
 	}
 	
 	if (class'BallisticReplicationInfo'.default.CrouchingPercentage != CrouchedPct)

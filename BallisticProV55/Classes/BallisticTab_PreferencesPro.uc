@@ -11,10 +11,9 @@
 //=============================================================================
 class BallisticTab_PreferencesPro extends UT2K4TabPanel;
 
-var automated moCheckbox	ch_UseBrass, ch_MSmoke, ch_SimpleDeathMessages, ch_OldCrosshairs, ch_bDrawCrosshairDot, ch_BloodFX;
+var automated moCheckbox	ch_UseBrass, ch_MSmoke, ch_OldCrosshairs, ch_bDrawCrosshairDot, ch_ToggleADS, ch_BloodFX;
 var automated moComboBox	co_WeaponDet, co_EffectDet;
-var automated moFloatEdit	fl_BrassTime, fl_BloodTimeScale;
-var automated moSlider		sl_GibMulti;
+var automated moFloatEdit	fl_BrassTime;
 var			  int			OldWeaponDet;
 var BallisticConfigMenuPro		p_Anchor;
 var bool					bInitialized;
@@ -39,14 +38,12 @@ function LoadSettings()
 	local int i;
 
 	ch_UseBrass.Checked(class'BallisticMod'.default.bEjectBrass);
-	ch_MSmoke.Checked(class'BallisticMod'.default.bMuzzleSmoke);
 	fl_BrassTime.SetValue(class'BallisticBrass'.default.LifeTimeScale);
-	ch_SimpleDeathMessages.Checked(class'BallisticDamageType'.default.bSimpleDeathMessages);
+	ch_MSmoke.Checked(class'BallisticMod'.default.bMuzzleSmoke);	
 	ch_OldCrosshairs.Checked(class'BallisticWeapon'.default.bOldCrosshairs);
 	ch_bDrawCrosshairDot.Checked(class'BallisticWeapon'.default.bDrawCrosshairDot);
+	ch_ToggleADS.Checked(class'BallisticWeapon'.default.bSightLock);	
 	ch_BloodFX.Checked(class'BloodManager'.default.bUseBloodEffects);
-	fl_BloodTimeScale.SetValue(class'AD_BloodDecal'.default.StayScale);
-	sl_GibMulti.SetValue(class'BloodManager'.default.GibMultiplier);
 
 	for (i=1;i<6;i+=2)
 	    co_EffectDet.AddItem(class'UT2K4Tab_DetailSettings'.default.DetailLevels[i] ,,string(i));
@@ -65,18 +62,15 @@ function SaveSettings()
 {
 	if (!bInitialized)
 		return;
+	class'BallisticMod'.default.EffectsDetailMode 		    = ELLHDetailMode(co_EffectDet.GetIndex());
+	class'BallisticMod'.default.bEjectBrass 			    = ch_useBrass.IsChecked();		
+	class'BallisticMod'.default.bMuzzleSmoke 			    = ch_MSmoke.IsChecked();	
+	class'BallisticBrass'.default.LifeTimeScale			    = fl_BrassTime.GetValue();
 	class'BallisticWeapon'.default.bOldCrosshairs			=	ch_OldCrosshairs.IsChecked();
-	class'BallisticWeapon'.default.bDrawCrosshairDot			=	ch_bDrawCrosshairDot.IsChecked();
-	class'BallisticMod'.default.EffectsDetailMode 		= ELLHDetailMode(co_EffectDet.GetIndex());
-	class'BallisticMod'.default.bEjectBrass 			= ch_useBrass.IsChecked();
-	class'BallisticMod'.default.bMuzzleSmoke 			= ch_MSmoke.IsChecked();
-	class'BallisticBrass'.default.LifeTimeScale			= fl_BrassTime.GetValue();
-	class'BallisticDamageType'.default.bSimpleDeathMessages	= ch_SimpleDeathMessages.IsChecked();
-	class'AD_BloodDecal'.default.StayScale			= fl_BloodTimeScale.GetValue();
-	class'BloodManager'.default.bUseBloodEffects	= ch_BloodFX.IsChecked();
-	class'BloodManager'.default.GibMultiplier		= sl_GibMulti.GetValue();
+	class'BallisticWeapon'.default.bDrawCrosshairDot	    =	ch_bDrawCrosshairDot.IsChecked();	
+    class'BallisticWeapon'.default.bSightLock 	            = ch_ToggleADS.IsChecked();	
+	class'BloodManager'.default.bUseBloodEffects	        = ch_BloodFX.IsChecked();
 	
-	class'BallisticDamageType'.static.StaticSaveConfig();
 	class'Mut_Ballistic'.static.StaticSaveConfig();
 	class'BallisticMod'.static.StaticSaveConfig();
 	class'BallisticBrass'.static.StaticSaveConfig();
@@ -84,8 +78,6 @@ function SaveSettings()
 	class'BallisticWeapon'.static.StaticSaveConfig();
 	class'BWBloodControl'.static.StaticSaveConfig();
 	class'BloodManager'.static.StaticSaveConfig();
-	class'BallisticGib'.static.StaticSaveConfig();
-	class'AD_BloodDecal'.static.StaticSaveConfig();	
 
 	if (co_WeaponDet.GetIndex() != OldWeaponDet)
 	{
@@ -100,13 +92,11 @@ function DefaultSettings()
 	co_WeaponDet.SilentSetIndex(OldWeaponDet);
 	ch_UseBrass.Checked(true);
 	fl_BrassTime.SetValue(0.10);
+	ch_MSmoke.Checked(false);		
 	ch_OldCrosshairs.Checked(false);
 	ch_bDrawCrosshairDot.Checked(true);
-	ch_MSmoke.Checked(false);
-	ch_SimpleDeathMessages.Checked(true);
-	ch_BloodFX.Checked(true);
-	fl_BloodTimeScale.SetValue(0.10);
-	sl_GibMulti.SetValue(0);	
+	ch_ToggleADS.Checked(false);	
+	ch_BloodFX.Checked(true);	
 }
 
 defaultproperties
@@ -179,19 +169,6 @@ defaultproperties
      End Object
      ch_MSmoke=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_MSmokeCheck'
 
-     Begin Object Class=moCheckBox Name=ch_SimpleDeathMessagesCheck
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.900000
-         Caption="Simplify Death Messages"
-         OnCreateComponent=ch_SimpleDeathMessagesCheck.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Renders death messages as Killer [Weapon] Killed"
-         WinTop=0.350000
-         WinLeft=0.250000
-         WinHeight=0.040000
-     End Object
-     ch_SimpleDeathMessages=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_SimpleDeathMessagesCheck'
-
      Begin Object Class=moCheckBox Name=ch_OldCrosshairsCheck
          ComponentJustification=TXTA_Left
          CaptionWidth=0.900000
@@ -199,7 +176,7 @@ defaultproperties
          OnCreateComponent=ch_OldCrosshairsCheck.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Drops back to UT2004 crosshairs."
-         WinTop=0.400000
+         WinTop=0.350000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
@@ -212,12 +189,25 @@ defaultproperties
          OnCreateComponent=ch_bDrawCrosshairDotCheck.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Display's a dot in the center of the crosshair"
-         WinTop=0.450000
+         WinTop=0.400000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
      ch_bDrawCrosshairDot=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_bDrawCrosshairDotCheck'
-	 
+	
+     Begin Object Class=moCheckBox Name=ch_ToggleADSCheck
+         ComponentJustification=TXTA_Left
+         CaptionWidth=0.900000
+         Caption="Toggle ADS mode"
+         OnCreateComponent=ch_ToggleADSCheck.InternalOnCreateComponent
+         IniOption="@Internal"
+         Hint="If enabled, ADS will be toggle and will not unscope if u let go of your ADS key, if Disabled it will be Hold to ADS."
+         WinTop=0.450000
+         WinLeft=0.250000
+         WinHeight=0.040000
+     End Object
+     ch_ToggleADS=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_ToggleADSCheck'
+	
      Begin Object Class=moCheckBox Name=ch_BloodFXCheck
          ComponentJustification=TXTA_Left
          CaptionWidth=0.900000
@@ -230,31 +220,4 @@ defaultproperties
          WinHeight=0.040000
      End Object
      ch_BloodFX=moCheckBox'BallisticProV55.BallisticTab_PreferencesPro.ch_BloodFXCheck'
-	 
-     Begin Object Class=moFloatEdit Name=fl_BloodTimeScaleFloat
-         MinValue=0.000000
-         MaxValue=100.000000
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.700000
-         Caption="Blood Stay Scale"
-         OnCreateComponent=fl_BloodTimeScaleFloat.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="Scales the life time of blood effects. 0 = Forever."
-         WinTop=0.550000
-         WinLeft=0.250000
-         WinHeight=0.040000
-     End Object
-     fl_BloodTimeScale=moFloatEdit'BallisticProV55.BallisticTab_PreferencesPro.fl_BloodTimeScaleFloat'
-
-     Begin Object Class=moSlider Name=sl_GibMultiSlider
-         MaxValue=20.000000
-         bIntSlider=True
-         Caption="Gib Multiplier"
-         OnCreateComponent=sl_GibMultiSlider.InternalOnCreateComponent
-         Hint="Multiplies number of gibs spawned. 1 = Normal, 0 = None. WARNING: Higher than 1 may kill performance!"
-         WinTop=0.600000
-         WinLeft=0.250000
-         WinHeight=0.040000
-     End Object
-     sl_GibMulti=moSlider'BallisticProV55.BallisticTab_PreferencesPro.sl_GibMultiSlider'	 
 }

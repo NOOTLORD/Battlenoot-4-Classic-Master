@@ -7,6 +7,8 @@
 // physical interaction between the player or AI and the world.
 //
 // This is a built-in Unreal class and it shouldn't be modified.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class Pawn extends Actor
 	abstract
@@ -94,7 +96,7 @@ var		bool	bStationary;			// pawn can't move
 
 var		bool	bCachedRelevant;		// network relevancy caching flag
 var		bool	bUseCompressedPosition;	// use compressed position in networking - true unless want to replicate roll, or very high velocities
-var		globalconfig bool bWeaponBob;
+var	    bool bWeaponBob;
 var     bool    bHideRegularHUD;
 var		bool	bSpecialHUD;
 var		bool	bSpecialCrosshair;
@@ -2800,7 +2802,7 @@ defaultproperties
      bSetPCRotOnPossess=True
      noise1time=-10.000000
      noise2time=-10.000000
-     Bob=0.006000
+     Bob=0.004000
      SoundDampening=1.000000
      DamageScaling=1.000000
      AmbientSoundScaling=0.800000

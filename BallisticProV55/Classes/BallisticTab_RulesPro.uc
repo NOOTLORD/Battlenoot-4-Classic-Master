@@ -11,8 +11,8 @@
 //=============================================================================
 class BallisticTab_RulesPro extends UT2K4TabPanel;
 
-var automated moCheckbox    ch_StableSprint, ch_NoLongGun, ch_NoDodging, ch_DoubleJump, ch_LimitCarry, ch_ToggleADS;
-var automated moFloatEdit	fl_Damage, fl_VDamage, fl_Accuracy, fl_Recoil, fl_SightingTime;
+var automated moCheckbox    ch_StableSprint, ch_NoLongGun, ch_NoDodging, ch_DoubleJump, ch_LimitCarry;
+var automated moFloatEdit	fl_Damage, fl_VDamage, fl_Accuracy, fl_Recoil, fl_ScopedWalkingpct, fl_Crouchingpct, fl_SightingTime;
 var automated moNumericEdit int_MaxWeps;
 
 var BallisticConfigMenuPro		p_Anchor;
@@ -41,10 +41,11 @@ function LoadSettings()
 	ch_NoLongGun.Checked(class'BallisticReplicationInfo'.default.bNoLongGun);
 	fl_Damage.SetValue(class'Rules_Ballistic'.default.DamageScale);
 	fl_VDamage.SetValue(class'Rules_Ballistic'.default.VehicleDamageScale);	
+	fl_ScopedWalkingpct.SetValue(class'BallisticReplicationInfo'.default.ScopedWalkingPercentage);	
+	fl_Crouchingpct.SetValue(class'BallisticReplicationInfo'.default.CrouchingPercentage);	
 	ch_NoDodging.Checked(class'BallisticReplicationInfo'.default.bNoDodging);
-	ch_DoubleJump.Checked(class'BallisticReplicationInfo'.default.bLimitDoubleJumps);
+	ch_DoubleJump.Checked(class'BallisticReplicationInfo'.default.bLimitDoubleJumps);	
 	fl_SightingTime.SetValue(class'BallisticWeapon'.default.SightingTimeScale);
-	ch_ToggleADS.Checked(class'BallisticWeapon'.default.bSightLock);
 	ch_LimitCarry.Checked(class'BallisticWeapon'.default.bLimitCarry);
 	int_MaxWeps.SetValue(class'BallisticWeapon'.default.MaxWeaponsPerSlot);	
 }
@@ -53,18 +54,19 @@ function SaveSettings()
 {
 	if (!bInitialized)
 		return;
-	class'BallisticReplicationInfo'.default.AccuracyScale	  = fl_Accuracy.GetValue();
-	class'BallisticReplicationInfo'.default.RecoilScale		  = fl_Recoil.GetValue();	
-	class'BallisticReplicationInfo'.default.bNoJumpOffset	  = ch_StableSprint.IsChecked();
-	class'BallisticReplicationInfo'.default.bNoLongGun		  = ch_NoLongGun.IsChecked();
-	class'Rules_Ballistic'.default.DamageScale 				  = fl_Damage.GetValue();
-	class'Rules_Ballistic'.default.VehicleDamageScale		  = fl_VDamage.GetValue();	
-	class'BallisticReplicationInfo'.default.bNoDodging		  = ch_NoDodging.IsChecked();
-	class'BallisticReplicationInfo'.default.bLimitDoubleJumps = ch_DoubleJump.IsChecked();
-	class'BallisticWeapon'.default.SightingTimeScale          = fl_SightingTime.GetValue();
-    class'BallisticWeapon'.default.bSightLock 	              = ch_ToggleADS.IsChecked();
-	class'BallisticWeapon'.default.bLimitCarry                = ch_LimitCarry.IsChecked();
-	class'BallisticWeapon'.default.MaxWeaponsPerSlot          = int_MaxWeps.GetValue();
+	class'BallisticReplicationInfo'.default.AccuracyScale	        = fl_Accuracy.GetValue();
+	class'BallisticReplicationInfo'.default.RecoilScale		        = fl_Recoil.GetValue();	
+	class'BallisticReplicationInfo'.default.bNoJumpOffset	        = ch_StableSprint.IsChecked();
+	class'BallisticReplicationInfo'.default.bNoLongGun		        = ch_NoLongGun.IsChecked();
+	class'Rules_Ballistic'.default.DamageScale 				        = fl_Damage.GetValue();
+	class'Rules_Ballistic'.default.VehicleDamageScale		        = fl_VDamage.GetValue();	
+	class'BallisticReplicationInfo'.default.ScopedWalkingPercentage = fl_ScopedWalkingpct.GetValue();
+	class'BallisticReplicationInfo'.default.CrouchingPercentage	    = fl_Crouchingpct.GetValue();
+	class'BallisticReplicationInfo'.default.bNoDodging		        = ch_NoDodging.IsChecked();
+	class'BallisticReplicationInfo'.default.bLimitDoubleJumps       = ch_DoubleJump.IsChecked();
+	class'BallisticWeapon'.default.SightingTimeScale                = fl_SightingTime.GetValue();
+	class'BallisticWeapon'.default.bLimitCarry                      = ch_LimitCarry.IsChecked();
+	class'BallisticWeapon'.default.MaxWeaponsPerSlot                = int_MaxWeps.GetValue();
 
 	class'BallisticReplicationInfo'.static.StaticSaveConfig();
 	class'BallisticWeapon'.static.StaticSaveConfig();
@@ -81,11 +83,12 @@ function DefaultSettings()
 	ch_StableSprint.Checked(false);
 	ch_NoLongGun.Checked(true);
 	fl_Damage.SetValue(1.0);
-	fl_VDamage.SetValue(1.0);	
+	fl_VDamage.SetValue(1.0);
+	fl_ScopedWalkingpct.SetValue(0.80);
+	fl_Crouchingpct.SetValue(0.50);
 	ch_NoDodging.Checked(true);
 	ch_DoubleJump.Checked(false);
 	fl_SightingTime.SetValue(1.00);
-	ch_ToggleADS.Checked(false);
 	ch_LimitCarry.Checked(True);
 	int_MaxWeps.SetValue(1);
 }
@@ -173,6 +176,36 @@ defaultproperties
          WinHeight=0.040000
      End Object
      fl_VDamage=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_VDamageFloat'
+	 
+     Begin Object Class=moFloatEdit Name=fl_ScopedWalkingpctFloat
+         MinValue=0.250000
+         MaxValue=1.500000
+         ComponentJustification=TXTA_Left
+         CaptionWidth=0.750000
+         Caption="Scope Movespeed Scale"
+         OnCreateComponent=fl_ScopedWalkingpctFloat.InternalOnCreateComponent
+         IniOption="@Internal"
+         Hint="Scales the amount of speed u have when scoping."
+         WinTop=0.400000
+         WinLeft=0.250000
+         WinHeight=0.040000
+     End Object
+     fl_ScopedWalkingpct=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_ScopedWalkingpctFloat'
+
+     Begin Object Class=moFloatEdit Name=fl_CrouchingpctFloat
+         MinValue=0.250000
+         MaxValue=1.500000
+         ComponentJustification=TXTA_Left
+         CaptionWidth=0.750000
+         Caption="Crouching Speed Scale"
+         OnCreateComponent=fl_CrouchingpctFloat.InternalOnCreateComponent
+         IniOption="@Internal"
+         Hint="Scales the amount of speed u have when crouching."
+         WinTop=0.450000
+         WinLeft=0.250000
+         WinHeight=0.040000
+     End Object
+     fl_Crouchingpct=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_CrouchingpctFloat'	 
 
      Begin Object Class=moCheckBox Name=ch_NoDodgingCheck
          ComponentJustification=TXTA_Left
@@ -181,7 +214,7 @@ defaultproperties
          OnCreateComponent=ch_NoDodgingCheck.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Disables dodging for all players"
-         WinTop=0.400000
+         WinTop=0.500000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
@@ -194,7 +227,7 @@ defaultproperties
          OnCreateComponent=ch_DoubleJumpCheck.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Disables the Double Jump capabilities of all players."
-         WinTop=0.450000
+         WinTop=0.550000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
@@ -209,24 +242,11 @@ defaultproperties
          OnCreateComponent=fl_SightingTimeFloat.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Multiplier of the time it takes to move weapon to and from sight view."
-         WinTop=0.500000
+         WinTop=0.600000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
      fl_SightingTime=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_SightingTimeFloat'
-
-     Begin Object Class=moCheckBox Name=ch_ToggleADSCheck
-         ComponentJustification=TXTA_Left
-         CaptionWidth=0.900000
-         Caption="Toggle ADS mode"
-         OnCreateComponent=ch_ToggleADSCheck.InternalOnCreateComponent
-         IniOption="@Internal"
-         Hint="If enabled, ADS will be toggle and will not unscope if u let go of your ADS key, if Disabled it will be Hold to ADS."
-         WinTop=0.550000
-         WinLeft=0.250000
-         WinHeight=0.040000
-     End Object
-     ch_ToggleADS=moCheckBox'BallisticProV55.BallisticTab_RulesPro.ch_ToggleADSCheck'
 
      Begin Object Class=moCheckBox Name=ch_LimitCarryCheck
          ComponentJustification=TXTA_Left
@@ -235,7 +255,7 @@ defaultproperties
          OnCreateComponent=ch_LimitCarryCheck.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="If enabled, you can only carry a limited number of weapons of each type."
-         WinTop=0.600000
+         WinTop=0.650000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object
@@ -250,7 +270,7 @@ defaultproperties
          OnCreateComponent=int_MaxWepsInt.InternalOnCreateComponent
          IniOption="@Internal"
          Hint="Sets the maximum number of weapons a player can carry in each InventoryGroup if Limit Carry is on."
-         WinTop=0.650000
+         WinTop=0.700000
          WinLeft=0.250000
          WinHeight=0.040000
      End Object

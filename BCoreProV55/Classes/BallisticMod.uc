@@ -5,6 +5,8 @@
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class BallisticMod extends Info
 	exportstructs
@@ -20,8 +22,8 @@ enum ELLHDetailMode
 var() globalconfig ELLHDetailMode	EffectsDetailMode;
 var() globalconfig bool				bEjectBrass;
 var() globalconfig bool				bMuzzleSmoke;
-var() globalconfig bool				bBulletFlybys;
-var() globalconfig bool				bUseMotionBlur;
+var() bool				            bBulletFlybys;
+var() bool	                        bUseMotionBlur;
 
 var   BallisticMod					BallisticMod;
 

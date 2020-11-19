@@ -52,8 +52,7 @@ defaultproperties
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.525000
      BrassClass=Class'BallisticProV55.Brass_GRS9_Pistol'
-     BrassOffset=(X=-36.000000,Y=1.500000,Z=2.500000)
-     AimedFireAnim="SightFire"	 
+     BrassOffset=(X=-36.000000,Y=1.500000,Z=2.500000)	 
      RecoilPerShot=256.000000
      VelocityRecoil=0.000000 	 
      FireChaos=0.140000

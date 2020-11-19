@@ -38,7 +38,7 @@ simulated event AnimEnd (int Channel)
 
     GetAnimParams(0, Anim, Frame, Rate);
 
-	if (Anim == 'OpenFire' || Anim == 'Pullout' || Anim == 'Fire' || Anim == 'SightFire' || Anim == 'OpenSightFire' ||Anim == CockAnim || Anim == ReloadAnim)
+	if (Anim == 'OpenFire' || Anim == 'Pullout' || Anim == 'Fire' || Anim == 'OpenSightFire' ||Anim == CockAnim || Anim == ReloadAnim)
 	{
 		if (MagAmmo - BFireMode[0].ConsumedLoad < 1)
 		{

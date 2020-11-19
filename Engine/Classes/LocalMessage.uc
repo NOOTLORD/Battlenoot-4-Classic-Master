@@ -9,6 +9,7 @@
 // classes to send messages.  The BroadcastHandler function BroadcastLocalizedMessage()
 // is used to broadcast localized messages to all the players.
 //
+// Modified by (NL)NOOTLORD
 //=============================================================================
 class LocalMessage extends Info;
 

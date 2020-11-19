@@ -15,14 +15,16 @@ function PlayFiring()
 	{
 		BW.IdleAnim = 'OpenIdle';
 		BW.ReloadAnim = 'OpenReload';
+		AimedFireAnim = 'SightOpenFire';
 		FireAnim = 'OpenFire';
 	}
 	else
 	{
 		BW.IdleAnim = 'Idle';
 		BW.ReloadAnim = 'Reload';
+		AimedFireAnim = 'SightFire';
 		FireAnim = 'Fire';
-	}	
+	}
 	super.PlayFiring();
 }
 

@@ -207,7 +207,7 @@ function ModifyPlayer(Pawn Other)
 		// Make players a bit crap
 		Other.GroundSpeed=360;
 		Other.default.GroundSpeed=360; //required as Ballistic keeps resetting it
-		Other.WalkingPct=class'BallisticReplicationInfo'.default.WalkingPercentage;
+		Other.WalkingPct=class'BallisticReplicationInfo'.default.ScopedWalkingPercentage;
 		Other.CrouchedPct=class'BallisticReplicationInfo'.default.CrouchingPercentage;
 		// Me can hide better
 		Other.Visibility = 16;

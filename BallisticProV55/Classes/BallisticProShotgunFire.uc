@@ -47,11 +47,6 @@ simulated function vector GetFireSpread()
 	local float fX;
     local Rotator R;
 	
-	if (BW.BCRepClass.default.bRelaxedHipFire)
-		AdjustedHipSpreadFactor = default.HipSpreadFactor * 0.5;
-	else
-		AdjustedHipSpreadFactor = default.HipSpreadFactor;
-
 	if (BW.bScopeView || BW.bAimDisabled)
 		return super.GetFireSpread();
 	else
