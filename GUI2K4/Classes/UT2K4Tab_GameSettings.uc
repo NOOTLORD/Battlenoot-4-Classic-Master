@@ -3,6 +3,8 @@
 //
 //  Written by Ron Prestenback
 //  © 2003, Epic Games, Inc.  All Rights Reserved
+//
+// Modified by (NL)NOOTLORD
 //==============================================================================
 class UT2K4Tab_GameSettings extends Settings_Tabs;
 
@@ -140,18 +142,6 @@ function SaveSettings()
     {
         PC.SetDodging(bDodge);
         bSave = True;
-    }
-	
-    if (PC.Pawn != None)
-    {
-
-        PC.Pawn.bWeaponBob = bBob;
-        PC.Pawn.SaveConfig();
-    }
-    else if (class'Engine.Pawn'.default.bWeaponBob != bBob)
-    {
-        class'Engine.Pawn'.default.bWeaponBob = bBob;
-        class'Engine.Pawn'.static.StaticSaveConfig();
     }
 
     if (PC.Level != None && PC.Level.Game != None)

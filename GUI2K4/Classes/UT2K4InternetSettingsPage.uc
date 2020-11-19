@@ -4,6 +4,8 @@
 //
 //  Written by Ron Prestenback
 //  © 2003, Epic Games, Inc. All Rights Reserved
+//
+// Modified by (NL)NOOTLORD
 //==============================================================================
 
 class UT2K4InternetSettingsPage extends MessageWindow;

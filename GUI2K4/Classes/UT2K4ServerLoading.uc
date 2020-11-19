@@ -3,6 +3,8 @@
 //
 //	Created by Ron Prestenback
 //	© 2003, Epic Games, Inc.  All Rights Reserved
+//
+// Modified by (NL)NOOTLORD
 //==============================================================================
 class UT2K4ServerLoading extends UT2K4LoadingPageBase
 	config(User);

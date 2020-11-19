@@ -4,6 +4,8 @@
 //
 //  Written by Ron Prestenback
 //  © 2003, Epic Games, Inc. All Rights Reserved
+//
+// Modified by (NL)NOOTLORD
 //==============================================================================
 
 class UT2K4Tab_MainBase extends UT2K4GameTabBase;

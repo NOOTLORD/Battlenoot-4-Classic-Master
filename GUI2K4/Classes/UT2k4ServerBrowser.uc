@@ -1,6 +1,8 @@
 // ====================================================================
 //  Written by Ron Prestenback (based on XInterface.ServerBrowser)
 //  (c) 2002, 2003, Epic Games, Inc.  All Rights Reserved
+//
+// Modified by (NL)NOOTLORD
 // ====================================================================
 
 class UT2K4ServerBrowser extends UT2K4MainPage

@@ -3,6 +3,8 @@
 //
 //  (c) 2003, Epic Games, Inc.  All Rights Reserved
 //	Updated by Ron Prestenback
+//
+// Modified by (NL)NOOTLORD
 // ====================================================================
 
 class UT2k4MainMenu extends UT2K4GUIPage;
