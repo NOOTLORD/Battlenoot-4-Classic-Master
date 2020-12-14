@@ -76,7 +76,7 @@ defaultproperties
      Emitters(1)=SpriteEmitter'BallisticProV55.BG_BulletHitHead.SpriteEmitter2'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter6
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.BloodVolumetric'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.BloodVolumetric'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

@@ -11,7 +11,7 @@ class BallisticStump extends Effects;
 defaultproperties
 {
      DrawType=DT_StaticMesh
-     StaticMesh=StaticMesh'BWGoreHardwarePro.Stumps.LimbStump'
+     StaticMesh=StaticMesh'BallisticProGoreStatic.Stumps.LimbStump'
      AmbientGlow=5
      bUnlit=False
      bHardAttach=True

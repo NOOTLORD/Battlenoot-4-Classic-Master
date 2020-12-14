@@ -63,7 +63,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      PlayerJumpFactor=1.100000		 
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XRS10'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_XRS10'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Machinegun=True
 	 InventorySize=10
@@ -124,7 +124,7 @@ defaultproperties
      InventoryGroup=2
      PlayerViewOffset=(X=10.000000,Y=12.000000,Z=-9.500000)
      AttachmentClass=Class'BallisticProV55.XRS10Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XRS10'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_XRS10'
      IconCoords=(X2=127,Y2=31)
      ItemName="XRS-10"
      LightType=LT_Pulse

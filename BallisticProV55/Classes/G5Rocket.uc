@@ -155,7 +155,7 @@ defaultproperties
      LightSaturation=100
      LightBrightness=200.000000
      LightRadius=15.000000
-     StaticMesh=StaticMesh'BallisticHardware2.G5.G5Rocket'
+     StaticMesh=StaticMesh'BallisticProStatic2.G5.G5Rocket'
      bDynamicLight=True
      bNetTemporary=False
      bUpdateSimulatedPosition=True

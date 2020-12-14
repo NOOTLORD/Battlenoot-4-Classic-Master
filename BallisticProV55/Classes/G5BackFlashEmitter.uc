@@ -15,7 +15,7 @@ defaultproperties
      DisableDGV(1)=1
      bAutoInit=False
      Begin Object Class=MeshEmitter Name=MeshEmitter4
-         StaticMesh=StaticMesh'BallisticHardware2.G5.BazookaBackFlash'
+         StaticMesh=StaticMesh'BallisticProStatic2.G5.BazookaBackFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

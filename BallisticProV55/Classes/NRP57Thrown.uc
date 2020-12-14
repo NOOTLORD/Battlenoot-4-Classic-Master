@@ -69,7 +69,7 @@ defaultproperties
      DamageRadius=512.000000
      MyDamageType=Class'BallisticProV55.DT_NRP57Grenade'
      ImpactSound=SoundGroup'BallisticSounds2.NRP57.NRP57-Concrete'
-     StaticMesh=StaticMesh'BallisticHardware2.NRP57.Pineapple'
+     StaticMesh=StaticMesh'BallisticProStatic2.NRP57.Pineapple'
      AmbientGlow=40
      bUnlit=False
      CollisionRadius=0.000000

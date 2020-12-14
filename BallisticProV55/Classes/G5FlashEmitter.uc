@@ -18,7 +18,7 @@ simulated event PostBeginPlay()
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter2
-         StaticMesh=StaticMesh'BallisticHardware2.G5.BazookaMuzzleFlash'
+         StaticMesh=StaticMesh'BallisticProStatic2.G5.BazookaMuzzleFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

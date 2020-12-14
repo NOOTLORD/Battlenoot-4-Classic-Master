@@ -47,7 +47,7 @@ defaultproperties
      HitSounds(9)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSounds(10)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
      HitSoundVolume=0.140000
-     StaticMesh=StaticMesh'BallisticHardware2.Brass.EmptyShell'
+     StaticMesh=StaticMesh'BallisticProStatic2.Brass.EmptyShell'
      DrawScale=0.110000
      DrawScale3D=(X=0.500000,Y=0.800000,Z=0.800000)
 }

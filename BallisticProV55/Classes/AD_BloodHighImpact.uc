@@ -6,9 +6,9 @@ class AD_BloodHighImpact extends AD_BloodDecal
 
 defaultproperties
 {
-     DecalTextures(0)=Texture'BallisticBloodPro.Decals.HighImpact1'
-     DecalTextures(1)=Texture'BallisticBloodPro.Decals.HighImpact2'
-     DecalTextures(2)=Texture'BallisticBloodPro.Decals.HighImpact3'
+     DecalTextures(0)=Texture'BallisticProBlood.Decals.HighImpact1'
+     DecalTextures(1)=Texture'BallisticProBlood.Decals.HighImpact2'
+     DecalTextures(2)=Texture'BallisticProBlood.Decals.HighImpact3'
      bRandomRotate=True
      StayTime=0.100000
      ZoomDist=-16.000000

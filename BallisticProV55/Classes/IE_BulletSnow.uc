@@ -10,7 +10,7 @@ class IE_BulletSnow extends DGVEmitter
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter0
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.VolumetricA2'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA2'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

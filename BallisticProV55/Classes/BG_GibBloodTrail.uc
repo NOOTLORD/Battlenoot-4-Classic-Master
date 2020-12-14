@@ -43,7 +43,7 @@ defaultproperties
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.000000)
          StartSizeRange=(X=(Min=1.000000,Max=2.000000),Y=(Min=1.000000,Max=2.000000),Z=(Min=1.000000,Max=2.000000))
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticBloodPro.Particles.BloodDrip1'
+         Texture=Texture'BallisticProBlood.Particles.BloodDrip1'
          LifetimeRange=(Min=0.700000,Max=0.800000)
          StartVelocityRange=(X=(Min=-5.000000,Max=5.000000),Y=(Min=-5.000000,Max=5.000000),Z=(Max=10.000000))
      End Object

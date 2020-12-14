@@ -147,7 +147,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.SmallIcon_M763'
+     BigIconMaterial=Texture'BallisticProUI.Icons.SmallIcon_M763'
      BigIconCoords=(Y1=35,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=12
@@ -216,7 +216,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=4.000000,Y=12.000000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.M763Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.BigIcon_M763'
+     IconMaterial=Texture'BallisticProUI.Icons.BigIcon_M763'
      IconCoords=(X2=127,Y2=31)
      ItemName="M763"						  
      LightType=LT_Pulse

@@ -59,7 +59,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 
      XInaccuracy=32.000000
      YInaccuracy=32.000000
-     BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-Fire',Volume=1.800000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProRecolorsSounds.AH208.AH208-Fire',Volume=1.800000,Radius=32.000000,Pitch=1.000000)
      FireRate=0.600000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_AH208_Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)

@@ -152,7 +152,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000	 
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MGL'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_MGL'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      IdleTweenTime=0.000000
      bWT_Bullet=False	 
@@ -225,7 +225,7 @@ defaultproperties
      InventoryGroup=4
      PlayerViewOffset=(X=9.000000,Y=-1.000000,Z=-7.000000)
      AttachmentClass=Class'BWBPRecolorsPro.MGLAttachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MGL'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_MGL'
      IconCoords=(X2=127,Y2=35)
      ItemName="MGL"
      LightType=LT_Pulse

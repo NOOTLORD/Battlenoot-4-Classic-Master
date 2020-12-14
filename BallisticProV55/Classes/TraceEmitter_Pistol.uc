@@ -11,7 +11,7 @@ class TraceEmitter_Pistol extends BCTraceEmitter;
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter0
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.TracerA1'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.TracerA1'
          UseMeshBlendMode=False
          RenderTwoSided=True
          RespawnDeadParticles=False

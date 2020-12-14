@@ -43,7 +43,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=256.000000
      YInaccuracy=256.000000
-     BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Fire',Volume=1.600000)
+     BallisticFireSound=(Sound=Sound'BallisticProRecolorsSounds.SK410.SK410-Fire',Volume=1.600000)
      FireAnimRate=1.750000
      FireRate=0.225000
      AmmoClass=Class'BWBPRecolorsPro.Ammo_SK410_Shotgun'

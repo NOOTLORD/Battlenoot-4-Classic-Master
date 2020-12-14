@@ -127,7 +127,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      PlayerJumpFactor=1.100000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_RS8'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_RS8'
      BigIconCoords=(X1=64,Y1=70,X2=418)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=6	 
@@ -189,7 +189,7 @@ defaultproperties
      InventoryGroup=2
      PlayerViewOffset=(X=12.000000,Y=14.000000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.RS8Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_RS8'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_RS8'
      IconCoords=(X2=127,Y2=31)
      ItemName="RS8"
      LightType=LT_Pulse

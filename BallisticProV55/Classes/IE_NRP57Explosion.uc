@@ -75,7 +75,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'BallisticProV55.IE_NRP57Explosion.SpriteEmitter16'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter3
-         StaticMesh=StaticMesh'BallisticHardware2.Impact.ConcreteChip2'
+         StaticMesh=StaticMesh'BallisticProStatic2.Impact.ConcreteChip2'
          UseMeshBlendMode=False
          UseParticleColor=True
          UseCollision=True

@@ -78,7 +78,7 @@ defaultproperties
 	 PlayerSpeedFactor=1.050000
      PlayerJumpFactor=1.050000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_Fifty9'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_Fifty9'
      BigIconCoords=(Y1=24)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=8	 
@@ -142,7 +142,7 @@ defaultproperties
      InventoryGroup=2 
      PlayerViewOffset=(X=21.000000,Y=10.500000,Z=-9.500000)
      AttachmentClass=Class'BallisticProV55.Fifty9Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_Fifty9'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_Fifty9'
      IconCoords=(X2=127,Y2=31)
      ItemName="Fifty-9"
      LightType=LT_Pulse

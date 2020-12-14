@@ -11,7 +11,7 @@ class MGLPickup extends BallisticWeaponPickup
 
 #exec OBJ LOAD FILE=BallisticEffects.utx
 #exec OBJ LOAD FILE=BallisticRecolorsTex.utx
-#exec OBJ LOAD FILE=BallisticRecolorsStatic.usx
+#exec OBJ LOAD FILE=BallisticProRecolorsStatic.usx
 
 //Fixed by (NL)NOOTLORD
 //===========================================================================
@@ -38,18 +38,18 @@ simulated function UpdatePrecacheMaterials()
 
 simulated function UpdatePrecacheStaticMeshes()
 {
-	Level.AddPrecacheStaticMesh(StaticMesh'BallisticRecolorsStatic.MGL.MGLPickup');
-	Level.AddPrecacheStaticMesh(StaticMesh'BallisticRecolorsStatic.MGL.MGLPickupLow');
+	Level.AddPrecacheStaticMesh(StaticMesh'BallisticProRecolorsStatic.MGL.MGLPickup');
+	Level.AddPrecacheStaticMesh(StaticMesh'BallisticProRecolorsStatic.MGL.MGLPickupLow');
 }
 
 defaultproperties
 {
-     LowPolyStaticMesh=StaticMesh'BallisticRecolorsStatic.MGL.MGLPickupLow'
+     LowPolyStaticMesh=StaticMesh'BallisticProRecolorsStatic.MGL.MGLPickupLow'
      InventoryType=Class'BWBPRecolorsPro.MGLauncher'
      RespawnTime=5.000000
      PickupMessage="You picked up the Conqueror multiple grenade launcher."
      PickupSound=Sound'BallisticSounds2.M763.M763Putaway'
-     StaticMesh=StaticMesh'BallisticRecolorsStatic.MGL.MGLPickup'
+     StaticMesh=StaticMesh'BallisticProRecolorsStatic.MGL.MGLPickup'
      Physics=PHYS_None
      DrawScale=0.900000
      CollisionHeight=3.000000

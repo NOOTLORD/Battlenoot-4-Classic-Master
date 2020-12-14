@@ -38,7 +38,7 @@ defaultproperties
      PickupSound=Sound'BallisticSounds2.Udamage.UDamagePickup'
      PickupForce="UDamagePickup"
      DrawType=DT_StaticMesh
-     StaticMesh=StaticMesh'BallisticHardware1.Udamage.U-Damage'
+     StaticMesh=StaticMesh'BallisticProStatic1.Udamage.U-Damage'
      DrawScale=0.600000
      TransientSoundVolume=0.600000
      TransientSoundRadius=128.000000

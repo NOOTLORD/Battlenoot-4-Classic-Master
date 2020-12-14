@@ -10,7 +10,7 @@ class IE_ShellWater extends BallisticEmitter
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter1
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.VolumetricA4'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA4'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

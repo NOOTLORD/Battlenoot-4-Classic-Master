@@ -56,7 +56,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'BallisticProV55.MRS138FlashEmitter.SpriteEmitter1'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter0
-         StaticMesh=StaticMesh'BallisticHardware2.M806.PistolMuzzleFlash'
+         StaticMesh=StaticMesh'BallisticProStatic2.M806.PistolMuzzleFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

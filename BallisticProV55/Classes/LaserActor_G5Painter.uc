@@ -8,6 +8,6 @@ class LaserActor_G5Painter extends LaserActor;
 
 defaultproperties
 {
-     StaticMesh=StaticMesh'BallisticHardware2.Lasers.LaserCross'
+     StaticMesh=StaticMesh'BallisticProStatic2.Lasers.LaserCross'
      Skins(0)=FinalBlend'BallisticWeapons2.Effects.G5LaserBeamFBFade'
 }

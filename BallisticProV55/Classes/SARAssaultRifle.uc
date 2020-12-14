@@ -81,7 +81,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SAR'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_SAR'
      BigIconCoords=(Y1=24,Y2=250)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      SightFXClass=Class'BallisticProV55.SARSightDot'
@@ -146,7 +146,7 @@ defaultproperties
      InventoryGroup=1 
      PlayerViewOffset=(X=14.000000,Y=13.500000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.SARAttachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SAR'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_SAR'
      IconCoords=(X2=127,Y2=31)
      ItemName="SAR-12"
      LightType=LT_Pulse

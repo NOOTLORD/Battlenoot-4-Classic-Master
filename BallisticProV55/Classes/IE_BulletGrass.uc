@@ -67,7 +67,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'BallisticProV55.IE_BulletGrass.SpriteEmitter30'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter15
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.VolumetricA3'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA3'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

@@ -43,7 +43,7 @@ defaultproperties
      Emitters(0)=TrailEmitter'BallisticProV55.IE_WaterSurfaceBlast.TrailEmitter0'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter2
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.VolumetricA4'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA4'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

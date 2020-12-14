@@ -154,13 +154,13 @@ simulated event Tick(float DT)
 
 defaultproperties
 {
-     LowPolyStaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackLo'
+     LowPolyStaticMesh=StaticMesh'BallisticProStatic1.Ammo.AmmoPackLo'
      LowPolyDist=500.000000
      MaxDesireability=0.700000
      PickupMessage="Received ammo"
      PickupSound=Sound'BallisticSounds2.Ammo.AmmoPackPickup'
      PickupForce="HealthPack"
-     StaticMesh=StaticMesh'BallisticHardware1.Ammo.AmmoPackHi'
+     StaticMesh=StaticMesh'BallisticProStatic1.Ammo.AmmoPackHi'
      DrawScale=0.325000
      CollisionRadius=16.000000
      CollisionHeight=15.000000

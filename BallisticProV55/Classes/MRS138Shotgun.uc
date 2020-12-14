@@ -71,7 +71,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000	 
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_MRS138'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_MRS138'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=12	 
@@ -139,7 +139,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=7.500000,Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_MRS138'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_MRS138'
      IconCoords=(X2=127,Y2=31)
      ItemName="MRS-138"
      LightType=LT_Pulse

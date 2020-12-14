@@ -48,7 +48,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000	 
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AK-470'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_AK-470'
      BigIconCoords=(Y1=32,Y2=220)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'	 
      InventorySize=12
@@ -56,11 +56,11 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M50.M50Putaway',Volume=0.400000)
      MagAmmo=25  
      CockingBringUpTime=1.300000
-     CockSound=(Sound=Sound'BallisticRecolorsSounds.AK470.AK470-Cock',Volume=0.900000)
+     CockSound=(Sound=Sound'BallisticProRecolorsSounds.AK470.AK470-Cock',Volume=0.900000)
      ReloadAnimRate=1.250000
-     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.AK470.AK470-ClipHit',Volume=0.900000)
-     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.AK470.AK470-ClipOut',Volume=0.900000)
-     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.AK470.AK470-ClipIn',Volume=0.900000)
+     ClipHitSound=(Sound=Sound'BallisticProRecolorsSounds.AK470.AK470-ClipHit',Volume=0.900000)
+     ClipOutSound=(Sound=Sound'BallisticProRecolorsSounds.AK470.AK470-ClipOut',Volume=0.900000)
+     ClipInSound=(Sound=Sound'BallisticProRecolorsSounds.AK470.AK470-ClipIn',Volume=0.900000)
      ClipInFrame=64.000000
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -110,7 +110,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=2.000000,Y=15.500000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.AK470Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.AK-470.SmallIcon_AK-470'
+     IconMaterial=Texture'BallisticProUI.Icons.AK-470.SmallIcon_AK-470'
      IconCoords=(X2=127,Y2=31)
      ItemName="AK-470"
      LightType=LT_Pulse

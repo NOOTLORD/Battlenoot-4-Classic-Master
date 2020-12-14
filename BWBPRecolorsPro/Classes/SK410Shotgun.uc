@@ -67,7 +67,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.SmallIcon_SK410'
+     BigIconMaterial=Texture'BallisticProUI.Icons.SmallIcon_SK410'
      BigIconCoords=(Y1=40)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Shotgun=True
@@ -77,10 +77,10 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=8 
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-Cock',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProRecolorsSounds.SK410.SK410-Cock',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-MagOut',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.SK410.SK410-MagIn',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticProRecolorsSounds.SK410.SK410-MagOut',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProRecolorsSounds.SK410.SK410-MagIn',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=82.000000
      WeaponModes(0)=(ModeName="Automatic",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -128,7 +128,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=0.000000,Y=14.500000,Z=-16.000000)
      AttachmentClass=Class'BWBPRecolorsPro.SK410Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.BigIcon_SK410'
+     IconMaterial=Texture'BallisticProUI.Icons.BigIcon_SK410'
      IconCoords=(X2=127,Y2=35)
      ItemName="SK-410"
      LightType=LT_Pulse

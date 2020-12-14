@@ -9,7 +9,7 @@ defaultproperties
      StayTime=0.000000
      ZoomDist=-0.000000
      FrameBufferBlendingOp=PB_Add
-     ProjTexture=Combiner'BallisticBloodPro.DeRez.Symbol-Com'
+     ProjTexture=Combiner'BallisticProBlood.DeRez.Symbol-Com'
      FOV=1
      MaxTraceDistance=0
      bProjectParticles=False

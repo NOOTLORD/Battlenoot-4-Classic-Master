@@ -18,7 +18,7 @@ simulated event PostBeginPlay()
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter0
-         StaticMesh=StaticMesh'BallisticRecolorsStatic.MARS.MARSMuzzleFlash'
+         StaticMesh=StaticMesh'BallisticProRecolorsStatic.MARS.MARSMuzzleFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True
@@ -77,7 +77,7 @@ defaultproperties
      Emitters(1)=SpriteEmitter'BWBPRecolorsPro.MARSFlashEmitter.SpriteEmitter0'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter1
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.FBlast'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.FBlast'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

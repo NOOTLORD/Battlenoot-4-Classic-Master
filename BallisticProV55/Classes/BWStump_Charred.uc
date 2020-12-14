@@ -2,5 +2,5 @@ class BWStump_Charred extends BallisticStump;
 
 defaultproperties
 {
-     StaticMesh=StaticMesh'BWGoreHardwarePro.Stumps.StumpCharred'
+     StaticMesh=StaticMesh'BallisticProGoreStatic.Stumps.StumpCharred'
 }

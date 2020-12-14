@@ -12,7 +12,7 @@ defaultproperties
      DisableDGV(0)=1
      bModifyLossRange=False
      Begin Object Class=MeshEmitter Name=MeshEmitter17
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.VolumetricA3'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA3'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

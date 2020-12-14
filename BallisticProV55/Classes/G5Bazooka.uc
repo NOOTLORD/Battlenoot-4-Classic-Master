@@ -8,7 +8,7 @@
 //=============================================================================
 class G5Bazooka extends BallisticWeapon;
 
-#EXEC OBJ LOAD FILE=BallisticUI.utx
+#EXEC OBJ LOAD FILE=BallisticProUI.utx
 
 var() BUtil.FullSound	HatchSound;
 var   bool				bCamView;
@@ -441,8 +441,8 @@ simulated event DrawTargeting (Canvas C)
 	C.SetPos(V.X, V.Y);
 	V2 = C.WorldToScreen(Target.Location + Y*Target.CollisionRadius - Z*Target.CollisionHeight);
 	C.SetDrawColor(255,255,255,255);
-//	C.DrawTile(Texture'BallisticUI.G5.G5Targetbox', V2.X - V.X, V2.Y - V.Y, 0, 0, 1, 1);
-	C.DrawTileStretched(Texture'BallisticUI.G5.G5Targetbox', (V2.X - V.X) + 32*ScaleFactor, (V2.Y - V.Y) + 32*ScaleFactor);
+//	C.DrawTile(Texture'BallisticProUI.G5.G5Targetbox', V2.X - V.X, V2.Y - V.Y, 0, 0, 1, 1);
+	C.DrawTileStretched(Texture'BallisticProUI.G5.G5Targetbox', (V2.X - V.X) + 32*ScaleFactor, (V2.Y - V.Y) + 32*ScaleFactor);
 }
 
 simulated function KillLaserDot()
@@ -738,7 +738,7 @@ defaultproperties
      PlayerSpeedFactor=0.900000
      PlayerJumpFactor=0.900000
      AIReloadTime=4.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_G5'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_G5'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=24	 
@@ -772,7 +772,7 @@ defaultproperties
      ScopeXScale=1.333000
      ZoomInAnim="ZoomIn"
      ZoomOutAnim="ZoomOut"
-     ScopeViewTex=Texture'BallisticUI.G5.G5ScopeView'
+     ScopeViewTex=Texture'BallisticProUI.G5.G5ScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
      bNoCrosshairInScope=True	 
@@ -822,7 +822,7 @@ defaultproperties
      InventoryGroup=4
      PlayerViewOffset=(X=12.000000,Y=10.000000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_G5'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_G5'
      IconCoords=(X2=127,Y2=31)
      ItemName="Bazooka"
      LightType=LT_Pulse

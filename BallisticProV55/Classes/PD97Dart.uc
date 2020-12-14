@@ -94,7 +94,7 @@ defaultproperties
      Speed=15000.000000
      Damage=3.000000
      MyDamageType=Class'BallisticProV55.DT_PD97Dart'
-     StaticMesh=StaticMesh'BallisticHardware1.OA-SMG.OA-SMG_Dart'
+     StaticMesh=StaticMesh'BallisticProStatic1.OA-SMG.OA-SMG_Dart'
      LifeSpan=2.500000
      bIgnoreTerminalVelocity=True
 }

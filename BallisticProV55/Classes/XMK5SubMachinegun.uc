@@ -46,7 +46,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.OA-SMG.BigIcon_XMK5'
+     BigIconMaterial=Texture'BallisticProUI.Icons.OA-SMG.BigIcon_XMK5'
      BigIconCoords=(Y1=16,Y2=210)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Machinegun=True
@@ -110,7 +110,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=2.000000,Y=6.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.XMK5Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_XMK5'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_XMK5'
      IconCoords=(X2=127,Y2=31)
      ItemName="XMK-5"
      LightType=LT_Pulse

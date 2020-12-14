@@ -94,18 +94,18 @@ defaultproperties
      AIReloadTime=1.000000
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000	 
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_LK-05'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_LK-05'
      BigIconCoords=(Y1=36,Y2=225)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=12	 
-     BringUpSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-PullOut',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Sound=Sound'BallisticRecolorsSounds.M4A1.M4A1-Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     BringUpSound=(Sound=Sound'BallisticProRecolorsSounds.M4A1.M4A1-PullOut',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticProRecolorsSounds.M4A1.M4A1-Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=32
      CockAnimRate=1.000000	 
-     CockSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-Cock',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProRecolorsSounds.LK05.LK05-Cock',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnimRate=1.000000
-     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagOut',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.LK05.LK05-MagIn',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticProRecolorsSounds.LK05.LK05-MagOut',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProRecolorsSounds.LK05.LK05-MagIn',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=37.000000
      WeaponModes(0)=(ModeName="Full Auto",ModeID="WM_FullAuto")
      WeaponModes(1)=(bUnavailable=True)
@@ -155,7 +155,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=-2.000000,Y=12.500000,Z=-17.000000)
      AttachmentClass=Class'BWBPRecolorsPro.LK05Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_LK-05'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_LK-05'
      IconCoords=(X2=127,Y2=31)
      ItemName="LK-05"
      LightType=LT_Pulse

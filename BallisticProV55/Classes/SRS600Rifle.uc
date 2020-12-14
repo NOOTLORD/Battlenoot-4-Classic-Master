@@ -59,7 +59,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_SRS600'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_SRS600'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=14	 
@@ -121,7 +121,7 @@ defaultproperties
      InventoryGroup=1 
      PlayerViewOffset=(X=5.000000,Y=9.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_SRS600'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_SRS600'
      IconCoords=(X2=127,Y2=31)
      ItemName="SRS-600"
      LightType=LT_Pulse

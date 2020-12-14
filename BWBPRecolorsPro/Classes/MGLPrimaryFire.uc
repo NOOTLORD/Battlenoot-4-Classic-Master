@@ -20,7 +20,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 
      XInaccuracy=32.000000
      YInaccuracy=32.000000	 
-     BallisticFireSound=(Sound=Sound'BallisticRecolorsSounds.MGL.MGL-Fire',Volume=0.950000)
+     BallisticFireSound=(Sound=Sound'BallisticProRecolorsSounds.MGL.MGL-Fire',Volume=0.950000)
      bModeExclusive=False
      FireForce="AssaultRifleAltFire"
      FireRate=0.850000

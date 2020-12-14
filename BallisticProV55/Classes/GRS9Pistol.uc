@@ -97,7 +97,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      PlayerJumpFactor=1.100000	
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_GRS-9
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_GRS-9
      BigIconCoords=(Y1=30,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=6
@@ -160,7 +160,7 @@ defaultproperties
      InventoryGroup=2
      PlayerViewOffset=(X=10.000000,Y=10.50000,Z=-8.500000)
      AttachmentClass=Class'BallisticProV55.GRS9Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_GRS-9
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_GRS-9
      IconCoords=(X2=127,Y2=31)
      ItemName="GRS-9"
      LightType=LT_Pulse

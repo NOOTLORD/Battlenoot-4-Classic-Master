@@ -52,7 +52,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000	
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_XK2'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_XK2'
      BigIconCoords=(X1=24,X2=450)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Machinegun=True
@@ -116,7 +116,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=10.000000,Y=8.000000,Z=-11.000000)
      AttachmentClass=Class'BallisticProV55.Xk2Attachment'
-     IconMaterial=BallisticUI.Icons.SmallIcon_XK2'
+     IconMaterial=BallisticProUI.Icons.SmallIcon_XK2'
      IconCoords=(X2=127,Y2=31)
      ItemName="XK2"
      LightType=LT_Pulse

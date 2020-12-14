@@ -48,7 +48,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000			   
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M50'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_M50'
      BigIconCoords=(Y1=40,Y2=235)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Machinegun=True
@@ -111,7 +111,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=5.500000,Y=6.600000,Z=-8.000000)
      AttachmentClass=Class'BallisticProV55.M50Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M50'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_M50'
      IconCoords=(X2=127,Y2=31)
      ItemName="M50"
      LightType=LT_Pulse

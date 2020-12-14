@@ -326,7 +326,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      PlayerJumpFactor=1.100000	 
      AIReloadTime=1.500000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_D49'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_D49'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=6	 
      SpecialInfo(0)=(Info="120.0;10.0;0.6;50.0;1.0;0.0;-999.0")
@@ -388,7 +388,7 @@ defaultproperties
      PlayerViewOffset=(X=8.000000,Y=16.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=512)
      AttachmentClass=Class'BallisticProV55.D49Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_D49'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_D49'
      IconCoords=(X2=127,Y2=31)
      ItemName="D49"
      LightType=LT_Pulse

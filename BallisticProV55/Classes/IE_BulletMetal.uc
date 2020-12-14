@@ -50,7 +50,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'SpriteEmitter4'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter4
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.VBlast'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VBlast'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True
@@ -132,7 +132,7 @@ defaultproperties
      Emitters(3)=SpriteEmitter'SpriteEmitter6'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter5
-         StaticMesh=StaticMesh'BallisticHardware2.Impact.ConcreteChip2'
+         StaticMesh=StaticMesh'BallisticProStatic2.Impact.ConcreteChip2'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

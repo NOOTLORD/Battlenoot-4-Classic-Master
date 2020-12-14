@@ -52,7 +52,7 @@ defaultproperties
 {
      PlayerSpeedFactor=1.100000
      PlayerJumpFactor=1.100000	
-     BigIconMaterial=Texture'BallisticUI.Icons.X4.BigIcon_X4'
+     BigIconMaterial=Texture'BallisticProUI.Icons.X4.BigIcon_X4'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      SpecialInfo(0)=(Info="180.0;6.0;-999.0;-1.0;-999.0;-999.0;-999.0")
@@ -82,7 +82,7 @@ defaultproperties
      InventoryGroup=3
      PlayerViewOffset=(X=16.000000,Y=8.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.X4Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.X4.SmallIcon_X4
+     IconMaterial=Texture'BallisticProUI.Icons.X4.SmallIcon_X4
      IconCoords=(X2=128,Y2=32)
      ItemName="X4"
      Mesh=SkeletalMesh'BallisticAnims1.X4_FP'

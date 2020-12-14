@@ -10,7 +10,7 @@ class IE_BulletWater extends BallisticEmitter
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter18
-         StaticMesh=StaticMesh'BallisticHardware2.Effects.VolumetricA4'
+         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA4'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

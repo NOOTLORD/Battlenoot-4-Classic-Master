@@ -6,10 +6,10 @@ class AD_BloodLowImpact extends AD_BloodDecal
 
 defaultproperties
 {
-     DecalTextures(0)=Texture'BallisticBloodPro.Decals.LowImpact1'
-     DecalTextures(1)=Texture'BallisticBloodPro.Decals.LowImpact2'
-     DecalTextures(2)=Texture'BallisticBloodPro.Decals.LowImpact3'
-     DecalTextures(3)=Texture'BallisticBloodPro.Decals.LowImpact4'
+     DecalTextures(0)=Texture'BallisticProBlood.Decals.LowImpact1'
+     DecalTextures(1)=Texture'BallisticProBlood.Decals.LowImpact2'
+     DecalTextures(2)=Texture'BallisticProBlood.Decals.LowImpact3'
+     DecalTextures(3)=Texture'BallisticProBlood.Decals.LowImpact4'
      bRandomRotate=True
      StayTime=0.100000
      ZoomDist=-16.000000

@@ -49,7 +49,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000	 
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_M46'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_M46'
      BigIconCoords=(Y1=40,Y2=235)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      bWT_Machinegun=True	
@@ -115,7 +115,7 @@ defaultproperties
      PlayerViewOffset=(X=8.400000,Y=5.000000,Z=-8.000000)
      PlayerViewPivot=(Pitch=384)														 								
      AttachmentClass=Class'BallisticProV55.M46AttachmentQS'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_M46'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_M46'
      IconCoords=(X2=127,Y2=31)																								  
      ItemName="M46"
      LightType=LT_Pulse

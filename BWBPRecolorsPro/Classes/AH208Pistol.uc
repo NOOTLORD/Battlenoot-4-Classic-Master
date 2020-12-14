@@ -110,7 +110,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      PlayerJumpFactor=1.100000		 
      AIReloadTime=1.500000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_AH208-Pistol'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_AH208-Pistol'
      BigIconCoords=(X1=47,Y1=16,X2=455,Y2=245)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=8
@@ -118,11 +118,11 @@ defaultproperties
      PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.400000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=7
      CockAnimRate=1.000000	 
-     CockSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-Cock',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProRecolorsSounds.AH208.AH208-Cock',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnimRate=1.000000
-     ClipHitSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-ClipHit',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipOutSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-ClipOut',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipInSound=(Sound=Sound'BallisticRecolorsSounds.AH208.AH208-ClipIn',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipHitSound=(Sound=Sound'BallisticProRecolorsSounds.AH208.AH208-ClipHit',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticProRecolorsSounds.AH208.AH208-ClipOut',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProRecolorsSounds.AH208.AH208-ClipIn',Volume=1.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=56.000000 
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -172,7 +172,7 @@ defaultproperties
      InventoryGroup=2
      PlayerViewOffset=(X=15.000000,Y=25.500000,Z=-31.500000)
      AttachmentClass=Class'BWBPRecolorsPro.AH208Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_AH208-Pistol'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_AH208-Pistol'
      IconCoords=(X2=127,Y2=31)
      BobDamping=1.250000	 
      ItemName="AH-208"

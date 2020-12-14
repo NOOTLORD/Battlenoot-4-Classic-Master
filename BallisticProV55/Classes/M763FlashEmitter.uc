@@ -94,7 +94,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'BallisticProV55.M763FlashEmitter.SpriteEmitter33'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter9
-         StaticMesh=StaticMesh'BallisticHardware2.M763.M763MuzzleFlash'
+         StaticMesh=StaticMesh'BallisticProStatic2.M763.M763MuzzleFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

@@ -223,7 +223,7 @@ defaultproperties
      PlayerSpeedFactor=1.100000
      PlayerJumpFactor=1.100000				 
      AIReloadTime=1.500000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_PD97'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_PD97'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo' 
 	 InventorySize=6	 
      bWT_Bullet=False
@@ -288,7 +288,7 @@ defaultproperties
      InventoryGroup=2
      PlayerViewOffset=(X=10.000000,Y=9.750000,Z=-9.500000)
      AttachmentClass=Class'BallisticProV55.PD97Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon-PD97'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon-PD97'
      IconCoords=(X2=127,Y2=31)
      ItemName="PD-97"
      LightType=LT_Pulse

@@ -46,7 +46,7 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000	 
      AIReloadTime=1.500000
-     BigIconMaterial=Texture'BallisticUI.Icons.BigIcon_R78'
+     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_R78'
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=12	 
      SpecialInfo(0)=(Info="240.0;25.0;0.5;60.0;10.0;0.0;0.0")
@@ -68,7 +68,7 @@ defaultproperties
      ScopeXScale=1.333000
      ZoomInAnim="ZoomIn"
 	 ZoomOutAnim="ZoomOut"
-     ScopeViewTex=Texture'BallisticUI.R78.RifleScopeView'
+     ScopeViewTex=Texture'BallisticProUI.R78.RifleScopeView'
      ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      FullZoomFOV=50.000000
@@ -120,7 +120,7 @@ defaultproperties
      InventoryGroup=1
      PlayerViewOffset=(X=12.000000,Y=9.500000,Z=-11.500000)
      AttachmentClass=Class'BallisticProV55.R78Attachment'
-     IconMaterial=Texture'BallisticUI.Icons.SmallIcon_R78'
+     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_R78'
      IconCoords=(X2=127,Y2=31)
      ItemName="R78A1"
      LightType=LT_Pulse

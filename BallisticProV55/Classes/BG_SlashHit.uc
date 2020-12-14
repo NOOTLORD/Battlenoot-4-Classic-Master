@@ -36,7 +36,7 @@ defaultproperties
          StartSizeRange=(X=(Min=1.000000,Max=3.000000),Y=(Min=1.000000,Max=3.000000),Z=(Min=1.000000,Max=3.000000))
          InitialParticlesPerSecond=50.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticBloodPro.Sprites.LimbBits'
+         Texture=Texture'BallisticProBlood.Sprites.LimbBits'
          TextureUSubdivisions=4
          TextureVSubdivisions=2
          SecondsBeforeInactive=0.000000
@@ -100,7 +100,7 @@ defaultproperties
          StartSizeRange=(X=(Min=5.000000,Max=25.000000))
          InitialParticlesPerSecond=400.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticBloodPro.Particles.BloodMistShot1'
+         Texture=Texture'BallisticProBlood.Particles.BloodMistShot1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.500000,Max=0.500000)
          StartVelocityRange=(X=(Min=-100.000000,Max=-25.000000),Y=(Min=-10.000000,Max=10.000000),Z=(Min=-100.000000))

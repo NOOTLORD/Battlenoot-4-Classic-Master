@@ -39,7 +39,7 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.160000,OutVal=1),(InVal=0.250000,OutVal=1.500000),(InVal=0.500000,OutVal=2.250000),(InVal=0.750000,OutVal=3.500000),(InVal=1.000000,OutVal=5.000000)))
      XInaccuracy=48.000000
      YInaccuracy=48.000000
-     BallisticFireSound=(Sound=SoundGroup'BallisticRecolorsSounds.AK470.AK470-Fire',Volume=1.150000,Slot=SLOT_Interact,bNoOverride=False)
+     BallisticFireSound=(Sound=SoundGroup'BallisticProRecolorsSounds.AK470.AK470-Fire',Volume=1.150000,Slot=SLOT_Interact,bNoOverride=False)
      FireRate=0.115000
      bPawnRapidFireAnim=True	 
      AmmoClass=Class'BWBPRecolorsPro.Ammo_AK470_Rifle'

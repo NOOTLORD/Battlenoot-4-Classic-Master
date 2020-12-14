@@ -10,5 +10,5 @@ class BWDeResShader extends Shader;
 
 defaultproperties
 {
-     Opacity=TexPanner'BallisticBloodPro.DeRez.MaskPan'
+     Opacity=TexPanner'BallisticProBlood.DeRez.MaskPan'
 }
