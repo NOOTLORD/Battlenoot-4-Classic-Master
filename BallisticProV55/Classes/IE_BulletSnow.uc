@@ -10,7 +10,7 @@ class IE_BulletSnow extends DGVEmitter
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter0
-         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA2'
+         StaticMesh=StaticMesh'BallisticProStatic.Effects.VolumetricA2'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True
@@ -61,7 +61,7 @@ defaultproperties
          StartSizeRange=(X=(Min=2.000000,Max=5.000000),Y=(Min=2.000000,Max=5.000000),Z=(Min=2.000000,Max=5.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_Brighten
-         Texture=Texture'BallisticEffects.Particles.FlameParts'
+         Texture=Texture'BallisticProEffectsTex.Particles.FlameParts'
          TextureUSubdivisions=4
          TextureVSubdivisions=4
          SecondsBeforeInactive=0.000000
@@ -89,7 +89,7 @@ defaultproperties
          StartSizeRange=(X=(Min=5.000000,Max=10.000000),Y=(Min=5.000000,Max=10.000000),Z=(Min=5.000000,Max=10.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_Brighten
-         Texture=Texture'BallisticEffects.Particles.Smoke3'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke3'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=3.000000,Max=3.000000)
          StartVelocityRange=(X=(Max=10.000000),Y=(Min=-5.000000,Max=5.000000),Z=(Min=-5.000000,Max=5.000000))

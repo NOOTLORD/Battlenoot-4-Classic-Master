@@ -35,19 +35,19 @@ simulated function Destroyed()
 defaultproperties
 {
      StartVelocity=(Z=60.000000)
-     HitSounds(0)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSounds(1)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSounds(2)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSounds(3)=SoundGroup'BallisticSounds2.Brass.ShellMetal'
-     HitSounds(4)=SoundGroup'BallisticSounds2.Brass.ShellWood'
-     HitSounds(5)=SoundGroup'BallisticSounds2.Brass.ShellWood'
-     HitSounds(6)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSounds(7)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSounds(8)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSounds(9)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
-     HitSounds(10)=SoundGroup'BallisticSounds2.Brass.ShellConcrete'
+     HitSounds(0)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
+     HitSounds(1)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
+     HitSounds(2)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
+     HitSounds(3)=SoundGroup'BallisticProSounds.Effects.Shell-Metal'
+     HitSounds(4)=SoundGroup'BallisticProSounds.Effects.Shell-Wood'
+     HitSounds(5)=SoundGroup'BallisticProSounds.Effects.Shell-Wood'
+     HitSounds(6)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
+     HitSounds(7)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
+     HitSounds(8)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
+     HitSounds(9)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
+     HitSounds(10)=SoundGroup'BallisticProSounds.Effects.Shell-Concrete'
      HitSoundVolume=0.140000
-     StaticMesh=StaticMesh'BallisticProStatic2.Brass.EmptyShell'
+     StaticMesh=StaticMesh'BallisticProStatic.Effects.EmptyShell'
      DrawScale=0.110000
      DrawScale3D=(X=0.500000,Y=0.800000,Z=0.800000)
 }

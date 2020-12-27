@@ -102,15 +102,15 @@ defaultproperties
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=6
      SpecialInfo(0)=(Info="120.0;8.0;-999.0;25.0;0.0;0.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M806.M806Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M806.M806Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     BringUpSound=(Sound=Sound'BallisticProSounds.M806.M806-Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticProSounds.M806.M806-Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=15
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BallisticSounds1.Glock.Glk-Cock',Volume=0.700000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProSounds.GRS-9.GRS-9-Cock',Volume=0.700000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnimRate=1.350000
-     ClipHitSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipHit',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipOutSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipOut',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipInSound=(Sound=Sound'BallisticSounds1.Glock.Glk-ClipIn',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipHitSound=(Sound=Sound'BallisticProSounds.GRS-9.GRS-9-ClipHit',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticProSounds.GRS-9.GRS-9-ClipOut',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProSounds.GRS-9.GRS-9-ClipIn',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=37.000000
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -152,8 +152,8 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'	 	 
 	 AIRating=0.600000
 	 CurrentRating=0.600000
-     AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9_Pistol'
-     AmmoClass(1)=Class'BallisticProV55.Ammo_GRS9_Pistol'	 
+     AmmoClass(0)=Class'BallisticProV55.Ammo_GRS9Pistol'
+     AmmoClass(1)=Class'BallisticProV55.Ammo_GRS9Pistol'	 
      Description="GRS-9"
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
@@ -169,8 +169,8 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=2.250000
-     Mesh=SkeletalMesh'BallisticAnims1.GRS9_FP'
+     Mesh=SkeletalMesh'BallisticProAnims.GRS9_FP'
      DrawScale=0.150000
-	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-	 Skins(1)=Texture'BallisticWeapons1.Glock.Glock_Main'
+	 Skins(0)=Shader'BallisticProTex.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticProTex.GRS-9.GRS-9-Main'
 }

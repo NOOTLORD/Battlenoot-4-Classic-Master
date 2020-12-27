@@ -340,7 +340,7 @@ function InternalOnChange(GUIComponent Sender)
 defaultproperties
 {
      Begin Object Class=GUILoadOutItem Name=SideArmImage
-         NAImage=Texture'BallisticProUI.Icons.BigIcon_NA'
+         NAImage=Texture'BallisticProUITex.Icons.BigIcon_NA'
          Caption="Sidearm"
          WinTop=0.040000
          WinLeft=0.400000
@@ -353,7 +353,7 @@ defaultproperties
      Item_SideArm=GUILoadOutItem'BallisticProV55.BallisticTeamOutfittingWeaponsTab.SideArmImage'
 
      Begin Object Class=GUILoadOutItem Name=PrimaryImage
-         NAImage=Texture'BallisticProUI.Icons.BigIcon_NA'
+         NAImage=Texture'BallisticProUITex.Icons.BigIcon_NA'
          Caption="Primary Weapon"
          WinTop=0.340000
          WinLeft=0.250000
@@ -366,7 +366,7 @@ defaultproperties
      Item_Primary=GUILoadOutItem'BallisticProV55.BallisticTeamOutfittingWeaponsTab.PrimaryImage'
 
      Begin Object Class=GUILoadOutItem Name=GrenadeImage
-         NAImage=Texture'BallisticProUI.Icons.BigIcon_NA'
+         NAImage=Texture'BallisticProUITex.Icons.BigIcon_NA'
          Caption="Abilities"
          WinTop=0.350000
          WinLeft=0.550000

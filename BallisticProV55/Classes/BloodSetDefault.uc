@@ -25,9 +25,9 @@ defaultproperties
      SlashHeadEffect=Class'BallisticProV55.BG_SlashHitHead'
      DefaultStump=Class'BallisticProV55.BallisticStump'
      CharredStump=Class'BallisticProV55.BWStump_Charred'
-     AltStumpMesh=StaticMesh'BallisticProGoreStatic.Stumps.LimbStump2'
-     AltCharStumpMesh=StaticMesh'BallisticProGoreStatic.Stumps.StumpCharred2'
-     BulletHitSound=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'
-     BulletHitHeadSound=SoundGroup'BallisticSounds2.BulletImpacts.Headshot'
+     AltStumpMesh=StaticMesh'BallisticProStatic.Stumps.Limb-Stump2'
+     AltCharStumpMesh=StaticMesh'BallisticProStatic.Stumps.Stump-Charred2'
+     BulletHitSound=SoundGroup'BallisticProSounds.Effects.Bullet-Flesh'
+     BulletHitHeadSound=SoundGroup'BallisticProSounds.Effects.Bullet-Headshot'
      DefaultGibClass=Class'BallisticProV55.BWGib_Default'
 }

@@ -81,12 +81,12 @@ defaultproperties
      Damage=60.000000
      DamageHead=120.000000
      DamageLimb=60.000000
-     DamageType=Class'BallisticProV55.DT_MarlinRifle'
-     DamageTypeHead=Class'BallisticProV55.DT_MarlinRifleHead'
-     DamageTypeArm=Class'BallisticProV55.DT_MarlinRifle'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=1.000000,Radius=32.000000,Pitch=1.000000)	 
+     DamageType=Class'BallisticProV55.DT_MarlinBody'
+     DamageTypeHead=Class'BallisticProV55.DT_MarlinHead'
+     DamageTypeArm=Class'BallisticProV55.DT_MarlinBody'
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryRifle',Volume=1.000000,Radius=32.000000,Pitch=1.000000)	 
      bCockAfterFire=True
-     MuzzleFlashClass=Class'BallisticProV55.R78FlashEmitter'
+     MuzzleFlashClass=Class'BallisticProV55.R78A1FlashEmitter'
      FlashScaleFactor=0.900000
      BrassClass=Class'BallisticProV55.Brass_Rifle'
      BrassOffset=(X=-108.000000,Y=-18.500000,Z=14.500000)
@@ -98,10 +98,10 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=32.000000
      YInaccuracy=32.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.Marlin.Marlin-Fire',Volume=1.000000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.Marlin.Marlin-Fire',Volume=1.000000,Radius=32.000000,Pitch=1.000000)
      FireAnimRate=1.250000
      FireRate=0.900000
-     AmmoClass=Class'BallisticProV55.Ammo_Marlin_Rifle'
+     AmmoClass=Class'BallisticProV55.Ammo_MarlinRifle'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

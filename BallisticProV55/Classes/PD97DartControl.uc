@@ -1,5 +1,5 @@
 //=============================================================================
-// Damage effect class for the PD97 Bloodhound
+// Damage effect class for the PD97 Pistol
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -12,7 +12,7 @@ class PD97DartControl extends BallisticEmitter
 
 var   Pawn					Victim;
 var   float					Damage, BaseDuration;
-var 	PD97Bloodhound	Master;
+var 	PD97Pistol	Master;
 var   Controller			InstigatorController;
 var class<DamageType> DamageType;
 
@@ -31,7 +31,7 @@ simulated event TornOff()
 	Kill();
 }
 
-simulated function Initialize(Pawn V, PD97Bloodhound Gun)
+simulated function Initialize(Pawn V, PD97Pistol Gun)
 {
 	if (V == None)
 		return;
@@ -156,7 +156,7 @@ defaultproperties
          StartSizeRange=(X=(Min=-0.000000,Max=0.000000),Y=(Min=-0.000000,Max=0.000000),Z=(Min=0.000000,Max=0.000000))
          InitialParticlesPerSecond=20.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects2.Particles.NewSmoke1g'
+         Texture=Texture'BallisticProEffectsTex.Particles.NewSmoke1g'
          TextureUSubdivisions=1
          TextureVSubdivisions=1
          StartVelocityRange=(X=(Min=-45.000000,Max=45.000000),Y=(Min=-45.000000,Max=45.000000),Z=(Min=-45.000000,Max=45.000000))

@@ -1,5 +1,5 @@
 //=============================================================================
-// Healing effect class for the PD-97 Bloodhound
+// Healing effect class for the PD-97 Pistol
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -10,7 +10,7 @@
 class PD97HealControl extends PD97DartControl
 	placeable;
 
-simulated function Initialize(Pawn V, PD97Bloodhound Gun)
+simulated function Initialize(Pawn V, PD97Pistol Gun)
 {
 	if (V == None)
 		return;

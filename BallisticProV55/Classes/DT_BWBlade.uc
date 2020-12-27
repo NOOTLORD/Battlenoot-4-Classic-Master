@@ -26,7 +26,7 @@ defaultproperties
      FlashScale=0.000000	 
      DamageDescription=",Slash,"
      bInstantHit=True
-     PawnDamageSounds(0)=SoundGroup'BallisticSounds2.Knife.KnifeFlesh'
+     PawnDamageSounds(0)=SoundGroup'BallisticProSounds.Effects.Knife-Flesh'
      TransientSoundVolume=0.700000
      VehicleDamageScaling=0.500000	 
      InvasionDamageScaling=1.000000	 

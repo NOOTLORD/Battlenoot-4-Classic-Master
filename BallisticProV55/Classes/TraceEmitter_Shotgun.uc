@@ -15,7 +15,7 @@ simulated function Initialize(float Distance, optional float Power)
 defaultproperties
 {
      Begin Object Class=MeshEmitter Name=MeshEmitter15
-         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VBlast'
+         StaticMesh=StaticMesh'BallisticProStatic.Effects.VBlast'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

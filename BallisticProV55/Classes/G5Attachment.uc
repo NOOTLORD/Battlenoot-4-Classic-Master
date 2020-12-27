@@ -130,24 +130,21 @@ defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.G5FlashEmitter'
      AltMuzzleFlashClass=Class'BallisticProV55.G5BackFlashEmitter'
-     FlashMode=MU_Primary 
-     FlashScale=1.000000		 
-     LightMode=MU_Primary	
+     FlashScale=1.000000		 	
      AltFlashBone="tip2"	 
      ImpactManager=Class'BallisticProV55.IM_Bullet'
      BrassMode=MU_None
-     InstantMode=MU_None
-     TrackAnimMode=MU_None	 
+     InstantMode=MU_None 
 	 ReloadAnim="Reload_MG"
 	 ReloadAnimRate=1.500000						 
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims2.G5_TP'
+     Mesh=SkeletalMesh'BallisticProAnims.G5_TP'
      DrawScale=0.230000
-	 Skins(0)=Texture'BallisticWeapons2.G5.G5Bazooka'
-	 Skins(1)=Texture'BallisticWeapons2.G5.G5Bazooka'
-	 Skins(2)=Texture'BallisticWeapons2.G5.G5Bazooka'
-	 Skins(3)=FinalBlend'BallisticWeapons2.G5.G5RocketFinal'
-	 Skins(4)=Texture'BallisticWeapons2.G5.G5Inner'
-	 Skins(5)=Texture'BallisticWeapons2.G5.G5Scope'
-	 Skins(6)=Texture'BallisticWeapons2.G5.G5Scope'
+	 Skins(0)=Texture'BallisticProTex.G5.G5-Main'
+	 Skins(1)=Texture'BallisticProTex.G5.G5-Main'
+	 Skins(2)=Texture'BallisticProTex.G5.G5-Main'
+	 Skins(3)=Texture'BallisticProTex.G5.G5-Rocket'
+	 Skins(4)=Texture'BallisticProTex.G5.G5-Misc'
+	 Skins(5)=Texture'BallisticProTex.G5.G5-Scope'
+	 Skins(6)=Texture'BallisticProTex.G5.G5-Scope'
 }

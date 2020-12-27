@@ -30,7 +30,7 @@ defaultproperties
          StartSizeRange=(X=(Min=15.000000,Max=20.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects.Particles.Smoke1'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=1.000000,Max=1.000000)
          StartVelocityRange=(X=(Min=20.000000,Max=60.000000),Y=(Min=-20.000000,Max=20.000000),Z=(Min=-20.000000,Max=30.000000))

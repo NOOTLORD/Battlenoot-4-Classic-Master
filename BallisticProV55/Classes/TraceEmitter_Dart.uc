@@ -23,7 +23,7 @@ defaultproperties
          MaxParticles=1
          StartSizeRange=(X=(Min=25.000000,Max=25.000000),Y=(Min=25.000000,Max=25.000000),Z=(Min=25.000000,Max=25.000000))
          InitialParticlesPerSecond=20.000000
-         Texture=Texture'BallisticEffects.Particles.AquaFlareA1'
+         Texture=Texture'BallisticProEffectsTex.Particles.AquaFlareA1'
          SecondsBeforeInactive=0.000000
      End Object
      Emitters(0)=SpriteEmitter'BallisticProV55.TraceEmitter_Dart.SpriteEmitter8'
@@ -47,7 +47,7 @@ defaultproperties
          MaxParticles=1
          StartSizeRange=(X=(Min=17.500000,Max=17.500000),Y=(Min=5.000000,Max=5.000000),Z=(Min=5.000000,Max=10.000000))
          InitialParticlesPerSecond=500000.000000
-         Texture=Texture'BallisticEffects.Particles.FlareB1'
+         Texture=Texture'BallisticProEffectsTex.Particles.FlareB1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=2.000000,Max=2.000000)
      End Object

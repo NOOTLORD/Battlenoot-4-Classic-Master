@@ -47,7 +47,7 @@ defaultproperties
          StartSizeRange=(X=(Min=25.000000,Max=30.000000),Y=(Min=25.000000,Max=30.000000),Z=(Min=25.000000,Max=30.000000))
          InitialParticlesPerSecond=10000.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects.Particles.Smoke6'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke6'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=1.000000,Max=1.000000)
          StartVelocityRange=(X=(Min=30.000000,Max=60.000000),Y=(Min=-30.000000,Max=30.000000),Z=(Min=-30.000000,Max=30.000000))
@@ -56,7 +56,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'BallisticProV55.IE_BulletWood.SpriteEmitter42'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter21
-         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA3'
+         StaticMesh=StaticMesh'BallisticProStatic.Effects.VolumetricA3'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True

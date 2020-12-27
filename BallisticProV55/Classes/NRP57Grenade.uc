@@ -52,9 +52,9 @@ defaultproperties
      HeldMomentum=75000
      HeldDamageType=Class'BallisticProV55.DT_NRP57Held'
      GrenadeSmokeClass=Class'BallisticProV55.NRP57Trail'
-     ClipReleaseSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-ClipOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
-     PinPullSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-PinOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
-     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_NRP57'
+     ClipReleaseSound=(Sound=Sound'BallisticProSounds.NRP57.NRP57-ClipOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
+     PinPullSound=(Sound=Sound'BallisticProSounds.NRP57.NRP57-PinOut',Volume=0.325000,Radius=48.000000,Pitch=1.000000,bAtten=True)
+     BigIconMaterial=Texture'BallisticProUITex.Icons.BigIcon_NRP57'
      BigIconCoords=(Y1=16,Y2=245)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=4	 
@@ -63,8 +63,8 @@ defaultproperties
      bWT_Grenade=True
      bWT_Bullet=False 
      SpecialInfo(0)=(Info="60.0;5.0;0.25;30.0;0.0;0.0;0.4")
-     BringUpSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     BringUpSound=(Sound=Sound'BallisticProSounds.NRP57.NRP57-Pullout',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticProSounds.NRP57.NRP57-Putaway',Volume=0.325000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      WeaponModes(0)=(bUnavailable=True)
      WeaponModes(1)=(ModeName="Long Throw",ModeID="WM_None",Value=1.000000)	 
      WeaponModes(2)=(bUnavailable=True)
@@ -79,8 +79,8 @@ defaultproperties
      FireModeClass(1)=Class'BallisticProV55.NRP57SecondaryFire'	 
      AIRating=0.850000
      CurrentRating=0.850000
-     AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57_Grenade'
-     AmmoClass(1)=Class'BallisticProV55.Ammo_NRP57_Grenade'	 
+     AmmoClass(0)=Class'BallisticProV55.Ammo_NRP57Grenade'
+     AmmoClass(1)=Class'BallisticProV55.Ammo_NRP57Grenade'	 
      Description="NRP57" 
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
@@ -88,12 +88,12 @@ defaultproperties
      PlayerViewOffset=(X=17.000000,Y=11.000000,Z=-12.000000)
      PlayerViewPivot=(Pitch=1024,Yaw=-1024)
      AttachmentClass=Class'BallisticProV55.NRP57Attachment'
-     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_NRP57'
+     IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_NRP57'
      IconCoords=(X2=127,Y2=31)
      ItemName="NRP57"
-     Mesh=SkeletalMesh'BallisticAnims2.NRP57_FP'
+     Mesh=SkeletalMesh'BallisticProAnims.NRP57_FP'
      DrawScale=0.400000
-	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-	 Skins(1)=Texture'BallisticWeapons2.NRP57.Grenade'
-	 Skins(2)=Texture'BallisticWeapons2.NRP57.Grenade'
+	 Skins(0)=Shader'BallisticProTex.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticProTex.NRP57.NRP57-Main'
+	 Skins(2)=Texture'BallisticProTex.NRP57.NRP57-Main'
 }

@@ -570,7 +570,7 @@ simulated final function bool BlendFire()
 	{
 		case SS_None: return false;
 		case SS_Raising: AnimBlendToAlpha(1, 1, (1-SightingPhase) * SightingTime); return true;
-		case SS_Lowering: AnimBlendToAlpha(1, 1, SightingPhase * SightingTime); return true;
+        case SS_Lowering: AnimBlendToAlpha(1, 0, SightingPhase * SightingTime); return true;
 		case SS_Active: AnimBlendParams(1,1); return true;
 	}
 	
@@ -1259,8 +1259,7 @@ simulated function StopScopeView(optional bool bNoAnim)
 // Scope up anim just ended. Either go into scope view or move the scope back down again
 simulated function ScopeUpAnimEnd()
 {
-	if (!bUseSights || Instigator.Physics == PHYS_Falling || (SprintControl != None && SprintControl.bSprinting))
-	{
+    if (!bUseSights || (SprintControl != None && SprintControl.bSprinting))	{
 		PlayScopeDown();
 		return;
 	}
@@ -1299,6 +1298,7 @@ simulated function PlayScopeDown(optional bool bNoAnim)
 	    SafePlayAnim(ZoomOutAnim, 1.0);
 	else if (SightingState == SS_Active || SightingState == SS_Raising)
 		SightingState = SS_Lowering;
+	BlendFire();	
 	InstigatorController.bRun = 0;
 }
 
@@ -4717,7 +4717,7 @@ static function String GetShortManual()
 
 defaultproperties
 {
-     TeamSkins(0)=(RedTex=Shader'BallisticWeapons2.Hands.RedHand-Shiny',BlueTex=Shader'BallisticWeapons2.Hands.BlueHand-Shiny')
+     TeamSkins(0)=(RedTex=Shader'BallisticProTex.Hands.RedHand-Shiny',BlueTex=Shader'BallisticProTex.Hands.BlueHand-Shiny')
 	 AimDisplacementDurationMult=0.000000
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000

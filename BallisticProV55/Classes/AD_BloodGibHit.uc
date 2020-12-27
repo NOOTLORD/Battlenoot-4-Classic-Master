@@ -6,14 +6,14 @@ class AD_BloodGibHit extends AD_BloodDecal
 
 defaultproperties
 {
-     DecalTextures(0)=Texture'BallisticProBlood.Decals.Splat1'
-     DecalTextures(1)=Texture'BallisticProBlood.Decals.Splat2'
-     DecalTextures(2)=Texture'BallisticProBlood.Decals.Splat3'
-     DecalTextures(3)=Texture'BallisticProBlood.Decals.Splat4'
-     DecalTextures(4)=Texture'BallisticProBlood.Decals.Splat5'
-     DecalTextures(5)=Texture'BallisticProBlood.Decals.Splat6'
-     DecalTextures(6)=Texture'BallisticProBlood.Decals.Splat7'
-     DecalTextures(7)=Texture'BallisticProBlood.Decals.Splat8'
+     DecalTextures(0)=Texture'BallisticProBloodTex.Decals.Splat1'
+     DecalTextures(1)=Texture'BallisticProBloodTex.Decals.Splat2'
+     DecalTextures(2)=Texture'BallisticProBloodTex.Decals.Splat3'
+     DecalTextures(3)=Texture'BallisticProBloodTex.Decals.Splat4'
+     DecalTextures(4)=Texture'BallisticProBloodTex.Decals.Splat5'
+     DecalTextures(5)=Texture'BallisticProBloodTex.Decals.Splat6'
+     DecalTextures(6)=Texture'BallisticProBloodTex.Decals.Splat7'
+     DecalTextures(7)=Texture'BallisticProBloodTex.Decals.Splat8'
      bRandomRotate=True
      StayTime=0.100000
      ZoomDist=-16.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for the D49 Revolver
+// Primaryfire class for the D49 Pistol
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved.
@@ -18,10 +18,10 @@ simulated event ModeDoFire()
 {
 	if (!AllowFire())
 		return;
-	switch(D49Revolver(Weapon).GetBarrelMode())
+	switch(D49Pistol(Weapon).GetBarrelMode())
 	{
 		case BM_Neither:
-			D49Revolver(Weapon).RevolverFired(BM_Neither);
+			D49Pistol(Weapon).RevolverFired(BM_Neither);
 			BW.FireCount++;
 	        NextFireTime += FireRate*0.5;
     	    NextFireTime = FMax(NextFireTime, Level.TimeSeconds);
@@ -32,7 +32,7 @@ simulated event ModeDoFire()
 			break;
 	}
 	super.ModeDoFire();
-		D49Revolver(Weapon).RevolverFired(BM_Primary);
+		D49Pistol(Weapon).RevolverFired(BM_Primary);
 }
 
 defaultproperties
@@ -52,10 +52,10 @@ defaultproperties
      Damage=45.000000
      DamageHead=63.000000
      DamageLimb=45.000000
-     DamageType=Class'BallisticProV55.DT_D49Revolver'
-     DamageTypeHead=Class'BallisticProV55.DT_D49RevolverHead'
-     DamageTypeArm=Class'BallisticProV55.DT_D49Revolver'
-     DryFireSound=(Sound=Sound'BallisticSounds2.D49.D49-DryFire',Volume=0.750000,Radius=32.000000,Pitch=1.000000)	 
+     DamageType=Class'BallisticProV55.DT_D49Body'
+     DamageTypeHead=Class'BallisticProV55.DT_D49Head'
+     DamageTypeArm=Class'BallisticProV55.DT_D49Body'
+     DryFireSound=(Sound=Sound'BallisticProSounds.D49.D49-DryFire',Volume=0.750000,Radius=32.000000,Pitch=1.000000)	 
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
      FlashScaleFactor=0.600000
      RecoilPerShot=768.000000
@@ -64,10 +64,10 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.D49.D49-Fire',Volume=1.850000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.D49.D49-Fire',Volume=1.850000,Radius=32.000000,Pitch=1.000000)
 	 FireAnimRate=1.600000
      FireRate=0.400000
-     AmmoClass=Class'BallisticProV55.Ammo_D49_Revolver'
+     AmmoClass=Class'BallisticProV55.Ammo_D49Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

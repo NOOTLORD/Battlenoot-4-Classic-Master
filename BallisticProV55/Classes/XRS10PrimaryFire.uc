@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for the XRS10 SubMachinegun
+// Primaryfire class for the XRS-10 SMG
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2006 RuneStorm. All Rights Reserved. 
@@ -25,10 +25,10 @@ defaultproperties
      Damage=25.000000
      DamageHead=25.000000
      DamageLimb=25.000000
-     DamageType=Class'BallisticProV55.DT_XRS10SMG'
-     DamageTypeHead=Class'BallisticProV55.DT_XRS10SMGHead'
-     DamageTypeArm=Class'BallisticProV55.DT_XRS10SMG'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.750000,Radius=32.000000,Pitch=1.000000) 	
+     DamageType=Class'BallisticProV55.DT_XRS10Body'
+     DamageTypeHead=Class'BallisticProV55.DT_XRS10Head'
+     DamageTypeArm=Class'BallisticProV55.DT_XRS10Body'
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryRifle',Volume=0.750000,Radius=32.000000,Pitch=1.000000) 	
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
@@ -40,10 +40,10 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.320000,OutVal=1),(InVal=0.500000,OutVal=1.500000),(InVal=1.000000,OutVal=2.250000)))
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.XRS-10.XRS-10-Fire',Volume=1.700000,Radius=32.000000,Pitch=1.000000) 
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.XRS-10.XRS-10-Fire',Volume=1.700000,Radius=32.000000,Pitch=1.000000) 
      bPawnRapidFireAnim=True
      FireRate=0.090000
-     AmmoClass=Class'BallisticProV55.Ammo_XRS10_SMG'
+     AmmoClass=Class'BallisticProV55.Ammo_XRS10SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

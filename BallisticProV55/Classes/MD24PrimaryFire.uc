@@ -46,10 +46,10 @@ defaultproperties
      Damage=22.000000
      DamageHead=33.000000
      DamageLimb=22.000000
-     DamageType=Class'BallisticProV55.DT_MD24Pistol'
-     DamageTypeHead=Class'BallisticProV55.DT_MD24PistolHead'
-     DamageTypeArm=Class'BallisticProV55.DT_MD24Pistol'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=1.125000,Radius=32.000000,Pitch=1.000000)
+     DamageType=Class'BallisticProV55.DT_MD24Body'
+     DamageTypeHead=Class'BallisticProV55.DT_MD24Head'
+     DamageTypeArm=Class'BallisticProV55.DT_MD24Body'
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryPistol',Volume=1.125000,Radius=32.000000,Pitch=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.150000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
@@ -61,10 +61,10 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.MD24_Fire',Volume=1.750000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.MD24-Fire',Volume=1.750000,Radius=32.000000,Pitch=1.000000)
      FireAnimRate=1.450000
      FireRate=0.220000
-     AmmoClass=Class'BallisticProV55.Ammo_MD24_Pistol'
+     AmmoClass=Class'BallisticProV55.Ammo_MD24Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

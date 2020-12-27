@@ -13,9 +13,6 @@ defaultproperties
      EffectChance=0.500000
      BloodManagerName="BallisticProV55.BloodMan_ShotgunShell"
      DamageDescription=",Shell,"
-     bDisplaceAim=False
-     bUseMotionBlur=False
-     FlashScale=0.000000
      VehicleDamageScaling=0.500000
      InvasionDamageScaling=1.000000
 }

@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for the Fifty-9 Machine Pistol
+// Primaryfire class for the Fifty-9 SMG
 //
 // by Nolan "Dark Carnivour" Richert.
 // Copyright(c) 2007 RuneStorm. All Rights Reserved.
@@ -33,9 +33,9 @@ function EjectBrass()
 	if (BrassActor != None)
 	{
 		BrassActor.bHidden=true;
-		Fifty9MachinePistol(Weapon).UziBrassList.length = Fifty9MachinePistol(Weapon).UziBrassList.length + 1;
-		Fifty9MachinePistol(Weapon).UziBrassList[Fifty9MachinePistol(Weapon).UziBrassList.length-1].Actor = BrassActor;
-		Fifty9MachinePistol(Weapon).UziBrassList[Fifty9MachinePistol(Weapon).UziBrassList.length-1].KillTime = level.TimeSeconds + 0.2;
+		Fifty9SMG(Weapon).UziBrassList.length = Fifty9SMG(Weapon).UziBrassList.length + 1;
+		Fifty9SMG(Weapon).UziBrassList[Fifty9SMG(Weapon).UziBrassList.length-1].Actor = BrassActor;
+		Fifty9SMG(Weapon).UziBrassList[Fifty9SMG(Weapon).UziBrassList.length-1].KillTime = level.TimeSeconds + 0.2;
 	}
 }
 
@@ -56,13 +56,13 @@ defaultproperties
      Damage=22.000000
      DamageHead=44.000000
      DamageLimb=22.000000
-     DamageType=Class'BallisticProV55.DT_Fifty9SMG'
-     DamageTypeHead=Class'BallisticProV55.DT_Fifty9SMGHead'
-     DamageTypeArm=Class'BallisticProV55.DT_Fifty9SMG'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.900000,Radius=32.000000,Pitch=1.000000)
+     DamageType=Class'BallisticProV55.DT_Fifty9Body'
+     DamageTypeHead=Class'BallisticProV55.DT_Fifty9Head'
+     DamageTypeArm=Class'BallisticProV55.DT_Fifty9Body'
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryRifle',Volume=0.900000,Radius=32.000000,Pitch=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.230000
-     BrassClass=Class'BallisticProV55.Brass_Fifty_SMG'
+     BrassClass=Class'BallisticProV55.Brass_Fifty9SMG'
      BrassOffset=(X=-38.750000,Y=-2.500000,Z=2.00000)
      AimedFireAnim="SightFire"
      RecoilPerShot=160.000000
@@ -71,10 +71,10 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0,OutVal=1),(InVal=0.240000,OutVal=1),(InVal=0.350000,OutVal=1.500000),(InVal=0.660000,OutVal=2.250000),(InVal=1.000000,OutVal=3.500000)))
      XInaccuracy=64.000000
      YInaccuracy=64.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.UZI.UZI-Fire',Volume=0.450000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.Fifty-9.Fifty-9-Fire',Volume=0.450000,Radius=32.000000,Pitch=1.000000)
      FireRate=0.073000
 	 bPawnRapidFireAnim=True 
-     AmmoClass=Class'BallisticProV55.Ammo_Fifty_SMG'
+     AmmoClass=Class'BallisticProV55.Ammo_Fifty9SMG'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

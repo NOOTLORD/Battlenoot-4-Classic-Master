@@ -12,7 +12,7 @@ defaultproperties
 {
      StartVelocity=(Y=30.000000,Z=60.000000)
      HitSoundVolume=0.140000
-     StaticMesh=StaticMesh'BallisticProStatic2.Brass.EmptyPistolRound'
+     StaticMesh=StaticMesh'BallisticProStatic.Effects.EmptyPistolRound'
      DrawScale=0.090000
      DrawScale3D=(X=0.450000,Y=0.750000,Z=0.750000)
 }

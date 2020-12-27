@@ -37,6 +37,6 @@ defaultproperties
 {
      bRandomRotate=False
      DrawScaleVariance=0.050000
-     ProjTexture=Texture'BallisticEffects2.Decals.KnifeCutWood'
+     ProjTexture=Texture'BallisticProEffectsTex.Decals.KnifeCutWood'
      DrawScale=0.200000
 }

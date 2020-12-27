@@ -9,7 +9,7 @@ class LaserActor extends Actor;
 defaultproperties
 {
      DrawType=DT_StaticMesh
-     StaticMesh=StaticMesh'BallisticProStatic2.Lasers.LaserHex'
+     StaticMesh=StaticMesh'BallisticProStatic.Effects.LaserHex'
      bHidden=True
      bAcceptsProjectors=False
      RemoteRole=ROLE_None

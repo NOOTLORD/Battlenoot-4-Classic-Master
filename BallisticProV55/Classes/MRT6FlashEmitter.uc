@@ -45,7 +45,7 @@ simulated event PostBeginPlay()
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=5.000000)
          StartSizeRange=(X=(Min=1.000000,Max=1.000000))
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects.Particles.Smoke6'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke6'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.800000,Max=1.200000)
          SpawnOnTriggerRange=(Min=300.000000,Max=700.000000)
@@ -81,7 +81,7 @@ defaultproperties
          SizeScale(2)=(RelativeTime=1.000000,RelativeSize=4.000000)
          StartSizeRange=(X=(Min=3.000000,Max=4.000000),Y=(Min=3.000000,Max=4.000000),Z=(Min=3.000000,Max=4.000000))
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects2.Particles.SmokeWisp-Alpha'
+         Texture=Texture'BallisticProEffectsTex.Particles.SmokeWisp-Alpha'
          TextureUSubdivisions=4
          TextureVSubdivisions=2
          SecondsBeforeInactive=0.000000
@@ -93,7 +93,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'BallisticProV55.MRT6FlashEmitter.SpriteEmitter37'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter10
-         StaticMesh=StaticMesh'BallisticProStatic2.MRT6.MRT6MuzzleFlash'
+         StaticMesh=StaticMesh'BallisticProStatic.Effects.MRT6-MuzzleFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True
@@ -138,7 +138,7 @@ defaultproperties
          StartLocationRange=(X=(Min=16.000000,Max=16.000000))
          StartSizeRange=(X=(Min=22.500000,Max=22.500000),Y=(Min=50.000000,Max=50.000000),Z=(Min=50.000000,Max=50.000000))
          DrawStyle=PTDS_Brighten
-         Texture=Texture'BallisticEffects.Particles.FlareB1'
+         Texture=Texture'BallisticProEffectsTex.Particles.FlareB1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.400000,Max=0.400000)
          SpawnOnTriggerRange=(Min=1.000000,Max=1.000000)
@@ -164,7 +164,7 @@ defaultproperties
          MaxParticles=20
          StartSizeRange=(X=(Min=2.000000,Max=2.500000),Y=(Min=2.000000,Max=2.500000),Z=(Min=2.000000,Max=2.500000))
          DrawStyle=PTDS_Brighten
-         Texture=Texture'BallisticEffects.Particles.Smoke3'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke3'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=2.000000,Max=2.000000)
          SpawnOnTriggerRange=(Min=2.000000,Max=2.000000)
@@ -192,7 +192,7 @@ defaultproperties
          MaxParticles=20
          StartSpinRange=(X=(Min=0.250000,Max=0.250000))
          StartSizeRange=(X=(Min=7.500000,Max=10.000000),Y=(Min=7.500000,Max=10.000000),Z=(Min=7.500000,Max=10.000000))
-         Texture=Texture'BallisticWeapons2.Effects.SparkA1'
+         Texture=Texture'BallisticProEffectsTex.Effects.SparkA1'
          TextureUSubdivisions=2
          TextureVSubdivisions=2
          SecondsBeforeInactive=0.000000

@@ -12,30 +12,20 @@ class MD24Attachment extends HandgunAttachment;
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashMode=MU_Primary  
      FlashScale=0.200000
      FlashBone="Muzzle"	 
-	 LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Bullet'	 
-     BrassClass=Class'BallisticProV55.Brass_Pistol'
-     BrassMode=MU_Primary
-     InstantMode=MU_Primary
-     TrackAnimMode=MU_None
-     TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
-     TracerMode=MU_Primary
-     TracerChance=1.000000	 
-     WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Primary	 
-     FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-     FlyByMode=MU_Primary 
+     BrassClass=Class'BallisticProV55.Brass_Pistol'	 
+     TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'	 
+     WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet' 
      ReloadAnim="Reload_Pistol"
      CockingAnim="Cock_RearPull"
      ReloadAnimRate=1.400000
      CockAnimRate=0.800000
      bRapidFire=True
-     Mesh=SkeletalMesh'BallisticAnims1.MD24_TP'
+     Mesh=SkeletalMesh'BallisticProAnims.MD24_TP'
      DrawScale=0.250000
-	 Skins(0)=Texture'BallisticWeapons1.MD24.MD24_Main'
-	 Skins(1)=Texture'BallisticWeapons1.MD24.MD24_Clip'
+	 Skins(0)=Texture'BallisticProTex.MD24.MD24-Main'
+	 Skins(1)=Texture'BallisticProTex.MD24.MD24-Clip'
 }
 

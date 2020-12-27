@@ -15,7 +15,7 @@ defaultproperties
      DisableDGV(1)=1
      bAutoInit=False
      Begin Object Class=MeshEmitter Name=MeshEmitter4
-         StaticMesh=StaticMesh'BallisticProStatic2.G5.BazookaBackFlash'
+         StaticMesh=StaticMesh'BallisticProStatic.Effects.BazookaBackFlash'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True
@@ -58,7 +58,7 @@ defaultproperties
          StartLocationOffset=(X=-40.000000)
          StartSizeRange=(X=(Min=150.000000,Max=150.000000))
          DrawStyle=PTDS_Brighten
-         Texture=Texture'BallisticEffects.Particles.FlareB1'
+         Texture=Texture'BallisticProEffectsTex.Particles.FlareB1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=1.000000,Max=1.000000)
          SpawnOnTriggerRange=(Min=1.000000,Max=1.000000)
@@ -93,7 +93,7 @@ defaultproperties
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
          StartSizeRange=(X=(Min=50.000000,Max=50.000000))
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects.Particles.Smoke6'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke6'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=2.500000,Max=2.500000)
          SpawnOnTriggerRange=(Min=120.000000,Max=120.000000)

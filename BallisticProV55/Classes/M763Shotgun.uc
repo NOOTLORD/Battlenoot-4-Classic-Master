@@ -147,19 +147,19 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticProUI.Icons.SmallIcon_M763'
+     BigIconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_M763'
      BigIconCoords=(Y1=35,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=12
      SpecialInfo(0)=(Info="120.0;20.0;0.7;50.0;0.0;0.5;0.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     BringUpSound=(Sound=Sound'BallisticProSounds.M763.M763-Pullout',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticProSounds.M763.M763-Putaway',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=7
      CockAnimRate=1.700000
-     CockSound=(Sound=Sound'BallisticSounds2.M763.M763Cock',Volume=0.400000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProSounds.M763.M763-Cock',Volume=0.400000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.100000
-     ClipInSound=(Sound=Sound'BallisticSounds2.M763.M763LoadShell1',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProSounds.M763.M763-ShellIn',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=9.000000
      WeaponModes(0)=(ModeName="Pump-Action",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -208,15 +208,15 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.750000
      CurrentRating=0.750000
-     AmmoClass(0)=BallisticProV55.Ammo_M763_Shotgun'
-     AmmoClass(1)=BallisticProV55.Ammo_M763_Shotgun'	 
+     AmmoClass(0)=BallisticProV55.Ammo_M763Shotgun'
+     AmmoClass(1)=BallisticProV55.Ammo_M763Shotgun'	 
      Description="M763"
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1
      PlayerViewOffset=(X=4.000000,Y=12.000000,Z=-12.000000)
      AttachmentClass=Class'BallisticProV55.M763Attachment'
-     IconMaterial=Texture'BallisticProUI.Icons.BigIcon_M763'
+     IconMaterial=Texture'BallisticProUITex.Icons.BigIcon_M763'
      IconCoords=(X2=127,Y2=31)
      ItemName="M763"						  
      LightType=LT_Pulse
@@ -225,9 +225,9 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims2.M763_FP'
+     Mesh=SkeletalMesh'BallisticProAnims.M763_FP'
      DrawScale=0.500000
-	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-	 Skins(1)=Texture'BallisticWeapons2.M763.M763Shotgun'
-	 Skins(2)=Texture'BallisticWeapons2.M763.M763Small'	
+	 Skins(0)=Shader'BallisticProTex.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticProTex.M763.M763-Main'
+	 Skins(2)=Texture'BallisticProTex.M763.M763-Shell'	
 }

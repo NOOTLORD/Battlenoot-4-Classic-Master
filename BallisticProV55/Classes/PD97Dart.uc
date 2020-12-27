@@ -1,5 +1,5 @@
 //=============================================================================
-// Dart class for the PD-97 Bloodhound
+// Dart class for the PD-97 Pistol
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -12,7 +12,7 @@ class PD97Dart extends BallisticProjectile;
 var Actor StuckActor;
 var bool bPlaced;
 
-var PD97Bloodhound Master;
+var PD97Pistol Master;
 
 simulated event ProcessTouch(Actor Other, vector HitLocation )
 {
@@ -94,7 +94,7 @@ defaultproperties
      Speed=15000.000000
      Damage=3.000000
      MyDamageType=Class'BallisticProV55.DT_PD97Dart'
-     StaticMesh=StaticMesh'BallisticProStatic1.OA-SMG.OA-SMG_Dart'
+     StaticMesh=StaticMesh'BallisticProStatic.XMK5.DartProj'
      LifeSpan=2.500000
      bIgnoreTerminalVelocity=True
 }

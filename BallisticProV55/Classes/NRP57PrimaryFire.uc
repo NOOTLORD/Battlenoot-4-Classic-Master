@@ -15,10 +15,10 @@ defaultproperties
      BrassClass=Class'BallisticProV55.Brass_Grenade'
      BrassBone="tip"
      BrassOffset=(X=-2.500000,Y=20.000000)
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.NRP57.NRP57-Throw',Volume=0.500000,Radius=32.000000,bAtten=True)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.NRP57.NRP57-Throw',Volume=0.500000,Radius=32.000000,bAtten=True)
      PreFireAnim="PrepThrow"
      FireAnim="Throw"
-     AmmoClass=Class'BallisticProV55.Ammo_NRP57_Grenade'
+     AmmoClass=Class'BallisticProV55.Ammo_NRP57Grenade'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

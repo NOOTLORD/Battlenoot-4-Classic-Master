@@ -61,13 +61,13 @@ defaultproperties
      Damage=13.000000
      DamageHead=20.000000
      DamageLimb=13.000000
-     DamageType=Class'BallisticProV55.DT_MRS138Shotgun'
-     DamageTypeHead=Class'BallisticProV55.DT_MRS138ShotgunHead'
-     DamageTypeArm=Class'BallisticProV55.DT_MRS138Shotgun'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.700000,Radius=32.000000,Pitch=1.000000) 					
+     DamageType=Class'BallisticProV55.DT_MRS138Body'
+     DamageTypeHead=Class'BallisticProV55.DT_MRS138Head'
+     DamageTypeArm=Class'BallisticProV55.DT_MRS138Body'
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryRifle',Volume=0.700000,Radius=32.000000,Pitch=1.000000) 					
      MuzzleFlashClass=Class'BallisticProV55.MRS138FlashEmitter'
      FlashScaleFactor=0.400000
-     BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
+     BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
      BrassOffset=(X=18.000000,Y=-7.500000,Z=16.000000)
      RecoilPerShot=512.000000
      VelocityRecoil=0.000000 	 
@@ -75,10 +75,10 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=256.000000
      YInaccuracy=256.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-Fire',Volume=1.500000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.MRS138.MRS138-Fire',Volume=1.500000,Radius=32.000000,Pitch=1.000000)
      FireAnim="FireCombined"
      FireRate=0.500000
-     AmmoClass=Class'BallisticProV55.Ammo_MRS138_Shotgun'
+     AmmoClass=Class'BallisticProV55.Ammo_MRS138Shotgun'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

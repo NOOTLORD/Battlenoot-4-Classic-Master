@@ -12,23 +12,16 @@ class MRS138Attachment extends BallisticShotgunAttachment;
 
 defaultproperties
 {
-     FireClass=Class'BallisticProV55.MRS138PrimaryFire'
      MuzzleFlashClass=Class'BallisticProV55.MRS138FlashEmitter'
-     FlashMode=MU_Primary
      FlashScale=0.800000	 
-     LightMode=MU_Primary
      ImpactManager=Class'BallisticProV55.IM_Shell'
-     BrassClass=Class'BallisticProV55.Brass_MRS138_Shotgun'
-     BrassMode=MU_Primary
-     InstantMode=MU_Primary
-     TrackAnimMode=MU_None
+     BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
      TracerClass=Class'BallisticProV55.TraceEmitter_Shotgun'
-     TracerMode=MU_Primary	 	 
-	 TracerChance=1.000000
+     WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'	 
      SingleFireAnim="RifleHip_FireCock"
      SingleAimedFireAnim="RifleAimed_FireCock"
-     Mesh=SkeletalMesh'BallisticAnims1.MRS138_TP'
+     Mesh=SkeletalMesh'BallisticProAnims.MRS-138_TP'
      DrawScale=0.080000
-	 Skins(0)=Texture'BallisticWeapons1.MRS138.MRS138Skin'
-	 Skins(1)=Texture'BallisticWeapons1.MRS138.MRS138HeatShield'
+	 Skins(0)=Texture'BallisticProTex.MRS-138.MRS-138-Main'
+	 Skins(1)=Texture'BallisticProTex.MRS-138.MRS-138-Misc'
 }

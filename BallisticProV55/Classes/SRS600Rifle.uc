@@ -59,19 +59,19 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000
-     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_SRS600'
+     BigIconMaterial=Texture'BallisticProUITex.Icons.BigIcon_SRS600'
      BigIconCoords=(Y2=240)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=14	 
      SpecialInfo(0)=(Info="240.0;20.0;0.9;75.0;1.0;0.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.R78.R78Pullout',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Sound=Sound'BallisticSounds2.R78.R78Putaway',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     BringUpSound=(Sound=Sound'BallisticProSounds.R78A1.R78A1-Pullout',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticProSounds.R78A1.R78A1-Putaway',Volume=0.375000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=20
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-Cock',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipHitSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipHit',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipOutSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipOut',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipInSound=(Sound=Sound'BallisticSounds1.SRS600.SRS-ClipIn',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProSounds.SRS-600.SRS-600-Cock',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipHitSound=(Sound=Sound'BallisticProSounds.SRS-600.SRS-600-ClipHit',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticProSounds.SRS-600.SRS-600-ClipOut',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProSounds.SRS-600.SRS-600-ClipIn',Volume=0.875000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=50.000000 
      WeaponModes(0)=(ModeName="Semi-Auto",ModeID="WM_SemiAuto",)
      WeaponModes(1)=(bUnavailable=True)
@@ -113,15 +113,15 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.80000
      CurrentRating=0.80000
-     AmmoClass(0)=Class'BallisticProV55.Ammo_SRS600_Rifle'	
-     AmmoClass(1)=Class'BallisticProV55.Ammo_SRS600_Rifle'		 
+     AmmoClass(0)=Class'BallisticProV55.Ammo_SRS600Rifle'	
+     AmmoClass(1)=Class'BallisticProV55.Ammo_SRS600Rifle'		 
      Description="SRS-600"
      CustomCrossHairScale=0.000000								  
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1 
      PlayerViewOffset=(X=5.000000,Y=9.000000,Z=-10.000000)
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
-     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_SRS600'
+     IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_SRS600'
      IconCoords=(X2=127,Y2=31)
      ItemName="SRS-600"
      LightType=LT_Pulse
@@ -130,9 +130,9 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims1.SRS600_FP'
+     Mesh=SkeletalMesh'BallisticProAnims.SRS-600_FP'
      DrawScale=0.500000
-     Skins(0)=Texture'BallisticWeapons1.SRS600.SRS-600main'
-     Skins(1)=Texture'BallisticWeapons1.SRS600.SRS600Ammo'
-     Skins(2)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
+     Skins(0)=Texture'BallisticProTex.SRS-600.SRS-600-Main'
+     Skins(1)=Texture'BallisticProTex.SRS-600.SRS-600-Clip'
+     Skins(2)=Shader'BallisticProTex.Hands.Hands-Shiny'
 }

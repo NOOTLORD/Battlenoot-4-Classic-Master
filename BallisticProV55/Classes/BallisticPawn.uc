@@ -41,7 +41,7 @@
 //=============================================================================
 class BallisticPawn extends xPawn;
 
-#EXEC OBJ LOAD File="BallisticThird.ukx"
+#EXEC OBJ LOAD File="BallisticProThird.ukx"
 
 var   byte				DoubleJumpsLeft;
 var   float				LastDoubleJumpTime;
@@ -113,7 +113,6 @@ var   vector			LastImpactLocation;	// Location of last impact
 
 // New Bw style DeRes vars -------------------------------
 var Projector			NewDeResDecal;		// Projector used to great symbol decal on teh floor under the corpse
-var Sound				NewDeResSound;		// DeRes sound
 var array<Shader>		NewDeResShaders;	// Shaders used to set opacity
 var array<FinalBlend>	NewDeResFinalBlends;// FinalBlends' alpha ref is used to create the dissolving effect
 // -------------------------------------------------------
@@ -496,12 +495,12 @@ simulated function AssignInitialPose()
 		}		
 		//log( "Skeleton "$recx.Skeleton$" Species "$recx.Species );
 		if (  recx.Species.default.SpeciesName == "Alien" )
-			 LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdAlien');
+			 LinkSkelAnim(MeshAnimation'BallisticProThird.Ballistic3rdAlien');
 		else if (  recx.Species.default.SpeciesName == "Juggernaut" )
-			 LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rd');														 
+			 LinkSkelAnim(MeshAnimation'BallisticProThird.Ballistic3rd');														 
 		else if ( recx.Sex ~= "Female" && PlayerReplicationInfo.CharacterName != "July")
-			LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rdFemale');	 
-		else LinkSkelAnim(MeshAnimation'BallisticThird.Ballistic3rd');
+			LinkSkelAnim(MeshAnimation'BallisticProThird.Ballistic3rdFemale');	 
+		else LinkSkelAnim(MeshAnimation'BallisticProThird.Ballistic3rd');
 	}
 }
 
@@ -1729,9 +1728,7 @@ simulated function StartDeRes()
 
 	// Wicked new BW DeRes ---------
 	Spawn(class'BWDeresFX',self,, Location);
-	NewDeResDecal = Spawn(class'BWDeResDecal', self, , Location, rot(-16384,0,0));
-	PlaySound(NewDeResSound, SLOT_Interact, 1.0);
-
+	NewDeResDecal = Spawn(class'BWDeResDecal', self, , Location, rot(-16384,0,0));	
 
 	for (i=0;i<Skins.Length;i++)
 	{
@@ -2473,9 +2470,8 @@ defaultproperties
      HighImpactVelocity=1000.000000
      LowImpactVelocity=500.000000
      TimeBetweenImpacts=1.000000
-     NewDeResSound=SoundGroup'BallisticSounds2.Misc.DeRes'
      MeleeAnim="Melee_Smack" 
-     UDamageSound=Sound'BallisticSounds2.Udamage.UDamageFire'
+     UDamageSound=Sound'BallisticProSounds.Udamage.UDamage-Fire'
 	 GruntVolume=0.070000
      FootstepVolume=0.125000
      DeResTime=2.000000

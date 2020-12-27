@@ -36,7 +36,7 @@ defaultproperties
          StartSizeRange=(X=(Min=1.000000,Max=3.000000),Y=(Min=1.000000,Max=3.000000),Z=(Min=1.000000,Max=3.000000))
          InitialParticlesPerSecond=50.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticProBlood.Sprites.LimbBits'
+         Texture=Texture'BallisticProBloodTex.Sprites.LimbBits'
          TextureUSubdivisions=4
          TextureVSubdivisions=2
          SecondsBeforeInactive=0.000000
@@ -72,7 +72,7 @@ defaultproperties
          StartSizeRange=(X=(Min=10.000000,Max=15.000000),Y=(Min=10.000000,Max=15.000000),Z=(Min=10.000000,Max=15.000000))
          InitialParticlesPerSecond=400.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects.Particles.Smoke6'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke6'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=1.500000,Max=2.000000)
          StartVelocityRange=(X=(Min=-50.000000),Y=(Min=-10.000000,Max=10.000000),Z=(Max=30.000000))
@@ -100,7 +100,7 @@ defaultproperties
          StartSizeRange=(X=(Min=5.000000,Max=25.000000))
          InitialParticlesPerSecond=400.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticProBlood.Particles.BloodMistShot1'
+         Texture=Texture'BallisticProBloodTex.Particles.BloodMistShot1'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=0.500000,Max=0.500000)
          StartVelocityRange=(X=(Min=-100.000000,Max=-25.000000),Y=(Min=-10.000000,Max=10.000000),Z=(Min=-100.000000))
@@ -134,7 +134,7 @@ defaultproperties
          StartSizeRange=(X=(Min=5.000000,Max=10.000000),Y=(Min=5.000000,Max=10.000000),Z=(Min=5.000000,Max=10.000000))
          InitialParticlesPerSecond=20.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticWeapons2.Effects.SparkA1Alpha'
+         Texture=Texture'BallisticProEffectsTex.Effects.SparkA1Alpha'
          TextureUSubdivisions=2
          TextureVSubdivisions=2
          SecondsBeforeInactive=0.000000
@@ -166,7 +166,7 @@ defaultproperties
          StartSizeRange=(X=(Min=5.000000,Max=10.000000),Y=(Min=5.000000,Max=10.000000),Z=(Min=5.000000,Max=10.000000))
          InitialParticlesPerSecond=200.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticWeapons2.Effects.SparkA1Alpha'
+         Texture=Texture'BallisticProEffectsTex.Effects.SparkA1Alpha'
          TextureUSubdivisions=2
          TextureVSubdivisions=2
          SecondsBeforeInactive=0.000000

@@ -10,13 +10,6 @@ class MRS138Shotgun extends BallisticProShotgun;
 
 var name			ShellBone;
 
-// Animation notify for when cocking action starts. Used to time sounds
-simulated function Notify_CockAimed()
-{
-	bNeedCock = False;
-	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
-}
-
 simulated function Notify_Hideshell()
 {
 	SetBoneScale(0,0.0,ShellBone);
@@ -25,6 +18,13 @@ simulated function Notify_Hideshell()
 simulated function Notify_Showshell()
 {
 	SetBoneScale(0,1.0,ShellBone);
+}
+
+// Animation notify for when cocking action starts. Used to time sounds
+simulated function Notify_CockAimed()
+{
+	bNeedCock = False;
+	PlayOwnedSound(CockSound.Sound,CockSound.Slot,CockSound.Volume,CockSound.bNoOverride,CockSound.Radius,CockSound.Pitch,CockSound.bAtten);
 }
 
 // AI Interface =====
@@ -71,19 +71,19 @@ defaultproperties
      PlayerSpeedFactor=1.000000
      PlayerJumpFactor=1.000000
      AIReloadTime=1.000000	 
-     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_MRS138'
+     BigIconMaterial=Texture'BallisticProUITex.Icons.BigIcon_MRS138'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
      InventorySize=12	 
      SpecialInfo(0)=(Info="240.0;25.0;0.5;40.0;0.0;1.0;-999.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.M763.M763Pullout',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Sound=Sound'BallisticSounds2.M763.M763Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     BringUpSound=(Sound=Sound'BallisticProSounds.M763.M763-Pullout',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticProSounds.M763.M763-Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=5
      CockAnimRate=1.200000
-     CockSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-Cock',Volume=0.850000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProSounds.MRS138.MRS138-Cock',Volume=0.850000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.500000
-     ClipInSound=(Sound=Sound'BallisticSounds1.MRS38.RSS-ShellIn',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProSounds.MRS138.MRS138-ShellIn',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=28.000000
      bCockOnEmpty=True
      WeaponModes(0)=(ModeName="Pump-Action",ModeID="WM_SemiAuto",)
@@ -131,15 +131,15 @@ defaultproperties
      FireModeClass(1)=Class'BCoreProV55.BallisticScopeFire'
      AIRating=0.800000
      CurrentRating=0.800000
-     AmmoClass(0)=Class'BallisticProV55.Ammo_MRS138_Shotgun'
-     AmmoClass(1)=Class'BallisticProV55.Ammo_MRS138_Shotgun'	 
+     AmmoClass(0)=Class'BallisticProV55.Ammo_MRS138Shotgun'
+     AmmoClass(1)=Class'BallisticProV55.Ammo_MRS138Shotgun'	 
      Description="MRS-138"
      CustomCrossHairScale=0.000000
      CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross1"
      InventoryGroup=1
      PlayerViewOffset=(X=7.500000,Y=10.000000,Z=-14.000000)
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'
-     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_MRS138'
+     IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_MRS138'
      IconCoords=(X2=127,Y2=31)
      ItemName="MRS-138"
      LightType=LT_Pulse
@@ -148,10 +148,10 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims1.MRS138_FP'
+     Mesh=SkeletalMesh'BallisticProAnims.MRS-138_FP'
      DrawScale=0.400000	 	 
-	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-	 Skins(1)=Texture'BallisticWeapons1.MRS138.MRS138Skin'
-	 Skins(2)=Texture'BallisticWeapons1.MRS138.MRS138HeatShield'
-	 Skins(3)=Texture'BallisticEffects.Brass.MRS138Shell'
+	 Skins(0)=Shader'BallisticProTex.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticProTex.MRS-138.MRS-138-Main'
+	 Skins(2)=Texture'BallisticProTex.MRS-138.MRS-138-Misc'
+	 Skins(3)=Texture'BallisticProEffectsTex.Brass.MRS138-Shell'
 }

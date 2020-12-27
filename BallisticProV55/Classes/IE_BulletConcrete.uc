@@ -47,7 +47,7 @@ defaultproperties
          StartSizeRange=(X=(Min=20.000000,Max=40.000000),Y=(Min=20.000000,Max=40.000000),Z=(Min=20.000000,Max=40.000000))
          InitialParticlesPerSecond=10000.000000
          DrawStyle=PTDS_AlphaBlend
-         Texture=Texture'BallisticEffects.Particles.Smoke6'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke6'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=1.000000,Max=1.000000)
          StartVelocityRange=(X=(Min=60.000000,Max=100.000000),Y=(Min=-20.000000,Max=20.000000),Z=(Min=-5.000000,Max=20.000000))
@@ -56,7 +56,7 @@ defaultproperties
      Emitters(0)=SpriteEmitter'BallisticProV55.IE_BulletConcrete.SpriteEmitter27'
 
      Begin Object Class=MeshEmitter Name=MeshEmitter14
-         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA3'
+         StaticMesh=StaticMesh'BallisticProStatic.Effects.VolumetricA3'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True
@@ -103,7 +103,7 @@ defaultproperties
          SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.000000)
          StartSizeRange=(X=(Min=5.000000,Max=12.000000),Y=(Min=5.000000,Max=12.000000),Z=(Min=5.000000,Max=12.000000))
          InitialParticlesPerSecond=50000.000000
-         Texture=Texture'BallisticWeapons2.Effects.SparkA1'
+         Texture=Texture'BallisticProEffectsTex.Effects.SparkA1'
          TextureUSubdivisions=2
          TextureVSubdivisions=2
          LifetimeRange=(Min=0.300000,Max=0.300000)

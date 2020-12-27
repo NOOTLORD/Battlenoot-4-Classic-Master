@@ -12,7 +12,7 @@ defaultproperties
 {
      HitEffects(0)=Class'BallisticProV55.IE_FireExplosion'
      HitDecals(0)=Class'BallisticProV55.AD_FireExplosion'
-     HitSounds(0)=Sound'BallisticSounds1.FP7.FP7Ignition'
+     HitSounds(0)=Sound'BallisticProSounds.FP7.FP7-Ignition'
      HitSoundVolume=1.000000
      HitSoundRadius=1024.000000
      EffectBackOff=32.000000

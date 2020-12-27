@@ -7,6 +7,6 @@ class AD_ShellMetal extends AD_ImpactDecal
 defaultproperties
 {
      DrawScaleVariance=0.100000
-     ProjTexture=Texture'BallisticEffects2.Decals.Shell_Metal'
+     ProjTexture=Texture'BallisticProEffectsTex.Decals.Shell_Metal'
      DrawScale=0.100000
 }

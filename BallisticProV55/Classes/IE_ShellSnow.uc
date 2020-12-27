@@ -11,7 +11,7 @@ defaultproperties
 {
      DisableDGV(0)=1
      Begin Object Class=MeshEmitter Name=MeshEmitter1
-         StaticMesh=StaticMesh'BallisticProStatic2.Effects.VolumetricA2'
+         StaticMesh=StaticMesh'BallisticProStatic.Effects.VolumetricA2'
          UseMeshBlendMode=False
          RenderTwoSided=True
          UseParticleColor=True
@@ -58,7 +58,7 @@ defaultproperties
          StartSizeRange=(X=(Min=15.000000,Max=20.000000),Y=(Min=15.000000,Max=20.000000),Z=(Min=15.000000,Max=20.000000))
          InitialParticlesPerSecond=50000.000000
          DrawStyle=PTDS_Brighten
-         Texture=Texture'BallisticEffects.Particles.Smoke3'
+         Texture=Texture'BallisticProEffectsTex.Particles.Smoke3'
          SecondsBeforeInactive=0.000000
          LifetimeRange=(Min=1.000000,Max=1.000000)
          StartVelocityRange=(X=(Max=15.000000),Y=(Min=-5.000000,Max=5.000000),Z=(Min=-5.000000,Max=5.000000))

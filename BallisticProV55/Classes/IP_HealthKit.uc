@@ -19,10 +19,10 @@ defaultproperties
      HealingAmount=50
      bAmbientGlow=False
      PickupMessage="Recieved health +"
-     PickupSound=Sound'BallisticSounds2.Health.HealthKitPickup'
+     PickupSound=Sound'BallisticProSounds.Pickups.HealthKit-Pickup'
      PickupForce="HealthPack"
      DrawType=DT_StaticMesh
-     StaticMesh=StaticMesh'BallisticProStatic1.Health.HealthKit'
+     StaticMesh=StaticMesh'BallisticProStatic.Health.HealthKit'
      AmbientGlow=0
      ScaleGlow=0.600000
      TransientSoundVolume=0.700000

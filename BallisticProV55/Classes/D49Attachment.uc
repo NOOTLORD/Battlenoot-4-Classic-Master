@@ -55,26 +55,16 @@ simulated function EjectBrass(byte Mode);
 defaultproperties
 {
      MuzzleFlashClass=Class'BallisticProV55.D49FlashEmitter'
-     FlashMode=MU_Primary 
-     FlashScale=0.300000	 
-     LightMode=MU_Primary
-     ImpactManager=Class'BallisticProV55.IM_Bullet'
-     BrassClass=Class'BallisticProV55.Brass_D49_Revolver'
-     BrassMode=MU_Primary	 
+     FlashScale=0.300000
+     ImpactManager=Class'BallisticProV55.IM_Bullet'	 
+     BrassClass=Class'BallisticProV55.Brass_D49Pistol'	 
      BrassBone="MagnumWhole"
-     InstantMode=MU_Primary
-     TrackAnimMode=MU_None
-     TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'
-     TracerMode=MU_Primary	 
-     TracerChance=1.000000
-     WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'
-     WaterTracerMode=MU_Primary
-     FlyBySound=(Sound=SoundGroup'BallisticSounds2.FlyBys.Bullet-Whizz',Volume=0.700000)
-     FlyByMode=MU_Primary
+     TracerClass=Class'BallisticProV55.TraceEmitter_Pistol'	 
+     WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'	 
 	 ReloadAnim="Reload_Pistol"
      ReloadAnimRate=0.350000
-     Mesh=SkeletalMesh'BallisticAnims2.D49_TP'
+     Mesh=SkeletalMesh'BallisticProAnims.D49_TP'
      DrawScale=0.125000
-	 Skins(0)=Texture'BallisticWeapons2.D49.D49RevolverSkin'
-	 Skins(1)=Texture'BallisticWeapons2.D49.D49ShellsSkin'
+	 Skins(0)=Texture'BallisticProTex.D49.D49-Main'
+	 Skins(1)=Texture'BallisticProTex.D49.D49-Shells'
 }

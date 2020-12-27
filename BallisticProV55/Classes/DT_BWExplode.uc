@@ -26,7 +26,7 @@ defaultproperties
      bDisplaceAim=False
      bUseMotionBlur=False
      FlashScale=0.000000	 
-     PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'
+     PawnDamageSounds(0)=SoundGroup'BallisticProSounds.Effects.Bullet-Flesh'
      GibPerterbation=0.500000
      KDamageImpulse=20000.000000
      VehicleDamageScaling=1.500000

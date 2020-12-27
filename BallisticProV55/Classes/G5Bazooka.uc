@@ -8,27 +8,27 @@
 //=============================================================================
 class G5Bazooka extends BallisticWeapon;
 
-#EXEC OBJ LOAD FILE=BallisticProUI.utx
+#EXEC OBJ LOAD FILE=BallisticProUITex.utx
 
 var() BUtil.FullSound	HatchSound;
 var   bool				bCamView;
-var   Pawn			Target;
-var   float			TargetTime;
-var() float			LockOnTime;
-var	  bool			bLockedOn, bLockedOld;
+var   Pawn			    Target;
+var   float			    TargetTime;
+var() float			    LockOnTime;
+var	  bool			    bLockedOn, bLockedOld;
 var() BUtil.FullSound	LockOnSound;
 var() BUtil.FullSound	LockOffSound;
-var() int		LaserChaosAimSpread, LaserAimSpread;
+var() int		        LaserChaosAimSpread, LaserAimSpread;
 
-var   Actor			CurrentRocket;			//Current rocket of interest. The rocket that can be used as camera or directed with laser
+var   Actor			    CurrentRocket;			//Current rocket of interest. The rocket that can be used as camera or directed with laser
 
-var   float			LastSendTargetTime;
-var   vector		TargetLocation;
-var   bool			bLaserOn, bLaserOld;
-var   LaserActor	Laser;
-var() Sound			LaserOnSound;
-var() Sound			LaserOffSound;
-var   Emitter		LaserDot;
+var   float			    LastSendTargetTime;
+var   vector		    TargetLocation;
+var   bool			    bLaserOn, bLaserOld;
+var   LaserActor	    Laser;
+var() Sound			    LaserOnSound;
+var() Sound			    LaserOffSound;
+var   Emitter		    LaserDot;
 
 replication
 {
@@ -441,8 +441,8 @@ simulated event DrawTargeting (Canvas C)
 	C.SetPos(V.X, V.Y);
 	V2 = C.WorldToScreen(Target.Location + Y*Target.CollisionRadius - Z*Target.CollisionHeight);
 	C.SetDrawColor(255,255,255,255);
-//	C.DrawTile(Texture'BallisticProUI.G5.G5Targetbox', V2.X - V.X, V2.Y - V.Y, 0, 0, 1, 1);
-	C.DrawTileStretched(Texture'BallisticProUI.G5.G5Targetbox', (V2.X - V.X) + 32*ScaleFactor, (V2.Y - V.Y) + 32*ScaleFactor);
+//	C.DrawTile(Texture'BallisticProUITex.G5.G5Targetbox', V2.X - V.X, V2.Y - V.Y, 0, 0, 1, 1);
+	C.DrawTileStretched(Texture'BallisticProUITex.G5.G5Targetbox', (V2.X - V.X) + 32*ScaleFactor, (V2.Y - V.Y) + 32*ScaleFactor);
 }
 
 simulated function KillLaserDot()
@@ -730,15 +730,15 @@ function float SuggestDefenseStyle()	{	return -0.9;	}
 
 defaultproperties
 {
-     HatchSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=1.000000)
+     HatchSound=(Sound=Sound'BallisticProSounds.G5.G5-Lever',Volume=1.000000)
      LockOnTime=1.500000
-     LockOnSound=(Sound=Sound'BallisticSounds2.G5.G5-TargetOn',Volume=0.500000,Pitch=1.000000)
-     LockOffSound=(Sound=Sound'BallisticSounds2.G5.G5-TargetOff',Volume=0.500000,Pitch=1.000000)
+     LockOnSound=(Sound=Sound'BallisticProSounds.G5.G5-TargetOn',Volume=0.500000,Pitch=1.000000)
+     LockOffSound=(Sound=Sound'BallisticProSounds.G5.G5-TargetOff',Volume=0.500000,Pitch=1.000000)
      LaserChaosAimSpread=256
      PlayerSpeedFactor=0.900000
      PlayerJumpFactor=0.900000
      AIReloadTime=4.000000
-     BigIconMaterial=Texture'BallisticProUI.Icons.BigIcon_G5'
+     BigIconMaterial=Texture'BallisticProUITex.Icons.BigIcon_G5'
      BigIconCoords=(Y1=36,Y2=230)
      BCRepClass=Class'BallisticProV55.BallisticReplicationInfo'
 	 InventorySize=24	 
@@ -747,16 +747,16 @@ defaultproperties
      bWT_Projectile=True
      bWT_Super=True
      SpecialInfo(0)=(Info="300.0;35.0;1.0;80.0;0.8;0.0;1.0")
-     BringUpSound=(Sound=Sound'BallisticSounds2.G5.G5-Pullout',Volume=0.370000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     PutDownSound=(Sound=Sound'BallisticSounds2.G5.G5-Putaway',Volume=0.370000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     BringUpSound=(Sound=Sound'BallisticProSounds.G5.G5-Pullout',Volume=0.370000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     PutDownSound=(Sound=Sound'BallisticProSounds.G5.G5-Putaway',Volume=0.370000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=2
      CockAnimRate=1.250000
-     CockSound=(Sound=Sound'BallisticSounds2.G5.G5-Lever',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     CockSound=(Sound=Sound'BallisticProSounds.G5.G5-Lever',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      bCockOnEmpty=False
      ReloadAnim="ReloadLoop"
      ReloadAnimRate=1.250000
-     ClipOutSound=(Sound=Sound'BallisticSounds2.G5.G5-Load',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
-     ClipInSound=(Sound=Sound'BallisticSounds2.G5.G5-LoadHatch',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipOutSound=(Sound=Sound'BallisticProSounds.G5.G5-Load',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
+     ClipInSound=(Sound=Sound'BallisticProSounds.G5.G5-LoadHatch',Volume=1.000000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ClipInFrame=60.000000	 
      WeaponModes(0)=(ModeName="Rocket")
      WeaponModes(1)=(bUnavailable=True)
@@ -772,9 +772,9 @@ defaultproperties
      ScopeXScale=1.333000
      ZoomInAnim="ZoomIn"
      ZoomOutAnim="ZoomOut"
-     ScopeViewTex=Texture'BallisticProUI.G5.G5ScopeView'
-     ZoomInSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomIn',Volume=0.500000,Pitch=1.000000)
-     ZoomOutSound=(Sound=Sound'BallisticSounds2.R78.R78ZoomOut',Volume=0.500000,Pitch=1.000000)
+     ScopeViewTex=Texture'BallisticProUITex.G5.G5ScopeView'
+     ZoomInSound=(Sound=Sound'BallisticProSounds.R78A1.R78A1-ZoomIn',Volume=0.500000,Pitch=1.000000)
+     ZoomOutSound=(Sound=Sound'BallisticProSounds.R78A1.R78A1-ZoomOut',Volume=0.500000,Pitch=1.000000)
      bNoCrosshairInScope=True	 
      bNoMeshInScope=True
 	 SightZoomFactor=0	 
@@ -812,8 +812,8 @@ defaultproperties
      FireModeClass(1)=Class'BallisticProV55.G5SecondaryFire'
      AIRating=0.800000
      CurrentRating=0.800000
-     AmmoClass(0)=Class'BallisticProV55.Ammo_G5_Bazooka'
-     AmmoClass(1)=Class'BallisticProV55.Ammo_G5_Bazooka'	 
+     AmmoClass(0)=Class'BallisticProV55.Ammo_G5Bazooka'
+     AmmoClass(1)=Class'BallisticProV55.Ammo_G5Bazooka'	 
      Description="G5 Bazooka"
      CenteredOffsetY=10.000000
      CenteredRoll=0
@@ -822,7 +822,7 @@ defaultproperties
      InventoryGroup=4
      PlayerViewOffset=(X=12.000000,Y=10.000000,Z=-6.000000)
      AttachmentClass=Class'BallisticProV55.G5Attachment'
-     IconMaterial=Texture'BallisticProUI.Icons.SmallIcon_G5'
+     IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_G5'
      IconCoords=(X2=127,Y2=31)
      ItemName="Bazooka"
      LightType=LT_Pulse
@@ -831,12 +831,12 @@ defaultproperties
      LightSaturation=150
      LightBrightness=130.000000
      LightRadius=3.000000
-     Mesh=SkeletalMesh'BallisticAnims2.G5_FP'
+     Mesh=SkeletalMesh'BallisticProAnims.G5_FP'
      DrawScale=0.300000
-	 Skins(0)=Shader'BallisticWeapons2.Hands.Hands-Shiny'
-	 Skins(1)=Texture'BallisticWeapons2.G5.G5Bazooka'
-	 Skins(2)=Texture'BallisticWeapons2.G5.G5Scope'
-	 Skins(3)=Texture'BallisticWeapons2.G5.G5Inner'
-	 Skins(4)=FinalBlend'BallisticWeapons2.G5.G5RocketFinal'
-	 Skins(5)=Texture'BallisticWeapons2.G5.G5Bazooka'
+	 Skins(0)=Shader'BallisticProTex.Hands.Hands-Shiny'
+	 Skins(1)=Texture'BallisticProTex.G5.G5-Main'
+	 Skins(2)=Texture'BallisticProTex.G5.G5-Scope'
+	 Skins(3)=Texture'BallisticProTex.G5.G5-Misc'
+	 Skins(4)=Texture'BallisticProTex.G5.G5-Rocket'
+	 Skins(5)=Texture'BallisticProTex.G5.G5-Main'
 }

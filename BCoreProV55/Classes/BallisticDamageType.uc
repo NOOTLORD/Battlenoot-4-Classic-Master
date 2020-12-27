@@ -338,10 +338,9 @@ defaultproperties
      ArmorHitType=255
      InvasionDamageScaling=1.000000
      DamageIdent="Unknown"
-     bDisplaceAim=False
      bSimpleDeathMessages=True
      bUseMotionBlur=False
-     bDetonatesGoop=True
+     bDetonatesGoop=True 
      bKUseTearOffMomentum=True
      bExtraMomentumZ=False
      bDirectDamage=False

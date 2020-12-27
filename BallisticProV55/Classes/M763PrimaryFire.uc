@@ -60,10 +60,10 @@ defaultproperties
      Damage=15.000000
      DamageHead=15.000000
      DamageLimb=15.000000
-     DamageType=Class'BallisticProV55.DT_M763Shotgun'
-     DamageTypeHead=Class'BallisticProV55.DT_M763ShotgunHead'
-     DamageTypeArm=Class'BallisticProV55.DT_M763Shotgun'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryRifle',Volume=0.7500000,Radius=32.000000,Pitch=1.000000)	 			   					 					
+     DamageType=Class'BallisticProV55.DT_M763Body'
+     DamageTypeHead=Class'BallisticProV55.DT_M763Head'
+     DamageTypeArm=Class'BallisticProV55.DT_M763Body'
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryRifle',Volume=0.7500000,Radius=32.000000,Pitch=1.000000)	 			   					 					
      MuzzleFlashClass=Class'BallisticProV55.M763FlashEmitter'
      FlashScaleFactor=0.390000
      BrassClass=Class'BallisticProV55.Brass_Shotgun'
@@ -75,11 +75,11 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=128.000000
      YInaccuracy=128.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds2.M763.M763Fire',Volume=1.900000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.M763.M763-Fire',Volume=1.900000,Radius=32.000000,Pitch=1.000000)
      FireAnim="FireCombined"
      FireAnimRate=1.000000
      FireRate=0.750000
-     AmmoClass=Class'BallisticProV55.Ammo_M763_Shotgun'
+     AmmoClass=Class'BallisticProV55.Ammo_M763Shotgun'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -38,15 +38,11 @@ defaultproperties
      BloodManagerName="BallisticProV55.BloodMan_Bullet"
      bMetallic=True
      DamageDescription=",Bullet,"
-     bOnlySeverLimbs=True
-     bSeverPreventsBlood=True
-	 bDisplaceAim=False
-     bUseMotionBlur=False
 	 FlashScale=0.000000
      bInstantHit=True
-     bRagdollBullet=True
+     bRagdollBullet=False
      bBulletHit=True
-     PawnDamageSounds(0)=SoundGroup'BallisticSounds2.BulletImpacts.BulletFlesh'
+     PawnDamageSounds(0)=SoundGroup'BallisticProSounds.Effects.Bullet-Flesh'
      VehicleDamageScaling=0.500000
      InvasionDamageScaling=1.000000
 }

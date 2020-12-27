@@ -25,7 +25,7 @@ defaultproperties
 	 bDisplaceAim=False
      bUseMotionBlur=False
      FlashScale=0.000000	 
-     PawnDamageSounds(0)=Sound'BallisticSounds2.M763.M763SmashFlesh'
+     PawnDamageSounds(0)=Sound'BallisticProSounds.M763.M763-SmashFlesh'
      VehicleDamageScaling=0.500000
      VehicleMomentumScaling=0.000000
 }

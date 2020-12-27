@@ -73,24 +73,6 @@ simulated function FlashMuzzleFlash(byte Mode)
 		SlaveAlpha = 1.0;
 }
 
-simulated function FlashWeaponLight(byte Mode)
-{
-	if (LightMode == MU_None || (LightMode == MU_Secondary && Mode == 0) || (LightMode == MU_Primary && Mode != 0))
-		return;
-	if (Instigator == None || Level.bDropDetail || ((Level.TimeSeconds - LastRenderTime > 0.2) && (PlayerController(Instigator.Controller) == None)))
-	{
-//		Timer();
-		return;
-	}
-	if (HandGun != None)
-		LightWeapon = HandGun;
-	else
-		LightWeapon = self;
-
-	LightWeapon.bDynamicLight = true;
-	SetTimer(WeaponLightTime, false);
-}
-
 simulated function Tick(float DT)
 {
 	local rotator newRot;
@@ -151,8 +133,6 @@ function InitFor(Inventory I)
 
 defaultproperties
 {
-     SlaveOffset=(X=17.000000,Y=-7.000000,Z=-7.000000)
-     SlavePivot=(Yaw=32768)
      IdleHeavyAnim="PistolHip_Idle"
      IdleRifleAnim="PistolAimed_Idle"
      SingleFireAnim="PistolHip_Fire"

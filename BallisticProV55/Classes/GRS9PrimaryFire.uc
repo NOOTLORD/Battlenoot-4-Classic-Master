@@ -45,13 +45,13 @@ defaultproperties
      Damage=20.000000
      DamageHead=25.000000
      DamageLimb=20.000000
-     DamageType=Class'BallisticProV55.DT_GRS9Pistol'
-     DamageTypeHead=Class'BallisticProV55.DT_GRS9PistolHead'
-     DamageTypeArm=Class'BallisticProV55.DT_GRS9Pistol'
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=1.000000,Radius=32.000000,Pitch=1.000000)					
+     DamageType=Class'BallisticProV55.DT_GRS9Body'
+     DamageTypeHead=Class'BallisticProV55.DT_GRS9Head'
+     DamageTypeArm=Class'BallisticProV55.DT_GRS9Body'
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryPistol',Volume=1.000000,Radius=32.000000,Pitch=1.000000)					
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.525000
-     BrassClass=Class'BallisticProV55.Brass_GRS9_Pistol'
+     BrassClass=Class'BallisticProV55.Brass_GRS9Pistol'
      BrassOffset=(X=-36.000000,Y=1.500000,Z=2.500000)	 
      RecoilPerShot=256.000000
      VelocityRecoil=0.000000 	 
@@ -59,10 +59,10 @@ defaultproperties
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))	 	 
      XInaccuracy=96.000000
      YInaccuracy=96.000000
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.Glock.Glk-Fire',Volume=1.400000,Radius=32.000000,Pitch=1.000000)
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.GRS-9.GRS-9-Fire',Volume=1.400000,Radius=32.000000,Pitch=1.000000)
      FireAnimRate=1.500000
      FireRate=0.12500
-     AmmoClass=Class'BallisticProV55.Ammo_GRS9_Pistol'
+     AmmoClass=Class'BallisticProV55.Ammo_GRS9Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000

@@ -1,5 +1,5 @@
 //=============================================================================
-// Primaryfire class for the PD-97 Bloodhound
+// Primaryfire class for the PD-97 Pistol
 //
 // by Logan "BlackEagle" Richert.
 // uses code by Nolan "Dark Carnivour" Richert.
@@ -28,7 +28,7 @@ simulated function PlayFiring()
 	
 	Super.PlayFiring();
 	
-	PD97Bloodhound(BW).ShellFired();
+	PD97Pistol(BW).ShellFired();
 }
 
 function SpawnProjectile (Vector Start, Rotator Dir)
@@ -37,14 +37,14 @@ function SpawnProjectile (Vector Start, Rotator Dir)
 	if (Proj != None)
 	{
 		Proj.Instigator = Instigator;
-		PD97Dart(Proj).Master = PD97Bloodhound(BW);
+		PD97Dart(Proj).Master = PD97Pistol(BW);
 	}
 }
 
 defaultproperties
 {
      SpawnOffset=(X=15.000000,Y=29.000000,Z=-20.000000)	 
-     DryFireSound=(Sound=Sound'BallisticSounds2.Misc.DryPistol',Volume=0.850000,Radius=32.000000,Pitch=1.000000)	 
+     DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryPistol',Volume=0.850000,Radius=32.000000,Pitch=1.000000)	 
 	 MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
      FlashScaleFactor=0.250000
      AimedFireAnim="SightFire"
@@ -56,9 +56,9 @@ defaultproperties
      XInaccuracy=32.000000
      YInaccuracy=32.000000	 
      FireForce="AssaultRifleAltFire"
-     BallisticFireSound=(Sound=Sound'BallisticSounds1.OA-SMG.OA-SMG_FireDart',Volume=1.750000,Radius=32.000000,Pitch=1.000000)	 
+     BallisticFireSound=(Sound=Sound'BallisticProSounds.XMK-5.XMK-5-FireDart',Volume=1.750000,Radius=32.000000,Pitch=1.000000)	 
      FireRate=0.400000
-     AmmoClass=Class'BallisticProV55.Ammo_PD97_Pistol'
+     AmmoClass=Class'BallisticProV55.Ammo_PD97Pistol'
      ShakeRotMag=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotRate=(X=0.000000,Y=0.000000,Z=0.000000)
      ShakeRotTime=0.000000
