@@ -68,8 +68,8 @@ simulated function bool CheckReloading()
 // Send sight key release event to weapon
 simulated event ModeDoFire()
 {
-	if (AllowFire() && Instigator.IsLocallyControlled() && BW != None)
-    		BW.ScopeViewRelease();
+	if (Instigator.IsLocallyControlled() && BW != None)
+        BW.ScopeViewRelease();
 }
 
 // Send sight key press event to weapon
@@ -88,6 +88,7 @@ defaultproperties
      bUseWeaponMag=False
      EffectString="Scope/Iron Sights"
      bFireOnRelease=True
+     bModeExclusive=False						 
      FireAnim=
      FireRate=0.200000
      AmmoPerFire=0

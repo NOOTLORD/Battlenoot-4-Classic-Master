@@ -1259,20 +1259,24 @@ simulated function StopScopeView(optional bool bNoAnim)
 // Scope up anim just ended. Either go into scope view or move the scope back down again
 simulated function ScopeUpAnimEnd()
 {
-    if (!bUseSights || (SprintControl != None && SprintControl.bSprinting))	{
+    if (!bUseSights || (SprintControl != None && SprintControl.bSprinting))	
+	{
 		PlayScopeDown();
 		return;
 	}
+	
 	if (bPendingSightUp)
 	{
 		StartScopeView();
 		bPendingSightUp=false;
 	}
+	
 	else if (bScopeHeld)
 	{
 		StartScopeView();
 		bScopeHeld=false;
 	}
+	
 	else
 		PlayScopeDown();
 }
@@ -2272,6 +2276,7 @@ final function ServerReloaded()
 simulated function bool HasAmmo()
 {
 	return (HasMagAmmo(255) || HasNonMagAmmo(255) || MeleeFireMode != None);	//This weapon is empty?
+	
 }
 simulated function bool HasMagAmmo(byte Mode)
 {

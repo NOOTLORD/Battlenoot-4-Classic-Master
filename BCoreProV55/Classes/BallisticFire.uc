@@ -344,6 +344,11 @@ simulated function FireRecoil ()
 			Instigator.Velocity -= VelRecoilVect;
 	}
 }
+simulated event ModeTick(float dt)
+{
+	if (Instigator == None)
+		Log("BallisticFire: ModeTick: No Instigator");
+}											
 simulated function SendFireEffect(Actor Other, vector HitLocation, vector HitNormal, int Surf, optional vector WaterHitLoc)
 {
 	BallisticAttachment(Weapon.ThirdPersonActor).BallisticUpdateHit(Other, HitLocation, HitNormal, Surf, (ThisModeNum > 0), WaterHitLoc);
@@ -373,8 +378,8 @@ function ServerPlayFiring()
 
 	else
 	{
-		if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
-			BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
+		if (FireCount == 0 && Weapon.HasAnim(FireLoopAnim))
+			BW.SafeLoopAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 }
@@ -394,8 +399,8 @@ function PlayFiring()
 
 	else
 	{
-		if (FireCount > 0 && Weapon.HasAnim(FireLoopAnim))
-			BW.SafePlayAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
+		if (FireCount == 0 && Weapon.HasAnim(FireLoopAnim))
+			BW.SafeLoopAnim(FireLoopAnim, FireLoopAnimRate, 0.0, ,"FIRE");
 		else BW.SafePlayAnim(FireAnim, FireAnimRate, TweenTime, ,"FIRE");
 	}
 	
@@ -556,7 +561,7 @@ simulated event ModeDoFire()
 	}
 }
 
-function StopFiring()
+simulated function StopFiring()
 {	
 	if (bBurstMode && BurstCount != 0)
 	{
@@ -659,6 +664,7 @@ defaultproperties
      FlashScaleFactor=1.000000
      BrassBone="ejector"
      bReleaseFireOnDie=False
+	 FireChaos=0			 
      FireChaosCurve=(Points=((InVal=0.000000,OutVal=1.000000),(InVal=1.000000,OutVal=1.000000)))
      FireSpreadMode=FSM_Circle
      UnjamMethod=UJM_Cock

@@ -526,11 +526,11 @@ defaultproperties
      End Object
      l_Receiving=GUILabel'BallisticProV55.BallisticOutfittingWeaponsTab.l_Receivinglabel'
 
-SavedLoadouts[0]=(PresetName="DEFAULT1",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.RS8Pistol",Weapons[2]="BWBPRecolorsPro.AK47AssaultRifle",Weapons[3]="BallisticProV55.M50AssaultRifle",Weapons[4]="BallisticProV55.NRP57Grenade")
-SavedLoadouts[1]=(PresetName="DEFAULT2",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BWBPRecolorsPro.AH208Pistol",Weapons[2]="BWBPRecolorsPro.LK05Carbine",Weapons[3]=,Weapons[4]="BWBPRecolorsPro.MGLauncher")
-SavedLoadouts[2]=(PresetName="DEFAULT3",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.D49Revolver",Weapons[2]="BallisticProV55.M46AssaultRifleQS",Weapons[3]=,Weapons[4]="BallisticProV55.G5Bazooka")
-SavedLoadouts[3]=(PresetName="DEFAULT4",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.GRS9Pistol",Weapons[2]="BallisticProV55.M763Shotgun",Weapons[3]=,Weapons[4]="BallisticProV55.NRP57Grenade")
-SavedLoadouts[4]=(PresetName="DEFAULT5",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.MD24Pistol",Weapons[2]="BallisticProV55.R78Rifle",Weapons[3]=,Weapons[4]="BallisticProV55.NRP57Grenade")
+     SavedLoadouts(0)=(PresetName="DEFAULT1",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.RS8Pistol",Weapons[2]="BallisticProV55.M763Shotgun",Weapons[4]="BallisticProV55.NRP57Grenade")
+     SavedLoadouts(1)=(PresetName="DEFAULT2",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.MD24Pistol",Weapons[2]="BallisticProV55Recolors.LK05Rifle",Weapons[4]="BallisticProV55.NRP57Grenade")
+     SavedLoadouts(2)=(PresetName="DEFAULT3",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.D49Revolver",Weapons[2]="BallisticProV55.M46Rifle",Weapons[4]="BallisticProV55.NRP57Grenade")
+     SavedLoadouts(3)=(PresetName="DEFAULT4",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.GRS9Pistol",Weapons[2]="BallisticProV55.M763Shotgun",Weapons[4]="BallisticProV55.NRP57Grenade")
+     SavedLoadouts(4)=(PresetName="DEFAULT5",Weapons[0]="BallisticProV55.X4Knife",Weapons[1]="BallisticProV55.MD24Pistol",Weapons[2]="BallisticProV55.R78A1Rifle",Weapons[4]="BallisticProV55.NRP57Grenade")
      QuickListText="QuickList"
      ReceivingText(0)="Receiving..."
      ReceivingText(1)="Loading..."

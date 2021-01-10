@@ -10,6 +10,7 @@ class SK410Attachment extends BallisticShotgunAttachment;
 
 defaultproperties
 {
+     FireClass=Class'BallisticProV55Recolors.SK410PrimaryFire'
      MuzzleFlashClass=Class'BallisticProV55Recolors.SK410MuzzleFlash'	 
      FlashScale=1.200000	 
      ImpactManager=Class'BallisticProV55.IM_Shell'

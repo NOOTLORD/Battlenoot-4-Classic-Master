@@ -9,7 +9,8 @@
 class M763Attachment extends BallisticShotgunAttachment;
 
 defaultproperties
-{																											         																 
+{	
+     FireClass=Class'BallisticProV55.M763PrimaryFire'																										         																 
      MuzzleFlashClass=Class'BallisticProV55.M763FlashEmitter'
      FlashScale=1.500000	 	    
 	 ImpactManager=Class'BallisticProV55.IM_Shell'													  	
@@ -18,6 +19,8 @@ defaultproperties
      WaterTracerClass=Class'BallisticProV55.TraceEmitter_WaterBullet'						  
      SingleFireAnim="RifleHip_FireCock"
      SingleAimedFireAnim="RifleAimed_FireCock"
+	 ReloadAnim="Reload_ShovelBottom"
+     ReloadAnimRate=1.100000	 
      Mesh=SkeletalMesh'BallisticProAnims.M763_TP'
      DrawScale=0.080000
 	 Skins(0)=Texture'BallisticProTex.M763.M763-Shell'

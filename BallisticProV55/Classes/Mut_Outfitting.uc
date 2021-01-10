@@ -710,15 +710,15 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 
 defaultproperties
 {
-     LoadOut(0)="BallisticProV55.X3Knife"
-     LoadOut(1)="BallisticProV55.M806Pistol"
-     LoadOut(2)="BallisticProV55.M763Shotgun"
-     LoadOut(3)="BallisticProV55.M50AssaultRifle"
+     LoadOut(0)="BallisticProV55.X4Knife"
+     LoadOut(1)="BallisticProV55.MD24Pistol"
+     LoadOut(2)=""
+     LoadOut(3)="BallisticProV55.M50Rifle"
      LoadOut(4)="BallisticProV55.NRP57Grenade"
-     Killstreaks(0)="BallisticProV55.RX22AFlamer"
-     Killstreaks(1)="BallisticProV55.MRocketLauncher"													 
+     Killstreaks(0)=""
+     Killstreaks(1)=""													 
      bAllowKillstreaks=False
      bHideLockers=True
      FriendlyName="BallisticPro: Loadout"
-     Description="Play Ballistic Weapons, but instead of picking up weapons, you can choose five to start with, Melee, Sidearm, Primary, Secondary and Grenade. Ammo Packs replace weapon pickups and extra weapons can be taken from your enemies.||http://www.runestorm.com"
+     Description="Play Ballistic Weapons, but instead of picking up weapons, you can choose four to start with, Melee, Sidearm, Primary, Secondary and Grenade. Ammo Packs replace weapon pickups and extra weapons can be taken from your enemies.||http://www.runestorm.com"
 }

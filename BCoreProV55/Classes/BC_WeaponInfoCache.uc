@@ -30,7 +30,9 @@
 //
 // Modified by (NL)NOOTLORD
 //=============================================================================
-class BC_WeaponInfoCache extends Object config(BWProCache) exportstructs;
+class BC_WeaponInfoCache extends Object 
+	config(BWCache) 
+	exportstructs;			   
 
 struct WeaponInfo
 {

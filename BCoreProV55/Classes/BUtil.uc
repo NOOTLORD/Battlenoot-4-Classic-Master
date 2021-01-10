@@ -31,8 +31,26 @@ class BUtil extends Object
 var() Array<String> NM;
 var() Array<String> RL;
 
-// Full sounds Are a simple way to set up and play sounds with detailed settings
-// All the settings with wich to play the sound
+struct IntRange
+{
+	var int Min;
+	var int Max;
+};
+
+struct IntVector2
+{
+	var int X;
+	var int Y;
+};
+
+struct IntVector3
+{
+	var int X;
+	var int Y;
+	var int Z;
+}; 
+// FullSounds are a simple way to set up and play sounds with detailed settings
+// All the settings with which to play the sound
 struct FullSound
 {
 	var() Sound				Sound;		//Sound to use
@@ -43,6 +61,20 @@ struct FullSound
 	var() bool				bAtten;		//
 	var() bool				bNoOverride;//
 };
+
+static final operator(34) IntRange *= (out IntRange A, float B)
+{
+	A.Min *= B;
+	A.Max *= B;
+	return A;
+}
+
+static final operator(34) IntRange /= (out IntRange A, float B)
+{
+	A.Min /= B;
+	A.Min /= B;
+	return A;
+}
 
 // Even quicker way to show the NetModes and Roles as easy to read strings
 static function string MyNetMode(Levelinfo L)	{	return default.NM[L.NetMode];	}

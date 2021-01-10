@@ -217,22 +217,6 @@ function LoadBoxesFromMutator ()
 	Boxes[4].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup4;
 	Boxes[5].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup5;
 	Boxes[6].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup6;
-	//Red
-	Boxes[7].WeaponNames = class'Mut_TeamOutfitting'.default.RedLoadoutGroup0;
-	Boxes[8].WeaponNames = class'Mut_TeamOutfitting'.default.RedLoadoutGroup1;
-	Boxes[9].WeaponNames = class'Mut_TeamOutfitting'.default.RedLoadoutGroup2;
-	Boxes[10].WeaponNames = class'Mut_TeamOutfitting'.default.RedLoadoutGroup3;
-	Boxes[11].WeaponNames = class'Mut_TeamOutfitting'.default.RedLoadoutGroup4;
-	Boxes[12].WeaponNames = class'Mut_TeamOutfitting'.default.RedLoadoutGroup5;
-	Boxes[13].WeaponNames = class'Mut_TeamOutfitting'.default.RedLoadoutGroup6;
-	//Blue
-	Boxes[14].WeaponNames = class'Mut_TeamOutfitting'.default.BlueLoadoutGroup0;
-	Boxes[15].WeaponNames = class'Mut_TeamOutfitting'.default.BlueLoadoutGroup1;
-	Boxes[16].WeaponNames = class'Mut_TeamOutfitting'.default.BlueLoadoutGroup2;
-	Boxes[17].WeaponNames = class'Mut_TeamOutfitting'.default.BlueLoadoutGroup3;
-	Boxes[18].WeaponNames = class'Mut_TeamOutfitting'.default.BlueLoadoutGroup4;
-	Boxes[19].WeaponNames = class'Mut_TeamOutfitting'.default.BlueLoadoutGroup5;
-	Boxes[20].WeaponNames = class'Mut_TeamOutfitting'.default.BlueLoadoutGroup6;
 	
 	// Get rid of things that are no longer around
 	for(i=0;i<NUM_BOXES_TOTAL;i++)
@@ -267,25 +251,8 @@ function SaveBoxesToMutator ()
 	class'Mut_Outfitting'.default.LoadoutGroup4 = Boxes[4].WeaponNames;
 	class'Mut_Outfitting'.default.LoadoutGroup5 = Boxes[5].WeaponNames;
 	class'Mut_Outfitting'.default.LoadoutGroup6 = Boxes[6].WeaponNames;
-	
-	class'Mut_TeamOutfitting'.default.RedLoadoutGroup0 = Boxes[7].WeaponNames;
-	class'Mut_TeamOutfitting'.default.RedLoadoutGroup1 = Boxes[8].WeaponNames;
-	class'Mut_TeamOutfitting'.default.RedLoadoutGroup2 = Boxes[9].WeaponNames;
-	class'Mut_TeamOutfitting'.default.RedLoadoutGroup3 = Boxes[10].WeaponNames;
-	class'Mut_TeamOutfitting'.default.RedLoadoutGroup4 = Boxes[11].WeaponNames;
-	class'Mut_TeamOutfitting'.default.RedLoadoutGroup5 = Boxes[12].WeaponNames;
-	class'Mut_TeamOutfitting'.default.RedLoadoutGroup6 = Boxes[13].WeaponNames;
-	
-	class'Mut_TeamOutfitting'.default.BlueLoadoutGroup0 = Boxes[14].WeaponNames;
-	class'Mut_TeamOutfitting'.default.BlueLoadoutGroup1 = Boxes[15].WeaponNames;
-	class'Mut_TeamOutfitting'.default.BlueLoadoutGroup2 = Boxes[16].WeaponNames;
-	class'Mut_TeamOutfitting'.default.BlueLoadoutGroup3 = Boxes[17].WeaponNames;
-	class'Mut_TeamOutfitting'.default.BlueLoadoutGroup4 = Boxes[18].WeaponNames;
-	class'Mut_TeamOutfitting'.default.BlueLoadoutGroup5 = Boxes[19].WeaponNames;
-	class'Mut_TeamOutfitting'.default.BlueLoadoutGroup6 = Boxes[20].WeaponNames;
-	
+		
 	class'Mut_Outfitting'.static.StaticSaveConfig();
-	class'Mut_TeamOutfitting'.static.StaticSaveConfig();
 }
 
 //===========================================================================
@@ -700,7 +667,7 @@ defaultproperties
          OnKeyEvent=BBox5Button.InternalOnKeyEvent
      End Object
      BBox5=GUIButton'BallisticProV55.BallisticTab_OutfittingPro.BBox5Button'
-	 
+
      Begin Object Class=GUIScrollTextBox Name=WeaponDescription
          CharDelay=0.001500
          EOLDelay=0.250000
@@ -716,7 +683,7 @@ defaultproperties
          bAcceptsInput=False
          bNeverFocus=True
      End Object
-     lb_Desc=GUIScrollTextBox'BallisticProV55.BallisticTab_OutfittingPro.WeaponDescription'	 
+     lb_Desc=GUIScrollTextBox'BallisticProV55.BallisticTab_OutfittingPro.WeaponDescription'
 
      Begin Object Class=moCheckBox Name=ch_AllWeapsCheck
          ComponentJustification=TXTA_Left

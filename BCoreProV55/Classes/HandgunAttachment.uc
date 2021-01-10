@@ -40,21 +40,17 @@ simulated function Hide(bool NewbHidden)
 
 // Return the location of the muzzle.
 simulated function Vector GetTipLocation()
-{
-    local Coords C;
-
+{	
 	if (Instigator != None && Instigator.IsFirstPerson() && PlayerController(Instigator.Controller).ViewTarget == Instigator)
 	{
 		if (HandGun != None)
-			C = HandGun.GetBoneCoords('tip');
+			return HandGun.GetEffectStart();
 		else
-			C = Instigator.Weapon.GetBoneCoords('tip');
+			return Instigator.Weapon.GetEffectStart();
 	}
-	else
-		C = GetBoneCoords('tip');
-	if (Instigator != None && VSize(C.Origin - Instigator.Location) > 200)
-		return Instigator.Location;
-    return C.Origin;
+	
+	return GetBoneCoords('tip').Origin;
+
 }
 
 simulated function Destroyed()
@@ -71,6 +67,23 @@ simulated function FlashMuzzleFlash(byte Mode)
 	super.FlashMuzzleFlash (Mode);
 	if (bIsSlave)
 		SlaveAlpha = 1.0;
+}
+simulated function FlashWeaponLight(byte Mode)
+{
+	if (LightMode == MU_None || (LightMode == MU_Secondary && Mode == 0) || (LightMode == MU_Primary && Mode != 0))
+		return;
+	if (Instigator == None || Level.bDropDetail || ((Level.TimeSeconds - LastRenderTime > 0.2) && (PlayerController(Instigator.Controller) == None)))
+	{
+//		Timer();
+		return;
+	}
+	if (HandGun != None)
+		LightWeapon = HandGun;
+	else
+		LightWeapon = self;
+
+	LightWeapon.bDynamicLight = true;
+	SetTimer(WeaponLightTime, false);
 }
 
 simulated function Tick(float DT)
@@ -133,6 +146,8 @@ function InitFor(Inventory I)
 
 defaultproperties
 {
+     SlaveOffset=(X=17.000000,Y=-7.000000,Z=-7.000000)
+     SlavePivot=(Yaw=32768)
      IdleHeavyAnim="PistolHip_Idle"
      IdleRifleAnim="PistolAimed_Idle"
      SingleFireAnim="PistolHip_Fire"

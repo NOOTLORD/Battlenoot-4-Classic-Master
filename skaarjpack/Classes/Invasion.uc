@@ -522,45 +522,6 @@ function PlayEndOfMatchMessage()
 
 /* Rate whether player/monster should choose this NavigationPoint as its start
 */
-function float RatePlayerStart(NavigationPoint N, byte Team, Controller Player)
-{
-    local float Score, NextDist;
-    local Controller OtherPlayer;
-
-	if ( (Team == 0) || ((Player !=None) && Player.bIsPlayer) )
-		return Super.RatePlayerStart(N,Team,Player);
-
-    if ( N.PhysicsVolume.bWaterVolume )
-        return -10000000;
-
-    //assess candidate
-    if ( (SmallNavigationPoint(N) != None) && (PlayerStart(N) == None) )
-		return -1;
-
-	Score = 10000000;
-
-    Score += 3000 * FRand(); //randomize
-
-    for ( OtherPlayer=Level.ControllerList; OtherPlayer!=None; OtherPlayer=OtherPlayer.NextController)
-        if ( (PlayerController(OtherPlayer) != None) && (OtherPlayer.Pawn != None) )
-        {
-            NextDist = VSize(OtherPlayer.Pawn.Location - N.Location);
-            if ( NextDist < OtherPlayer.Pawn.CollisionRadius + OtherPlayer.Pawn.CollisionHeight )
-                Score -= 1000000.0;
-            else if ( NextDist > 5000 )
-				Score -= 20000;
-            else if ( NextDist < 3000 )
-            {
-				if ( (NextDist > 1200) && (Vector(OtherPlayer.Rotation) Dot (N.Location - OtherPlayer.Pawn.Location)) <= 0 )
-					Score = Score + 5000 - NextDist;
-				else if ( FastTrace(N.Location, OtherPlayer.Pawn.Location) )
-					Score -= (10000.0 - NextDist);
-				if ( (Location.Z > OtherPlayer.Pawn.Location.Z) && (NextDist > 1000) )
-					Score += 1000;
-			}
-        }
-    return FMax(Score, 5);
-}
 
 function ReplenishWeapons(Pawn P)
 {

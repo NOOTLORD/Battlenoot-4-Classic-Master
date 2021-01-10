@@ -1699,9 +1699,6 @@ function PlayTeleportEffect( bool bOut, bool bSound)
 //		SetOverlayMaterial( ShieldHitMat, DeathMatch(Level.Game).SpawnProtectionTime, false );
 //	    if ( (PlayerReplicationInfo == None) || (PlayerReplicationInfo.Team == None) || (PlayerReplicationInfo.Team.TeamIndex == 0) )
 //		    Spawn(TransEffects[0],,,Location + CollisionHeight * vect(0,0,0.75));
-//	    else
-//		    Spawn(TransEffects[1],,,Location + CollisionHeight * vect(0,0,0.75));
-		Spawn(class'BWPlayerSpawnFX',,,Location);
 	}
 	else if ( bOut )
 		DoTranslocateOut(Location);

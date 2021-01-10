@@ -73,7 +73,7 @@ defaultproperties
      bMeleeWeapon=True
      AmmoClass(0)=Class'BallisticProV55.Ammo_X4Knife'
      AmmoClass(1)=Class'BallisticProV55.Ammo_X4Knife'	 
-     Description="Knife"
+     Description="X4"
      Priority=13
      HudColor=(B=255,G=200,R=200)
      CenteredOffsetY=7.000000

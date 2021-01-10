@@ -50,7 +50,7 @@ defaultproperties
      DamageTypeArm=Class'BallisticProV55.DT_RS8Body'
      DryFireSound=(Sound=Sound'BallisticProSounds.Effects.DryPistol',Volume=1.000000,Radius=32.000000,Pitch=1.000000)
      MuzzleFlashClass=Class'BallisticProV55.XK2FlashEmitter'
-     FlashScaleFactor=0.350000
+     FlashScaleFactor=0.300000
      BrassClass=Class'BallisticProV55.Brass_Pistol'
      BrassOffset=(X=-34.000000,Y=4.500000,Z=2.500000)
      AimedFireAnim="SightFire"	 
