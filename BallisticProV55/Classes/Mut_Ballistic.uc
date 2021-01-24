@@ -29,7 +29,6 @@ struct ItemSwitch
 };
 
 var() array<ItemSwitch> Replacements;			// List of items and what to replace them with
-var() Sound				UDamageSnd;				// Different sound UDamage firing
 struct DoomedItem
 {
 	var() Actor OldItem;
@@ -277,7 +276,6 @@ simulated function ClientModifyPlayer(Pawn Other)
 		if (xPawn(P) != none && BallisticPawn(P) == None)
 		{
 			xPawn(P).FootstepVolume = 0.5;
-			xPawn(P).UDamageSound = UDamageSnd;
 			xPawn(P).TransientSoundVolume=0.200000;
 		}
 	}
@@ -867,7 +865,6 @@ defaultproperties
 {
      Replacements(0)=(OldItemName="XPickups.HealthPack",NewItemNames=("BallisticProV55.IP_HealthKit"))
      Replacements(1)=(OldItemName="XPickups.UDamagePack",NewItemNames=("BallisticProV55.IP_UDamage"))
-     UDamageSnd=Sound'BallisticProSounds.Udamage.UDamage-Fire'
      ItemGroup="Ballistic"
      bSpawnUniqueItems=False
      bPickupsChange=False

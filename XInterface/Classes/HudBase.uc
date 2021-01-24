@@ -379,6 +379,7 @@ simulated function DrawHud (Canvas C)
     DrawHudPassD(C);
 
     DisplayLocalMessages(C);
+    DrawWeaponName(C);					  
 //    DrawHeadShotSphere();
 }
 
@@ -901,6 +902,42 @@ simulated function font LoadInstructionFont()
 	return InstructionFontFont;
 }
 
+simulated function DrawWeaponName(Canvas C)
+{
+	local string CurWeaponName;
+    local float XL,YL, Fade;
+
+	if (bHideWeaponName)
+    	return;
+
+	if (WeaponDrawTimer>Level.TimeSeconds)
+    {
+	    C.Font = GetMediumFontFor(C);
+        C.DrawColor = WeaponDrawColor;
+
+		Fade = WeaponDrawTimer - Level.TimeSeconds;
+
+        if (Fade<=1)
+        	C.DrawColor.A = 255 * Fade;
+
+
+		C.Strlen(LastWeaponName,XL,YL);
+        C.SetPos( (C.ClipX/2) - (XL/2), C.ClipY*0.8-YL);
+        C.DrawText(LastWeaponName);
+    }
+
+	if (  PawnOwner==None || PawnOwner.PendingWeapon==None )
+    	return;
+
+	CurWeaponName = PawnOwner.PendingWeapon.GetHumanReadableName();
+    if (CurWeaponName!=LastWeaponName)
+    {
+    	WeaponDrawTimer = Level.TimeSeconds+1.5;
+        WeaponDrawColor = PawnOwner.PendingWeapon.HudColor;
+    }
+
+   	LastWeaponName = CurWeaponName;
+}								   
 /* called when viewing a Matinee cinematic */
 simulated function DrawCinematicHUD(Canvas C)
 {
@@ -972,7 +1009,8 @@ defaultproperties
      Crosshairs(11)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Bracket2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.600000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      Crosshairs(12)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Circle1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.400000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
      Crosshairs(13)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Circle2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.400000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-     bUseCustomWeaponCrosshairs=True
+     bHideWeaponName=True 
+	 bUseCustomWeaponCrosshairs=True
      ProgressFontName="UT2003Fonts.FontMedium"
      FontArrayNames(0)="UT2003Fonts.FontEurostile37"
      FontArrayNames(1)="UT2003Fonts.FontEurostile29"

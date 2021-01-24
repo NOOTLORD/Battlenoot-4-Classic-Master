@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class SpecialKillMessage extends LocalMessage;
 
 var(Messages)	localized string 	DecapitationString;

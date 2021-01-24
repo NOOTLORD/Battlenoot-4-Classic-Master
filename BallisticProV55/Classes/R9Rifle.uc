@@ -111,6 +111,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.R9Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_R9'
      IconCoords=(X2=127,Y2=31)
+	 BobDamping=1.000000
      ItemName="R9"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence

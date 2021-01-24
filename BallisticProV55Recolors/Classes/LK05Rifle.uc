@@ -101,6 +101,7 @@ defaultproperties
      BringUpSound=(Sound=Sound'BallisticProRecolorsSounds.M4A1.M4A1-PullOut',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      PutDownSound=(Sound=Sound'BallisticProRecolorsSounds.M4A1.M4A1-Putaway',Volume=0.425000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      MagAmmo=32
+	 CockAnimPostReload="Pullout"
      CockAnimRate=1.000000	 
      CockSound=(Sound=Sound'BallisticProRecolorsSounds.LK-05.LK-05-Cock',Volume=0.800000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      ReloadAnimRate=1.000000

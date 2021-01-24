@@ -68,23 +68,6 @@ simulated function FlashMuzzleFlash(byte Mode)
 	if (bIsSlave)
 		SlaveAlpha = 1.0;
 }
-simulated function FlashWeaponLight(byte Mode)
-{
-	if (LightMode == MU_None || (LightMode == MU_Secondary && Mode == 0) || (LightMode == MU_Primary && Mode != 0))
-		return;
-	if (Instigator == None || Level.bDropDetail || ((Level.TimeSeconds - LastRenderTime > 0.2) && (PlayerController(Instigator.Controller) == None)))
-	{
-//		Timer();
-		return;
-	}
-	if (HandGun != None)
-		LightWeapon = HandGun;
-	else
-		LightWeapon = self;
-
-	LightWeapon.bDynamicLight = true;
-	SetTimer(WeaponLightTime, false);
-}
 
 simulated function Tick(float DT)
 {

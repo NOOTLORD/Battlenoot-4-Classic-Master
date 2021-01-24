@@ -683,7 +683,7 @@ final simulated static function bool VoiceMatchesGender( EVoiceGender GenderType
 
 defaultproperties
 {
-     bShowMessageText=True
+     bShowMessageText=False
      Pitch=1.000000
      LeaderSign(0)="Red Leader"
      LeaderSign(1)="Blue Leader"

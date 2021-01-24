@@ -23,8 +23,7 @@ var automated GUISectionBackground i_BG, i_BG2, i_BG3;
 var automated GUIImage i_Crosshair, i_CrosshairBG, i_Shadow, i_Bk;
 var automated GUIGFXButton	b_Up, b_Down;
 var automated GUIListBox	lb_Weapons;
-var automated GUIScrollTextBox	lb_Desc;
-var automated moCheckbox	ch_Swap, ch_WeaponCrosshair, ch_ClassicModel;
+var automated moCheckbox	ch_WeaponCrosshair;
 var automated moComboBox	co_Crosshair;
 var automated moSlider		sl_Red, sl_Blue, sl_Green, sl_Alpha, sl_CrosshairScale;
 
@@ -608,15 +607,6 @@ function InternalOnChange(GUIComponent Sender)
 
 		break;
 
-	case ch_Swap:
-		WeaponsList[WeaponIndex].bAltFireMode = ch_Swap.IsChecked();
-		break;
-
-	case ch_ClassicModel:
-		WeaponsList[WeaponIndex].bClassicModel = ch_ClassicModel.IsChecked();
-		UpdateCurrentWeapon();
-		break;
-
 	case sl_Red:
 		i = sl_Red.GetValue();
 		if (bWeaponCrosshair)
@@ -860,9 +850,6 @@ function UpdateCurrentWeapon()
 
 	if ( OldMesh != None && !class'LevelInfo'.static.IsDemoBuild() )
 	{
-		EnableComponent(ch_ClassicModel);
-		ch_ClassicModel.SetComponentValue( WeaponsList[WeaponIndex].bClassicModel, True );
-
 		if ( WeaponsList[WeaponIndex].bClassicModel )
 		{
 			if ( WeaponsList[WeaponIndex].WeapClass.default.OldPickup != "" )
@@ -881,12 +868,6 @@ function UpdateCurrentWeapon()
 				SpinnyWeap.SetDrawType(DT_StaticMesh);
 			}
 		}
-	}
-
-	else
-	{
-		ch_ClassicModel.SetComponentValue("False", True);
-		DisableComponent(ch_ClassicModel);
 	}
 
 	if ( OldPickup == None )
@@ -934,8 +915,6 @@ function UpdateCurrentWeapon()
 
 
 	i_BG.Caption = lb_Weapons.List.Get();
-	lb_Desc.SetContent( lb_Weapons.List.GetExtra() );
-	ch_Swap.SetComponentValue( WeaponsList[WeaponIndex].bAltFireMode, True );
 
 	if (bWeaponCrosshair)
 	{
@@ -1190,7 +1169,7 @@ defaultproperties
 
      Begin Object Class=GUISectionBackground Name=WeaponPriorityBK
          bFillClient=True
-         Caption="Weapon Priorities"
+         Caption="Weapon Preview"
          LeftPadding=0.000000
          RightPadding=0.000000
          WinTop=0.666667
@@ -1293,7 +1272,7 @@ defaultproperties
          bVisibleWhenEmpty=True
          OnCreateComponent=WeaponPrefWeapList.InternalOnCreateComponent
          IniOption="@Internal"
-         Hint="Select order for weapons"
+         Hint="Select a weapon to preview"
          WinTop=0.733868
          WinLeft=0.068546
          WinWidth=0.338338
@@ -1304,37 +1283,6 @@ defaultproperties
          OnSaveINI=UT2K4Tab_WeaponPref.InternalOnSaveINI
      End Object
      lb_Weapons=GUIListBox'GUI2K4.UT2K4Tab_WeaponPref.WeaponPrefWeapList'
-
-     Begin Object Class=GUIScrollTextBox Name=WeaponDescription
-         CharDelay=0.001500
-         EOLDelay=0.250000
-         bVisibleWhenEmpty=True
-         OnCreateComponent=WeaponDescription.InternalOnCreateComponent
-         FontScale=FNS_Small
-         WinTop=0.378073
-         WinLeft=0.063125
-         WinWidth=0.362170
-         WinHeight=0.188969
-         RenderWeight=0.510000
-         TabOrder=0
-         bAcceptsInput=False
-         bNeverFocus=True
-     End Object
-     lb_Desc=GUIScrollTextBox'GUI2K4.UT2K4Tab_WeaponPref.WeaponDescription'
-
-     Begin Object Class=moCheckBox Name=WeaponSwap
-         Caption="Swap Fire Mode"
-         OnCreateComponent=WeaponSwap.InternalOnCreateComponent
-         Hint="Check this box to swap the firing mode on the selected weapon."
-         WinTop=0.753946
-         WinLeft=0.540953
-         WinWidth=0.225000
-         WinHeight=0.040000
-         RenderWeight=1.030000
-         TabOrder=11
-         OnChange=UT2K4Tab_WeaponPref.InternalOnChange
-     End Object
-     ch_Swap=moCheckBox'GUI2K4.UT2K4Tab_WeaponPref.WeaponSwap'
 
      Begin Object Class=moCheckBox Name=CustomWeaponCrosshair
          CaptionWidth=0.900000
@@ -1352,20 +1300,6 @@ defaultproperties
          OnLoadINI=UT2K4Tab_WeaponPref.InternalOnLoadINI
      End Object
      ch_WeaponCrosshair=moCheckBox'GUI2K4.UT2K4Tab_WeaponPref.CustomWeaponCrosshair'
-
-     Begin Object Class=moCheckBox Name=WeaponMesh
-         Caption="Classic Model"
-         OnCreateComponent=WeaponMesh.InternalOnCreateComponent
-         Hint="Enable to use the classic model for this weapon"
-         WinTop=0.837279
-         WinLeft=0.542070
-         WinWidth=0.224062
-         WinHeight=0.040000
-         RenderWeight=1.030000
-         TabOrder=12
-         OnChange=UT2K4Tab_WeaponPref.InternalOnChange
-     End Object
-     ch_ClassicModel=moCheckBox'GUI2K4.UT2K4Tab_WeaponPref.WeaponMesh'
 
      Begin Object Class=moComboBox Name=GameCrossHair
          ComponentJustification=TXTA_Left
@@ -1462,7 +1396,7 @@ defaultproperties
      sl_Alpha=moSlider'GUI2K4.UT2K4Tab_WeaponPref.GameHudCrossHairA'
 
      Begin Object Class=moSlider Name=GameHudCrosshairScale
-         MaxValue=2.000000
+         MaxValue=3.0000000
          CaptionWidth=0.300000
          Caption="Scale:"
          LabelColor=(B=255,G=255,R=255)
@@ -1484,8 +1418,8 @@ defaultproperties
      MaxCrosshairWidth=0.071922
      MaxCrosshairHeight=0.121081
      HiddenText="Hidden"
-     LoadingText="...Loading Weapon Database..."
-     PanelCaption="Weapons"
+     LoadingText="Precaching crosshairs..."
+     PanelCaption="Crosshairs"
      WinTop=0.150000
      WinHeight=0.740000
      OnRendered=UT2K4Tab_WeaponPref.InternalDraw

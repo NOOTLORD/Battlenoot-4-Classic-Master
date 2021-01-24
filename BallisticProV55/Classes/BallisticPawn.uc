@@ -670,12 +670,6 @@ simulated function StartFiring(bool bHeavy, bool bRapid)
 		return;
 	}
 
-    if ( HasUDamage() && (Level.TimeSeconds - LastUDamageSoundTime > 0.25) )
-    {
-        LastUDamageSoundTime = Level.TimeSeconds;
-        PlaySound(UDamageSound, SLOT_None, 1.5*TransientSoundVolume,,700);
-    }
-
     if (Physics == PHYS_Swimming)
         return;
 
@@ -2468,7 +2462,6 @@ defaultproperties
      LowImpactVelocity=500.000000
      TimeBetweenImpacts=1.000000
      MeleeAnim="Melee_Smack" 
-     UDamageSound=Sound'BallisticProSounds.Udamage.UDamage-Fire'
 	 GruntVolume=0.070000
      FootstepVolume=0.125000
      DeResTime=2.000000

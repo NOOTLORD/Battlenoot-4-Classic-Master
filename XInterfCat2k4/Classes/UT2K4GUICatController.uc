@@ -5,9 +5,6 @@
 
 class UT2K4GUICatController extends UT2K4GUIController;   // GUIController;
 
-
-
-
 #exec OBJ LOAD FILE=InterfaceContent.utx
 #exec OBJ LOAD FIlE=Cat2K4Menus.utx
 #exec OBJ LOAD FILE=2K4MenuSounds.uax
@@ -74,38 +71,14 @@ event bool OpenMenu(string NewMenuName, optional string Param1, optional string 
 // Should override this function if you have less options in your custom start menu
 static simulated event Validate()
 {
-	if ( default.MainMenuOptions.Length < 7 )
+	if ( default.MainMenuOptions.Length < 4 )
 		ResetConfig();
-}
-
-static simulated function string GetSinglePlayerPage()
-{
-	Validate();
-	return default.MainMenuOptions[0];
-}
-
-static simulated function string GetServerBrowserPage()
-{
-	Validate();
-	return default.MainMenuOptions[1];
-}
-
-static simulated function string GetMultiplayerPage()
-{
-	Validate();
-	return default.MainMenuOptions[2];
 }
 
 static simulated function string GetInstantActionPage()
 {
 	Validate();
 	return default.MainMenuOptions[3];
-}
-
-static simulated function string GetModPage()
-{
-	Validate();
-	return default.MainMenuOptions[4];
 }
 
 static simulated function string GetSettingsPage()

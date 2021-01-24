@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class MultiKillMessage extends LocalMessage;
 
 var	localized string 	KillString[7];

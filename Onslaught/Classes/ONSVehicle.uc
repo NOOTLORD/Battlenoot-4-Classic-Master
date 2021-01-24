@@ -1701,7 +1701,6 @@ defaultproperties
      TeamBeaconBorderMaterial=Texture'InterfaceContent.Menu.BorderBoxD'
      RanOverDamageType=Class'Onslaught.DamTypeRoadkill'
      CrushedDamageType=Class'Onslaught.DamTypePancake'
-     RanOverSound=Sound'ONSVehicleSounds-S.CollisionSounds.BodyHitbyVeh01'
      StolenAnnouncement="Hijacked"
      StolenSound=Sound'ONSVehicleSounds-S.CarAlarm.CarAlarm01'
      BulletSounds(0)=Sound'WeaponSounds.BaseShieldReflections.BBulletReflect1'

@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class xPawn extends UnrealPawn
     config(User)
     dependsOn(xUtil)
@@ -9,7 +11,6 @@ class xPawn extends UnrealPawn
 #exec OBJ LOAD FILE=PlayerFootSteps.uax
 #exec OBJ LOAD FILE=DanFX.utx
 #exec OBJ LOAD FILE=GeneralAmbience.uax
-#exec OBJ LOAD FILE=GeneralImpacts.uax
 #exec OBJ LOAD FILE=DeRez.utx
 #exec OBJ LOAD FILE=WeaponSounds.uax
 
@@ -112,12 +113,6 @@ var(Karma) float RagDeathUpKick; // Amount of upwards kick ragdolls get when the
 var(Karma) float RagGravScale;
 
 var(Karma) material RagConvulseMaterial;
-
-// Ragdoll impact sounds.
-var(Karma) array<sound>		RagImpactSounds;
-var(Karma) float			RagImpactSoundInterval;
-var(Karma) float			RagImpactVolume;
-var transient float			RagLastSoundTime;
 
 var string RagdollOverride;
 
@@ -1557,24 +1552,6 @@ function PlayTakeHit(vector HitLocation, int Damage, class<DamageType> DamageTyp
 }
 
 // jag
-// Called when in Ragdoll when we hit something over a certain threshold velocity
-// Used to play impact sounds.
-event KImpact(actor other, vector pos, vector impactVel, vector impactNorm)
-{
-	local int numSounds, soundNum;
-	numSounds = RagImpactSounds.Length;
-
-	//log("ouch! iv:"$VSize(impactVel));
-
-	if(numSounds > 0 && Level.TimeSeconds > RagLastSoundTime + RagImpactSoundInterval)
-	{
-		soundNum = Rand(numSounds);
-		//Log("Play Sound:"$soundNum);
-		PlaySound(RagImpactSounds[soundNum], SLOT_Pain, RagImpactVolume);
-		RagLastSoundTime = Level.TimeSeconds;
-	}
-}
-//jag
 
 simulated function PlayDirectionalDeath(Vector HitLoc)
 {
@@ -2419,7 +2396,6 @@ defaultproperties
 {
      bCanDodgeDoubleJump=True
      UDamageWeaponMaterial=Shader'XGameShaders.PlayerShaders.WeaponUDamageShader'
-     UDamageSound=Sound'GameSounds.UDamageFire'
      InvisMaterial=FinalBlend'XEffectMat.Combos.InvisOverlayFB'
      ShieldStrengthMax=150.000000
      ShieldHitMat=Shader'XGameShaders.PlayerShaders.PlayerShieldSh'
@@ -2476,11 +2452,6 @@ defaultproperties
      RagSpinScale=2.500000
      RagDeathUpKick=150.000000
      RagGravScale=1.000000
-     RagImpactSounds(0)=Sound'GeneralImpacts.Wet.Breakbone_01'
-     RagImpactSounds(1)=Sound'GeneralImpacts.Wet.Breakbone_02'
-     RagImpactSounds(2)=Sound'GeneralImpacts.Wet.Breakbone_03'
-     RagImpactSoundInterval=0.500000
-     RagImpactVolume=2.250000
      TransOutEffect(0)=Class'XEffects.NewTransDeresRed'
      TransOutEffect(1)=Class'XEffects.NewTransDeresBlue'
      PlacedCharacterName="Jakob"

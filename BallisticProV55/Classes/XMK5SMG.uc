@@ -112,6 +112,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.XMK5Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_XMK5'
      IconCoords=(X2=127,Y2=31)
+	 BobDamping=1.500000
      ItemName="XMK-5"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence

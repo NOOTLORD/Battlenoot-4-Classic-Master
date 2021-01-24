@@ -67,7 +67,7 @@ var	  bool bSpectated;
 var	  bool bDebugging;
 var	  bool bNoInstagibReplace;
 var	  bool bInitOldMesh;
-var config bool bUseOldWeaponMesh;
+var   bool bUseOldWeaponMesh;
 var   bool	bEndOfRound;	// don't allow firing
 var bool bNoAmmoInstances;	// if true, replicated ammocount using the Weapons AmmoCharge property - true by default, included to allow mod authors to fallback to old style
 var bool bBerserk;
@@ -118,7 +118,7 @@ var() enum EWeaponClientState
     WS_ReadyToFire
 } ClientState; // this will always be None on the server
 
-var() config byte ExchangeFireModes;
+var() byte ExchangeFireModes;
 var() config byte Priority;
 
 var() deprecated byte DefaultPriority;

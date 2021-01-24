@@ -19,11 +19,11 @@ enum ELLHDetailMode
 	DM_High
 };
 
-var() globalconfig ELLHDetailMode	EffectsDetailMode;
-var() globalconfig bool				bEjectBrass;
-var() globalconfig bool				bMuzzleSmoke;
-var() bool				            bBulletFlybys;
-var() bool	                        bUseMotionBlur;
+var() ELLHDetailMode	EffectsDetailMode;
+var() bool				bEjectBrass;
+var() bool				bMuzzleSmoke;
+var() bool				bBulletFlybys;
+var() bool	            bUseMotionBlur;
 
 var   BallisticMod					BallisticMod;
 

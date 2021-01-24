@@ -471,7 +471,7 @@ defaultproperties
      CrouchTurnRightAnim="Crouch"
      CrouchTurnLeftAnim="Crouch"
      IdleWeaponAnim="Idle_Rest"
-     AmbientGlow=60
+     AmbientGlow=20
      TransientSoundVolume=0.600000
      TransientSoundRadius=500.000000
 }

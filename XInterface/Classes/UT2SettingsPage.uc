@@ -23,8 +23,8 @@ var localized string	VideoTabLabel,
 						ControlsTabHint,
 						IForceTabLabel,
 						IForceTabHint,
-						WeaponsTabLabel,
-						WeaponsTabHint,
+						CrosshairsTabLabel,
+						CrosshairsTabHint,
 						GameTabLabel,
 						GameTabHint,
                         HudTabLabel,
@@ -32,7 +32,7 @@ var localized string	VideoTabLabel,
 						SpeechBinderTabLabel,
 						SpeechBinderTabHint;
 
-var Tab_WeaponPref 		pWeaponPref;
+var Tab_WeaponPref 		pCrosshairs;
 var Tab_PlayerSettings  pPlayer;
 var Tab_NetworkSettings	pNetwork;
 
@@ -62,7 +62,7 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 	TabC.AddTab(ControlsTabLabel,"xinterface.Tab_ControlSettings",,ControlsTabHint);
 //	if ( MyPlayer.ForceFeedbackSupported() )	-- Restore later
 	TabC.AddTab(IForceTabLabel,"xinterface.Tab_IForceSettings",,IForceTabHint);
-	pWeaponPref = Tab_WeaponPref(TabC.AddTab(WeaponsTabLabel,"xinterface.Tab_WeaponPref",,WeaponsTabHint));
+	pCrosshairs = Tab_WeaponPref(TabC.AddTab(CrosshairsTabLabel,"xinterface.Tab_WeaponPref",,CrosshairsTabHint));
     TabC.AddTab(HudTabLabel,"xinterface.Tab_HudSettings",,HudTabHint);
 	TabC.AddTab(GameTabLabel,"xinterface.Tab_GameSettings",,GameTabHint);
 	TabC.AddTab(SpeechBinderTabLabel,"xinterface.Tab_SpeechBinder",,SpeechBinderTabHint);
@@ -124,10 +124,10 @@ function InternalOnClose(optional Bool bCanceled)
 	local rotator NewRot;
 
 	// Destroy spinning weapon actor
-	if(pWeaponPref.SpinnyWeap != None)
+	if(pCrosshairs.SpinnyWeap != None)
 	{
-		pWeaponPref.SpinnyWeap.Destroy();
-		pWeaponPref = None;
+		pCrosshairs.SpinnyWeap.Destroy();
+		pCrosshairs = None;
 	}
 
 	// Destroy spinning player model actor
@@ -145,7 +145,7 @@ function InternalOnClose(optional Bool bCanceled)
 	// Save config.
 	pNetwork.ApplyStatConfig();
 	pPlayer.InternalApply(none);
-	pWeaponPref.WeapApply(none);
+	pCrosshairs.WeapApply(none);
 
 	Super.OnClose(bCanceled);
 }
@@ -166,8 +166,8 @@ defaultproperties
      ControlsTabHint="Configure your controls..."
      IForceTabLabel="Input"
      IForceTabHint="Configure misc. input options..."
-     WeaponsTabLabel="Weapons"
-     WeaponsTabHint="Adjust your weapon priorities and settings..."
+     CrosshairsTabLabel="Crosshairs"
+     CrosshairsTabHint="Adjust your weapon crosshairs"
      GameTabLabel="Game"
      GameTabHint="Adjust various game related settings..."
      HudTabLabel="Hud"

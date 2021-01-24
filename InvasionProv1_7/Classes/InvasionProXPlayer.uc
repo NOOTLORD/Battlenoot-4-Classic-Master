@@ -1,3 +1,4 @@
+// Modified by (NL)NOOTLORD
 class InvasionProXPlayer extends BallisticPlayer;
 
 var() Sound KillSound;
@@ -585,7 +586,7 @@ defaultproperties
      CrosshairSizeScale=30.000000
      CrosshairMinSize=30.000000
      CrosshairMaxSize=335.000000
-     bSpecMonsters=True
+     bSpecMonsters=False
      PlayerReplicationInfoClass=Class'InvasionProv1_7.InvasionProPlayerReplicationInfo'
      PawnClass=Class'InvasionProv1_7.InvasionProxPawn'
 }

@@ -3,6 +3,8 @@
 //==============================================================================
 // Created by Laurent Delayen
 // © 2003, Epic Games, Inc.  All Rights Reserved
+//
+// Modified by (NL)NOOTLORD
 //==============================================================================
 class Message_Awards extends LocalMessage;
 

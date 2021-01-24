@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class InvasionProHud extends HudWTeamDeathMatch config(User);
 
 #exec OBJLOAD FILE=2K4Menus.utx

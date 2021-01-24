@@ -6,6 +6,7 @@
 //	RelatedPRI_2 is the Victim.
 //	OptionalObject is the DamageType Class.
 //
+// Modified by (NL)NOOTLORD
 
 class xDeathMessage extends LocalMessage
 	config(user);
@@ -120,7 +121,7 @@ defaultproperties
 	KilledString="was killed by"
 	SomeoneString="someone"
     bIsSpecial=true	
-    Lifetime=8
+    Lifetime=6
     bFadeMessage=True	
     DrawPivot=DP_MiddleRight	
 	StackMode=SM_Down

@@ -3,6 +3,8 @@
 //=============================================================================
 // Created by Laurent Delayen
 // © 2003, Epic Games, Inc.  All Rights Reserved
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 
 class HUD_Assault extends HudCTeamDeathMatch

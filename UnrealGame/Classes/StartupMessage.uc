@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class StartupMessage extends CriticalEventPlus;
 
 var localized string Stage[8], NotReady, SinglePlayer;

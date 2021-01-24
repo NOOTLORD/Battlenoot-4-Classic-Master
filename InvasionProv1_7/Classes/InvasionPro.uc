@@ -1,5 +1,7 @@
 //=======================================================
 //InvasionPro Copyright © Shaun Goeppinger 2009 - 2012
+//
+// Modified by (NL)NOOTLORD
 //=======================================================
 class InvasionPro extends Invasion config(InvasionProSettings);
 

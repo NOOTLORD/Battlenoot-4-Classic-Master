@@ -141,6 +141,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.MRS138Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_MRS138'
      IconCoords=(X2=127,Y2=31)
+	 BobDamping=1.250000
      ItemName="MRS-138"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence

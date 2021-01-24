@@ -84,6 +84,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.X4Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.X4.SmallIcon_X4
      IconCoords=(X2=128,Y2=32)
+	 BobDamping=1.250000
      ItemName="X4"
      Mesh=SkeletalMesh'BallisticProAnims.X4_FP'
      DrawScale=0.300000	 

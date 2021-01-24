@@ -80,7 +80,9 @@ defaultproperties
      Speed=1350.000000
      Damage=75.000000
      DamageRadius=300.000000
+     AmbientGlow=5	 
      MyDamageType=Class'BallisticProV55Recolors.DT_MGLGrenadeRadius'
      ImpactSound=Sound'BallisticProRecolorsSounds.MGL.FLAK-GrenadeBounce'
      StaticMesh=StaticMesh'BallisticProStatic.M900.M900Proj'
+	
 }

@@ -67,7 +67,7 @@ function PlayNextAnim()
 
 defaultproperties
 {
-     spinRate=20000
+     spinRate=10000
      bPlayCrouches=True
      AnimChangeInterval=3.000000
      AnimNames(0)="Idle_Rest"
@@ -81,7 +81,7 @@ defaultproperties
      DrawType=DT_StaticMesh
      RemoteRole=ROLE_None
      LODBias=100000.000000
-     DrawScale=0.500000
+     DrawScale=0.400000
      bUnlit=True
      bAlwaysTick=True
 }

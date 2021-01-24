@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class xVictimMessage extends LocalMessage;
 
 var(Message) localized string YouWereKilledBy, KilledByTrailer;

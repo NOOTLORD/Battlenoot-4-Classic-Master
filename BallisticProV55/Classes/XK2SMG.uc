@@ -118,6 +118,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.Xk2Attachment'
      IconMaterial=BallisticProUITex.Icons.SmallIcon_XK2'
      IconCoords=(X2=127,Y2=31)
+	 BobDamping=1.500000
      ItemName="XK2"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence

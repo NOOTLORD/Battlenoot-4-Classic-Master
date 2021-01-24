@@ -1,5 +1,7 @@
 //=============================================================================
 // ScoreBoard_Assault
+//
+// Modified by (NL)NOOTLORD
 //=============================================================================
 
 class ScoreBoard_Assault extends ScoreBoardTeamDeathMatch;

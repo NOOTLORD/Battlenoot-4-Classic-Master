@@ -110,6 +110,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55Recolors.FN2000Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_FN2000'
      IconCoords=(X2=127,Y2=31)
+	 BobDamping=1.500000
      ItemName="FN2000"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence

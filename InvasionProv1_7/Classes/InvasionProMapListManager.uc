@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class InvasionProMapListManager extends MaplistManager;
 
 protected function GenerateGroupMaplist(int GroupIndex)

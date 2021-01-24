@@ -1,6 +1,6 @@
 //Scales any ballistic damagetypes.
 class Rules_Ballistic extends GameRules
-	config(System);
+	config(BallisticProV55);
 
 var() globalconfig float	DamageScale;		// Damage is scaled by this
 var() globalconfig float	VehicleDamageScale;	// Damage is scaled by this for vehicles

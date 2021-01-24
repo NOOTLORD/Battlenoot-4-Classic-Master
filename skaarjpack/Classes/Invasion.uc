@@ -522,6 +522,11 @@ function PlayEndOfMatchMessage()
 
 /* Rate whether player/monster should choose this NavigationPoint as its start
 */
+function float RatePlayerStart(NavigationPoint N, byte Team, Controller Player)
+{
+    if ( N.PhysicsVolume.bWaterVolume )
+        return -10000000;
+}
 
 function ReplenishWeapons(Pawn P)
 {

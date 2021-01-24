@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class xKillerMessagePlus extends LocalMessage;
 
 var(Message) localized string YouKilled;

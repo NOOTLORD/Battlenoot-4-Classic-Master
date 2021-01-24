@@ -23,9 +23,8 @@ var() editconst noexport BallisticTab_RulesPro			p_Rules;
 var() editconst noexport BallisticTab_PreferencesPro	p_Options;
 var() editconst noexport BallisticTab_OutfittingPro	p_Loadout;
 
-
 var() localized string 	HeaderCaption;
-var() localized string	RulesTabLabel,RulesTabHint, OptionsTabLabel,OptionsTabHint, BloodTabLabel,BloodTabHint, SwapTabLabel,SwapTabHint,LoadoutTabLabel,LoadoutTabHint;
+var() localized string	RulesTabLabel,RulesTabHint, OptionsTabLabel,OptionsTabHint, BloodTabLabel,BloodTabHint, SwapTabLabel,SwapTabHint,LoadoutTabLabel,LoadoutTabHint, InvasionLoadoutTabLabel,InvasionLoadoutTabHint;
 var()		  string	DetailSettings[9];
 
 function InitComponent(GUIController MyController, GUIComponent MyOwner)

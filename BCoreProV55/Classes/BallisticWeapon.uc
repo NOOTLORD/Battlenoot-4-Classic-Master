@@ -82,9 +82,6 @@ var() byte		SightsRestrictionLevel;	// Forces any weapon which can aim to aim wh
 //----------------------------------------------------------------------------------------------------------------------
 
 //Special weapon info vars ---------------------------------------------------------------------------------------------
-var() config float		WeaponPrice;					// Cash cost to buy the weapon
-var() config float		PrimaryAmmoPrice;			// Cost to fill primary fm ammo
-var() config float		SecondaryAmmoPrice;		// Cost to fill secondary fm ammo
 var() byte					InventorySize;					// How much space this weapon should occupy in an inventory. 0-100. Used by mutators, games, etc...
 																	// Please note that this is now equivalent to slot usage in Conflict.
 
@@ -197,8 +194,6 @@ enum ModeSaveType
 	MR_Last,				//Remember the last mode used.
 	MR_SavedDefault		//Remember the mode saved manually using the SaveMode command.
 };
-
-var globalconfig ModeSaveType ModeHandling;
 	
 struct WeaponModeType						//All the settings for a weapon firing mode
 {
@@ -211,8 +206,8 @@ struct WeaponModeType						//All the settings for a weapon firing mode
 var() Array<WeaponModeType>	WeaponModes;			//A list of the available weapon firing modes and their info for this weapon
 var() travel byte						CurrentWeaponMode;	//The index of the firing mode currently active
 																				//FIXME, weapons using SwitchCannonMode will require assistance.
-var() config byte						LastWeaponMode;		//The last known used weapon mode
-var() config byte						SavedWeaponMode;		//A manually set or saved initial weapon mode
+var()  byte						LastWeaponMode;		//The last known used weapon mode
+var()  byte						SavedWeaponMode;		//A manually set or saved initial weapon mode
 var	bool									bNotifyModeSwitch;		//Calls SwitchWeaponMode on each fire mode on mode switching.
 var	bool									bRedirectSwitchToFiremode; //Compatibility for Ballistic UI - implemented in later weapons
 var	byte 									PendingMode;
@@ -229,12 +224,21 @@ enum EZoomType // Azarael
 	ZT_Smooth // Smooth zoom. Replaces bSmoothZoom, allows the weapon to zoom from FOV 90 to FullZoomFOV.
 };
 
+enum EScopeHandling
+{
+    SH_Default,     // Hold to ADS up. Weapon locks into ADS mode. Press once to release.
+    SH_Hold,        // Hold to ADS. Release to drop gun.
+};
+
 var EZoomType ZoomType;
+
+var() globalconfig           	EScopeHandling  ScopeHandling;			// Should iron sights continue when the key is released, once activated?
+var   bool                      bScopeDesired;                  // Weapon wishes to transition to scope
 
 var() bool						bUseSights;			// This weapon has sights or a scope that can be used
 var() bool						bNoTweenToScope;			//Don't tween to the first idle frame to fix the animation jump (M75 fix) FIXME the M75 uses animations to scope
-var() config float              ScopeXScale;			//Manual scaling for scopes
-var() globalconfig bool         bInvertScope;		// Inverts Prev/Next weap relation to Zoom In/Out
+var() float              ScopeXScale;			//Manual scaling for scopes
+var() bool         bInvertScope;		// Inverts Prev/Next weap relation to Zoom In/Out
 var() name						ZoomInAnim;			// Anim to play for raising weapon to view through Scope or sights
 var() name						ZoomOutAnim;		// Anim to play when lowering weapon after viewing through scope or sights
 var() Material					ScopeViewTex;		// Texture displayed in Scope View. Fills the screen
@@ -250,7 +254,6 @@ var() Vector					SightOffset;		// Offset of actual sight view position from Sigh
 var() float						SightDisplayFOV;	// DisplayFOV for drawing gun in scope/sight view
 var() float						SightingTime;		// Time it takes to move weapon to and from sight view
 var() globalconfig float	    SightingTimeScale;	// Scales the SightingTime for each weapon by this amount.
-var() globalconfig     bool     bSightLock;                // Should iron sights continue when the key is released, once activated?
 var   float						OldZoomFOV;			// FOV saved for temporary scope down
 var   float						SightingPhase;		// Current level of progress moving weapon into place for sight view
 var   bool						bPendingSightUp;		// Currently out of sight view for something. Will go back when done
@@ -2132,63 +2135,92 @@ simulated function bool CheckWeaponMode (int Mode)
 
 // End Firing Mode Stuff <<<<<<<<<<<<<<<<<<<<
 
-// Sight View Stuff >>>>>>>>>>>>>>>>>>>>>>>>>
-// Scopes can be activated with the sight key. Holding the key will zoom in until released. Further adjustments can
-// be made with the Prev/Next weapon select keys.
-
-// Sight key pressed. Bring the scope/sights up to eye level or lower gun if already in scope view.
-// Azarael - Improved ironsights
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ScopeView
+//
+// If not in ADS, zeroes aim on the server and flags that sight interpolation
+// should begin.
+//
+// If in ADS, ends ADS mode on client and server.
+//
+// Toggle mode: should 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 exec simulated function ScopeView()
 {
-	bScopeHeld=true;
-	bPendingSightUp=false;
-	
-	if (!bUseSights)
-		return;
+	bScopeHeld      = true;
+
+	bPendingSightUp = false;
+
+    // abort any scope view in progress
 	if (bScopeView)
 	{
-		bScopeHeld=false;
+        bScopeDesired = false;
 		StopScopeView();
 		return;
 	}
+	
+	if (!bUseSights)
+		return;
 
 	if (!CanUseSights())
-	{
-		bScopeHeld=False;
 		return;
-	}
 
-	ZeroAim(SightingTime); //Level out sights over aim adjust time to stop the "shunt" effect
-	
-	if (!IsFiring() && !bNoTweenToScope)
-		TweenAnim(IdleAnim, SightingTime);
+    switch (ScopeHandling)
+    {
+        case SH_Default:
+        case SH_Hold:
+            bScopeDesired = true;
+            break;
+    }
 
-	bForceReaim=true;
+    if (!bScopeDesired)
+    {
+        ServerReaim(0.1);
+
+        if( InstigatorController.IsA( 'PlayerController' ) && ZoomType == ZT_Smooth)
+            PlayerController(InstigatorController).StopZoom();
+    }
+
+    else 
+    {	
+        ZeroAim(SightingTime); //Level out sights over aim adjust time to stop the "shunt" effect
 	
-	if (NewLongGunFactor == 0)
-		PlayScopeUp();
+        if (!IsFiring() && !bNoTweenToScope)
+            TweenAnim(IdleAnim, SightingTime);
+
+        if (NewLongGunFactor == 0)
+            PlayScopeUp();
+    }
 }
 
- //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ScopeViewRelease
 //
 // Notifies the weapon that the player no longer wishes to scope.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 exec simulated function ScopeViewRelease()
 {
-    bScopeHeld=false;
+	bScopeHeld = false;
 
-    if (!bUseSights)
-        return;
+	if (!bUseSights)
+		return;
 
-    if (bScopeView && !bSightLock)
-        StopScopeView();
+    switch (ScopeHandling)
+    { 
+        case SH_Hold:       // abandon ADS on key release
+            if (bScopeView)
+                StopScopeView();
+            bScopeDesired = false;
+            break;
+        case SH_Default:    // abandon ADS attempt on key release
+            bScopeDesired = false;
+    }
 
     if (!bScopeView)
-        ServerReaim(0.1);
+		ServerReaim(0.1);
 
-    if( InstigatorController.IsA( 'PlayerController' ) && ZoomType == ZT_Smooth)
-        PlayerController(InstigatorController).StopZoom();
+	if( InstigatorController.IsA( 'PlayerController' ) && ZoomType == ZT_Smooth)
+		PlayerController(InstigatorController).StopZoom();
 }
 
 // End Sight View <<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -2942,21 +2974,6 @@ simulated function ClientWeaponSet(bool bPossiblySwitch)
     if( Level.NetMode == NM_DedicatedServer || !Instigator.IsHumanControlled() )
         return;
 		
-	if (Instigator.IsLocallyControlled())
-	{
-		if (ModeHandling == MR_Last)
-		{
-			if(LastWeaponMode != CurrentWeaponMode && LastWeaponMode != 255)
-				ServerSwitchWeaponMode(LastWeaponMode);
-		}
-	
-		else if (ModeHandling == MR_SavedDefault)
-		{
-			if (SavedWeaponMode != CurrentWeaponMode && SavedWeaponMode != 255)
-				ServerSwitchWeaponMode(SavedWeaponMode);
-		}
-	}
-
     if( Instigator.Weapon == self || Instigator.PendingWeapon == self ) // this weapon was switched to while waiting for replication, switch to it now
     {
         if (Instigator.PendingWeapon != None)
@@ -4739,7 +4756,7 @@ defaultproperties
      SpecialInfo(0)=(Id="EvoDefs",Info="0.0;10.0;0.5;50.0;0.2;0.2;0.1")  
      BringUpSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)
      PutDownSound=(Volume=0.500000,Radius=32.000000,Slot=SLOT_Interact,Pitch=1.000000,bAtten=True)  
-     MagAmmo=30  
+     MagAmmo=30
      CockAnim="Cock"
      CockAnimRate=1.000000
      CockSelectAnim="PulloutFancy"
@@ -4770,20 +4787,19 @@ defaultproperties
      bDrawCrosshairDot=True
      bUseBigIcon=False
      bLimitCarry=True
-     MaxWeaponsPerSlot=1
-     SightsRestrictionLevel=0
-     ModeHandling=MR_None 	 
+     MaxWeaponsPerSlot=2
+     SightsRestrictionLevel=0 
      LastWeaponMode=255
      SavedWeaponMode=255
      bUseSights=True
      ScopeXScale=1.000000
      FullZoomFOV=80.000000
+	 ScopeHandling=SH_Default
      SightZoomFactor=0
      SightOffset=(Z=2.500000)
      SightDisplayFOV=30.000000
      SightingTime=0.350000
      SightingTimeScale=1.000000
-     bSightLock=False
      MinFixedZoomLevel=0.050000
      MinZoom=1.000000
      MaxZoom=2.000000

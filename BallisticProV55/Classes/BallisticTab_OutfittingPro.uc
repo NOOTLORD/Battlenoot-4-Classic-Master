@@ -45,8 +45,7 @@ var LoadoutBox	Boxes[NUM_BOXES_TOTAL]; //DM, and the two teams
 var localized string		BoxNames[NUM_BOXES];
 var int			SelectedBox;
 
-var() localized string Headings[12];
-
+var() localized string Headings[12];									
 struct LOWeapInfo
 {
 	var string		ClassName;
@@ -174,7 +173,7 @@ function LoadList()
 					if (!MiscLoaded)
 					{
 						MiscLoaded=true;
-						lb_NewWeapons.CheckList.Add(Headings[10],,"MISC",true);
+						lb_NewWeapons.CheckList.Add(class'BallisticWeaponClassInfo'.static.GetHeading(10),,"MISC",true);
 					}
 					lb_NewWeapons.CheckList.Insert(Index[10], Recs[i].FriendlyName,, string(j));
 					Index[10]++;
@@ -186,7 +185,7 @@ function LoadList()
 				if (!OtherLoaded)
 				{
 					OtherLoaded=true;
-					lb_NewWeapons.CheckList.Add(Headings[11],,"OTHER",true);
+					lb_NewWeapons.CheckList.Add(class'BallisticWeaponClassInfo'.static.GetHeading(11),,"OTHER",true);
 				}
 				lb_NewWeapons.CheckList.Insert(Index[11], Recs[i].FriendlyName,, string(j));
 				Index[11]++;
@@ -215,8 +214,6 @@ function LoadBoxesFromMutator ()
 	Boxes[2].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup2;
 	Boxes[3].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup3;
 	Boxes[4].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup4;
-	Boxes[5].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup5;
-	Boxes[6].WeaponNames = class'Mut_Outfitting'.default.LoadoutGroup6;
 	
 	// Get rid of things that are no longer around
 	for(i=0;i<NUM_BOXES_TOTAL;i++)
@@ -249,8 +246,6 @@ function SaveBoxesToMutator ()
 	class'Mut_Outfitting'.default.LoadoutGroup2 = Boxes[2].WeaponNames;
 	class'Mut_Outfitting'.default.LoadoutGroup3 = Boxes[3].WeaponNames;
 	class'Mut_Outfitting'.default.LoadoutGroup4 = Boxes[4].WeaponNames;
-	class'Mut_Outfitting'.default.LoadoutGroup5 = Boxes[5].WeaponNames;
-	class'Mut_Outfitting'.default.LoadoutGroup6 = Boxes[6].WeaponNames;
 		
 	class'Mut_Outfitting'.static.StaticSaveConfig();
 }
@@ -532,9 +527,6 @@ function DefaultSettings()
 	class'Mut_Outfitting'.static.ResetConfig("LoadoutGroup2");
 	class'Mut_Outfitting'.static.ResetConfig("LoadoutGroup3");
 	class'Mut_Outfitting'.static.ResetConfig("LoadoutGroup4");
-
-	class'Mut_Outfitting'.static.ResetConfig("LoadoutGroup5");
-	class'Mut_Outfitting'.static.ResetConfig("LoadoutGroup6");
 	LoadBoxesFromMutator();
 	LoadBox(SelectedBox);
 }

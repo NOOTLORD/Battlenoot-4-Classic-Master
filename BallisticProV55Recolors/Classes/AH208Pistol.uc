@@ -174,7 +174,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55Recolors.AH208Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_AH208-Pistol'
      IconCoords=(X2=127,Y2=31)
-     BobDamping=1.250000	 
+     BobDamping=1.000000	
      ItemName="AH-208"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence

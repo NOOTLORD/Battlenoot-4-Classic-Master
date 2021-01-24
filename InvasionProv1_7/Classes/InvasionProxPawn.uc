@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class InvasionProxPawn extends BallisticPawn;
 
 function DeactivateSpawnProtection()

@@ -16,7 +16,7 @@ var() int						Spin;				// Random spin applied after impact
 var() float						DampenFactor;		// Dampen factor for impacts
 var() Rotator					RandomDir;			// Adds some random rotation to the start velocity calculations
 var() Vector					StartVelocity;		// Velocity applied at start
-var() globalconfig float		LifeTimeScale;		// Scales the lifespan of brass (0 = Stays... FOREVER!!!)
+var() config float		        LifeTimeScale;		// Scales the lifespan of brass (0 = Stays... FOREVER!!!)
 var() bool						bAddOwnerVelocity;	// Add velocity of owner (or Owner.Instigator if inventory)
 // Sound Vars -----------------------------------------------------------------
 var() bool						bHitSounds;		// Play sounds when shell hits wall or floor

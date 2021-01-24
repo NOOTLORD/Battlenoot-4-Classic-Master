@@ -40,7 +40,7 @@ function LoadSettings()
 	ch_StableSprint.Checked(class'BallisticReplicationInfo'.default.bNoJumpOffset);
 	ch_NoLongGun.Checked(class'BallisticReplicationInfo'.default.bNoLongGun);
 	fl_Damage.SetValue(class'Rules_Ballistic'.default.DamageScale);
-	fl_VDamage.SetValue(class'Rules_Ballistic'.default.VehicleDamageScale);	
+	fl_VDamage.SetValue(class'Rules_Ballistic'.default.VehicleDamageScale);		
 	fl_ScopedWalkingpct.SetValue(class'BallisticReplicationInfo'.default.ScopedWalkingPercentage);	
 	fl_Crouchingpct.SetValue(class'BallisticReplicationInfo'.default.CrouchingPercentage);	
 	ch_NoDodging.Checked(class'BallisticReplicationInfo'.default.bNoDodging);
@@ -59,7 +59,7 @@ function SaveSettings()
 	class'BallisticReplicationInfo'.default.bNoJumpOffset	        = ch_StableSprint.IsChecked();
 	class'BallisticReplicationInfo'.default.bNoLongGun		        = ch_NoLongGun.IsChecked();
 	class'Rules_Ballistic'.default.DamageScale 				        = fl_Damage.GetValue();
-	class'Rules_Ballistic'.default.VehicleDamageScale		        = fl_VDamage.GetValue();	
+	class'Rules_Ballistic'.default.VehicleDamageScale		        = fl_VDamage.GetValue();
 	class'BallisticReplicationInfo'.default.ScopedWalkingPercentage = fl_ScopedWalkingpct.GetValue();
 	class'BallisticReplicationInfo'.default.CrouchingPercentage	    = fl_Crouchingpct.GetValue();
 	class'BallisticReplicationInfo'.default.bNoDodging		        = ch_NoDodging.IsChecked();
@@ -96,7 +96,7 @@ function DefaultSettings()
 defaultproperties
 {
      Begin Object Class=moFloatEdit Name=fl_AccuracyFloat
-         MinValue=0.500000	 
+         MinValue=0.250000	 
          MaxValue=2.000000
          CaptionWidth=0.750000		 
          Caption="Inaccuracy Scale"
@@ -109,7 +109,7 @@ defaultproperties
      fl_Accuracy=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_AccuracyFloat'
 
      Begin Object Class=moFloatEdit Name=fl_RecoilFloat
-	     MinValue=0.500000	 
+	     MinValue=0.250000	 
          MaxValue=2.000000
          CaptionWidth=0.750000		 
          Caption="Recoil Scale"
@@ -177,15 +177,16 @@ defaultproperties
      End Object
      fl_VDamage=moFloatEdit'BallisticProV55.BallisticTab_RulesPro.fl_VDamageFloat'
 	 
+	 
      Begin Object Class=moFloatEdit Name=fl_ScopedWalkingpctFloat
          MinValue=0.250000
          MaxValue=1.500000
          ComponentJustification=TXTA_Left
          CaptionWidth=0.750000
-         Caption="Scope Movespeed Scale"
+         Caption="ADS Move Speed Scale"
          OnCreateComponent=fl_ScopedWalkingpctFloat.InternalOnCreateComponent
          IniOption="@Internal"
-         Hint="Scales the amount of speed u have when scoping."
+         Hint="Scales the amount of movement speed u have when in ADS."
          WinTop=0.400000
          WinLeft=0.250000
          WinHeight=0.040000
@@ -200,7 +201,7 @@ defaultproperties
          Caption="Crouching Speed Scale"
          OnCreateComponent=fl_CrouchingpctFloat.InternalOnCreateComponent
          IniOption="@Internal"
-         Hint="Scales the amount of speed u have when crouching."
+         Hint="Scales the amount of movement speed u have when crouching."
          WinTop=0.450000
          WinLeft=0.250000
          WinHeight=0.040000

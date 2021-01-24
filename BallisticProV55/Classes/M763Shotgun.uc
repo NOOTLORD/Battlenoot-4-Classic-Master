@@ -218,6 +218,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.M763Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.BigIcon_M763'
      IconCoords=(X2=127,Y2=31)
+	 BobDamping=1.250000
      ItemName="M763"						  
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence

@@ -1,3 +1,5 @@
+// Modified by (NL)NOOTLORD
+
 class SpeciesType extends Object
 	abstract
 	native;

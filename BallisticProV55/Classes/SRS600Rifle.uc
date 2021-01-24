@@ -123,6 +123,7 @@ defaultproperties
      AttachmentClass=Class'BallisticProV55.SRS600Attachment'
      IconMaterial=Texture'BallisticProUITex.Icons.SmallIcon_SRS600'
      IconCoords=(X2=127,Y2=31)
+	 BobDamping=1.500000
      ItemName="SRS-600"
      LightType=LT_Pulse
      LightEffect=LE_NonIncidence
