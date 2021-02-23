@@ -1,1 +1,0 @@
-<th><%HeadTitle%></th>
