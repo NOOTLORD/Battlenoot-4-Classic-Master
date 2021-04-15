@@ -8,37 +8,6 @@
 //=============================================================================
 class M763PrimaryFire extends BallisticProShotgunFire;
 
-
-function PlayFiring()
-{
-	if (BW.MagAmmo - ConsumedLoad < 1)
-	{
-		AimedFireAnim = 'SightFire';
-		FireAnim = 'Fire';
-	}
-	else
-	{
-		AimedFireAnim='FireCombinedSight';
-		FireAnim = 'FireCombined';
-	}
-	super.PlayFiring();
-}
-
-function ServerPlayFiring()
-{
-	if (BW.MagAmmo - ConsumedLoad < 1)
-	{
-		AimedFireAnim = 'SightFire';
-		FireAnim = 'Fire';
-	}
-	else
-	{
-		AimedFireAnim='FireCombinedSight';
-		FireAnim = 'FireCombined';
-	}
-	super.ServerPlayFiring();
-}
-
 defaultproperties
 {
      HipSpreadFactor=3.000000
@@ -53,7 +22,7 @@ defaultproperties
      WaterRangeAtten=0.800000
      PDamageFactor=0.700000
      WallPDamageFactor=0.950000 
-     WallPenetrationForce=64.000000
+     WallPenetrationForce=20.000000
      KickForce=0
      PenetrateForce=0
      bPenetrate=False	 

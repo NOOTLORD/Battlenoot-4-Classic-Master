@@ -10,36 +10,6 @@
 //=============================================================================
 class MRS138PrimaryFire extends BallisticProShotgunFire;
 
-function PlayFiring()
-{
-	if (BW.MagAmmo - ConsumedLoad < 1)
-	{
-		AimedFireAnim = 'SightFire';
-		FireAnim = 'Fire';
-	}
-	else
-	{
-		AimedFireAnim='SightFireCombined';
-		FireAnim = 'FireCombined';
-	}
-	super.PlayFiring();
-}
-
-function ServerPlayFiring()
-{
-	if (BW.MagAmmo - ConsumedLoad < 1)
-	{
-		AimedFireAnim = 'SightFire';
-		FireAnim = 'Fire';
-	}
-	else
-	{
-		AimedFireAnim='SightFireCombined';
-		FireAnim = 'FireCombined';
-	}
-	super.ServerPlayFiring();
-}
-
 defaultproperties
 {
      HipSpreadFactor=2.500000
@@ -54,7 +24,7 @@ defaultproperties
 	 WaterRangeAtten=0.800000	
      PDamageFactor=0.700000
      WallPDamageFactor=0.950000	 
-     WallPenetrationForce=0
+     WallPenetrationForce=20.000000
      KickForce=0
      PenetrateForce=0
      bPenetrate=False	 
@@ -69,6 +39,7 @@ defaultproperties
      FlashScaleFactor=0.400000
      BrassClass=Class'BallisticProV55.Brass_MRS138Shotgun'
      BrassOffset=(X=18.000000,Y=-7.500000,Z=16.000000)
+     AimedFireAnim="SightFireCombined"	 
      RecoilPerShot=512.000000
      VelocityRecoil=0.000000 	 
      FireChaos=0.400000
